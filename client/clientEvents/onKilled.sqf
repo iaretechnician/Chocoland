@@ -67,13 +67,13 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
-
+/*
 if((_player getVariable "cmoney") > 0) then {
 	_m = "EvMoney" createVehicle (position _player);
 	_m setVariable["money", (_player getVariable "cmoney"), true];
 	_m setVariable ["owner", "world", true];
 	_to_delete = _to_delete + [_m];
-};
+};*/
 
 if((_player getVariable "medkits") > 0) then {
 	for "_a" from 1 to (_player getVariable "medkits") do {	

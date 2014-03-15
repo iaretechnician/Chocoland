@@ -77,7 +77,7 @@ else
 				
 				// Faire relacher l'objet au joueur (si il l'a dans "les mains")
 				R3F_LOG_joueur_deplace_objet = objNull;
-				sleep 2;
+				sleep 0.1;
 				
 				// Choisir une position dégagée (sphère de 50m de rayon) dans le ciel dans un cube de 9km^3
 				private ["_nb_tirage_pos", "_position_attache"];

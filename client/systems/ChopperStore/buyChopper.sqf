@@ -25,7 +25,7 @@ closeDialog objshop_DIALOG;
    dir = getdir player;
    pos = getPos player;
      pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),100];
-//Buy
+
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
@@ -38,8 +38,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
-                     
-			_spawn setDir dir + 180;
+			_spawn setDir dir + 90;
+                        _spawn allowdamage false;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
@@ -47,21 +47,27 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			player setVariable["cmoney",_playerMoney - _price,true];
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 			hintsilent "Chopper bought - Follow the arrows to the spawn point";
-                _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
+              
+              _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
 		_smoke = "smokeShellblue" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
-       waitUntil {(getPos _spawn select 2) < 2};
-              	deTach _spawn;
-                sleep 3;
-		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
+                waitUntil {(getPos _spawn select 2) < 2};
+		deTach _spawn;
+		sleep 3;
+             
+		//_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
+
     		// Delete parachute
-		sleep 5;
+		sleep 15;
+		
 		deleteVehicle _Parachute;
+                
                  _spawn setDamage (0.00);
-               
+                 _spawn allowdamage true;
+
 		} else {
 			hintsilent "There is another chopper or player blocking the spawn point!";
 		};

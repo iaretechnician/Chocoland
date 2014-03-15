@@ -60,3 +60,4 @@ if(X_Server) then {
 [0.1, 0.9, 1] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 
 [] execVM "motd.sqf";
+null = execVM "killTicker.sqf";

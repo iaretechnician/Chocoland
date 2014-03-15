@@ -37,7 +37,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 _vehicleClass = ["BTR40_MG_TK_GUE_EP1","GAZ_Vodnik_HMG","GAZ_Vodnik","BRDM2_HQ_TK_GUE_EP1","BRDM2_TK_GUE_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
-_vehicle = [_vehicleClass,_randomPos,0.1,1,0.75,"NONE"] call createMissionVehicle;
+_vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");

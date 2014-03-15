@@ -245,7 +245,7 @@ generalStore = [
     ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",300,150]  
 ];
 ChopperStoreArray = [
-["Sputnik", 500, "Ka137_MG_PMC"],
+
   ["BQM-74", 500,"Chukar_EP1"],
   ["C130J", 500, "C130J"],
 [" SeeHawk", 500, "MV22"],
@@ -259,7 +259,7 @@ ChopperStoreArray = [
 	["Medivac", 2300,"UH60M_MEV_EP1"],
 	["Seahawk", 2500,"MH60S"],
 	["Merlin", 2500,"BAF_Merlin_HC3_D"],
-	["Ka137", 12000,"Ka137_MG_PMC"],
+	
 	["Blackhawk", 5000,"UH60M_EP1"],
 	["Chinook", 7500,"CH_47F_EP1"],
 	["Ka60", 14700,"Ka60_PMC"],
@@ -327,7 +327,7 @@ vehicleStoreArray = [
         ["M1A1", 50000,"M1A1"],
 	["T-90", 60000,"T90"],  
         ["FV510 Warrior", 60000,"BAF_FV510_W"],
-        ["M1A2 TUSK [USMC]", 750000,"M1A2_TUSK_MG"]
+        ["M1A2 TUSK [USMC]", 100000,"M1A2_TUSK_MG"]
 ];
 BuildStoreArray = [
 	["----------CONTAINER----------", 999999,"Land_ConcreteBlock"],
@@ -360,10 +360,10 @@ BuildStoreArray = [
 	["HBarrier Low x5",100,"Land_HBarrier5"],
 	["HBarrier Large (High)",200,"Land_HBarrier_large"],
 	["----------BUNKER----------", 9999999,"Land_ConcreteBlock"],
-	["Medium Warfare Bunker",250,"WarfareBCamp"],
-	["Big Warfare Bunker 2x",175,"WarfareBDepot"],
-	["Deerstand",25,"Land_Misc_deerstand"],
-	["Radar Tower",45,"Land_radar_EP1"],
+	["Medium Warfare Bunker",1000,"WarfareBCamp"],
+	["Big Warfare Bunker 2x",10000,"WarfareBDepot"],
+	["Deerstand",200,"Land_Misc_deerstand"],
+	["Radar Tower",500,"Land_radar_EP1"],
 	["----------TENTS----------", 9999999,"Land_ConcreteBlock"],
 	["Green Tent",35,"CampEast_EP1"],
     ["Green Tent (Big)",65,"Land_tent_east"],

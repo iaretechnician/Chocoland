@@ -11,8 +11,9 @@
     sleep 120;
 	player globalchat "[server] There are VIP packages available for donators on this server, for more info or to donate, visit our forums.";
 	player globalchat "[server] Be one with ChocoLand";
+        player globalchat "[server] We can be both of God and Devil, since we`re trying to raise the dead against the stream of Time";
     sleep 120;
-        player globalchat "[server] Donations help keep these servers alive!, without donations, you could not play here long time. please donate!";
+        player globalchat "[server] Please advertises for us to keep these servers alive!, without advertising would suffer the game fun !";
         player globalchat "[server]  Is it true that vampires don't like clowns because their blood tastes funny?";
     sleep 120;
 	player globalchat "[server] Become the best in the highscore and get the unique bonus";

@@ -20,22 +20,18 @@ _foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
 _watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
 _moneytext ctrlSetText format["%1", player getVariable "cmoney"];
 
-_mIndex = _mvalue lbadd "$5"; _mvalue lbSetData [(lbSize _mvalue)-1, "5"];
-_mIndex = _mvalue lbadd "$15"; _mvalue lbSetData [(lbSize _mvalue)-1, "15"];
-_mIndex = _mvalue lbadd "$20"; _mvalue lbSetData [(lbSize _mvalue)-1, "20"];
+_mIndex = _mvalue lbadd "$10"; _mvalue lbSetData [(lbSize _mvalue)-1, "10"];
 _mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];
-_mIndex = _mvalue lbadd "$75"; _mvalue lbSetData [(lbSize _mvalue)-1, "75"];
 _mIndex = _mvalue lbadd "$100"; _mvalue lbSetData [(lbSize _mvalue)-1, "100"];
-_mIndex = _mvalue lbadd "$200"; _mvalue lbSetData [(lbSize _mvalue)-1, "200"];
-_mIndex = _mvalue lbadd "$300"; _mvalue lbSetData [(lbSize _mvalue)-1, "300"];
-_mIndex = _mvalue lbadd "$400"; _mvalue lbSetData [(lbSize _mvalue)-1, "400"];
+_mIndex = _mvalue lbadd "$250"; _mvalue lbSetData [(lbSize _mvalue)-1, "250"];
 _mIndex = _mvalue lbadd "$500"; _mvalue lbSetData [(lbSize _mvalue)-1, "500"];
 _mIndex = _mvalue lbadd "$1000"; _mvalue lbSetData [(lbSize _mvalue)-1, "1000"];
-_mIndex = _mvalue lbadd "$2000"; _mvalue lbSetData [(lbSize _mvalue)-1, "2000"];
-_mIndex = _mvalue lbadd "$3000"; _mvalue lbSetData [(lbSize _mvalue)-1, "3000"];
-_mIndex = _mvalue lbadd "$4000"; _mvalue lbSetData [(lbSize _mvalue)-1, "4000"];
+_mIndex = _mvalue lbadd "$2500"; _mvalue lbSetData [(lbSize _mvalue)-1, "2500"];
 _mIndex = _mvalue lbadd "$5000"; _mvalue lbSetData [(lbSize _mvalue)-1, "5000"];
-
+_mIndex = _mvalue lbadd "$10000"; _mvalue lbSetData [(lbSize _mvalue)-1, "10000"];
+_mIndex = _mvalue lbadd "$20000"; _mvalue lbSetData [(lbSize _mvalue)-1, "20000"];
+_mIndex = _mvalue lbadd "$50000"; _mvalue lbSetData [(lbSize _mvalue)-1, "50000"];
+_mIndex = _mvalue lbadd "$100000"; _mvalue lbSetData [(lbSize _mvalue)-1, "100000"];
 if(str(playerSide) == "west" || str(playerSide) == "east") then
 {
 	_groupButton ctrlShow false;    
