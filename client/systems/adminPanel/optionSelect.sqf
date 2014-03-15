@@ -79,7 +79,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 				};
 			    case 2: //Tags
 			    {
-					
+					execVM "client\systems\adminPanel\playerTags.sqf";
 			    };
 			    case 3: //Teleport
 			    {

@@ -3,23 +3,11 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
-[_player] execVM "persistentscripts\pSave.sqf";
+
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
-_bounty = score _player;
-//if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
+if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
 
-/// custom
-
-if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
-if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
-	_killer addScore 2;
-};};
-_player addScore (0-_bounty);
-_killer getVariable "cmoney",_bounty*10,false];
-hint format["You got %1 $ from killing %2", _bounty*10 ,_player];
-
-titleText ["Please wait for your player to setup", "BLACK OUT", 1];
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {
@@ -47,6 +35,9 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
 				};
 			};
 		};
+                if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
+                if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
+                _killer addScore 2;
 		_ignore = ["SmokeLauncher", "FlareLauncher", "CMFlareLauncher", "CarHorn", "BikeHorn", "TruckHorn", "TruckHorn2", "SportCarHorn", "MiniCarHorn", "Laserdesignator_mounted"];
 		_suspects = [];
 		{
@@ -77,7 +68,7 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 _to_delete = [];
 _to_delete_quick = [];
 
-/*if((_player getVariable "cmoney") > 0) then {
+if((_player getVariable "cmoney") > 0) then {
 	_m = "EvMoney" createVehicle (position _player);
 	_m setVariable["money", (_player getVariable "cmoney"), true];
 	_m setVariable ["owner", "world", true];
@@ -96,10 +87,9 @@ if((_player getVariable "repairkits") > 0) then {
 		_m = "Suitcase" createVehicle (position _player);
 		_to_delete = _to_delete + [_m];
 	};
-};*/
+};
 
 true spawn {
 	waitUntil {playerRespawnTime < 2};
 	titleText ["", "BLACK OUT", 1];
-
 };

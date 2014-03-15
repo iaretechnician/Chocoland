@@ -26,4 +26,3 @@ while {true} do {
 	publicVariable "serverFPS";
     sleep 1; 
 };
-

@@ -25,7 +25,7 @@ true spawn {
 	if(!isDedicated) then {
 		titleText ["Please wait for your player to setup", "BLACK OUT", 1];
 		waitUntil {player == player};
-		client_initEH = player addEventHandler ["Respawn"];
+		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
 };
 execVM "persistentscripts\init.sqf";
@@ -35,7 +35,11 @@ execVM "persistentscripts\init.sqf";
 
 if(X_Client) then {
 	[] execVM "client\init.sqf";
-    	enableRadio false;
+        
+        player removeWeapon "ItemGPS";
+	removeAllWeapons player;
+	removeBackpack player;
+    	enableRadio true;
     
     if(count units group player > 1) then
     {  
@@ -54,5 +58,5 @@ if(X_Server) then {
 
 
 [0.1, 0.9, 1] execVM "addons\scripts\DynamicWeatherEffects.sqf";
-// custom
+
 [] execVM "motd.sqf";

@@ -1,4 +1,32 @@
+/*
+ =======================================================================================================================
+Script: BIN_taskDefend.sqf v1.3a
+Author(s): Binesi
+Partly based on original code by BIS
 
+Description:
+Group will man all nearby static defenses and vehicle turrets and guard/patrol the position and surrounding area.
+
+Parameter(s):
+_this select 0: group (Group)
+_this select 1: defense position (Array)
+    
+Returns:
+Boolean - success flag
+
+Example(s):
+null = [group this,(getPos this)] execVM "BIN_taskDefend.sqf"
+
+-----------------------------------------------------------------------------------------------------------------------
+Notes:
+
+To prevent this script from manning vehicle turrets find and replace "LandVehicle" with "StaticWeapon".
+
+The "DISMISS" waypoint is nice but bugged in a few ways. The odd hacks in this code are used to force the desired behavior.
+The ideal method would be to write a new FSM and I may attempt that in a future project if no one else does. 
+
+=======================================================================================================================
+*/
 if (!isServer) exitWith {};
 private ["_grp", "_pos"];
 _grp = _this select 0;

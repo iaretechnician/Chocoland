@@ -213,19 +213,7 @@ class gunshopd {
 
 		};
 
-		class BuySellEquipment: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\gunStore\sellWeapon.sqf'";
-			text = "Sell Current Weapon";
-
-			x = 0.40625 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.096 * safezoneW;
-			h = 0.040 * safezoneH;
-
-		};
-
+	
 		class CancelButton: w_RscButton
 		{
 			idc = -1;

@@ -14,7 +14,7 @@ _i = 0;
 
 while {_counter < 2} do
 {
-	_selectedMarker = floor (random 26);
+	_selectedMarker = floor (random 2);
     _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
     _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 	[0, _newPos] call staticHeliCreation;

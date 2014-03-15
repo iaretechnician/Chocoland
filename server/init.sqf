@@ -11,7 +11,6 @@ sideMissions = 1;
 serverSpawning = 1;
 
 //Execute Server Side Scripts.
-//[] execVM "server\functions\antiCheatServer.sqf"
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
@@ -36,7 +35,7 @@ if (serverSpawning == 1) then {
     _gunSpawn = [] ExecVM "server\functions\staticGunSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _gunSpawn};
     _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
-     waitUntil{sleep 0.1; scriptDone _heliSpawn};
+    waitUntil{sleep 0.1; scriptDone _heliSpawn};
     _markerClean = [] ExecVM "server\functions\cleanMarkers.sqf";
     waitUntil{sleep 0.1; scriptDone _markerClean};
 };
@@ -48,7 +47,6 @@ if (sideMissions == 1) then {
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
     //[] execVM "server\missions\worldMissionController.sqf";
-    
 };
 
 if (isDedicated) then {

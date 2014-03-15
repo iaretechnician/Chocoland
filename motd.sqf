@@ -1,8 +1,6 @@
 
- while {true} do
-{
     sleep 20;
-    player globalchat "[server] Welcome To HD | ChocoLand | Wasteland MOD BaseDefense!";
+   player globalchat "[server] Welcome To HD | ChocoLand | Wasteland MOD BaseDefense!";
     player globalchat "[server] Visit www.heavensdelight.de ";
     player globalchat "[server] Please follow ALL rules or you'll have lots of fun.";
     player globalchat "[server] Server restart at 8 PM";
@@ -25,4 +23,3 @@
     sleep 120;
     	player globalchat "[server] What is the speed of darkness?";
     sleep 240;
-};

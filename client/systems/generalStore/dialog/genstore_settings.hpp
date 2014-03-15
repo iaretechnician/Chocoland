@@ -209,18 +209,7 @@ class genstored {
 			color[] = {0.95,0.1,0.1,1};
 		};
 
-		class SaleBuy : w_RscButton {
-			
-			idc = genstore_switch;
-
-			text = "Sell Items";
-			onButtonClick = "[] execVM 'client\systems\generalStore\switchMode.sqf'";
-
-			x = 0.450 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.096 * safezoneW;
-			h = 0.040 * safezoneH;
-		};
+		
 
 		class BuyToPlayer : w_RscButton {
 			

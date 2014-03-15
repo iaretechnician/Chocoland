@@ -25,7 +25,11 @@ _player selectWeapon "revolver_gold_EP1";
 
 if(str(playerSide) in ["WEST"]) then
 {
-  [_player] execVM "persistentscripts\pLoad.sqf";
+    removeAllWeapons _player;
+    _player addMagazine "7Rnd_45ACP_1911";
+    _player addMagazine "7Rnd_45ACP_1911";
+	_player addWeapon "Colt1911";
+	_player selectWeapon "Colt1911";
 };
 
 if(str(playerSide) in ["EAST"]) then
@@ -51,7 +55,7 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-_player setVariable["cmoney",0,false];
+_player setVariable["cmoney",100,false];
 _player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",1,false];

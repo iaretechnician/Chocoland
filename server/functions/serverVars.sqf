@@ -1,3 +1,14 @@
+//	@file Version: 1.0
+//	@file Name: serverVars.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse
+//	@file Created: 20/11/2012 05:19
+//	@file Args:
+// --------------------------------------------------------------------------------------------------- \\
+// ----------  !DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING!	---------- \\
+// ----------																				---------- \\
+// ----------			404Games are not responsible for anything that may happen 			---------- \\
+// ----------			 as a result of unauthorised modifications to this file.			---------- \\
+// --------------------------------------------------------------------------------------------------- \\
 #include "setup.sqf"
 if(!X_Server) exitWith {};
 
@@ -42,71 +53,44 @@ publicVariable "currentInvites";
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
 
 //Civilian Vehicle List - Random Spawns
-civilianVehicles = ["HMMWV",                                   
-                    "UAZ_CDF",
-					"UAZ_RU",
-					"LandRover_TK_CIV_EP1",
-					"UAZ_Unarmed_TK_CIV_EP1",
-                    "Ural_INS",
-                    "SUV_TK_EP1",
-                    "V3S_Open_TK_EP1",								
-					"LandRover_CZ_EP1",
-					"V3S_TK_GUE_EP1",
-					"UralOpen_CDF",									
-					"LandRover_Special_CZ_EP1",
-					"Old_moto_TK_Civ_EP1",
-					"ATV_CZ_EP1",								
-					"M1030_US_DES_EP1",	
-					"Lada2_TK_CIV_EP1",
-					"SUV_PMC",								
-					"S1203_TK_CIV_EP1", 
-					"TT650_TK_CIV_EP1",
-					"Volha_1_TK_CIV_EP1", 
-					"Lada1",
-					"Skoda",  
-					"TT650_Gue", 
-					"car_hatchback", 
-					"datsun1_civil_1_open", 
-					"datsun1_civil_2_covered", 
-					"hilux1_civil_2_covered",
-					"hilux1_civil_1_open",	
-                    "Pickup_PK_GUE",
-					"UralCivil",
+civilianVehicles = ["car_hatchback",
+					"car_sedan",
+					"datsun1_civil_2_covered",
 					"SkodaGreen",
+					"Lada2",
+					"V3S_Civ",
+					"UralCivil",
 					"VWGolf",
+					"MMT_Civ",
+					"Ikarus_TK_CIV_EP1",
+					"Lada1_TK_CIV_EP1",
+					"Old_moto_TK_Civ_EP1",
+					"S1203_TK_CIV_EP1",
+					"UAZ_Unarmed_TK_CIV_EP1",
+					"ATV_US_EP1",
 					"BAF_Offroad_W",
-					"MtvrReammo",
-					"MtvrRefuel",
-					"MtvrRepair"];
+					"S1203_ambulance_EP1"];
 
 //Military Vehicle List - Random Spawns
-militaryVehicles = [ "BTR40_MG_TK_INS_EP1",
-					"BAF_Jackal2_GMG_W",
-					"BAF_Jackal2_L2A1_D",
-					"BAF_Jackal2_GMG_W",
-					"BAF_Jackal2_L2A1_D",
-					"ArmoredSUV_PMC",
-					"Offroad_DSHKM_Ins",
-					"UAZ_MG_INS",
-					"Pickup_PK_TK_GUE_EP1",
-					"UAZ_SPG9_INS",
-					"UAZ_AGS30_RU",
-					"Offroad_SPG9_TK_GUE_EP1",
-					"LandRover_MG_TK_INS_EP1",
-					"LandRover_SPG9_TK_EP1",
-					"HMMWV_MK19",
-					"HMMWV_M2",
-					"HMMWV_Armored",
-					"HMMWV_TOW",
+militaryVehicles = ["UAZ_CDF",
+					"SUV_PMC",
+					"MTVR",
+					"BAF_Offroad_W",
+					"HMMWV",
 					"HMMWV_Ambulance",
-					"HMMWV_M998A2_SOV_DES_EP1",
-					"MtvrReammo",
-					"MtvrRefuel",
-					"MtvrRepair"];
+					"S1203_ambulance_EP1",
+					"GAZ_Vodnik_MedEvac"];
 
 //Armed Military Vehicle List - Random Spawns
-armedMilitaryVehicles = ["GAZ_Vodnik", "UAZ_MG_TK_EP1","LandRover_MG_TK_INS_EP1"
-];
+armedMilitaryVehicles = ["ArmoredSUV_PMC",
+							"Pickup_PK_GUE",
+							"UAZ_MG_TK_EP1",
+							"LandRover_MG_TK_INS_EP1",
+							"HMMWV_M2",
+							"HMMWV_Armored",
+							"HMMWV_MK19",
+							"HMMWV_TOW",
+							"GAZ_Vodnik"];
 
 //Item Config
 pickupList = ["Satelit",
@@ -115,7 +99,7 @@ pickupList = ["Satelit",
 				"Fuel_can"];
 
 //Object List - Random Spawns.
-objectList = [	"EvMoney","Land_Barrel_water",
+objectList = ["Land_Barrel_water",
 				"Land_prebehlavka",
 				"Land_leseni2x",
                 "Fort_Crate_wood",
@@ -159,75 +143,45 @@ objectList = [	"EvMoney","Land_Barrel_water",
                 "Land_Campfire_burning",
                 "Land_GuardShed",
                 "Land_tent_east",
-				"Land_ConcreteBlock",
-                            "TOW_TriPod_US_EP1",
-                            "MASH",
-                            "Land_CamoNet_NATO",
-                            "Land_tent_east"];
+				"Land_ConcreteBlock"];
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
-				"DSHKM_TK_INS_EP1",
-                "BAF_L2A1_Tripod_D",
-				"MK19_TriPod",
-				"KORD_high"];
+				"DSHKM_TK_INS_EP1"];
 
 //Object List - Random Helis.
-staticHeliList = [];
+staticHeliList = ["UH1H_TK_GUE_EP1",
+				"Mi17_Civilian",
+                "MV22",
+                "CH_47F_EP1",
+                "MH6J_EP1",
+                "UH60M_MEV_EP1",
+                "AH6X_EP1"];
 
 //Random Weapon List - Change this to what you want to spawn in cars.
-vehicleWeapons = ["AK_107_GL_kobra",
-				"AK_107_kobra",
-				"M4SPR",
-				"FN_FAL_ANPVS4",
-				"SMAW",
-				"Strela",
-				"M110_NVG_EP1",
-				"BAF_L110A1_Aim",
-				"BAF_L7A2_GPMG",
+vehicleWeapons = ["AK_107_kobra",
+				"AK_47_M",
+				"AK_47_S",
+				"AK_74",
 				"BAF_L85A2_RIS_ACOG",
-				"M32_EP1",
-				"MP5SD",
-				"G36_C_SD_camo",
-				"M4A3_RCO_GL_EP1",
-				"SCAR_L_STD_Mk4CQT",
+				"bizon",
+				"bizon_silenced",
+				"FN_FAL",
+				"G36a",
+				"LeeEnfield",
+				"M1014",
+				"M16A2",
+				"m16a4",
+				"M4A1_Aim",
+				"MP5A5",
+				"Sa58V_EP1",
 				"Saiga12K",
-				"M8_SAW",
-				"M8_compact",
-				"DMR",
-				"M8_sharpshooter",
-				
-				"M24_des_EP1",
-				
-				"UZI_SD_EP1",
-				"Huntingrifle",
-				"M40A3",
-				"M4A1_HWS_GL_camo",
-				"BAF_LRR_scoped_W",
-				"G36_C_SD_eotech",
-				
-				"MakarovSD",
-				"M4A1_HWS_GL_SD_Camo",
-				"M14_EP1",
-				"SCAR_H_LNG_Sniper_SD",
-				"M4A3_RCO_GL_EP1",
-				"M240",
-				"M249",
-				"M4A1_RCO_GL",
-				"M4A1_HWS_GL",
-				"M4A3_CCO_EP1",
-				"M60A4_EP1",
-				"m8_carbine",
-				"MG36",
-				"Mk_48",
-				"SCAR_L_STD_EGLM_RCO",
-				"M249_TWS_EP1",
-				"SCAR_L_CQC_EGLM_Holo",
-				"SCAR_H_STD_EGLM_Spect",
-				"SCAR_H_CQC_CCO",
-				"bizon_silenced"
-                                
-                              ];
+				"SCAR_L_CQC",
+                "M9",
+                "M9SD",
+                "revolver_EP1",
+                "Sa61_EP1",
+                "UZI_EP1"];
                 
 MissionSpawnMarkers = [
             ["Mission_1",false],
@@ -249,6 +203,35 @@ MissionSpawnMarkers = [
             ["Mission_17",false],
             ["Mission_18",false],
             ["Mission_19",false],
-            ["Mission_20",false]
-  
+            ["Mission_20",false],
+            ["Mission_21",false],
+            ["Mission_22",false],
+            ["Mission_23",false],
+            ["Mission_24",false],
+            ["Mission_25",false],
+            ["Mission_26",false],
+            ["Mission_27",false],
+            ["Mission_28",false],
+            ["Mission_29",false],
+            ["Mission_30",false],
+            ["Mission_31",false],
+            ["Mission_32",false],
+            ["Mission_33",false],
+            ["Mission_34",false],
+            ["Mission_35",false],
+            ["Mission_36",false],
+            ["Mission_37",false],
+            ["Mission_38",false],
+            ["Mission_39",false],
+            ["Mission_40",false],
+            ["Mission_41",false],
+            ["Mission_42",false],
+            ["Mission_43",false],
+            ["Mission_44",false],
+            ["Mission_45",false],
+            ["Mission_46",false],
+            ["Mission_47",false],
+            ["Mission_48",false],
+            ["Mission_49",false],
+            ["Mission_50",false]
 ];

@@ -42,14 +42,14 @@ class Mission
 	randomSeed=15307759;
 	class Intel
 	{
-		briefingName="404Wasteland - Utes [v2.9c]";
+		briefingName="TESTland - Utes [v2.9c]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.00;
 		forecastWeather=0.00;
-		year=2014;
-		month=3;
-		day=7;
+		year=2020;
+		month=7;
+		day=1;
 		hour=8;
 		minute=0;
 	};
@@ -1173,1449 +1173,2351 @@ class Mission
 			init="this setVariable[""newVehicle"",1,true];";
 		};
 	};
-	class Markers
+class Markers
 	{
-		items=240;
+		items=390;
 		class Item0
 		{
-			position[]={3336.5415,19,3639.7969};
-			name="Spawn_209";
+			position[]={3329.0925,19,3646.7795};
+			name="Spawn";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={3397.7896,19,3633.8669};
+			position[]={3380.1106,19,3644.5603};
 			name="Spawn_1";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={3455.0864,19,3623.9829};
+			position[]={3427.801,18.96549,3643.4507};
 			name="Spawn_2";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={3508.4316,19,3623.9829};
+			position[]={3483.2556,19,3644.5603};
 			name="Spawn_3";
 			type="Empty";
 		};
 		class Item4
 		{
-			position[]={3344.4443,18.9555,3570.6113};
+			position[]={3537.6006,18.954393,3644.5603};
 			name="Spawn_4";
 			type="Empty";
 		};
 		class Item5
 		{
-			position[]={3462.9893,18.9677,3556.7744};
+			position[]={3597.4907,18.987684,3641.2314};
 			name="Spawn_5";
 			type="Empty";
 		};
 		class Item6
 		{
-			position[]={3356.2988,19.1004,3507.3564};
+			position[]={3657.3818,18.96549,3643.4507};
 			name="Spawn_6";
 			type="Empty";
 		};
 		class Item7
 		{
-			position[]={3462.9893,19.3583,3448.0547};
+			position[]={3706.1814,18.954393,3644.5603};
 			name="Spawn_7";
 			type="Empty";
 		};
 		class Item8
 		{
-			position[]={3573.6316,19,3509.3333};
+			position[]={3773.8357,18.976587,3642.3411};
 			name="Spawn_8";
 			type="Empty";
 		};
 		class Item9
 		{
-			position[]={3642.783,19.0090,3653.634};
+			position[]={3833.7261,18.994942,3646.7795};
 			name="Spawn_9";
 			type="Empty";
 		};
 		class Item10
 		{
-			position[]={3520.2861,19.3575,3710.9592};
+			position[]={3882.5259,18.943296,3645.6699};
 			name="Spawn_10";
 			type="Empty";
 		};
 		class Item11
 		{
-			position[]={3593.3889,20.6703,3770.2607};
+			position[]={3933.5432,18.943296,3645.6699};
 			name="Spawn_11";
 			type="Empty";
 		};
 		class Item12
 		{
-			position[]={3632.9043,22.6657,3687.2383};
+			position[]={4013.3977,18.932198,3646.7795};
 			name="Spawn_12";
 			type="Empty";
 		};
 		class Item13
 		{
-			position[]={3532.1409,22.0962,3699.0989};
+			position[]={4066.6335,19,3646.7795};
 			name="Spawn_13";
 			type="Empty";
 		};
 		class Item14
 		{
-			position[]={3567.7041,21.8782,3722.8193};
+			position[]={4119.8701,19,3635.6833};
 			name="Spawn_14";
 			type="Empty";
 		};
 		class Item15
 		{
-			position[]={3583.5105,18.8636,3653.634};
+			position[]={4152.0332,19.417421,3576.873};
 			name="Spawn_15";
 			type="Empty";
 		};
 		class Item16
 		{
-			position[]={3455.0864,19,3701.0752};
+			position[]={4081.0518,18.890293,3536.9263};
 			name="Spawn_16";
 			type="Empty";
 		};
 		class Item17
 		{
-			position[]={3498.5527,18.7627,3657.5876};
+			position[]={3969.0347,18.951481,3535.8167};
 			name="Spawn_17";
 			type="Empty";
 		};
 		class Item18
 		{
-			position[]={3573.6316,19,3544.9143};
+			position[]={3875.8716,18.964022,3533.5974};
 			name="Spawn_18";
 			type="Empty";
 		};
 		class Item19
 		{
-			position[]={3698.104,19,3531.0771};
+			position[]={3811.5444,19,3543.584};
 			name="Spawn_19";
 			type="Empty";
 		};
 		class Item20
 		{
-			position[]={3717.8616,18.8999,3501.4263};
+			position[]={3699.5271,19,3556.8994};
 			name="Spawn_20";
 			type="Empty";
 		};
 		class Item21
 		{
-			position[]={3597.3408,19.5643,3483.6357};
+			position[]={3623.0005,19,3558.009};
 			name="Spawn_21";
 			type="Empty";
 		};
 		class Item22
 		{
-			position[]={3668.4678,20.7087,3442.1245};
+			position[]={3552.019,18.98662,3561.3379};
 			name="Spawn_22";
 			type="Empty";
 		};
 		class Item23
 		{
-			position[]={3709.9585,23.5605,3430.2642};
+			position[]={3479.9285,18.98662,3561.3379};
 			name="Spawn_23";
 			type="Empty";
 		};
 		class Item24
 		{
-			position[]={3781.0854,19,3515.2634};
+			position[]={3413.3833,18.98662,3561.3379};
 			name="Spawn_24";
 			type="Empty";
 		};
 		class Item25
 		{
-			position[]={3800.8428,19,3544.9143};
+			position[]={3340.1841,19,3561.3379};
 			name="Spawn_25";
 			type="Empty";
 		};
 		class Item26
 		{
-			position[]={3844.3096,27.3074,3412.4736};
+			position[]={3283.6208,14.708478,3570.2151};
 			name="Spawn_26";
 			type="Empty";
 		};
 		class Item27
 		{
-			position[]={3739.5947,28.0548,3382.8228};
+			position[]={3285.8389,19,3616.8193};
 			name="Spawn_27";
 			type="Empty";
 		};
 		class Item28
 		{
-			position[]={3943.0972,28.2813,3329.4512};
+			position[]={3290.2751,18.84248,3657.876};
 			name="Spawn_28";
 			type="Empty";
 		};
 		class Item29
 		{
-			position[]={4012.2485,31.5256,3339.3347};
+			position[]={3434.6355,18.996485,3499.6484};
 			name="Spawn_29";
 			type="Empty";
 		};
 		class Item30
 		{
-			position[]={3779.1094,36.2897,3297.8235};
+			position[]={3646.1238,19.881826,3472.8464};
 			name="Spawn_30";
 			type="Empty";
 		};
 		class Item31
 		{
-			position[]={3911.4854,24.7719,3440.1477};
+			position[]={3523.4604,19,3495.4163};
 			name="Spawn_31";
 			type="Empty";
 		};
 		class Item32
 		{
-			position[]={3909.5095,18.9473,3515.2634};
+			position[]={3595.3665,20.457706,3455.9192};
 			name="Spawn_32";
 			type="Empty";
 		};
 		class Item33
 		{
-			position[]={3978.6609,19,3497.4729};
+			position[]={3599.5962,19,3519.397};
 			name="Spawn_33";
 			type="Empty";
 		};
 		class Item34
 		{
-			position[]={3745.522,18.9258,3572.5884};
+			position[]={3737.7686,19.254465,3479.8999};
 			name="Spawn_34";
 			type="Empty";
 		};
 		class Item35
 		{
-			position[]={3660.5645,23.2174,3677.3545};
+			position[]={3796.9854,25.235476,3467.2041};
 			name="Spawn_35";
 			type="Empty";
 		};
 		class Item36
 		{
-			position[]={3899.6311,18.9031,3649.6807};
+			position[]={3819.5439,18.945839,3505.2905};
 			name="Spawn_36";
 			type="Empty";
 		};
 		class Item37
 		{
-			position[]={4026.0789,19,3600.2622};
+			position[]={3780.0662,19,3526.45};
 			name="Spawn_37";
 			type="Empty";
 		};
 		class Item38
 		{
-			position[]={4061.6426,19,3637.8203};
+			position[]={3739.1782,19,3549.0198};
 			name="Spawn_38";
 			type="Empty";
 		};
 		class Item39
 		{
-			position[]={4107.085,22.318,3507.3564};
+			position[]={3687.0112,19.32535,3460.1509};
 			name="Spawn_39";
 			type="Empty";
 		};
 		class Item40
 		{
-			position[]={4041.8848,19.0649,3483.6357};
+			position[]={3736.3584,25.872128,3420.6538};
 			name="Spawn_40";
 			type="Empty";
 		};
 		class Item41
 		{
-			position[]={4053.7393,25.2323,3406.5435};
+			position[]={3606.6458,26.248241,3383.9775};
 			name="Spawn_41";
 			type="Empty";
 		};
 		class Item42
 		{
-			position[]={4045.8364,38.6295,3272.1262};
+			position[]={3421.946,20.00701,3405.137};
 			name="Spawn_42";
 			type="Empty";
 		};
 		class Item43
 		{
-			position[]={4089.3032,31.6045,3368.9858};
+			position[]={3358.4993,10.696551,3268.3076};
 			name="Spawn_43";
 			type="Empty";
 		};
 		class Item44
 		{
-			position[]={4059.6667,40.2063,3218.7546};
+			position[]={3616.5154,37.464252,3238.6843};
 			name="Spawn_44";
 			type="Empty";
 		};
 		class Item45
 		{
-			position[]={4243.4116,32.7647,3214.8013};
+			position[]={3493.8521,24.197693,3365.6396};
 			name="Spawn_45";
 			type="Empty";
 		};
 		class Item46
 		{
-			position[]={4261.1934,30.0620,3331.428};
+			position[]={3321.8416,17.785809,3379.7461};
 			name="Spawn_46";
 			type="Empty";
 		};
 		class Item47
 		{
-			position[]={4255.2661,33.4529,3246.4287};
+			position[]={3218.9175,4.5252829,3522.218};
 			name="Spawn_47";
 			type="Empty";
 		};
 		class Item48
 		{
-			position[]={4118.939,38.5029,3240.4985};
+			position[]={3258.395,9.4059925,3437.5811};
 			name="Spawn_48";
 			type="Empty";
 		};
 		class Item49
 		{
-			position[]={4182.1631,36.8216,3165.3831};
+			position[]={3355.6797,20.085407,3458.7402};
 			name="Spawn_49";
 			type="Empty";
 		};
-		
 		class Item50
 		{
-			position[]={4101.1572,32.5287,3127.8252};
+			position[]={3152.6514,27.777229,3743.6846};
 			name="Spawn_50";
 			type="Empty";
 		};
 		class Item51
 		{
-			position[]={4103.1333,31.3233,3106.0813};
+			position[]={3388.1082,34.761482,3753.5591};
 			name="Spawn_51";
 			type="Empty";
 		};
 		class Item52
 		{
-			position[]={4107.085,31.1065,3005.2683};
+			position[]={3310.5625,19.490993,3697.1343};
 			name="Spawn_52";
 			type="Empty";
 		};
 		class Item53
 		{
-			position[]={4263.1694,30.1491,3113.988};
+			position[]={3290.8237,19.031176,3699.9556};
 			name="Spawn_53";
 			type="Empty";
 		};
 		class Item54
 		{
-			position[]={4338.2476,16.6369,3062.5933};
+			position[]={3241.4766,33.473495,3818.4473};
 			name="Spawn_54";
 			type="Empty";
 		};
 		class Item55
 		{
-			position[]={4403.4478,24.9661,3153.5227};
+			position[]={3278.1343,37.281292,3829.7319};
 			name="Spawn_55";
 			type="Empty";
 		};
 		class Item56
 		{
-			position[]={4429.1323,24.0886,3228.6382};
+			position[]={3307.7424,50.77737,3935.5286};
 			name="Spawn_56";
 			type="Empty";
 		};
 		class Item57
 		{
-			position[]={4361.9565,31.0337,3321.5442};
+			position[]={3364.1396,64.006989,3966.562};
 			name="Spawn_57";
 			type="Empty";
 		};
 		class Item58
 		{
-			position[]={4282.9268,30.4228,3270.1494};
+			position[]={3476.9336,50.222374,3904.4949};
 			name="Spawn_58";
 			type="Empty";
 		};
 		class Item59
 		{
-			position[]={4294.7813,29.1074,3248.4055};
+			position[]={3383.8784,50.329041,3808.573};
 			name="Spawn_59";
 			type="Empty";
 		};
 		class Item60
 		{
-			position[]={4535.8232,2.90568,3159.4529};
+			position[]={3520.6406,28.480963,3783.1816};
 			name="Spawn_60";
 			type="Empty";
 		};
 		class Item61
 		{
-			position[]={4480.5015,1.77939,3094.2209};
+			position[]={3489.6226,39.558208,3825.5005};
 			name="Spawn_61";
 			type="Empty";
 		};
 		class Item62
 		{
-			position[]={4539.7744,0.2214,3088.2908};
+			position[]={3395.1577,61.562111,3880.5146};
 			name="Spawn_62";
 			type="Empty";
 		};
 		class Item63
 		{
-			position[]={4425.1807,40.6776,3349.2185};
+			position[]={3651.7637,45.216656,3770.4863};
 			name="Spawn_63";
 			type="Empty";
 		};
 		class Item64
 		{
-			position[]={4261.1934,29.2682,3349.2185};
+			position[]={3671.5024,42.324814,3719.7043};
 			name="Spawn_64";
 			type="Empty";
 		};
 		class Item65
 		{
-			position[]={4160.4302,17.8994,3426.3108};
+			position[]={3828.0034,21.020931,3707.0088};
 			name="Spawn_65";
 			type="Empty";
 		};
 		class Item66
 		{
-			position[]={4391.5933,36.9911,3396.6597};
+			position[]={3914.009,24.003382,3712.6514};
 			name="Spawn_66";
 			type="Empty";
 		};
 		class Item67
 		{
-			position[]={4401.4717,37.8915,3408.5203};
+			position[]={4117.0376,19.020189,3709.8296};
 			name="Spawn_67";
 			type="Empty";
 		};
 		class Item68
 		{
-			position[]={4255.2661,19.1953,3426.3108};
+			position[]={4191.7637,19.000813,3690.0811};
 			name="Spawn_68";
 			type="Empty";
 		};
 		class Item69
 		{
-			position[]={4405.4233,31.8258,3453.9849};
+			position[]={4294.6875,26.828955,3667.5117};
 			name="Spawn_69";
 			type="Empty";
 		};
 		class Item70
 		{
-			position[]={4389.6172,28.7890,3479.6824};
+			position[]={4324.2959,29.215511,3609.6765};
 			name="Spawn_70";
 			type="Empty";
 		};
 		class Item71
 		{
-			position[]={4278.9751,30.7163,3511.3098};
+			position[]={4334.1655,31.791525,3532.0923};
 			name="Spawn_71";
 			type="Empty";
 		};
 		class Item72
 		{
-			position[]={4450.8657,23.7443,3479.6824};
+			position[]={4266.4893,23.820972,3478.489};
 			name="Spawn_72";
 			type="Empty";
 		};
 		class Item73
 		{
-			position[]={4336.2715,30.3845,3598.2859};
+			position[]={4258.0298,24.201439,3392.4414};
 			name="Spawn_73";
 			type="Empty";
 		};
 		class Item74
 		{
-			position[]={4411.3506,21.0265,3610.1462};
+			position[]={4221.3721,32.001518,3321.9104};
 			name="Spawn_74";
 			type="Empty";
 		};
 		class Item75
 		{
-			position[]={4407.686,23.4393,3556.3035};
-			name="Town_1";
+			position[]={4093.0691,34.392918,3331.7847};
+			name="Spawn_75";
 			type="Empty";
 		};
 		class Item76
 		{
-			position[]={3364.0972,16.9745,4402.5493};
-			name="Town_2";
+			position[]={3954.8967,26.519207,3372.6929};
+			name="Spawn_76";
 			type="Empty";
 		};
 		class Item77
 		{
-			position[]={2949.4993,39,4514.8608};
-			name="Town_3";
+			position[]={3866.0713,27.276842,3402.3157};
+			name="Spawn_77";
 			type="Empty";
 		};
 		class Item78
 		{
-			position[]={3193.7754,39.3144,4026.6809};
-			name="Town_4";
+			position[]={3839.283,27.314106,3415.0112};
+			name="Spawn_78";
 			type="Empty";
 		};
 		class Item79
 		{
-			position[]={2544.521,32.2704,3833.3118};
-			name="Town_5";
+			position[]={4022.5728,30.099449,3361.4082};
+			name="Spawn_79";
 			type="Empty";
 		};
 		class Item80
 		{
-			position[]={3591.0205,18.1937,3689.5957};
-			name="Town_6";
+			position[]={3952.0769,29.438467,3323.3213};
+			name="Spawn_80";
 			type="Empty";
 		};
 		class Item81
 		{
-			position[]={3765.3013,27.2495,3411.8818};
-			name="Town_7";
+			position[]={3921.0586,31.391674,3282.4133};
+			name="Spawn_81";
+			type="Empty";
+		};
+		class Item82
+		{
+			position[]={3840.6929,28,3275.3601};
+			name="Spawn_82";
+			type="Empty";
+		};
+		class Item83
+		{
+			position[]={3789.9358,28.267761,3348.7124};
+			name="Spawn_83";
+			type="Empty";
+		};
+		class Item84
+		{
+			position[]={3767.3772,28.366589,3378.3352};
+			name="Spawn_84";
 			type="Empty";
 		};
 		class Item85
 		{
-			position[]={3330.2097,19,3611.8225};
-			name="Mission_1";
+			position[]={3374.009,6.2366095,3217.5249};
+			name="Spawn_85";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item86
 		{
-			position[]={3710.8047,19,3609.6528};
-			name="Mission_2";
+			position[]={3244.2961,6.5483084,3385.3882};
+			name="Spawn_86";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item87
 		{
-			position[]={4067.5444,19,3608.5681};
-			name="Mission_3";
+			position[]={3045.4973,17.824858,3644.9417};
+			name="Spawn_87";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item88
 		{
-			position[]={3106.4834,40.1839,3899.7415};
-			name="Mission_4";
+			position[]={2791.7114,63.75061,3760.6123};
+			name="Spawn_88";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item89
 		{
-			position[]={2537.4451,29.1145,3911.4319};
-			name="Mission_5";
+			position[]={3008.8394,38.460537,3770.4863};
+			name="Spawn_89";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item90
 		{
-			position[]={2988.1582,13.4842,4326.6025};
-			name="Mission_6";
+			position[]={2914.3745,36.382359,4046.9673};
+			name="Spawn_90";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item91
 		{
-			position[]={3154.4558,9.6289,4505.4214};
-			name="Mission_7";
+			position[]={2721.2153,63.052494,3850.8914};
+			name="Spawn_91";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item92
 		{
-			position[]={3455.9666,33.4239,4534.9653};
-			name="Mission_8";
+			position[]={3032.8079,44.531311,3949.6348};
+			name="Spawn_92";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item93
 		{
-			position[]={3738.8276,32.5329,4197.542};
-			name="Mission_9";
+			position[]={2795.9409,74.250893,3846.6597};
+			name="Spawn_93";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item94
 		{
-			position[]={4026.3516,31.4365,3895.8826};
-			name="Mission_10";
+			position[]={2654.949,43.453144,3846.6597};
+			name="Spawn_94";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item95
 		{
-			position[]={4304.5508,29.2503,3561.5693};
-			name="Mission_11";
+			position[]={2495.6279,23.831387,3850.8914};
+			name="Spawn_95";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item96
 		{
-			position[]={4380.7056,35.5187,3365.6458};
-			name="Mission_12";
+			position[]={2546.385,29.002825,3920.0117};
+			name="Spawn_96";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item97
 		{
-			position[]={3368.3491,42.0191,4165.5977};
-			name="Mission_13";
+			position[]={2528.0562,30.383369,3883.3354};
+			name="Spawn_97";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item98
 		{
-			position[]={4191.0957,29.5481,3037.5518};
-			name="Mission_14";
+			position[]={2480.1187,6.7252655,3770.4863};
+			name="Spawn_98";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item99
 		{
-			position[]={3878.7051,34.7005,3135.5139};
-			name="Mission_15";
+			position[]={2635.21,39.009136,3812.8049};
+			name="Spawn_99";
 			type="Empty";
-			colorName="ColorOrange";
 		};
-		
 		class Item100
 		{
-			position[]={3456.2871,22.1543,3366.1458};
-			name="Mission_16";
+			position[]={2643.6697,35.753143,3894.6204};
+			name="Spawn_100";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item101
 		{
-			position[]={4192.6499,34.3207,2819.8599};
-			name="Mission_17";
+			position[]={2561.894,32.860729,3777.5393};
+			name="Spawn_101";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item102
 		{
-			position[]={3522.7974,32.2669,3062.4316};
-			name="Mission_18";
+			position[]={2508.3171,23.176888,3778.9502};
+			name="Spawn_102";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item103
 		{
-			position[]={3768.3584,54.1656,3889.6628};
-			name="Mission_19";
+			position[]={2719.8054,25.431164,3969.3833};
+			name="Spawn_103";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item104
 		{
-			position[]={3027.0137,16.6074,3617.5474};
-			name="Mission_20";
+			position[]={2791.7114,22.380075,4055.4307};
+			name="Spawn_104";
 			type="Empty";
-			colorName="ColorOrange";
 		};
 		class Item105
 		{
-			position[]={4267.1206,25.1849,3693.1687};
-			name="Spawn_75";
+			position[]={2876.3066,22.992392,4104.8022};
+			name="Spawn_105";
 			type="Empty";
 		};
 		class Item106
 		{
-			position[]={4352.0781,33.5410,3754.4468};
-			name="Spawn_76";
+			position[]={2779.022,0.57256794,4147.1206};
+			name="Spawn_106";
 			type="Empty";
 		};
 		class Item107
 		{
-			position[]={4154.5029,18.9632,3722.8193};
-			name="Spawn_77";
+			position[]={2928.4736,15.584192,4176.7437};
+			name="Spawn_107";
 			type="Empty";
 		};
 		class Item108
 		{
-			position[]={4178.2119,12.9798,3835.4927};
-			name="Spawn_78";
+			position[]={2962.312,12.632201,4210.5986};
+			name="Spawn_108";
 			type="Empty";
 		};
 		class Item109
 		{
-			position[]={4142.6484,18.1932,3859.2136};
-			name="Spawn_79";
+			position[]={3025.7583,20.393169,4248.6855};
+			name="Spawn_109";
 			type="Empty";
 		};
 		class Item110
 		{
-			position[]={4041.8848,30.3197,3920.4917};
-			name="Spawn_80";
+			position[]={3075.1057,30.571894,4164.0483};
+			name="Spawn_110";
 			type="Empty";
 		};
 		class Item111
 		{
-			position[]={4083.376,23.8434,4027.2349};
-			name="Spawn_81";
+			position[]={2956.6724,31.981657,4113.2661};
+			name="Spawn_111";
 			type="Empty";
 		};
 		class Item112
 		{
-			position[]={3984.5884,29.5953,4054.9092};
-			name="Spawn_82";
+			position[]={3075.1057,34.654732,4104.8022};
+			name="Spawn_112";
 			type="Empty";
 		};
 		class Item113
 		{
-			position[]={3846.2854,30.7265,4139.9082};
-			name="Spawn_83";
+			position[]={3121.6328,30.089014,4227.5259};
+			name="Spawn_113";
 			type="Empty";
 		};
 		class Item114
 		{
-			position[]={3923.3398,19.4627,4197.2334};
-			name="Spawn_84";
+			position[]={3173.8003,38.352192,4090.696};
+			name="Spawn_114";
 			type="Empty";
 		};
 		class Item115
 		{
-			position[]={3773.1826,30.2192,4232.8145};
-			name="Spawn_85";
+			position[]={3118.813,36.221165,4038.5034};
+			name="Spawn_115";
 			type="Empty";
 		};
 		class Item116
 		{
-			position[]={3785.0369,27.1127,4294.0928};
-			name="Spawn_86";
+			position[]={3107.5337,37.987492,3973.6147};
+			name="Spawn_116";
 			type="Empty";
 		};
 		class Item117
 		{
-			position[]={3599.3164,27.9421,4303.9766};
-			name="Spawn_87";
+			position[]={3145.6016,37.843979,3939.7603};
+			name="Spawn_117";
 			type="Empty";
 		};
 		class Item118
 		{
-			position[]={3543.9954,25.5557,4329.6738};
-			name="Spawn_88";
+			position[]={3203.4087,40.922646,4004.6484};
+			name="Spawn_118";
 			type="Empty";
 		};
 		class Item119
 		{
-			position[]={3520.2861,19.2306,4404.7891};
-			name="Spawn_89";
+			position[]={3280.9541,46.028072,4006.0591};
+			name="Spawn_119";
 			type="Empty";
 		};
 		class Item120
 		{
-			position[]={3389.8867,20.7761,4448.2773};
-			name="Spawn_90";
+			position[]={3309.1528,51.062721,4010.291};
+			name="Spawn_120";
 			type="Empty";
 		};
 		class Item121
 		{
-			position[]={3304.9294,10.4915,4470.021};
-			name="Spawn_91";
+			position[]={3258.3953,42.624504,4111.855};
+			name="Spawn_121";
 			type="Empty";
 		};
 		class Item122
 		{
-			position[]={3115.2568,14.0461,4475.9517};
-			name="Spawn_92";
+			position[]={3241.4763,35.205551,4247.2744};
+			name="Spawn_122";
 			type="Empty";
 		};
 		class Item123
 		{
-			position[]={3111.3057,15.4527,4470.021};
-			name="Spawn_93";
+			position[]={3182.2598,28.072462,4313.5732};
+			name="Spawn_123";
 			type="Empty";
 		};
 		class Item124
 		{
-			position[]={3271.3413,5.4449,4525.3696};
-			name="Spawn_94";
+			position[]={3039.8574,19.855518,4554.7891};
+			name="Spawn_124";
 			type="Empty";
 		};
 		class Item125
 		{
-			position[]={3287.1475,4.6955,4553.0439};
-			name="Spawn_95";
+			position[]={2924.2439,30.517647,4581.5903};
+			name="Spawn_125";
 			type="Empty";
 		};
 		class Item126
 		{
-			position[]={3198.2388,10.3332,4485.835};
-			name="Spawn_96";
+			position[]={2893.2256,32.448139,4480.0259};
+			name="Spawn_126";
 			type="Empty";
 		};
 		class Item127
 		{
-			position[]={3194.2871,14.7486,4416.6494};
-			name="Spawn_97";
+			position[]={2934.1133,23.311399,4420.7803};
+			name="Spawn_127";
 			type="Empty";
 		};
 		class Item128
 		{
-			position[]={3253.5596,15.4313,4390.9521};
-			name="Spawn_98";
+			position[]={3052.5466,34.420399,4401.0313};
+			name="Spawn_128";
 			type="Empty";
 		};
 		class Item129
 		{
-			position[]={3168.6023,27.1167,4345.4878};
-			name="Spawn_99";
+			position[]={3056.7766,28.479319,4336.1431};
+			name="Spawn_129";
 			type="Empty";
 		};
 		class Item130
 		{
-			position[]={3372.1047,22.6700,4309.9067};
-			name="Spawn_100";
+			position[]={3114.5833,11.288563,4498.3643};
+			name="Spawn_130";
 			type="Empty";
 		};
 		class Item131
 		{
-			position[]={3271.3413,32.5250,4262.4653};
-			name="Spawn_101";
+			position[]={3141.3721,12.349821,4475.7939};
+			name="Spawn_131";
 			type="Empty";
 		};
 		class Item132
 		{
-			position[]={3393.8379,17.1665,4347.4644};
-			name="Spawn_102";
+			position[]={3321.8416,4.6820221,4608.3921};
+			name="Spawn_132";
 			type="Empty";
 		};
 		class Item133
 		{
-			position[]={3516.3345,35.3878,4236.7681};
-			name="Spawn_103";
+			position[]={3211.8679,6.5967875,4549.146};
+			name="Spawn_133";
 			type="Empty";
 		};
 		class Item134
 		{
-			position[]={3545.9712,37.5378,4215.0239};
-			name="Spawn_104";
+			position[]={3193.5391,14.558063,4420.7803};
+			name="Spawn_134";
 			type="Empty";
 		};
 		class Item135
 		{
-			position[]={3626.9771,30.3552,4262.4653};
-			name="Spawn_105";
+			position[]={3225.967,6.4244018,4544.9146};
+			name="Spawn_135";
 			type="Empty";
 		};
 		class Item136
 		{
-			position[]={3698.104,28.3555,4252.5815};
-			name="Spawn_106";
+			position[]={3193.5391,0.46071193,4639.4258};
+			name="Spawn_136";
 			type="Empty";
 		};
 		class Item137
 		{
-			position[]={3656.6133,23.2892,4323.7437};
-			name="Spawn_107";
+			position[]={3412.0767,29.642687,4523.7554};
+			name="Spawn_138";
 			type="Empty";
 		};
 		class Item138
 		{
-			position[]={3692.1765,20.6326,4345.4878};
-			name="Spawn_108";
+			position[]={3327.4814,13.597019,4463.0986};
+			name="Spawn_139";
 			type="Empty";
 		};
 		class Item139
 		{
-			position[]={3607.2192,23.3062,4363.2778};
-			name="Spawn_109";
+			position[]={3340.1709,17.44515,4519.5234};
+			name="Spawn_137";
 			type="Empty";
 		};
 		class Item140
 		{
-			position[]={3609.1948,42.8077,4104.3271};
-			name="Spawn_110";
+			position[]={3293.6433,27.900539,4292.4141};
+			name="Spawn_140";
 			type="Empty";
 		};
 		class Item141
 		{
-			position[]={3662.5405,36.6333,4183.3965};
-			name="Spawn_111";
+			position[]={3365.5493,17.077196,4358.7134};
+			name="Spawn_141";
 			type="Empty";
 		};
 		class Item142
 		{
-			position[]={3733.6675,40.0525,4088.5132};
-			name="Spawn_112";
+			position[]={3485.3926,21.891644,4333.3223};
+			name="Spawn_142";
 			type="Empty";
 		};
 		class Item143
 		{
-			position[]={3834.4309,34.2137,4058.8628};
-			name="Spawn_113";
+			position[]={3569.988,23.194157,4375.6406};
+			name="Spawn_143";
 			type="Empty";
 		};
 		class Item144
 		{
-			position[]={3850.2368,34.9362,4029.2119};
-			name="Spawn_114";
+			position[]={3491.0327,24.108835,4474.3838};
+			name="Spawn_144";
 			type="Empty";
 		};
 		class Item145
 		{
-			position[]={3783.0613,48.1422,3989.6772};
-			name="Spawn_115";
+			position[]={3436.0454,21.52247,4382.6934};
+			name="Spawn_145";
 			type="Empty";
 		};
 		class Item146
 		{
-			position[]={3459.0381,53.4201,4025.2578};
-			name="Spawn_116";
+			position[]={3468.4736,21.335793,4329.0903};
+			name="Spawn_146";
 			type="Empty";
 		};
 		class Item147
 		{
-			position[]={3615.1223,41.7054,3952.1196};
-			name="Spawn_117";
+			position[]={3348.6304,16.891729,4393.9785};
+			name="Spawn_147";
 			type="Empty";
 		};
 		class Item148
 		{
-			position[]={3518.3103,36.5538,3900.7246};
-			name="Spawn_118";
+			position[]={3430.4058,22.927725,4450.4033};
+			name="Spawn_148";
 			type="Empty";
 		};
 		class Item149
 		{
-			position[]={3518.3103,34.6721,3853.2832};
-			name="Spawn_119";
+			position[]={3264.0349,16.752565,4382.6934};
+			name="Spawn_149";
 			type="Empty";
 		};
 		class Item150
 		{
-			position[]={3573.6316,23.3932,3819.6787};
-			name="Spawn_120";
+			position[]={3228.7869,13.99345,4430.6548};
+			name="Spawn_150";
 			type="Empty";
 		};
 		class Item151
 		{
-			position[]={3484.7227,52.6804,3973.8633};
-			name="Spawn_121";
+			position[]={3192.1289,21.166361,4369.998};
+			name="Spawn_151";
 			type="Empty";
 		};
 		class Item152
 		{
-			position[]={3575.6074,43.0138,4025.2578};
-			name="Spawn_122";
+			position[]={3311.9722,23.704588,4337.5537};
+			name="Spawn_152";
 			type="Empty";
 		};
 		class Item153
 		{
-			position[]={3399.7654,63.2903,3983.7471};
-			name="Spawn_123";
+			position[]={3447.3247,22.448988,4314.9844};
+			name="Spawn_153";
 			type="Empty";
 		};
 		class Item154
 		{
-			position[]={3366.1777,47.7799,4078.6299};
-			name="Spawn_124";
+			position[]={3448.7346,31.23712,4252.917};
+			name="Spawn_154";
 			type="Empty";
 		};
 		class Item155
 		{
-			position[]={3330.614,49.3513,4037.1187};
-			name="Spawn_125";
+			position[]={3557.2983,32.912106,4257.1489};
+			name="Spawn_155";
 			type="Empty";
 		};
 		class Item156
 		{
-			position[]={3306.9048,54.6934,3969.9102};
-			name="Spawn_126";
+			position[]={3546.019,34.815399,4240.2217};
+			name="Spawn_156";
 			type="Empty";
 		};
 		class Item157
 		{
-			position[]={3227.875,42.8818,4019.3281};
-			name="Spawn_127";
+			position[]={3586.907,39.879467,4175.333};
+			name="Spawn_157";
 			type="Empty";
 		};
 		class Item158
 		{
-			position[]={3247.6323,43.5708,4088.5132};
-			name="Spawn_128";
+			position[]={3606.646,40.391922,4154.1738};
+			name="Spawn_158";
 			type="Empty";
 		};
 		class Item159
 		{
-			position[]={3162.6753,33.2578,4179.4429};
-			name="Spawn_129";
+			position[]={3675.7319,39.991344,4128.7832};
+			name="Spawn_159";
 			type="Empty";
 		};
 		class Item160
 		{
-			position[]={3146.8691,32.8074,4177.4663};
-			name="Spawn_130";
+			position[]={3719.4395,42.04274,4070.9475};
+			name="Spawn_160";
 			type="Empty";
 		};
 		class Item161
 		{
-			position[]={3156.7478,30.2556,4264.4419};
-			name="Spawn_132";
+			position[]={3798.3953,36.485435,4075.1794};
+			name="Spawn_161";
 			type="Empty";
 		};
 		class Item162
 		{
-			position[]={3093.5239,27.0671,4294.0928};
-			name="Spawn_133";
+			position[]={3853.3821,35.120342,4022.9868};
+			name="Spawn_162";
 			type="Empty";
 		};
 		class Item163
 		{
-			position[]={3052.0327,32.3748,4375.1387};
-			name="Spawn_134";
+			position[]={3959.1265,15.6577,4202.1348};
+			name="Spawn_163";
 			type="Empty";
 		};
 		class Item164
 		{
-			position[]={3113.281,27.6802,4398.8589};
-			name="Spawn_135";
+			position[]={3932.3374,28.295488,4099.1597};
+			name="Spawn_164";
 			type="Empty";
 		};
 		class Item165
 		{
-			position[]={2978.9302,36.7224,4446.3003};
-			name="Spawn_136";
+			position[]={4164.9746,16.349703,3842.428};
+			name="Spawn_165";
 			type="Empty";
 		};
 		class Item166
 		{
-			position[]={2913.7302,39,4507.5791};
-			name="Spawn_137";
+			position[]={4091.6584,26.589108,3797.2881};
+			name="Spawn_166";
 			type="Empty";
 		};
 		class Item167
 		{
-			position[]={3006.5908,30.6753,4568.8574};
-			name="Spawn_138";
+			position[]={3973.2256,34.786659,3935.5286};
+			name="Spawn_167";
 			type="Empty";
 		};
 		class Item168
 		{
-			position[]={2854.4578,26.7735,4527.3462};
-			name="Spawn_139";
+			position[]={3699.7007,52.635311,3948.2239};
+			name="Spawn_168";
 			type="Empty";
 		};
 		class Item169
 		{
-			position[]={3012.5176,29.4488,4556.9971};
-			name="Spawn_140";
+			position[]={3885.8105,44.835373,3888.9783};
+			name="Spawn_169";
 			type="Empty";
 		};
 		class Item170
 		{
-			position[]={3063.8872,33.0062,4434.4399};
-			name="Spawn_141";
+			position[]={4520.2754,31.520918,3628.0142};
+			name="Spawn_170";
 			type="Empty";
 		};
 		class Item171
 		{
-			position[]={3044.1296,27.4355,4481.8818};
-			name="Spawn_142";
+			position[]={4452.5991,32.644913,3667.5115};
+			name="Spawn_171";
 			type="Empty";
 		};
 		class Item172
 		{
-			position[]={2963.124,33.2132,4436.417};
-			name="Spawn_143";
+			position[]={4324.2959,32.891003,3777.5393};
+			name="Spawn_172";
 			type="Empty";
 		};
 		class Item173
 		{
-			position[]={3152.7964,5.9948,4602.4619};
-			name="Spawn_144";
+			position[]={4394.7925,35.793373,3691.4919};
+			name="Spawn_173";
 			type="Empty";
 		};
 		class Item174
 		{
-			position[]={3206.1416,0.2560,4667.6938};
-			name="Spawn_145";
+			position[]={4514.6357,31.484205,3392.4414};
+			name="Spawn_174";
 			type="Empty";
 		};
 		class Item175
 		{
-			position[]={3140.9419,7.0667,4551.0669};
-			name="Spawn_146";
+			position[]={4438.5,42.019634,3323.3213};
+			name="Spawn_175";
 			type="Empty";
 		};
 		class Item176
 		{
-			position[]={3241.7051,7.5956,4505.6021};
-			name="Spawn_147";
+			position[]={4654.2183,3.4991577,3218.9355};
+			name="Spawn_176";
 			type="Empty";
 		};
 		class Item177
 		{
-			position[]={3277.2686,6.8971,4505.6021};
-			name="Spawn_148";
+			position[]={4430.04,23.141914,3204.8296};
+			name="Spawn_177";
 			type="Empty";
 		};
 		class Item178
 		{
-			position[]={3348.3958,17.7938,4582.6943};
-			name="Spawn_149";
+			position[]={4404.6616,29.961136,3273.9497};
+			name="Spawn_178";
 			type="Empty";
 		};
 		class Item179
 		{
-			position[]={3372.1047,15.0494,4612.3452};
-			name="Spawn_150";
+			position[]={4331.3457,29.168619,3292.2876};
+			name="Spawn_179";
 			type="Empty";
 		};
 		class Item180
 		{
-			position[]={3457.0625,39.4577,4574.7876};
-			name="Spawn_151";
+			position[]={4294.688,29.803699,3290.877};
+			name="Spawn_180";
 			type="Empty";
 		};
 		class Item181
 		{
-			position[]={2536.3616,1.1211,4543.1602};
-			name="Spawn_152";
+			position[]={4248.1602,33.882843,3238.6843};
+			name="Spawn_181";
 			type="Empty";
 		};
 		class Item182
 		{
-			position[]={2419.7922,8.7861,4570.8345};
-			name="Spawn_153";
+			position[]={4222.7817,36.499302,3194.9551};
+			name="Spawn_182";
 			type="Empty";
 		};
 		class Item183
 		{
-			position[]={3024.3723,17.0716,4272.3491};
-			name="Spawn_154";
+			position[]={4265.0801,29.46443,3127.2456};
+			name="Spawn_183";
 			type="Empty";
 		};
 		class Item184
 		{
-			position[]={2925.5845,14.3824,4175.4893};
-			name="Spawn_155";
+			position[]={4359.5444,17.93071,3106.0864};
+			name="Spawn_184";
 			type="Empty";
 		};
 		class Item185
 		{
-			position[]={2846.5547,20.3967,4104.3271};
-			name="Spawn_156";
+			position[]={4404.6616,16.992168,3123.0139};
+			name="Spawn_185";
 			type="Empty";
 		};
 		class Item186
 		{
-			position[]={3040.1782,29.2318,4163.6289};
-			name="Spawn_157";
+			position[]={4476.5679,2.1009085,3103.2651};
+			name="Spawn_186";
 			type="Empty";
 		};
 		class Item187
 		{
-			position[]={2791.2334,31.3325,3960.0264};
-			name="Spawn_158";
+			position[]={4489.2568,6.4676514,3175.2065};
+			name="Spawn_187";
 			type="Empty";
 		};
 		class Item188
 		{
-			position[]={2714.1792,24.2819,3985.7236};
-			name="Spawn_159";
+			position[]={4528.7344,1.5288792,3132.8882};
+			name="Spawn_188";
 			type="Empty";
 		};
 		class Item189
 		{
-			position[]={2929.5361,38.7393,4041.0723};
-			name="Spawn_160";
+			position[]={4315.8369,25.155962,3151.2261};
+			name="Spawn_189";
 			type="Empty";
 		};
 		class Item190
 		{
-			position[]={3004.6147,34.6782,4118.1646};
-			name="Spawn_161";
+			position[]={4026.8025,25.479132,3086.3379};
+			name="Spawn_190";
 			type="Empty";
 		};
 		class Item191
 		{
-			position[]={2706.2764,16.1626,4058.8628};
-			name="Spawn_162";
+			position[]={4019.7529,32.426491,3146.9944};
+			name="Spawn_191";
 			type="Empty";
 		};
 		class Item192
 		{
-			position[]={2577.8521,18.0624,3985.7236};
-			name="Spawn_163";
+			position[]={4200.2231,34.346882,2862.0503};
+			name="Spawn_192";
 			type="Empty";
 		};
 		class Item193
 		{
-			position[]={2579.8279,32.8245,3906.6548};
-			name="Spawn_164";
+			position[]={4173.4346,33.570717,2997.4692};
+			name="Spawn_193";
 			type="Empty";
 		};
 		class Item194
 		{
-			position[]={2516.6038,29.7185,3859.2136};
-			name="Spawn_165";
+			position[]={4001.4241,16.698179,2925.5278};
+			name="Spawn_194";
 			type="Empty";
 		};
 		class Item195
 		{
-			position[]={2459.3069,14.3618,3795.9583};
-			name="Spawn_166";
+			position[]={3771.6069,35.122314,3041.1982};
+			name="Spawn_195";
 			type="Empty";
 		};
 		class Item196
 		{
-			position[]={2595.6338,35.2372,3772.2375};
-			name="Spawn_167";
+			position[]={3561.5288,32.776447,2987.595};
+			name="Spawn_196";
 			type="Empty";
 		};
 		class Item197
 		{
-			position[]={2666.7607,36.7614,3890.8408};
-			name="Spawn_168";
+			position[]={3660.2229,45.849304,3169.5649};
+			name="Spawn_197";
 			type="Empty";
 		};
 		class Item198
 		{
-			position[]={2394.1072,5.0168,3969.9102};
-			name="Spawn_169";
+			position[]={2320.4551,24.937727,4045.2769};
+			name="Spawn_198";
 			type="Empty";
 		};
 		class Item199
 		{
-			position[]={2285.4409,10.5794,4094.4438};
-			name="Spawn_170";
+			position[]={2232.0801,16.483389,3816.8628};
+			name="Spawn_199";
 			type="Empty";
 		};
 		class Item200
 		{
-			position[]={2180.7261,6.7778,4205.1401};
-			name="Spawn_171";
+			position[]={2136.3408,20.721531,4303.1636};
+			name="Spawn_200";
 			type="Empty";
 		};
 		class Item201
 		{
-			position[]={2239.9985,12.6519,3805.842};
-			name="Spawn_172";
+			position[]={2493.5227,9.2603054,4579.4712};
+			name="Spawn_201";
 			type="Empty";
 		};
 		class Item202
 		{
-			position[]={2500.7979,7.0207,3730.7261};
-			name="Spawn_173";
+			position[]={4364.125,19.338295,2427.957};
+			name="Spawn_202";
 			type="Empty";
 		};
 		class Item203
 		{
-			position[]={2656.8823,25.2245,3651.6575};
-			name="Spawn_174";
+			position[]={3600.3228,43.909676,4040.9495};
+			name="Spawn_203";
 			type="Empty";
 		};
 		class Item204
 		{
-			position[]={2826.7971,52.9818,3736.6565};
-			name="Spawn_175";
+			position[]={3742.7249,14.171166,4355.5166};
+			name="Spawn_204";
 			type="Empty";
 		};
 		class Item205
 		{
-			position[]={2915.7058,44.3798,3758.4006};
-			name="Spawn_176";
+			position[]={3649.6699,17.064465,4383.729};
+			name="Spawn_205";
 			type="Empty";
 		};
 		class Item206
 		{
-			position[]={2832.7244,21.2832,3594.3323};
-			name="Spawn_177";
+			position[]={3459.3306,31.192114,4599.5532};
+			name="Spawn_206";
 			type="Empty";
 		};
 		class Item207
 		{
-			position[]={3148.8442,19.8532,3679.3315};
-			name="Spawn_178";
+			position[]={3550.9756,18.262333,4555.8242};
+			name="Spawn_207";
 			type="Empty";
 		};
 		class Item208
 		{
-			position[]={3259.4868,18.6552,3707.0054};
-			name="Spawn_179";
+			position[]={3371.9155,41.228855,4176.3682};
+			name="Spawn_208";
 			type="Empty";
 		};
 		class Item209
 		{
-			position[]={3081.6689,40.3962,3926.4219};
-			name="Spawn_180";
+			position[]={2944.709,61.428852,3894.2456};
+			name="Spawn_209";
 			type="Empty";
 		};
 		class Item210
 		{
-			position[]={3176.5051,0.4260,3481.6589};
-			name="Spawn_181";
+			position[]={3517.137,28.481634,3138.1555};
+			name="Spawn_210";
 			type="Empty";
 		};
 		class Item211
 		{
-			position[]={3259.4868,9.7311,3440.1477};
-			name="Spawn_182";
+			position[]={3690.3777,24.529568,3506.3257};
+			name="Town";
 			type="Empty";
 		};
 		class Item212
 		{
-			position[]={3227.8748,0.2139,3254.3357};
-			name="Spawn_183";
+			position[]={3714.3464,19.348536,3487.9875};
+			name="Town_1";
 			type="Empty";
 		};
 		class Item213
 		{
-			position[]={3380.0076,6.9283,3224.6848};
-			name="Spawn_184";
+			position[]={4338.9414,27,3194.5796};
+			name="Town_2";
 			type="Empty";
 		};
 		class Item214
 		{
-			position[]={3502.5044,29.6588,3112.0115};
-			name="Spawn_185";
+			position[]={4405.2075,23.677624,3562.7507};
+			name="Town_3";
 			type="Empty";
 		};
 		class Item215
 		{
-			position[]={3484.7222,15.4501,3001.3149};
-			name="Spawn_186";
+			position[]={3570.585,18.545078,3682.1606};
+			name="Town_4";
 			type="Empty";
 		};
 		class Item216
 		{
-			position[]={3630.9282,34.8203,2989.4546};
-			name="Spawn_187";
+			position[]={3545.2813,21.712559,4381.4922};
+			name="Town_5";
 			type="Empty";
 		};
 		class Item217
 		{
-			position[]={3735.6431,26.1078,2955.8503};
-			name="Spawn_188";
+			position[]={3319.1685,16.648026,4385.3638};
+			name="Town_6";
 			type="Empty";
 		};
 		class Item218
 		{
-			position[]={3840.3579,2.0649,2906.4321};
-			name="Spawn_189";
+			position[]={2551.1604,36.589573,3847.6948};
+			name="Town_7";
 			type="Empty";
 		};
 		class Item219
 		{
-			position[]={4008.2969,19.6700,2918.2925};
-			name="Spawn_190";
+			position[]={3152.3762,27.840729,4354.8208};
+			name="Mission";
 			type="Empty";
 		};
 		class Item220
 		{
-			position[]={4109.0601,27.3092,2823.4097};
-			name="Spawn_191";
+			position[]={3273.2666,13.585589,4420.2886};
+			name="Mission_1";
 			type="Empty";
 		};
 		class Item221
 		{
-			position[]={4243.4116,22.2292,2835.27};
-			name="Spawn_192";
+			position[]={3513.9373,19.081625,4393.6577};
+			name="Mission_2";
 			type="Empty";
 		};
 		class Item222
 		{
-			position[]={4235.5083,23.2438,2754.2246};
-			name="Spawn_193";
+			position[]={3594.8999,18.317577,3685.7148};
+			name="Mission_3";
 			type="Empty";
 		};
 		class Item223
 		{
-			position[]={4257.2417,21.4935,2685.0388};
-			name="Spawn_194";
+			position[]={3333.1565,19,3608.0405};
+			name="Mission_4";
 			type="Empty";
 		};
 		class Item224
 		{
-			position[]={4326.3931,0.2405,2667.2483};
-			name="Spawn_195";
+			position[]={4064.0427,19,3609.1501};
+			name="Mission_5";
 			type="Empty";
 		};
 		class Item225
 		{
-			position[]={4330.3447,-0.0706,2868.8743};
-			name="Spawn_196";
+			position[]={3689.1724,18.915031,3479.3237};
+			name="Mission_6";
 			type="Empty";
 		};
 		class Item226
 		{
-			position[]={4278.9751,20.3974,2995.3848};
-			name="Spawn_197";
+			position[]={4407.8584,23.677624,3560.3267};
+			name="Mission_7";
 			type="Empty";
 		};
 		class Item227
 		{
-			position[]={4367.8838,8.3502,3013.1753};
-			name="Spawn_198";
+			position[]={4375.6948,27,3163.0796};
+			name="Mission_8";
 			type="Empty";
 		};
 		class Item228
 		{
-			position[]={4371.8354,9.8696,2382.6006};
-			name="Spawn_199";
+			position[]={4238.1689,34.319714,3256.2881};
+			name="Mission_9";
 			type="Empty";
 		};
 		class Item229
 		{
-			position[]={4599.0469,34.2463,3244.4521};
-			name="Spawn_200";
+			position[]={3869.9529,28,3321.7563};
+			name="Mission_10";
 			type="Empty";
 		};
 		class Item230
 		{
-			position[]={4589.1685,13.9363,3363.0557};
-			name="Spawn_201";
+			position[]={3546.1003,35.088615,3097.6111};
+			name="Mission_11";
 			type="Empty";
 		};
 		class Item231
 		{
-			position[]={3850.2368,44.8043,3827.5864};
-			name="Spawn_202";
+			position[]={4231.5142,17.732016,2714.7888};
+			name="Mission_12";
 			type="Empty";
 		};
 		class Item232
 		{
-			position[]={3565.7285,29.0584,3272.127};
-			name="Spawn_203";
+			position[]={4059.6064,20.066666,3458.2407};
+			name="Mission_13";
 			type="Empty";
 		};
 		class Item233
 		{
-			position[]={3737.6191,61.6675,3169.3369};
-			name="Spawn_204";
+			position[]={4102.8608,15.766859,4010.8369};
+			name="Mission_14";
 			type="Empty";
 		};
 		class Item234
 		{
-			position[]={4166.3569,19,3598.2861};
-			name="Spawn_205";
+			position[]={2856.2507,37.797031,3689.0442};
+			name="Mission_15";
 			type="Empty";
 		};
 		class Item235
 		{
-			position[]={4490.3804,25.5144,3635.8438};
-			name="Spawn_206";
+			position[]={2997.104,42.447788,3993.0825};
+			name="Mission_16";
 			type="Empty";
 		};
 		class Item236
 		{
-			position[]={3761.3279,18.9363,3653.6343};
-			name="Spawn_207";
+			position[]={2513.5437,28.774668,3812.2131};
+			name="Mission_17";
 			type="Empty";
 		};
 		class Item237
 		{
-			position[]={3279.2444,9.1108,3335.3818};
-			name="Spawn_208";
+			position[]={2290.6182,30.17333,4030.8103};
+			name="Mission_18";
 			type="Empty";
 		};
 		class Item238
 		{
-			position[]={3176.5054,32.8874,4199.21};
-			name="Spawn_131";
+			position[]={2909.4878,37.629467,4536.8013};
+			name="Mission_19";
 			type="Empty";
 		};
-		
+		class Item239
+		{
+			position[]={3451.8403,18.384272,4630.7954};
+			name="Mission_20";
+			type="Empty";
+		};
+		class Item240
+		{
+			position[]={2542.1641,32.06665,3851.2585};
+			name="heliSpawn_1";
+			type="Empty";
+		};
+		class Item241
+		{
+			position[]={2514.1887,28.81032,3817.0503};
+			name="heliSpawn_2";
+			type="Empty";
+		};
+		class Item242
+		{
+			position[]={2584.127,35.530151,3810.8301};
+			name="heliSpawn_3";
+			type="Empty";
+		};
+		class Item243
+		{
+			position[]={2607.4397,36.175198,3877.6929};
+			name="heliSpawn_4";
+			type="Empty";
+		};
+		class Item244
+		{
+			position[]={2591.8979,32.880131,3921.2314};
+			name="heliSpawn_5";
+			type="Empty";
+		};
+		class Item245
+		{
+			position[]={2621.4275,27.730646,3952.3303};
+			name="heliSpawn_6";
+			type="Empty";
+		};
+		class Item246
+		{
+			position[]={2649.4028,31.464241,3924.3413};
+			name="heliSpawn_7";
+			type="Empty";
+		};
+		class Item247
+		{
+			position[]={2649.4028,20.931471,4000.5337};
+			name="heliSpawn_8";
+			type="Empty";
+		};
+		class Item248
+		{
+			position[]={2682.0405,23.39463,3988.0942};
+			name="heliSpawn_9";
+			type="Empty";
+		};
+		class Item249
+		{
+			position[]={2705.3533,19.095785,4050.2917};
+			name="heliSpawn_10";
+			type="Empty";
+		};
+		class Item250
+		{
+			position[]={2730.2202,21.292648,4031.6328};
+			name="heliSpawn_11";
+			type="Empty";
+		};
+		class Item251
+		{
+			position[]={2807.9292,21.741125,4087.6108};
+			name="heliSpawn_12";
+			type="Empty";
+		};
+		class Item252
+		{
+			position[]={2828.1333,23.999439,4067.3962};
+			name="heliSpawn_13";
+			type="Empty";
+		};
+		class Item253
+		{
+			position[]={2870.0967,20.798227,4120.2646};
+			name="heliSpawn_14";
+			type="Empty";
+		};
+		class Item254
+		{
+			position[]={2957.1309,25.440178,4143.5889};
+			name="heliSpawn_15";
+			type="Empty";
+		};
+		class Item255
+		{
+			position[]={3006.8645,22.50045,4212.0068};
+			name="heliSpawn_16";
+			type="Empty";
+		};
+		class Item256
+		{
+			position[]={3062.8149,29.414492,4171.5781};
+			name="heliSpawn_17";
+			type="Empty";
+		};
+		class Item257
+		{
+			position[]={3083.0193,25.950972,4269.5396};
+			name="heliSpawn_18";
+			type="Empty";
+		};
+		class Item258
+		{
+			position[]={3124.9824,29.718113,4241.5508};
+			name="heliSpawn_19";
+			type="Empty";
+		};
+		class Item259
+		{
+			position[]={3114.1033,30.112041,4355.0615};
+			name="heliSpawn_20";
+			type="Empty";
+		};
+		class Item260
+		{
+			position[]={3171.6079,28.555862,4320.853};
+			name="heliSpawn_21";
+			type="Empty";
+		};
+		class Item261
+		{
+			position[]={3118.7656,22.216524,4432.8091};
+			name="heliSpawn_22";
+			type="Empty";
+		};
+		class Item262
+		{
+			position[]={3020.8521,35.948639,4418.8149};
+			name="heliSpawn_23";
+			type="Empty";
+		};
+		class Item263
+		{
+			position[]={3042.6106,28.095497,4481.0127};
+			name="heliSpawn_24";
+			type="Empty";
+		};
+		class Item264
+		{
+			position[]={2974.2268,39,4484.1226};
+			name="heliSpawn_25";
+			type="Empty";
+		};
+		class Item265
+		{
+			position[]={2952.468,39,4544.7651};
+			name="heliSpawn_26";
+			type="Empty";
+		};
+		class Item266
+		{
+			position[]={2946.2515,39,4493.4521};
+			name="heliSpawn_27";
+			type="Empty";
+		};
+		class Item267
+		{
+			position[]={3166.9453,17.839283,4418.8149};
+			name="heliSpawn_28";
+			type="Empty";
+		};
+		class Item268
+		{
+			position[]={3215.125,17.289375,4381.4961};
+			name="heliSpawn_29";
+			type="Empty";
+		};
+		class Item269
+		{
+			position[]={3260.196,10.837111,4443.6938};
+			name="heliSpawn_30";
+			type="Empty";
+		};
+		class Item270
+		{
+			position[]={3319.2551,12.362785,4467.0181};
+			name="heliSpawn_31";
+			type="Empty";
+		};
+		class Item271
+		{
+			position[]={3305.2671,8.159585,4526.106};
+			name="heliSpawn_32";
+			type="Empty";
+		};
+		class Item272
+		{
+			position[]={3285.063,4,4563.4248};
+			name="heliSpawn_33";
+			type="Empty";
+		};
+		class Item273
+		{
+			position[]={3241.5459,4.0498161,4611.6279};
+			name="heliSpawn_34";
+			type="Empty";
+		};
+		class Item274
+		{
+			position[]={3194.9209,4.0673828,4616.2925};
+			name="heliSpawn_35";
+			type="Empty";
+		};
+		class Item275
+		{
+			position[]={3250.8708,5.8866782,4532.3257};
+			name="heliSpawn_36";
+			type="Empty";
+		};
+		class Item276
+		{
+			position[]={3286.6169,8.7491026,4474.7925};
+			name="heliSpawn_37";
+			type="Empty";
+		};
+		class Item277
+		{
+			position[]={3235.3291,14.756815,4395.4902};
+			name="heliSpawn_38";
+			type="Empty";
+		};
+		class Item278
+		{
+			position[]={3302.1589,22.304398,4362.8364};
+			name="heliSpawn_39";
+			type="Empty";
+		};
+		class Item279
+		{
+			position[]={3295.9421,24,4320.853};
+			name="heliSpawn_40";
+			type="Empty";
+		};
+		class Item280
+		{
+			position[]={3372.0972,17.419367,4423.4795};
+			name="heliSpawn_41";
+			type="Empty";
+		};
+		class Item281
+		{
+			position[]={3351.8928,17.814438,4448.3584};
+			name="heliSpawn_42";
+			type="Empty";
+		};
+		class Item282
+		{
+			position[]={3306.8218,13.968216,4418.8149};
+			name="heliSpawn_43";
+			type="Empty";
+		};
+		class Item283
+		{
+			position[]={3392.3015,16.952755,4375.2759};
+			name="heliSpawn_44";
+			type="Empty";
+		};
+		class Item284
+		{
+			position[]={3418.7227,16.89999,4362.8364};
+			name="heliSpawn_45";
+			type="Empty";
+		};
+		class Item285
+		{
+			position[]={3339.4595,21.819551,4330.1826};
+			name="heliSpawn_46";
+			type="Empty";
+		};
+		class Item286
+		{
+			position[]={3465.3481,26.351086,4294.4189};
+			name="heliSpawn_47";
+			type="Empty";
+		};
+		class Item287
+		{
+			position[]={3502.6484,20.164858,4448.3584};
+			name="heliSpawn_48";
+			type="Empty";
+		};
+		class Item288
+		{
+			position[]={3418.7227,28.465824,4518.3315};
+			name="heliSpawn_49";
+			type="Empty";
+		};
+		class Item289
+		{
+			position[]={3389.1934,19.283064,4442.1387};
+			name="heliSpawn_50";
+			type="Empty";
+		};
+		class Item290
+		{
+			position[]={3479.3357,16.858438,4404.8198};
+			name="heliSpawn_51";
+			type="Empty";
+		};
+		class Item291
+		{
+			position[]={3412.5063,21.921646,4474.7925};
+			name="heliSpawn_52";
+			type="Empty";
+		};
+		class Item292
+		{
+			position[]={3490.2148,23.195518,4325.5181};
+			name="heliSpawn_53";
+			type="Empty";
+		};
+		class Item293
+		{
+			position[]={3619.2122,22.594244,4362.8364};
+			name="heliSpawn_54";
+			type="Empty";
+		};
+		class Item294
+		{
+			position[]={3553.9365,21.421694,4404.8198};
+			name="heliSpawn_55";
+			type="Empty";
+		};
+		class Item295
+		{
+			position[]={3532.1777,36.976048,4274.2046};
+			name="heliSpawn_56";
+			type="Empty";
+		};
+		class Item296
+		{
+			position[]={3558.5991,31.321575,4274.2046};
+			name="heliSpawn_57";
+			type="Empty";
+		};
+		class Item297
+		{
+			position[]={3581.9116,36.886478,4213.5615};
+			name="heliSpawn_58";
+			type="Empty";
+		};
+		class Item298
+		{
+			position[]={3623.8745,36.364151,4204.2319};
+			name="heliSpawn_59";
+			type="Empty";
+		};
+		class Item299
+		{
+			position[]={3609.887,40.590683,4148.2539};
+			name="heliSpawn_60";
+			type="Empty";
+		};
+		class Item300
+		{
+			position[]={3768.4136,36.548687,4124.9297};
+			name="heliSpawn_61";
+			type="Empty";
+		};
+		class Item301
+		{
+			position[]={3776.1846,36.916615,4104.7153};
+			name="heliSpawn_62";
+			type="Empty";
+		};
+		class Item302
+		{
+			position[]={3839.9063,33.823475,4058.0669};
+			name="heliSpawn_63";
+			type="Empty";
+		};
+		class Item303
+		{
+			position[]={3202.6914,34.428375,4226.0015};
+			name="heliSpawn_64";
+			type="Empty";
+		};
+		class Item304
+		{
+			position[]={3148.2952,31.917391,4205.7866};
+			name="heliSpawn_65";
+			type="Empty";
+		};
+		class Item305
+		{
+			position[]={3267.967,40.491142,4151.3638};
+			name="heliSpawn_66";
+			type="Empty";
+		};
+		class Item306
+		{
+			position[]={3219.7874,42.009968,4089.166};
+			name="heliSpawn_67";
+			type="Empty";
+		};
+		class Item307
+		{
+			position[]={3255.5337,45.750664,4042.5173};
+			name="heliSpawn_68";
+			type="Empty";
+		};
+		class Item308
+		{
+			position[]={3154.5117,37.93856,3997.4241};
+			name="heliSpawn_69";
+			type="Empty";
+		};
+		class Item309
+		{
+			position[]={3199.583,39.560337,3992.759};
+			name="heliSpawn_70";
+			type="Empty";
+		};
+		class Item310
+		{
+			position[]={3177.8245,37.642319,3932.1162};
+			name="heliSpawn_71";
+			type="Empty";
+		};
+		class Item311
+		{
+			position[]={3191.8123,39.641418,4058.0669};
+			name="heliSpawn_72";
+			type="Empty";
+		};
+		class Item312
+		{
+			position[]={3294.3882,47.539299,4051.8469};
+			name="heliSpawn_73";
+			type="Empty";
+		};
+		class Item313
+		{
+			position[]={3395.4099,59.535557,4016.0835};
+			name="heliSpawn_74";
+			type="Empty";
+		};
+		class Item314
+		{
+			position[]={3499.5403,47.634235,4053.4021};
+			name="heliSpawn_75";
+			type="Empty";
+		};
+		class Item315
+		{
+			position[]={3535.2861,40.38229,3963.2153};
+			name="heliSpawn_76";
+			type="Empty";
+		};
+		class Item316
+		{
+			position[]={3623.8745,39.200661,3913.457};
+			name="heliSpawn_77";
+			type="Empty";
+		};
+		class Item317
+		{
+			position[]={3591.2368,25.596373,3827.9346};
+			name="heliSpawn_78";
+			type="Empty";
+		};
+		class Item318
+		{
+			position[]={3572.5869,20.211525,3771.9568};
+			name="heliSpawn_79";
+			type="Empty";
+		};
+		class Item319
+		{
+			position[]={3592.791,18.244978,3687.9895};
+			name="heliSpawn_80";
+			type="Empty";
+		};
+		class Item320
+		{
+			position[]={3561.7073,19,3647.561};
+			name="heliSpawn_81";
+			type="Empty";
+		};
+		class Item321
+		{
+			position[]={3538.395,24.433313,3666.2202};
+			name="heliSpawn_82";
+			type="Empty";
+		};
+		class Item322
+		{
+			position[]={3483.9983,30.498358,3764.1821};
+			name="heliSpawn_83";
+			type="Empty";
+		};
+		class Item323
+		{
+			position[]={3448.252,18.74859,3661.5554};
+			name="heliSpawn_84";
+			type="Empty";
+		};
+		class Item324
+		{
+			position[]={3578.8035,18.843056,3656.8906};
+			name="heliSpawn_85";
+			type="Empty";
+		};
+		class Item325
+		{
+			position[]={3351.8928,19,3600.9126};
+			name="heliSpawn_86";
+			type="Empty";
+		};
+		class Item326
+		{
+			position[]={3474.6733,19,3630.4565};
+			name="heliSpawn_87";
+			type="Empty";
+		};
+		class Item327
+		{
+			position[]={3553.9365,19,3597.8027};
+			name="heliSpawn_88";
+			type="Empty";
+		};
+		class Item328
+		{
+			position[]={3595.8994,18.96406,3563.5938};
+			name="heliSpawn_89";
+			type="Empty";
+		};
+		class Item329
+		{
+			position[]={3712.4629,18.89999,3568.2588};
+			name="heliSpawn_90";
+			type="Empty";
+		};
+		class Item330
+		{
+			position[]={3796.3887,18.988455,3551.1543};
+			name="heliSpawn_91";
+			type="Empty";
+		};
+		class Item331
+		{
+			position[]={3933.1567,19,3557.3743};
+			name="heliSpawn_92";
+			type="Empty";
+		};
+		class Item332
+		{
+			position[]={4021.7451,19,3555.8191};
+			name="heliSpawn_93";
+			type="Empty";
+		};
+		class Item333
+		{
+			position[]={4041.9497,18.937244,3526.2749};
+			name="heliSpawn_94";
+			type="Empty";
+		};
+		class Item334
+		{
+			position[]={4096.3462,18.788021,3565.1487};
+			name="heliSpawn_95";
+			type="Empty";
+		};
+		class Item335
+		{
+			position[]={4029.5161,19,3633.5664};
+			name="heliSpawn_96";
+			type="Empty";
+		};
+		class Item336
+		{
+			position[]={3875.6523,19,3632.0115};
+			name="heliSpawn_97";
+			type="Empty";
+		};
+		class Item337
+		{
+			position[]={3796.3887,18.924381,3647.561};
+			name="heliSpawn_98";
+			type="Empty";
+		};
+		class Item338
+		{
+			position[]={3675.1628,19,3628.9014};
+			name="heliSpawn_99";
+			type="Empty";
+		};
+		class Item339
+		{
+			position[]={3651.8499,19,3635.1216};
+			name="heliSpawn_100";
+			type="Empty";
+		};
+		class Item340
+		{
+			position[]={3488.6606,18.968882,3644.4509};
+			name="heliSpawn_101";
+			type="Empty";
+		};
+		class Item341
+		{
+			position[]={3362.772,19,3636.6763};
+			name="heliSpawn_102";
+			type="Empty";
+		};
+		class Item342
+		{
+			position[]={3418.7227,19,3507.6157};
+			name="heliSpawn_103";
+			type="Empty";
+		};
+		class Item343
+		{
+			position[]={3609.887,19.140974,3502.9512};
+			name="heliSpawn_104";
+			type="Empty";
+		};
+		class Item344
+		{
+			position[]={3777.7388,26.61166,3440.7532};
+			name="heliSpawn_105";
+			type="Empty";
+		};
+		class Item345
+		{
+			position[]={3867.8813,26.358046,3426.7583};
+			name="heliSpawn_106";
+			type="Empty";
+		};
+		class Item346
+		{
+			position[]={3926.9402,26.837839,3372.3352};
+			name="heliSpawn_107";
+			type="Empty";
+		};
+		class Item347
+		{
+			position[]={3990.6616,29.866362,3341.2366};
+			name="heliSpawn_108";
+			type="Empty";
+		};
+		class Item348
+		{
+			position[]={4170.9468,35.141533,3289.9231};
+			name="heliSpawn_109";
+			type="Empty";
+		};
+		class Item349
+		{
+			position[]={4239.3306,33.730663,3263.489};
+			name="heliSpawn_110";
+			type="Empty";
+		};
+		class Item350
+		{
+			position[]={3895.8564,27.38821,3352.1211};
+			name="heliSpawn_111";
+			type="Empty";
+		};
+		class Item351
+		{
+			position[]={3829.0269,28,3325.6865};
+			name="heliSpawn_112";
+			type="Empty";
+		};
+		class Item352
+		{
+			position[]={3944.0361,31,3285.2583};
+			name="heliSpawn_113";
+			type="Empty";
+		};
+		class Item353
+		{
+			position[]={3846.1226,28,3299.2527};
+			name="heliSpawn_114";
+			type="Empty";
+		};
+		class Item354
+		{
+			position[]={3944.0361,48.028191,3196.626};
+			name="heliSpawn_115";
+			type="Empty";
+		};
+		class Item355
+		{
+			position[]={4304.6064,27.539337,3229.28};
+			name="heliSpawn_116";
+			type="Empty";
+		};
+		class Item356
+		{
+			position[]={4295.2813,29.008142,3247.9395};
+			name="heliSpawn_117";
+			type="Empty";
+		};
+		class Item357
+		{
+			position[]={4144.5254,35.904217,3148.4229};
+			name="heliSpawn_118";
+			type="Empty";
+		};
+		class Item358
+		{
+			position[]={4077.6958,33.562721,3153.0879};
+			name="heliSpawn_119";
+			type="Empty";
+		};
+		class Item359
+		{
+			position[]={4142.9717,33.821922,3092.4448};
+			name="heliSpawn_120";
+			type="Empty";
+		};
+		class Item360
+		{
+			position[]={4226.897,34.592911,3265.0439};
+			name="heliSpawn_121";
+			type="Empty";
+		};
+		class Item361
+		{
+			position[]={4441.3745,14.488223,3165.5273};
+			name="heliSpawn_122";
+			type="Empty";
+		};
+		class Item362
+		{
+			position[]={4388.5322,27,3229.28};
+			name="heliSpawn_123";
+			type="Empty";
+		};
+		class Item363
+		{
+			position[]={4307.7148,22.229717,3120.4341};
+			name="heliSpawn_124";
+			type="Empty";
+		};
+		class Item364
+		{
+			position[]={4363.6655,26.3745,3149.9778};
+			name="heliSpawn_125";
+			type="Empty";
+		};
+		class Item365
+		{
+			position[]={4388.5322,25.985819,3149.9778};
+			name="heliSpawn_126";
+			type="Empty";
+		};
+		class Item366
+		{
+			position[]={4366.7734,27,3165.5273};
+			name="heliSpawn_127";
+			type="Empty";
+		};
+		class Item367
+		{
+			position[]={4391.6406,33.04982,3308.582};
+			name="heliSpawn_128";
+			type="Empty";
+		};
+		class Item368
+		{
+			position[]={4262.6436,30.252934,3325.6865};
+			name="heliSpawn_129";
+			type="Empty";
+		};
+		class Item369
+		{
+			position[]={4307.7148,24.752182,3409.6538};
+			name="heliSpawn_130";
+			type="Empty";
+		};
+		class Item370
+		{
+			position[]={4268.8599,21.54162,3467.187};
+			name="heliSpawn_131";
+			type="Empty";
+		};
+		class Item371
+		{
+			position[]={4418.0615,28.194273,3470.2966};
+			name="heliSpawn_132";
+			type="Empty";
+		};
+		class Item372
+		{
+			position[]={4354.3403,30.465939,3516.9453};
+			name="heliSpawn_133";
+			type="Empty";
+		};
+		class Item373
+		{
+			position[]={4357.4487,28.997087,3565.1487};
+			name="heliSpawn_134";
+			type="Empty";
+		};
+		class Item374
+		{
+			position[]={4414.9531,21.952648,3616.4619};
+			name="heliSpawn_135";
+			type="Empty";
+		};
+		class Item375
+		{
+			position[]={4332.5815,30.572983,3653.7805};
+			name="heliSpawn_136";
+			type="Empty";
+		};
+		class Item376
+		{
+			position[]={4271.9688,27.47802,3708.2036};
+			name="heliSpawn_137";
+			type="Empty";
+		};
+		class Item377
+		{
+			position[]={4234.668,22.634743,3750.1875};
+			name="heliSpawn_138";
+			type="Empty";
+		};
+		class Item378
+		{
+			position[]={4164.73,16.926243,3838.8196};
+			name="heliSpawn_139";
+			type="Empty";
+		};
+		class Item379
+		{
+			position[]={4085.4668,26.463772,3871.4734};
+			name="heliSpawn_140";
+			type="Empty";
+		};
+		class Item380
+		{
+			position[]={4076.1418,23.240377,3988.0942};
+			name="heliSpawn_141";
+			type="Empty";
+		};
+		class Item381
+		{
+			position[]={4111.8877,8.369215,4006.7534};
+			name="heliSpawn_142";
+			type="Empty";
+		};
+		class Item382
+		{
+			position[]={4023.2991,28.128946,4073.6162};
+			name="heliSpawn_143";
+			type="Empty";
+		};
+		class Item383
+		{
+			position[]={3934.7109,28.146727,4115.5996};
+			name="heliSpawn_144";
+			type="Empty";
+		};
+		class Item384
+		{
+			position[]={3881.8684,24.472084,4184.0176};
+			name="heliSpawn_145";
+			type="Empty";
+		};
+		class Item385
+		{
+			position[]={3783.9553,29.026884,4255.5449};
+			name="heliSpawn_146";
+			type="Empty";
+		};
+		class Item386
+		{
+			position[]={3675.1626,23.135071,4319.2983};
+			name="heliSpawn_147";
+			type="Empty";
+		};
+		class Item387
+		{
+			position[]={3563.2615,23.529203,4362.8364};
+			name="heliSpawn_148";
+			type="Empty";
+		};
+		class Item388
+		{
+			position[]={3678.9368,20.547119,3444.5288};
+			name="heliSpawn_149";
+			type="Empty";
+		};
+		class Item389
+		{
+			position[]={3736.7642,27.330967,3395.4392};
+			name="heliSpawn_150";
+			type="Empty";
+		};
 	};
+	
 };
 class Intro
 {

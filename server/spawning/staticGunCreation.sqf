@@ -1,3 +1,8 @@
+//	@file Version: 1.0
+//	@file Name: Script Name
+//	@file Author: [404] Deadbeat
+//	@file Created: DD/MM/YYYY HH:MM
+//	@file Args:
 
 if(!X_Server) exitWith {};
 
