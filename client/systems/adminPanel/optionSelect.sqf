@@ -86,7 +86,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	                closeDialog 0;    
 	                hint "Click on map to teleport";
 	                onMapSingleClick "vehicle player setPos _pos; onMapSingleClick '';true;";
-			    };
+			    openMap true;};
 	            case 4: //Money
 			    {      
 					player setVariable["cmoney", (player getVariable "cmoney")+10000,true];

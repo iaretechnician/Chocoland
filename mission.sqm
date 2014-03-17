@@ -42,7 +42,7 @@ class Mission
 	randomSeed=15307759;
 	class Intel
 	{
-		briefingName="chocoland - Utes [v2.9c]";
+		briefingName="tcctland - Utes [v2.9c]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.00;
@@ -72,7 +72,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="gs1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>Gun store</t>"", ""client\systems\gunStore\loadGunStore.sqf"",'gs1']; this attachTo[fp1,[-1.5,0,0]];";
+					
 				};
 			};
 		};
@@ -92,7 +92,6 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore1";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp7,[0,-3,0]];";
 				};
 			};
 		};
@@ -112,7 +111,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="generalStore2";
-					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""client\systems\generalStore\loadGenStore.sqf""]; this attachTo[fp8,[0,-3,0]];";
+					
 				};
 			};
 		};

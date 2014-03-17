@@ -16,7 +16,7 @@ X_Client = false;
 X_JIP = false;
 hitStateVar = false;
 versionName = "v2.9c";
-
+firstspawn = true;
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};
@@ -61,3 +61,4 @@ if(X_Server) then {
 
 [] execVM "motd.sqf";
 null = execVM "killTicker.sqf";
+[] execVM "addons\Backpacks\init.sqf";

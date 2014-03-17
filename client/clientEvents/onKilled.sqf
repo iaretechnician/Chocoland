@@ -3,7 +3,7 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
-
+yourunitName spawn tlq_killTicker;
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};

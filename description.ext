@@ -39,5 +39,6 @@ class RscTitles {
 	#include "client\systems\newicons.hpp"
 }
 class CfgSounds {
-	sounds[] = {};	
+	sounds[] = {};
+       
 };

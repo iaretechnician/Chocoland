@@ -15,7 +15,7 @@ _lockDuration = _totalDuration;
 _originalState = animationState player;
 mutexScriptInProgress = true;
 
-_moneyObject = (nearestobjects [getpos player, ["EvMoney"],  10] select 0);
+_moneyObject = (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
 if((_moneyObject getVariable "owner") == "world") then
 {
    	_moneyObject setVariable ["owner", getPlayerUID player, true];

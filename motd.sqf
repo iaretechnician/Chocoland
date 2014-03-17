@@ -1,9 +1,9 @@
 
     sleep 20;
-   player globalchat "[server] Welcome To HD | ChocoLand | Wasteland MOD BaseDefense!";
-    player globalchat "[server] Visit www.heavensdelight.de ";
-    player globalchat "[server] Please follow ALL rules or you'll have lots of fun.";
-    player globalchat "[server] Server restart at 8 PM";
+   msgbot globalchat "Welcome To HD | ChocoLand | Wasteland MOD BaseDefense | MoneyIsland!";
+   msgbot globalchat "Visit www.heavensdelight.de ";
+    msgbot globalchat "The BaseDefend on ChocoLand will give you lots of scope to earn Money, Kill Npc,Kill Player,";
+   msgbot globalchat " find Money on the BattleField and Find the Secret MoneyZone";
     sleep 60;
 	player globalchat "[server] Player save is enabled on this server";
 	player globalchat "[server] VOIP Is Disabled";
