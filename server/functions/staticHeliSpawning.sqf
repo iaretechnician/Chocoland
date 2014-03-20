@@ -6,21 +6,45 @@
 
 if(!X_Server) exitWith {};
 
-private ["_counter","_pos","_markerName","_marker","_amountOfVehicles","_hint"];
-_counter = 0;
+private ["_count","_pos","_mapside","_xCord","_yCord","_obj","_moneyCount", "_smoke"];
 
-for "_i" from 1 to 150 do
+_moneyCount = Round (random 200) + 250;
+for "_i" from 1 to _moneyCount do
+    {
+    //GREAT THX to Viba and KiloSwiss =D
+    _count = Round (random 500)+100;
+    if(_count == 600) then
+        {
+         _count= Round (random 4);
+         if(_count == 2) then{_count = 50000;} else {_count = 10000;};
+        };
+    if(_count < 150) then 
+        {
+          _count = 1000;
+          _count= Round (random 3);
+          if(_count == 2) then{_count = 5000;} else {_count = 1000;};
+        };
+     _mapside = Round (random 2);
+     if(_mapside == 1) then 
+     {
+          _xCord = Round (random 2000) + 2436.33;
+          _yCord = Round (random 1140) + 3501.65;
+          _pos = [_xCord, _yCord,0.0014];
+     }
+     else 
+     {
+         _xCord = Round (random 1550)+3197.88;
+         _yCord = Round (random 1375)+ 2857;
+         _pos = [_xCord,_yCord, 0.0014];
+     };
 
-{
-    _pos = getMarkerPos format ["heliSpawn_%1", _i];
-    
-    _newpos = [_pos, 10, 20, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-	[_newpos] call objectCreation;
-    
-    _newpos = [_pos, 21, 40, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-    [_newpos] call objectCreation; 
-    
-    _counter = _counter + 2;
+    //Now create Object
+    _obj = "EvMoney" createVehicle _pos;
+    _obj setpos (getpos _obj);
+    _obj setVariable["money",_count,true];
+    _obj setVariable["owner","world",true]; 
+   
+ 
+ //////////////////////////
 };
-
-diag_log format["WASTELAND SERVER - %1 Money Spawned",_counter];
+diag_log format["WASTELAND SERVER - %1 Money Spawned",_moneyCount];

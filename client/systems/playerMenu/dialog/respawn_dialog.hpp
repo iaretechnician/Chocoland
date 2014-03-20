@@ -35,7 +35,7 @@
 		class RespawnMenuTitle: w_RscText
 		{
 			idc = -1;
-			text = "Respawn Menu";
+			text = "ChocoSpawn";
 			sizeEx = 0.06;
 
 			x = 0.4475 * safezoneW + safezoneX;
@@ -91,7 +91,7 @@
 		class MissionUptimeText: w_RscText
 		{
 			idc = respawn_MissionUptime_Text;
-			text = "Mission Uptime: 00:00:00";
+			text = "Server Uptime: 00:00:00";
 
 			x = 0.562 * safezoneW + safezoneX;
 			y = 0.752 * safezoneH + safezoneY;
@@ -157,13 +157,25 @@
 			h = 0.025 * safezoneH;
 		};
 		
-		class RandomSpawnButton: w_RscButton
+		class RandomSpawnButtonFloor: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
 			text = "Random";
 
-			x = 0.460* safezoneW + safezoneX;
+			x = 0.406 * safezoneW + safezoneX;
+			y = 0.310 * safezoneH + safezoneY;
+			w = 0.078 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+		
+		class RandomSpawnButtonHALO: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
+			text = "Suicide";
+
+			x = 0.515 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;

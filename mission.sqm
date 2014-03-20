@@ -46,12 +46,12 @@ class Mission
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0.00;
-		forecastWeather=0.00;
+		forecastWeather=1;
 		year=2020;
 		month=7;
 		day=1;
-		hour=8;
-		minute=0;
+		hour=12;
+		minute=15;
 	};
 	class Groups
 	{
@@ -131,6 +131,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor4";
+			init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";	
 				};
 			};
 		};
@@ -150,6 +151,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor3";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -169,6 +171,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor8";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -188,6 +191,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor11";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -207,6 +211,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor12";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -226,6 +231,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor13";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -245,6 +251,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor14";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -264,6 +271,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor15";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -283,6 +291,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor1";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -302,6 +311,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor2";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -321,6 +331,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor3";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -340,6 +351,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor4";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -359,6 +371,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor5";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -378,6 +391,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor6";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -397,6 +411,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor7";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -416,6 +431,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor8";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -435,6 +451,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor12";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -454,6 +471,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor11";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -473,6 +491,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor10";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -492,6 +511,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor9";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -511,6 +531,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor13";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -530,6 +551,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor14";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -549,6 +571,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="opfor15";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -568,6 +591,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer1";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -587,6 +611,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer2";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -606,6 +631,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer3";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -625,6 +651,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer4";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -644,6 +671,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer5";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -663,6 +691,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer6";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -682,6 +711,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer7";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -701,6 +731,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer8";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -720,6 +751,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer9";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -739,6 +771,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer10";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -758,6 +791,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer11";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -777,6 +811,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer12";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -796,6 +831,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer13";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -815,6 +851,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer14";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -834,6 +871,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="guer15";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -854,6 +892,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor1";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -873,6 +912,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor7";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -892,6 +932,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor6";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -911,6 +952,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor5";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -930,6 +972,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor9";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -949,6 +992,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor10";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -968,6 +1012,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor2";
+init="this addEventHandler ['killed', {(_this select 0) execVM 'removeBody.sqf'}];";
 				};
 			};
 		};
@@ -1174,7 +1219,7 @@ class Mission
 	};
 class Markers
 	{
-		items=390;
+		items=240;
 		class Item0
 		{
 			position[]={3329.0925,19,3646.7795};
@@ -2615,906 +2660,7 @@ class Markers
 			name="Mission_20";
 			type="Empty";
 		};
-		class Item240
-		{
-			position[]={2542.1641,32.06665,3851.2585};
-			name="heliSpawn_1";
-			type="Empty";
-		};
-		class Item241
-		{
-			position[]={2514.1887,28.81032,3817.0503};
-			name="heliSpawn_2";
-			type="Empty";
-		};
-		class Item242
-		{
-			position[]={2584.127,35.530151,3810.8301};
-			name="heliSpawn_3";
-			type="Empty";
-		};
-		class Item243
-		{
-			position[]={2607.4397,36.175198,3877.6929};
-			name="heliSpawn_4";
-			type="Empty";
-		};
-		class Item244
-		{
-			position[]={2591.8979,32.880131,3921.2314};
-			name="heliSpawn_5";
-			type="Empty";
-		};
-		class Item245
-		{
-			position[]={2621.4275,27.730646,3952.3303};
-			name="heliSpawn_6";
-			type="Empty";
-		};
-		class Item246
-		{
-			position[]={2649.4028,31.464241,3924.3413};
-			name="heliSpawn_7";
-			type="Empty";
-		};
-		class Item247
-		{
-			position[]={2649.4028,20.931471,4000.5337};
-			name="heliSpawn_8";
-			type="Empty";
-		};
-		class Item248
-		{
-			position[]={2682.0405,23.39463,3988.0942};
-			name="heliSpawn_9";
-			type="Empty";
-		};
-		class Item249
-		{
-			position[]={2705.3533,19.095785,4050.2917};
-			name="heliSpawn_10";
-			type="Empty";
-		};
-		class Item250
-		{
-			position[]={2730.2202,21.292648,4031.6328};
-			name="heliSpawn_11";
-			type="Empty";
-		};
-		class Item251
-		{
-			position[]={2807.9292,21.741125,4087.6108};
-			name="heliSpawn_12";
-			type="Empty";
-		};
-		class Item252
-		{
-			position[]={2828.1333,23.999439,4067.3962};
-			name="heliSpawn_13";
-			type="Empty";
-		};
-		class Item253
-		{
-			position[]={2870.0967,20.798227,4120.2646};
-			name="heliSpawn_14";
-			type="Empty";
-		};
-		class Item254
-		{
-			position[]={2957.1309,25.440178,4143.5889};
-			name="heliSpawn_15";
-			type="Empty";
-		};
-		class Item255
-		{
-			position[]={3006.8645,22.50045,4212.0068};
-			name="heliSpawn_16";
-			type="Empty";
-		};
-		class Item256
-		{
-			position[]={3062.8149,29.414492,4171.5781};
-			name="heliSpawn_17";
-			type="Empty";
-		};
-		class Item257
-		{
-			position[]={3083.0193,25.950972,4269.5396};
-			name="heliSpawn_18";
-			type="Empty";
-		};
-		class Item258
-		{
-			position[]={3124.9824,29.718113,4241.5508};
-			name="heliSpawn_19";
-			type="Empty";
-		};
-		class Item259
-		{
-			position[]={3114.1033,30.112041,4355.0615};
-			name="heliSpawn_20";
-			type="Empty";
-		};
-		class Item260
-		{
-			position[]={3171.6079,28.555862,4320.853};
-			name="heliSpawn_21";
-			type="Empty";
-		};
-		class Item261
-		{
-			position[]={3118.7656,22.216524,4432.8091};
-			name="heliSpawn_22";
-			type="Empty";
-		};
-		class Item262
-		{
-			position[]={3020.8521,35.948639,4418.8149};
-			name="heliSpawn_23";
-			type="Empty";
-		};
-		class Item263
-		{
-			position[]={3042.6106,28.095497,4481.0127};
-			name="heliSpawn_24";
-			type="Empty";
-		};
-		class Item264
-		{
-			position[]={2974.2268,39,4484.1226};
-			name="heliSpawn_25";
-			type="Empty";
-		};
-		class Item265
-		{
-			position[]={2952.468,39,4544.7651};
-			name="heliSpawn_26";
-			type="Empty";
-		};
-		class Item266
-		{
-			position[]={2946.2515,39,4493.4521};
-			name="heliSpawn_27";
-			type="Empty";
-		};
-		class Item267
-		{
-			position[]={3166.9453,17.839283,4418.8149};
-			name="heliSpawn_28";
-			type="Empty";
-		};
-		class Item268
-		{
-			position[]={3215.125,17.289375,4381.4961};
-			name="heliSpawn_29";
-			type="Empty";
-		};
-		class Item269
-		{
-			position[]={3260.196,10.837111,4443.6938};
-			name="heliSpawn_30";
-			type="Empty";
-		};
-		class Item270
-		{
-			position[]={3319.2551,12.362785,4467.0181};
-			name="heliSpawn_31";
-			type="Empty";
-		};
-		class Item271
-		{
-			position[]={3305.2671,8.159585,4526.106};
-			name="heliSpawn_32";
-			type="Empty";
-		};
-		class Item272
-		{
-			position[]={3285.063,4,4563.4248};
-			name="heliSpawn_33";
-			type="Empty";
-		};
-		class Item273
-		{
-			position[]={3241.5459,4.0498161,4611.6279};
-			name="heliSpawn_34";
-			type="Empty";
-		};
-		class Item274
-		{
-			position[]={3194.9209,4.0673828,4616.2925};
-			name="heliSpawn_35";
-			type="Empty";
-		};
-		class Item275
-		{
-			position[]={3250.8708,5.8866782,4532.3257};
-			name="heliSpawn_36";
-			type="Empty";
-		};
-		class Item276
-		{
-			position[]={3286.6169,8.7491026,4474.7925};
-			name="heliSpawn_37";
-			type="Empty";
-		};
-		class Item277
-		{
-			position[]={3235.3291,14.756815,4395.4902};
-			name="heliSpawn_38";
-			type="Empty";
-		};
-		class Item278
-		{
-			position[]={3302.1589,22.304398,4362.8364};
-			name="heliSpawn_39";
-			type="Empty";
-		};
-		class Item279
-		{
-			position[]={3295.9421,24,4320.853};
-			name="heliSpawn_40";
-			type="Empty";
-		};
-		class Item280
-		{
-			position[]={3372.0972,17.419367,4423.4795};
-			name="heliSpawn_41";
-			type="Empty";
-		};
-		class Item281
-		{
-			position[]={3351.8928,17.814438,4448.3584};
-			name="heliSpawn_42";
-			type="Empty";
-		};
-		class Item282
-		{
-			position[]={3306.8218,13.968216,4418.8149};
-			name="heliSpawn_43";
-			type="Empty";
-		};
-		class Item283
-		{
-			position[]={3392.3015,16.952755,4375.2759};
-			name="heliSpawn_44";
-			type="Empty";
-		};
-		class Item284
-		{
-			position[]={3418.7227,16.89999,4362.8364};
-			name="heliSpawn_45";
-			type="Empty";
-		};
-		class Item285
-		{
-			position[]={3339.4595,21.819551,4330.1826};
-			name="heliSpawn_46";
-			type="Empty";
-		};
-		class Item286
-		{
-			position[]={3465.3481,26.351086,4294.4189};
-			name="heliSpawn_47";
-			type="Empty";
-		};
-		class Item287
-		{
-			position[]={3502.6484,20.164858,4448.3584};
-			name="heliSpawn_48";
-			type="Empty";
-		};
-		class Item288
-		{
-			position[]={3418.7227,28.465824,4518.3315};
-			name="heliSpawn_49";
-			type="Empty";
-		};
-		class Item289
-		{
-			position[]={3389.1934,19.283064,4442.1387};
-			name="heliSpawn_50";
-			type="Empty";
-		};
-		class Item290
-		{
-			position[]={3479.3357,16.858438,4404.8198};
-			name="heliSpawn_51";
-			type="Empty";
-		};
-		class Item291
-		{
-			position[]={3412.5063,21.921646,4474.7925};
-			name="heliSpawn_52";
-			type="Empty";
-		};
-		class Item292
-		{
-			position[]={3490.2148,23.195518,4325.5181};
-			name="heliSpawn_53";
-			type="Empty";
-		};
-		class Item293
-		{
-			position[]={3619.2122,22.594244,4362.8364};
-			name="heliSpawn_54";
-			type="Empty";
-		};
-		class Item294
-		{
-			position[]={3553.9365,21.421694,4404.8198};
-			name="heliSpawn_55";
-			type="Empty";
-		};
-		class Item295
-		{
-			position[]={3532.1777,36.976048,4274.2046};
-			name="heliSpawn_56";
-			type="Empty";
-		};
-		class Item296
-		{
-			position[]={3558.5991,31.321575,4274.2046};
-			name="heliSpawn_57";
-			type="Empty";
-		};
-		class Item297
-		{
-			position[]={3581.9116,36.886478,4213.5615};
-			name="heliSpawn_58";
-			type="Empty";
-		};
-		class Item298
-		{
-			position[]={3623.8745,36.364151,4204.2319};
-			name="heliSpawn_59";
-			type="Empty";
-		};
-		class Item299
-		{
-			position[]={3609.887,40.590683,4148.2539};
-			name="heliSpawn_60";
-			type="Empty";
-		};
-		class Item300
-		{
-			position[]={3768.4136,36.548687,4124.9297};
-			name="heliSpawn_61";
-			type="Empty";
-		};
-		class Item301
-		{
-			position[]={3776.1846,36.916615,4104.7153};
-			name="heliSpawn_62";
-			type="Empty";
-		};
-		class Item302
-		{
-			position[]={3839.9063,33.823475,4058.0669};
-			name="heliSpawn_63";
-			type="Empty";
-		};
-		class Item303
-		{
-			position[]={3202.6914,34.428375,4226.0015};
-			name="heliSpawn_64";
-			type="Empty";
-		};
-		class Item304
-		{
-			position[]={3148.2952,31.917391,4205.7866};
-			name="heliSpawn_65";
-			type="Empty";
-		};
-		class Item305
-		{
-			position[]={3267.967,40.491142,4151.3638};
-			name="heliSpawn_66";
-			type="Empty";
-		};
-		class Item306
-		{
-			position[]={3219.7874,42.009968,4089.166};
-			name="heliSpawn_67";
-			type="Empty";
-		};
-		class Item307
-		{
-			position[]={3255.5337,45.750664,4042.5173};
-			name="heliSpawn_68";
-			type="Empty";
-		};
-		class Item308
-		{
-			position[]={3154.5117,37.93856,3997.4241};
-			name="heliSpawn_69";
-			type="Empty";
-		};
-		class Item309
-		{
-			position[]={3199.583,39.560337,3992.759};
-			name="heliSpawn_70";
-			type="Empty";
-		};
-		class Item310
-		{
-			position[]={3177.8245,37.642319,3932.1162};
-			name="heliSpawn_71";
-			type="Empty";
-		};
-		class Item311
-		{
-			position[]={3191.8123,39.641418,4058.0669};
-			name="heliSpawn_72";
-			type="Empty";
-		};
-		class Item312
-		{
-			position[]={3294.3882,47.539299,4051.8469};
-			name="heliSpawn_73";
-			type="Empty";
-		};
-		class Item313
-		{
-			position[]={3395.4099,59.535557,4016.0835};
-			name="heliSpawn_74";
-			type="Empty";
-		};
-		class Item314
-		{
-			position[]={3499.5403,47.634235,4053.4021};
-			name="heliSpawn_75";
-			type="Empty";
-		};
-		class Item315
-		{
-			position[]={3535.2861,40.38229,3963.2153};
-			name="heliSpawn_76";
-			type="Empty";
-		};
-		class Item316
-		{
-			position[]={3623.8745,39.200661,3913.457};
-			name="heliSpawn_77";
-			type="Empty";
-		};
-		class Item317
-		{
-			position[]={3591.2368,25.596373,3827.9346};
-			name="heliSpawn_78";
-			type="Empty";
-		};
-		class Item318
-		{
-			position[]={3572.5869,20.211525,3771.9568};
-			name="heliSpawn_79";
-			type="Empty";
-		};
-		class Item319
-		{
-			position[]={3592.791,18.244978,3687.9895};
-			name="heliSpawn_80";
-			type="Empty";
-		};
-		class Item320
-		{
-			position[]={3561.7073,19,3647.561};
-			name="heliSpawn_81";
-			type="Empty";
-		};
-		class Item321
-		{
-			position[]={3538.395,24.433313,3666.2202};
-			name="heliSpawn_82";
-			type="Empty";
-		};
-		class Item322
-		{
-			position[]={3483.9983,30.498358,3764.1821};
-			name="heliSpawn_83";
-			type="Empty";
-		};
-		class Item323
-		{
-			position[]={3448.252,18.74859,3661.5554};
-			name="heliSpawn_84";
-			type="Empty";
-		};
-		class Item324
-		{
-			position[]={3578.8035,18.843056,3656.8906};
-			name="heliSpawn_85";
-			type="Empty";
-		};
-		class Item325
-		{
-			position[]={3351.8928,19,3600.9126};
-			name="heliSpawn_86";
-			type="Empty";
-		};
-		class Item326
-		{
-			position[]={3474.6733,19,3630.4565};
-			name="heliSpawn_87";
-			type="Empty";
-		};
-		class Item327
-		{
-			position[]={3553.9365,19,3597.8027};
-			name="heliSpawn_88";
-			type="Empty";
-		};
-		class Item328
-		{
-			position[]={3595.8994,18.96406,3563.5938};
-			name="heliSpawn_89";
-			type="Empty";
-		};
-		class Item329
-		{
-			position[]={3712.4629,18.89999,3568.2588};
-			name="heliSpawn_90";
-			type="Empty";
-		};
-		class Item330
-		{
-			position[]={3796.3887,18.988455,3551.1543};
-			name="heliSpawn_91";
-			type="Empty";
-		};
-		class Item331
-		{
-			position[]={3933.1567,19,3557.3743};
-			name="heliSpawn_92";
-			type="Empty";
-		};
-		class Item332
-		{
-			position[]={4021.7451,19,3555.8191};
-			name="heliSpawn_93";
-			type="Empty";
-		};
-		class Item333
-		{
-			position[]={4041.9497,18.937244,3526.2749};
-			name="heliSpawn_94";
-			type="Empty";
-		};
-		class Item334
-		{
-			position[]={4096.3462,18.788021,3565.1487};
-			name="heliSpawn_95";
-			type="Empty";
-		};
-		class Item335
-		{
-			position[]={4029.5161,19,3633.5664};
-			name="heliSpawn_96";
-			type="Empty";
-		};
-		class Item336
-		{
-			position[]={3875.6523,19,3632.0115};
-			name="heliSpawn_97";
-			type="Empty";
-		};
-		class Item337
-		{
-			position[]={3796.3887,18.924381,3647.561};
-			name="heliSpawn_98";
-			type="Empty";
-		};
-		class Item338
-		{
-			position[]={3675.1628,19,3628.9014};
-			name="heliSpawn_99";
-			type="Empty";
-		};
-		class Item339
-		{
-			position[]={3651.8499,19,3635.1216};
-			name="heliSpawn_100";
-			type="Empty";
-		};
-		class Item340
-		{
-			position[]={3488.6606,18.968882,3644.4509};
-			name="heliSpawn_101";
-			type="Empty";
-		};
-		class Item341
-		{
-			position[]={3362.772,19,3636.6763};
-			name="heliSpawn_102";
-			type="Empty";
-		};
-		class Item342
-		{
-			position[]={3418.7227,19,3507.6157};
-			name="heliSpawn_103";
-			type="Empty";
-		};
-		class Item343
-		{
-			position[]={3609.887,19.140974,3502.9512};
-			name="heliSpawn_104";
-			type="Empty";
-		};
-		class Item344
-		{
-			position[]={3777.7388,26.61166,3440.7532};
-			name="heliSpawn_105";
-			type="Empty";
-		};
-		class Item345
-		{
-			position[]={3867.8813,26.358046,3426.7583};
-			name="heliSpawn_106";
-			type="Empty";
-		};
-		class Item346
-		{
-			position[]={3926.9402,26.837839,3372.3352};
-			name="heliSpawn_107";
-			type="Empty";
-		};
-		class Item347
-		{
-			position[]={3990.6616,29.866362,3341.2366};
-			name="heliSpawn_108";
-			type="Empty";
-		};
-		class Item348
-		{
-			position[]={4170.9468,35.141533,3289.9231};
-			name="heliSpawn_109";
-			type="Empty";
-		};
-		class Item349
-		{
-			position[]={4239.3306,33.730663,3263.489};
-			name="heliSpawn_110";
-			type="Empty";
-		};
-		class Item350
-		{
-			position[]={3895.8564,27.38821,3352.1211};
-			name="heliSpawn_111";
-			type="Empty";
-		};
-		class Item351
-		{
-			position[]={3829.0269,28,3325.6865};
-			name="heliSpawn_112";
-			type="Empty";
-		};
-		class Item352
-		{
-			position[]={3944.0361,31,3285.2583};
-			name="heliSpawn_113";
-			type="Empty";
-		};
-		class Item353
-		{
-			position[]={3846.1226,28,3299.2527};
-			name="heliSpawn_114";
-			type="Empty";
-		};
-		class Item354
-		{
-			position[]={3944.0361,48.028191,3196.626};
-			name="heliSpawn_115";
-			type="Empty";
-		};
-		class Item355
-		{
-			position[]={4304.6064,27.539337,3229.28};
-			name="heliSpawn_116";
-			type="Empty";
-		};
-		class Item356
-		{
-			position[]={4295.2813,29.008142,3247.9395};
-			name="heliSpawn_117";
-			type="Empty";
-		};
-		class Item357
-		{
-			position[]={4144.5254,35.904217,3148.4229};
-			name="heliSpawn_118";
-			type="Empty";
-		};
-		class Item358
-		{
-			position[]={4077.6958,33.562721,3153.0879};
-			name="heliSpawn_119";
-			type="Empty";
-		};
-		class Item359
-		{
-			position[]={4142.9717,33.821922,3092.4448};
-			name="heliSpawn_120";
-			type="Empty";
-		};
-		class Item360
-		{
-			position[]={4226.897,34.592911,3265.0439};
-			name="heliSpawn_121";
-			type="Empty";
-		};
-		class Item361
-		{
-			position[]={4441.3745,14.488223,3165.5273};
-			name="heliSpawn_122";
-			type="Empty";
-		};
-		class Item362
-		{
-			position[]={4388.5322,27,3229.28};
-			name="heliSpawn_123";
-			type="Empty";
-		};
-		class Item363
-		{
-			position[]={4307.7148,22.229717,3120.4341};
-			name="heliSpawn_124";
-			type="Empty";
-		};
-		class Item364
-		{
-			position[]={4363.6655,26.3745,3149.9778};
-			name="heliSpawn_125";
-			type="Empty";
-		};
-		class Item365
-		{
-			position[]={4388.5322,25.985819,3149.9778};
-			name="heliSpawn_126";
-			type="Empty";
-		};
-		class Item366
-		{
-			position[]={4366.7734,27,3165.5273};
-			name="heliSpawn_127";
-			type="Empty";
-		};
-		class Item367
-		{
-			position[]={4391.6406,33.04982,3308.582};
-			name="heliSpawn_128";
-			type="Empty";
-		};
-		class Item368
-		{
-			position[]={4262.6436,30.252934,3325.6865};
-			name="heliSpawn_129";
-			type="Empty";
-		};
-		class Item369
-		{
-			position[]={4307.7148,24.752182,3409.6538};
-			name="heliSpawn_130";
-			type="Empty";
-		};
-		class Item370
-		{
-			position[]={4268.8599,21.54162,3467.187};
-			name="heliSpawn_131";
-			type="Empty";
-		};
-		class Item371
-		{
-			position[]={4418.0615,28.194273,3470.2966};
-			name="heliSpawn_132";
-			type="Empty";
-		};
-		class Item372
-		{
-			position[]={4354.3403,30.465939,3516.9453};
-			name="heliSpawn_133";
-			type="Empty";
-		};
-		class Item373
-		{
-			position[]={4357.4487,28.997087,3565.1487};
-			name="heliSpawn_134";
-			type="Empty";
-		};
-		class Item374
-		{
-			position[]={4414.9531,21.952648,3616.4619};
-			name="heliSpawn_135";
-			type="Empty";
-		};
-		class Item375
-		{
-			position[]={4332.5815,30.572983,3653.7805};
-			name="heliSpawn_136";
-			type="Empty";
-		};
-		class Item376
-		{
-			position[]={4271.9688,27.47802,3708.2036};
-			name="heliSpawn_137";
-			type="Empty";
-		};
-		class Item377
-		{
-			position[]={4234.668,22.634743,3750.1875};
-			name="heliSpawn_138";
-			type="Empty";
-		};
-		class Item378
-		{
-			position[]={4164.73,16.926243,3838.8196};
-			name="heliSpawn_139";
-			type="Empty";
-		};
-		class Item379
-		{
-			position[]={4085.4668,26.463772,3871.4734};
-			name="heliSpawn_140";
-			type="Empty";
-		};
-		class Item380
-		{
-			position[]={4076.1418,23.240377,3988.0942};
-			name="heliSpawn_141";
-			type="Empty";
-		};
-		class Item381
-		{
-			position[]={4111.8877,8.369215,4006.7534};
-			name="heliSpawn_142";
-			type="Empty";
-		};
-		class Item382
-		{
-			position[]={4023.2991,28.128946,4073.6162};
-			name="heliSpawn_143";
-			type="Empty";
-		};
-		class Item383
-		{
-			position[]={3934.7109,28.146727,4115.5996};
-			name="heliSpawn_144";
-			type="Empty";
-		};
-		class Item384
-		{
-			position[]={3881.8684,24.472084,4184.0176};
-			name="heliSpawn_145";
-			type="Empty";
-		};
-		class Item385
-		{
-			position[]={3783.9553,29.026884,4255.5449};
-			name="heliSpawn_146";
-			type="Empty";
-		};
-		class Item386
-		{
-			position[]={3675.1626,23.135071,4319.2983};
-			name="heliSpawn_147";
-			type="Empty";
-		};
-		class Item387
-		{
-			position[]={3563.2615,23.529203,4362.8364};
-			name="heliSpawn_148";
-			type="Empty";
-		};
-		class Item388
-		{
-			position[]={3678.9368,20.547119,3444.5288};
-			name="heliSpawn_149";
-			type="Empty";
-		};
-		class Item389
-		{
-			position[]={3736.7642,27.330967,3395.4392};
-			name="heliSpawn_150";
-			type="Empty";
-		};
+		
 	};
 	
 };
@@ -3531,13 +2677,13 @@ class Intro
 	randomSeed=9313745;
 	class Intel
 	{
-		startWeather=0.40000001;
-		forecastWeather=0.25;
+		startWeather=0;
+		forecastWeather=1;
 		year=2008;
 		month=10;
 		day=11;
-		hour=14;
-		minute=20;
+		hour=12;
+		minute=10;
 	};
 };
 class OutroWin
@@ -3553,13 +2699,13 @@ class OutroWin
 	randomSeed=761998;
 	class Intel
 	{
-		startWeather=0.40000001;
-		forecastWeather=0.25;
+		startWeather=0;
+		forecastWeather=1;
 		year=2008;
 		month=10;
 		day=11;
-		hour=14;
-		minute=20;
+		hour=12;
+		minute=10;
 	};
 };
 class OutroLoose
@@ -3575,12 +2721,12 @@ class OutroLoose
 	randomSeed=2986268;
 	class Intel
 	{
-		startWeather=0.40000001;
-		forecastWeather=0.25;
+		startWeather=0;
+		forecastWeather=1;
 		year=2008;
 		month=10;
 		day=11;
-		hour=14;
-		minute=20;
+		hour=12;
+		minute=10;
 	};
 };

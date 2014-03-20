@@ -21,24 +21,5 @@ closeDialog 0;
 _mins = floor(60 * (daytime - floor(daytime)));
 _townName = _randomLoc select 2;
 [
-	"ModdedGaming",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
+	"404 Wasteland",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
-
-// Check if database loads a spawnposition above 5 meters off ground and if player is losing altitude (falling to death).
-// Initializing a paradrop at low altitude (100meters) for safe spawning.
-sleep 0.5;
-_pAlt = ((getposATL player) select 2);
-_pVelZ = (velocity player select 2);
-if ((_pAlt > 5) && (_pVelZ < 0)) then {
-	_chute = "ParachuteG" createVehicle (position player);
-	_chute setPosATL [getPosATL player select 0, getPosATL player select 1, 100];
-	sleep 0.1;
-	player moveInDriver _chute;
-	2 cutText ["You logged off mid air. Low altitude paradrop initialized.", "PLAIN DOWN", 2];
-		//Force 3rd person view at spawning
-		firstperson_allowed = false;
-		while {not firstperson_allowed} do {
-		if(cameraView == "INTERNAL" || cameraView == "GROUP") then {
-			vehicle player switchCamera "EXTERNAL";};
-		sleep 5; firstperson_allowed = true;};
-	};
