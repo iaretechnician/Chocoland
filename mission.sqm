@@ -42,14 +42,14 @@ class Mission
 	randomSeed=15307759;
 	class Intel
 	{
-		briefingName="tcctland - Utes [v2.9c]";
-		briefingDescription="Wasteland is a harsh survival sandbox";
+		briefingName="ChocoLand - BaseDefense 1.0";
+		briefingDescription="CoreCode by 404Wasteland.Thanks all to you!";
 		resistanceWest=0;
 		startWeather=0.00;
 		forecastWeather=1;
-		year=2020;
-		month=7;
-		day=1;
+		year=2014;
+		month=3;
+		day=7;
 		hour=12;
 		minute=15;
 	};

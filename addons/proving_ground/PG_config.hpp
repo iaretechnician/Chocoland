@@ -120,7 +120,7 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*1;
 				text = "Heigth +20";
-				action = "player setPos [(getPos player select 0),(getPos player select 1), (getPos player select 2)+20)]"; 
+				action = "[] execVM 'addons\c130\herc_1.sqf'"; 
 			};
 			
 			class balca_repair_btn : balca_debug_btn

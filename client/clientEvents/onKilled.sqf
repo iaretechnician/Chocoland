@@ -6,8 +6,13 @@
 yourunitName spawn tlq_killTicker;
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
-if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,true];};
-
+//if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,false];};
+_pS = score _player;
+_kS = score _killer;
+if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
+if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
+	_killer addScore 2;
+        _killer setVariable["cmoney",(player getVariable"cmoney")+ (_pS * _kS *100),true];
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {
