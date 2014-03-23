@@ -1,9 +1,9 @@
 if (!local player) exitWith {};
-if !((getPlayerUID player) in serverAdministrators) exitWith {hint "Server Admin access only"};
+if !((getPlayerUID player) in serverAdministrators) exitWith {hint "SiG Server Admin access only"};
 if (alive herc) exitWith {hint "C130 Already spawned"};
  
 herc = createVehicle ["C130J_US_EP1", player, [], 0, "FLY"]; 
-herc setPosASL [(getPos player) select 0,(getPos player) select 1,600];
+herc setPosASL [(getMarkerPos "c130") select 0,(getMarkerPos "c130") select 1,1000];
 player moveindriver herc;   
 herc setVehicleInit "
 this addAction[('<t color=''#E6CE49''>' + ('Drop Random Vec') +    '</t>'),'addons\c130\randomvec.sqf'];
@@ -16,5 +16,4 @@ this addAction[('<t color=''#C91518''>' + ('Delete C130, Deploy Escape Car') +  
 this allowdamage false;
 nul=[herc] execVM 'addons\c130\vehiclelock.sqf';";
 processInitCommands;          		
-                 
-//this addAction[('<t color=''#d508d8''>' + ('Drop Ammo') +    '</t>'),'c130\dropammo.sqf'];
+ 

@@ -29,7 +29,7 @@ _minWeatherChangeTimeMin = 10;
 
 // Maximum time in minutes for the weather (fog and overcast) to change. Must be greater than or equal to _minWeatherChangeTimeMin.
 // (Suggested value: 20).
-_maxWeatherChangeTimeMin = 20;
+_maxWeatherChangeTimeMin = 30;
 
 // Minimum time in minutes that weather (fog and overcast) stays constant between weather changes. Must be less than or equal to 0 and 
 // greater than or equal to _minWeatherChangeTimeMin. (Suggested value: 5).
@@ -49,7 +49,7 @@ _maximumFog = 0.99;
 
 // Overcast intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumOvercast
 // (0 = no overcast, 1 = maximum overcast). (Suggested value: 0).
-_minimumOvercast = 0;
+_minimumOvercast = 0.5;
 
 // Overcast intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumOvercast
 // (0 = no overcast, 1 = maximum overcast). (Suggested value: 1).
@@ -61,7 +61,7 @@ _minimumRain = 0;
 
 // When raining, rain intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumRain
 // (0 = no rain, 1 = maximum rain intensity). (Suggested value: 0.8);
-_maximumRain = 0.99;
+_maximumRain = 0.33;
 
 // Wind vector strength never falls below this value. Must be greater or equal to 0 and less than or equal to _maximumWind.
 // (Suggested value: 0);
@@ -69,7 +69,7 @@ _minimumWind = 0;
 
 // Wind vector strength never exceeds this value. Must be greater or equal to 0 and greater than or equal to _minimumWind.
 // (Suggested value: 8).
-_maximumWind = 100;
+_maximumWind = 0;
 
 // Probability in percent for wind to change when weather changes. If set to 0 then wind will never change. If set to 100 then rain will 
 // change every time the weather (fog or overcast) start to change. (Suggested value: 25);

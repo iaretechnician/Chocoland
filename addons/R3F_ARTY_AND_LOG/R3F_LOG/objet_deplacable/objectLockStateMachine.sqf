@@ -21,21 +21,24 @@ switch (_lockState) do {
     case 0:{ // LOCK
     
     	R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = 5;
+		_totalDuration = 6;
 		_lockDuration = _totalDuration;
 		_iteration = 0;
-		
+	if(player getVariable "cmoney" < 1000) exitWith { // If the player dies, revert state.
+		        2 cutText ["you dont have enough money", "PLAIN DOWN", 1];
+                R3F_LOG_mutex_local_verrou = false;
+			};
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		
 		for "_iteration" from 1 to _lockDuration do {
-		    
-            if(player distance _currObject > 5) exitWith { // If the player dies, revert state.
-		        2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+		   
+            if(player distance _currObject > 9) exitWith { // If the player dies, revert state.
+		        2 cutText ["Object is to far away ...", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 			};
             
             if (!(alive player)) exitWith {// If the player dies, revert state.
-				2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
+				2 cutText ["Object is to far away...", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 			};
             
@@ -56,7 +59,7 @@ switch (_lockState) do {
                 R3F_LOG_mutex_local_verrou = false;
 		    }; 
 		};
-		
+		player setVariable["cmoney",(player getVariable "cmoney") - 1000,true];
 		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.       
     };
     case 1:{ // UNLOCK
@@ -70,7 +73,7 @@ switch (_lockState) do {
 		
 		for "_iteration" from 1 to _unlockDuration do {
 		    
-            if(player distance _currObject > 5) exitWith { // If the player dies, revert state.
+            if(player distance _currObject > 7) exitWith { // If the player dies, revert state.
 		        2 cutText ["Object unlock interrupted...", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 			};

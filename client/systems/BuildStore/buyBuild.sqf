@@ -24,7 +24,7 @@ hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
  dir = getdir player;
    pos = getPos player;
-   pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),100];
+   pos = [(pos select 0),(pos select 1),100];
  
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -37,7 +37,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
-			_spawn setDir dir + 180;
+			_spawn setDir dir+270;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
@@ -48,10 +48,15 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                   
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
-		_smoke = "smokeShellblue" createVehicle position _spawn;
-		_smoke setPos (getPos _spawn);
-		_spawn attachTo [_Parachute,[0,0,-1.5]];
-		_smoke attachTo [_Parachute,[0,0,-1.5]];
+                _Parachute setVelocity [0, 3, 1];
+                _spawn attachTo [_Parachute,[0,0,-1.5]];
+                _spawn setDamage (0.00);
+                 if(_spawn == "Land_stand_small_EP1") then {
+                 _spawn setVariable["food",40,true];
+                 };
+                  if(_spawn == "Land_Barrel_water") then {
+                 _spawn setVariable["water",40,true];
+                 };
                 waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
 		sleep 3;
@@ -63,7 +68,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		
 		deleteVehicle _Parachute;
                 
-                 _spawn setDamage (0.00);
+               
 		} else {
 			hintsilent "There is another Building or player blocking the spawn point!";
 		};

@@ -1,1 +1,1 @@
-(getPos player nearestObject "LandVehicle") setVectorUp [0, 0, 1]; 	titleText ["Vehicle flipped.", "PLAIN"];titleFadeOut 5;
+(getPos player nearestObject "LandVehicle") setVectorUp [0, 0, 1];  dir = getdir player;(getPos player nearestObject "LandVehicle") setDir dir;	titleText ["Vehicle flipped.", "PLAIN"];titleFadeOut 5;

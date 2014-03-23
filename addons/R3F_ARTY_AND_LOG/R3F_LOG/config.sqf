@@ -1,30 +1,4 @@
-/**
- * English and French comments
- * Commentaires anglais et français
- * 
- * This file contains the configuration variables of the logistics system.
- * Fichier contenant les variables de configuration du système de logistique.
- * 
- * Important note : All the classes names which inherits from the ones used in configuration variables will be also available.
- * Note importante : Tous les noms de classes dérivant de celles utilisées dans les variables de configuration seront aussi valables.
- */
 
-/*
- * There are two ways to manage new objects with the logistics system. The first is to add these objects in the
- * folowing appropriate lists. The second is to create a new external file in the /addons_config/ directory,
- * according to the same scheme as the existing ones, and to add a #include at the end of this current file.
- * 
- * Deux moyens existent pour gérer de nouveaux objets avec le système logistique. Le premier consiste à ajouter
- * ces objets dans les listes appropriées ci-dessous. Le deuxième est de créer un fichier externe dans le répertoire
- * /addons_config/ selon le même schéma que ceux qui existent déjà, et d'ajouter un #include à la fin de ce présent fichier.
- */
-
-/****** TOW WITH VEHICLE / REMORQUER AVEC VEHICULE ******/
-
-/**
- * List of class names of (ground or air) vehicles which can tow towables objects.
- * Liste des noms de classes des véhicules terrestres pouvant remorquer des objets remorquables.
- */
 R3F_LOG_CFG_remorqueurs = [
 	"Truck",
     "Car",
@@ -233,29 +207,7 @@ R3F_LOG_CFG_objets_heliportables = [
 ];
 
 
-/****** LOAD IN VEHICLE / CHARGER DANS LE VEHICULE ******/
-
 /*
- * This section use a quantification of the volume and/or weight of the objets.
- * The arbitrary referencial used is : an ammo box of type USVehicleBox "weights" 12 units.
- * 
- * Cette section utilise une quantification du volume et/ou poids des objets.
- * Le référentiel arbitraire utilisé est : une caisse de munition de type USVehicleBox "pèse" 12 unités.
- * 
- * Note : the priority of a declaration of capacity to another corresponds to their order in the tables.
- *   For example : the "Truck" class is in the "Car" class (see http://community.bistudio.com/wiki/ArmA_2:_CfgVehicles).
- *   If "Truck" is declared with a capacity of 140 before "Car". And if "Car" is declared after "Truck" with a capacity of 40,
- *   Then all the sub-classes in "Truck" will have a capacity of 140. And all the sub-classes of "Car", excepted the ones
- *   in "Truck", will have a capacity of 40.
- * 
- * Note : la priorité d'une déclaration de capacité sur une autre correspond à leur ordre dans les tableaux.
- *   Par exemple : la classe "Truck" appartient à la classe "Car" (voir http://community.bistudio.com/wiki/ArmA_2:_CfgVehicles).
- *   Si "Truck" est déclaré avec une capacité de 140 avant "Car". Et que "Car" est déclaré après "Truck" avec une capacité de 40,
- *   Alors toutes les sous-classes appartenant à "Truck" auront une capacité de 140. Et toutes les sous-classes appartenant
- *   à "Car", exceptées celles de "Truck", auront une capacité de 40.
- */
-
-/**
  * List of class names of (ground or air) vehicles which can transport transportables objects.
  * The second element of the arrays is the load capacity (in relation with the capacity cost of the objects).
  * 
@@ -563,7 +515,8 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_Misc_Cargo2E", 8],
 	["Land_Misc_Cargo1D", 16],
 	["Land_ladder", 4],
-	["Land_ladder", 2]
+	["Land_ladder", 2],
+        ["Land_fortified_nest_big_EP1",15]
 ];
 
 /****** MOVABLE-BY-PLAYER OBJECTS / OBJETS DEPLACABLES PAR LE JOUEUR ******/
@@ -751,7 +704,8 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Land_Misc_Cargo2E",
 	"Land_Misc_Cargo1D",
 	"Land_ladder",
-	"Land_ladder"
+	"Land_ladder",
+       "Land_fortified_nest_big_EP1"
 ];
 
 /*

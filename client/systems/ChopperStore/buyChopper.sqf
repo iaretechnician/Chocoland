@@ -1,18 +1,10 @@
 #include "dialog\chopstoreDefines.sqf";
 disableSerialization;
-
-//if(objStoreCart > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-//objshop_cart
-
 _playerMoney = player getVariable "cmoney";
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
 
-//_price = _x select 1;
-//if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-
-// Grab access to the controls
 _dialog = findDisplay chopshop_DIALOG;
 _cartlist = _dialog displayCtrl chopshop_cart;
 _totalText = _dialog displayCtrl chopshop_total;
@@ -38,33 +30,30 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
-			_spawn setDir dir + 90;
+			_spawn setDir dir+270;
                         _spawn allowdamage false;
-				clearMagazineCargoGlobal _spawn;
-				clearWeaponCargoGlobal _spawn;
+			clearMagazineCargoGlobal _spawn;
+			clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];
 			player setVariable["cmoney",_playerMoney - _price,true];
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-			hintsilent "Chopper bought - Follow the arrows to the spawn point";
+			hintsilent "Chopper bought - watch the sky";
               
               _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
+                _Parachute setVelocity [0, 3, 1];
+                _random = Round (random 5);
+                _spawn attachTo [_Parachute,[0,0,-1.5]];
+		 if (_random == 5) then {
 		_smoke = "smokeShellblue" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
-		_spawn attachTo [_Parachute,[0,0,-1.5]];
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
+                };
                 waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
-		sleep 3;
-             
-		//_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
-
-    		// Delete parachute
 		sleep 15;
-		
 		deleteVehicle _Parachute;
-                
                  _spawn setDamage (0.00);
                  _spawn allowdamage true;
 

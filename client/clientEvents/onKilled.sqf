@@ -6,13 +6,7 @@
 yourunitName spawn tlq_killTicker;
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
-//if(isnil {_player getVariable "cmoney"}) then {_player setVariable["cmoney",0,false];};
-_pS = score _player;
-_kS = score _killer;
-if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
-if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
-	_killer addScore 2;
-        _killer setVariable["cmoney",(player getVariable"cmoney")+ (_pS * _kS *100),true];
+
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {
@@ -43,6 +37,10 @@ if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide =
                 if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
                 if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
                 _killer addScore 2;
+                  //
+            _bounty = 50*(_killer score)*(_player score);
+            _killer getVariable["cmoney",_bounty,false];
+           
 		_ignore = ["SmokeLauncher", "FlareLauncher", "CMFlareLauncher", "CarHorn", "BikeHorn", "TruckHorn", "TruckHorn2", "SportCarHorn", "MiniCarHorn", "Laserdesignator_mounted"];
 		_suspects = [];
 		{
@@ -72,13 +70,6 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
-/*
-if((_player getVariable "cmoney") > 0) then {
-	_m = "EvMoney" createVehicle (position _player);
-	_m setVariable["money", (_player getVariable "cmoney"), true];
-	_m setVariable ["owner", "world", true];
-	_to_delete = _to_delete + [_m];
-};*/
 
 if((_player getVariable "medkits") > 0) then {
 	for "_a" from 1 to (_player getVariable "medkits") do {	

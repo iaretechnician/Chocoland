@@ -1,7 +1,7 @@
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 loadScreen = "Loading.jpg";
 respawn="BASE";
-respawnDelay=3;
+respawnDelay=5;
 disabledAI=1;
 disableChannels[]={2};
 class Header

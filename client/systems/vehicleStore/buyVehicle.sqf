@@ -38,7 +38,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
-			_spawn setDir dir + 90;
+			_spawn setDir dir+270;
                         _spawn allowdamage false;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
@@ -50,10 +50,15 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                   
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
+                _Parachute setVelocity [0, 3, 1];
+                _random = Round (random 5);
+                _spawn attachTo [_Parachute,[0,0,-1.5]];
+		 if (_random == 5) then {
 		_smoke = "smokeShellblue" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
-		_spawn attachTo [_Parachute,[0,0,-1.5]];
+		
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
+                };
                 waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
 		sleep 3;
