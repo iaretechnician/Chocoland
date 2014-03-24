@@ -45,13 +45,13 @@ class Mission
 		briefingName="2ChocoLand - BaseDefense 1.0";
 		briefingDescription="CoreCode by 404Wasteland.Thanks all to you!";
 		resistanceWest=0;
-		startWeather=0.00;
-		forecastWeather=1;
-		year=2012;
-		month=7;
-		day=21;
-		hour=12;
-		minute=15;
+		startWeather=0;
+		forecastWeather=0.15426171;
+		year=2013;
+		month=8;
+		day=3;
+		hour=15;
+		minute=33;
 	};
 	class Groups
 	{
