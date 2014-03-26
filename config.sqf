@@ -3,27 +3,33 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:13
 //	@file Description: Main config.
-// --------------------------------------------------------------------------------------------------- \\
-// ----------  !DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING!	---------- \\
-// ----------																				---------- \\
-// ----------			404Games are not responsible for anything that may happen 			---------- \\
-// ----------			 as a result of unauthorised modifications to this file.			---------- \\
-// --------------------------------------------------------------------------------------------------- \\
-
-//Client Vars
-playerSetupComplete = false;
                                                                                                 
 //Gunstore Weapon List - Gun Store Base List
-// Text name, classname, buy cost, sell amount
+// Type, Text name, classname, buy cost, sell amount
 weaponsArray = [
-
+	// Pistols
 	[1, "Glock 17","glock17_EP1",25,10],
-	[1, "M9 Silenced","M9SD",50,25],
-    [1, "Golden Revolver","revolver_gold_EP1",250,125],
     [1, "Sa.61 Skorpion","Sa61_EP1",35,13],
+	[1, "M9 Silenced","M9SD",50,25],
     [1, "UZI Silenced","UZI_SD_EP1",85,35],
-	
+    [1, "Golden Revolver","revolver_gold_EP1",250,125],
+    
     // Shotguns & Rifles
+       [2, "M1014","M1014",35,25],
+	[2, "Saiga 12K","Saiga12K",50,25],
+	[2, "AK-74","AK_74",50,25],
+	[2, "AK-107 Kobra","AK_107_kobra",75,30],
+    [2, "M16","M16A2",80,35],
+    [2, "AKM","AK_47_M",100,45],
+    [2, "M4A1 CCO","M4A1_Aim",120,55],
+    [2, "AKS Silenced","AKS_74_UN_kobra",120,55],
+    [2, "M4A1 CCO SD","M4A1_AIM_SD_camo",150,65],
+    [2, "Mk 16 Holo","SCAR_L_CQC_Holo",190,90],
+    [2, "FN FAL","FN_FAL",400,120],
+    [2, "Mk 17 CCO","SCAR_H_CQC_CCO",450,220],
+    [2, "M14 AIM","M14_EP1",750,330],
+    [2, "AA-12 Shotgun","AA12_PMC",1000,425],
+    
     [2, "AA 12","AA12_PMC",400,200],
     [2, "AK 107 GL Kobra","AK_107_GL_kobra",270,135],
     [2, "AK 107 GL PSO","AK_107_GL_pso",300,150],
@@ -99,8 +105,18 @@ weaponsArray = [
     [2, "Sa-58P","Sa58P_EP1",225,110],
     [2, "Sa-58V ACOG","Sa58V_RCO_EP1",300,150],
     [2, "Sa-58V","Sa58V_EP1",225,110],
-	
+
+    
     // Sniper rifles
+       [3, "Mk12 SPR","M4SPR",350,150],
+    [3, "M24","M24",600,300],
+    [3, "Mk17 Sniper SD","SCAR_H_LNG_Sniper_SD",600,300],
+    [3, "Mk17 Sniper","SCAR_H_LNG_Sniper",800,350],
+    [3, "Mk17 Sniper TWS","SCAR_H_STD_TWS_SD",1200,600],
+    [3, "DMR","DMR",1500,755],
+    [3, "M107","m107",2000,1100],
+    [3, "M110 TWS","M110_TWS_EP1",2500,2000],
+    
 	[3, "DMR","DMR",7500,3555],
 	[3, "KSVK","KSVK",12000,5000],
 	[3, "M107","M107",10000,3000],
@@ -118,8 +134,15 @@ weaponsArray = [
 	[3, "VSS Vintorez","VSS_Vintorez",12000,6000],
         [3, " L115A3", "BAF_LRR_scoped",25000,12000],
         [3, " AS50 TWS","PMC_AS50_TWS", 100000, 50000],
-	
+
+    
     // Machineguns
+	[4, "RPK","RPK_74",150,75],
+    [4, "M249","M249_EP1",275,120],
+    [4, "Mk 48 Mod","Mk_48",350,150],
+    [4, "M60 Hog","M60A4_EP1",400,230],
+    [4, "Pecheneg","Pecheneg",450,230],
+    
 	[4, "L110A1","BAF_L110A1_Aim",7500,3500],
 	[4, "L7A2 GPMG","BAF_L7A2_GPMG",12500,3250],
 	[4, "L86A2 LSW","BAF_L86A2_ACOG",1550,775],
@@ -138,8 +161,13 @@ weaponsArray = [
 	[4, "PKP Scope","Pecheneg",15000,7500],
 	[4, "RPK","RPK_74",5000,2500],
         [2, "L85A2 AWS","BAF_L85A2_RIS_CWS", 20000,10000],
-	
+
     // Anti-tank
+       [5, "Carl Gustav","MAAWS",250,120],
+    [5, "SMAW","SMAW",300,175],
+    [5, "RPG-7","RPG7V",350,200],
+    [5, "Stinger","Stinger",1000,550],
+    [5, "Javelin","Javelin",1200,750],
 	[5, "Igla","Igla",10000,5000],
 	[5, "Javelin","Javelin",10000,5000],
 	[5, "M136 Launcher","M136",5000,2500],
@@ -151,16 +179,16 @@ weaponsArray = [
 	[5, "Mk13","Mk13_EP1",2000,1000],
 	[5, "NLAW","BAF_NLAW_Launcher",10000,5500],
 	[5, "RPG7V","RPG7V",5000,2500],
-   
 	[5, "SMAW","SMAW",5000,2500],
 	[5, "Stinger","Stinger",10000,5000],
 	[5, "Strela-2","Strela",10000,5000]
+
 ];
 
 //Gun Store Ammo List
 //Text name, classname, buy cost
-ammoArray = [
-	 ["5Rnd. 338 Lapua Magnum Clip","5Rnd_86x70_L115A1",30],
+ammoArray = [    
+    ["5Rnd. 338 Lapua Magnum Clip","5Rnd_86x70_L115A1",30],
     ["5Rnd. M24 Clip","5Rnd_762x51_M24",20],
 	["5Rnd. KSVK","5Rnd_127x108_KSVK",40],
     ["6Rnd. Revolver Clip","6Rnd_45ACP",5],
@@ -221,28 +249,28 @@ ammoArray = [
 	["1 IR Marker Strobe","IR_Strobe_Marker",20]
 ];
 
-
 //Gun Store Equipment List
 //Text name, classname, buy cost
 accessoriesArray = [
-	["Range Finder","Binocular_Vector",500],
+	//["1 Hand Grenade","BAF_L109A1_HE", 50],
+    //["1 Land Mine","Mine", 75],
+	["GPS","ItemGPS", 100],
 	["NV Goggles","NVGoggles",100],
-    ["GPS","ItemGPS", 90],
-    ["Laser Marker","Laserdesignator",650]
-    
+	["Range Finder","Binocular_Vector",350],
+         ["Laser Marker","Laserdesignator",650]
 ];
 
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
+	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
 	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",1000,500],
 	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25],
 	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",3000,1500],
-    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",300,150]  
+    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",300,150] 
 ];
 ChopperStoreArray = [
 
@@ -449,7 +477,7 @@ BuildStoreArray = [
         ["M252",100000, "M252"]
 ];
 
-// Chernarus town and city array
+// Utes town and city array
 //Marker Name, Radius, City Name
 cityList = [
 		["Town_0",100,"Strelka"],

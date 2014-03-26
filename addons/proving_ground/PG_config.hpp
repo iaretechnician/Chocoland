@@ -40,153 +40,127 @@ class balca_debug_main
 				action = "closeDialog 0;createDialog ""balca_debug_weap_creator"";[0,0] call c_proving_ground_fnc_create_weapon;"; 
 			};
 
-			class balca_inon_btn : balca_debug_btn
+			class balca_targets_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*2;
-				text = "Invisible";
-				action = "[] execVM 'addons\proving_ground\fnc_inon.sqf'"; 
+				text = "Targets";
+				action = "closeDialog 0;if ((serverCommandAvailable '#kick')||isServer) then {createDialog ""balca_target_display"";[0] call c_proving_ground_fnc_target;[1] call c_proving_ground_fnc_target;}else{hint 'Target management not allowed for you'}"; 
 			};
-			
-			class balca_speed_btn : balca_debug_btn
+
+			class balca_environment_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*3;
-				text = "speed";
-				action = "[] execVM 'addons\proving_ground\fnc_speed.sqf'"; 
+				text = "Environment";
+				action = "closeDialog 0;createDialog ""balca_environment"";[0] call c_proving_ground_fnc_environment"; 
 			};
-			
-			class balca_ammo_btn : balca_debug_btn
+
+			class balca_stat_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*4;
-				text = "IAmmo";
-				action = "[] execVM 'addons\proving_ground\fnc_ammo.sqf'"; 
+				text = "Statistics";
+				action = "closeDialog 0;createDialog ""balca_statistics"";[0] call c_proving_ground_fnc_statistics"; 
 			};
-			
-			class balca_fun_btn : balca_debug_btn
-			{
-				x = 0; w = column_weight-column_div;
-				y = btn_height*5;
-				text = "Big Guns";
-				action = "[] execVM 'addons\proving_ground\fnc_fun.sqf'"; 
-			};
-			
-			class balca_godmode_btn : balca_debug_btn
+
+			class balca_realign_core_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*6;
-				text = "God Mode";
-				action = "[] execVM 'addons\proving_ground\fnc_godmode.sqf'"; 
-			};
-			
-			class balca_cargod_btn : balca_debug_btn
-			{
-				x = 0; w = column_weight-column_div;
-				y = btn_height*7;
-				text = "Car God Mode";
-				action = "[] execVM 'addons\proving_ground\fnc_cargod.sqf'"; 
+				text = "Realign core";
+				action = "closeDialog 0;_core = c_proving_ground_core;_dir = direction player;_pos = getPos player;_core setPos [(_pos select 0)+10*sin(_dir),(_pos select 1)+10*cos(_dir),0];_core setDir _dir;_marker = createMarkerLocal ['respawn_west',_pos];createMarkerLocal ['respawn_east',_pos];createMarkerLocal ['respawn_guerrila',_pos];createMarkerLocal ['respawn_civilian',_pos];closeDialog 0;"; 
 			};
 
 			class balca_get_bot_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
-				y = btn_height*8;
-				text = "HPlayersWC130";
-				action = "execVM 'addons\c130\herc.sqf'"; 
+				y = btn_height*7;
+				text = "Get bot in team";
+				action = "((group player) createUnit [typeOf player,getpos player,[],0.1,""FORM""]) setSkill 1"; 
 			};
 
 			class balca_dVeh_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
-				y = btn_height*9;
+				y = btn_height*8;
 				text = "Delete vehicle";
 				action = "deleteVehicle cursorTarget;closeDialog 0;"; 
 			};
 
 
 		//column 2
-			
-			class balca_teleport_btn : balca_debug_btn
+			class balca_ammo_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*0;
-				text = "Teleport";
-				action = "hint ""Click on map to teleport"";onMapSingleClick ""vehicle player setPos [_pos select 0,_pos select 1,0]; onMapSingleClick '';""; openMap true; closeDialog 0;"; 
+				text = "Ammo";
+				action = "[] call c_proving_ground_fnc_ammo"; 
 			};
-			
-			class balca_rearm_btn : balca_debug_btn
-			{
-				x = column_weight; w = column_weight-column_div;
-				y = btn_height*1;
-				text = "Heigth +20";
-				action = "[] execVM 'addons\c130\herc_1.sqf'"; 
-			};
-			
+
 			class balca_repair_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
+				y = btn_height*1;
+				text = "Autoheal";
+				action = "[] call c_proving_ground_fnc_autoheal"; 
+			};
+
+			class balca_booster_btn : balca_debug_btn
+			{
+				x = column_weight; w = column_weight-column_div;
 				y = btn_height*2;
-				text = "Repair";
-				action = "[] execVM 'addons\proving_ground\fnc_repkit.sqf'"; 
+				text = "Booster";
+				action = "[] spawn c_proving_ground_fnc_booster;closeDialog 0;"; 
+			};
+
+			class balca_teleport_btn : balca_debug_btn
+			{
+				x = column_weight; w = column_weight-column_div;
+				y = btn_height*3;
+				text = "Teleport";
+				action = "hint ""Click on map to teleport"";onMapSingleClick ""vehicle player setPos [_pos select 0,_pos select 1,0]; onMapSingleClick '';""; openMap true; closeDialog 0;"; 
 			};
 
 			class balca_sattelite_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
-				y = btn_height*3;
-				text = "Satellite";
-				action = "hint ""Click on map to aim satellite"";onMapSingleClick ""[_pos] call c_proving_ground_fnc_sattelite;onMapSingleClick '';""; openMap true; closeDialog 0;"; 
-			};
-			
-			class balca_dance_btn : balca_debug_btn
-			{
-				x = column_weight; w = column_weight-column_div;
 				y = btn_height*4;
-				text = "Hacked Air Marker";
-				action = "[] execVM 'markers\hackair.sqf'"; 
+				text = "Sattelite";
+				action = "hint ""Click on map to aim sattelite"";onMapSingleClick ""[_pos] call c_proving_ground_fnc_sattelite;onMapSingleClick '';""; openMap true; closeDialog 0;"; 
 			};
-			
-			class balca_dance2_btn : balca_debug_btn
+
+			class balca_bulletcam_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "Tanks Marker";
-				action = "[] execVM 'markers\tanks.sqf'"; 
+				text = "Bulletcam";
+				action = """bulletcam"" call c_proving_ground_fnc_bulletcam;"; 
 			};
-			
-			class balca_dance3_btn : balca_debug_btn
+
+			class balca_marker_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*6;
-				text = "Air Marker";
-				action = "[] execVM 'markers\air.sqf'"; 
+				text = "Hitmarker";
+				action = """hitmarker"" call c_proving_ground_fnc_bulletcam;"; 
 			};
-			
-			class balca_playershield_btn : balca_debug_btn
+
+			class balca_status_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "Player Marker";
-				action = "[] execVM 'markers\esp.sqf'"; 
+				text = "Status display";
+				action = "closeDialog 0;call c_proving_ground_fnc_status";
 			};
-		    
-			class balca_spectate_btn : balca_debug_btn
+
+			class balca_console_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*8;
-				text = "Tags";
-				action = "[] execVM 'addons\proving_ground\fnc_esp.sqf'"; 
+				text = "Console";
+				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console;"; 
 			};
-			
-			class balca_money_btn : balca_debug_btn
-			{
-				x = column_weight; w = column_weight-column_div;
-				y = btn_height*9;
-				text = "Spectate";
-				action = "[] execVM 'addons\proving_ground\fnc_spectate.sqf'"; 
-			};
-			
 		//column 3
 			class balca_sound_btn : balca_debug_btn
 			{
@@ -196,42 +170,18 @@ class balca_debug_main
 				action = "closeDialog 0;createDialog ""balca_sound_player"";[0] call c_proving_ground_fnc_sound;"; 
 			};
 
-			class balca_stat_btn : balca_debug_btn
+			class balca_display_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*1;
-				text = "Statistics";
-				action = "closeDialog 0;createDialog ""balca_statistics"";[0] call c_proving_ground_fnc_statistics"; 
-			};
-			
-			class balca_environment_btn : balca_debug_btn
-			{
-				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*2;
-				text = "Environment";
-				action = "closeDialog 0;createDialog ""balca_environment"";[0] call c_proving_ground_fnc_environment"; 
-			};
-			
-			class balca_status_btn : balca_debug_btn
-			{
-				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*3;
-				text = "Status display";
-				action = "closeDialog 0;call c_proving_ground_fnc_status";
-			};
-			
-			class balca_console_btn : balca_debug_btn
-			{
-				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*4;
-				text = "Console";
-				action = "closeDialog 0;createDialog ""balca_debug_console"";[0] call c_proving_ground_fnc_exec_console;"; 
+				text = "BalCa";
+				action = "execVM ""\x\addons\balca\balca.sqf"";closeDialog 0;"; 
 			};
 
 			class balca_reload_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*5;
+				y = btn_height*2;
 				text = "Reloader";
 				action = "closeDialog 0;(vehicle player) spawn c_proving_ground_reloader_fnc_act_open_dialog;"; 
 			};
@@ -239,7 +189,7 @@ class balca_debug_main
 			class balca_cfgexplorer_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*6;
+				y = btn_height*3;
 				text = "cfgExplorer";
 				action = "closeDialog 0;createDialog ""HJ_ConfigExplorer"";[] call c_proving_ground_HJ_fnc_InitDialog;"; 
 			};
@@ -247,7 +197,7 @@ class balca_debug_main
 			class balca_BIS_help_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*7;
+				y = btn_height*4;
 				text = "BIS help";
 				action = "closeDialog 0;[] execVM 'ca\modules\functions\misc\fn_help.sqf'"; 
 			};
@@ -255,15 +205,14 @@ class balca_debug_main
 			class balca_BIS_cfgviewer_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*8;
+				y = btn_height*5;
 				text = "BIS cfgviewer";
 				action = "closeDialog 0;[] execVM 'ca\modules_e\functions\misc\fn_configviewer.sqf'"; 
 			};
-			
 			class balca_close_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
-				y = btn_height*9;
+				y = btn_height*8;
 				text = "Close";
 				action = "closeDialog 0;"; 
 			};

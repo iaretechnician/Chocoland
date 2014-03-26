@@ -8,15 +8,15 @@ class Header
 {
 	gameType=COOP;
 	minPlayers=1;
-	maxPlayers=45;
+	maxPlayers=50;
 };
 
 //Dialog includes
-
 #include "client\systems\common.hpp"
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
 #include "client\systems\groups\dialog\groupManagement.hpp"
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
+#include "client\systems\gunStore\dialog\gunshop_ConfirmSell.hpp"
 #include "client\systems\generalStore\dialog\genstore_settings.hpp"
 #include "client\systems\adminPanel\dialog\adminMenu.hpp"
 #include "client\systems\adminPanel\dialog\modMenu.hpp"
@@ -31,13 +31,13 @@ class Header
 #include "client\systems\vehicleStore\dialog\vehshop_settings.hpp"
 #include "client\systems\ChopperStore\dialog\chopshop_settings.hpp"
 
-
 class RscTitles {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
     #include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\newicons.hpp"
-}
+};
+
 class CfgSounds
 {
     sounds[] = {nuke1s, nuke2s, radzoneb, nblast, incoming};

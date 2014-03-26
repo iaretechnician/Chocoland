@@ -50,10 +50,11 @@ publicVariable "currentInvites";
                   
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
-currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
+currentStaticHelis = [];
 
 //Civilian Vehicle List - Random Spawns
 civilianVehicles = ["car_hatchback",
+"HMMWV_Ambulance",
 					"car_sedan",
 					"datsun1_civil_2_covered",
 					"SkodaGreen",
@@ -90,7 +91,9 @@ armedMilitaryVehicles = ["ArmoredSUV_PMC",
 							"HMMWV_Armored",
 							"HMMWV_MK19",
 							"HMMWV_TOW",
-							"GAZ_Vodnik"];
+							"GAZ_Vodnik",
+                                                        "BRDM2_ATGM_CDF",
+                                                        "BRDM2_INS"];
 
 //Item Config
 pickupList = ["Satelit",
@@ -156,43 +159,34 @@ staticHeliList = ["UH1H_TK_GUE_EP1",
                 "CH_47F_EP1",
                 "MH6J_EP1",
                 "UH60M_MEV_EP1",
-                "AH6X_EP1"];
+                "AH6X_EP1"
+                ];
 
-//Random Weapon List - Change this to what you want to spawn in cars.
-vehicleWeapons = ["AK_107_kobra",
-				"AK_47_M",
-                                "m240_scoped_EP1",
-				"AK_47_S",
-                                "M14_EP1"
-				"AK_74",
+vehicleWeapons = ["m240_scoped_EP1",
+			        "M14_EP1",
                                 "UZI_SD_EP1",
 				"BAF_L85A2_RIS_ACOG",
 				"bizon",
                                 "MG36_camo",
 				"bizon_silenced",
-                                "AK_107_GL_pso",
 				"FN_FAL",
                                 "BAF_L110A1_Aim",
 				"G36a",
                                 "m8_holo_sd",
 				"LeeEnfield",
                                 "m8_sharpshooter",
-				"M1014",
                                 "M24",
 				"M16A2",
                                 "M249",
 				"m16a4",
                                 "RPG7V",
 				"M4A1_Aim",
-                                "MP5SD",
-				"MP5A5",
                                 "SCAR_L_CQC_CCO_SD",
-				"Sa58V_EP1",
                                 "M4A1_RCO_GL",
-				"Saiga12K",
                                 "G36C_camo",
 				"SCAR_L_CQC",
-                                "AKS_Gold",
+                                "L85A2 Holo","BAF_L85A2_RIS_Holo",
+                                "Mk17 EGLM RCO","SCAR_H_STD_EGLM_Spect",
                                 "M32_EP1"
                                 ];
                 

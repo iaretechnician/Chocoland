@@ -1,3 +1,8 @@
+//	@file Version: 1.0
+//	@file Name: onRespawn.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy
+//	@file Created: 20/11/2012 05:19
+//	@file Args:
 
 private["_player","_corpse","_town","_spawn","_temp"];
 playerSetupComplete = false;
@@ -5,9 +10,7 @@ playerSetupComplete = false;
 _player = (_this select 0) select 0;
 _corpse = (_this select 0) select 1;
 _corpse removeAction playerMenuId;
-_corpse removeAction  playerWeaponId;
 _corpse removeAction  saveVehId;
-
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;
