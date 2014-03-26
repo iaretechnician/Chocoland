@@ -1,17 +1,10 @@
 //@file Version: 1.0
 //@file Name: init.sqf
-//@file Author: [404] Deadbeat, [404] Costlyy
+//@file Author: [404] Deadbeat
 //@file Created: 20/11/2012 05:19
 //@file Description: The client init.
 
 if(!X_Client) exitWith {};
-
-// Disable player from killing in the spawn area.
-player enableSimulation false; 
-removeAllWeapons player;
-
-// Start the loading screen ASAP.
-titleText ["Loading...", "BLACK OUT", 0];
 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
@@ -63,7 +56,7 @@ waituntil {!(IsNull (findDisplay 46))};
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
 [] execVM "client\functions\createGeneralStoreMarkers.sqf";
-//true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
+true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 [] execVM "client\functions\playerTags.sqf";
 [] execVM "client\functions\groupTags.sqf";
 [] call updateMissionsMarkers;
@@ -73,5 +66,4 @@ if (isNil "FZF_IC_INIT") then   {
 };
 sleep 1;
 true spawn playerSpawn;
-[] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;

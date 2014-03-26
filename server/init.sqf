@@ -1,24 +1,33 @@
 //	@file Version: 1.0
 //	@file Name: init.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
+//	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Description: The server init.
 //	@file Args:
-
 #include "setup.sqf"
 if(!X_Server) exitWith {};
 
 sideMissions = 1;
 serverSpawning = 1;
 
+randomStartTime = true;
+ 
+if (randomStartTime) then { //Set a random Mission start time
+_missionDate = date;
+_missionDate set [3, 12]; //round(random 23)]; //Set a random Hour
+_missionDate set [4, 15]; //Set a random Minute
+setDate _missionDate;
+diag_log format["Mission Start Time set to: %1", date];
+currentDate = _missionDate;
+publicVariable "currentDate";
+};
 //Execute Server Side Scripts.
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
-[] execVM "server\functions\broadcaster.sqf";
+//[] execVM "server\functions\broadcaster.sqf";
 [] execVM "server\functions\relations.sqf";
 [] execVM "server\functions\serverTimeSync.sqf";
-//[] execVM "server\functions\antiCheatServer.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
@@ -32,6 +41,8 @@ if (serverSpawning == 1) then {
 	waitUntil{sleep 0.1; scriptDone _vehSpawn};
     _objSpawn = [] ExecVM "server\functions\objectsSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _objSpawn};
+    _boxSpawn = [] ExecVM "server\functions\boxSpawning.sqf";
+	waitUntil{sleep 0.1; scriptDone _boxSpawn};
     _gunSpawn = [] ExecVM "server\functions\staticGunSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _gunSpawn};
     _heliSpawn = [] ExecVM "server\functions\staticHeliSpawning.sqf";
@@ -46,7 +57,7 @@ if (sideMissions == 1) then {
     [] execVM "server\missions\sideMissionController.sqf";
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
-    //[] execVM "server\missions\worldMissionController.sqf";
+    [] execVM "server\missions\worldMissionController.sqf";
 };
 
 if (isDedicated) then {

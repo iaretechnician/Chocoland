@@ -1,44 +1,59 @@
 //	@file Version: 1.0
-//	@file Name: staticHeliSpawning.sqf
-//	@file Author: [404] Costlyy
-//	@file Created: 20/12/2012 21:00
-//	@file Description: Random static helis
+//	@file Name: vehicleTestSpawn.sqf
+//	@file Author: [404] Deadbeat, [404] Costlyy
+//	@file Created: 20/11/2012 05:19
 //	@file Args:
 
 if(!X_Server) exitWith {};
 
-private ["_counter","_position","_markerName","_marker","_hint","_newPos","_countActual", "_i", "_doSpawnWreck"];
-_counter = 0;
-_countActual = 0;
-_i = 0;
+private ["_count","_pos","_mapside","_xCord","_yCord","_obj","_moneyCount", "_smoke"];
 
-while {_counter < 2} do
-{
-	_selectedMarker = floor (random 24);
-    _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
-	[0, _position] call staticHeliCreation;
-    
-	currentStaticHelis set [count currentStaticHelis, _selectedMarker];
-
-    _counter = _counter + 1;
-    _countActual = _countActual + 1;
-};
-
-//{diag_log format["Heli %1 = %2",_forEachIndex, _x];} forEach currentStaticHelis;
-
-for "_i" from 1 to 2 do {
-    _doSpawnWreck = true;
-    
-    { // Check if current iteration already exists as a live heli...
-    	if (_i == _x) then {
-			_doSpawnWreck = false;
+_moneyCount = Round (random 200) + 250;
+for "_i" from 1 to _moneyCount do
+    {
+    //GREAT THX to Viba and KiloSwiss =D
+    _count = Round (random 400)+100;
+    if(_count == 600) then
+        {
+         _count= Round (random 4);
+         if(_count == 2) then{_count = 100000;} else {_count = 50000;};
         };
-    } forEach currentStaticHelis;
-    
-    if (_doSpawnWreck) then {
-    	_position = getMarkerPos format ["heliSpawn_%1", _i];
-		[1, _position] call staticHeliCreation;
-    };
-};
+     if(_count > 400 AND _count < 150) then 
+        {
+            _random = Round (random 4);
+           if(_random == 1) then{_count = _count *2;};
+        if(_random == 2) then{_count = _count *3;};
+     if(_random == 3) then{_count = _count *4;};
+  if(_random == 4) then{_count = _count *5;};
+        };
+    if(_count < 150 AND _count > 1) then 
+        {
+          _count = 1000;
+          _count= Round (random 3);
+          if(_count == 2) then{_count = 5000;} else {_count = 1000;};
+        };
+        if(_count == 1) then{_count = 1;};
+     _mapside = Round (random 2);
+     if(_mapside == 1) then 
+     {
+          _xCord = Round (random 2000) + 2436.33;
+          _yCord = Round (random 1140) + 3501.65;
+          _pos = [_xCord, _yCord,0.0014];
+     }
+     else 
+     {
+         _xCord = Round (random 1550)+3197.88;
+         _yCord = Round (random 1375)+ 2857;
+         _pos = [_xCord,_yCord, 0.0014];
+     };
 
-diag_log format["WASTELAND SERVER - %1 Static helis Spawned",_countActual];
+    //Now create Object
+    _obj = "EvMoney" createVehicle _pos;
+    _obj setpos (getpos _obj);
+    _obj setVariable["money",_count,true];
+    _obj setVariable["owner","world",true]; 
+   
+ 
+ //////////////////////////
+};
+diag_log format["WASTELAND SERVER - %1 Money Spawned",_moneyCount];

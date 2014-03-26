@@ -37,7 +37,6 @@ if(str(playerSide) in ["EAST"]) then
     removeAllWeapons _player;
     _player addMagazine "8Rnd_9x18_Makarov";
     _player addMagazine "8Rnd_9x18_Makarov";
-    _player addMagazine "8Rnd_9x18_Makarov";
 	_player addWeapon "Makarov";
 	_player selectWeapon "Makarov";
 };
@@ -56,7 +55,7 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-_player setVariable["cmoney",100,false];
+
 _player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",1,false];
@@ -67,9 +66,13 @@ _player setVariable["fuelEmpty", 1, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
-player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
 
 _player groupChat format["Player Initialization Complete"];
 playerSetupComplete = true;
+
+if(firstspawn) then {
+	player setVariable["cmoney",500,false];
+	firstspawn = false;
+};

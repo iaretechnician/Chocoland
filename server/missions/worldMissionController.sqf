@@ -1,9 +1,3 @@
-//	@file Version: 1.0
-//	@file Name: worldMissionController.sqf
-//	@file Author: [404] Costlyy
-//	@file Created: 30th May 2013
-//	@file Args:
-
 if(!isServer) exitWith {};
 
 //waitUntil{sleep 1; staticGunSpawningComplete};
@@ -11,7 +5,7 @@ if(!isServer) exitWith {};
 diag_log format["WASTELAND SERVER - Started Mission State"];
 
 //Main Mission Array
-_MMarray = [];
+_MMarray = ["mission_carrier", "mission_invasion"];
 
 worldMissionRunning = false;
 #ifdef __A2NET__

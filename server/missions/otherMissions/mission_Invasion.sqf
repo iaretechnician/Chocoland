@@ -22,7 +22,7 @@ _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
 _missionTimeOut = 60;
-_missionDelayTime = 30; //2700
+_missionDelayTime = 60; //2700
 _missionRewardRadius = 1500;
 _reward = ceil(random 1000);
 

@@ -39,8 +39,6 @@ pvar_beaconListBlu = [];
 publicVariable "pvar_beaconListBlu";
 pvar_beaconListRed = []; 
 publicVariable "pvar_beaconListRed";
-pvar_beaconListIndep = []; 
-publicVariable "pvar_beaconListIndep";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 clientRadarMarkers = [];
@@ -49,17 +47,10 @@ currentDate = [];
 publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
-
-"processVIP" addPublicVariableEventHandler {[_this] spawn server_VIPEscape};
                   
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
 currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
-
-staticHeliWrecks = [
-	"UH1Wreck",
-    "Mi8Wreck",
-    "UH60_wreck_EP1"];
 
 //Civilian Vehicle List - Random Spawns
 civilianVehicles = ["car_hatchback",
@@ -71,7 +62,6 @@ civilianVehicles = ["car_hatchback",
 					"UralCivil",
 					"VWGolf",
 					"MMT_Civ",
-                    "V3S_TK_GUE_EP1",
 					"Ikarus_TK_CIV_EP1",
 					"Lada1_TK_CIV_EP1",
 					"Old_moto_TK_Civ_EP1",
@@ -79,21 +69,7 @@ civilianVehicles = ["car_hatchback",
 					"UAZ_Unarmed_TK_CIV_EP1",
 					"ATV_US_EP1",
 					"BAF_Offroad_W",
-					"S1203_ambulance_EP1",
-                    "tractorOld",
-                    "hilux1_civil_2_covered",
-                    "Lada2_TK_CIV_EP1",
-                    "HMMWV_M1035_DES_EP1",
-                    "LadaLM",
-                    "Tractor",
-                    "TT650_TK_EP1",
-					"TT650_Gue",
-					"M1030",               
-                    "Kamaz",
-                    "LadaLM",
-                    "Lada1",
-                    "hilux1_civil_1_open",
-                    "VolhaLimo_TK_CIV_EP1"];
+					"S1203_ambulance_EP1"];
 
 //Military Vehicle List - Random Spawns
 militaryVehicles = ["UAZ_CDF",
@@ -159,7 +135,7 @@ objectList = ["Land_Barrel_water",
                 "Land_Fort_Watchtower",
 				"Land_fortified_nest_big",
 				"RampConcrete",
-				"WarfareBDepot",
+				
 				"WarfareBCamp",
                 "Hedgehog",
                 "Land_ConcreteRamp",
@@ -171,10 +147,7 @@ objectList = ["Land_Barrel_water",
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
-				"DSHKM_TK_INS_EP1",
-                "BAF_L2A1_Tripod_D",
-				"MK19_TriPod",
-				"KORD_high"];
+				"DSHKM_TK_INS_EP1"];
 
 //Object List - Random Helis.
 staticHeliList = ["UH1H_TK_GUE_EP1",
@@ -183,36 +156,45 @@ staticHeliList = ["UH1H_TK_GUE_EP1",
                 "CH_47F_EP1",
                 "MH6J_EP1",
                 "UH60M_MEV_EP1",
-                "AH6X_EP1",
-                "BAF_Merlin_HC3_D",
-                "Ka137_MG_PMC"];
+                "AH6X_EP1"];
 
 //Random Weapon List - Change this to what you want to spawn in cars.
-vehicleWeapons = [
+vehicleWeapons = ["AK_107_kobra",
 				"AK_47_M",
+                                "m240_scoped_EP1",
 				"AK_47_S",
+                                "M14_EP1"
 				"AK_74",
+                                "UZI_SD_EP1",
+				"BAF_L85A2_RIS_ACOG",
 				"bizon",
+                                "MG36_camo",
 				"bizon_silenced",
-                "MP5SD",
+                                "AK_107_GL_pso",
+				"FN_FAL",
+                                "BAF_L110A1_Aim",
+				"G36a",
+                                "m8_holo_sd",
 				"LeeEnfield",
+                                "m8_sharpshooter",
 				"M1014",
+                                "M24",
 				"M16A2",
-                "M4A1",
-				"M79_EP1",
+                                "M249",
+				"m16a4",
+                                "RPG7V",
+				"M4A1_Aim",
+                                "MP5SD",
 				"MP5A5",
+                                "SCAR_L_CQC_CCO_SD",
 				"Sa58V_EP1",
+                                "M4A1_RCO_GL",
 				"Saiga12K",
+                                "G36C_camo",
 				"SCAR_L_CQC",
-                "M9",
-                "M9SD",
-                "revolver_EP1",
-                "Sa61_EP1",
-                "huntingrifle",
-                "Mk13_EP1",
-                "MakarovSD",
-                "AKS_74_U",
-                "UZI_EP1"];
+                                "AKS_Gold",
+                                "M32_EP1"
+                                ];
                 
 MissionSpawnMarkers = [
             ["Mission_1",false],
@@ -235,4 +217,14 @@ MissionSpawnMarkers = [
             ["Mission_18",false],
             ["Mission_19",false],
             ["Mission_20",false]
+];
+CarrierMarkers = [
+["carrier_1", false],
+["carrier_2", false],
+["carrier_3", false],
+["carrier_4", false],
+["carrier_5", false],
+["carrier_6", false],
+["carrier_7", false],
+["carrier_8", false]
 ];

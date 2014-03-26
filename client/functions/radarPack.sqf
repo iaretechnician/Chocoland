@@ -35,7 +35,6 @@ for "_iteration" from 1 to _actionDuration do {
 	if(vehicle player != player) exitWith {
 		player globalChat localize "STR_WL_Errors_BeaconInVehicle";
         player action ["eject", vehicle player];
-        mutexScriptInProgress = false;
 		sleep 1;
 	};
     
