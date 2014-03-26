@@ -1,6 +1,7 @@
 terminate playerMenuHandle;
 playerMenuHandle = [] spawn {
 	waituntil {!isnull player};
+        x1 = player;
 	private ["_veh"];
 	while {true} do {
 		waituntil {vehicle player == player};

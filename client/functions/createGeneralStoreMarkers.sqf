@@ -3,7 +3,7 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
-/*
+
 _generalStores = ["generalStore1","generalStore2"];
 
 //Creates the markers around general stores.
@@ -22,4 +22,4 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
 	_markerName setMarkerTextLocal "General Store";
 
 } forEach _generalStores;
-*/
+

@@ -3,7 +3,6 @@
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
-/*
 
 _gunStores = ["gs1"];
 
@@ -23,5 +22,3 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
 	_markerName setMarkerTextLocal "Gun Store";
 
 } forEach _gunStores;
-
-*/
