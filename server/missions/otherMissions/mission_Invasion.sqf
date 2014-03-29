@@ -22,21 +22,26 @@ _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
 _missionTimeOut = 60;
-_missionDelayTime = 30; //2700
+_missionDelayTime = 180; //2700
 _missionRewardRadius = 1500;
-_reward = ceil(random 1000);
+_reward = ceil(random 10000) + 5000;
 
-_invasionArray = ["invasion_1",
-				"invasion_2",
-				"invasion_3",
-				"invasion_4"];
+_invasionArray = ["carrier_1",
+				"carrier_3",
+				"carrier_5",
+				"carrier_7"];
 				
 _selectMarker = _invasionArray call BIS_fnc_selectRandom;
 _randomPos = getMarkerPos _selectMarker;
 
 
 //Tell everyone their will be an invasion soon
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion!</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour];
+_war1 = Round (random 9);
+      _war2 = Round (random 9);
+        _war3 = Round (random 9);
+        _war4 = Round (random 9);
+        _war1 = _war1 * _war2 * _war3 * _war4;
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war4];
 [nil,nil,rHINT,_hint] call RE;
 
 //Wait till the mission is ready to be ran.
@@ -86,7 +91,7 @@ clientMissionMarkers set [count clientMissionMarkers,["Invasion_Marker",_randomP
 publicVariable "clientMissionMarkers";
 
 //Announce the invasion to clients
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion!</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3'>The invasion has begun! Destroy the enemy force at the marked city!</t>", _missionType,  _mainTextColour, _subTextColour];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3'>The invasion has begun! Destroy the enemy force at the marked city!</t>", _missionType,  _mainTextColour, _subTextColour, _war4];
 [nil,nil,rHINT,_hint] call RE;
 
 //Random vehicle reward
@@ -140,11 +145,11 @@ if(_result == 1) then
 {
 	//Mission Failed.
 	deleteMarkerLocal "UPS";
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion Successful</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1</t><br/><t align='center' color='%3'>The enemy is now in control of the city! Position entered, keys turned - get out of there!</t><t align='center' color='%2'> NUCLEAR MISSILE INBOUND</t>", _missionType, _failTextColour, _subTextColour];
+    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion Successful</t>", _missionType, _failTextColour, _subTextColour];
 	[nil,nil,rHINT,_hint] call RE;
 	sleep 20;
-	//Nuke!
-	[nil, nil, rEXECVM, "addons\lk\nuke\nuke_incoming.sqf", _randomPos] call RE;
+	
+	
 	deleteGroup FireTeamA;
 	deleteGroup FireTeamB;
 	deleteGroup FireTeamC;

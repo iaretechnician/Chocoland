@@ -22,8 +22,8 @@ _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
 _missionTimeOut = 1800;
-_missionDelayTime = 30;
-_missionRewardRadius = 1500;
+_missionDelayTime = 180;
+_missionRewardRadius = 500;
 _reward = round(random 500);
 
 _gotLoc = false;
@@ -45,7 +45,13 @@ while {!_gotLoc} do
 waitUntil {_gotLoc};
 
 //Tell everyone their will be a mission soon.
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>High Priority Target</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A naval threat will be in your vicinity within %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour];
+_war1 = Round (random 9);
+      _war2 = Round (random 9);
+        _war3 = Round (random 9);
+        _war4 = Round (random 9);
+        _war5 = Round (random 9);
+        _war1 = _war1 * _war2 * _war3 * _war4 * _war5;
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A naval threat will be in your vicinity within %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 //Wait till the mission is ready to be ran.
@@ -88,7 +94,7 @@ CivGrpM = createGroup civilian;
 null = [CivGrpM,_randomPos]execVM "server\missions\createUnits\carrierGroup.sqf";
 waitUntil{sleep 0.5; scriptDone null};
 
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>High Priority Target</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>An Aircraft Carrier is just off shore, destroy the crew and capture it for your team!</t>", _missionType,  _mainTextColour, _subTextColour];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>An Aircraft Carrier is just off shore, destroy the crew and capture it for your team!</t>", _missionType,  _mainTextColour, _subTextColour, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
@@ -118,7 +124,7 @@ if(_result == 1) then
 	{_x setDamage 1} forEach units CivGrpG;
 	deleteGroup CivGrpG;
 	deleteMarkerLocal "patrolCarrier";
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>High Priority Target failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1</t><br/><t align='center' color='%3'>The Aircraft Carrier has left your vicinity.</t>", _missionType, _failTextColour, _subTextColour];
+    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4 failed</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%2' size='1.25'>%1</t><br/><t align='center' color='%3'>The Aircraft Carrier has left your vicinity.</t>", _missionType, _failTextColour, _subTextColour, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Mission Failed"];
 	
@@ -130,7 +136,7 @@ if(_result == 1) then
     deleteGroup CivGrpM;
 	deleteGroup CivGrpG;
 	deleteMarkerLocal "patrolCarrier";
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>High Priority Target captured</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The crew of the Aircraft Carrier have been decimated!</t><br/><t align'center' color='%4'>Reward: %5</t>", _missionType, _successTextColour, _subTextColour, _mainTextColour, _reward];
+    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %6 captured</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>The crew of the Aircraft Carrier have been decimated!</t><br/><t align'center' color='%4'>Reward: %5</t>", _missionType, _successTextColour, _subTextColour, _mainTextColour, _reward, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Mission Finished"];
 	

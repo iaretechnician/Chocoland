@@ -21,10 +21,10 @@ CVG_weapons = CVG_weapons + CVG_Heavy;
 CVG_weapons = CVG_weapons + CVG_pistols;
 CVG_weapons = CVG_weapons + CVG_Launchers;
 
-#ifdef __A2NET__
+/*#ifdef __A2NET__
 missionStartTime = 0;
 netTime = 0;
-#endif
+#endif*/
 
 sideMissionPos = "";
 mainMissionPos = "";
@@ -54,7 +54,7 @@ currentStaticHelis = [];
 
 //Civilian Vehicle List - Random Spawns
 civilianVehicles = ["car_hatchback",
-"HMMWV_Ambulance",
+                                        "HMMWV_Ambulance",
 					"car_sedan",
 					"datsun1_civil_2_covered",
 					"SkodaGreen",
@@ -105,7 +105,7 @@ pickupList = ["Satelit",
 objectList = ["Land_Barrel_water",
 				"Land_prebehlavka",
 				"Land_leseni2x",
-                "Fort_Crate_wood",
+                                "Fort_Crate_wood",
                 "Land_CamoNet_NATO",
 				"Land_Barrel_water",
 				"Land_stand_small_EP1",
@@ -138,7 +138,6 @@ objectList = ["Land_Barrel_water",
                 "Land_Fort_Watchtower",
 				"Land_fortified_nest_big",
 				"RampConcrete",
-				
 				"WarfareBCamp",
                 "Hedgehog",
                 "Land_ConcreteRamp",
@@ -185,8 +184,8 @@ vehicleWeapons = ["m240_scoped_EP1",
                                 "M4A1_RCO_GL",
                                 "G36C_camo",
 				"SCAR_L_CQC",
-                                "L85A2 Holo","BAF_L85A2_RIS_Holo",
-                                "Mk17 EGLM RCO","SCAR_H_STD_EGLM_Spect",
+                                "BAF_L85A2_RIS_Holo",
+                                "SCAR_H_STD_EGLM_Spect",
                                 "M32_EP1"
                                 ];
                 
@@ -213,12 +212,12 @@ MissionSpawnMarkers = [
             ["Mission_20",false]
 ];
 CarrierMarkers = [
-["carrier_1", false],
-["carrier_2", false],
-["carrier_3", false],
-["carrier_4", false],
-["carrier_5", false],
-["carrier_6", false],
-["carrier_7", false],
-["carrier_8", false]
+[carrier_1, false],
+[carrier_2, false],
+[carrier_3, false],
+[carrier_4, false],
+[carrier_5, false],
+[carrier_6, false],
+[carrier_7, false],
+[carrier_8, false]
 ];

@@ -11,7 +11,7 @@ player enableSimulation false;
 removeAllWeapons player;
 
 // Start the loading screen ASAP.
-titleText ["Loading...", "BLACK OUT", 0];
+titleText ["setting up HeavensDelight Network  E5-2620", "BLACK OUT", 0];
 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
@@ -63,7 +63,7 @@ waituntil {!(IsNull (findDisplay 46))};
 [] execVM "client\functions\createTownMarkers.sqf";
 [] execVM "client\functions\createGunStoreMarkers.sqf";
 [] execVM "client\functions\createGeneralStoreMarkers.sqf";
-true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
+//true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 [] execVM "client\functions\playerTags.sqf";
 [] execVM "client\functions\groupTags.sqf";
 [] call updateMissionsMarkers;
@@ -75,3 +75,4 @@ sleep 1;
 true spawn playerSpawn;
 [] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;
+[] execVM "motd.sqf";

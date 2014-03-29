@@ -66,6 +66,6 @@ _man5 addMagazine "100Rnd_762x51_M240";
 _man5 addWeapon "m240_scoped_EP1";
 
 _leader = leader _group;
-_leader setVehicleInit "null = [this,'UPS','random','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
+//_leader setVehicleInit "null = [this,'UPS','random','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
 processInitCommands;
 

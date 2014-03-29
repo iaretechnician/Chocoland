@@ -6,7 +6,7 @@
 
 if(!X_Server) exitWith {};
 
-_currencyLimit = 10 * 1000; // 10k money limit for initial config.
+_currencyLimit = 1000 * 1000; // 10k money limit for initial config.
 _instantKick = false; // Kick the nasty little scalliwags immediately or taunght them a little?
 
 while {true} do {

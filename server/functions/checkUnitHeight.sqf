@@ -3,7 +3,7 @@
 //Help from: Tankbuster, F2k Sel, Iceman77 (BI editing and scripting forum)
 //Created on: 11/02/2013
 //Description: If a unit decides to abandon ship it gets teleported back on deck
-
+/*
 private ["_group","_unitsAlive","_unit","_units","_unitHeight","_pos","_preferredHeight"];
 
 _group = _this select 0;
@@ -32,3 +32,4 @@ while {_unitsAlive > 0} do
 
 };  
 
+*/

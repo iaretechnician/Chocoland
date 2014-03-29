@@ -45,13 +45,13 @@ class Mission
 		briefingName="404Wasteland - Utes [3.0b]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
-		startWeather=0.25;
-		forecastWeather=0.25;
+		startWeather=0;
+		forecastWeather=1;
 		year=2020;
 		month=1;
 		day=1;
-		hour=12;
-		minute=0;
+		hour=13;
+		minute=00;
 	};
 	class Groups
 	{

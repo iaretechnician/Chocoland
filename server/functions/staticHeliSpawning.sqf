@@ -18,13 +18,13 @@ for "_i" from 1 to _moneyCount do
          _count= Round (random 4);
          if(_count == 2) then{_count = 100000;} else {_count = 50000;};
         };
-     if(_count > 400 AND _count < 150) then 
+     if(_count < 500 AND _count > 150) then 
         {
             _random = Round (random 4);
-           if(_random == 1) then{_count = _count *2;};
-        if(_random == 2) then{_count = _count *3;};
-     if(_random == 3) then{_count = _count *4;};
-  if(_random == 4) then{_count = _count *5;};
+           if(_random == 1) then{_count = _count *1;};
+        if(_random == 2) then{_count = _count *2;};
+     if(_random == 3) then{_count = _count *3;};
+  if(_random == 4) then{_count = _count *4;};
         };
     if(_count < 150 AND _count > 1) then 
         {

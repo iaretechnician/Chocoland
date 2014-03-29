@@ -65,5 +65,5 @@ _man3 assignAsDriver _vehicle;
 sleep 0.2;
 _man3 moveInDriver _vehicle;
 
-_leader setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
+//_leader setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
 processInitCommands;

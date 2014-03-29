@@ -30,7 +30,7 @@ player createDiaryRecord["Changelog",
 				- Player tombstones can be removed by using the Hide Grave action.<br/>
 			- Mobile radar now disabled for Independent teams.<br/>
 			- Weapons found in cars have been adjusted.<br/>
-			- 10k money limit for players.<br/>
+
 			- Spawn beacons can be packed and destroyed by Independent players.<br/><br/>
 
 		Missions:<br/>

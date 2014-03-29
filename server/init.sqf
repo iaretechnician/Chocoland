@@ -10,17 +10,7 @@ if(!X_Server) exitWith {};
 
 sideMissions = 1;
 serverSpawning = 1;
-randomStartTime = true;
- 
-if (randomStartTime) then { //Set a random Mission start time
-_missionDate = date;
-_missionDate set [3, 12]; //round(random 23)]; //Set a random Hour
-_missionDate set [4, 15]; //Set a random Minute
-setDate _missionDate;
-diag_log format["Mission Start Time set to: %1", date];
-currentDate = _missionDate;
-publicVariable "currentDate";
-};
+
 //Execute Server Side Scripts.
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
@@ -28,7 +18,7 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\broadcaster.sqf";
 [] execVM "server\functions\relations.sqf";
 [] execVM "server\functions\serverTimeSync.sqf";
-//[] execVM "server\functions\antiCheatServer.sqf";
+[] execVM "server\functions\antiCheatServer.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
