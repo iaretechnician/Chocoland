@@ -203,7 +203,7 @@ class gunshopd {
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
-			text = "Buy to Player";
+			text = "Buy";
 
 			x = 0.703125 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
@@ -228,7 +228,7 @@ class gunshopd {
 
 		};
 
-		///////////////////////////////////////////////////////////// LEFT HAND BUTTONS /////////////////////////////////////////////////////
+		// LEFT HAND BUTTONS
 
 		class WeaponsButton: w_RscButton
 		{

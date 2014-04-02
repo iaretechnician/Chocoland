@@ -299,6 +299,8 @@ R3F_LOG_CFG_transporteurs = [
  */
  
 R3F_LOG_CFG_objets_transportables =  [
+["TK_WarfareBFieldhHospital_EP1",15],
+["US_WarfareBFieldhHospital_EP1",20],
 	["SatPhone", 1],
 	["Pchela1T", 15],
 	["ATV_Base_EP1", 10],
@@ -527,6 +529,8 @@ R3F_LOG_CFG_objets_transportables =  [
  */
 
 R3F_LOG_CFG_objets_deplacables = [
+"TK_WarfareBFieldhHospital_EP1",
+"US_WarfareBFieldhHospital_EP1",
 	"Land_covering_hut_big_EP1",
 	"ZU23_Ins",
 	"Fort_Nest_M240",

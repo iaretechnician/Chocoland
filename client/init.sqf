@@ -75,4 +75,5 @@ sleep 1;
 true spawn playerSpawn;
 [] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;
-[] execVM "motd.sqf";
+
+nul = [player] execVM "client\functions\safeZone.sqf";

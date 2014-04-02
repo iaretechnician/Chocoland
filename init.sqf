@@ -59,5 +59,5 @@ if(X_Server) then {
 [] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
 [] execVM "addons\proving_Ground\init.sqf";
 //[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
-
+[] execVM "motd.sqf";
 [] execVM "addons\Backpacks\init.sqf";

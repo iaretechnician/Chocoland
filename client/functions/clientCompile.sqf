@@ -44,7 +44,10 @@ sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore
 loadbuildStore = compile preprocessFileLineNumbers "client\systems\BuildStore\loadBuildStore.sqf";
 PopulatebuildStore = compile preprocessFileLineNumbers "client\systems\BuildStore\populateBuildStore.sqf";
 buildItemInfo = compile preprocessFileLineNumbers "client\systems\BuildStore\itemInfo.sqf";
-
+// funstore Dialog compiles
+loadFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\loadFunStore.sqf";
+PopulateFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\populateFunStore.sqf";
+funItemInfo = compile preprocessFileLineNumbers "client\systems\FunStore\itemInfo.sqf";
 // Vehicle Dialog compiles
 loadVehStore = compile preprocessFileLineNumbers "client\systems\vehicleStore\loadVehStore.sqf";
 PopulateVehStore = compile preprocessFileLineNumbers "client\systems\vehicleStore\populateVehStore.sqf";
@@ -54,8 +57,6 @@ vehItemInfo = compile preprocessFileLineNumbers "client\systems\vehicleStore\ite
 loadChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\loadChopStore.sqf";
 PopulateChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\populateChopStore.sqf";
 chopItemInfo = compile preprocessFileLineNumbers "client\systems\ChopperStore\itemInfo.sqf";
-
-player groupChat "Client Compile Complete";
 sleep 1;
 playerCompiledScripts = true;
 

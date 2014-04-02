@@ -5,17 +5,18 @@
 #include "setup.sqf"
 if(!X_Server) exitWith {};
 
+
+
+private["_newObject"];
+_player = _this select 0;
+_killer = _this select 1;
+
 _score = score _player;
 if(_score > 0)then{
 	_player addScore -_score;
 }else{
 	_player addScore abs(_score);
 };
-
-private["_newObject"];
-_player = _this select 0;
-_killer = _this select 1;
-
 #ifdef __A2NET__
 _player setVariable["processedDeath",netTime];
 #else

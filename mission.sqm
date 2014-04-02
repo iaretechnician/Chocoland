@@ -42,7 +42,7 @@ class Mission
 	randomSeed=15307759;
 	class Intel
 	{
-		briefingName="404Wasteland - Utes [3.0b]";
+		briefingName="2404Wasteland - Utes [3.0b]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0;
@@ -1161,7 +1161,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=248;
+		items=250;
 		class Item0
 		{
 			position[]={3329.0925,19,3646.7795};
@@ -2648,6 +2648,18 @@ class Mission
 		{
 			position[]={1366.8755,15.885103,1013.7573};
 			name="carrier_8";
+			type="Empty";
+		};
+		class Item248
+		{
+			position[]={2005.75,0.0017,4314.72};
+			name="zone1";
+			type="Empty";
+		};
+		class Item249
+		{
+			position[]={2200,0.0017,4250.17};
+			name="zone2";
 			type="Empty";
 		};
 		

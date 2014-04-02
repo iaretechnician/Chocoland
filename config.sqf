@@ -7,13 +7,11 @@
 //Gunstore Weapon List - Gun Store Base List
 // Type, Text name, classname, buy cost, sell amount
 weaponsArray = [
-	// Pistols
-	[1, "Glock 17","glock17_EP1",25,10],
+    [1, "Glock 17","glock17_EP1",25,10],
     [1, "Sa.61 Skorpion","Sa61_EP1",35,13],
-	[1, "M9 Silenced","M9SD",50,25],
+    [1, "M9 Silenced","M9SD",50,25],
     [1, "UZI Silenced","UZI_SD_EP1",85,35],
     [1, "Golden Revolver","revolver_gold_EP1",250,125],
-    
     // Shotguns & Rifles
     [2, "AA 12","AA12_PMC",400,200],
     [2, "AK 107 GL Kobra","AK_107_GL_kobra",270,135],
@@ -66,7 +64,7 @@ weaponsArray = [
     [2, "M4A1","M4A1",200,100],
     [2, "M4A3 CCO EP1","M4A3_CCO_EP1",220,110],
     [2, "M4A3 RCO GL EP1","M4A3_RCO_GL_EP1",290,145],
-	[2, "M8","m8_carbine",250,125],
+    [2, "M8","m8_carbine",250,125],
     [2, "M8 Compact CCO","m8_compact_pmc",260,130],
     [2, "M8 Compact","m8_compact",240,120],
     [2, "M8 CQC","m8_carbine_pmc",240,120],
@@ -90,8 +88,6 @@ weaponsArray = [
     [2, "Sa-58P","Sa58P_EP1",225,110],
     [2, "Sa-58V ACOG","Sa58V_RCO_EP1",300,150],
     [2, "Sa-58V","Sa58V_EP1",225,110],
-
-    
     // Sniper rifles
  	[3, "DMR","DMR",7500,3555],
 	[3, "KSVK","KSVK",12000,5000],
@@ -110,8 +106,6 @@ weaponsArray = [
 	[3, "VSS Vintorez","VSS_Vintorez",12000,6000],
         [3, " L115A3", "BAF_LRR_scoped",25000,12000],
         [3, " AS50 TWS","PMC_AS50_TWS", 100000, 50000],
-
-    
     // Machineguns
 	[4, "L110A1","BAF_L110A1_Aim",7500,3500],
 	[4, "L7A2 GPMG","BAF_L7A2_GPMG",12500,3250],
@@ -131,7 +125,6 @@ weaponsArray = [
 	[4, "PKP Scope","Pecheneg",15000,7500],
 	[4, "RPK","RPK_74",5000,2500],
         [2, "L85A2 AWS","BAF_L85A2_RIS_CWS", 20000,10000],
-
     // Anti-tank
         [5, "Stinger","Stinger",1000,550],
         [5, "Javelin","Javelin",1200,750],
@@ -149,9 +142,7 @@ weaponsArray = [
 	[5, "SMAW","SMAW",5000,2500],
 	[5, "Stinger","Stinger",10000,5000],
 	[5, "Strela-2","Strela",10000,5000]
-
 ];
-
 //Gun Store Ammo List
 //Text name, classname, buy cost
 ammoArray = [    
@@ -215,12 +206,10 @@ ammoArray = [
 	["1 Laser Batterie","Laserbatteries",5],
 	["1 IR Marker Strobe","IR_Strobe_Marker",20]
 ];
-
 //Gun Store Equipment List
 //Text name, classname, buy cost
 accessoriesArray = [
-	//["1 Hand Grenade","BAF_L109A1_HE", 50],
-    //["1 Land Mine","Mine", 75],
+
 	["GPS","ItemGPS", 100],
 	["NV Goggles","NVGoggles",100],
 	["Range Finder","Binocular_Vector",350],
@@ -240,7 +229,6 @@ generalStore = [
     ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",300,150] 
 ];
 ChopperStoreArray = [
-
         ["BQM-74", 500,"Chukar_EP1"],
         ["C130J", 500, "C130J"],
         ["SeeHawk", 500, "MV22"],
@@ -282,8 +270,7 @@ vehicleStoreArray = [
 	["Utility Truck", 150,"Kamaz"],
         ["Towing Tractor", 200,"TowingTractor"],
         ["HMMWV", 200,"HMMWV_DES_EP1"],
-        
-	["UAZ (DShKM)", 250,"Offroad_DSHKM_Gue"],
+        ["UAZ (DShKM)", 250,"Offroad_DSHKM_Gue"],
         ["SUV", 300,"SUV_UN_EP1"],
 	["UAZ (AGS-30)", 400,"UAZ_AGS30_TK_EP1"],
         ["HMMWV ARMOR", 500,"HMMWV_Armored"],
@@ -323,7 +310,7 @@ vehicleStoreArray = [
         ["M1A1", 80000,"M1A1"],
 	["T-90", 80000,"T90"],  
         ["FV510 Warrior", 100000,"BAF_FV510_W"],
-        ["M1A2 TUSK [USMC]", 1000000,"M1A2_TUSK_MG"]
+        ["M1A2 TUSK [USMC]", 100000,"M1A2_TUSK_MG"]
 ];
 BuildStoreArray = [
 	["~~~~~CONTAINER~~~~~~", 999999,"Land_ConcreteBlock"],
@@ -413,38 +400,55 @@ BuildStoreArray = [
 	["Field Toilet",75,"Land_Toilet"],
 	["Ladder Tall",100,"Land_ladder"],
 	["Ladder Short",50,"Land_ladder_half"],
-	["~~~~~~ FLAG+SIGN ~~~~~~", 9999999,"Land_ConcreteBlock"],
-	["Sign STOP (Blue)",100,"Sign_Checkpoint_US_EP1"],
-	["Sign STOP (Red)",100,"Sign_Checkpoint_TK_EP1"],
-	["Sign DANGER (Nuclear)",1000,"Sign_Danger"],
-	["Road Barrier",1000,"Land_RedWhiteBarrier"],
-	["Road Cone light",500,"Land_coneLight"],
-	["German Flag",250,"FlagCarrierGermany_EP1"],
-	["Red Cross Flag",250,"FlagCarrierRedCross_EP1"],
-	["Nato Flag",250,"FlagCarrierNATO_EP1"],
-	["~~~~~~ GUNSSS ~~~~~~", 9999999,"Land_ConcreteBlock"],
-	["Searchlight (Tripod)",100,"SearchLight_TK_EP1"],
-	["MG Nest PKT",500,"WarfareBMGNest_PK_TK_EP1"],
-	["MG Nest M240",500,"Fort_Nest_M240"],
-	["DSHkM Mini TriPod",500,"DSHkM_Mini_TriPod_TK_EP1"],
-	["DSHkM TriPod (High)",500,"DSHKM_TK_GUE_EP1"],
-	["KORD",500,"KORD_TK_EP1"],
-	["KORD (High)",500,"KORD_high_TK_EP1"],
-	["L7A2 Mini TriPod",500,"BAF_GPMG_Minitripod_D"],
-	["M2 Mini TriPod",500,"M2HD_mini_TriPod"],
-	["M2 TriPod (High)",500,"M2StaticMG"],
-	["L111A1/L2A1 MiniTriPod",750,"BAF_L2A1_Minitripod_D"],
-	["L111A1/L2A1 (High)",750,"BAF_L2A1_Tripod_D"],
-	["MK19 Mini TriPod",750,"MK19_TriPod"],
-	["AGS Mini TriPod",750,"AGS_TK_EP1"],
-	["GMG Mini TriPod",1250,"BAF_GMG_Tripod_D"],
-	["SPG9 Mini TriPod",1500,"SPG9_TK_GUE_EP1"],
-	["ZU23",10000,"ZU23_Ins"],
-	["IGLA AA Pod",50000,"Igla_AA_pod_TK_EP1"],
-	["Stinger AA Pod",50000,"Stinger_Pod_US_EP1"],
-        ["M252",100000, "M252"]
+["~~~~~~ FLAG+SIGN ~~~~~~", 9999999,"Land_ConcreteBlock"],
+["Sign STOP (Blue)",100,"Sign_Checkpoint_US_EP1"],
+["Sign STOP (Red)",100,"Sign_Checkpoint_TK_EP1"],
+["Sign DANGER (Nuclear)",1000,"Sign_Danger"],
+["Road Barrier",1000,"Land_RedWhiteBarrier"],
+["Road Cone light",500,"Land_coneLight"],
+["German Flag",250,"FlagCarrierGermany_EP1"],
+["Red Cross Flag",250,"FlagCarrierRedCross_EP1"],
+["Nato Flag",250,"FlagCarrierNATO_EP1"],
+["~~~~~~ GUNSSS ~~~~~~", 9999999,"Land_ConcreteBlock"],
+["Searchlight (Tripod)",100,"SearchLight_TK_EP1"],
+["MG Nest PKT",500,"WarfareBMGNest_PK_TK_EP1"],
+["MG Nest M240",500,"Fort_Nest_M240"],
+["DSHkM Mini TriPod",500,"DSHkM_Mini_TriPod_TK_EP1"],
+["DSHkM TriPod (High)",500,"DSHKM_TK_GUE_EP1"],
+["KORD",500,"KORD_TK_EP1"],
+["KORD (High)",500,"KORD_high_TK_EP1"],
+["L7A2 Mini TriPod",500,"BAF_GPMG_Minitripod_D"],
+["M2 Mini TriPod",500,"M2HD_mini_TriPod"],
+["M2 TriPod (High)",500,"M2StaticMG"],
+["L111A1/L2A1 MiniTriPod",750,"BAF_L2A1_Minitripod_D"],
+["L111A1/L2A1 (High)",750,"BAF_L2A1_Tripod_D"],
+["MK19 Mini TriPod",750,"MK19_TriPod"],
+["AGS Mini TriPod",750,"AGS_TK_EP1"],
+["GMG Mini TriPod",1250,"BAF_GMG_Tripod_D"],
+["SPG9 Mini TriPod",1500,"SPG9_TK_GUE_EP1"],
+["ZU23",10000,"ZU23_Ins"],
+["IGLA AA Pod",50000,"Igla_AA_pod_TK_EP1"],
+["Stinger AA Pod",50000,"Stinger_Pod_US_EP1"],
+["M252",100000, "M252"]
 ];
-
+FunStoreArray=[
+["Infinite Ammunition",100000,"ZU23_Ins"],
+["Infinite Life/Bullets",150000,"god1"],
+["Infinite Life/Explosions",150000,"god2"],
+["be a Rabid",150000,"rabbid"],
+["Cow for the Win",160000,"cow"],
+["ESP, PlayerTags",130000,"tags"],
+["Coat gives Milk",170000,"coat"],
+["Invisible",160000,"invisible"],
+["Fast2Furious",100000,"carspeed"],
+["FlyMode",150000,"flymode"],
+["1ClickBase",150000,"base"],
+["Satelite Camera",130000,"satcam"],
+["Kill Player",100000,"killplayer"],
+["Infinite Money",250000,"money"],
+["Order Airstrike",120000,"strike"],
+["Kill yourself",100000,"kill"]           
+];
 // Utes town and city array
 //Marker Name, Radius, City Name
 cityList = [

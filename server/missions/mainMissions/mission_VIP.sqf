@@ -59,7 +59,8 @@ _unitVIP setVariable["released",0,true];
 
 
 _vehicleName = "Captured VIP";
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been located near the marker. Go rescue him to earn a reward.</t>", _missionType, _vehicleName, mainMissionColor, subTextColor];
+   _war1 = Round (random 100)+900;
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Mission %6</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been located near the marker. Go rescue him to earn a reward.</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpL = createGroup civilian;
@@ -87,7 +88,7 @@ waitUntil
 
 if(_result == 1) then
 {
-	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed. The enemy is scuttling the base and has killed the VIP.</t>", _missionType, _vehicleName, failMissionColor, subTextColor];
+	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed. The enemy is scuttling the base and has killed the VIP.</t>", _missionType, _vehicleName, failMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     
     _unitVIP setDamage 1;
@@ -115,7 +116,7 @@ if(_result == 1) then
     {deleteVehicle _x;}forEach units CivGrpL;
     deleteGroup CivGrpL;
   
-    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The VIP has successfuly escaped.</t>", _missionType, _vehicleName, successMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The VIP has successfuly escaped.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
 };

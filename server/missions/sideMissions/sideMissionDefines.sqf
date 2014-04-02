@@ -11,12 +11,12 @@
 #ifdef __DEBUG__
 
 	#define sideMissionTimeout 500
-	#define sideMissionDelayTime 40
+	#define sideMissionDelayTime 10
 
 #else
 
 #define sideMissionTimeout 1500
-#define sideMissionDelayTime 600
+#define sideMissionDelayTime 10
     
 #endif
 

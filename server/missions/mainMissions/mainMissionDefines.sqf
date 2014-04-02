@@ -11,12 +11,12 @@
 #ifdef __DEBUG__
 
 #define mainMissionTimeout 500
-#define mainMissionDelayTime 50
+#define mainMissionDelayTime 10
 
 #else
 
 #define mainMissionTimeout 1500
-#define mainMissionDelayTime 1050
+#define mainMissionDelayTime 20
 
 #endif
 

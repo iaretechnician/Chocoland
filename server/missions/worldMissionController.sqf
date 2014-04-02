@@ -33,18 +33,22 @@ while {true} do
     
 	if(!worldMissionRunning) then
     {
-        sleep 120;
-        _mission = _MMarray select (random (count _MMarray - 1));
-        execVM format ["server\missions\otherMissions\%1.sqf",_mission];
+      sleep 1000;
+        _zufall = Round (random 100);
+                if(_zufall == 100) then
+                {
+                 _mission = _MMarray select (random (count _MMarray - 1));
+                 execVM format ["server\missions\otherMissions\%1.sqf",_mission];
 		worldMissionRunning = true;
-        diag_log format["WASTELAND SERVER - Execute New Mission"];
+                 diag_log format["WASTELAND SERVER - Execute New Mission"];
 		#ifdef __A2NET__
 		_startTime = floor(netTime);
 		#else
 		_startTime = floor(time);
 		#endif
         _result = 0;
+                 };
     } else {
-    	sleep 1;  
+    	sleep 100;  
     };    
 };

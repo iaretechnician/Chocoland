@@ -36,11 +36,8 @@ _randomPos = getMarkerPos _selectMarker;
 
 
 //Tell everyone their will be an invasion soon
-_war1 = Round (random 9);
-      _war2 = Round (random 9);
-        _war3 = Round (random 9);
-        _war4 = Round (random 9);
-        _war1 = _war1 * _war2 * _war3 * _war4;
+
+    _war1 = 1;
 _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war4];
 [nil,nil,rHINT,_hint] call RE;
 
@@ -93,24 +90,6 @@ publicVariable "clientMissionMarkers";
 //Announce the invasion to clients
 _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3'>The invasion has begun! Destroy the enemy force at the marked city!</t>", _missionType,  _mainTextColour, _subTextColour, _war4];
 [nil,nil,rHINT,_hint] call RE;
-
-//Random vehicle reward
-_randomVehicle = ["BAF_Apache_AH1_D", "AW159_Lynx_BAF", "AH6J_EP1", "M1A1_US_DES_EP1", "BAF_FV510_W", "M1A2_US_TUSK_MG_EP1", "MtvrReammo", "MtvrRefuel", "MtvrRepair"] call BIS_fnc_selectRandom;
-_vehicle = createVehicle [_randomVehicle, [(_randomPos select 0) - 10, (_randomPos select 1), 0], [], 0, "NONE"];
-
-if (_vehicle isKindOf "Air") then
-{
-	_vehicle setVehicleInit "this addAction [('<t color=''#00EEFF''>') + ('HALO Jump') + '</t>','addons\haloJump\haloJump.sqf',[],7,false,true,'','player in _target']";
-	processInitCommands;
-};
-
-clearMagazineCargoGlobal _vehicle;
-clearWeaponCargoGlobal _vehicle;
-
-_vehicle setVehicleLock "LOCKED";
-_vehicle setVariable ["original",1,true];
-_vehicle setVariable ["R3F_LOG_disabled", true, true];
-
 diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
 _startTime = floor(time);
 _fireTeamA_alive = ({alive _x} count units FireTeamA);
@@ -149,14 +128,28 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
 	sleep 20;
 	
+	{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units FireTeamA;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units FireTeamB;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units FireTeamC;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units FireTeamD;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units FireTeamE;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units GroundSupport;
+{
+_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units AirSupport;
 	
-	deleteGroup FireTeamA;
-	deleteGroup FireTeamB;
-	deleteGroup FireTeamC;
-	deleteGroup FireTeamD;
-	deleteGroup FireTeamE;
-	deleteGroup GroundSupport;
-	deleteGroup AirSupport;
     diag_log format["WASTELAND SERVER - Mission Failed"];
 	
 	
@@ -193,4 +186,5 @@ if(_result == 1) then
         publicVariable "clientMissionMarkers";    
     };
 } forEach clientMissionMarkers;
+sleep 300;
 worldMissionRunning = false;

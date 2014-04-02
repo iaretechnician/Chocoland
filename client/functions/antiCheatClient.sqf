@@ -26,7 +26,7 @@ _bannedWeapons = [
 _bannedVehicles = [
 	"CruiseMissile1","CruiseMissile2","RM70_ACR","T810_Des_ACR","T810_ACR","T810Reammo_ACR",
     "Ka52Black","Su25_Ins","F35","Su25_TK_EP1","Mi24_D_TK_EP1","T810Reammo_Des_ACR",
-    "Chukar_EP1","L39_TK_EP1","M1114_AGS_ACR","AV8B2","T810Refuel_ACR","T810Refuel_Des_ACR",
+    "Chukar_EP1","L39_TK_EP1","M1114_AGS_ACR","T810Refuel_ACR","T810Refuel_Des_ACR",
     "L159_ACR","L39_ACR","L39_TK_EP1","L39_TK_EP1","MQ9PredatorB_US_EP1", "A10_US_EP1", "Chukar", "L39_2_ACR","T810A_Des_MG_ACR",
     "BRDM2_ATGM_CDF","BRDM2_ATGM_INS","BRDM2_CDF","BRDM2_Gue","BRDM2_HQ_Gue","BRDM2_INS","BTR90_HQ","GRAD_CDF","T810A_MG_ACR",
 	"GRAD_RU","GRAD_CDF","KamazOpen","RM70_ACR",

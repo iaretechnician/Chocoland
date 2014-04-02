@@ -24,10 +24,10 @@ switch (_lockState) do {
 		_totalDuration = 6;
 		_lockDuration = _totalDuration;
 		_iteration = 0;
-	if(player getVariable "cmoney" < 1000) exitWith { // If the player dies, revert state.
+	/*if(player getVariable "cmoney" < 1000) exitWith { // If the player dies, revert state.
 		        2 cutText ["you dont have enough money", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
-			};
+			};*/
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		
 		for "_iteration" from 1 to _lockDuration do {
@@ -55,11 +55,16 @@ switch (_lockState) do {
 			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed.
 		        sleep 1;
                 _currObject setVariable ["objectLocked", true, true];
+                //CUSTOM
+                _uid = getPlayerUID player;
+                _currObject setVariable ["playerGUID", _uid, true];
                 2 cutText ["", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 		    }; 
 		};
-		player setVariable["cmoney",(player getVariable "cmoney") - 1000,true];
+                //CUSTOM
+              
+		//player setVariable["cmoney",(player getVariable "cmoney") - cost,true];
 		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.       
     };
     case 1:{ // UNLOCK

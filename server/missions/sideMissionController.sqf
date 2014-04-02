@@ -41,12 +41,7 @@ while {true} do
     
 	_missionRunning = [] spawn _mission;
     diag_log format["WASTELAND SERVER - Execute New Side Mission: %1",_missionType];
-    _war1 = Round (random 9);
-      _war2 = Round (random 9);
-        _war3 = Round (random 9);
-        _war1 = _war1 * _war2 * _war3;
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Objective #%4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", sideMissionDelayTime / 60, sideMissionColor, subTextColor, _war1];
-	[nil,nil,rHINT,_hint] call RE;
+  
     _lastMission = _missionType;
 	waitUntil{sleep 0.1; scriptDone _missionRunning};
     sleep 5;

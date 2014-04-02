@@ -46,7 +46,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_spawn setVariable["R3F_LOG_disabled", false, true];
 			player setVariable["cmoney",_playerMoney - _price,true];
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-			hintsilent "Vehicle bought - Follow the arrows to the spawn point";
+			hintsilent "Vehicle bought - watch the sky";
                   
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
