@@ -57,6 +57,7 @@ vehItemInfo = compile preprocessFileLineNumbers "client\systems\vehicleStore\ite
 loadChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\loadChopStore.sqf";
 PopulateChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\populateChopStore.sqf";
 chopItemInfo = compile preprocessFileLineNumbers "client\systems\ChopperStore\itemInfo.sqf";
+createLootMoney = compile preprocessFile "killed.sqf";
 sleep 1;
 playerCompiledScripts = true;
 

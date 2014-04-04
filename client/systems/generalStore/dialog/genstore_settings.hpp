@@ -53,28 +53,6 @@ class genstored {
 			h = 0.068889 * safezoneH;
 		};
 
-		class DialogTitleText: w_RscText
-		{
-			idc = -1;
-			text = "General Store Menu";
-
-			x = 0.203125 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0880 * safezoneW;
-			h = 0.0448148 * safezoneH;
-		};
-
-		class PlayerMoneyText: w_RscText
-		{
-			idc = genstore_money;
-			text = "Cash:";
-
-			x = 0.6875 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-		};
-
 		class CartTotalText: w_RscText
 		{
 			idc = genstore_total;
@@ -94,7 +72,7 @@ class genstored {
 		{
 			idc =-1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\vehicleStore\loadVehStore.sqf'";
-			text = "-> Vehicle Store";
+			text = "-> Vehicles";
 
 			x = 0.22 * safezoneW + safezoneX;
 			y = 0.175 * safezoneH + safezoneY;
@@ -106,7 +84,7 @@ class genstored {
 		{
 			idc =-1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\GunStore\loadGunStore.sqf'";
-			text = "-> Weapon Store";
+			text = "-> Weapons";
 
 			x = 0.32 * safezoneW + safezoneX;
 			y = 0.175 * safezoneH + safezoneY;
@@ -118,7 +96,7 @@ class genstored {
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\BuildStore\loadBuildStore.sqf'";
-			text = "-> Building Store";
+			text = "-> Buildings";
 
 			x = 0.42 * safezoneW + safezoneX;
 			y = 0.175 * safezoneH + safezoneY;
@@ -130,9 +108,21 @@ class genstored {
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "-> Chopper Store";
+			text = "-> Choppers";
 
 			x = 0.52 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                  class loadBuildStore3: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
+			text = "-> Funniest";
+
+			x = 0.62 * safezoneW + safezoneX;
 			y = 0.175 * safezoneH + safezoneY;
 			w = 0.0844792 * safezoneW;
 			h = 0.0448148 * safezoneH;

@@ -74,7 +74,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             };
         };
         
-		case "Repair Kit": {
+		case "Ultima Repair Kit": {
             if((player getVariable "repairkits") + 1 <= 2) then {
                 player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
             } else {

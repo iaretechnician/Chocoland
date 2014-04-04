@@ -27,6 +27,10 @@ _missionRewardRadius = 1500;
 _reward = ceil(random 10000) + 5000;
 
 _invasionArray = ["carrier_1",
+"carrier_2",
+"carrier_4",
+"carrier_6",
+"carrier_8",
 				"carrier_3",
 				"carrier_5",
 				"carrier_7"];
@@ -61,25 +65,104 @@ _marker_UPS = createMarkerLocal ["UPS", _randomPos];
 //Create Units
 FireTeamA = createGroup civilian;
 [FireTeamA,_randomPos] execVM "server\missions\createUnits\fireTeamA.sqf";
+{
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units FireTeamA;
 
 FireTeamB = createGroup civilian;
 [FireTeamB,_randomPos] execVM "server\missions\createUnits\fireTeamB.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units FireTeamB;
 FireTeamC = createGroup civilian;
 [FireTeamC,_randomPos] execVM "server\missions\createUnits\fireTeamC.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units FireTeamC;
 FireTeamD = createGroup civilian;
 [FireTeamD,_randomPos] execVM "server\missions\createUnits\fireTeamD.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units FireTeamD;
 FireTeamE = createGroup civilian;
 [FireTeamE,_randomPos] execVM "server\missions\createUnits\fireTeamE.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units FireTeamE;
 GroundSupport = createGroup civilian;
 [GroundSupport,_randomPos] execVM "server\missions\createUnits\groundSupport.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units GroundSupport;
 AirSupport = createGroup civilian;
 [AirSupport, _randomPos] execVM "server\missions\createUnits\airSupport.sqf";
-
+_unit = _x;
+_unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
+_unit setskill ["Spotdistance", 1];
+_unit setskill ["general", (0.3)];
+_unit setskill ["courage", 1];
+_unit setskill ["endurance", 1];
+_unit setskill ["spotTime", 0.1];
+_unit setskill ["aimingShake", 0.5];
+_unit setskill ["aimingSpeed", 0.1];
+_unit setskill ["reloadSpeed", 0.4];
+_unit setskill ["aimingAccuracy",0.3];
+}forEach units AirSupport;
 //Wait 5 for units to start patrolling and for the air support to take off
 sleep 5;
 

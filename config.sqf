@@ -182,51 +182,51 @@ ammoArray = [
 	["100Rnd. MK48 / M60 Belt","100Rnd_762x51_M240",30],
 	["100Rnd. Pencheng Belt","100Rnd_762x54_PK",50],
 	["200Rnd. M249 Belt","200Rnd_556x45_M249",50],
-	["1 MAAWS HEAT rocket","MAAWS_HEAT",300],
-	["1 MAAWS HEDP rocket","MAAWS_HEDP",200],
-    ["1 Anti-personnel RPG Rocket","OG7",150],
-    ["1 Adv. RPG Rocket","PG7VR",200],
-    ["1 Basic RPG Rocket","PG7V",100],
-	["1 AT SMAW Rocket","SMAW_HEAA",250],
-    ["1 HE SMAW Rocket","SMAW_HEDP",250],
-    ["1 Stinger Missile","Stinger",250],
-	["1 Strela Missile","Strela",250],
-	["1 NLAW Missile","NLAW",300],
-	["1 Igla Missile","Igla",250],
-    ["1 M136 Missile","M136",150],
-    ["1 Javelin Missile","Javelin",600],
-    ["1 M47 missile","Dragon_EP1",600],
-	["1 M203 HE","1Rnd_HE_M203",30],
-	["1 GP-25 HE","1Rnd_HE_GP25",30],
-	["1 6x40mm HE M203","6Rnd_HE_M203",100],
-	["1 Hand Grenade","BAF_L109A1_HE", 50],
-    ["1 Land Mine","Mine", 75],
-	["1 Satchel Charges","PipeBomb",200],
-	["1 Big IED","BAF_ied_v2",200],
-	["1 Laser Batterie","Laserbatteries",5],
-	["1 IR Marker Strobe","IR_Strobe_Marker",20]
+	["1 MAAWS HEAT rocket","MAAWS_HEAT",3000],
+	["1 MAAWS HEDP rocket","MAAWS_HEDP",2000],
+    ["1 Anti-personnel RPG Rocket","OG7",1500],
+    ["1 Adv. RPG Rocket","PG7VR",2000],
+    ["1 Basic RPG Rocket","PG7V",1000],
+	["1 AT SMAW Rocket","SMAW_HEAA",2500],
+    ["1 HE SMAW Rocket","SMAW_HEDP",2500],
+    ["1 Stinger Missile","Stinger",2500],
+	["1 Strela Missile","Strela",2500],
+	["1 NLAW Missile","NLAW",3000],
+	["1 Igla Missile","Igla",2500],
+    ["1 M136 Missile","M136",1500],
+    ["1 Javelin Missile","Javelin",6000],
+    ["1 M47 missile","Dragon_EP1",6000],
+	["1 M203 HE","1Rnd_HE_M203",300],
+	["1 GP-25 HE","1Rnd_HE_GP25",300],
+	["1 6x40mm HE M203","6Rnd_HE_M203",1000],
+	["1 Hand Grenade","BAF_L109A1_HE", 5000],
+    ["1 Land Mine","Mine", 7500],
+	["1 Satchel Charges","PipeBomb",20000],
+	["1 Big IED","BAF_ied_v2",20000],
+	["1 Laser Batterie","Laserbatteries",500],
+	["1 IR Marker Strobe","IR_Strobe_Marker",2000]
 ];
 //Gun Store Equipment List
 //Text name, classname, buy cost
 accessoriesArray = [
 
-	["GPS","ItemGPS", 100],
-	["NV Goggles","NVGoggles",100],
-	["Range Finder","Binocular_Vector",350],
-         ["Laser Marker","Laserdesignator",650]
+	["GPS","ItemGPS", 1000],
+	["NV Goggles","NVGoggles",1000],
+	["Range Finder","Binocular_Vector",3500],
+         ["Laser Marker","Laserdesignator",6500]
 ];
 
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",30,15],
-	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",30,15],
-	["Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",1000,500],
-	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",400,200],
-	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",150,75],
-    ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",50,25],
-	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",3000,1500],
-    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",300,150] 
+	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,150],
+	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",300,150],
+	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",5000,2000],
+	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",2000,1000],
+	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,750],
+    ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,250],
+	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",50000,50000],
+    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",3000,1500] 
 ];
 ChopperStoreArray = [
         ["BQM-74", 500,"Chukar_EP1"],
@@ -432,22 +432,35 @@ BuildStoreArray = [
 ["M252",100000, "M252"]
 ];
 FunStoreArray=[
-["Infinite Ammunition",100000,"ZU23_Ins"],
-["Infinite Life/Bullets",150000,"god1"],
-["Infinite Life/Explosions",150000,"god2"],
-["be a Rabid",150000,"rabbid"],
-["Cow for the Win",160000,"cow"],
-["ESP, PlayerTags",130000,"tags"],
-["Coat gives Milk",170000,"coat"],
-["Invisible",160000,"invisible"],
-["Fast2Furious",100000,"carspeed"],
+["Dance on the Island",100000,"dance"],
+["Change Environment",100000,"weather"],
+["Teleport to",100000,"tel"],
+["Delete something",100000,"del"],
+["Spectate Player",100000,"spectate"],
+["receive reinforcement",100000,"npc"],
+["Infinite Ammunition 1m",100000,"ammo1"],
+["No Recoil + Random Vehicle",100000,"recoil"],
+["Infinite Life/Bullets 1m",100000,"god1"],
+["Infinite Life/Explosions 1m",100000,"god2"],
+["Cow for the Win",100000,"cow"],
+["ESP, PlayerTags",120000,"tags"],
+["Satelite Camera",130000,"satcam"],
+["Coat gives Milk",140000,"goat"],
+["Fast2Furious",150000,"carspeed"],
 ["FlyMode",150000,"flymode"],
 ["1ClickBase",150000,"base"],
-["Satelite Camera",130000,"satcam"],
-["Kill Player",100000,"killplayer"],
-["Infinite Money",250000,"money"],
-["Order Airstrike",120000,"strike"],
-["Kill yourself",100000,"kill"]           
+["Baseshield 1m",150000,"baseshield"],
+["Terror Rabid",150000,"rabbid"],
+["Invisible",160000,"invisible"],
+["Satelite Camera",160000,"satcam"],
+["Kill Player",170000,"killplayer"],
+["Infinite Money 1m",200000,"money"],
+["Infinite Ammunition 10m",200000,"ammo10"],
+["Infinite Life/Bullets 10m",200000,"god10"],
+["Infinite Life/Explosions 10m",200000,"god20"],
+["Order Airstrike",200000,"strike"],
+["Order BaseCarrier",250000,"carrier"],
+["Kill yourself",300000,"death"]           
 ];
 // Utes town and city array
 //Marker Name, Radius, City Name

@@ -1,5 +1,13 @@
-//_x = select 0;
-saveVehicle = Format["%1",typeOf x1];
-player action ["getOut", vehicle player];
-deleteVehicle x1;   
-hintsilent "Vehicle saved to Hangar! (PlayerMenu for Spawn)";
+if (!(isengineOn vehicle player) AND  ((velocity vehicle player select 2) <= 1) AND ((velocity vehicle player select 1) <= 1) AND((velocity vehicle player select 0) <= 1))
+then {
+    vehicleSave1 = typeof vehicle player;
+    vehicleSave = vehicle player;
+   player action ["getOut", vehicle player];
+   sleep 3;
+   if (!isPlayer vehicleSave) then {
+   vehicleSave hideObject true; 
+    hint format ["%1 saved to Hangar! (PlayerMenu for Spawn)", vehicleSave1];
+    sleep 1;
+    player globalChat "Vehicle Saved.";
+      } else{ player globalChat "There is another Player in this Vehicle.";sleep 1;};
+} else { player globalChat "cannot Save Vehicle,pls stop and turn engine Off"; sleep 1;};

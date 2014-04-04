@@ -103,6 +103,6 @@ while {true} do {
     }forEach _bannedVehicles;
               	
 	// Loop speed not much of an issue clientside.
-	sleep 0.5; 
+	sleep 1; 
 };
 

@@ -84,11 +84,15 @@ if(_result == 1) then
     
     {deleteVehicle _x;}forEach units CivGrpL;
     deleteGroup CivGrpL;
+    _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units CivGrpL;
     
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
     deleteGroup CivGrpL;
+    _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units CivGrpL;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost and weapons have been captured.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];

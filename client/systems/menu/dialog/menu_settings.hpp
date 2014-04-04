@@ -61,7 +61,7 @@ class menu1d {
 		{
 			idc =-1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "-> Planes&Choppers";
+			text = "-> Choppers";
 
 			x = 0.020313 * safezoneW + safezoneX;
 			y = 0.421852 * safezoneH + safezoneY;

@@ -48,13 +48,13 @@ class balca_debug_main
 				action = "[] execVM 'addons\proving_ground\fnc_inon.sqf'"; 
 			};
 			
-			/*class balca_speed_btn : balca_debug_btn
+			class balca_speed_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*3;
 				text = "speed";
 				action = "[] execVM 'addons\proving_ground\fnc_speed.sqf'"; 
-			};*/
+			};
 			
 			class balca_ammo_btn : balca_debug_btn
 			{

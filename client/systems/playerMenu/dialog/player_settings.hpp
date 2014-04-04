@@ -141,7 +141,7 @@ class playerSettings {
                   class vehButton : w_RscButton {
 			idc = vehButton;
 			text = "Spawn My Vehicle";
-			onButtonClick = "";
+			onButtonClick = "[] execVM 'addons\scripts\createVehicle.sqf'";
 			x = 0.150; y = 0.48;
 			w = 0.225; h = 0.033 * safezoneH;
 		};

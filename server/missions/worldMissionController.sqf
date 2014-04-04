@@ -33,9 +33,9 @@ while {true} do
     
 	if(!worldMissionRunning) then
     {
-      sleep 1000;
-        _zufall = Round (random 100);
-                if(_zufall == 100) then
+      sleep 600;
+        _zufall = Round (random 50);
+                if(_zufall == 50) then
                 {
                  _mission = _MMarray select (random (count _MMarray - 1));
                  execVM format ["server\missions\otherMissions\%1.sqf",_mission];

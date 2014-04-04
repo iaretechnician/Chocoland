@@ -55,9 +55,17 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
 		sleep 3;
-              
-		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
+if((_x select 2) == "Land_Barrel_water") then 
+{
+    _spawn setVariable["water",40,true];
+};
 
+if((_x select 2) == "Land_stand_small_EP1") then 
+{
+    _spawn setVariable["food",40,true];
+};
+		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
+ 
     		// Delete parachute
 		sleep 15;
 		

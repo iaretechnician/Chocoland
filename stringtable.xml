@@ -38,7 +38,7 @@
 	</Package>
 	<Package name="WelcomeMessage">
 		<Key ID="STR_WL_WelcomeToWasteland">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to 404Wasteland&lt;t color='#FFFFFF' size='1' &gt;</English>
+			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to ChocoLand&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
 			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Instructions&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t&gt;&lt;br/&gt;&#127;No VOIP/VON in GLOBAL&lt;br/&gt;&#127;The server does restart unexpectedly.&lt;br/&gt;&#127;You will be locked to your team after 3 minutes.&lt;/t&gt;</English>
@@ -62,10 +62,10 @@
 	</Package>
 	<Package name="Shop">
 		<Key ID="STR_WL_Shop_Marker_GunStore">
-			<English>Gun store</English>
+			<English>Guns</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_GenStore">
-			<English>General store</English>
+			<English>Generals</English>
 		</Key>
 		<Key ID="STR_WL_Shop_Marker_Empty">
 			<English>Unoccupied</English>
@@ -94,7 +94,7 @@
 			<English>4O4Games Value Cat food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
-			<English>This magic box will repair any mechanical device to its former glory. Warning: 4O4Games cannot guarantee compatibility with wives/spouses/partners.</English>
+			<English>This magic box will repair, refuel and rearm any mechanical device to its former glory. </English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
 			<English>Restore your health back to full. Disclaimer: This product was tested on animals and at least 5 bunnies, 3 cows and 1 make-up wearing pig died as a result.</English>
@@ -116,24 +116,24 @@
 	</Package>
 	<Package name="Actions">
 		<Key ID="STR_WL_Acts_PlayerMenu">
-			<English>Player Menu</English>
+			<English>Choco Menu</English>
 		</Key>
 	</Package>
 	<Package name="Errors">
 		<Key ID="STR_WL_Errors_InProgress">
-			<English>YOU ARE ALREADY PERFORMING ANOTHER ACTION!</English>
+			<English>You are already performing another action!</English>
 		</Key>
 		<Key ID="STR_WL_Errors_InVehicle">
-			<English>YOU ARE CURRENTLY BUSY!</English>
+			<English>You are currently busy</English>
 		</Key>
 		<Key ID="STR_WL_Errors_BeaconActive">
-			<English>YOU ALREADY HAVE AN ACTIVE SPAWN BEACON!</English>
+			<English>You already have an active spawn Beacon</English>
 		</Key>
 		<Key ID="STR_WL_Errors_BeaconInVehicle">
-			<English>YOU CANNOT ENTER A VEHICLE WHILE PLACING A SPAWN BEACON!</English>
+			<English>You cannot enter a vehicle while placing a spawn Beacon</English>
 		</Key>		
 		<Key ID="STR_WL_Errors_BeaconTooMany">
-			<English>YOU ARE ALREADY HAVE TOO MANY OF THAT OBJECT!</English>
+			<English>You are already have too many of that object</English>
 		</Key>						
 	</Package>
 </Project>

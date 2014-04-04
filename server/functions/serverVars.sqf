@@ -68,19 +68,19 @@ civilianVehicles = ["car_hatchback",
 					"Old_moto_TK_Civ_EP1",
 					"S1203_TK_CIV_EP1",
 					"UAZ_Unarmed_TK_CIV_EP1",
-					"ATV_US_EP1",
 					"BAF_Offroad_W",
 					"S1203_ambulance_EP1"];
 
 //Military Vehicle List - Random Spawns
 militaryVehicles = ["UAZ_CDF",
-					"SUV_PMC",
-					"MTVR",
-					"BAF_Offroad_W",
-					"HMMWV",
-					"HMMWV_Ambulance",
-					"S1203_ambulance_EP1",
-					"GAZ_Vodnik_MedEvac"];
+"HMMWV_TOW",
+"SUV_PMC",
+"MTVR",
+"BAF_Offroad_W",
+"HMMWV",
+"HMMWV_Ambulance",
+"S1203_ambulance_EP1",
+"GAZ_Vodnik_MedEvac"];
 
 //Armed Military Vehicle List - Random Spawns
 armedMilitaryVehicles = ["ArmoredSUV_PMC",
@@ -91,9 +91,8 @@ armedMilitaryVehicles = ["ArmoredSUV_PMC",
 							"HMMWV_Armored",
 							"HMMWV_MK19",
 							"HMMWV_TOW",
-							"GAZ_Vodnik",
-                                                        "BRDM2_ATGM_CDF",
-                                                        "BRDM2_INS"];
+							"GAZ_Vodnik"
+                                                        ];
 
 //Item Config
 pickupList = ["Satelit",
@@ -152,14 +151,7 @@ staticWeaponsList = ["M2StaticMG_US_EP1",
 				"DSHKM_TK_INS_EP1"];
 
 //Object List - Random Helis.
-staticHeliList = ["UH1H_TK_GUE_EP1",
-				"Mi17_Civilian",
-                "MV22",
-                "CH_47F_EP1",
-                "MH6J_EP1",
-                "UH60M_MEV_EP1",
-                "AH6X_EP1"
-                ];
+staticHeliList = [];
 
 vehicleWeapons = ["m240_scoped_EP1",
 			        "M14_EP1",

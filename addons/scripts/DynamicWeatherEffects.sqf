@@ -1,13 +1,3 @@
-/* DynamicWeatherEffects.sqf version 1.01 by Engima of Ostgota Ops
- * Description:
- *   Script that generates dynamic (random) weather. Works in single player, multiplayer (hosted and dedicated), and is JIP compatible.
- * Arguments:
- *   [_initialFog]: Optional. Fog when mission starts. Must be between 0 and 1 where 0 = no fog, 1 = maximum fog. -1 = random fog.
- *   [_initialOvercast]: Optional. Overcast when mission starts. Must be between 0 and 1 where 0 = no overcast, 1 = maximum overcast. -1 = random overcast.
- *   [_initialRain]: Optional. Rain when mission starts. Must be between 0 and 1 where 0 = no rain, 1 = maximum rain. -1 = random rain. (Overcast must be greater than or equal to 0.75).
- *   [_initialWind]: Optional. Wind when mission starts. Must be an array of form [x, z], where x is one wind strength vector and z is the other. x and z must be greater than or equal to 0. [-1, -1] = random wind.
- *   [_debug]: Optional. true if debug text is to be shown, otherwise false.
- */
 
 private ["_initialFog", "_initialOvercast", "_initialRain", "_initialWind", "_debug"];
 private ["_minWeatherChangeTimeMin", "_maxWeatherChangeTimeMin", "_minTimeBetweenWeatherChangesMin", "_maxTimeBetweenWeatherChangesMin", "_rainIntervalRainProbability", "_windChangeProbability"];
@@ -20,98 +10,31 @@ if (count _this > 2) then { _initialRain = _this select 2; } else { _initialRain
 if (count _this > 3) then { _initialWind = _this select 3; } else { _initialWind = [-1, -1]; };
 if (count _this > 4) then { _debug = _this select 4; } else { _debug = false; };
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// The following variables can be changed to tweak weather behaviour
-
-// Minimum time in minutes for the weather (fog and overcast) to change. Must be greater than or equal to 1 and less than or equal to 
-// _maxWeatherChangeTimeMin. When weather changes, it is fog OR overcast that changes, not both at the same time. (Suggested value: 10).
 _minWeatherChangeTimeMin = 10;
-
-// Maximum time in minutes for the weather (fog and overcast) to change. Must be greater than or equal to _minWeatherChangeTimeMin.
-// (Suggested value: 20).
 _maxWeatherChangeTimeMin = 30;
 
-// Minimum time in minutes that weather (fog and overcast) stays constant between weather changes. Must be less than or equal to 0 and 
-// greater than or equal to _minWeatherChangeTimeMin. (Suggested value: 5).
 _minTimeBetweenWeatherChangesMin = 5;
-
-// Maximum time in minutes that weather (fog and overcast) stays unchanged between weather changes. Must be greater than or equal to 
-// _minWeatherChangeTimeMin. (Suggested value: 10).
 _maxTimeBetweenWeatherChangesMin = 10;
-
-// Fog intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumFog
-// (0 = no fog, 1 = pea soup). (Suggested value: 0).
 _minimumFog = 0;
-
-// Fog intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumFog
-// (0 = no fog, 1 = pea soup). (Suggested value: 0.8).
 _maximumFog = 0.99;
-
-// Overcast intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumOvercast
-// (0 = no overcast, 1 = maximum overcast). (Suggested value: 0).
 _minimumOvercast = 1;
-
-// Overcast intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumOvercast
-// (0 = no overcast, 1 = maximum overcast). (Suggested value: 1).
 _maximumOvercast = 1;
-
-// When raining, rain intensity never falls below this value. Must be between 0 and 1 and less than or equal to _maximumRain
-// (0 = no rain, 1 = maximum rain intensity). (Suggested value: 0);
 _minimumRain = 0;
-
-// When raining, rain intensity never exceeds this value. Must be between 0 and 1 and greater than or equal to _minimumRain
-// (0 = no rain, 1 = maximum rain intensity). (Suggested value: 0.8);
 _maximumRain = 1;
-
-// Wind vector strength never falls below this value. Must be greater or equal to 0 and less than or equal to _maximumWind.
-// (Suggested value: 0);
 _minimumWind = 0;
-
-// Wind vector strength never exceeds this value. Must be greater or equal to 0 and greater than or equal to _minimumWind.
-// (Suggested value: 8).
 _maximumWind = 8;
-
-// Probability in percent for wind to change when weather changes. If set to 0 then wind will never change. If set to 100 then rain will 
-// change every time the weather (fog or overcast) start to change. (Suggested value: 25);
 _windChangeProbability = 25;
-
-// A "rain interval" is defined as "a time interval during which it may rain in any intensity (or it may not rain at all)". When overcast 
-// goes above 0.75, a chain of rain intervals (defined below) is started. It cycles on until overcast falls below 0.75. At overcast 
-// below 0.75 rain intervals never execute (thus it cannot rain).
-
-// Probability in percent (0-100) for rain to start at every rain interval. Set this to 0 if you don't want rain at all. Set this to 100 
-// if you want it to rain constantly when overcast is greater than 0.75. In short: if you think that it generally rains to often then 
-// lower this value and vice versa. (Suggested value: 50).
 _rainIntervalRainProbability = 50;
-
-// Minimum time in minutes for rain intervals. Must be greater or equal to 0 and less than or equal to _maxRainIntervalTimeMin.
-// (Suggested value: 0).
 _minRainIntervalTimeMin = 0;
-
-// Maximum time in minutes for rain intervals. Must be greater than or equal to _minRainIntervalTimeMin. (Suggested value:
-// (_maxWeatherChangeTimeMin + _maxTimeBetweenWeatherChangesMin) / 2).
 _maxRainIntervalTimeMin = (_maxWeatherChangeTimeMin + _maxTimeBetweenWeatherChangesMin) / 2;
-
-// If set to true, then the rain is forced to stop after one rain interval during which it has rained (use this for example if you only want 
-// small occational cloudbursts ). If set to false, then the rain may stop, but it may also just change intensity for an 
-// immedeate new rain interval. (Suggested value: false).
 _forceRainToStopAfterOneRainInterval = false;
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Don't touch anything beneath this line
-
-drn_DynamicWeather_DebugTextEventArgs = []; // Empty
+drn_DynamicWeather_DebugTextEventArgs = []; 
 
 "drn_DynamicWeather_DebugTextEventArgs" addPublicVariableEventHandler {
     drn_DynamicWeather_DebugTextEventArgs call drn_fnc_DynamicWeather_ShowDebugTextLocal;
 };
 
-/*
- * Summary: Shows debug text on local client.
- * Arguments:
- *   _text: Debug text.
- */
 drn_fnc_DynamicWeather_ShowDebugTextLocal = {
     private ["_minutes", "_seconds"];
     
@@ -124,11 +47,6 @@ drn_fnc_DynamicWeather_ShowDebugTextLocal = {
     diag_log ((str _minutes + ":" + str _seconds) + " Debug: " + (_this select 0));
 };
 
-/*
- * Summary: Shows debug text on all clients.
- * Arguments:
- *   _text: Debug text.
- */
 drn_fnc_DynamicWeather_ShowDebugTextAllClients = {
     drn_DynamicWeather_DebugTextEventArgs = _this;
     publicVariable "drn_DynamicWeather_DebugTextEventArgs";
@@ -390,15 +308,6 @@ if (isServer) then {
                     drn_DynamicWeather_WeatherTargetValue = _minimumOvercast + (_maximumOvercast - _minimumOvercast) * (0.7 + random 0.3);
                 };
                 
-                // DEBUG
-                /*
-                if (overcast > 0.8) then {
-                    drn_DynamicWeather_WeatherTargetValue = 0.5;
-                }
-                else {
-                    drn_DynamicWeather_WeatherTargetValue = 0.85;
-                };
-                */
                 
                 drn_DynamicWeather_WeatherChangeStartedTime = time;
                 _weatherChangeTimeSek = _minWeatherChangeTimeMin * 60 + random ((_maxWeatherChangeTimeMin - _minWeatherChangeTimeMin) * 60);
@@ -408,8 +317,6 @@ if (isServer) then {
                     ["Weather forecast: Overcast " + str drn_DynamicWeather_WeatherTargetValue + " in " + str round (_weatherChangeTimeSek / 60) + " minutes."] call drn_fnc_DynamicWeather_ShowDebugTextAllClients;
                 };
             };
-            
-            // On average every one fourth of weather changes, change wind too
             if (random 100 < _windChangeProbability) then {
                 private ["_maxWind"];
                 
@@ -439,7 +346,7 @@ if (isServer) then {
         };
     };
     
-    // Start rain thread
+   
     if (_rainIntervalRainProbability > 0) then {
         [_minimumRain, _maximumRain, _forceRainToStopAfterOneRainInterval, _minRainIntervalTimeMin, _maxRainIntervalTimeMin, _rainIntervalRainProbability, _debug] spawn {
             private ["_minimumRain", "_maximumRain", "_forceRainToStopAfterOneRainInterval", "_minRainIntervalTimeMin", "_maxRainIntervalTimeMin", "_rainIntervalRainProbability", "_debug"];
@@ -468,7 +375,7 @@ if (isServer) then {
                     if (time >= _nextRainEventTime) then {
                         private ["_rainTimeSec"];
                         
-                        // At every rain event time, start or stop rain with 50% probability
+                     
                         if (random 100 < _rainIntervalRainProbability && !_forceStop) then {
                             drn_var_DynamicWeather_rain = _minimumRain + random (_maximumRain - _minimumRain);
                             publicVariable "drn_var_DynamicWeather_rain";
@@ -482,7 +389,7 @@ if (isServer) then {
                             _forceStop = false;
                         };
                         
-                        // Pick a time for next rain change
+                       
                         _rainTimeSec = _minRainIntervalTimeMin * 60 + random ((_maxRainIntervalTimeMin - _minRainIntervalTimeMin) * 60);
                         _nextRainEventTime = time + _rainTimeSec;
                         

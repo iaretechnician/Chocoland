@@ -103,11 +103,15 @@ if(_result == 1) then
 	//Mission Failed.
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, _failTextColour, _subTextColour, _war1];
 	[nil,nil,rHINT,_hint] call RE;
+         _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units CivGrpM;
     diag_log format["WASTELAND SERVER - Mission Failed"];
 } else {
 	//Mission Complete.
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The base has been captured, use what you found to help you crush the enemy</t>", _missionType, _vehicleName, _successTextColour, _subTextColour, _war1];
 	[nil,nil,rHINT,_hint] call RE;
+         _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+}forEach units CivGrpM;
     diag_log format["WASTELAND SERVER - Mission Finished"];
 };
 

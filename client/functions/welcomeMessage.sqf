@@ -1,5 +1,5 @@
 #define welcomeText 3200
-
+sleep 10;
 10 cutrsc["WelcomeMessage", "PLAIN"];
 
 disableSerialization;

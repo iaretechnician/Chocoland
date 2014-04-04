@@ -21,14 +21,30 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
 		sleep 1;
-		
 		if(0 <= 1) then {
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["cmoney",_playerMoney - _price,true];
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-			hintsilent "funnystuff bought";
+            switch (_x select 2) do
+{
+    case "dance":{[] execVM "addons\proving_ground\fnc_dance.sqf";};  
+    case "weather":{[] execVM "addons\proving_ground\fnc_environment.sqf";}; 
+    case "tel":{vehicle player setPos [_pos select 0,_pos select 1,0]; onMapSingleClick ""; openMap true;};
+    case "del":{playerdeleteObject = player addAction[('<t color=''#FF11AA''>' + ('mark the object on your Aim, Press on this') +  '</t>'),'addons\proving_ground\fnc_delete.sqf'];
+              };
+    case "spectate":{[] execVM "addons\proving_ground\fnc_spectate.sqf";};
+    case "npc":{(group player) createUnit [typeOf player,getpos player,[],0.1,""FORM""] setSkill 1;};
+    case "ammo1":{[1] execVM "addons\proving_ground\fnc_ammo_1.sqf";};
+    case "god1":{[1] execVM "addons\proving_ground\fnc_godmone_1.sqf";};
+    case "god2":{[1] execVM "addons\proving_ground\fnc_godmone_1.sqf";};
+      case "cow":{[Cow04] execVM "bunny.sqf";};
+      case "rabbid":{[Rabbit] execVM "bunny.sqf";};
+     case "goat":{[Goat] execVM "bunny.sqf";};
+   };
+hintsilent "funnystuff bought";
  
-		};
+} else {
+			hintsilent "There is another chopper or player blocking the spawn point!";};
 	}}forEach FunStoreArray;
 };
