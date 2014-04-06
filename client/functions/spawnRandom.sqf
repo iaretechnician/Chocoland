@@ -13,6 +13,19 @@ _randomLoc = cityList select (random (count cityList - 1));
 _pos = getMarkerPos (_randomLoc select 0);
 _pos = [_pos,1,(_randomLoc select 1),1,0,0,0] call BIS_fnc_findSafePos;
 _pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
+ _mapside = Round (random 2);
+     if(_mapside == 1) then 
+     {
+          _xCord = Round (random 700) + 2896.75;
+          _yCord = Round (random 1040) + 3515.77;
+          _pos = [_xCord, _yCord,0.0014];
+     }
+     else 
+     {
+         _xCord = Round (random 650)+3671.96;
+         _yCord = Round (random 980)+ 2915;
+         _pos = [_xCord,_yCord, 0.0014];
+     };
 player setPos _pos;
 
 respawnDialogActive = false;

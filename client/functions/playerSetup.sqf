@@ -57,20 +57,22 @@ thirstLevel = 100;
 hungerLevel = 100;
 
 
-_player setVariable["canfood",1,false];
+_player setVariable["canfood",2,false];
 _player setVariable["medkits",0,false];
-_player setVariable["water",1,false];
+_player setVariable["water",2,false];
 _player setVariable["fuel",0,false];
 _player setVariable["repairkits",0,false];
-_player setVariable["fuelFull", 0, false];
-_player setVariable["fuelEmpty", 1, false];
+_player setVariable["fuelFull", 1, false];
+_player setVariable["fuelEmpty",0, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
 player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
-
+_player addEventHandler ["Killed", {[_this] call createLootMoney2;}];
+processInitCommands;
+_player playMoveNow "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
 _player groupChat format["Player Initialization Complete"];
 playerSetupComplete = true;
 if(firstspawn) then {

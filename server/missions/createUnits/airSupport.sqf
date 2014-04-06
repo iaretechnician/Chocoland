@@ -53,5 +53,5 @@ sleep 0.2;
 _man2 moveInGunner _vehicle;
 
 
-_leader setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
-processInitCommands;
+/* setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
+processInitCommands;*/

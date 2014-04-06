@@ -33,11 +33,7 @@ while {true} do
     
 	if(!worldMissionRunning) then
     {
-      sleep 600;
-        _zufall = Round (random 50);
-                if(_zufall == 50) then
-                {
-                 _mission = _MMarray select (random (count _MMarray - 1));
+              _mission = _MMarray select (random (count _MMarray - 1));
                  execVM format ["server\missions\otherMissions\%1.sqf",_mission];
 		worldMissionRunning = true;
                  diag_log format["WASTELAND SERVER - Execute New Mission"];
@@ -47,7 +43,7 @@ while {true} do
 		_startTime = floor(time);
 		#endif
         _result = 0;
-                 };
+               
     } else {
     	sleep 100;  
     };    

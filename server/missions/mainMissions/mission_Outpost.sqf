@@ -25,9 +25,12 @@ diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
 [mainMissionDelayTime] call createWaitCondition;
+
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
@@ -37,7 +40,7 @@ _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Enemy Outpost";
   _war1 = Round (random 100)+600;
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Mission %6</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been spotted near the marker!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been spotted near the marker!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpL = createGroup civilian;
@@ -82,16 +85,15 @@ if(_result == 1) then
     _baseToDelete = nearestObjects [_randomPos, ["All"], 22];
     { deleteVehicle _x; } forEach _baseToDelete;
     
-    {deleteVehicle _x;}forEach units CivGrpL;
-    deleteGroup CivGrpL;
-    _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+    
+    {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpL;
     
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
-    deleteGroup CivGrpL;
-    _x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+   
+    {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpL;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost and weapons have been captured.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;

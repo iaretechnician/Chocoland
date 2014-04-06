@@ -46,7 +46,7 @@ class Mission
 	randomSeed=15307759;
 	class Intel
 	{
-		briefingName="4104Wasteland - Utes [3.0b]";
+		briefingName="404Wasteland - Utes [3.0b]";
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0;
@@ -92,7 +92,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor4";
-					init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+					
 				};
 			};
 		};
@@ -112,7 +112,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="blufor3";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -132,7 +132,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor8";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -152,7 +152,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor11";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -172,7 +172,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor12";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -192,7 +192,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor13";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -212,7 +212,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor14";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -232,7 +232,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor15";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -252,7 +252,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor1";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -272,7 +272,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor2";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -292,7 +292,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor3";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -312,7 +312,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor4";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -332,7 +332,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor5";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -352,7 +352,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor6";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -372,7 +372,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor7";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -392,7 +392,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor8";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -412,7 +412,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor12";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -432,7 +432,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor11";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -452,7 +452,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor10";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -472,7 +472,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor9";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -492,7 +492,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor13";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -512,7 +512,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor14";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -532,7 +532,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="opfor15";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -552,7 +552,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer1";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -572,7 +572,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer2";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -592,7 +592,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer3";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -612,7 +612,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer4";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -632,7 +632,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer5";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -652,7 +652,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer6";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -672,7 +672,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer7";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -692,7 +692,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer8";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -712,7 +712,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer9";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -732,7 +732,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer10";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -752,7 +752,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer11";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -772,7 +772,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer12";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -792,7 +792,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer13";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -812,7 +812,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer14";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -832,7 +832,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="guer15";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -853,7 +853,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor1";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -873,7 +873,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor7";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -893,7 +893,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor6";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -913,7 +913,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor5";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -933,7 +933,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor9";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -953,7 +953,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor10";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -973,7 +973,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 					leader=1;
 					skill=0.60000002;
 					text="blufor2";
-init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
+
 				};
 			};
 		};
@@ -1064,6 +1064,7 @@ init="_unit addEventHandler ["Killed", {[_this] call createLootMoney;}];";
 			skill=0.60000002;
 			init="this setVariable[""newVehicle"",1,true];";
 		};
+		
 	};
 	class Markers
 	{

@@ -26,9 +26,12 @@ diag_log format["WASTELAND SERVER - Side Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionType];
 [sideMissionDelayTime] call createWaitCondition;
+
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
@@ -39,9 +42,8 @@ _box = createVehicle ["RULaunchersBox",[(_randomPos select 0), (_randomPos selec
 _box2 = createVehicle ["RUSpecialWeaponsBox",[(_randomPos select 0), (_randomPos select 1) - 10,0],[], 0, "NONE"];
 [_box2,"mission_Side_USSpecial"] call fn_refillbox;
    _war1 = Round (random 100)+70;
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Mission %6</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>An enemy supply cache has been spotted!</t>", _missionType,  sideMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3' size='1.25'>%1</t><br/><t align='center' color='%3'>An enemy supply cache has been spotted!</t>", _missionType,  sideMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
-
 CivGrpS = createGroup civilian;
 [CivGrpS,_randomPos] spawn createSmallGroup;
 

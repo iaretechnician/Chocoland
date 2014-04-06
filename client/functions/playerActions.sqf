@@ -39,15 +39,4 @@ aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Release VIP
 aActionsIDs = aActionsIDs + [player addAction["Pickup Camo Net", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_CamoNet_NATO"],  5] select 0) < 5 and (player getVariable "camonet")<1 ']];
 
 //Cancel action
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 7, false, false, "", 'mutexScriptInProgress']];
-
-//Hide grave
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Hide Grave</t>"), "client\functions\hideGrave.sqf", nil, 1, false, true, "", 'player distance (nearestObjects [player, ["GraveCrossHelmet"],  5] select 0) < 2']];
-
-
-
-
-
-
-
-
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];

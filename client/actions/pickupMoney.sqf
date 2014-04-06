@@ -73,4 +73,4 @@ for "_iteration" from 1 to _lockDuration do
 		};      
 	};     
 };
-[] execVM "server\functions\eventSpawning.sqf";
+//[] execVM "server\functions\eventSpawning.sqf";

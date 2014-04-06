@@ -11,10 +11,11 @@ _player = (_this select 0) select 0;
 _corpse = (_this select 0) select 1;
 _corpse removeAction playerMenuId;
 _corpse removeAction  saveVehId;
+_corpse removeAction bombId; 
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;
-
+_corpse removeAction skinId;
 player call playerSetup;
 waitUntil {playerSetupComplete};
 

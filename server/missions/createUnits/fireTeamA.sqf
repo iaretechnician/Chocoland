@@ -63,4 +63,3 @@ _man5 addWeapon "Mk_48_DES_EP1";
 
 _leader = leader _group;
 //_leader setVehicleInit "null = [this,'UPS','random','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
-processInitCommands;

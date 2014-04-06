@@ -75,4 +75,4 @@ true spawn {
 	waitUntil {playerRespawnTime < 1};
 	titleText ["", "BLACK OUT", 1];
 };
-[] execVM "server\functions\eventSpawning.sqf";
+//[] execVM "server\functions\eventSpawning.sqf";

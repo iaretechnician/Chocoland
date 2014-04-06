@@ -26,7 +26,9 @@ diag_log format["WASTELAND SERVER - Side Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionType];
 [sideMissionDelayTime] call createWaitCondition;
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
@@ -41,7 +43,7 @@ _vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
   _war1 = Round (random 100)+30;
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Side Mission %6</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has been spotted at the marker go get it for your team.</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has been spotted at the marker go get it for your team.</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 diag_log format["WASTELAND SERVER - Side Mission Waiting to be Finished: %1",_missionType];

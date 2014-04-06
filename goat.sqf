@@ -52,3 +52,5 @@ _player addweapon "ItemWatch";
 _secondaryWeapon = secondaryWeapon _player;
 _player selectweapon _secondaryWeapon;
  player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
+skinId = player addAction[('<t color=''#FF33CC''>' + ('get back to Player') +  '</t>'),'reverseskin.sqf'];
+bombId = player addAction[('<t color=''#FF33CC''>' + ('BLEW UP!!!!') +  '</t>'),'bomb.sqf'];

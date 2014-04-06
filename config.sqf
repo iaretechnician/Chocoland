@@ -459,7 +459,7 @@ FunStoreArray=[
 ["Infinite Life/Bullets 10m",200000,"god10"],
 ["Infinite Life/Explosions 10m",200000,"god20"],
 ["Order Airstrike",200000,"strike"],
-["Order BaseCarrier",250000,"carrier"],
+["Order BaseCarrier",280000,"carrier"],
 ["Kill yourself",300000,"death"]           
 ];
 // Utes town and city array

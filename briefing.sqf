@@ -1,103 +1,296 @@
-//	@file Version: 1.0
-//	@file Name: briefing.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 30th May 13
 
-player createDiarySubject ["404Games", "404Games Information"];
-player createDiarySubject ["Changelog", "404Games Change Log"];
-player createDiarySubject ["Wasteland", "What is Wasteland?"];
+player createDiarySubject ["ChocoLand", "ChocoLand"];
+player createDiarySubject ["changelog", "404Games Change Log"];
+player createDiarySubject ["wasteland", "What is Wasteland?"];
 
-player createDiaryRecord["Changelog",
+player createDiaryRecord["changelog",
 [
-"3.0",
+"0.1",
 "
 <br/>
-		General:<br/>
-			- New improved and refined gun store.<br/>
-			- Added multiple new weapon and ammunition types.<br/>
-			- Added multiple new vehicles and static weapons.<br/>
-			- Vastly improved anti-cheat system.<br/>
-			- Weapon caches are now spawned by crash sites upon server reset.<br/>
-			- Helicopters and Planes are now guarded by AI upon server reset.<br/>
-			- Significant changes made to Weapon Caches.<br/>
-			- Towed vehicles can now hold players.<br/>
-			- Players are no longer able to drop money for the first few minutes upon spawning.<br/>
-			- Medikits used above 95hp are no longer consumed.<br/>
-			- Numerous code improvements and clean-ups.<br/>
-			- Added Cancel Action option to eating, drinking, locking and more.<br/>
-			- OPFOR now start with an extra Makarov magazine.<br/>
-			- Player bodies are now turned into tombstones upon death.<br/>
-				- Player tombstones can be removed by using the Hide Grave action.<br/>
-			- Mobile radar now disabled for Independent teams.<br/>
-			- Weapons found in cars have been adjusted.<br/>
-
-			- Spawn beacons can be packed and destroyed by Independent players.<br/><br/>
-
-		Missions:<br/>
-			- Added new VIP rescue mission.<br/>
-			- Added new small helicopter side mission.<br/>
-			- The Capture Outpost mission will now be airstriked and cleared of all AI and objects upon failure.<br/>
-			- New APCs added to the mission list.<br/>
-			- New Recon Vehicles added to the mission list.<br/>
-			- New Light Tanks added to the mission list.<br/>
-			- New Light Helicopters added to the mission list.<br/>
-			- US Special Weapons is no longer the only consisting crate to spawn for the Aircraft Wreck mission.<br/>
-			- Reduced delay between missions.<br/><br/>
-
-		Bug Fixes:<br/>
-			- Fixed a bug that allowed multiple cars to be towed to the same vehicle.<br/>
-			- Fixed a bug that allowed players to be loaded into vehicles whilst still on a stationary gun.<br/>
-			- Fixed a bug where the mission Capture Outpost was not despawning after failing.<br/>
-			- Fixed a bug where Spawn Beacons were not working for Independent players and groups.<br/>
-			- Fixed a bug where multiple helicopter explosions would occur upon server reset.<br/>
-			- Fixed a bug that allowed a player to drop money whilst buying a weapon from the gunstore.<br/>
-			- Sell Current Weapon gunstore feature is now fixed and working as intended.<br/>
-			- Spamming Buy Weapon no longer causes undefined behaviour.<br/>
-			- Stopped players killing each other in the spawn area on connection.<br/>
-			- Various other minor fixes to the gun store.<br/>
-			- Fixed multiple small bugs with the mission system.<br/>
+		[Fixed] - Server performance issues.<br/>
+		[Fixed] - Vehicle cleanup.<br/>
+		[Fixed] - Team locking time which is actually 3 mins now.<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404Games",
+player createDiaryRecord["changelog",
 [
-"Credits",
+"2.1",
 "
-	404Games Team:<br/><br/>
-		Costlyy - Lead Developer<br/>
-		Deadbeat - Developer<br/>
-		Pulse - Developer<br/>
-		Domuk - Community Manager<br/><br/>
-    
-	404Games Testers:<br/><br/>
-		Jellafish<br/>
-		Smibbs<br/>
-		Gwen<br/>
-		Joshy Fagence<br/>
+<br/>
+                        - New Missions.(Warning+Bounty,balanced npc AI,RandomSeed,on Failed Correctly despawn)<br/>
+			- New Money Spawn ( random Count, random Value,money drops during Mission Random Seed)<br/>
+                        - New Events (Money Zone, Invasion, Carrier AirStrike and SandStorms)<br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+			- New Killing System (when you kill an Enemy, you will get a fix Value of Money multiplied by your and your enemys Score)<br/>
+			- New Respawn System (you can Spawn Random or Suicide,where you can touch of Bomb), <br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+                        - New Store (the Parastore will full fill you wishes), <br/>
+                        - Modifier Lock / Unlock System( players can only unlock his locked Obejcts) <br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+                        - New anti-cheat system.<br/>
+                        - New TeamKilling Punish(Teamkill #1 = Loose 10% Money and 3m no Weapons, Teamkill 2# = 10m no Weapons, Teamkill #3 = Die on Every Second 10m), <br/>
+			- Server dont need Restarts, Objects will Respawn, and old Destroyed Buildings will Reset<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["changelog",
 [
-"Bug and Cheat Reporting",
+"2.2",
 "
 <br/>
-	Found a bug? Please report it at: http://www.404games.co.uk/bugs<br/><br/>
-	Suspect a player is hacking or exploiting? Please report it at: http://www.404games.co.uk/bans<br/><br/>
+		[Added] - Body Clean Up after a short period.<br/>
+		[Added] - Mobile Radar Station Mission.<br/>
+		[Changed] - Vehicle Clean made less aggressive.<br/>
 "
 ]
 ];
 
-player createDiaryRecord["404games",
+player createDiaryRecord["changelog",
 [
-"Teamspeak",
+"2.2b",
 "
 <br/>
-	There is a public Teamspeak 3 server available for players of this server.<br/><br/>
-	Teamspeak IP: ts.404games.co.uk<br/><br/>
-	Please join and say hello! (Please speak English)
+		[Changed] - Server Spawning Less Aggressive.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.3",
+"
+<br/>
+		[Fixed] - Drinking and Eating While in the car animation.<br/>
+        [Fixed] - Other minor bugs.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.4",
+"
+<br/>
+		[Added] - Three new objects.<br/>
+		[Added] - More anti hack for vehicles.<br/>
+		[Added] - Check to make sure missions don't pop up in the same place.<br/>
+		[Added] - Static Boats.<br/>
+		[Changed] - Increased length of welcome message.<br/>
+		[Changed] - Mission failover to 60 mins.<br/>
+		[Changed] - Increased delay for body clean up to 15 mins.<br/>
+		[Fixed] - Vehicle respawn script.<br/>
+		[Removed] - Some debuging.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.5",
+"
+<br/>
+		[Added] - Default weapon crates have been nerfed and more gun variations added.<br/>
+		[Added] - Static helis now spawn in random locations.<br/>
+		[Added] - When a static heli fails to spawn, a wreck is spawned instead.<br/>
+		[Added] - Cammo nets have been added to the general store.<br/>
+		[Fixed] - Players are now able to buy LMG's at the gun store.<br/>
+		[Fixed] - Weapons now have varying sell prices relative to gun cost.<br/>
+		[Fixed] - When buying a full jerry can, the empty one is automatically removed from player inventory.<br/>
+		[Changed] - Various balance and price tweaks made to stores.<br/>
+		[Changed] - Chernarus is now in summer time. Longer days to be had by all.<br/>
+		[Changed] - Player starting money reduced to $100.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.6",
+"
+<br/>
+		[Added] - Groups.<br/>
+        [Added] - Body and Object clean up.<br/>
+		[Added] - Static helis now spawn in random locations.<br/>
+		[Added] - Default weapon crates have been nerfed and more gun variations added.<br/>
+		[Added] - When a static heli fails to spawn, a wreck is spawned instead.<br/>
+		[Added] - Player Tags thanks to [OcUK]Melbo.<br/>
+		[Added] - Yellow tint, falling ash and dust for wasteland.<br/>
+		[Added] - Cammo nets have been added to the general store.<br/>
+        [Fixed] - Fix vehicle cleanup and respawn.<br/>
+		[Fixed] - Players are now able to buy LMG's at the gun store.<br/>
+		[Fixed] - Weapons now have varying sell prices relative to gun cost.<br/>
+		[Fixed] - When buying a full jerry can, the empty one is automatically removed from player inventory.<br/>
+		[Changed] - Town marker procedural generation optimised for reduced start-up lag.<br/>
+		[Changed] - Admin menu can now remove player teamlock and teamkiller, also added a three tier permission system for greater flexibility.<br/>
+		[Changed] - Player starting money reduced to $100.<br/>
+		[Changed] - Various balance and price tweaks made to stores.<br/>
+		[Changed] - Chernarus is now in summer time. Longer days to be had by all.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.6 Dev3",
+"
+<br/>
+		[Fixed] - Flickering Icons.<br/>
+		[Fixed] - Spawning with guns.<br/>
+		[Fixed] - Spawning in a group.<br/>
+		[Changed] - Removed Green Icons From Groups.<br/>
+"
+]
+];
+player createDiaryRecord["changelog",
+[
+"2.7",
+"
+<br/>
+		[Added] - Better player join flow.<br/>
+		[Added] - Independent groups now have icons back.<br/>
+		[Fixed] - Disapearing icons on players who have been alive a long time.<br/>
+		[Fixed] - Player Setup and Initialization.<br/>
+		[Fixed] - Joining with a group.<br/>
+		[Fixed] - Feedback messages missing.<br/>
+        [Fixed] - Money dupe.<br/>
+		[Changed] - Time Sync to just sync time and not accelerate it.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.8",
+"
+<br/>
+		[Added] - When spawning on a spawn beacon, you come in via HALO jump.<br/>
+		[Added] - New store interaction system.<br/>
+		[Added] - Supply drop mission written by OCUK MarKeR and tweaked by 404Games.<br/>
+		[Added] - Lots of new mission spawn locations.<br/>
+		[Fixed] - Floating crates/objects sometimes appearing above Novy.<br/>
+		[Fixed] - AI Team defend script. Be careful, they now actually use their mounted weapons!<br/>
+		[Fixed] - Vehicles no longer spawn in silly places / silly angles.<br/>
+		[Fixed] - Not able to interact with stores sometimes.<br/>
+		[Fixed] - Outpost having overpowered weapons.<br/>
+		[Fixed] - Other misc fixes that have been mentioned on the forums, Thanks for your help!<br/>
+		[Improved] - Vehicle HUD to now show the players respective role within the vehicle.<br/>
+		[Improved] - Mission spawning system thanks to Kettlewell.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.8a",
+"
+<br/>
+		[Fixed] - AI getting into mission vehicles.<br/>
+		[Fixed] - Fixed some issues with missions.<br/>
+		[Fixed] - Added in some defines for missions to easily edit the times.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.9",
+"
+<br/>
+		[Added] - Most interactions have a Cancel Action option now.<br/>
+		[Fixed] - Abandoned Truck showing up as recon vehicle.<br/>
+		[Fixed] - Object lock now functions correctly.<br/>
+		[Fixed] - Spawn beacon, radar, object etc unlock/lock actions now stop on death.<br/>    
+		[Fixed] - The mission RPT errors.<br/>
+		[Fixed] - The vehicle count RPT error.<br/>
+		[Fixed] - mission_Outpost timeout.<br/>
+		[Changed] - Gun and General stores no longer have over-powered super radars.<br/>
+		[Changed] - Player now starts with only 1x food and water.<br/>
+		[Changed] - Added more variation to vehicle weapons spawns and removed OP weapons.<br/>
+		[Enhancement] - Refuel and Repair vehicle functions have been improved.<br/>
+		[Enhancement] - The mission RPT's to have more information to help with debuging.<br/>
+		[Enhancement] - Server startup optimizations.<br/>
+		[Enhancement] - General mission optimizations; many changes to improve performance.<br/>
+		[Enhancement] - Made some changes to defend area to make the AI more aware.<br/>
+		[Enhancement] - The mission system is now all pre compiled and steamlined to make it run smoother.<br/>
+		[Enhancement] - Mission will no longer run the same one twice.<br/>  
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.9b",
+"
+<br/>
+		[Fixed] - Fuel Cans not refilling.<br/>
+		[Fixed] - Deer Stand Flying.<br/>
+		[Fixed] - No limit on gunstore ammo.<br/>
+		[Fixed] - Supply Drop Mission Food Stand.<br/>
+		[Could Not Recrate] - The Mission_LightArmVeh Mission is not spawning the BTR40_MG_TK_GUE_EP1.<br/>
+		[Could Not Recrate] - Arma2Net version of 2.9a has got a problem with the groups system.<br/>
+		Could Not Recrate] - Teamkill Message Not Working.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"2.9c",
+"
+<br/>
+		[Fixed] - Some money exploits.<br/>
+		[Fixed] - Admin menu issues.<br/>
+"
+]
+];
+
+player createDiaryRecord["ChocoLand",
+[
+"ADMINS and Developer",
+"
+<br/>
+	   ChocoLand Hosted by Heavensdelight.de <br/>
+           Admin - OberChoco [B2F] Chocobora<br/>
+           Admin  - General [B2F] NinjaSquirttle<br/>
+           Admin - OberBaum [B2F] MisterIxi<br/>
+"
+]
+];
+
+player createDiaryRecord["ChocoLand",
+[
+"Website",
+"
+<br/>
+	have fun? Please visit : http://heavensdelight.de<br/><br/>
+	wanna watch our Music Playlist: http://heavensdelight.de<br/><br/>
+	Please remeber this game-mode is in continuous development and there will be bugs. 
+"
+]
+];
+
+player createDiaryRecord["ChocoLand",
+[
+"Information about the Features",
+"
+<br/>
+	  - New Missions.(Warning+Bounty,balanced npc AI,RandomSeed,on Failed Correctly despawn)<br/>
+			- New Money Spawn ( random Count, random Value,money drops during Mission Random Seed)<br/>
+                        - New Events (Money Zone, Invasion, Carrier AirStrike and SandStorms)<br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+			- New Killing System (when you kill an Enemy, you will get a fix Value of Money multiplied by your and your enemys Score)<br/>
+			- New Respawn System (you can Spawn Random or Suicide,where you can touch of Bomb), <br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+                        - New Store (the Parastore will full fill you wishes), <br/>
+                        - Modifier Lock / Unlock System( players can only unlock his locked Obejcts) <br/>
+                        - New Reward System (get every 5 min Money Multiplier your uptime on this Server), <br/>
+                        - New anti-cheat system.<br/>
+                        - New TeamKilling Punish(Teamkill #1 = Loose 10% Money and 3m no Weapons, Teamkill 2# = 10m no Weapons, Teamkill #3 = Die on Every Second 10m), <br/>
+			- Server dont need Restarts, Objects will Respawn, and old Destroyed Buildings will Reset<br/>
 "
 ]
 ];

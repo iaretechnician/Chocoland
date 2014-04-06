@@ -26,23 +26,18 @@ _missionDelayTime = 180; //2700
 _missionRewardRadius = 1500;
 _reward = ceil(random 10000) + 5000;
 
-_invasionArray = ["carrier_1",
-"carrier_2",
-"carrier_4",
-"carrier_6",
-"carrier_8",
-				"carrier_3",
-				"carrier_5",
-				"carrier_7"];
+_invasionArray = ["carrier_1","carrier_2","carrier_4","carrier_6","carrier_8","carrier_3","carrier_5","carrier_7"];
 				
 _selectMarker = _invasionArray call BIS_fnc_selectRandom;
 _randomPos = getMarkerPos _selectMarker;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 
 //Tell everyone their will be an invasion soon
 
-    _war1 = 1;
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war4];
+    _war1 = Round (random 10);
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war4];
 [nil,nil,rHINT,_hint] call RE;
 
 //Wait till the mission is ready to be ran.
@@ -76,7 +71,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units FireTeamA;
 
 FireTeamB = createGroup civilian;
@@ -91,7 +86,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units FireTeamB;
 FireTeamC = createGroup civilian;
 [FireTeamC,_randomPos] execVM "server\missions\createUnits\fireTeamC.sqf";
@@ -105,7 +100,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units FireTeamC;
 FireTeamD = createGroup civilian;
 [FireTeamD,_randomPos] execVM "server\missions\createUnits\fireTeamD.sqf";
@@ -119,7 +114,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units FireTeamD;
 FireTeamE = createGroup civilian;
 [FireTeamE,_randomPos] execVM "server\missions\createUnits\fireTeamE.sqf";
@@ -133,7 +128,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units FireTeamE;
 GroundSupport = createGroup civilian;
 [GroundSupport,_randomPos] execVM "server\missions\createUnits\groundSupport.sqf";
@@ -147,7 +142,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units GroundSupport;
 AirSupport = createGroup civilian;
 [AirSupport, _randomPos] execVM "server\missions\createUnits\airSupport.sqf";
@@ -161,7 +156,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.3];
+_unit setskill ["aimingAccuracy",0.1];
 }forEach units AirSupport;
 //Wait 5 for units to start patrolling and for the air support to take off
 sleep 5;
@@ -211,26 +206,26 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
 	sleep 20;
 	
-	{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units FireTeamA;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units FireTeamB;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units FireTeamC;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units FireTeamD;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units FireTeamE;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units GroundSupport;
-{
-_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+
+{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units AirSupport;
 	
     diag_log format["WASTELAND SERVER - Mission Failed"];

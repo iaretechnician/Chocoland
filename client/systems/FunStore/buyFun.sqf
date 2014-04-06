@@ -30,17 +30,18 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
     case "dance":{[] execVM "addons\proving_ground\fnc_dance.sqf";};  
     case "weather":{[] execVM "addons\proving_ground\fnc_environment.sqf";}; 
-    case "tel":{vehicle player setPos [_pos select 0,_pos select 1,0]; onMapSingleClick ""; openMap true;};
+    //case "tel":{player setPos [_pos select 0,_pos select 1,0]; onMapSingleClick ""; openMap true;};
     case "del":{playerdeleteObject = player addAction[('<t color=''#FF11AA''>' + ('mark the object on your Aim, Press on this') +  '</t>'),'addons\proving_ground\fnc_delete.sqf'];
               };
     case "spectate":{[] execVM "addons\proving_ground\fnc_spectate.sqf";};
-    case "npc":{(group player) createUnit [typeOf player,getpos player,[],0.1,""FORM""] setSkill 1;};
+    case "npc":{group player createUnit [typeOf player,getpos player,[],0.1,"FORM"] setSkill 1;};
     case "ammo1":{[1] execVM "addons\proving_ground\fnc_ammo_1.sqf";};
     case "god1":{[1] execVM "addons\proving_ground\fnc_godmone_1.sqf";};
     case "god2":{[1] execVM "addons\proving_ground\fnc_godmone_1.sqf";};
-      case "cow":{[Cow04] execVM "bunny.sqf";};
-      case "rabbid":{[Rabbit] execVM "bunny.sqf";};
-     case "goat":{[Goat] execVM "bunny.sqf";};
+      case "cow":{[] execVM "cow.sqf";};
+      case "rabbid":{[] execVM "bunny.sqf";};
+     case "goat":{[] execVM "goat.sqf";};
+    
    };
 hintsilent "funnystuff bought";
  

@@ -1,4 +1,4 @@
-_skin = "Cow04";
+_skin = "CDF_Soldier_Medic";
 // ***** CBA_fnc_switchPlayer *****
 private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
  
@@ -13,7 +13,7 @@ _dummyUnit = (_ar select 4) createUnit [_type, [0, 0, 0], [], 0, "NONE"]; // Joi
 if (isNull _dummyUnit) exitWith { hint "Sorry, something went wrong, dummyUnit is null" };
 [_oldUnit] join _dummyGroup;
  hint format["1.Dummy created, State saved and put oldUnit in new group: %1", _dummyGroup];
- _newUnit = _dummyGroup createUnit ["Cow04", _ar select 5, [], 0, "NONE"];
+ _newUnit = _dummyGroup createUnit ["CDF_Soldier_Medic", _ar select 5, [], 0, "NONE"];
  if (isNull _newUnit) exitWith { hint "Sorry, something went wrong, newUnit is null" };
  hint format["2.New unit created, local: %1", local _newUnit];
 sleep 1;
@@ -52,5 +52,7 @@ _player addweapon "ItemWatch";
 _secondaryWeapon = secondaryWeapon _player;
 _player selectweapon _secondaryWeapon;
  player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
-skinId = player addAction[('<t color=''#FF33CC''>' + ('get back to Player') +  '</t>'),'reverseskin.sqf'];
-bombId = player addAction[('<t color=''#FF33CC''>' + ('BLEW UP!!!!') +  '</t>'),'bomb.sqf'];
+playerMenuId = player addAction [format ["<t color='#FF6600'>%1</t>", "Player Menu"], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
+		/// custom
+              playerWeaponId = player addAction[('<t color=''#FF33CC''>' + ('ParaStore') +  '</t>'),'client\systems\menu\loadmenu.sqf'];
+               

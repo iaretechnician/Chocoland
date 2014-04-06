@@ -149,6 +149,7 @@ _man15 addWeapon "M4A3_RCO_GL_EP1";
 [_group,_pos] execVM "server\functions\checkUnitHeight.sqf";
 
 _leader = leader _group;
-_leader setVehicleInit "nul = [_group,_pos] execVM 'server\functions\defendArea.sqf'";
+/*_leader setVehicleInit "nul = [_group,_pos] execVM 'server\functions\defendArea.sqf'";
 processInitCommands;
 
+*/

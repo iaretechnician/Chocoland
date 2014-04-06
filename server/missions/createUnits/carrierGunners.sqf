@@ -47,5 +47,6 @@ _man4 addMagazine "100Rnd_762x51_M240";
 _man4 addWeapon "Mk_48_DES_EP1";
 
 _leader = leader _group;
-_leader setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendCarrier.sqf'";
+/*_leader setVehicleInit "null = [group this,(getPos this)] execVM 'server\functions\defendCarrier.sqf'";
 processInitCommands;
+*/

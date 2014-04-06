@@ -14,6 +14,19 @@ _pos = getMarkerPos (_randomLoc select 0);
 _pos = [_pos,1,(_randomLoc select 1),1,0,0,0] call BIS_fnc_findSafePos;
 _pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];
 _pos = [_pos,1,75,1,0,0,0] call BIS_fnc_findSafePos;
+_mapside = Round (random 2);
+     if(_mapside == 1) then 
+     {
+          _xCord = Round (random 2000) + 2436.33;
+          _yCord = Round (random 1140) + 3501.65;
+          _pos = [_xCord, _yCord,0.0014];
+     }
+     else 
+     {
+         _xCord = Round (random 1550)+3197.88;
+         _yCord = Round (random 1375)+ 2857;
+         _pos = [_xCord,_yCord, 0.0014];
+     };
 player setPos _pos;
 		    
     2 cutText ["HALO jump initialized. Use MOUSEWHEEL to open Your parachute!", "PLAIN DOWN", 5];
