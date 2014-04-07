@@ -187,7 +187,7 @@ class PlayersMenu
                 class addMoneyButton: w_RscButton
 		{
 			idc = -1;
-			text = "add 50k Money";
+			text = "ADD 50k$ Money";
 			onButtonClick = "[8] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.410 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -195,7 +195,17 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-
+                class telButton: w_RscButton
+		{
+			idc = -1;
+			text = "Tel to Player";
+			onButtonClick = "[9] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.410 * safezoneW + safezoneX;
+			y = 0.760 * safezoneH + safezoneY;
+			w = 0.080 * safezoneW;
+			h = 0.04 * safezoneH;
+			color[] = {0.95,0.1,0.1,1};
+		};
 		class RemoveAllWeaponsButton: w_RscButton
 		{
 			idc = -1;

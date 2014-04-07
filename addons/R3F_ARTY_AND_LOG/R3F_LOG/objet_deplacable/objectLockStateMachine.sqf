@@ -55,7 +55,7 @@ switch (_lockState) do {
                 //CUSTOM
                 _uid = getPlayerUID player;
                 _currObject setVariable ["playerGUID", _uid, true];
-              // player globalChat format["Your id  $%1",_uid]; 
+             
                 2 cutText ["", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 		    }; 
@@ -63,22 +63,24 @@ switch (_lockState) do {
  		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.       
     };
     case 1:{ // UNLOCK
-         if ((_currObject getVariable "playerGUID") == getPlayerUID player) then{
+         
         R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = 45;
+		_totalDuration = 8;
 		_unlockDuration = _totalDuration;
 		_iteration = 0;
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		for "_iteration" from 1 to _unlockDuration do {
-            if(player distance _currObject > 7) exitWith { 
-		        2 cutText ["Object unlock failed, you too far away...", "PLAIN DOWN", 1];
-                R3F_LOG_mutex_local_verrou = false;
-			};
+                    if ((_currObject getVariable "playerGUID") != getPlayerUID player) exitWith{
+                          2 cutText ["You Cannot Unlock this Object, you are not the Owner of this Object", "PLAIN DOWN", 1];
+                           R3F_LOG_mutex_local_verrou = false;};
+                    if(player distance _currObject > 7) exitWith {  R3F_LOG_mutex_local_verrou = false;
+                          2 cutText ["Object unlock failed, you too far away...", "PLAIN DOWN", 1];
+                           R3F_LOG_mutex_local_verrou = false;};
+			
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you too far away...", "PLAIN DOWN", 1];
-                R3F_LOG_mutex_local_verrou = false;
-			};
-            
+                              R3F_LOG_mutex_local_verrou = false; };
+                               
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
             };
@@ -91,12 +93,13 @@ switch (_lockState) do {
                 _currObject setVariable ["objectLocked", false, true];
                 2 cutText ["", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
-		    }; 
+                                                                    }; 
 		};
 		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.     
       if !(R3F_LOG_mutex_local_verrou) then {
         R3F_LOG_mutex_local_verrou = false;
         diag_log format["WASTELAND DEBUG: An error has occured in LockStateMachine.sqf. Mutex lock was not reset. Mutex lock state actual: %1", R3F_LOG_mutex_local_verrou];
-    };
-    } else {player globalChat "You Cannot Unlock this Object";};
-};};
+                                            };
+       // };
+     };
+};

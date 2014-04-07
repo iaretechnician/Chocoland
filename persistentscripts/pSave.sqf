@@ -93,11 +93,14 @@ PDB_savePlayerDead = {
 	
 	_dammage = 1;
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "dammage", _dammage] call iniDB_write;
-	
-	/*_cmoney = 0;
-	if(!isNil "_cmoney") then {*/
+	_cmoney = _x getVariable "cmoney";
+	if(!isNil "_cmoney") then {
+	[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
+	};
+        /*_cmoney = _playerUID getVariable "cmoney";
+	if(!isNil "_cmoney") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
-
+*/
 	_canfood = 0;
 	if(!isNil "_canfood") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "canfood", _canfood] call iniDB_write;

@@ -60,5 +60,4 @@ if(X_Server) then {
 [] execVM "addons\proving_Ground\init.sqf";
 //[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "motd.sqf";
-[] execVM "addons\Backpacks\init.sqf";
 _null = [] execVM "addons\scripts\cleanupnew.sqf";

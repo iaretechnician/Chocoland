@@ -7,7 +7,26 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
+//thx KiloSwiss
+if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
+_sidePlayer = side (group _player);
+_sideKiller = side (group _killer);
+_killerUID = getPlayerUID _killer;
+_groupMemberUIDs = [];
+if(count units group player > 1) then { //Get your group member UIDs
+	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
+};
 
+if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_player == _killer)) then {
+		
+		[nil,_killer, "loc", rEXECVM,"client\functions\moneyReward.sqf", "punish", _player] call RE;
+	}else{
+		if(_Player != _Killer)then{	//Give the killer his deserved reward.
+			_reward = 1 max floor(score _killer) * 200 max floor(score _player * 200);	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
+			[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;
+		};
+	};
+};
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {

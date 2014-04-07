@@ -253,5 +253,5 @@ switch(_switch) do
 		lbClear _cartlist;
 	};
 };
-
+player spawn PDB_savePlayer;
 mutexScriptInProgress = false;

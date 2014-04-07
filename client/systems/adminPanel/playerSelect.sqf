@@ -160,8 +160,25 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-  					_x setVariable["cmoney",50000,true];
-			    };
+                                _killerMoney = _x getVariable "cmoney";
+                                _newMoney = _killerMoney + 50000;
+                                _x setVariable ["cmoney", _newMoney, true];
+  			   };
+			}forEach playableUnits;       		
+	    };
+             case 9: //add 100k Money
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			    if(getPlayerUID _x == _targetUID) then
+			    {
+                             _playerName = name player;
+                            _target setVehicleInit format["if (name player == ""%1"") then {titleText [""Admin %2: approaches you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
+                              processInitCommands;
+                             clearVehicleInit _target;
+                            _pos1 = getPos _x;
+                             player setPos _pos1;
+  			   };
 			}forEach playableUnits;       		
 	    };
 	};

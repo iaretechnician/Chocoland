@@ -60,10 +60,11 @@ else
 		_arme_principale = primaryWeapon player;
 		if (_arme_principale != "") then
 		{
-			player playMove "AidlPercMstpSnonWnonDnon04";
-			sleep 1.5;
+                   
+			/*player playMove "AidlPercMstpSnonWnonDnon04";
+			sleep 1.5;*/
 			player removeWeapon _arme_principale;
-		}
+                        		}
 		else {sleep 0.5;};
 		
 		// Si le joueur est mort pendant le sleep, on remet tout comme avant
@@ -162,12 +163,13 @@ else
 			if (alive player && _arme_principale != "") then
 			{
 				if(primaryWeapon player != "") then {
-					_o = createVehicle ["WeaponHolder", player modelToWorld [0,0,0], [], 0, "NONE"];
+                                  	_o = createVehicle ["WeaponHolder", player modelToWorld [0,0,0], [], 0, "NONE"];
 					_o addWeaponCargoGlobal [_arme_principale, 1];
 				} else {
 					player addWeapon _arme_principale;
 					player selectWeapon _arme_principale;
 					player selectWeapon (getArray (configFile >> "cfgWeapons" >> _arme_principale >> "muzzles") select 0);
+                                            
 				};
 			};
 		};

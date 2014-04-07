@@ -51,13 +51,14 @@ player addEventHandler ["Killed", {[_this] call onKilled;}];
 waituntil {!(IsNull (findDisplay 46))};
 (findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyPress"];
 
-"currentDate" addPublicVariableEventHandler {[] call timeSync};
+//"currentDate" addPublicVariableEventHandler {[] call timeSync};
 "clientMissionMarkers" addPublicVariableEventHandler {[] call updateMissionsMarkers};
 "clientRadarMarkers" addPublicVariableEventHandler {[] call updateRadarMarkers};
 "pvar_teamKillList" addPublicVariableEventHandler {[] call updateTeamKiller};
 "publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
 
 //client Executes
+[] execVM "addons\Backpacks\init.sqf";
 [] execVM "client\functions\initSurvival.sqf";
 [] execVM "client\systems\hud\playerHud.sqf";
 [] execVM "client\functions\createTownMarkers.sqf";
@@ -73,7 +74,5 @@ if (isNil "FZF_IC_INIT") then   {
 };
 sleep 1;
 true spawn playerSpawn;
-[] execVM "client\functions\antiCheatClient.sqf";
+//[] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;
-
-nul = [player] execVM "client\functions\safeZone.sqf";

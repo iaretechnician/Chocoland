@@ -19,12 +19,12 @@ _startTime = floor(netTime);
 #else
 _startTime = floor(time);
 #endif
-_result = 0;
+_result = 1;
 
 while {true} do
 {
-    _currTime = floor(time);
-	if(_currTime - _startTime >= 2400) then {_result = 1;};
+   // _currTime = floor(time);
+	//if(_currTime - _startTime >= 2400) then {_result = 1;};
     
     if(_result == 1) then
     {

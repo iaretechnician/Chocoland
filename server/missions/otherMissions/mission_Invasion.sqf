@@ -37,7 +37,7 @@ sleep 10;
 //Tell everyone their will be an invasion soon
 
     _war1 = Round (random 10);
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war4];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>A large enemy force is just off shore. Reconnaissance suggests the invasion will begin in approximately %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 //Wait till the mission is ready to be ran.
@@ -63,7 +63,7 @@ FireTeamA = createGroup civilian;
 {
 _unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -71,14 +71,14 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units FireTeamA;
 
 FireTeamB = createGroup civilian;
 [FireTeamB,_randomPos] execVM "server\missions\createUnits\fireTeamB.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -86,13 +86,13 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units FireTeamB;
 FireTeamC = createGroup civilian;
 [FireTeamC,_randomPos] execVM "server\missions\createUnits\fireTeamC.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -100,13 +100,13 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units FireTeamC;
 FireTeamD = createGroup civilian;
 [FireTeamD,_randomPos] execVM "server\missions\createUnits\fireTeamD.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -114,13 +114,13 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units FireTeamD;
 FireTeamE = createGroup civilian;
 [FireTeamE,_randomPos] execVM "server\missions\createUnits\fireTeamE.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -128,13 +128,13 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units FireTeamE;
 GroundSupport = createGroup civilian;
 [GroundSupport,_randomPos] execVM "server\missions\createUnits\groundSupport.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -142,13 +142,13 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units GroundSupport;
 AirSupport = createGroup civilian;
 [AirSupport, _randomPos] execVM "server\missions\createUnits\airSupport.sqf";
-_unit = _x;
+{_unit = _x;
 _unit disableAI "TARGET"; //Disable the "running away from the object and hunting down enemies" behaviour.
-_unit setskill ["Spotdistance", 1];
+_unit setskill ["Spotdistance", 0.5];
 _unit setskill ["general", (0.3)];
 _unit setskill ["courage", 1];
 _unit setskill ["endurance", 1];
@@ -156,7 +156,7 @@ _unit setskill ["spotTime", 0.1];
 _unit setskill ["aimingShake", 0.5];
 _unit setskill ["aimingSpeed", 0.1];
 _unit setskill ["reloadSpeed", 0.4];
-_unit setskill ["aimingAccuracy",0.1];
+_unit setskill ["aimingAccuracy",0.05];
 }forEach units AirSupport;
 //Wait 5 for units to start patrolling and for the air support to take off
 sleep 5;
@@ -166,7 +166,7 @@ clientMissionMarkers set [count clientMissionMarkers,["Invasion_Marker",_randomP
 publicVariable "clientMissionMarkers";
 
 //Announce the invasion to clients
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3'>The invasion has begun! Destroy the enemy force at the marked city!</t>", _missionType,  _mainTextColour, _subTextColour, _war4];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Invasion %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t align='center' color='%3'>The invasion has begun! Destroy the enemy force at the marked city!</t>", _missionType,  _mainTextColour, _subTextColour, _war1];
 [nil,nil,rHINT,_hint] call RE;
 diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
 _startTime = floor(time);

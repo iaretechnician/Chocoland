@@ -67,7 +67,7 @@ if(((damage _currVehicle) > 0.05) OR !(canMove _currVehicle) OR (_currVehicle is
       		player switchMove _currPlayerState;
   			player setVariable["repairkits",(player getVariable "repairkits")-1,false];
       		_currVehicle setDamage 0;
-                _currVehicle setFuel 0;
+                _currVehicle setFuel 1;
                 _currVehicle setVehicleAmmo 1;
    		};
     };

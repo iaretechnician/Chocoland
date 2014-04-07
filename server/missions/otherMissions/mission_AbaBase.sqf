@@ -17,7 +17,7 @@ private ["_base","_unitsAlive","_playerPresent","_missionType","_successTextColo
 //Mission Initialization.
 _rad=20000;
 _result = 0;
-_missionType = "Capture Military Base";
+_missionType = "Choco Base";
 _mainTextColour = "#52bf90";
 _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
@@ -75,7 +75,9 @@ _result = 0;
 //Add marker to client marker array.
 clientMissionMarkers set [count clientMissionMarkers,["Base_Marker",_randomPos,"Capture Military Base"]];
 publicVariable "clientMissionMarkers";
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 _veh = ["outpostUS1"] call BIS_fnc_selectRandom;
 _base = [_veh, 0, _randomPos] execVM "server\functions\createBase.sqf";
 

@@ -50,11 +50,11 @@ class Mission
 		briefingDescription="Wasteland is a harsh survival sandbox";
 		resistanceWest=0;
 		startWeather=0;
-		forecastWeather=1;
+		forecastWeather=0.9;
 		year=2020;
-		month=1;
-		day=1;
-		hour=13;
+		month=3;
+		day=7;
+		hour=10;
 		minute=0;
 	};
 	class Groups
@@ -73,6 +73,8 @@ class Mission
 					side="LOGIC";
 					vehicle="ProtectionZone_Ep1";
 					skill=0.2;
+					name="testmo";
+
 				};
 			};
 		};

@@ -77,3 +77,4 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		};
 	}}forEach vehicleStoreArray;
 };
+player spawn PDB_savePlayer;

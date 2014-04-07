@@ -26,9 +26,7 @@ diag_log format["WASTELAND SERVER - Side Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionType];
 [sideMissionDelayTime] call createWaitCondition;
 
@@ -36,7 +34,9 @@ diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 _vehicleClass = ["HMMWV_M998A2_SOV_DES_EP1","UAZ_AGS30_RU","LandRover_Special_CZ_EP1","HMMWV_M1151_M2_DES_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage

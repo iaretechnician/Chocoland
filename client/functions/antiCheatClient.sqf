@@ -12,14 +12,14 @@
 // TODO: Find a better way of doing this...
 _bannedWeapons = [
     "2A14","2A38M","2A42","2A46M","2A46MRocket","2A70","2A70Rocket","2A72","2B14","57mmLauncher","57mmLauncher_128","57mmLauncher_64",
-    "80mmLauncher","9M311Laucher","AALauncher_twice","AGS17","AGS30_heli","AirBombLauncher","AT10LauncherSingle","AT11LauncherSingle","AT13LauncherSingle","AT2Launcher","AT5Launcher","AT5LauncherSingle",
-    "AT6Launcher","AT9Launcher","AZP85","BAF_GMG","BombLauncher","BombLauncherA10","BombLauncherF35","Ch29Launcher","Ch29Launcher_Su34","CMFlareLauncher","CRV7_FAT","CRV7_HEPD",
-    "CRV7_PG","CTWS","D10","D30","D81","DT_veh","FFARLauncher","FFARLauncher_14","GAU12","GAU8","GRAD","GSh23L",
-    "GSh23L_L39","GSh301","GSh302","HeliBombLauncher","HellfireLauncher","HellfireLauncher_AH6","Igla_twice","KPVT","Laserdesignator_mounted","M119","M120","M134",
+    "80mmLauncher","9M311Laucher","AALauncher_twice","AGS17","AGS30_heli","AirBombLauncher","AT10LauncherSingle","AT11LauncherSingle","AT13LauncherSingle","AT5Launcher","AT5LauncherSingle",
+    "AT6Launcher","AT9Launcher","AZP85","BAF_GMG","BombLauncher","Ch29Launcher","CRV7_FAT","CRV7_HEPD",
+    "CRV7_PG","CTWS","D10","D30","D81","DT_veh","FFARLauncher","FFARLauncher_14","GRAD","GSh23L",
+    "GSh23L_L39","GSh301","GSh302","HeliBombLauncher","HellfireLauncher","HellfireLauncher_AH6","Igla_twice","KPVT","M119","M120","M134",
     "M134_2","M168","M197","M230","M242","M242BC","M252","M256","M2BC","M32_heli","M3P","M621",
     "M68","MaverickLauncher","MissileLauncher","Mk82BombLauncher","Mk82BombLauncher_6","MLRS","R73Launcher","R73Launcher_2","RocketPods","S8Launcher",
-    "SmokeLauncher","SPG9","StingerLaucher","StingerLaucher_4x","StingerLauncher_twice","TOWLauncher","TOWLauncherSingle","TwinM134","TwinVickers","VikhrLauncher",
-    "YakB","ZiS_S_53" ];
+    "SmokeLauncher","SPG9","StingerLaucher_4x","StingerLauncher_twice","TOWLauncherSingle","TwinM134","TwinVickers","VikhrLauncher",
+    "ZiS_S_53" ];
     
 // TODO: Make mission vehicles sit in public arrays, then extrapolate the vehicles out of the cfgVehicles in full
 //  and just compare to make sure the selected vehicle is not in any of the mission arrays.
@@ -59,18 +59,18 @@ while {true} do {
     disableUserInput false;
 	        
 	// Show the player incase they are trying to be a sneaky little neckbearded fuck.
-	player hideObject false;
-	[nil, player, "loc", rHideObject, false] call RE;
+	//player hideObject false;
+	//[nil, player, "loc", rHideObject, false] call RE;
     
     // Remove existing event handlers before adding them back.
-    player removeAllEventHandlers "Killed";
-    player removeAllEventHandlers "Respawn";
+   // player removeAllEventHandlers "Killed";
+  //  player removeAllEventHandlers "Respawn";
     player removeAllEventHandlers "handleDamage";
     
     // Add event handlers back incase hacker has disabled them.
     if(!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH]; };
-	player addEventHandler ["Respawn", {[_this] call onRespawn;}];
-	player addEventHandler ["Killed", {[_this] call onKilled;}];
+	//player addEventHandler ["Respawn", {[_this] call onRespawn;}];
+	//player addEventHandler ["Killed", {[_this] call onKilled;}];
     player addEventHandler ["handleDamage", { _this select 2 }];
     player allowDamage true;
     

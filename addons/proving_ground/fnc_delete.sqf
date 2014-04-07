@@ -1,6 +1,5 @@
 _cursortarget = cursorTarget;
 deleteVehicle cursorTarget;
-hint format ["you destroyed %1  Object", _cursortarget];
+hint format ["Yeah, you destroyed 1 Object"];
 player removeaction playerdeleteObject;
-sleep;
-hint format ["%1 deleted from Server", _cursortarget];
+sleep 1;

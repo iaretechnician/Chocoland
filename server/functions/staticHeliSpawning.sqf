@@ -8,7 +8,7 @@ for "_i" from 1 to _moneyCount do
     {
     //GREAT THX to Viba and KiloSwiss =D
     _count = Round (random 400)+100;
-    if(_count == 600) then
+    if(_count == 500) then
         {
          _count= Round (random 4);
          if(_count == 2) then{_count = 50000;} else {_count = 10000;};

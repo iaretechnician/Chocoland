@@ -25,16 +25,16 @@ diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
 [mainMissionDelayTime] call createWaitCondition;
 
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 _vehicleClass = ["BTR60_TK_EP1","M1126_ICV_MK19_EP1","BRDM2_TK_GUE_EP1","M113_UN_EP1","BTR90","LAV25","M6_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage, State

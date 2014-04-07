@@ -28,5 +28,5 @@ while {true} do {
 	}forEach playableUnits;
         	
 	// Don't loop too fast, with 60+ people connected this might be quite straining.
-    sleep 3; 
+    sleep 60; 
 };

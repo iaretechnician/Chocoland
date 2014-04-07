@@ -25,16 +25,16 @@ diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
 [mainMissionDelayTime] call createWaitCondition;
 
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 _veh = ["outpostUS1","smallbase1"] call BIS_fnc_selectRandom;
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
@@ -71,17 +71,12 @@ if(_result == 1) then
 	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed. Enemy airstrike inbound!</t>", _missionType, _vehicleName, failMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     
-    sleep 20;
+    sleep 10;
     
 	//Mission Failed. Firstly obliterate the site.
     _bomb = "Bo_GBU12_LGB" createVehicle [(_randomPos select 0),(_randomPos select 1), 50]; 
     sleep 1;
-    _bomb = "Bo_GBU12_LGB" createVehicle [(_randomPos select 0) + 5,(_randomPos select 1) - 5, 50];
-    sleep 1;
-    _bomb = "Bo_GBU12_LGB" createVehicle [(_randomPos select 0),(_randomPos select 1) + 10, 50];
-    
-    sleep 10;
-    
+   
     _baseToDelete = nearestObjects [_randomPos, ["All"], 22];
     { deleteVehicle _x; } forEach _baseToDelete;
     
@@ -97,6 +92,7 @@ if(_result == 1) then
 }forEach units CivGrpL;
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost and weapons have been captured.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
+    
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
 };
 

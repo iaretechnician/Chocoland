@@ -229,7 +229,7 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["SVD_CAMO",20];
         _currBox addWeaponCargoGlobal ["SVD_NSPU_EP1",12];
 		_currBox addWeaponCargoGlobal ["Pecheneg",8];
-		_currBox addWeaponCargoGlobal ["MetisLauncher",8];	
+		_currBox addWeaponCargoGlobal ["MetisLauncher",1];	
 		_currBox addWeaponCargoGlobal ["AKS_GOLD",16];	
         
         // Add ammunition
@@ -239,7 +239,7 @@ switch(_selectedBox) do {
           _currBox addMagazineCargoGlobal ["5Rnd_127x108_KSVK",65];
         _currBox addMagazineCargoGlobal ["10Rnd_762x54_SVD",75];
         _currBox addMagazineCargoGlobal ["100Rnd_762x54_PK",60];
-		_currBox addMagazineCargoGlobal ["AT13",40];
+		_currBox addMagazineCargoGlobal ["AT13",10];
 		_currBox addMagazineCargoGlobal ["30Rnd_762x39_AK47",100];
 		_currBox addMagazineCargoGlobal ["SmokeShell",20];
 		_currBox addMagazineCargoGlobal ["SmokeShellOrange",20];
@@ -302,11 +302,11 @@ switch(_selectedBox) do {
         _currBox addWeaponCargoGlobal ["VSS_Vintorez",3];
 		_currBox addWeaponCargoGlobal ["revolver_EP1",24];	 
         _currBox addWeaponCargoGlobal ["revolver_gold_EP1",8];
-          _currBox addWeaponCargoGlobal ["Javelin",8];
+          _currBox addWeaponCargoGlobal ["Javelin",1];
 		_currBox addWeaponCargoGlobal ["M136",8];
-		_currBox addWeaponCargoGlobal ["SMAW",12];
-        _currBox addWeaponCargoGlobal ["Stinger",8];
-		_currBox addWeaponCargoGlobal ["MAAWS",8];
+		_currBox addWeaponCargoGlobal ["SMAW",1];
+        _currBox addWeaponCargoGlobal ["Stinger",1];
+		_currBox addWeaponCargoGlobal ["MAAWS",1];
         
         // Add ammunition
           _currBox addMagazineCargoGlobal ["30Rnd_762x39_AK47",100];
@@ -315,13 +315,13 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal ["20Rnd_762x51_FNFAL",95];
         _currBox addMagazineCargoGlobal ["10x_303",150];
         _currBox addMagazineCargoGlobal ["10Rnd_9x39_SP5_VSS",30];
-           _currBox addMagazineCargoGlobal ["Javelin",30];
+           _currBox addMagazineCargoGlobal ["Javelin",5];
         _currBox addMagazineCargoGlobal ["M136",30];
-        _currBox addMagazineCargoGlobal ["SMAW_HEAA",30];
-        _currBox addMagazineCargoGlobal ["SMAW_HEDP",30];
-        _currBox addMagazineCargoGlobal ["Stinger",30];
-		_currBox addMagazineCargoGlobal ["MAAWS_HEAT",15];
-		_currBox addMagazineCargoGlobal ["MAAWS_HEDP",15];
+        _currBox addMagazineCargoGlobal ["SMAW_HEAA",5];
+        _currBox addMagazineCargoGlobal ["SMAW_HEDP",5];
+        _currBox addMagazineCargoGlobal ["Stinger",5];
+		_currBox addMagazineCargoGlobal ["MAAWS_HEAT",5];
+		_currBox addMagazineCargoGlobal ["MAAWS_HEDP",5];
     };
     case "mission_Mid_BAF": { // Broad selection mid-high tier weapons 
     	_currBox = createVehicle ["BAF_BasicWeapons", _selectedBoxPos,[], 30, "NONE"];
@@ -333,21 +333,21 @@ switch(_selectedBox) do {
         // Add new weapons before ammunition
         _currBox addWeaponCargoGlobal ["BAF_LRR_scoped",1];
         _currBox addWeaponCargoGlobal ["SVD_CAMO",1];
-	  _currBox addWeaponCargoGlobal ["M8_SAW",8];
-		_currBox addWeaponCargoGlobal ["M8_carbine",12];
-		_currBox addWeaponCargoGlobal ["M8_carbineGL",12];
-        _currBox addWeaponCargoGlobal ["M8_compact",8];
-		_currBox addWeaponCargoGlobal ["M8_sharpshooter",8];	 
-        _currBox addWeaponCargoGlobal ["m8_tws",8];
-		_currBox addWeaponCargoGlobal ["m8_tws_sd",8];
+	  _currBox addWeaponCargoGlobal ["M8_SAW",20];
+		_currBox addWeaponCargoGlobal ["M8_carbine",20];
+		_currBox addWeaponCargoGlobal ["M8_carbineGL",20];
+        _currBox addWeaponCargoGlobal ["M8_compact",20];
+		_currBox addWeaponCargoGlobal ["M8_sharpshooter",20];	 
+        _currBox addWeaponCargoGlobal ["m8_tws",1];
+		_currBox addWeaponCargoGlobal ["m8_tws_sd",1];
 		_currBox addWeaponCargoGlobal ["NVgoggles",8];
 		_currBox addWeaponCargoGlobal ["Binocular_Vector",8];
-         _currBox addWeaponCargoGlobal ["MG36",8];
-		_currBox addWeaponCargoGlobal ["G36C",12];
-		_currBox addWeaponCargoGlobal ["G36K",8];
-        _currBox addWeaponCargoGlobal ["MG36_camo",8];
-		_currBox addWeaponCargoGlobal ["G36K_camo",8];	 
-        _currBox addWeaponCargoGlobal ["G36_C_SD_camo",12];
+         _currBox addWeaponCargoGlobal ["MG36",20];
+		_currBox addWeaponCargoGlobal ["G36C",20];
+		_currBox addWeaponCargoGlobal ["G36K",20];
+        _currBox addWeaponCargoGlobal ["MG36_camo",20];
+		_currBox addWeaponCargoGlobal ["G36K_camo",20];	 
+        _currBox addWeaponCargoGlobal ["G36_C_SD_camo",20];
         
         // Add ammunition
     
@@ -363,8 +363,6 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal ["HandGrenade",40];
         _currBox addMagazineCargoGlobal ["30Rnd_556x45_G36SD",90];
 		_currBox addMagazineCargoGlobal ["Mine",30];
-		_currBox addMagazineCargoGlobal ["SmokeShell",30];
-		_currBox addMagazineCargoGlobal ["SmokeShellRed",30];
-		_currBox addMagazineCargoGlobal ["SmokeShellGreen",30];
+		
     };
 };

@@ -13,7 +13,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_returnData
 //Mission Initialization.
 _result = 0;
 _missionMarkerName = "LightTank_Marker";
-_missionType = "Immobile Light Tank";
+_missionType = "Immobile Armored Vehicle";
 #ifdef __A2NET__
 _startTime = floor(netTime);
 #else
@@ -26,16 +26,16 @@ diag_log format["WASTELAND SERVER - Main Mission Started: %1",_missionType];
 _returnData = call createMissionLocation;
 _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
 [mainMissionDelayTime] call createWaitCondition;
 
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-
+_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
+_smoke setPos _randomPos;
+sleep 10;
 _vehicleClass = ["ArmoredSUV_PMC","Pickup_PK_GUE","UAZ_MG_TK_EP1","LandRover_MG_TK_INS_EP1","HMMWV_M2",	"HMMWV_Armored","HMMWV_MK19","HMMWV_TOW","GAZ_Vodnik"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage

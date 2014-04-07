@@ -4,11 +4,11 @@
 //	@file Created: DD/MM/YYYY HH:MM
 //	@file Args:
 
-if(!X_Server) exitWith {};
-
+if(X_Server) exitWith {};
+/*
 private ["_count","_pos","_mapside","_xCord","_yCord","_obj","_moneyCount", "_smoke"];
 
-_moneyCount = Round (random 10) + 25;
+_moneyCount = Round (random 200) + 250;
 for "_i" from 1 to _moneyCount do
     {
     //GREAT THX to Viba and KiloSwiss =D
@@ -38,18 +38,20 @@ for "_i" from 1 to _moneyCount do
      {
           _xCord = Round (random 2000) + 2436.33;
           _yCord = Round (random 1140) + 3501.65;
-          _pos = [_xCord, _yCord,0.0014];
+          _pos = [_xCord,  _yCord,0.00143];
      }
      else 
      {
          _xCord = Round (random 1550)+3197.88;
          _yCord = Round (random 1375)+ 2857;
-         _pos = [_xCord,_yCord, 0.0014];
+         _pos = [_xCord, _yCord, 0.00143];
      };
 _rand = Round (random 3);
-if (_rand == 1)then{_rand = "Rabbit"};
-if (_rand == 2)then{_rand = "Goat"};
-if (_rand == 3)then{_rand = "Cow4"};
-    //Now create Object
-    _obj = _rand createVehicle _pos;
-    _obj setpos (getpos _obj);
+if (_rand == 1)then{_obj = "Rabbit" createVehicle _pos;
+    _obj setpos (getpos _obj);};
+if (_rand == 2)then{_obj = "Goat" createVehicle _pos;
+    _obj setpos (getpos _obj);};
+if (_rand == 3)then{_obj = "Cow4" createVehicle _pos;
+    _obj setpos (getpos _obj);};
+  
+    };*/

@@ -70,12 +70,13 @@ _player setVariable["camonet",0,false];
 player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
-_player addEventHandler ["Killed", {[_this] call createLootMoney2;}];
-processInitCommands;
-_player playMoveNow "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
-_player groupChat format["Player Initialization Complete"];
+//_player playMoveNow "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
 playerSetupComplete = true;
 if(firstspawn) then {
 	player setVariable["cmoney",500,false];
 	firstspawn = false;
+};
+_nullmoney = player getVariable "cmoney";
+if(_nullmoney <= 0 ) then {
+	player setVariable["cmoney",500,false];
 };
