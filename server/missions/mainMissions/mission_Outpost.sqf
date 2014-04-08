@@ -94,6 +94,16 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
     
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
+     //Cash Reward
+        _missionRewardRadius = 500;
+_reward = Round(random 3000) + 1000;
+	_inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+            titleText [format["\n+%1$ for  Mission %2", _reward, _war1], "PLAIN DOWN", 0];
+	player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+	};
+	} forEach _inArea;
 };
 
 //Reset Mission Spot.

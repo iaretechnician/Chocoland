@@ -55,8 +55,8 @@ func_tauntHacker = {
 while {true} do {
      
 	// Re-enable input incase it has been disabled.
-	player enableSimulation true;
-    disableUserInput false;
+	//player enableSimulation true;
+      //   disableUserInput false;
 	        
 	// Show the player incase they are trying to be a sneaky little neckbearded fuck.
 	//player hideObject false;
@@ -65,17 +65,17 @@ while {true} do {
     // Remove existing event handlers before adding them back.
    // player removeAllEventHandlers "Killed";
   //  player removeAllEventHandlers "Respawn";
-    player removeAllEventHandlers "handleDamage";
+   // player removeAllEventHandlers "handleDamage";
     
     // Add event handlers back incase hacker has disabled them.
-    if(!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH]; };
+  //  if(!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH]; };
 	//player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 	//player addEventHandler ["Killed", {[_this] call onKilled;}];
-    player addEventHandler ["handleDamage", { _this select 2 }];
-    player allowDamage true;
+   // player addEventHandler ["handleDamage", { _this select 2 }];
+ //   player allowDamage true;
     
     // Get the player's money and ensure it is < 10k.
-	_money = player getVariable["cmoney",0];    
+/*	_money = player getVariable["cmoney",0];    
 	if (_money > _currencyLimit) then {
     	if (_moneyKick AND _money > _moneyKickCeiling) then { 
         	if (!_instantKick) then { [] call func_tauntHacker; };
@@ -84,7 +84,7 @@ while {true} do {
         	player setVariable["cmoney",_currencyLimit, true];
         };
 	};
-      
+      */
     { // Check for illegal weapons. 
     	if (currentWeapon player == _x) exitWith {
         	// Firstly MITIGATE the damage by removing the infringing weaponry.

@@ -90,6 +90,16 @@ if(_result == 1) then
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The recon vehicle has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Side Mission Success: %1",_missionType];
+     //Cash Reward
+        _missionRewardRadius = 500;
+_reward = Round(random 1000) + 1000;
+	_inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+            titleText [format["\n+%1$ for  Mission %2", _reward, _war1], "PLAIN DOWN", 0];
+	player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+	};
+	} forEach _inArea;
 };
 
 //Reset Mission Spot.

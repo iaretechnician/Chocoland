@@ -35,22 +35,11 @@ _man2 addMagazine "HandGrenade_West";
 _man2 addWeapon "M8_compact";
 
 //Random vehicle
-_randomVehicle = ["AH1Z", "AH64D", "Mi24_P"] call BIS_fnc_selectRandom;
-_vehicle = createVehicle [_randomVehicle, [(_pos select 0) + 20, (_pos select 1) + 20, 0], [], 0, "FORM"];
-_vehicle setVehicleInit "this addAction [('<t color=''#00EEFF''>') + ('HALO Jump') + '</t>','addons\haloJump\haloJump.sqf',[],7,false,true,'','player in _target']";
-processInitCommands;
+
 
 //Assign positions and shove them in vehicle
 _leader = leader _group;
-_leader assignAsDriver _vehicle;
-[_leader] orderGetIn true;
-sleep 0.2;
-_leader moveInDriver _vehicle;
 
-_man2 assignAsGunner _vehicle;
-[_man2] orderGetIn true;
-sleep 0.2;
-_man2 moveInGunner _vehicle;
 
 
 /* setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";

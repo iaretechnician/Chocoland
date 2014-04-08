@@ -1,4 +1,7 @@
 
+aActionsIDs = [player addAction["Disable FlyMode", "noscript.sqf", 'player removeAllEventHandlers "KeyDown";if(true) exitWith{};]];
+ skinId = player addAction[('<t color=''#FF33CC''>' + ('Disable FlyMode') +  '</t>'),'client\systems\FunStore\adds\reverseskin.sqf'];
+ 
 hint "Super fly loaded!";
 _timer= 0;
 pm1 == 1;

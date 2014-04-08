@@ -16,14 +16,14 @@ _MMarray1 = ["moneyzone","night"];
 eventRunning = false;
 while {true} do
 { 
-   sleep 1800;
+  sleep 3600;
     if(!eventRunning) then
     {
-        _currTime = Round (random 6);
-	if(_currTime == 6) then 
+        _currTime = Round (random 10);
+	if(_currTime == 7) then 
         {
            
-                  _mission = _MMarray1 select (random (count _MMarray1 - 1));
+                  _mission = _MMarray1 call BIS_fnc_selectRandom; 
                 execVM format ["server\missions\events\%1.sqf",_mission];
                	eventRunning = true;
                  diag_log format["WASTELAND SERVER - Execute New event"];

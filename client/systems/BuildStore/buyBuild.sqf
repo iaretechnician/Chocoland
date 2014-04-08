@@ -77,3 +77,4 @@ if((_x select 2) == "Land_stand_small_EP1") then
 		};
 	}}forEach BuildStoreArray;
 };
+player spawn PDB_savePlayer;

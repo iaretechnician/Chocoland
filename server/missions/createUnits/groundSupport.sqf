@@ -45,25 +45,6 @@ _man3 addMagazine "HandGrenade_West";
 _man3 addWeapon "M8_compact";
 
 //Random vehicle
-_randomVehicle = ["M1A1_US_DES_EP1", "BAF_FV510_D", "LAV25", "M2A2_EP1"] call BIS_fnc_selectRandom;
-_vehicle = createVehicle [_randomVehicle, [(_pos select 0) - 20, (_pos select 1) - 20, 0], [], 0, "FORM"];
-
 //Assign positions and shove them in vehicle
 _leader = leader _group;
-_leader assignAsCommander _vehicle;
-[_leader] orderGetIn true;
-sleep 0.2;
-_leader moveInCommander _vehicle;
 
-_man2 assignAsGunner _vehicle;
-[_man2] orderGetIn true;
-sleep 0.2;
-_man2 moveInGunner _vehicle;
-
-_man3 assignAsDriver _vehicle;
-[_man3] orderGetIn true;
-sleep 0.2;
-_man3 moveInDriver _vehicle;
-
-//_leader setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
-processInitCommands;

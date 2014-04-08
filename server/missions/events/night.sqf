@@ -14,37 +14,64 @@ if(!isServer) exitwith {};
 diag_log format["WASTELAND SERVER - Mission Started"];
 
 //Mission Initialization.
-
+_randomPos = [3707, 3608,0.0014];
 _missionType = "Night Event";
 _mainTextColour = "#52bf90";
 _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
+_missionRewardRadius = 50000;
 
-
-//Tell everyone their will be a mission soon.
-
-//player setVehicleInit _command;
-//processInitCommands;
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Starting in 1 Minutes, you can find NightVision googles in Parastore - Weapons - Equipment</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
  sleep 60; 
- setDate[2014,03,07,18,00];
+ setDate[2014,03,07,00,00];
+ _inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+           player setVehicleInit "setDate[2014,03,07,00,00]";
+           processInitCommands;
+	};
+	} forEach _inArea;
  _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>has begun, 10 minutes in Darkness,you can find NightVision googles in Parastore - Weapons - Equipment</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 sleep 300;
-setDate[2014,08,07,03,00];
+setDate[2014,03,07,03,00];
+ _inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+           player setVehicleInit "setDate[2014,03,07,03,00]";
+           processInitCommands;
+	};
+	} forEach _inArea;
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'> will end in 5 minutes</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;	
 sleep 240;
-setDate[2014,08,07,06,00];
+setDate[2014,03,07,06,00];
+ _inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+           player setVehicleInit "setDate[2014,03,07,06,00]";
+           processInitCommands;
+	};
+	} forEach _inArea;
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>will end in 1 minutes</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 sleep 60;
-setDate[2014,03,07,08,00];
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event finished</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Good Morning Sir.</t>", _mainTextColour, _subTextColour];
+setDate[2014,03,07,12,00];
+ _inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+           player setVehicleInit "setDate[2014,03,07,12,00]";
+           processInitCommands;
+	};
+	} forEach _inArea;
+_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event is finished</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Good Morning Sir.</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 sleep 10;
-setDate[2014,03,07,14,00];
+
 diag_log format["WASTELAND SERVER - Mission Finished"];
 eventRunning = false;
+
+ 
+	

@@ -6,10 +6,11 @@ sleep 3;
 _dir = getdir player;
 _pos = getPos player;
 _pos = [(_pos select 0)+20*sin(_dir),(_pos select 1)+20*cos(_dir),50];
+
+_nic = [nil, vehicleSave, "per", rHideobject, false] call RE; 
 _veh = vehicleSave;
 _veh setpos _pos;
 _veh setVelocity [0, 0.1, 0];
-vehicleSave hideObject false;
 player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
 _veh allowdamage false;
  hint format ["%1 spawned in the Sky", vehicleSave1]; 

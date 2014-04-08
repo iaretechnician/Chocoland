@@ -4,7 +4,7 @@ private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney"];
 _action = _this select 0;
 _victim = _this select 1;
 _reward = _this select 2;
-_currencyLimit = 1000 * 1000;
+
 
 switch (_action) do{
 	case "punish" :{
@@ -23,7 +23,7 @@ switch (_action) do{
 	case "reward" :{
 		titleText [format["\n+%1$ for killing %2", _reward, str name _victim], "PLAIN DOWN", 0];
 		_killerMoney = player getVariable "cmoney";
-		_newMoney = _currencyLimit min (_killerMoney + _reward);
+		_newMoney = _killerMoney + _reward;
 		player setVariable ["cmoney", _newMoney, false];
 	};
 };

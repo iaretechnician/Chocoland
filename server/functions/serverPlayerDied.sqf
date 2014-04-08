@@ -14,8 +14,8 @@ _killer = _this select 1;
 _score = score _player;
 if(_score > 0)then{
 	_player addScore -_score;
-}else{
-	_player addScore abs(_score);
+/*}else{
+	_player addScore abs(_score);*/
 };
 #ifdef __A2NET__
 _player setVariable["processedDeath",netTime];

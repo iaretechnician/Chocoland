@@ -76,7 +76,6 @@ if(firstspawn) then {
 	player setVariable["cmoney",500,false];
 	firstspawn = false;
 };
-_nullmoney = player getVariable "cmoney";
-if(_nullmoney <= 0 ) then {
-	player setVariable["cmoney",500,false];
-};
+if ( format ["X%1X", str(player getVariable "cmoney")] == 'XX') then 
+{player setVariable["cmoney",500,false];}
+

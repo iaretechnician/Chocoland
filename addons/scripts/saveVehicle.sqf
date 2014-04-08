@@ -5,7 +5,8 @@ then {
    player action ["getOut", vehicle player];
    sleep 3;
    if (!isPlayer vehicleSave) then {
-   vehicleSave hideObject true; 
+_nic = [nil, vehicleSave, "per", rHideobject, true] call RE; 
+     
     hint format ["%1 saved to Hangar! (PlayerMenu for Spawn)", vehicleSave1];
     sleep 1;
     player globalChat "Vehicle Saved.";

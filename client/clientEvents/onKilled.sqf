@@ -7,23 +7,27 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-//thx KiloSwiss
 if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
 _sidePlayer = side (group _player);
 _sideKiller = side (group _killer);
+if (_sidekiller == "GUER") then { 
+_killer addScore 2;};
 _killerUID = getPlayerUID _killer;
 _groupMemberUIDs = [];
+
 if(count units group player > 1) then { //Get your group member UIDs
 	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
 };
-
-if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_player == _killer)) then {
-		
-		[nil,_killer, "loc", rEXECVM,"client\functions\moneyReward.sqf", "punish", _player] call RE;
+if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then {
+		//Give no reward for teamkill. Instead punish him by taking away half of his money.
+		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
+	
 	}else{
 		if(_Player != _Killer)then{	//Give the killer his deserved reward.
-			_reward = 1 max floor(score _killer) * 200 max floor(score _player * 200);	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
+			_reward = (score _killer) * 200 max floor(score _player * 200);
+                        if(_reward == 0) then {_reward = 200};	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
 			[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;
+			
 		};
 	};
 };
@@ -34,11 +38,6 @@ if (isServer) then {
 };
 
 if(!local _player) exitwith {};
-if ((_player != _killer) AND (vehicle _player != vehicle _killer)) then {
-if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then {
-	_killer addScore 2;
-        
-};};
 
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
@@ -88,10 +87,21 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
+if((_player getVariable "medkits") > 0) then {
+	for "_a" from 1 to (_player getVariable "medkits") do {	
+		_m = "CZ_VestPouch_EP1" createVehicle (position _player);
+		_to_delete = _to_delete + [_m];
+	};
+};
 
+if((_player getVariable "repairkits") > 0) then {
+	for "_b" from 1 to (_player getVariable "repairkits") do {	
+		_m = "Suitcase" createVehicle (position _player);
+		_to_delete = _to_delete + [_m];
+	};
+};
 
 true spawn {
-	waitUntil {playerRespawnTime < 1};
+	waitUntil {playerRespawnTime < 2};
 	titleText ["", "BLACK OUT", 1];
 };
-//[] execVM "server\functions\eventSpawning.sqf";

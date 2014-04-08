@@ -18,7 +18,7 @@ _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\broadcaster.sqf";
 [] execVM "server\functions\relations.sqf";
 [] execVM "server\functions\serverTimeSync.sqf";
-//[] execVM "server\functions\antiCheatServer.sqf";
+[] execVM "server\functions\antiCheatServer.sqf";
 waitUntil{scriptDone _serverCompiledScripts};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
@@ -46,7 +46,7 @@ if (sideMissions == 1) then {
     [] execVM "server\missions\sideMissionController.sqf";
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
-   [] execVM "server\missions\worldMissionController.sqf";
+  // [] execVM "server\missions\worldMissionController.sqf";
   sleep 5;
   [] execVM "server\missions\eventController.sqf";
  // [] execVM "server\spawning\spawningObjects.sqf";
@@ -55,3 +55,4 @@ if (sideMissions == 1) then {
 if (isDedicated) then {
 	_id = [] execFSM "server\WastelandServClean.fsm";
 };
+[] execVM "server\functions\moneyspawn.sqf";

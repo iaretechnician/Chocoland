@@ -18,9 +18,9 @@ _picture = _this select 2;
 _vehicleName = _this select 3;
 _missionType = _this select 4;
 
-_cargoItem_1 = "RUSpecialWeaponsBox";
+_cargoItem_1 = "mission_Side_USSpecial";
 [_cargoItem_1,"mission_Side_USSpecial"] call fn_refillbox;
-_cargoItem_2 = "RULaunchersBox"; 
+_cargoItem_2 = "mission_Side_USLaunchers"; 
 [_cargoItem_2,"mission_Side_USLaunchers"] call fn_refillbox;
 _cargoItem_3 = "Barrels";
 _cargoItem_4 = "Land_stand_small_EP1"; 

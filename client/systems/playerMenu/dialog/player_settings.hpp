@@ -134,7 +134,7 @@ class playerSettings {
                class SafeButton : w_RscButton {
 			idc = safeButton;
 			text = "Save Player";
-			onButtonClick = "[] execVM 'persistentscripts\pSave.sqf'";
+			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf'";
 			x = 0.150; y = 0.58;
 			w = 0.225; h = 0.033 * safezoneH;
 		};

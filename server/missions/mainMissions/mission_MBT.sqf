@@ -13,7 +13,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_returnData
 //Mission Initialization.
 _result = 0;
 _missionMarkerName = "MBT_Marker";
-_missionType = "Immobile MBT";
+_missionType = "Random Vehicle";
 #ifdef __A2NET__
 _startTime = floor(netTime);
 #else
@@ -36,8 +36,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 _smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
 _smoke setPos _randomPos;
 sleep 10;
-_vehicleClass = ["ArmoredSUV_PMC","Pickup_PK_GUE","UAZ_MG_TK_EP1","LandRover_MG_TK_INS_EP1","HMMWV_M2",
-"HMMWV_Armored","HMMWV_MK19","HMMWV_TOW","GAZ_Vodnik"] call BIS_fnc_selectRandom;
+_vehicleClass = randomVehicleArray select (random (count randomVehicleArray - 1));
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
@@ -94,6 +93,16 @@ if(_result == 1) then
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The main tank has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
+     //Cash Reward
+        _missionRewardRadius = 500;
+_reward = Round(random 2000) + 1000;
+	_inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+            titleText [format["\n+%1$ for  Mission %2", _reward, _war1], "PLAIN DOWN", 0];
+	player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+	};
+	} forEach _inArea;
 };
 
 //Reset Mission Spot.
