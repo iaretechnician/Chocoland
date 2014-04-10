@@ -39,53 +39,27 @@ _bannedVehicles = [
     "Mi171Sh_rockets_CZ_EP1""AH6J_EP1","Mi24_D_CZ_ACR","M1114_AGS_ACR","M1114_DSK_ACR"];
     
     
-_currencyLimit = 1000 * 1000; // 10k money limit for initial config.
-_moneyKickCeiling = 3000 * 1000; // money kick ceiling - default value is 30k.
-_instantKick = false; // Kick the bastards immediately or taunght them a little?
+_currencyLimit = 999000000; // 10k money limit for initial config.
+
+_instantKick = true; // Kick the bastards immediately or taunght them a little?
 _moneyKick = true; // Kick players who greatly exceed the money limit? Note: THIS MAY LEAD TO FALSE-POSITIVES! YOU HAVE BEEN WARNED...
 
 func_tauntHacker = {                
 	// Black their screen out and taunt them with silly messages! Mwahahahaha!
 	titleText ["", "BLACK IN", 0];
 	titleText ["ERROR: User performed an illegal operation. \n\n If the problem persists, contact your system administrator or stop using hacked items.","black"]; 
-	sleep 10; titleFadeOut 10; 
+	diag_log format["player:%1 uses hacks!",name player];
+        sleep 10; titleFadeOut 10; 
 };
 
 
 while {true} do {
      
-	// Re-enable input incase it has been disabled.
-	//player enableSimulation true;
-      //   disableUserInput false;
+	
+	player enableSimulation true;
+       disableUserInput false;
 	        
-	// Show the player incase they are trying to be a sneaky little neckbearded fuck.
-	//player hideObject false;
-	//[nil, player, "loc", rHideObject, false] call RE;
-    
-    // Remove existing event handlers before adding them back.
-   // player removeAllEventHandlers "Killed";
-  //  player removeAllEventHandlers "Respawn";
-   // player removeAllEventHandlers "handleDamage";
-    
-    // Add event handlers back incase hacker has disabled them.
-  //  if(!isNil "client_initEH") then { player removeEventHandler ["Respawn", client_initEH]; };
-	//player addEventHandler ["Respawn", {[_this] call onRespawn;}];
-	//player addEventHandler ["Killed", {[_this] call onKilled;}];
-   // player addEventHandler ["handleDamage", { _this select 2 }];
- //   player allowDamage true;
-    
-    // Get the player's money and ensure it is < 10k.
-/*	_money = player getVariable["cmoney",0];    
-	if (_money > _currencyLimit) then {
-    	if (_moneyKick AND _money > _moneyKickCeiling) then { 
-        	if (!_instantKick) then { [] call func_tauntHacker; };
-            endMission "LOSER";
-        } else {
-        	player setVariable["cmoney",_currencyLimit, true];
-        };
-	};
-      */
-    { // Check for illegal weapons. 
+	   { // Check for illegal weapons. 
     	if (currentWeapon player == _x) exitWith {
         	// Firstly MITIGATE the damage by removing the infringing weaponry.
     		removeAllWeapons player;

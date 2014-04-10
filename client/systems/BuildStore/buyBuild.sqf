@@ -78,3 +78,4 @@ if((_x select 2) == "Land_stand_small_EP1") then
 	}}forEach BuildStoreArray;
 };
 player spawn PDB_savePlayer;
+diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];

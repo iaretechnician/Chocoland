@@ -144,7 +144,7 @@ if(_result == 1) then
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-	player setVariable["cmoney", (player getVariable "cmoney")+_reward,true];
+	[nil,_x, "loc", rEXECVM, "client\functions\missionReward.sqf", "reward", _war1, _reward] call RE;
 	};
 	} forEach _inArea;
 	

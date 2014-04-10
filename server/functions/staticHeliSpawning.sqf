@@ -7,27 +7,27 @@ _moneyCount = Round (random 200) + 250;
 for "_i" from 1 to _moneyCount do
     {
     //GREAT THX to Viba and KiloSwiss =D
-    _count = Round (random 400)+100;
-    if(_count == 500) then
+    _count = Round (random 250)+200;
+    if(_count == 450) then
         {
-         _count= Round (random 4);
-         if(_count == 2) then{_count = 50000;} else {_count = 10000;};
+         _random = Round (random 6);
+         _count = 10000;
+         if(_random == 2) then{_random = 20000;};
         };
-     if(_count < 500 AND _count > 150) then 
+     if(_count < 450 AND _count > 150) then 
         {
-            _random = Round (random 4);
-           if(_random == 1) then{_count = _count *1;};
-        if(_random == 2) then{_count = _count *2;};
+            _random = Round (random 10);
+     if(_random == 2) then{_count = _count *2;};
      if(_random == 3) then{_count = _count *3;};
   if(_random == 4) then{_count = _count *4;};
         };
-    if(_count < 150 AND _count > 1) then 
+    if(_count < 100 AND _count > 1) then 
         {
-          _count = 1000;
-          _count= Round (random 3);
-          if(_count == 2) then{_count = 5000;} else {_count = 1000;};
+          _count = 600;
+          _random= Round (random 3);
+          if(_random == 2) then{_count = 2000;};
+          if(_random == 3) then{_count = 1000;};
         };
-        if(_count == 1) then{_count = 1;};
      _mapside = Round (random 2);
      if(_mapside == 1) then 
      {
@@ -46,6 +46,7 @@ for "_i" from 1 to _moneyCount do
     _obj = "EvMoney" createVehicle _pos;
     _obj setpos (getpos _obj);
     _obj setVariable["money",_count,true];
+    _obj setVariable["server",1,true];
     _obj setVariable["owner","world",true]; 
    
  

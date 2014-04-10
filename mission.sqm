@@ -1025,17 +1025,17 @@ class Mission
 			id=54;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
 			skill=0.60000002;
-		};
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
+			};
 		class Item8
 		{
 			position[]={3500.3982,21.199986,3726.7197};
 			id=55;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item9
 		{
@@ -1043,7 +1043,7 @@ class Mission
 			id=56;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item10
@@ -1052,7 +1052,7 @@ class Mission
 			id=57;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item11
@@ -1061,7 +1061,7 @@ class Mission
 			id=58;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item12
@@ -1070,7 +1070,7 @@ class Mission
 			id=59;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item13
@@ -1079,7 +1079,7 @@ class Mission
 			id=60;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item14
@@ -1088,7 +1088,7 @@ class Mission
 			id=61;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item15
@@ -1097,7 +1097,7 @@ class Mission
 			id=62;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item16
@@ -1106,7 +1106,7 @@ class Mission
 			id=63;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item17
@@ -1115,7 +1115,7 @@ class Mission
 			id=64;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item18
@@ -1124,7 +1124,7 @@ class Mission
 			id=65;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item19
@@ -1133,7 +1133,7 @@ class Mission
 			id=66;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item20
@@ -1142,7 +1142,7 @@ class Mission
 			id=67;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item21
@@ -1151,7 +1151,7 @@ class Mission
 			id=68;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item22
@@ -1160,7 +1160,7 @@ class Mission
 			id=69;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item23
@@ -1169,7 +1169,7 @@ class Mission
 			id=70;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item24
@@ -1178,7 +1178,7 @@ class Mission
 			id=71;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item25
@@ -1187,7 +1187,7 @@ class Mission
 			id=72;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item26
@@ -1196,7 +1196,7 @@ class Mission
 			id=73;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item27
@@ -1205,7 +1205,7 @@ class Mission
 			id=74;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item28
@@ -1214,7 +1214,7 @@ class Mission
 			id=75;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item29
@@ -1223,7 +1223,7 @@ class Mission
 			id=76;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item30
@@ -1232,7 +1232,7 @@ class Mission
 			id=77;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item31
@@ -1241,7 +1241,7 @@ class Mission
 			id=78;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item32
@@ -1250,7 +1250,7 @@ class Mission
 			id=79;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item33
@@ -1259,7 +1259,7 @@ class Mission
 			id=80;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item34
@@ -1268,7 +1268,7 @@ class Mission
 			id=81;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item35
@@ -1277,7 +1277,7 @@ class Mission
 			id=82;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item36
@@ -1286,7 +1286,7 @@ class Mission
 			id=83;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item37
@@ -1295,7 +1295,7 @@ class Mission
 			id=84;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item38
@@ -1304,7 +1304,7 @@ class Mission
 			id=85;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item39
@@ -1313,7 +1313,7 @@ class Mission
 			id=86;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item40
@@ -1322,7 +1322,7 @@ class Mission
 			id=87;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item41
@@ -1331,7 +1331,7 @@ class Mission
 			id=88;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item42
@@ -1340,7 +1340,7 @@ class Mission
 			id=89;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item43
@@ -1349,7 +1349,7 @@ class Mission
 			id=90;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item44
@@ -1358,7 +1358,7 @@ class Mission
 			id=91;
 			side="AMBIENT LIFE";
 			vehicle="Rabbit";
-			
+			init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 			skill=0.60000002;
 		};
 		class Item45
@@ -1369,6 +1369,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item46
 		{
@@ -1378,6 +1379,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item47
 		{
@@ -1387,6 +1389,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item48
 		{
@@ -1396,6 +1399,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item49
 		{
@@ -1405,6 +1409,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item50
 		{
@@ -1414,6 +1419,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item51
 		{
@@ -1423,6 +1429,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item52
 		{
@@ -1432,6 +1439,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item53
 		{
@@ -1441,6 +1449,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item54
 		{
@@ -1450,6 +1459,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item55
 		{
@@ -1459,6 +1469,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item56
 		{
@@ -1468,6 +1479,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item57
 		{
@@ -1477,6 +1489,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item58
 		{
@@ -1486,6 +1499,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item59
 		{
@@ -1495,6 +1509,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item60
 		{
@@ -1504,6 +1519,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item61
 		{
@@ -1513,6 +1529,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item62
 		{
@@ -1522,6 +1539,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item63
 		{
@@ -1531,6 +1549,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item64
 		{
@@ -1540,6 +1559,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item65
 		{
@@ -1549,6 +1569,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item66
 		{
@@ -1558,6 +1579,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item67
 		{
@@ -1567,6 +1589,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item68
 		{
@@ -1576,6 +1599,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item69
 		{
@@ -1585,6 +1609,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item70
 		{
@@ -1594,6 +1619,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item71
 		{
@@ -1603,6 +1629,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item72
 		{
@@ -1612,6 +1639,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item73
 		{
@@ -1621,6 +1649,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item74
 		{
@@ -1630,6 +1659,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item75
 		{
@@ -1639,6 +1669,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item76
 		{
@@ -1648,6 +1679,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Cow04";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item77
 		{
@@ -1657,6 +1689,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item78
 		{
@@ -1666,6 +1699,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item79
 		{
@@ -1675,6 +1709,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item80
 		{
@@ -1684,6 +1719,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item81
 		{
@@ -1693,6 +1729,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item82
 		{
@@ -1702,6 +1739,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item83
 		{
@@ -1711,6 +1749,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item84
 		{
@@ -1720,6 +1759,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item85
 		{
@@ -1729,6 +1769,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item86
 		{
@@ -1738,6 +1779,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item87
 		{
@@ -1747,6 +1789,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item88
 		{
@@ -1756,6 +1799,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item89
 		{
@@ -1765,6 +1809,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item90
 		{
@@ -1774,6 +1819,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item91
 		{
@@ -1783,6 +1829,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 		class Item92
 		{
@@ -1792,6 +1839,7 @@ class Mission
 			side="AMBIENT LIFE";
 			vehicle="Goat";
 			skill=0.60000002;
+init = "this addEventHandler [""Killed"", {_this execVM ""server\functions\bomb.sqf""}];";
 		};
 	};
 	class Markers

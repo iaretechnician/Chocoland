@@ -40,4 +40,6 @@ aActionsIDs = aActionsIDs + [player addAction["Pickup Camo Net", "client\actions
 //Cancel action
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];
 
-aActionsIDs = aActionsIDs + [player addAction["get on Board", "client\functions\getonBoard.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  20] select 0) < 100']];
+aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\getonBoard.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  20] select 0) < 200']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5 && _obj getVariable"basecore" == 1']];

@@ -8,3 +8,4 @@
 #define vehshop_total 2008
 #define vehshop_buysell 2020
 #define vehshop_item_Info 2021
+#define vehshop_vehicle_pic 2010

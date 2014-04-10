@@ -10,6 +10,7 @@ playerSetupComplete = false;
 _player = (_this select 0) select 0;
 _corpse = (_this select 0) select 1;
 _corpse removeAction playerMenuId;
+_corpse removeAction playerWeaponId;
 _corpse removeAction  saveVehId;
 {
 	_corpse removeAction _x;

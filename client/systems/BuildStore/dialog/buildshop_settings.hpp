@@ -19,7 +19,15 @@ class buildshopd {
 			w = 0.27 * safezoneW;
 			h = 0.60 * safezoneH;
 		};
-
+ class balca_VC_vehicle_shortcut : balca_debug_image
+	{
+		idc = buildshop_vehicle_pic;
+		 x = 0.208459 * safezoneW + safezoneX;
+		y = 0.01 * safezoneH + safezoneY;
+		w = 0.28 * safezoneW;
+		h = 0.26 * safezoneH;
+		text = "";
+	};
 		class DialogTitleText: w_RscText
 		{
 			idc = -1;
@@ -51,8 +59,8 @@ class buildshopd {
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\vehicleStore\loadVehStore.sqf'";
 			text = "-> Vehicles";
 
-                        x = 0.228459 * safezoneW + safezoneX;
-			y = 0.06 * safezoneH + safezoneY;
+                       x = 0.228459 * safezoneW + safezoneX;
+			y = 0.30 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -63,8 +71,8 @@ class buildshopd {
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\GunStore\loadGunStore.sqf'";
 			text = "-> Weapons";
 
-                        x = 0.230203 * safezoneW + safezoneX;
-			y = 0.12 * safezoneH + safezoneY;
+                          x = 0.230203 * safezoneW + safezoneX;
+			y = 0.35 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -76,7 +84,7 @@ class buildshopd {
 			text = "-> Choppers";
 
                         x = 0.230203 * safezoneW + safezoneX;
-			y = 0.18 * safezoneH + safezoneY;
+			y = 0.40 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -88,7 +96,7 @@ class buildshopd {
 			text = "-> Generals";
 
 			x = 0.230203 * safezoneW + safezoneX;
-			y = 0.24 * safezoneH + safezoneY;
+			y = 0.45 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -97,11 +105,11 @@ class buildshopd {
                   class loadfunStore3: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\generalStore\loadGenStore.sqf'";
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
 			text = "-> funniest";
 
 			x = 0.230203 * safezoneW + safezoneX;
-			y = 0.30 * safezoneH + safezoneY;
+			y = 0.50 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 

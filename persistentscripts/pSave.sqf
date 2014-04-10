@@ -20,6 +20,11 @@ PDB_savePlayer = {
 			_dammage = getDammage _x;
 			[_playerUID call PDB_databaseNameCompiler, _playerSide, "dammage", _dammage] call iniDB_write;
 			
+                        _bounty = _x getVariable "bounty";
+			if(!isNil "_bounty") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
+			};
+                        
 			_cmoney = _x getVariable "cmoney";
 			if(!isNil "_cmoney") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
@@ -93,9 +98,15 @@ PDB_savePlayerDead = {
 	
 	_dammage = 1;
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "dammage", _dammage] call iniDB_write;
+        
 	_cmoney = _x getVariable "cmoney";
 	if(!isNil "_cmoney") then {
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
+	};
+        
+        _bounty = 0;
+	if(!isNil "_bounty") then {
+		[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
 	};
         /*_cmoney = _playerUID getVariable "cmoney";
 	if(!isNil "_cmoney") then {

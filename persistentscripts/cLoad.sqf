@@ -49,7 +49,8 @@ ProfileFound%1;
 "dir" call PersistentDBLCStuff;		
 "pos" call PersistentDBLCStuff;		
 "dammage" call PersistentDBLCStuff;		
-"cmoney" call PersistentDBLCStuff;		
+"cmoney" call PersistentDBLCStuff;
+"bounty" call PersistentDBLCStuff;
 "canfood" call PersistentDBLCStuff;		
 "medkits" call PersistentDBLCStuff;		
 "water" call PersistentDBLCStuff;		
@@ -106,7 +107,7 @@ _PDB_checkDeadLoop = {
 if (!_profileFound) exitWith{hint "Persistent DB: No profile found";};
 _curVal = "weapons" call persistentDBLCConvert;//Test if got values
 if(isnil "_curVal") exitWith {hint "PersistentDB: No profile on this team.";};
-hint "Persistent DB: Profile found";
+//hint "Persistent DB: Profile found";
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
 {
@@ -119,6 +120,7 @@ if (!isNil "_curVal") then
 	removeAllWeapons player;
 	{
 		player addWeapon _x;
+                player selectWeapon _x;
 	}foreach _curVal;
 };
 _curVal = ("magazines" call PersistentDBLCConvert);
@@ -145,7 +147,8 @@ if(!isNil "_curVal") then
 };
 
 _varArr = [
-"cmoney",	
+"cmoney",
+"bounty",
 "canfood",	
 "medkits",	
 "water",		

@@ -78,16 +78,14 @@ if(_result == 1) then
 {
 	//Mission Failed.
     deleteVehicle _vehicle;
-    {deleteVehicle _x;}forEach units CivGrpM;
-    deleteGroup CivGrpM;
-    {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+       {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time.</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
-    deleteGroup CivGrpM;
+   
     {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The main tank has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
@@ -95,12 +93,11 @@ if(_result == 1) then
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
      //Cash Reward
         _missionRewardRadius = 500;
-_reward = Round(random 2000) + 1000;
+_reward = Round(random 750) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-            titleText [format["\n+%1$ for  Mission %2", _reward, _war1], "PLAIN DOWN", 0];
-	player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+     [nil,_x, "loc", rEXECVM, "client\functions\missionReward.sqf", "reward", _war1, _reward] call RE;
 	};
 	} forEach _inArea;
 };

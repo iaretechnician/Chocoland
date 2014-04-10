@@ -32,6 +32,7 @@ _mIndex = _mvalue lbadd "$10000"; _mvalue lbSetData [(lbSize _mvalue)-1, "10000"
 _mIndex = _mvalue lbadd "$20000"; _mvalue lbSetData [(lbSize _mvalue)-1, "20000"];
 _mIndex = _mvalue lbadd "$50000"; _mvalue lbSetData [(lbSize _mvalue)-1, "50000"];
 _mIndex = _mvalue lbadd "$100000"; _mvalue lbSetData [(lbSize _mvalue)-1, "100000"];
+_mIndex = _mvalue lbadd "$100000"; _mvalue lbSetData [(lbSize _mvalue)-1, "250000"];
 if(str(playerSide) == "west" || str(playerSide) == "east") then
 {
 	_groupButton ctrlShow false;    

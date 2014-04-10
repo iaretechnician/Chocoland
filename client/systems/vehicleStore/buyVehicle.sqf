@@ -78,3 +78,4 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	}}forEach vehicleStoreArray;
 };
 player spawn PDB_savePlayer;
+diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];

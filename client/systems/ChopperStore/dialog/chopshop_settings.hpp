@@ -19,7 +19,15 @@ class chopshopd {
 			h = 0.60 * safezoneH;
 			
 		};
-
+                class balca_VC_vehicle_shortcut : balca_debug_image
+	{
+		idc = chopshop_vehicle_pic;
+		 x = 0.208459 * safezoneW + safezoneX;
+		y = 0.01 * safezoneH + safezoneY;
+		w = 0.28 * safezoneW;
+		h = 0.26 * safezoneH;
+		text = "";
+	};
 		class DialogTitleText: w_RscText
 		{
 			idc = -1;
@@ -43,6 +51,7 @@ class chopshopd {
 	};
 	
 	class controls {
+            
 		///custom
                class loadVehStore: w_RscButton
 		{
@@ -51,7 +60,7 @@ class chopshopd {
 			text = "-> Vehicles";
 
                         x = 0.228459 * safezoneW + safezoneX;
-			y = 0.06 * safezoneH + safezoneY;
+			y = 0.30 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -63,7 +72,7 @@ class chopshopd {
 			text = "-> Weapons";
 
                         x = 0.230203 * safezoneW + safezoneX;
-			y = 0.12 * safezoneH + safezoneY;
+			y = 0.35 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -75,7 +84,7 @@ class chopshopd {
 			text = "-> Buildings";
 
                         x = 0.230203 * safezoneW + safezoneX;
-			y = 0.18 * safezoneH + safezoneY;
+			y = 0.40 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -87,7 +96,7 @@ class chopshopd {
 			text = "-> Generals";
 
 			x = 0.230203 * safezoneW + safezoneX;
-			y = 0.24 * safezoneH + safezoneY;
+			y = 0.45 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -100,7 +109,7 @@ class chopshopd {
 			text = "-> funniest";
 
 			x = 0.230203 * safezoneW + safezoneX;
-			y = 0.30 * safezoneH + safezoneY;
+			y = 0.50 * safezoneH + safezoneY;
 			w = 0.124927 * safezoneW;
 			h = 0.0599908 * safezoneH;
 
@@ -124,14 +133,14 @@ class chopshopd {
 			onButtonClick = "[] execVM 'client\systems\ChopperStore\buyChopper.sqf'";
 			text = "Buy";
 
-                        x = 0.12 * safezoneW + safezoneX;
+                         x = 0.12 * safezoneW + safezoneX;
 			y = 0.54 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
 			h = 0.040 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
 
 		};
-
+                
 		class CancelButton: w_RscButton
 		{
 			idc = -1;

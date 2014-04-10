@@ -70,12 +70,15 @@ _player setVariable["camonet",0,false];
 player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
-//_player playMoveNow "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
+[] execVM "client\functions\playercamera.sqf";
 playerSetupComplete = true;
+player setVariable["bounty",0,false];
 if(firstspawn) then {
 	player setVariable["cmoney",500,false];
 	firstspawn = false;
 };
 if ( format ["X%1X", str(player getVariable "cmoney")] == 'XX') then 
-{player setVariable["cmoney",500,false];}
+{player setVariable["cmoney",500,false];
+};
 
+player spawn PDB_savePlayer;

@@ -55,4 +55,5 @@ if (sideMissions == 1) then {
 if (isDedicated) then {
 	_id = [] execFSM "server\WastelandServClean.fsm";
 };
-[] execVM "server\functions\moneyspawn.sqf";
+
+//[] execVM "server\spawn.sqf";

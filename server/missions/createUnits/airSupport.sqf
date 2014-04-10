@@ -40,7 +40,3 @@ _man2 addWeapon "M8_compact";
 //Assign positions and shove them in vehicle
 _leader = leader _group;
 
-
-
-/* setVehicleInit "null = [this,'UPS','nowait'] execVM 'addons\scripts\UPSMON.sqf'";
-processInitCommands;*/

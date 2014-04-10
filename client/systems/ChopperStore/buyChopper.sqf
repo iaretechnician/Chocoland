@@ -16,7 +16,7 @@ hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
    dir = getdir player;
    pos = getPos player;
-     pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),100];
+     pos = [(pos select 0),(pos select 1),100];
 
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -28,7 +28,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		
 		if(0 <= 1) then {
 			_price = _x select 1;
-			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
+                        if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
 			_spawn = createVehicle[(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir+270;
                         _spawn allowdamage false;
@@ -64,3 +64,4 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	}}forEach ChopperStoreArray;
 };
 player spawn PDB_savePlayer;
+diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];

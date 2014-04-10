@@ -11,19 +11,21 @@ switch (_action) do{
 		if(alive player)then{
 			_punishment = floor((player getVariable "cmoney") / 10);	//Calculate how much money will be left over after punishment
 			titleText [format["PUNISHMENT: -%1$ for TEAMKILLING your teammate %2 and 1 minute no Weapon",_punishment, str name _victim], "PLAIN", 0];
-			player setVariable["cmoney",_punishment,false];
+			 player setVariable["cmoney", (player getVariable "cmoney")- _punishment, false];
                         _time =0;
                         while{(_time == 60)} do 
                             {
-                            removeAllWeapons player;sleep 1; _time = _time +1;
+                            removeAllWeapons player;
+                            sleep 1;
+                            _time = _time +1;
                             };
                         
 		};
 	};
 	case "reward" :{
 		titleText [format["\n+%1$ for killing %2", _reward, str name _victim], "PLAIN DOWN", 0];
-		_killerMoney = player getVariable "cmoney";
-		_newMoney = _killerMoney + _reward;
-		player setVariable ["cmoney", _newMoney, false];
+	
+             player setVariable["cmoney", (player getVariable "cmoney")+ _reward, false];
+             player setVariable["bounty", (player getVariable "bounty")+ 1, false];
 	};
 };

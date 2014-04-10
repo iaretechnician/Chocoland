@@ -56,5 +56,6 @@ player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 player setVariable["cmoney",_mymoney,false];
-player addEventHandler ["Respawn", {[_this] call onRespawn;}];
-player addEventHandler ["Killed", {[_this] call onKilled;}];
+player addEventHandler ["Respawn", {[player] call onRespawn;}];
+player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
+processInitCommands;

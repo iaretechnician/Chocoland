@@ -41,13 +41,13 @@
 			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Welcome to ChocoLand&lt;t color='#FFFFFF' size='1' &gt;</English>
 		</Key>
 		<Key ID="STR_WL_YouAreInTeam">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Informations&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;Attacking or stealing from other %4 players is &lt;t color="#aa0000"&gt;FORBIDDEN.&lt;/t</English>
+			<English></English>
 		</Key>
 		<Key ID="STR_WL_YouAreInFFA">
-			<English>&lt;t color='#FF9E9E' size='2.5' &gt;Informations&lt;br/&gt;&lt;t color='#FFFFFF' size='1.5' &gt;&#127;You are in &lt;img size="1.5" image="%1"/&gt; &lt;t color="%2"&gt;%3&lt;/t&gt; team.&lt;br/&gt;&#127;You are &lt;t color="#00aa00"&gt;FREE TO ATTACK ANYONE.&lt;/t&gt;&lt;br/&gt;&#127;</English>
+			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;For more info please see the map&lt;br/&gt;&#127;you will get (Random)Money for finishing Mission at Radius of 500 meters&lt;br/&gt;&#127;Killing Players Fixxed&lt;br/&gt;&#127;Invasion will start as Main Missions&lt;br/&gt;&#127;New Random Vehicle Mission&lt;br/&gt;&#127;Fixed Invasion Mission&lt;br/&gt;&#127;Fix StartMoney for New Players&lt;br/&gt;&#127;Chernarus commingSoon</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.4' &gt;CHANGES:Spawing Money will multiplier with your ChocoKills on pickup, (FunnyExpenives)  Big Buildings added,be Hen- German shepherd- added, - modifiered stores &lt;br/&gt;&lt;</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">

@@ -8,3 +8,4 @@
 #define buildshop_total 2008
 #define buildshop_buysell 2020
 #define buildshop_item_Info 2021
+#define buildshop_vehicle_pic 2010

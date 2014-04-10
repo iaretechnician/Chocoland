@@ -7,30 +7,30 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
+if (isPlayer _killer) then {
+if(_Player != _Killer)then{
+                    //Give the killer his deserved reward.
+                   _reward = (_Killer getvariable "bounty") * 100 max floor((_Player getvariable "bounty") * 100);
+                        if(_reward == 0) then {_reward = 100};	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
+			[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;//Money reward for kills - Uses RemoteExec on Killer
+};
 _sidePlayer = side (group _player);
 _sideKiller = side (group _killer);
-if (_sidekiller == "GUER") then { 
-_killer addScore 2;};
 _killerUID = getPlayerUID _killer;
 _groupMemberUIDs = [];
 
-if(count units group player > 1) then { //Get your group member UIDs
+if(count units group player > 1) then 
+{ //Get your group member UIDs
 	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
 };
-if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then {
+if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then 
+{
 		//Give no reward for teamkill. Instead punish him by taking away half of his money.
 		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
 	
-	}else{
-		if(_Player != _Killer)then{	//Give the killer his deserved reward.
-			_reward = (score _killer) * 200 max floor(score _player * 200);
-                        if(_reward == 0) then {_reward = 200};	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
-			[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;
-			
-		};
-	};
 };
+                            };
+
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {

@@ -1,6 +1,6 @@
 sleep 60;
 while {true} do {
-	player groupchat "hey";
+	//player groupchat "hey";
 	PersistentDB_ObjCount = 0;
 	{
 		_var = _x getVariable "objectLocked";
@@ -26,7 +26,7 @@ while {true} do {
 					_supplyleft = 20;
 				};
 			};
-
+                         _playerGUID = _x getVariable "playerGUID";
 			_weapons = getWeaponCargo _x;
 			_magazines = getMagazineCargo _x;
 			_objSaveName = format["obj%1", PersistentDB_ObjCount];
@@ -37,7 +37,10 @@ while {true} do {
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", _supplyleft] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "weapons", _weapons] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "magazines", _magazines] call iniDB_write;
-
+                        if(!isnil "_playerGUID")then {
+                            ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", _playerGUID] call iniDB_write;
+                                                    };
+			
 			PersistentDB_ObjCount = PersistentDB_ObjCount + 1;
 		};
 	} forEach allMissionObjects "All";

@@ -5,11 +5,12 @@
 //	@file Args: Unit
 
 _chance = random 1;
+_killer = _this select 0 select 1;
 _unit = _this select 0 select 0;
 
 if (_chance <= 0.35) then {
 	_amount = 50;
-	_amount = _amount + round (random 50);
+	_amount = _amount + round (random 100);
     _unitPos = position _unit;
     
 	_droppedCash = "Evmoney" createVehicle _unitPos; 
@@ -18,3 +19,7 @@ if (_chance <= 0.35) then {
 	_droppedCash setVariable["owner","world",true];
 };
 
+if (isPlayer _killer) then {
+ _bounty = _Killer getvariable "bounty";
+        [nil,_killer, "loc", rEXECVM, "client\functions\npcReward.sqf", "reward", _unit, _bounty] call RE;	
+                        };

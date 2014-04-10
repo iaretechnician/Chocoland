@@ -24,7 +24,7 @@ _subTextColour = "#FFFFFF";
 _missionTimeOut = 300;
 _missionDelayTime = 180; //2700
 _missionRewardRadius = 500;
-_reward = ceil(random 10000) + 10000;
+_reward = ceil(random 5000) + 2000;
 
 _invasionArray = ["carrier_1","carrier_2","carrier_4","carrier_6","carrier_8","carrier_3","carrier_5","carrier_7"];
 				
@@ -246,7 +246,7 @@ if(_result == 1) then
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-	player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+	_x setVariable["cmoney", (_x getVariable "cmoney")+ _reward, true];
 	};
 	} forEach _inArea;
 	

@@ -65,7 +65,9 @@ for "_iteration" from 1 to _lockDuration do
             _moneyObject setVariable ["owner", "world", true];
 		} else {
 			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "money");
+                        _server = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "server");
 			deleteVehicle (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
+                        if(_server == 1) then {_money = _money max floor(_money * (player getVariable "bounty"));};
 			player setVariable["cmoney", (player getVariable "cmoney")+_money,true];          
 			player globalChat format["You have picked up $%1",_money];
 			mutexScriptInProgress = false;

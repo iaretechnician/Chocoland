@@ -107,6 +107,7 @@ ProfileFound%1 = nil;
 		
 		[_uid, _playerSide, "hungerLevel", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 
+                [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		exit;
 	};
 }foreach playableUnits;

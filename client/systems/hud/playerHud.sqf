@@ -22,11 +22,16 @@ while {true} do
     _health = 100 - (_health * 100);
     
     _playerMoney = player getVariable "cmoney";
-    
-    
-    
-    _vitals ctrlSetStructuredText parseText format ["%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%4 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, hungerLevel, thirstLevel, _playerMoney];
+    if (_playerMoney > 100000) then {
+		_playerMoney = Round (_playerMoney / 1000);
+                _vitals ctrlSetStructuredText parseText format ["%5 <img size='0.8' image='client\icons\bounty.paa'/><br/>%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%4K <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, hungerLevel, thirstLevel, _playerMoney,player getvariable "bounty"];
     _vitals ctrlCommit 0;
+	} else 
+        {_vitals ctrlSetStructuredText parseText format ["%5 <img size='0.8' image='client\icons\bounty.paa'/><br/>%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%4 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, hungerLevel, thirstLevel, _playerMoney,player getvariable "bounty"];
+    _vitals ctrlCommit 0;};
+    
+    
+    
         
     if(player != vehicle player) then
     {

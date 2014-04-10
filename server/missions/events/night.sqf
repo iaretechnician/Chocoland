@@ -29,7 +29,7 @@ _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> 
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-           player setVehicleInit "setDate[2014,03,07,00,00]";
+           _x setVehicleInit "setDate[2014,03,07,00,00]";
            processInitCommands;
 	};
 	} forEach _inArea;
@@ -40,7 +40,7 @@ setDate[2014,03,07,03,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-           player setVehicleInit "setDate[2014,03,07,03,00]";
+          _x setVehicleInit "setDate[2014,03,07,03,00]";
            processInitCommands;
 	};
 	} forEach _inArea;
@@ -51,7 +51,7 @@ setDate[2014,03,07,06,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-           player setVehicleInit "setDate[2014,03,07,06,00]";
+          _x setVehicleInit "setDate[2014,03,07,06,00]";
            processInitCommands;
 	};
 	} forEach _inArea;
@@ -62,7 +62,7 @@ setDate[2014,03,07,12,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-           player setVehicleInit "setDate[2014,03,07,12,00]";
+         _x setVehicleInit "setDate[2014,03,07,12,00]";
            processInitCommands;
 	};
 	} forEach _inArea;

@@ -51,10 +51,10 @@ fn_refillbox = compile preprocessFileLineNumbers "server\functions\fn_refillbox.
 //Player Management
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
 server_VIPEscape = compile preprocessFileLineNumbers "server\functions\escapeVIP.sqf";
-
-//Event handlers
 createLootMoney = compile preprocessFileLineNumbers "server\functions\dropLoot.sqf";
 
+//Event handlers
+bomb = compile preprocessFileLineNumbers "server\functions\bomb.sqf";
 //.Net Compiles
 #ifdef __A2NET__
 arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";
