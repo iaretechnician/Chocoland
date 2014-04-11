@@ -20,7 +20,7 @@ _MMarray = [[mission_SupplyDrop,"mission_SupplyDrop"],
             [mission_MBT,"mission_MBT"],
             [mission_Outpost,"mission_Outpost"],
             [mission_RadarTruck,"mission_RadarTruck"],
-            [mission_Invasion,"mission_Invasion"],
+         [mission_Invasion,"mission_Invasion"],
            [mission_VIP,"mission_VIP"]];
             
 _lastMission = "nomission";
@@ -46,6 +46,6 @@ while {true} do
     diag_log format["WASTELAND SERVER - Execute New Main Mission: %1",_missionType];
    
     _lastMission = _missionType;
-	waitUntil{sleep 0.1; scriptDone _missionRunning};
+waitUntil{sleep 0.1; scriptDone _missionRunning};
     sleep 5; 
 };

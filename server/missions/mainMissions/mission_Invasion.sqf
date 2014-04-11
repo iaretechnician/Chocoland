@@ -23,7 +23,7 @@ _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
 _missionTimeOut = 300;
 _missionDelayTime = 180; //2700
-_missionRewardRadius = 500;
+_missionRewardRadius = 100;
 _reward = ceil(random 5000) + 2000;
 
 _invasionArray = ["carrier_1","carrier_2","carrier_4","carrier_6","carrier_8","carrier_3","carrier_5","carrier_7"];

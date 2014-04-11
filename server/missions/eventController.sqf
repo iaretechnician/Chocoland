@@ -16,11 +16,11 @@ _MMarray1 = ["moneyzone","night"];
 eventRunning = false;
 while {true} do
 { 
-  sleep 3600;
+  sleep 1800;
     if(!eventRunning) then
     {
-        _currTime = Round (random 10);
-	if(_currTime == 7) then 
+        _currTime = Round (random 5);
+	if(_currTime == 1) then 
         {
            
                   _mission = _MMarray1 call BIS_fnc_selectRandom; 

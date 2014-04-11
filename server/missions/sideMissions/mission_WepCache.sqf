@@ -85,7 +85,7 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Side Mission Success: %1",_missionType];
      //Cash Reward
-        _missionRewardRadius = 500;
+        _missionRewardRadius = 100;
 _reward = Round(random 500) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

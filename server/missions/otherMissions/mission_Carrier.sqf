@@ -23,7 +23,7 @@ _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
 _missionTimeOut = 1800;
 _missionDelayTime = 180;
-_missionRewardRadius = 500;
+_missionRewardRadius = 100;
 _reward = round(random 500);
 
 _gotLoc = false;

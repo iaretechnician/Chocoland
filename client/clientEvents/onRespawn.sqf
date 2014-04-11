@@ -12,6 +12,7 @@ _corpse = (_this select 0) select 1;
 _corpse removeAction playerMenuId;
 _corpse removeAction playerWeaponId;
 _corpse removeAction  saveVehId;
+_corpe removeAction bombId;
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;

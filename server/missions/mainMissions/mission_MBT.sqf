@@ -13,7 +13,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_returnData
 //Mission Initialization.
 _result = 0;
 _missionMarkerName = "MBT_Marker";
-_missionType = "Random Vehicle";
+_missionType = "Special Random Vehicle";
 #ifdef __A2NET__
 _startTime = floor(netTime);
 #else
@@ -92,7 +92,7 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
      //Cash Reward
-        _missionRewardRadius = 500;
+        _missionRewardRadius = 100;
 _reward = Round(random 750) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

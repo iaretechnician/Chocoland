@@ -64,6 +64,13 @@ if((_x select 2) == "Land_stand_small_EP1") then
 {
     _spawn setVariable["food",40,true];
 };
+//bigobjects
+if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon" ||(_x select 2) == "Land_A_statue02" ||(_x select 2) == "Land_A_GeneralStore_01a" ||(_x select 2) == "Land_A_TVTower_Base" ||(_x select 2) == "Land_Barn_Metal" ||(_x select 2) == "Land_A_Office01" ||(_x select 2) == "Land_A_BuildingWIP" ||(_x select 2) == "Land_A_Hospital"||(_x select 2) == "Land_HouseB_Tenement") then 
+{
+        _spawn setVariable ["objectLocked", true, true];
+};
+
+
 		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
  
     		// Delete parachute

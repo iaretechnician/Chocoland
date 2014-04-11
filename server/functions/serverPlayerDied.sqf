@@ -14,27 +14,10 @@ _killer = _this select 1;
 _score = score _player;
 if(_score > 0)then{
 	_player addScore -_score;
-/*}else{
-	_player addScore abs(_score);*/
+
 };
 #ifdef __A2NET__
 _player setVariable["processedDeath",netTime];
 #else
 _player setVariable["processedDeath",time];
 #endif
-
-//diag_log format["Checking KILLER and PLAYER..."];
-
-if (((str(side _killer)) == "GUER") AND ((str(side _player)) == "GUER")) then { 
-	//diag_log format["Killer and Player are INDEPENDENT."]; 
-    {
-    	if ((vehicle _killer) == _x) then {
-        	//diag_log format["Found the killer, adding score..."];
-        	_x addScore 2; 
-        };
-    } forEach playableUnits;
-} else {
-	//diag_log format["Killer and/or Player are not INDEPENDENT."];
-};
-
-

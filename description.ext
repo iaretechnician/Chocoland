@@ -43,3 +43,215 @@ class CfgSounds
 {
     sounds[] = {};
 };
+class CfgIdentities
+{
+	// this setIdentity "John_Buckman";
+	class name1 // President of the Republic of Colemania
+	{
+		name="Amos S. Ferguson";
+		face="Face74";
+		glasses="Spectacles";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name2 // Main Character Thread #1
+	{
+		name="Thomas K. Pablo"
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name3 // Main Character, Thread #3
+	{
+		name="Norman Despain";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Federated Republics of Ekhrenia
+	class name4 // Main Character, Thread #4
+	{
+		name="Dalibor Kati?";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name5// Ekhrenian assassin of Residency X, Thread #5
+	{
+		name="Torsten Diederich";
+		face="Face20";
+		glasses="BlackSun";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Republic of Chernaskriya
+	class name6 // Police Officer, Thread #2
+	{
+		name="Dominik Hartmann";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+        class name7 // President of the Republic of Colemania
+	{
+		name="Ryder Pike";
+		face="Face74";
+		glasses="Spectacles";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name8 // Main Character Thread #1
+	{
+		name="Anthony Dennis"
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name9 // Main Character, Thread #3
+	{
+		name="Lasse S. Rasmussen";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Federated Republics of Ekhrenia
+	class name10 // Main Character, Thread #4
+	{
+		name="Hending Brownlock";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name11// Ekhrenian assassin of Residency X, Thread #5
+	{
+		name="Lee Tsai";
+		face="Face20";
+		glasses="BlackSun";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Republic of Chernaskriya
+	class name12 // Police Officer, Thread #2
+	{
+		name="Shi Li";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+        class name13 // President of the Republic of Colemania
+	{
+		name="Matthias Lundström";
+		face="Face74";
+		glasses="Spectacles";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name14 // Main Character Thread #1
+	{
+		name="Olle Larsson"
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name15 // Main Character, Thread #3
+	{
+		name="Kalle Lindqvist";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Federated Republics of Ekhrenia
+	class name16 // Main Character, Thread #4
+	{
+		name="Ciriaco Rossi";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name17// Ekhrenian assassin of Residency X, Thread #5
+	{
+		name="Celso Castiglione";
+		face="Face20";
+		glasses="BlackSun";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Republic of Chernaskriya
+	class name18 // Police Officer, Thread #2
+	{
+		name="Dobrogost Kucharski";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+        class name19 // President of the Republic of Colemania
+	{
+		name="Tomasz Jaworski";
+		face="Face74";
+		glasses="Spectacles";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name20 // Main Character Thread #1
+	{
+		name="Myron Efremov"
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name21 // Main Character, Thread #3
+	{
+		name="Vlad Ibrahimov";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Federated Republics of Ekhrenia
+	class name22 // Main Character, Thread #4
+	{
+		name="Timmie Arvidsson";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+	class name23// Ekhrenian assassin of Residency X, Thread #5
+	{
+		name="Klaus Baader";
+		face="Face20";
+		glasses="BlackSun";
+		speaker="Dan";
+		pitch=.95;
+	};
+	
+	// Republic of Chernaskriya
+	class name24 // Police Officer, Thread #2
+	{
+		name="Phillipp Unger";
+		face="Face74";
+		glasses="none";
+		speaker="Dan";
+		pitch=.95;
+	};
+};

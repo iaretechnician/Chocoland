@@ -35,7 +35,7 @@ diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 _smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
 _smoke setPos _randomPos;
 sleep 10;
-_vehicleClass = ["BTR60_TK_EP1","M1126_ICV_MK19_EP1","BRDM2_TK_GUE_EP1","M113_UN_EP1","BTR90","LAV25","M6_EP1"] call BIS_fnc_selectRandom;
+_vehicleClass = ["BTR60_TK_EP1","M1126_ICV_MK19_EP1","BRDM2_TK_GUE_EP1","HMMWV_Avenger_DES_EP1", "BTR40_MG_TK_GUE_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage, State
 _vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
@@ -80,7 +80,7 @@ if(_result == 1) then
     deleteVehicle _vehicle;
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
-    {
+   
 {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time.</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor, _war1];
@@ -90,7 +90,7 @@ if(_result == 1) then
 } else {
 	//Mission Complete.
     deleteGroup CivGrpM;
-    {
+    
 {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpM;
     _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The APC has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
@@ -98,7 +98,7 @@ if(_result == 1) then
 	//Reset the mission spawn bool
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
     //Cash Reward
-        _missionRewardRadius = 500;
+        _missionRewardRadius = 100;
 _reward = Round(random 750) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

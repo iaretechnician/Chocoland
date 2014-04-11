@@ -7,29 +7,6 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-if (isPlayer _killer) then {
-if(_Player != _Killer)then{
-                    //Give the killer his deserved reward.
-                   _reward = (_Killer getvariable "bounty") * 100 max floor((_Player getvariable "bounty") * 100);
-                        if(_reward == 0) then {_reward = 100};	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
-			[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;//Money reward for kills - Uses RemoteExec on Killer
-};
-_sidePlayer = side (group _player);
-_sideKiller = side (group _killer);
-_killerUID = getPlayerUID _killer;
-_groupMemberUIDs = [];
-
-if(count units group player > 1) then 
-{ //Get your group member UIDs
-	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
-};
-if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then 
-{
-		//Give no reward for teamkill. Instead punish him by taking away half of his money.
-		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
-	
-};
-                            };
 
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
@@ -39,6 +16,30 @@ if (isServer) then {
 
 if(!local _player) exitwith {};
 
+//custom 
+if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
+_sidePlayer = side (group _player);
+_sideKiller = side (group _killer);
+_killerUID = getPlayerUID _killer;
+_groupMemberUIDs = [];
+if(count units group player > 1) then { //Get your group member UIDs
+	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
+};
+
+if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then {
+		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
+	}else{
+		if(_Player != _Killer)then{	//Give the killer his deserved reward.
+	 _reward = 20 max floor(_playerMoney / 5);	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
+	 _killerbounty = _killer getvariable"bounty";if(_killerbounty==0)then{_killerbounty==1};
+         _playerbounty = _player getVariable"bounty";if(_playerbounty==0)then{_playerbounty==1};
+         _reward = _killerbounty * 100 * _playerbounty;
+[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;
+		};
+	};
+};
+//!custom
+                            
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
 	if(_killer isKindOf "CAManBase") then {
@@ -87,6 +88,8 @@ private["_a","_b","_c","_d","_e","_f","_m","_player","_killer", "_to_delete"];
 
 _to_delete = [];
 _to_delete_quick = [];
+
+
 if((_player getVariable "medkits") > 0) then {
 	for "_a" from 1 to (_player getVariable "medkits") do {	
 		_m = "CZ_VestPouch_EP1" createVehicle (position _player);

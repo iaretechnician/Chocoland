@@ -82,3 +82,4 @@ if ( format ["X%1X", str(player getVariable "cmoney")] == 'XX') then
 };
 
 player spawn PDB_savePlayer;
+spawni setObjectTexture [0, ""];

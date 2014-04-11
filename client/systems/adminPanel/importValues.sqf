@@ -19,7 +19,7 @@
 #define playerMenuPlayerList 55505
 #define playerMenuPlayerObject 55507
 #define playerMenuPlayerHealth 55508
-
+#define playerMenuPlayerck 55522
 disableSerialization;
 
 private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];
@@ -43,7 +43,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_healthText = _dialogPlayer displayCtrl playerMenuPlayerHealth;
 	_objectText = _dialogPlayer displayCtrl playerMenuPlayerObject;
 	_playerListBox = _dialogPlayer displayCtrl playerMenuPlayerList;
-	
+	_currentbountyText = _dialogPlayer displayCtrl playerMenuPlayerck;
 	_inCar = ["No Passengers"];
 	_driver = "No Driver";
 	if (_type1 == 1) then {
@@ -72,7 +72,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
-	            
+	            _currentbountyText ctrlSetText format["ChocoKills: %1",_x getVariable "bounty"];
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;

@@ -8,7 +8,7 @@
 #define playerMenuPlayerObject 55507
 #define playerMenuPlayerHealth 55508
 #define playerMenuWarnMessage 55509
-
+#define playerMenuPlayerck 55522
 class PlayersMenu
 {
 	idd = playerMenuDialog;
@@ -70,7 +70,16 @@ class PlayersMenu
 			w = 0.25 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-
+                class PlayerckText: w_RscText
+		{
+			idc = playerMenuPlayerck;
+			text = "ChocoKills:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.37 * safezoneH + safezoneY;
+			w = 0.25 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
 		class PlayerItemsText: w_RscText
 		{
 			idc = playerMenuPlayerItems;

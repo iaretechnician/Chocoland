@@ -184,8 +184,9 @@
 		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
-			text = "Towns";
+		onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
+			
+                        text = "GroupSpawn";
 
 			x = 0.406 * safezoneW + safezoneX;
 			y = 0.384 * safezoneH + safezoneY;

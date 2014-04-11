@@ -63,7 +63,7 @@ _unitVIP setVariable["released",0,true];
 
 _vehicleName = "Captured VIP";
    _war1 = Round (random 100)+900;
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been located near the marker. Go rescue him to earn a reward.</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been located near the marker. Go rescue him to earn a reward.</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpL = createGroup civilian;
@@ -109,14 +109,14 @@ if(_result == 1) then
 	//Mission Complete.
     {deleteVehicle _x;}forEach units CivGrpL;
     deleteGroup CivGrpL;
-   {  {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
+     {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpL;
   
     _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The VIP has successfuly escaped.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
       //Cash Reward
-        _missionRewardRadius = 500;
+        _missionRewardRadius = 100;
 _reward = Round(random 1000) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

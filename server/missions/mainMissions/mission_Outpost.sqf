@@ -40,7 +40,7 @@ _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Enemy Outpost";
   _war1 = Round (random 100)+600;
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been spotted near the marker!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t> has been spotted near the marker!</t>", _missionType, _vehicleName, mainMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpL = createGroup civilian;
@@ -68,7 +68,7 @@ waitUntil
 
 if(_result == 1) then
 {
-	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed. Enemy airstrike inbound!</t>", _missionType, _vehicleName, failMissionColor, subTextColor, _war1];
+	_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed. Enemy airstrike inbound!</t>", _missionType, _vehicleName, failMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     
     sleep 10;
@@ -90,12 +90,12 @@ if(_result == 1) then
    
     {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpL;
-    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost and weapons have been captured.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
+    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The outpost and weapons have been captured.</t>", _missionType, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
      //Cash Reward
-        _missionRewardRadius = 500;
+        _missionRewardRadius = 100;
 _reward = Round(random 1000) +500;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

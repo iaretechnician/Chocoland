@@ -23,6 +23,7 @@ _leader addMagazine "30Rnd_545x39_AK";
 _leader addMagazine "30Rnd_545x39_AK";
 _leader addWeapon "AKS_74_U";
 _leader setskill ["aimingAccuracy",0.08];
+_leader setIdentity "name24";
 //Support
 _man2 = _group createunit ["CIV_EuroMan02_EP1", [(_pos select 0) - 30, _pos select 1, 0], [], 0.5, "Form"];
 _man2 addMagazine "75Rnd_545x39_RPK";
@@ -31,6 +32,7 @@ _man2 addMagazine "75Rnd_545x39_RPK";
 _man2 addMagazine "75Rnd_545x39_RPK";
 _man2 addWeapon "RPK_74";
 _man2 setskill ["aimingAccuracy",0.1];
+_man2 setIdentity "name1";
 //Rifleman
 _man3 = _group createunit ["CIV_EuroMan01_EP1", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
 _man3 addMagazine "30Rnd_762x39_AK47";
@@ -41,6 +43,7 @@ _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addMagazine "30Rnd_762x39_AK47";
 _man3 addWeapon "AK_47_M";
 _man3 setskill ["aimingAccuracy",0.08];
+_man3 setIdentity "name2";
 //Sniper
 _man4 = _group createunit ["CIV_EuroMan01_EP1", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
 _man4 addMagazine "10Rnd_762x54_SVD";
@@ -50,6 +53,7 @@ _man4 addMagazine "10Rnd_762x54_SVD";
 _man4 addMagazine "10Rnd_762x54_SVD";
 _man4 addWeapon "SVD";
 _man4 setskill ["aimingAccuracy",0.1];
+_man4 setIdentity "name3";
 // Add event handlers for dropping items and money.
 _leader addEventHandler ["Killed", {[_this] call createLootMoney;}];
 _man2 addEventHandler ["Killed", {[_this] call createLootMoney;}];

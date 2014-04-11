@@ -9,7 +9,7 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 	_pos = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "pos", "ARRAY"] call iniDB_read;
 	_dir = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "dir", "ARRAY"] call iniDB_read;
 	_supplyleft = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", "NUMBER"] call iniDB_read;
-        _playerGUID = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", "NUMBER"] call iniDB_read;
+        _playerGUID = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", "STRING"] call iniDB_read;
 	_weapons = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "weapons", "ARRAY"] call iniDB_read;
 	_magazines = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "magazines", "ARRAY"] call iniDB_read;
 	if(!isNil "_objSaveName" && !isNil "_class" && !isNil "_pos" && !isNil "_dir" && !isNil "_playerGUID" && !isNil "_supplyleft" && !isNil "_weapons" && !isNil "_magazines") then 

@@ -10,6 +10,6 @@ switch (_action) do{
 		
 	case "reward" :{
 		player setVariable["bounty", (player getVariable "bounty")+ 1, false];
-                titleText [format["\n+1 ChocoKill for killing %2", _reward, _victim], "PLAIN DOWN", 0];
+                titleText [format["\n+1 ChocoKill for killing %2", _reward, name _victim], "PLAIN DOWN", 0];
 	};
 };

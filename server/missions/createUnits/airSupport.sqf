@@ -23,7 +23,7 @@ _leader addMagazine "SmokeShellPurple";
 _leader addMagazine "HandGrenade_West";
 _leader addMagazine "HandGrenade_West";
 _leader addWeapon "M8_compact";
-
+_leader setIdentity "name1";
 //Rifleman
 _man2 = _group createUnit ["TK_CIV_Takistani05_EP1", [(_pos select 0) + 2, (_pos select 1) - 2, 0], [], 0, "FORM"];
 _man2 addMagazine "30Rnd_556x45_Stanag";
@@ -33,7 +33,7 @@ _man2 addMagazine "30Rnd_556x45_Stanag";
 _man2 addMagazine "HandGrenade_West";
 _man2 addMagazine "HandGrenade_West";
 _man2 addWeapon "M8_compact";
-
+_man2 setIdentity "name2";
 //Random vehicle
 
 

@@ -47,7 +47,7 @@
 			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.4' &gt;CHANGES:Spawing Money will multiplier with your ChocoKills on pickup, (FunnyExpenives)  Big Buildings added,be Hen- German shepherd- added, - modifiered stores &lt;br/&gt;&lt;</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;CHANGES:SK=ChocoKills, Spawning objects on Restart x1.5,MoneyZone spawnchance 7.5% every 30min,buildingStore Fix,SuicideSpawn Finished,added SuicidSpawn_Bomb for 50.000 $ Killing  Fixxed - player get minimal 100 * his_SK for every playerKill and  maximum Killedplayers_SK * 100 * player_SK added GroupSpawn, hide RedCylinderProtectionZone</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">

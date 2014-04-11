@@ -23,9 +23,15 @@ switch (_action) do{
 		};
 	};
 	case "reward" :{
-		titleText [format["\n+%1$ for killing %2", _reward, str name _victim], "PLAIN DOWN", 0];
-	
-             player setVariable["cmoney", (player getVariable "cmoney")+ _reward, false];
-             player setVariable["bounty", (player getVariable "bounty")+ 1, false];
+           //  _killerbounty = player getvariable"bounty";if(_killerbounty==0)then{_killerbounty==1};
+              //      _playerbounty = _victim getVariable"bounty";if(_playerbounty==0)then{_playerbounty==1};
+                 //   _reward = _killerbounty * 100 * _playerbounty;
+                    titleText [format["\n+ TEST deineScore %1, meine %2 und geld? %3", _playerbounty,_killerbounty, _reward], "PLAIN DOWN", 0];
+	sleep 3;
+        titleText [format["\n+ %1$ for killingtesttest %2", _reward, name _victim], "PLAIN DOWN", 0];
+	_test = player getVariable "cmoney";
+        _bount= player getVariable "bounty";
+             player setVariable["cmoney", _test + _reward, false];
+             player setVariable["bounty", _bount + 1, false];
 	};
 };
