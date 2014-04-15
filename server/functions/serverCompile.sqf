@@ -19,6 +19,7 @@ mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMission
 mission_RadarTruck = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_RadarTruck.sqf";
 mission_SupplyDrop = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_SupplyDrop.sqf";
 mission_VIP = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_VIP.sqf";
+mission_Invasion = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Invasion.sqf";
 
 //Side Mission Compiles
 mission_AirWreck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_AirWreck.sqf";

@@ -17,6 +17,7 @@ if (isServer) then {
 if(!local _player) exitwith {};
 
 //custom 
+_player setVariable["basecore",0,false];
 if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
 _sidePlayer = side (group _player);
 _sideKiller = side (group _killer);
@@ -30,11 +31,11 @@ if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID
 		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
 	}else{
 		if(_Player != _Killer)then{	//Give the killer his deserved reward.
-	 _reward = 20 max floor(_playerMoney / 5);	//Calculate the reward = 1/5th of the killed players wallet, minimum 20
-	 _killerbounty = _killer getvariable"bounty";if(_killerbounty==0)then{_killerbounty==1};
-         _playerbounty = _player getVariable"bounty";if(_playerbounty==0)then{_playerbounty==1};
-         _reward = _killerbounty * 100 * _playerbounty;
-[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward] call RE;
+	
+	 //_killerb = _Killer getvariable"bounty";if(_killerb==0)then{_killerb=1;};if(isnil "_killerb")then{_killerb=1;};
+         _playerb = _Player getVariable"bounty";if(_playerb==0)then{_playerb=1;};if(isnil "_playerb")then{_playerb=1;};
+         _reward = 100 * _playerb;
+[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward, _killerb, _playerb] call RE;
 		};
 	};
 };

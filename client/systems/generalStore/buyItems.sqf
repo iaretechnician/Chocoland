@@ -122,7 +122,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	genStoreCart = genStoreCart - _price;    
             };
         };
-        case "Camo Net": {
+        case "ChocoBomb": {
             if(((player getVariable "camonet") + 1 <= 1) AND ((player getVariable "camonet") + 1 <= 1)) then {
                 player setVariable["camonet",(player getVariable "camonet") + 1,true];
             } else {

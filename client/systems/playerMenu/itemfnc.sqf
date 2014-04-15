@@ -122,9 +122,9 @@ switch(_switch) do
 				_playerPos = getPosATL player;
 				player setVariable["camonet",(player getVariable "camonet")-1,true];
 				_dir = getdir player;
-				_deployedCamoNet = "Land_CamoNet_NATO" createVehicle (position player); _deployedCamoNet setPos _playerPos;
+				_deployedCamoNet = "Explosive" createVehicle (position player); _deployedCamoNet setPos _playerPos;
 				_deployedCamoNet setDir _dir;
-				hint "Camo Net deployed";
+				hint "ChocoBomb deployed";
 			};            
             case "spawnBeacon": 
             {
@@ -162,6 +162,7 @@ switch(_switch) do
 			case "repairkits": {player setVariable["repairkits", (player getVariable "repairkits")-1,true]; _temp = "Suitcase" createVehicle (position player); _temp setPos _pos;};
 			case "water": {player setVariable["water", (player getvariable "water")-1,true]; _temp = "Land_Teapot_EP1" createVehicle (position player); _temp setPos _pos;};
 			case "medkit": {player setVariable["medkits", (player getVariable "medkits")-1,true]; _temp = "CZ_VestPouch_EP1" createVehicle (position player); _temp setPos _pos;};
+                        case "camonet": {player setVariable["camonet", (player getVariable "camonet")-1,true]; _temp = "Explosive" createVehicle (position player); _temp setPos _pos;};
             case "spawnBeacon": {
             player setVariable["spawnBeacon", (player getVariable "spawnBeacon")-1,true]; 
             _droppedBeacon = "Satelit" createVehicle (position player);

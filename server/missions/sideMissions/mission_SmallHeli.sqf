@@ -32,9 +32,7 @@ _randomIndex = _returnData select 1;
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 _vehicleClass = ["AH6X_EP1","Ka137_PMC","Ka137_MG_PMC","MH6J_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage

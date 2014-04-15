@@ -196,7 +196,7 @@ class PlayersMenu
                 class addMoneyButton: w_RscButton
 		{
 			idc = -1;
-			text = "ADD 50k$ Money";
+			text = "add 25k$ Money";
 			onButtonClick = "[8] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.410 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -226,16 +226,26 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-
-		class CheckPlayerGearButton: w_RscButton
+                class CheckPlayerGearButton3: w_RscButton
 		{
 			idc = -1;
 			text = "Check Gear";
 			onButtonClick = "[7] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.485 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
+			y = 0.755 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
+		};
+		class CheckPlayerGearButton4: w_RscButton
+		{
+			idc = -1;
+			text = "Tel player";
+			onButtonClick = "[10] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.485 * safezoneW + safezoneX;
+			y = 0.730 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+                        color[] = {0.95,0.1,0.1,1};
 		};
 
 		class WarnButton: w_RscButton

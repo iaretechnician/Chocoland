@@ -35,9 +35,7 @@ diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = ["C130J_US_EP1",[(_randomPos select 0) + 50, (_randomPos select 1) + 50,0],0,0,1,"NONE"] call createMissionVehicle;
 

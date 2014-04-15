@@ -65,7 +65,7 @@ R3F_LOG_CFG_objets_remorquables = [
 	"L39_TK_EP1",
 	"L39_ACR",
 	"Chukar",
-	"Misc_cargo_cont_tiny",
+	
 	"Land_Misc_Cargo1E_EP1",
 	"Land_Misc_Cargo2E_EP1",
 	"AW159_Lynx_BAF"
@@ -189,7 +189,7 @@ R3F_LOG_CFG_objets_heliportables = [
 	"ZSU_Base",
 	"Ship",
 	"Fort_Crate_wood",
-	"Misc_cargo_cont_tiny",
+	
 	"BAF_Merlin_HC3_D",
 	"Ka60_Base_PMC",
 	"ArmoredSUV_Base_PMC",
@@ -200,7 +200,7 @@ R3F_LOG_CFG_objets_heliportables = [
 	"GuerillaCacheBox",
 	"ReammoBox_EP1",
 	"Fort_Crate_wood",
-	"Misc_cargo_cont_tiny",
+	
 	"Land_Misc_Cargo1E_EP1",
 	"Land_Misc_Cargo2E_EP1",
 	"AW159_Lynx_BAF"
@@ -287,7 +287,7 @@ R3F_LOG_CFG_transporteurs = [
 	["ZSU_Base", 20],
 	["Ship", 500],
 	["Fort_Crate_wood", 40],
-	["Misc_cargo_cont_tiny", 80],
+	
 	["BAF_Merlin_HC3_D",150],
 	["Ka60_Base_PMC", 80],
 	["ArmoredSUV_Base_PMC",24],
@@ -307,7 +307,7 @@ R3F_LOG_CFG_transporteurs = [
 R3F_LOG_CFG_objets_transportables =  [
 ["TK_WarfareBFieldhHospital_EP1",15],
 ["US_WarfareBFieldhHospital_EP1",20],
-	["SatPhone", 1],
+	
 	["Pchela1T", 15],
 	//["ATV_Base_EP1", 10],
 	["FoldChair_with_Cargo", 1],
@@ -432,7 +432,7 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_CncBlock_Stripes", 2],
 	["Land_CncBlock", 2],
 	["Land_fortified_nest_big", 15],
-	["Misc_cargo_cont_tiny", 10],
+	
 	["Land_RedWhiteBarrier", 2],
 	["Land_ladder_half", 3],
 	["Land_ladder", 5],
@@ -534,7 +534,15 @@ R3F_LOG_CFG_objets_transportables =  [
  * Liste des noms de classes des objets transportables par le joueur.
  */
 
-R3F_LOG_CFG_objets_deplacables = [
+R3F_LOG_CFG_objets_deplacables = ["Land_A_Castle_Bastion",
+"Land_A_CraneCon","Land_A_statue02",
+"Land_A_GeneralStore_01a",
+"Land_A_TVTower_Base",
+"Land_Barn_Metal",
+"Land_A_Office01",
+"Land_A_BuildingWIP",
+"Land_A_Hospital",
+"Land_HouseB_Tenement",
 "TK_WarfareBFieldhHospital_EP1",
 "US_WarfareBFieldhHospital_EP1",
 	"Land_covering_hut_big_EP1",
@@ -588,7 +596,7 @@ R3F_LOG_CFG_objets_deplacables = [
 	"FlagCarrierINDFOR_EP1",
 	"FlagCarrierRedCross_EP1",
 	"FlagCarrierNATO_EP1",
-	"SatPhone",
+	
 	"TK_WarfareBFieldhHospital_EP1",
 	"ZavoraAnim",
 	"Land_Misc_Cargo2E_EP1",

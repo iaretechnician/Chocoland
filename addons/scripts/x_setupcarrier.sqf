@@ -3,10 +3,9 @@
 //	**Custom Modifications By ModdedGaming.Org**
 //	**If you use any of these files, please leave credits**
 // by Xeno
-#define THIS_FILE "x_setupcarrier.sqf"
-if (!isServer) exitWith {};
-
-_LHDspawnpoint = [getPosASL LHD_Center select 0, getPosASL LHD_Center select 1, -0.9];
+_private =["_pos"];
+_pos = _this select 0;
+_LHDspawnpoint = [getPosASL _pos select 0, getPosASL _pos select 1, -0.9];
 {
 	_dummy = createVehicle [_x, _LHDspawnpoint, [], 0, "NONE"];
 	_dummy setdir 270;

@@ -46,7 +46,7 @@ class buildshopd {
 
                        x = 0.12 * safezoneW + safezoneX;
 			y = 0.013 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
+			w = 0.125 * safezoneW;
 			h = 0.040 * safezoneH;
 		};
 	};

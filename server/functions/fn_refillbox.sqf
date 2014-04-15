@@ -18,12 +18,12 @@ switch(_selectedBox) do {
 		clearWeaponCargoGlobal _currBox;
         
         // Add new weapons before ammunition
-        _currBox addWeaponCargoGlobal ["BAF_LRR_scoped",20];
+        _currBox addWeaponCargoGlobal ["BAF_LRR_scoped",1];
         _currBox addWeaponCargoGlobal ["SVD_CAMO",20];
 		_currBox addWeaponCargoGlobal ["M14_EP1",20];			
 		_currBox addWeaponCargoGlobal ["BAF_L7A2_GPMG",20];
         _currBox addWeaponCargoGlobal ["BAF_L110A1_Aim",20];
-		_currBox addWeaponCargoGlobal ["BAF_L85A2_RIS_CWS",20];
+		_currBox addWeaponCargoGlobal ["BAF_L85A2_RIS_CWS",1];
         _currBox addWeaponCargoGlobal ["BAF_L85A2_RIS_Holo",20];
         _currBox addWeaponCargoGlobal ["BAF_L85A2_UGL_Holo",20];		
 		_currBox addWeaponCargoGlobal ["FN_FAL_ANPVS4",20];
@@ -54,9 +54,16 @@ switch(_selectedBox) do {
 		clearWeaponCargoGlobal _currBox;
 
 		// Add new weapons before ammunition
-		_currBox addWeaponCargoGlobal ["RPG7V",10];
-		_currBox addWeaponCargoGlobal ["M32_EP1",10];
+		_currBox addWeaponCargoGlobal ["RPG7V",20];
+		_currBox addWeaponCargoGlobal ["M32_EP1",20];
+                _currBox addWeaponCargoGlobal ["M9SD",20];
+		_currBox addWeaponCargoGlobal ["MakarovSD",20];
+                _currBox addWeaponCargoGlobal ["Binocular_Vector",10];
+		_currBox addWeaponCargoGlobal ["NVGoggles",5];
+		_currBox addWeaponCargoGlobal ["Binocular",5];
 		// Add ammunition
+                _currBox addMagazineCargoGlobal ["8Rnd_9x18_MakarovSD",100];
+                _currBox addMagazineCargoGlobal ["15Rnd_9x19_M9SD",100];
 		_currBox addMagazineCargoGlobal ["6Rnd_HE_M203",50];
 		_currBox addMagazineCargoGlobal ["PG7VR",30];
         _currBox addMagazineCargoGlobal ["PG7V",30];

@@ -34,9 +34,7 @@ diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 _vehicleClass = ["ArmoredSUV_PMC","Pickup_PK_GUE","UAZ_MG_TK_EP1","LandRover_MG_TK_INS_EP1","HMMWV_M2",	"HMMWV_Armored","HMMWV_MK19","HMMWV_TOW","GAZ_Vodnik"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage

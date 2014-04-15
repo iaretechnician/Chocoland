@@ -5,12 +5,13 @@
 
 // Firstly remove the cammo net from the player.
 player setVariable["camonet",(player getVariable "camonet")-1,true];
-
+player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
+sleep 3;
 _playerPos = getPosATL player;
 _playerDir = getDir player;
 
-_deployedCamoNet = "Land_CamoNet_NATO" createVehicle (position player); 
+_deployedCamoNet = "Explosive" createVehicle (position player); 
 _deployedCamoNet setPos _playerPos;
 _deployedCamoNet setDir _playerDir;
 
-hint "Cammo Net successfully deployed.";
+hint "ChocoBomb successfully deployed.";

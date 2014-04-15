@@ -32,9 +32,7 @@ diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 _vehicleClass = ["MtvrRefuel","MtvrReammo","MtvrRepair"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage

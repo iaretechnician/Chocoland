@@ -1,23 +1,17 @@
-//	@file Version: 1.0
-//	@file Name: inviteToGroup.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 20/11/2012 05:19
-
-if(player != leader group player) exitWith {player globalChat format["you are not the leader and can't invite people"];};
+if(player != leader group player) exitWith {msgbot globalChat format["you are not the leader and can't invite people"];};
 
 #define groupManagementDialog 55510
 #define groupManagementPlayerList 55511
 
 disableSerialization;
 
-private["_dialog","_playerListBox","_groupInvite","_target","_index","_playerData","_check","_unitCount","_hasInvite"];
+private["_dialog","_playerListBox","_target","_index","_playerData","_check"];
 
 _dialog = findDisplay groupManagementDialog;
 _playerListBox = _dialog displayCtrl groupManagementPlayerList;
 
 _index = lbCurSel _playerListBox;
 _playerData = _playerListBox lbData _index;
-_hasInvite = false;
 _check = 0;
 
 //Check selected data is valid   			
@@ -26,18 +20,14 @@ _check = 0;
 diag_log "Invite to group: Before the checks";
 
 //Checks
-if(_check == 0) exitWith{player globalChat "you must select someone to invite first";};
-if(_target == player) exitWith {player globalChat "you can't invite yourself";};
-if((count units group _target) > 1) exitWith {player globalChat "This player is already in a group"};
-
-{if(_x select 1 == getPlayerUID _target) then{_hasInvite = true;};}forEach currentInvites;
-if(_hasInvite) exitWith {player globalChat "This player already has a pending invite";};
+if(_check == 0) exitWith{msgbot globalChat "Server: You must select someone to invite first";};
+if(_target == player) exitWith {msgbot globalChat "Server: You can't invite yourself";};
+if((count units group _target) > 1) exitWith {msgbot globalChat "Server: This player is already in a group"};
 
 diag_log "Invite to group: After the checks";
 
-currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
-publicVariableServer "currentInvites"; 
+_command = [1, getPlayerUID player, _target, name player];
+[_target, _command] call com_send;
+//[3, getPlayerUID player, _target, name player] spawn comm;
 
-[nil,_target,"loc", rTITLETEXT, format["You have been invited to join %1's group",name player], "PLAIN", 0] call RE;
-
-player globalChat format["you have invited %1 to join the group",name _target];
+msgbot globalChat format["Server: You have invited %1 to join the group",name _target];

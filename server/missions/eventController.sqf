@@ -11,7 +11,7 @@ if(!isServer) exitWith {};
 diag_log format["WASTELAND SERVER - Started event State"];
 
 //Main Mission Array
-_MMarray1 = ["moneyzone","night"];
+_MMarray1 = ["moneyzone","night","moneyzone"];
 
 eventRunning = false;
 while {true} do

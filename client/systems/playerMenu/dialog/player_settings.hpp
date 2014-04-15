@@ -131,19 +131,27 @@ class playerSettings {
 			x = 0.150; y = 0.38;
 			w = 0.225; h = 0.033 * safezoneH;
 		};
+                class btnflipvehicle4 : w_RscButton {
+		
+			text = "BaseCoreMarkers ON/OFF";
+			onButtonClick = "[] execVM 'client\functions\createMarkers.sqf'";
+			
+			x = 0.150; y = 0.28;
+			w = 0.225; h = 0.043 * safezoneH;
+		};
                class SafeButton : w_RscButton {
 			idc = safeButton;
 			text = "Save Player";
 			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf'";
 			x = 0.150; y = 0.58;
-			w = 0.225; h = 0.033 * safezoneH;
+			w = 0.225; h = 0.043 * safezoneH;
 		};
                   class vehButton : w_RscButton {
 			idc = vehButton;
 			text = "Spawn My Vehicle";
 			onButtonClick = "[] execVM 'addons\scripts\createVehicle.sqf'";
 			x = 0.150; y = 0.48;
-			w = 0.225; h = 0.033 * safezoneH;
+			w = 0.225; h = 0.043 * safezoneH;
 		};
 
 		class GroupsButton : w_RscButton {
@@ -151,7 +159,7 @@ class playerSettings {
 			text = "Group Management";
 			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
 			x = 0.150; y = 0.68;
-			w = 0.225; h = 0.033 * safezoneH;
+			w = 0.225; h = 0.043 * safezoneH;
 		};
 
 		class btnDistanceNear : w_RscButton {

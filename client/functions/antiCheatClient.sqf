@@ -56,8 +56,8 @@ func_tauntHacker = {
 while {true} do {
      
 	
-	player enableSimulation true;
-       disableUserInput false;
+//	player enableSimulation true;
+   //    disableUserInput false;
 	        
 	   { // Check for illegal weapons. 
     	if (currentWeapon player == _x) exitWith {

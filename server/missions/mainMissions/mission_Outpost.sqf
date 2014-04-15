@@ -32,10 +32,8 @@ diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
-_veh = ["outpostUS1","smallbase1"] call BIS_fnc_selectRandom;
+
+_veh = ["outpostUS1","smallbase1","carrier2"] call BIS_fnc_selectRandom;
 _base = [_veh, 0, _randomPos] execVM "server\functions\createOutpost.sqf";
 
 _vehicleName = "Enemy Outpost";

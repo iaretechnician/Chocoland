@@ -161,12 +161,12 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
                                 _killerMoney = _x getVariable "cmoney";
-                                _newMoney = _killerMoney + 50000;
+                                _newMoney = _killerMoney +25000;
                                 _x setVariable ["cmoney", _newMoney, true];
   			   };
 			}forEach playableUnits;       		
 	    };
-             case 9: //add 100k Money
+             case 9: //teletoplayer
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -178,6 +178,19 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
                              clearVehicleInit _target;
                             _pos1 = getPos _x;
                              player setPos _pos1;
+  			   };
+			}forEach playableUnits;       		
+	    };
+             case 10: //add 100k Money
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			    if(getPlayerUID _x == _targetUID) then
+			    {
+                             _playerName = name player;
+                           clearVehicleInit _target;
+                            _pos1 = getPos player;
+                             _x setPos _pos1;
   			   };
 			}forEach playableUnits;       		
 	    };

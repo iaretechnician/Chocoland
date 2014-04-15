@@ -9,7 +9,7 @@ if(mutexScriptInProgress) exitWith {
 };
 
 mutexScriptInProgress = true;
-_camonet = (nearestobjects [getpos player, ["Land_CamoNet_NATO"],  5] select 0);
+_camonet = (nearestobjects [getpos player, ["Explosive"],  5] select 0);
 
 deleteVehicle _camonet;
 player playmove "AinvPknlMstpSlayWrflDnon";
@@ -17,7 +17,7 @@ player playmove "AinvPknlMstpSlayWrflDnon";
 sleep 2.9;
 
 player setVariable ["camonet",+1,true]; 
-hint format["You have picked up " + getText (configFile >> "CfgVehicles" >> (typeOf _camonet) >> "displayName")];
+hint format["You have picked up ChocoBomb"];
 player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation. 
 sleep 1;
 mutexScriptInProgress = false;

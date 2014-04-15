@@ -65,7 +65,7 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					position[]={2102.9773,24.884512,4300.6357};
@@ -75,6 +75,18 @@ class Mission
 					skill=0.2;
 					name="spawni";
 text="spawni";
+				};
+				class Item1
+				{
+					position[]={3655.6099,19,3613.1072};
+					id=1;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="EmptyGroup";
+					description="EmptyGroup";
+					name="EmptyGroup";
 				};
 			};
 		};

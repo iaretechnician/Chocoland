@@ -23,8 +23,9 @@ _itemlist = _dialog displayCtrl buildshop_item_list;
 hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
  dir = getdir player;
-   pos = getPos player;
-   pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),100];
+ pos = getPos player;
+ _random = Round(random 300);
+ pos = [(pos select 0),(pos select 1),_random+150];
  
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -32,26 +33,22 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_selectedItem = lbCurSel _itemlist;
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
-		sleep 1;
-		if(0 <= 1) then {
+	if(0 <= 1) then {
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
-			_spawn setDir dir + 180;
+			player setVariable["cmoney",_playerMoney - _price,true];
+			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+                        _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
+			_spawn setDir dir;
+                        _spawn setPos pos;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];
-			player setVariable["cmoney",_playerMoney - _price,true];
-			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 			hintsilent "Building bought - watch the sky";
-                  
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
-		_smoke = "smokeShellblue" createVehicle position _spawn;
-		_smoke setPos (getPos _spawn);
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
-		_smoke attachTo [_Parachute,[0,0,-1.5]];
                 waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
 		sleep 3;
@@ -71,7 +68,7 @@ if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon"
 };
 
 
-		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
+		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
  
     		// Delete parachute
 		sleep 15;

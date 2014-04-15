@@ -32,22 +32,20 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_selectedItem = lbCurSel _itemlist;
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
-		sleep 1;
-		
-		if(0 <= 1) then {
+	if(0 <= 1) then {
 			_price = _x select 1;
 			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-			_spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
+			player setVariable["cmoney",_playerMoney - _price,true];
+			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+			hintsilent "Vehicle bought - watch the sky";
+                        closeDialog 0;
+                        _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir+270;
                         _spawn allowdamage false;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
-			_spawn setVariable["R3F_LOG_disabled", false, true];
-			player setVariable["cmoney",_playerMoney - _price,true];
-			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
-			hintsilent "Vehicle bought - watch the sky";
-                  
+			_spawn setVariable["R3F_LOG_disabled", false, true];                
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
                 _Parachute setVelocity [0, 3, 1];

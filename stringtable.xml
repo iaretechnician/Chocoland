@@ -47,7 +47,7 @@
 			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;CHANGES:SK=ChocoKills, Spawning objects on Restart x1.5,MoneyZone spawnchance 7.5% every 30min,buildingStore Fix,SuicideSpawn Finished,added SuicidSpawn_Bomb for 50.000 $ Killing  Fixxed - player get minimal 100 * his_SK for every playerKill and  maximum Killedplayers_SK * 100 * player_SK added GroupSpawn, hide RedCylinderProtectionZone</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;CHANGES: ParaSpawning - over time there spawn vehicles , airplanes, objects,money, ChocoKills and animals, basecore will not loose money if player dies,basecoremarker issue still there, savevehicle fix, money fix, storefix, as50 and  leeEnfield added to Weapons in paraStore,buildingparastore fix</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
@@ -88,7 +88,7 @@
 			<English>Choco Premium Spring Water. This water contains 200% more flavour than other leading brands.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_Camo">
-			<English>Become a ninja, hide yourself while camping. Warning this does not make you invisible</English>
+			<English>Become a Choco, Explode everything you want. Warning this does only work With ChocoKills (1 Chocokill ->1 Destroyed Object, 10ChocoKills -> 10 Objects)</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
 			<English>Choco Value Cat food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>

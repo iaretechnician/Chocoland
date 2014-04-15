@@ -56,7 +56,7 @@ class CfgIdentities
 	};
 	class name2 // Main Character Thread #1
 	{
-		name="Thomas K. Pablo"
+		name="Thomas K. Pablo";
 		face="Face74";
 		glasses="none";
 		speaker="Dan";
@@ -108,7 +108,7 @@ class CfgIdentities
 	};
 	class name8 // Main Character Thread #1
 	{
-		name="Anthony Dennis"
+		name="Anthony Dennis";
 		face="Face74";
 		glasses="none";
 		speaker="Dan";
@@ -160,7 +160,7 @@ class CfgIdentities
 	};
 	class name14 // Main Character Thread #1
 	{
-		name="Olle Larsson"
+		name="Olle Larsson";
 		face="Face74";
 		glasses="none";
 		speaker="Dan";
@@ -212,7 +212,7 @@ class CfgIdentities
 	};
 	class name20 // Main Character Thread #1
 	{
-		name="Myron Efremov"
+		name="Myron Efremov";
 		face="Face74";
 		glasses="none";
 		speaker="Dan";

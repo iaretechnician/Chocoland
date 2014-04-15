@@ -24,5 +24,6 @@ _vehiclepicture ctrlSettext _picture;
 	_picture = getText (configFile >> "cfgVehicles" >> _type >> "picture");
         _vehiclepicture ctrlSettext _picture;
 _itemlisttext ctrlSetText format ["Price: %1$", _price];
+
 }
 }forEach ChopperStoreArray;

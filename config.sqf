@@ -13,6 +13,7 @@ weaponsArray = [
     [1, "UZI Silenced","UZI_SD_EP1",85,35],
     [1, "Golden Revolver","revolver_gold_EP1",250,125],
     // Shotguns & Rifles
+    [2,"LeeEnfield","LeeEnfield", 400,400],
     [2, "AA 12","AA12_PMC",400,200],
     [2, "AK 107 GL Kobra","AK_107_GL_kobra",270,135],
     [2, "AK 107 GL PSO","AK_107_GL_pso",300,150],
@@ -105,6 +106,7 @@ weaponsArray = [
 	[3, "SVD","SVD",5000,2500],
 	[3, "VSS Vintorez","VSS_Vintorez",12000,6000],
         [3, " L115A3", "BAF_LRR_scoped",25000,12000],
+        [3, "AS50","BAF_AS50_scoped", 65000,65000],
         [3, " AS50 TWS","PMC_AS50_TWS", 100000, 50000],
     // Machineguns
 	[4, "L110A1","BAF_L110A1_Aim",7500,3500],
@@ -145,7 +147,9 @@ weaponsArray = [
 ];
 //Gun Store Ammo List
 //Text name, classname, buy cost
-ammoArray = [    
+ammoArray = [  
+["LeeEnfield 10x_303","10x_303",50],
+["5Rnd 127x99 as50","5Rnd_127x99_as50",100],
     ["5Rnd. 338 Lapua Magnum Clip","5Rnd_86x70_L115A1",30],
     ["5Rnd. M24 Clip","5Rnd_762x51_M24",20],
 	["5Rnd. KSVK","5Rnd_127x108_KSVK",40],
@@ -226,7 +230,7 @@ generalStore = [
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,750],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,250],
 	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",50000,50000],
-    ["Camo Net", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",3000,1500] 
+    ["ChocoBomb", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",5000,5000] 
 ];
 ChopperStoreArray = [
         ["Littlebird", 1000,"AH6X_EP1"],
@@ -308,7 +312,7 @@ vehicleStoreArray = [
 	["LAV-25", 15000,"LAV25"],
 	["T-34", 15000,"T34"],
         ["AAVP7A1", 17500,"AAV"],
-	["ZSU-23 Shilka", 27500,"ZSU_CDF"],
+	
 	["BMP-2", 20000,"BMP2_CDF"],
 	["BTR-90", 22500,"BTR90"],
 	["BMP-3", 27500,"BMP3"],
@@ -324,35 +328,37 @@ vehicleStoreArray = [
 ];
 BuildStoreArray = [
 ["~~~~~NEW BASECOREEEE~~~~~~", 999999,"Land_ConcreteBlock"],
-["Choco BaseCore",10000,"Misc_cargo_cont_tiny"],
+["Choco BaseCore",100,"Misc_cargo_cont_tiny"],
+["Choco BaseCore Level 2",10000,"76n6ClamShell"],
 	["~~~~~CONTAINER~~~~~~", 999999,"Land_ConcreteBlock"],
 	["Transport Cargo Container x2",1000,"Land_Misc_Cargo2E_EP1"],
 	["Transport Cargo Container",500,"Land_Misc_Cargo1E_EP1"],
 	//["Tiny Container",100,"Misc_cargo_cont_tiny"],
-	["Small Wooden Crate",40,"Fort_Crate_wood"],
+	["Small Wooden Crate",500,"Fort_Crate_wood"],
 	["~~~~~~ESSIANTIAL~~~~~~", 999999,"Land_ConcreteBlock"],
+        ["CamoNet",1000,"Land_CamoNet_NATO"],
         ["Food Stand",1000,"Land_stand_small_EP1"],
         ["Water Barrel",1000,"Land_Barrel_water"],
-	["Small Crappy Shed",100,"Land_kulna"],
-	["Small Wooden Shed",100,"Land_Shed_wooden"],
-	["Wooden Guard Shed",200,"Land_GuardShed"],
-	["Sandbag Guard Shed",100,"Land_fortified_nest_small_EP1"],
+	["Small Crappy Shed",500,"Land_kulna"],
+	["Small Wooden Shed",500,"Land_Shed_wooden"],
+	["Wooden Guard Shed",500,"Land_GuardShed"],
+	["Sandbag Guard Shed",500,"Land_fortified_nest_small_EP1"],
 	["Sandbag Nest Big",1100,"Land_fortified_nest_big_EP1"],
-	["Bagfence Long",100,"Land_fort_bagfence_long"],
-    ["Bagfence Round",100,"Land_fort_bagfence_round"],
-    ["Bagfence Corner",100,"Land_fort_bagfence_corner"],
-    ["Sandbags",200,"Land_BagFenceLong"],
-	["Land Dirthump",100,"Land_Dirthump01"],
-	["Solid Sand Ramp",400,"Land_fort_rampart_EP1"],
-	["Artillery Nest",300,"Land_fort_artillery_nest_EP1"],
-	["Big Metall Tent",400,"Land_Ind_SawMillPen"],
+	["Bagfence Long",500,"Land_fort_bagfence_long"],
+    ["Bagfence Round",500,"Land_fort_bagfence_round"],
+    ["Bagfence Corner",500,"Land_fort_bagfence_corner"],
+    ["Sandbags",500,"Land_BagFenceLong"],
+	["Land Dirthump",500,"Land_Dirthump01"],
+	["Solid Sand Ramp",500,"Land_fort_rampart_EP1"],
+	["Artillery Nest",500,"Land_fort_artillery_nest_EP1"],
+	["Big Metall Tent",500,"Land_Ind_SawMillPen"],
 	["~~~~~~FORTIFIED~~~~~~", 9999999,"Land_ConcreteBlock"],
-	["Wall Short (5x)",100,"Base_WarfareBBarrier5x"],
-	["Wall Long (10x)",150,"Base_WarfareBBarrier10x"],
-	["Wall Long Tall (10x 2x)",200,"Base_WarfareBBarrier10xTall"],
-	["HBarrier Low x1",20,"Land_HBarrier1"],
-	["HBarrier Low x3",50,"Land_HBarrier3"],
-	["HBarrier Low x5",100,"Land_HBarrier5"],
+	["Wall Short (5x)",500,"Base_WarfareBBarrier5x"],
+	["Wall Long (10x)",500,"Base_WarfareBBarrier10x"],
+	["Wall Long Tall (10x 2x)",500,"Base_WarfareBBarrier10xTall"],
+	["HBarrier Low x1",500,"Land_HBarrier1"],
+	["HBarrier Low x3",500,"Land_HBarrier3"],
+	["HBarrier Low x5",500,"Land_HBarrier5"],
 	["HBarrier Large (High)",200,"Land_HBarrier_large"],
 	["~~~~~~BUNKER~~~~~~", 9999999,"Land_ConcreteBlock"],
         ["Watchtower (Desert)",500,"Land_Fort_Watchtower_EP1"],
@@ -360,9 +366,9 @@ BuildStoreArray = [
     ["Fortified Nest Bunker",1000,"Land_fortified_nest_big_EP1"],
 	["Medium Warfare Bunker",1000,"WarfareBCamp"],
 	["Big Warfare Depot 2x",10000,"WarfareBDepot"],
-	["Deerstand",200,"Land_Misc_deerstand"],
+	["Deerstand",500,"Land_Misc_deerstand"],
 	["Radar Tower",500,"Land_radar_EP1"],
-	["Green Tent",350,"CampEast_EP1"],
+	["Green Tent",500,"CampEast_EP1"],
     ["Green Tent (Big)",650,"Land_tent_east"],
 	["Small Medic Tent",1000,"MASH"],
 	["Hospital Tent Desert",1000,"TK_WarfareBFieldhHospital_EP1"],
@@ -419,9 +425,9 @@ BuildStoreArray = [
 ["Sign DANGER (Nuclear)",1000,"Sign_Danger"],
 ["Road Barrier",1000,"Land_RedWhiteBarrier"],
 ["Road Cone light",500,"Land_coneLight"],
-["German Flag",250,"FlagCarrierGermany_EP1"],
-["Red Cross Flag",250,"FlagCarrierRedCross_EP1"],
-["Nato Flag",250,"FlagCarrierNATO_EP1"],
+["German Flag",500,"FlagCarrierGermany_EP1"],
+["Red Cross Flag",500,"FlagCarrierRedCross_EP1"],
+["Nato Flag",500,"FlagCarrierNATO_EP1"],
 ["~~~~~~ BIG BUILDINGS (!MoveDisabled)~~~", 9999999,"Land_ConcreteBlock"],
 ["Castle Bastion",500000,"Land_A_Castle_Bastion"],
 ["CraneCon",500000,"Land_A_CraneCon"],
@@ -433,9 +439,9 @@ BuildStoreArray = [
 ["Office Building",900000,"Land_A_Office01"],
 ["Building WIP",900000,"Land_A_BuildingWIP"],
 ["Hospital",900000,"Land_A_Hospital"],
-["Hotel",900000,"Land_HouseB_Tenement"],
+["Hotel",999999,"Land_HouseB_Tenement"],
 ["~~~~~~ GUNSSS ~~~~~~", 9999999,"Land_ConcreteBlock"],
-["Searchlight (Tripod)",100,"SearchLight_TK_EP1"],
+["Searchlight (Tripod)",500,"SearchLight_TK_EP1"],
 ["MG Nest PKT",500,"WarfareBMGNest_PK_TK_EP1"],
 ["MG Nest M240",500,"Fort_Nest_M240"],
 ["DSHkM Mini TriPod",500,"DSHkM_Mini_TriPod_TK_EP1"],
@@ -484,13 +490,13 @@ FunStoreArray=[
 //["Fin",200000,"Fin"],
 ["German shepherd",200000,"Pastor"],
 //["SeaGull",200000,"SeaGull"],
-//["WildBoar",200000,"WildBoar"],
+["WildBoar",200000,"WildBoar"],
 ["Kill Player + 20xBounty",200000,"killplayer"],
 ["Infinite Ammunition 3m",250000,"ammo10"],
 ["Infinite Life/Bullets 3m",250000,"god10"],
 ["Infinite Life/Explosions 3m",250000,"god20"],
-//["Order Airstrike",300000,"strike"],
-//["Order BaseCarrier",450000,"carrier"],
+["Order Airstrike",300000,"strike"],
+["Order BaseCarrier",450000,"carrier"],
 ["Kill yourself?",500000,"death"],
 ["Infinite Money 20s",999999,"money"]
 ];
@@ -507,5 +513,5 @@ cityList = [
 		["Town_7",150,"South of Airfield"]
 ];
 cityLocations = [];
-randomVehicleArray = ["Chukar_EP1", "C130J", "MV22", "Pchela1T","An2_1_TK_Civ_EP1","UH60M_MEV_EP1","UH60M_MEV_EP1","Mi17_medevac_RU","MH60S","BAF_Merlin_HC3_D","An2_1_TK_CIV_EP1","UH1H_TK_EP1","UH60M_EP1","AH6J_EP1","CH_47F_EP1","AW159_Lynx_BAF","Ka60_PMC","UH1Y","MQ9PredatorB","L39_TK_EP1","Mi171Sh_rockets_CZ_EP1","Mi24_D","AH64D_EP1","BAF_Apache_AH1_D","Mi24_P","AH1Z","AV8B","AV8B2","Ka52","AV8B2","Su34","F35B","Su25_CDF","Su39","A10","Kamaz","TowingTractor","HMMWV_DES_EP1","Offroad_DSHKM_Gue","SUV_UN_EP1","UAZ_AGS30_TK_EP1","Ikarus_TK_CIV_EP1","HMMWV_Armored","M113Ambul_UN_EP1","GAZ_Vodnik","HMMWV_M2","BTR40_MG_TK_INS_EP1","UAZ_SPG9_INS","Ural_ZU23_CDF","HMMWV_M1151_M2_CZ_DES_EP1","LandRover_Special_CZ_EP1","ArmoredSUV_PMC","BAF_Jackal2_L2A1_D","UralRepair_TK_EP1","HMMWV_TOW","GAZ_Vodnik_HMG","BRDM2_ATGM_CDF","AAV","M1135_ATGMV_EP1","M1128_MGS_EP1","MTVR_Refuel","KamazReammo","HMMWV_Avenger","M113_UN_EP1","LAV25","T34","ZSU_CDF","BMP2_CDF","BTR90","BMP3","M6_EP1","T55_TK_GUE_EP1","M2A3_EP1","T72_RU","2S6M_Tunguska","M1A1","T90","BAF_FV510_W","M1A2_TUSK_MG"];
-randomBuildingrray = ["Land_ConcreteBlock","Land_Misc_Cargo2E_EP1","Land_Misc_Cargo1E_EP1","Misc_cargo_cont_tiny","Fort_Crate_wood","Land_stand_small_EP1","Land_Barrel_water","Land_kulna","Land_Shed_wooden","Land_GuardShed","Land_fortified_nest_small_EP1","Land_fortified_nest_big_EP1","Land_fort_bagfence_long","Land_fort_bagfence_round","Land_fort_bagfence_corner","Land_BagFenceLong","Land_Dirthump01","Land_fort_rampart_EP1","Land_fort_artillery_nest_EP1","Land_Ind_SawMillPen","Base_WarfareBBarrier5x","Base_WarfareBBarrier10x","Base_WarfareBBarrier10xTall","Land_HBarrier1","Land_HBarrier3","Land_HBarrier5","Land_HBarrier_large","Land_ConcreteBlock","Land_Fort_Watchtower_EP1","Land_Fort_Watchtower","Land_fortified_nest_big_EP1","WarfareBCamp","WarfareBDepot","Land_Misc_deerstand","Land_radar_EP1","CampEast_EP1","Land_tent_east","MASH","TK_WarfareBFieldhHospital_EP1","US_WarfareBFieldhHospital_EP1","Barrack2","Land_Barrack2_EP1","Land_CncBlock","Land_CncBlock_Stripes","Land_Misc_ConcPipeline_EP1","Misc_concrete_High","Concrete_Wall_EP1","RampConcrete","Land_ConcreteRamp","Land_ConcreteBlock","Land_Ind_BoardsPack2","Land_Ind_BoardsPack1","Land_Ind_Timbers","Hhedgehog_concrete","Hhedgehog_concreteBig","Land_Misc_Cargo1Eo_EP1","Land_Misc_Cargo2E","Land_Misc_Cargo1D","Fort_Barricade_EP1","Hedgehog_EP1","ZavoraAnim","Land_WoodenRamp","Land_prebehlavka","Land_prebehlavka","Land_prolejzacka","Land_leseni2x","Land_leseni4x","Land_Misc_Scaffolding","Land_Misc_Coil_EP1","Land_Fire_barrel_burning","Land_Campfire_burning","Land_Chair_EP1","WoodChair","Land_Bench_EP1","Land_Table_EP1","FoldChair","FoldTable","Land_sunshade_EP1","Land_covering_hut_EP1","Land_covering_hut_big_EP1","Land_KBud","Land_Toilet","Land_ladder","Land_ladder_half","Sign_Checkpoint_US_EP1","Sign_Checkpoint_TK_EP1","Sign_Danger","Land_RedWhiteBarrier","Land_coneLight","FlagCarrierGermany_EP1","FlagCarrierRedCross_EP1","FlagCarrierNATO_EP1","SearchLight_TK_EP1","WarfareBMGNest_PK_TK_EP1","Fort_Nest_M240","DSHkM_Mini_TriPod_TK_EP1","DSHKM_TK_GUE_EP1","KORD_TK_EP1","KORD_high_TK_EP1","BAF_GPMG_Minitripod_D","M2HD_mini_TriPod","M2StaticMG","BAF_L2A1_Minitripod_D","BAF_L2A1_Tripod_D","MK19_TriPod","AGS_TK_EP1","BAF_GMG_Tripod_D","SPG9_TK_GUE_EP1","ZU23_Ins","Igla_AA_pod_TK_EP1","Stinger_Pod_US_EP1", "M252"];
+randomVehicleArray = ["Chukar_EP1", "C130J", "MV22", "Pchela1T","An2_1_TK_Civ_EP1","UH60M_MEV_EP1","UH60M_MEV_EP1","Mi17_medevac_RU","MH60S","BAF_Merlin_HC3_D","An2_1_TK_CIV_EP1","UH1H_TK_EP1","UH60M_EP1","AH6J_EP1","CH_47F_EP1","AW159_Lynx_BAF","UH1Y","MQ9PredatorB","Mi171Sh_rockets_CZ_EP1","AH1Z","F35B","Kamaz","TowingTractor","HMMWV_DES_EP1","Offroad_DSHKM_Gue","SUV_UN_EP1","UAZ_AGS30_TK_EP1","Ikarus_TK_CIV_EP1","HMMWV_Armored","M113Ambul_UN_EP1","GAZ_Vodnik","HMMWV_M2","BTR40_MG_TK_INS_EP1","UAZ_SPG9_INS","Ural_ZU23_CDF","HMMWV_M1151_M2_CZ_DES_EP1","LandRover_Special_CZ_EP1","ArmoredSUV_PMC","BAF_Jackal2_L2A1_D","UralRepair_TK_EP1","HMMWV_TOW","GAZ_Vodnik_HMG","BRDM2_ATGM_CDF","AAV","M1135_ATGMV_EP1","M1128_MGS_EP1","MTVR_Refuel","KamazReammo","HMMWV_Avenger","M113_UN_EP1"];
+randomBuildingrray = ["Fort_Crate_wood","Land_stand_small_EP1","Land_Barrel_water","Land_kulna","Land_Shed_wooden","Land_GuardShed","Land_fortified_nest_small_EP1","Land_fortified_nest_big_EP1","Land_fort_bagfence_long","Land_fort_bagfence_round","Land_fort_bagfence_corner","Land_BagFenceLong","Land_Dirthump01","Land_fort_rampart_EP1","Land_fort_artillery_nest_EP1","Land_Ind_SawMillPen","Base_WarfareBBarrier5x","Base_WarfareBBarrier10x","Base_WarfareBBarrier10xTall","Land_HBarrier1","Land_HBarrier3","Land_HBarrier5","Land_HBarrier_large","Land_ConcreteBlock","Land_Fort_Watchtower_EP1","Land_Fort_Watchtower","Land_fortified_nest_big_EP1","WarfareBCamp","WarfareBDepot","Land_Misc_deerstand","Land_radar_EP1","CampEast_EP1","Land_tent_east","MASH","TK_WarfareBFieldhHospital_EP1","US_WarfareBFieldhHospital_EP1","Barrack2","Land_Barrack2_EP1","Land_CncBlock","Land_CncBlock_Stripes","Land_Misc_ConcPipeline_EP1","Misc_concrete_High","Concrete_Wall_EP1","RampConcrete","Land_ConcreteRamp","Land_ConcreteBlock","Land_Ind_BoardsPack2","Land_Ind_BoardsPack1","Land_Ind_Timbers","Hhedgehog_concrete","Hhedgehog_concreteBig","Land_Misc_Cargo1Eo_EP1","Land_Misc_Cargo2E","Land_Misc_Cargo1D","Fort_Barricade_EP1","Hedgehog_EP1","ZavoraAnim","Land_WoodenRamp","Land_prebehlavka","Land_prebehlavka","Land_prolejzacka","Land_leseni2x","Land_leseni4x","Land_Misc_Scaffolding","Land_Misc_Coil_EP1","Land_Fire_barrel_burning","Land_Campfire_burning","Land_Chair_EP1","WoodChair","Land_Bench_EP1","Land_Table_EP1","FoldChair","FoldTable","Land_sunshade_EP1","Land_covering_hut_EP1","Land_covering_hut_big_EP1","Land_KBud","Land_Toilet","Land_ladder","Land_ladder_half","WarfareBMGNest_PK_TK_EP1","Fort_Nest_M240","DSHkM_Mini_TriPod_TK_EP1","DSHKM_TK_GUE_EP1","KORD_TK_EP1","KORD_high_TK_EP1","BAF_GPMG_Minitripod_D","M2HD_mini_TriPod","M2StaticMG","BAF_L2A1_Minitripod_D","BAF_L2A1_Tripod_D","MK19_TriPod","AGS_TK_EP1"];

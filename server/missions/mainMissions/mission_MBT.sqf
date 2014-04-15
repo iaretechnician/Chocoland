@@ -33,9 +33,7 @@ diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 _vehicleClass = randomVehicleArray select (random (count randomVehicleArray - 1));
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
@@ -88,7 +86,7 @@ if(_result == 1) then
    
     {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
 }forEach units CivGrpM;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The main tank has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The random Vehicle has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
      //Cash Reward

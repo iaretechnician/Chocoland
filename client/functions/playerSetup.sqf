@@ -56,7 +56,11 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-
+_player setVariable["bounty",0,false];
+if(firstspawn) then {
+	_player setVariable["cmoney",500,false];
+	firstspawn = false;
+};
 _player setVariable["canfood",2,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",2,false];
@@ -67,19 +71,14 @@ _player setVariable["fuelEmpty",0, false];
 _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
-player setVariable["canDrop",false,false];
+_player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
 [] execVM "client\functions\playercamera.sqf";
-playerSetupComplete = true;
-player setVariable["bounty",0,false];
-if(firstspawn) then {
-	player setVariable["cmoney",500,false];
-	firstspawn = false;
-};
-if ( format ["X%1X", str(player getVariable "cmoney")] == 'XX') then 
-{player setVariable["cmoney",500,false];
-};
+[] execVM "client\functions\createMarkers.sqf";
 
-player spawn PDB_savePlayer;
+playerSetupComplete = true;
+//coroutine
+_player spawn PDB_savePlayer;
 spawni setObjectTexture [0, ""];
+_player setVariable["basecore",0,false];

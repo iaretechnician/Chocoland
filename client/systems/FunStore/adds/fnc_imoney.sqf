@@ -1,5 +1,5 @@
 iloopok = 0;
-_oldmoney player getVariable"cmoney";
+_oldmoney = player getVariable"cmoney";
 while {iloopok<=20} do
 {;
 

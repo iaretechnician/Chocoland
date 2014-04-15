@@ -5,7 +5,7 @@ _action = _this select 0;
 _victim = _this select 1;
 _reward = _this select 2;
 
-hint"hallo test";
+
 switch (_action) do{
 	
 	case "reward" :{

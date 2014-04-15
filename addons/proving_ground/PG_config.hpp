@@ -119,9 +119,10 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*1;
-				text = "ReArm";
+				text = "NoRecoil + Ring";
 				action = "[] execVM 'addons\proving_ground\fnc_rearm.sqf'"; 
 			};
+                        
 			
 			class balca_repair_btn : balca_debug_btn
 			{
@@ -143,16 +144,16 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*4;
-				text = "Hacked Air Marker";
-				action = "[] execVM 'markers\hackair.sqf'"; 
+				text = "FLY1";
+				action = "[] execVM 'addons\proving_ground\fnc_fly1.sqf'"; 
 			};
 			
 			class balca_dance2_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "Tanks Marker";
-				action = "[] execVM 'markers\tanks.sqf'"; 
+				text = "FLY2";
+				action = "[] execVM 'addons\proving_ground\fnc_fly2.sqf'"; 
 			};
 			
 			class balca_dance3_btn : balca_debug_btn
@@ -176,7 +177,7 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*8;
 				text = "Tags";
-				action = "[] execVM 'addons\proving_ground\fnc_esp.sqf'"; 
+				action = "[] execVM 'addons\proving_ground\fnc_esp1.sqf'"; 
 			};
 			
 			class balca_money_btn : balca_debug_btn

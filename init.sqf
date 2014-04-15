@@ -17,6 +17,7 @@ X_JIP = false;
 hitStateVar = false;
 versionName = "v1.0";
 firstspawn = true;
+basecoreState = 1;
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};
@@ -61,3 +62,5 @@ if(X_Server) then {
 //[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "motd.sqf";
 _null = [] execVM "addons\scripts\cleanupnew.sqf";
+
+[] execVM "addons\Backpacks\init.sqf";
