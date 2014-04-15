@@ -435,7 +435,6 @@ BuildStoreArray = [
 ["General Store",700000,"Land_A_GeneralStore_01a"],
 ["TV Tower",700000,"Land_A_TVTower_Base"],
 ["Starry Metal Barn",700000,"Land_Barn_Metal"],
-
 ["Office Building",900000,"Land_A_Office01"],
 ["Building WIP",900000,"Land_A_BuildingWIP"],
 ["Hospital",900000,"Land_A_Hospital"],

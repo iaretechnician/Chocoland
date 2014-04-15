@@ -142,4 +142,3 @@ _totalText CtrlsetText format["Total: $%1", genStoreCart];
 lbClear _cartlist;
 
 mutexScriptInProgress = false;
-player spawn PDB_savePlayer;

@@ -25,7 +25,10 @@ closeDialog objshop_DIALOG;
  dir = getdir player;
  pos = getPos player;
  _random = Round(random 300);
- pos = [(pos select 0),(pos select 1),_random+150];
+ spam= true;
+ pos = [(pos select 0),(pos select 1),50];
+ if (spam)then{pos = [(pos select 0),(pos select 1),_random+50];};
+ 
  
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -81,5 +84,5 @@ if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon"
 		};
 	}}forEach BuildStoreArray;
 };
-player spawn PDB_savePlayer;
+spam =false;
 diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];

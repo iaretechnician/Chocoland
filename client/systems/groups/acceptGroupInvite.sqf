@@ -1,9 +1,21 @@
+//	@file Version: 1.0
+//	@file Name: acceptGroupInvite.sqf
+//	@file Author: [404] Deadbeat
+//	@file Created: 20/11/2012 05:19
+
 private["_inviterUID","_inviter"];
 
 //Get the inviters UID
 _groupExists = false;
-_inviterUID = Invite select 0;
-Invite = [];
+{
+	if(getPlayerUID player == _x select 1) then
+	{
+    	_inviterUID = _x select 0;
+        currentInvites set [_forEachIndex,"REMOVETHISCRAP"];
+        currentInvites = currentInvites - ["REMOVETHISCRAP"];
+        publicVariableServer "currentInvites";       
+	};
+}forEach currentInvites;
 
 //Get the inviter with their UID
 {
@@ -17,7 +29,7 @@ Invite = [];
 if(_groupExists) then
 {
 	[player] join (group _inviter);
-    msgbot globalChat format["Server: You have accepted the invite"];
+    player globalChat format["you have accepted the invite"];
 } else {
-	msgbot globalChat format["Server: The group no longer exists"];    
+	player globalChat format["The group no longer exists"];    
 }; 

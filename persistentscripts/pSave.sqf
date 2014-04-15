@@ -84,6 +84,7 @@ PDB_savePlayer = {
 PDB_savePlayerDead = {
 	_playerUID = _this select 0;
 	_playerSide = _this select 1;
+        _player = _this select 2;
 	_weapons = [];
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "weapons", _weapons] call iniDB_write;
 	
@@ -104,7 +105,7 @@ PDB_savePlayerDead = {
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
 	};
  
-        _cmoney = _playerUID getVariable "cmoney";
+        _cmoney = _player;
 	if(!isNil "_cmoney") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
 };
@@ -159,11 +160,3 @@ PDB_savePlayerDead = {
 };
 
 execVM "persistentscripts\pSaveReqLoop.sqf";
-/*
-sleep 5;
-while {true} do {
-	{
-		_x spawn PDB_savePlayer;
-	}foreach playableUnits;
-	sleep 10;
-};*/

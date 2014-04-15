@@ -30,15 +30,13 @@ _stringEscapePercent = "%";
 		        sleep 1;
                 
                
-              _bounty= player getVariable"bounty";
-_random= Round (random 4);
-_ck =1;
-if (_random == 1)then {_ck = 2;};
-player setvariable["bounty", _bounty +_ck, false];
-if(_random!=2) then { titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];};    
-if(_random==2) then { titleText [format["\n you are lucky you got 2 ChocoKills"], "PLAIN DOWN", 0];};
+ _bounty= player getVariable"bounty";
+_random= Round (random 8);
+if(_random!=2) then { titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];_ck =1;};    
+if(_random==2) then { titleText [format["\n you are lucky you got 2 ChocoKills"], "PLAIN DOWN", 0];_ck = 2;};
                 deletevehicle _currObject;
-              //  titleText [format["\n you got %1 ChocoKill%2", _ck, _text], "PLAIN DOWN", 0];
+                player setvariable["bounty", _bounty +_ck, false];
+            
                 process = false;
                                                                     }; 
 		};

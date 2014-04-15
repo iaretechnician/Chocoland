@@ -32,12 +32,12 @@ if (!(doCancelAction)) then {
 	switch (_switch) do {
 	    case 0 : { // Food
 	    	player setVariable["canfood",(player getVariable "canfood")-1,true];
-			hungerLevel = hungerLevel + 30;
+			hungerLevel = hungerLevel + 50;
 			if(hungerLevel > 100) then {hungerLevel = 100};
 	    };
 	    case 1 : { // Water
 	    	player setVariable["water",(player getVariable "water")-1,true];
-			thirstLevel = thirstLevel + 40;
+			thirstLevel = thirstLevel + 60;
 			if(thirstLevel > 100) then {thirstLevel = 100};
 	    };
 	};   

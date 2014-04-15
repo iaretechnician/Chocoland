@@ -12,7 +12,7 @@ if(mutexScriptInProgress) exitWith {
 
 private["_currVehicle","_currVehicleType","_fuelAmount","_stringEscapePercent","_iteration","_loopSpeed","_iterationAmount","_iterationPercentage"];
 
-_currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 5] select 0;
+_currVehicle = nearestObjects[player, ["LandVehicle", "Air", "Ship"], 7] select 0;
 _currVehicleType = typeOf _currVehicle;
 _stringEscapePercent = "%"; // Required to get the % sign into a formatted string.
 _iteration = 0;
@@ -59,7 +59,7 @@ for "_iteration" from 1 to _iterationAmount do {
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	};
                 
-	if(player distance _currVehicle > 5) exitWith { // If the player leaves, revert state.
+	if(player distance _currVehicle > 7) exitWith { // If the player leaves, revert state.
 		2 cutText ["Vehicle refuel interrupted...", "PLAIN DOWN", 1];
 	}; 
             

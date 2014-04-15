@@ -67,7 +67,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
     case "ButterFly":{[] execVM "client\systems\FunStore\adds\animal_0.sqf";};
      };
 hintsilent "funnystuff bought";
-player spawn PDB_savePlayer;
+
  
 } else {
 			hintsilent "There is another chopper or player blocking the spawn point!";};

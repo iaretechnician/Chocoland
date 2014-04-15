@@ -113,14 +113,6 @@ class GroupManagement {
 			w = 0.125; h = 0.033 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-		class LeaderButton : RscButton {
-			idc = groupManagementLeaderButton;
-			text = "Set Leader";
-			onButtonClick = "[] execVM 'client\systems\groups\leaderGroup.sqf'";
-			x = 0.3075; y = 0.400;
-			w = 0.125; h = 0.033 * safezoneH;
-			color[] = {0.95,0.1,0.1,1};
-		};
 
 		class LeaveButton : w_RscButton {
 			idc = groupManagementLeaveButton;

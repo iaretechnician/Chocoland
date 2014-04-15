@@ -21,7 +21,7 @@ switch (_lockState) do {
     case 0:{ // LOCK
     
     	R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = 6;
+		_totalDuration = 4;
 		_lockDuration = _totalDuration;
 		_iteration = 0;
 	

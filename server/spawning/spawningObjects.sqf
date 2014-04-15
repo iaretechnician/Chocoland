@@ -1,8 +1,4 @@
 if(!X_Server) exitWith {};
-    _size= Round (random 10);
-// what object
-for [{_x=0},{_x<=_size},{_x=_x+1}] do
-{
 
 _randomObject = randomBuildingrray call BIS_fnc_selectRandom; 
 //berechne marker
@@ -48,5 +44,5 @@ if(_randomObject == "Land_stand_small_EP1") then
 		sleep 1;
 		deleteVehicle _Parachute;
                  _spawn setDamage (0.00);
-                 
-};
+ 
+_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];

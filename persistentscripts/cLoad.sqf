@@ -94,7 +94,7 @@ _PDB_checkDeadLoop = {
 		waitUntil {(!alive player)};
 		PDB_saveReqDead = [""%1"",""%2""];
 		publicVariableServer ""PDB_saveReqDead"";
-		", getPlayerUID player, side player];
+		", getPlayerUID player, side player, player getVariable"cmoney"];
 		PDB_isDead = true;
 		waitUntil{respawnDialogActive};
 		waitUntil{!respawnDialogActive && (alive player)};
@@ -111,7 +111,8 @@ if(isnil "_curVal") exitWith {hint "PersistentDB: No profile on this team.";};
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
 {
-	if(_curVal == 1) exitWith {hint "PersistentDB: You were dead when you quit.";};
+	//if(_curVal == 1) exitWith {hint "PersistentDB: You were dead when you quit.";};
+        if(_curVal == 1) then {_curVal == 0;};
 };
 
 _curVal = ("weapons" call persistentDBLCConvert);

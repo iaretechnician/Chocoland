@@ -9,7 +9,7 @@ while {true} do
 	waitUntil {(isNull (findDisplay 49)) || time >= _time + 5};
 	if (!(isNull (findDisplay 49))) then
 	{
-		((findDisplay 49) displayCtrl 104) ctrlEnable true;player spawn PDB_savePlayer;
+		((findDisplay 49) displayCtrl 104) ctrlEnable true;
 		waitUntil {isNull (findDisplay 49)};
 	};
 };

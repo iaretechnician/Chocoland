@@ -79,6 +79,6 @@ _player setVariable["canDrop",false,false];
 
 playerSetupComplete = true;
 //coroutine
-_player spawn PDB_savePlayer;
+
 spawni setObjectTexture [0, ""];
 _player setVariable["basecore",0,false];
