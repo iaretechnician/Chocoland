@@ -67,7 +67,7 @@ if (spectate) then
 	spectate = false;
 	
 };
-if (!spectate) then 
+if (!spectate) exitwith
 {	
 	titleText ["Back to player...","PLAIN DOWN"];titleFadeOut 4;
 };

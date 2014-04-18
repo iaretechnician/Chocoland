@@ -10,10 +10,9 @@ _subTextColour = "#FFFFFF";
           _pos1 = [_xCord1, _yCord1,-14];
      
 	//_pos1 = [3445.93,3665.25, 0.0013];
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'>Player Triggered The Money Zone</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>the Money Zone will Spawning right now, look for Purple Smoke, you will get 999$ every second, but it is not marked on the Map</t>", _mainTextColour, _subTextColour];
+_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'>Player Triggered The Money Zone</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>the Money Zone will Spawning right now, watch out there is a Red circle, get 999$ every second, but it is not marked on the Map</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 sleep 5;
-
  _smoke1 = createVehicle ["Sign_circle",_pos1,[], 0,"CAN_COLLIDE"];
  _smoke1 setpos _pos1;
 _timer = 0;

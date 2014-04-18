@@ -1,7 +1,7 @@
 
 private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
  skinText = typeOf(player);
-  mymoney = player getVariable"cmoney";
+  mymoney = player getVariable"choco";
   mybounty = player getVariable"bounty";
  _oldUnit = player;
 _type = _skin;
@@ -56,7 +56,9 @@ _player selectweapon _secondaryWeapon;
 player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
-player setVariable["cmoney",_mymoney,false];
+player setVariable["choco",mymoney,false];
+player setVariable["choco",mybounty,false];
 player addEventHandler ["Respawn", {[player] call onRespawn;}];
 player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
 processInitCommands;
+player call playerSetup;

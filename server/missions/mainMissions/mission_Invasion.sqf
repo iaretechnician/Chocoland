@@ -237,7 +237,7 @@ if(_result == 1) then
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-	_x setVariable["cmoney", (_x getVariable "cmoney")+ _reward, true];
+	_x setVariable["choco", (_x getVariable "choco")+ _reward, true];
 	};
 	} forEach _inArea;
 	

@@ -6,7 +6,7 @@ vehStoreCart = 0;
 
 _Dialog = findDisplay vehshop_DIALOG;
 _playerMoney = _Dialog displayCtrl vehshop_money;
-_money = player getVariable "cmoney";
+_money = player getVariable "choco";
 _playerMoney CtrlsetText format[""];
 
 VehicleShop = str(_this select 0);

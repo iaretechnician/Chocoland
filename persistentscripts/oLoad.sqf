@@ -1,23 +1,22 @@
 sleep 10;
 _check = ("Objects" call PDB_databaseNameCompiler) call iniDB_exists;
-//(!_check) exitWith {};
+if(!_check) exitWith {};
 _objectscount = ["Objects" call PDB_databaseNameCompiler, "Count", "Count", "NUMBER"] call iniDB_read;
 if(isNil "_objectscount") exitWith {};
 for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 	_objSaveName = format["obj%1", _i];
 	_class = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "classname", "STRING"] call iniDB_read;
+        //_playerGUID = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", "STRING"] call iniDB_read;
 	_pos = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "pos", "ARRAY"] call iniDB_read;
 	_dir = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "dir", "ARRAY"] call iniDB_read;
 	_supplyleft = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", "NUMBER"] call iniDB_read;
-        _playerGUID = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", "NUMBER"] call iniDB_read;
 	_weapons = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "weapons", "ARRAY"] call iniDB_read;
 	_magazines = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "magazines", "ARRAY"] call iniDB_read;
-	if(!isNil "_objSaveName" && !isNil "_class" && !isNil "_pos" && !isNil "_dir" && !isNil "_supplyleft" && !isNil "_weapons" && !isNil "_magazines") then 
+	if(!isNil "_objSaveName" && !isNil "_class" && !isNil "_pos" && !isNil "_dir" && !isNil "_supplyleft" && !isNil "_weapons" && !isNil "_magazines"&& !isNil "_playerGUID") then 
 	{
 
 		_obj = createVehicle [_class,_pos, [], 0, "CAN COLLIDE"];
 		_obj setPosASL _pos;
-             
 		_obj setVectorDirAndUp _dir;
 
 		if(_class == "Land_stand_small_EP1") then 
@@ -29,9 +28,7 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 		{
 			_obj setVariable["water",_supplyleft,true];
 		};
-                if(!isnil "_playerGUID")then{
-                _obj setVariable ["playerGUID", _playerGUID, true];
-                };
+
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 
@@ -43,5 +40,6 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 			_obj addMagazineCargoGlobal [(_magazines select 0) select _ii, (_magazines select 1) select _ii];
 		};
 		_obj setVariable ["objectLocked", true, true];
+               // _obj setVariable ["playerGUID", _playerGUID, true];
 	};
 };

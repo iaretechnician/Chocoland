@@ -82,6 +82,10 @@ ProfileFound%1 = nil;
 		[_uid, _playerSide, "dammage", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		[_uid, _playerSide, "cmoney", _id, "NUMBER"] spawn PersistentDBLoadStuff;
+                
+                [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
+                
+                 [_uid, _playerSide, "donator", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		[_uid, _playerSide, "canfood", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
@@ -107,7 +111,6 @@ ProfileFound%1 = nil;
 		
 		[_uid, _playerSide, "hungerLevel", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 
-                [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		exit;
 	};
 }foreach playableUnits;

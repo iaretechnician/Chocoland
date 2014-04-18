@@ -59,7 +59,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=47;
+		items=50;
 		class Item0
 		{
 			side="LOGIC";
@@ -74,7 +74,7 @@ class Mission
 					vehicle="ProtectionZone_Ep1";
 					skill=0.2;
 					name="spawni";
-text="spawni";
+					text="spawni";
 				};
 				class Item1
 				{
@@ -101,11 +101,13 @@ text="spawni";
 					position[]={2089.9304,20.455914,4290.7656};
 					id=4;
 					side="WEST";
-					vehicle="BAF_Soldier_Officer_MTP";
+					vehicle="USMC_SoldierS_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor4";
+					text="jake";
+name="jake";
+description=" Jake  |  Reserved Slot   |  ChocoLand";
 				};
 			};
 		};
@@ -239,6 +241,7 @@ text="spawni";
 					leader=1;
 					skill=0.60000002;
 					text="blufor15";
+
 				};
 			};
 		};
@@ -253,11 +256,14 @@ text="spawni";
 					position[]={2092.9932,28.70118,4307.3662};
 					id=16;
 					side="EAST";
-					vehicle="Ins_Soldier_Sab";
+					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor1";
+					text="jake2";
+name="jake2";
+description=" Jake  |  Reserved Slot   |  ChocoLand";
+				
 				};
 			};
 		};
@@ -538,11 +544,13 @@ text="spawni";
 					position[]={2096.885,29.750032,4307.5449};
 					id=31;
 					side="GUER";
-					vehicle="Soldier_Engineer_PMC";
+					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer1";
+					text="jake1";
+name="jake1";
+description=" Jake  |  Reserved Slot   |  ChocoLand";
 				};
 			};
 		};
@@ -824,7 +832,7 @@ text="spawni";
 					special="NONE";
 					id=1;
 					side="WEST";
-					vehicle="USMC_SoldierS_Engineer";
+					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -964,6 +972,68 @@ text="spawni";
 				};
 			};
 		};
+		class Item47
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2089.9304,20.455914,4290.7656};
+					id=47;
+					side="CIV";
+					vehicle="Policeman";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="admin1";
+					name="admin1";
+				};
+			};
+		};
+		class Item48
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2089.9304,20.455914,4290.7656};
+					id=48;
+					side="CIV";
+					vehicle="Policeman";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="admin2";
+					name="admin2";
+				};
+			};
+		};
+		class Item49
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2089.9304,20.455914,4290.7656};
+					id=49;
+					side="CIV";
+					vehicle="Policeman";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="admin3";
+					name="admin3";
+				};
+			};
+		};
+		
+				
 	};
 	class Vehicles
 	{

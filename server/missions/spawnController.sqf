@@ -26,7 +26,7 @@ while {true} do
                     setWind [0, 0, true];
 		 []execVM "server\spawning\spawningObjects.sqf";
                  []execVM "server\spawning\spawningVehicles.sqf";
-                 []execVM "server\spawning\spawningAnimals.sqf";
+               //  []execVM "server\spawning\spawningAnimals.sqf";
                  []execVM "server\spawning\spawningchocokills.sqf";
                  []execVM "server\spawning\spawningMoney.sqf";	
 		};

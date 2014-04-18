@@ -4,9 +4,27 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
-
 _player = _this;
 //Player initialization
+
+
+reserved_units = [admin1, admin3, admin2];
+reserved_uids = ["3771202","108720582","149964550"];
+_uid = getPlayerUId _player;
+if ((_player in reserved_units)&& !(_uid in reserved_uids)) then {
+   _player globalChat "You are in a reserved slot, kicking to lobby in 5 seconds";
+   sleep 5;
+   failMission "end1";
+ };
+ donator_units = [jake, jake1, jake2];
+ donator_uids = ["125670982"];
+_uid = getPlayerUId _player;
+if ((_player in donator_units)&& !(_uid in donator_uids)) then {
+   _player globalChat "You are in Jake`s reserved slot, kicking to lobby in 5 seconds";
+   sleep 5;
+   failMission "end1";
+ };
+//end Reserved slots
 _player setskill 0;
 {_player disableAI _x} foreach ["move","anim","target","autotarget"];
 _player setVariable ["BIS_noCoreConversations", true];
@@ -49,7 +67,17 @@ if(str(playerSide) in ["GUER"]) then
 	_player addWeapon "glock17_EP1";
 	_player selectWeapon "glock17_EP1";
 };
-
+if(_player getvariable"donator" == 1)then
+{_curVal = Donatorweapon;
+if (!isNil"_curVal") then 
+{
+	removeAllWeapons _player;
+	{
+		_player addWeapon _x;
+                _player selectWeapon _x;
+	}foreach _curVal;
+};
+};
 _player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
@@ -57,13 +85,13 @@ thirstLevel = 100;
 hungerLevel = 100;
 
 _player setVariable["bounty",0,false];
-if(firstspawn) then {
-	_player setVariable["cmoney",500,false];
+/*if(firstspawn) then {
+	_player setVariable["choco",500,false];
 	firstspawn = false;
-};
-_player setVariable["canfood",2,false];
+};*/
+_player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
-_player setVariable["water",2,false];
+_player setVariable["water",1,false];
 _player setVariable["fuel",0,false];
 _player setVariable["repairkits",0,false];
 _player setVariable["fuelFull", 1, false];
@@ -75,7 +103,7 @@ _player setVariable["canDrop",false,false];
 
 [] execVM "client\functions\playerActions.sqf";
 [] execVM "client\functions\playercamera.sqf";
-[] execVM "client\functions\createMarkers.sqf";
+//[] execVM "client\functions\createMarkers.sqf";
 
 playerSetupComplete = true;
 //coroutine

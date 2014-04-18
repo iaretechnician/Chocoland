@@ -4,6 +4,7 @@ respawn="BASE";
 respawnDelay=5;
 disabledAI=1;
 disableChannels[]={2};
+
 class Header
 {
 	gameType=COOP;

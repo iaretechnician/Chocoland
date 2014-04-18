@@ -1,7 +1,7 @@
 
 #include "dialog\FunStoreDefines.sqf";
 disableSerialization;
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
@@ -24,9 +24,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		sleep 1;
 		if(0 <= 1) then {
 			_price = _x select 1;
-			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-			player setVariable["cmoney",_playerMoney - _price,true];
-			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
+			player setVariable["choco",_playerMoney - _price,true];
+			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
             switch (_x select 2) do
 {
    case "name":{[] execVM "client\systems\FunStore\adds\fnc_name.sqf";};  
@@ -73,4 +73,4 @@ hintsilent "funnystuff bought";
 			hintsilent "There is another chopper or player blocking the spawn point!";};
 	}}forEach FunStoreArray;
 };
-diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];
+diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];

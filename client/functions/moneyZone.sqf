@@ -10,9 +10,9 @@ switch (_action) do{
 	
 	case "reward" :{
 		titleText [format["%1", _victim], "PLAIN DOWN", 0];
-		_killerMoney = player getVariable "cmoney";
+		_killerMoney = player getVariable "choco";
 		_newMoney = _killerMoney + _reward;
-		player setVariable ["cmoney", _newMoney, false];
+		player setVariable ["choco", _newMoney, false];
             
 	};
 };

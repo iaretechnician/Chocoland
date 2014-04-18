@@ -450,7 +450,7 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Fort_StoneWall_EP1", 5],
 	["Land_CamoNet_NATO", 3],
 	["WarfareBCamp", 15],
-	["WarfareBDepot", 30],
+	["WarfareBDepot", 100],
 	["Land_A_Castle_Stairs_A",15],
 	["Land_leseni2x", 8],
 	["Land_leseni4x", 15],

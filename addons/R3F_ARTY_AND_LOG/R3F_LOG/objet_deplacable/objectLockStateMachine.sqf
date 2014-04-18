@@ -53,7 +53,7 @@ switch (_lockState) do {
 		        sleep 1;
                 _currObject setVariable ["objectLocked", true, true];
                 //CUSTOM
-                _uid = getPlayerUID player;
+                _uid = name player;
                 _currObject setVariable ["playerGUID", _uid, true];
              
                 2 cutText ["", "PLAIN DOWN", 1];
@@ -70,9 +70,10 @@ switch (_lockState) do {
 		_iteration = 0;
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		for "_iteration" from 1 to _unlockDuration do {
-                    if ((_currObject getVariable "playerGUID") != (getPlayerUID player)) exitWith{
+                    if ((_currObject getVariable"playerGUID")!=(name player)) exitWith{
                           2 cutText ["You Cannot Unlock this Object, you are not the Owner of this Object", "PLAIN DOWN", 1];
                            R3F_LOG_mutex_local_verrou = false;};
+                           
                     if(player distance _currObject > 7) exitWith {  R3F_LOG_mutex_local_verrou = false;
                           2 cutText ["Object unlock failed, you too far away...", "PLAIN DOWN", 1];
                            R3F_LOG_mutex_local_verrou = false;};

@@ -10,7 +10,7 @@ switch (_action) do{
 	
 	case "reward" :{
 		  titleText [format["\n+%1$ for  Mission %2", _reward, _victim], "PLAIN DOWN", 0];
-                player setVariable["cmoney", (player getVariable "cmoney")+ _reward, true];
+                player setVariable["choco", (player getVariable "choco")+ _reward, true];
 	};
 };
  

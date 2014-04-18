@@ -45,7 +45,7 @@ class chopshopd {
 
 			 x = 0.10 * safezoneW + safezoneX;
 			y = 0.013 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
+			w = 0.165 * safezoneW;
 			h = 0.040 * safezoneH;
 		};
 	};

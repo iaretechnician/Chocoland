@@ -16,6 +16,8 @@ _corpe removeAction bombId;
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;
+if(player getvariable"donator" == 1)then
+{deletevehicle _corpse;};
 player call playerSetup;
 waitUntil {playerSetupComplete};
 

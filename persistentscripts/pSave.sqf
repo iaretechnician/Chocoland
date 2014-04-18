@@ -20,14 +20,17 @@ PDB_savePlayer = {
 			_dammage = getDammage _x;
 			[_playerUID call PDB_databaseNameCompiler, _playerSide, "dammage", _dammage] call iniDB_write;
 			
+			_cmoney = _x getVariable "choco";
+			if(!isNil "_cmoney") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
+			};
+                        _donator = _x getVariable "donator";
+			if(!isNil "_donator") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "donator", _donator] call iniDB_write;
+			};
                         _bounty = _x getVariable "bounty";
 			if(!isNil "_bounty") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
-			};
-                        
-			_cmoney = _x getVariable "cmoney";
-                        if(!isNil "_cmoney") then {
-			[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
 			};
 			_canfood = _x getVariable "canfood";
 			if(!isNil "_canfood") then {
@@ -84,31 +87,30 @@ PDB_savePlayer = {
 PDB_savePlayerDead = {
 	_playerUID = _this select 0;
 	_playerSide = _this select 1;
-        _player = _this select 2;
-	_weapons = [];
+     
+	_weapons = ["Colt1911"];
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "weapons", _weapons] call iniDB_write;
 	
-	_magazines = [];
+	_magazines = ["7Rnd_45ACP_1911"];
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "magazines", _magazines] call iniDB_write;
-	
+        
+	if(!isnil "Donatorweapon")then{
+        [_playerUID call PDB_databaseNameCompiler, _playerSide, "weapons", Donatorweapon] call iniDB_write;
+        };
+    
 	_dir = 0;
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "dir", _dir] call iniDB_write;
 	
-	_pos = [0,0,0];
+        _pos = [2089.9304,4290.7656,0.0014];
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "pos", _pos] call iniDB_write;
 	
-	_dammage = 1;
+	_dammage = 0;
 	[_playerUID call PDB_databaseNameCompiler, _playerSide, "dammage", _dammage] call iniDB_write;
-        
-        _bounty = 0;
-         if(!isNil "_bounty") then {
-	[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
+	
+	_bounty = 0;
+	if(!isNil "_bounty") then {
+		[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;
 	};
- 
-        _cmoney = _player;
-	if(!isNil "_cmoney") then {
-		[_playerUID call PDB_databaseNameCompiler, _playerSide, "cmoney", _cmoney] call iniDB_write;
-};
 	_canfood = 0;
 	if(!isNil "_canfood") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "canfood", _canfood] call iniDB_write;
@@ -149,11 +151,11 @@ PDB_savePlayerDead = {
 	if(!isNil "_camonet") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "camonet", _camonet] call iniDB_write;
 	};
-	_thirstLevel = 0;
+	_thirstLevel = 100;
 	if(!isNil "_thirstLevel") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "thirstLevel", _thirstLevel] call iniDB_write;
 	};
-	_hungerLevel = 0;
+	_hungerLevel = 100;
 	if(!isNil "_hungerLevel") then {
 		[_playerUID call PDB_databaseNameCompiler, _playerSide, "hungerLevel", _hungerLevel] call iniDB_write;
 	};

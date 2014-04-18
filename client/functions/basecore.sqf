@@ -24,7 +24,7 @@ while {alive player && alive _currObject} do {
         then {
             
                 _money = 2 + (player getVariable"bounty");
-                player setVariable["cmoney",(player getVariable"cmoney") + _money,false];
+                player setVariable["choco",(player getVariable"choco") + _money,false];
  
                 _currObject setVariable["wallet",(_currObject getVariable"wallet") + _money2,true];
                 _pos = getPos _currObject;

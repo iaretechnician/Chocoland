@@ -7,7 +7,8 @@
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
 
-
+if((_player getvariable"donator") == 1)
+then {Donatorweapon = weapons _player;};
 PlayerCDeath = [_player];
 publicVariable "PlayerCDeath";
 if (isServer) then {

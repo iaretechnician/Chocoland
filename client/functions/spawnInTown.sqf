@@ -39,7 +39,7 @@ switch(_switch) do
 			};
 		}forEach allUnits;
                 
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
+                 2 cutText ["HALO jump activated. Open your chute before you hit the ground! over 150 ALT", "PLAIN DOWN", 5];
         player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
         [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
         respawnDialogActive = false;
@@ -60,7 +60,7 @@ switch(_switch) do
 			};
 		}forEach allUnits;
                 
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
+                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!over 150 ALT", "PLAIN DOWN", 5];
         player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
         [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
         respawnDialogActive = false;

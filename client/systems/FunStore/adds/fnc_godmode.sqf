@@ -1,4 +1,4 @@
-
+  hint "GOD mode ON";
 while {iloopok<=60} do
 {;
 	player addeventhandler ["hit",{player setdammage 0}];
@@ -9,7 +9,7 @@ player addeventhandler ["dammaged",{player setdammage 0}];
 (vehicle player) addEventHandler ["handleDamage", { false }];	
 (vehicle player) allowDamage false;
         iloopok=iloopok + 0.1;
-        hint "GOD mode ON";
+       
 sleep 0.1;
 };
 iloopok = 0;

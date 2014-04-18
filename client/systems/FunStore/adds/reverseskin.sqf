@@ -1,7 +1,8 @@
 _skin = "CDF_Soldier_Medic";
 // ***** CBA_fnc_switchPlayer *****
 private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
-_mymoney = player getVariable"cmoney";
+_mymoney = player getVariable"choco";
+_player =player;
  _skinText = skinText;
 _oldUnit = player;
 _type = _skin;
@@ -42,48 +43,12 @@ removeAllWeapons _player;
 removeAllitems _player;
 removeBackpack player;
  
-_player addMagazine "15Rnd_9x19_M9";
-_player addMagazine "15Rnd_9x19_M9";
-_player addWeapon "M9";
- 
-_player addweapon "ItemMap";
-_player addweapon "ItemCompass";
-_player addweapon "ItemWatch";
- 
 _secondaryWeapon = secondaryWeapon _player;
 _player selectweapon _secondaryWeapon;
  player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
 playerMenuId = player addAction [format ["<t color='#FF6600'>%1</t>", "Player Menu"], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
 		/// custom
 playerWeaponId = player addAction[('<t color=''#FF33CC''>' + ('ParaStore') +  '</t>'),'client\systems\menu\loadmenu.sqf'];
-
-player setVariable["cmoney",mymoney,false];
-player setVariable["bounty",mybounty,false];
-player addweapon "ItemMap";
-player addweapon "ItemCompass";
-player addweapon "ItemWatch";
-player addMagazine "15Rnd_9x19_M9";
-player addMagazine "15Rnd_9x19_M9";
-player addWeapon "M9";
-player addEventHandler ["Respawn", {[player] call onRespawn;}];
-player addEventHandler ["Killed", {[player] call onKilled;}];
-player addrating 1000000;
-player switchMove "amovpknlmstpsraswpstdnon_gear";
-
-thirstLevel = 100;
-hungerLevel = 100;
-
-
-player setVariable["canfood",2,false];
-player setVariable["medkits",0,false];
-player setVariable["water",2,false];
-player setVariable["fuel",0,false];
-player setVariable["repairkits",0,false];
-player setVariable["fuelFull", 1, false];
-player setVariable["fuelEmpty",0, false];
-player setVariable["bombs",false,false];
-player setVariable["spawnBeacon",0,false];
-player setVariable["camonet",0,false];
-player setVariable["canDrop",false,false];
-
-[] execVM "client\functions\playerActions.sqf";
+player call playerSetup;
+player setVariable["choco",_mymoney,false];
+player setVariable["bounty",0,false];

@@ -44,6 +44,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_objectText = _dialogPlayer displayCtrl playerMenuPlayerObject;
 	_playerListBox = _dialogPlayer displayCtrl playerMenuPlayerList;
 	_currentbountyText = _dialogPlayer displayCtrl playerMenuPlayerck;
+        _currentdonatorText = _dialogPlayer displayCtrl playerMenuPlayerdonate;
 	_inCar = ["No Passengers"];
 	_driver = "No Driver";
 	if (_type1 == 1) then {
@@ -68,11 +69,12 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    {
 	        if (str(_x) == _data1) exitwith {
 	            _itemsText ctrlSetText format["Items: %1",weapons _x];
-	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "cmoney"];
+	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "choco"];
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
 	            _currentbountyText ctrlSetText format["ChocoKills: %1",_x getVariable "bounty"];
+                     _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable "donator"];
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;

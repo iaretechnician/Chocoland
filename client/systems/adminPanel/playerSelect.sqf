@@ -23,7 +23,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_index = lbCurSel _playerListBox;
 	_playerData = _playerListBox lbData _index;
 	
-	{
+	{  
 		if (str(_x) == _playerData) then {
 			_target = _x;
 			_check = 1;
@@ -104,21 +104,31 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    };
 			}forEach pvar_teamSwitchList;			
 	    };
-		case 4: //Unlock Team Killer
-	    {      
+	/*	case 4: //Unlock Team Killer
+	   {      
 			_targetUID = getPlayerUID _target;
 	        {
 			    if(_x select 0 == _targetUID) then
 			    {
 			    	pvar_teamKillList set [_forEachIndex, "REMOVETHISCRAP"];
 					pvar_teamKillList = pvar_teamKillList - ["REMOVETHISCRAP"];
-			        publicVariableServer "pvar_teamKillList"; 
+			       publicVariableServer "pvar_teamKillList"; 
 	                
 	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamKillList';};"];
 			        processInitCommands;
-			        clearVehicleInit player;       
+			       clearVehicleInit player;       
 			    };
 			}forEach pvar_teamKillList;       		
+	    };*/
+            case 4: //Remove All Money
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			    if(getPlayerUID _x == _targetUID) then
+			    {
+  					_x setVariable["bounty",0,true];
+			    };
+			}forEach playableUnits;       		
 	    };
         case 5: //Remove All Money
 	    {      
@@ -126,7 +136,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-  					_x setVariable["cmoney",0,true];
+  					_x setVariable["choco",0,true];
 			    };
 			}forEach playableUnits;       		
 	    };
@@ -160,9 +170,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-                                _killerMoney = _x getVariable "cmoney";
+                                _killerMoney = _x getVariable "choco";
                                 _newMoney = _killerMoney +25000;
-                                _x setVariable ["cmoney", _newMoney, true];
+                                _x setVariable ["choco", _newMoney, true];
   			   };
 			}forEach playableUnits;       		
 	    };
@@ -181,7 +191,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
   			   };
 			}forEach playableUnits;       		
 	    };
-             case 10: //add 100k Money
+             case 10: //teleplayer to admin
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -191,6 +201,55 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
                            clearVehicleInit _target;
                             _pos1 = getPos player;
                              _x setPos _pos1;
+  			   };
+			}forEach playableUnits;       		
+	    };
+             case 11: //chocokill -1
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			  if(getPlayerUID _x == _targetUID) then
+			    {
+                                _bounty = _x getVariable "bounty";
+                                _bount = _bounty -1;
+                                _x setVariable ["bounty", _bount, true];
+  			   };
+			}forEach playableUnits;       		
+	    };
+            case 12: //chocokill -2
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			  if(getPlayerUID _x == _targetUID) then
+			    {
+                                _bounty = _x getVariable "bounty";
+                                _bount = _bounty -2;
+                                _x setVariable ["bounty", _bount, true];
+  			   };
+			}forEach playableUnits;       		
+	    };
+            case 13: //chocokill -5
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			  if(getPlayerUID _x == _targetUID) then
+			    {
+                                _bounty = _x getVariable "bounty";
+                                _bount = _bounty -5;
+                                _x setVariable ["bounty", _bount, true];
+  			   };
+			}forEach playableUnits;       		
+	    };
+            case 14: //donator
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			  if(getPlayerUID _x == _targetUID) then
+			    {
+                                _bounty = _x getVariable "donator";
+                                if(_bounty == 1)then{
+                                _x setVariable ["donator", 0, false];}else{
+                                _x setVariable ["donator", 1, false];};
   			   };
 			}forEach playableUnits;       		
 	    };

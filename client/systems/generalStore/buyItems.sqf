@@ -8,7 +8,7 @@
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
 
-if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
+if(genStoreCart > (player getVariable "choco")) exitWith {hint "You do not have enough money"};
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
@@ -24,7 +24,7 @@ mutexScriptInProgress = true;
 
 
 //Initialize Values
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "choco";
 _size = 0;
 
 // Grab access to the controls
@@ -134,8 +134,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	};
 };
 
-player setVariable["cmoney",_playerMoney - genStoreCart,false];
-_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+player setVariable["choco",_playerMoney - genStoreCart,false];
+_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 
 genStoreCart = 0;
 _totalText CtrlsetText format["Total: $%1", genStoreCart];

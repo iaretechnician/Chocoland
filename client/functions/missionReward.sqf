@@ -10,11 +10,11 @@ switch (_action) do{
 	
 	case "reward" :{
 		
-		_killerMoney = player getVariable "cmoney";
+		_killerMoney = player getVariable "choco";
                 _bounty = player getVariable "bounty";if(_bounty ==0) then{_bounty =1;};
 		_newMoney = (_reward * _bounty)+ _killerMoney;
                 _missionreward= _reward * _bounty;
-		player setVariable ["cmoney", _newMoney, false];
+		player setVariable ["choco", _newMoney, false];
                 titleText [format["\n+%1$ * Your ChocoKills for Mission %2", _missionreward,_victim], "PLAIN DOWN", 0];
             
 	};

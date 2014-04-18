@@ -1,16 +1,16 @@
 #include "dialog\buildstoreDefines.sqf";
 disableSerialization;
 
-//if(objStoreCart > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
+//if(objStoreCart > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 //objshop_cart
 
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
 
 //_price = _x select 1;
-//if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
+//if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 
 // Grab access to the controls
 _dialog = findDisplay buildshop_DIALOG;
@@ -24,10 +24,10 @@ hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
  dir = getdir player;
  pos = getPos player;
- _random = Round(random 300);
- spam= true;
- pos = [(pos select 0),(pos select 1),50];
- if (spam)then{pos = [(pos select 0),(pos select 1),_random+50];};
+
+
+ pos = [(pos select 0),(pos select 1),100];
+
  
  
 //Buy
@@ -38,9 +38,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	{if(_itemText == _x select 0) then{
 	if(0 <= 1) then {
 			_price = _x select 1;
-			if(_price > (player getVariable "cmoney")) exitWith {hintsilent "You do not have enough money"};
-			player setVariable["cmoney",_playerMoney - _price,true];
-			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
+			player setVariable["choco",_playerMoney - _price,true];
+			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir;
                         _spawn setPos pos;
@@ -69,20 +69,14 @@ if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon"
 {
         _spawn setVariable ["objectLocked", true, true];
 };
-
-
-		_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
- 
+_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
     		// Delete parachute
 		sleep 15;
-		
-		deleteVehicle _Parachute;
-                
+		deleteVehicle _Parachute;      
                  _spawn setDamage (0.00);
 		} else {
 			hintsilent "There is another Building or player blocking the spawn point!";
 		};
 	}}forEach BuildStoreArray;
 };
-spam =false;
-diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"cmoney")];
+diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];

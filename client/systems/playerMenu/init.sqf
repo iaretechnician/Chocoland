@@ -1,5 +1,5 @@
 #include "dialog\player_sys.sqf"; 
-if(isnil {player getVariable "cmoney"}) then {player setVariable["cmoney",0,true];};
+if(isnil {player getVariable "choco"}) then {player setVariable["choco",0,true];};
 if(dialog) exitwith{};
 
 disableSerialization;
@@ -18,7 +18,7 @@ _uptime = _Dialog displayCtrl uptime_text;
 _groupButton = _Dialog displayCtrl groupButton;
 _foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
 _watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
-_moneytext ctrlSetText format["%1", player getVariable "cmoney"];
+_moneytext ctrlSetText format["%1", player getVariable "choco"];
 
 _mIndex = _mvalue lbadd "$10"; _mvalue lbSetData [(lbSize _mvalue)-1, "10"];
 _mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];

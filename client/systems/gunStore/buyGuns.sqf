@@ -7,7 +7,7 @@
 
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;
-if(gunStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
+if(gunStoreCart > (player getVariable "choco")) exitWith {hint "You do not have enough money"};
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
@@ -29,7 +29,7 @@ private ["_name"];
 //Initialize Values
 _switch = _this select 0;
 
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
 // Grab access to the controls
@@ -245,8 +245,8 @@ switch(_switch) do
             }forEach accessoriesArray;
 		};
 
-		player setVariable["cmoney",_playerMoney - gunStoreCart,false];
-		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+		player setVariable["choco",_playerMoney - gunStoreCart,false];
+		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 
 		gunStoreCart = 0;
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];

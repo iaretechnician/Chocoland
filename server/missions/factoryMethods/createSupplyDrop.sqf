@@ -18,10 +18,8 @@ _picture = _this select 2;
 _vehicleName = _this select 3;
 _missionType = _this select 4;
 
-_cargoItem_1 = "mission_Side_USSpecial";
-[_cargoItem_1,"mission_Side_USSpecial"] call fn_refillbox;
-_cargoItem_2 = "mission_Side_USLaunchers"; 
-[_cargoItem_2,"mission_Side_USLaunchers"] call fn_refillbox;
+_cargoItem_1 = "USBasicAmmunitionBox";
+_cargoItem_2 = "RUBasicAmmunitionBox"; 
 _cargoItem_3 = "Barrels";
 _cargoItem_4 = "Land_stand_small_EP1"; 
 _parachute = "ParachuteMediumWest";
@@ -117,7 +115,9 @@ if(damage _plane == 1) then {
 		
         _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission Succesfull!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, has relinquished the supplies.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 		[nil,nil,rHINT,_hint] call RE;	   
-    
+
+[_cargoItem_2,"RUBasicAmmunitionBox"] call fn_refillbox;
+[_cargoItem_1,"USBasicAmmunitionBox"] call fn_refillbox;
 	    _plane flyInHeight 1500;
 		_plane forceSpeed 600;
 		Waituntil {

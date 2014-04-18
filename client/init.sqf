@@ -31,11 +31,6 @@ waitUntil{time > 2};
 //Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
 
-//Stop people being civ's.
-if(!(playerSide in [west, east, resistance])) then {
-	endMission "LOSER";
-};
-
 //Player setup
 player call playerSetup;
 
@@ -56,8 +51,6 @@ waituntil {!(IsNull (findDisplay 46))};
 "clientRadarMarkers" addPublicVariableEventHandler {[] call updateRadarMarkers};
 "pvar_teamKillList" addPublicVariableEventHandler {[] call updateTeamKiller};
 "publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
-
-//client Executes
 
 [] execVM "client\functions\initSurvival.sqf";
 [] execVM "client\systems\hud\playerHud.sqf";

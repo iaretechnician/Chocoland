@@ -47,7 +47,7 @@
 			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;CHANGES: SAVEMONEY FIX, repair/fuel can on playermenu fix, ParaSpawn nerved (*playerOnline every 10min)Animals Added, AirStrike + Order BaseCarrier added to funnyExpensive, added ChocoBombs to Generals->parastore, ChocoBombs will destroy Objects*yourChocoKills</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;ChocoKills :you get ChocoKills for killing npcs and Players and you can find it on the Island, all your money will multiplier your Chocokills!&lt;/t&gt;&lt;br/&gt; CHANGES: SupplyDrop mission fixxed!</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">

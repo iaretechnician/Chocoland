@@ -22,9 +22,8 @@ _return;
 };
 
 /*
-	IniDB by SicSemperTyrannis
-	
-	Support: http://raiderbattalion.enjin.com/
+IniDB by SicSemperTyrannis
+Support: http://raiderbattalion.enjin.com/
 */
 
 iniDB_version = {

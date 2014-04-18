@@ -6,7 +6,7 @@ buildStoreCart = 0;
 
 _Dialog = findDisplay buildshop_DIALOG;
 _playerMoney = _Dialog displayCtrl buildshop_money;
-_money = player getVariable "cmoney";
+_money = player getVariable "choco";
 _playerMoney CtrlsetText format[""];
 
 BuildShop = str(_this select 0);

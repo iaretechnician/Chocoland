@@ -31,14 +31,13 @@ _stringEscapePercent = "%";
                 
                
  _bounty= player getVariable"bounty";
-_random= Round (random 8);
-if(_random!=2) then { titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];_ck =1;};    
-if(_random==2) then { titleText [format["\n you are lucky you got 2 ChocoKills"], "PLAIN DOWN", 0];_ck = 2;};
+
+titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];
+_ck=_bounty +1;
                 deletevehicle _currObject;
-                player setvariable["bounty", _bounty +_ck, false];
-            
+                player setvariable["bounty", _ck,false];
                 process = false;
-                                                                    }; 
+                }; 
 		};
 		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.     
       

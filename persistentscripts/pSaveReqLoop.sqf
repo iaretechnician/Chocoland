@@ -23,6 +23,8 @@
 		_uid = PDB_saveReqDead select 0;
 		_side = PDB_saveReqDead select 1;
                 _player = PDB_saveReqDead select 2;
-		[_uid, _side, _player] spawn PDB_savePlayerDead;
+		[_uid, _side] spawn PDB_savePlayerDead;
+                _uid = PDB_saveReq;
+		
 	};
 };

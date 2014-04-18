@@ -51,8 +51,6 @@ func_tauntHacker = {
 	diag_log format["player:%1 uses hacks!",name player];
         sleep 10; titleFadeOut 10; 
 };
-
-
 while {true} do {
      
 	
