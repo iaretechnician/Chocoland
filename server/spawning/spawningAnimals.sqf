@@ -20,17 +20,17 @@ _pos=[_xCord,_yCord,500];};
 //coroutine
 _marray3=["Cow04","Rabbit","Goat"];
 _animalClass = _marray3 select (random (count _marray3 - 1));
-_spawn=_animalClass createUnit [_pos,EmptyGroup,"",1.0];
+
+_grp = creategroup civilian;
+_spawn = _grp createunit [_animalClass,_pos,[],0,"FORM"];
+
+//_spawn=_animalClass createUnit [_pos,EmptyGroup,"",1.0];
 _spawn setPos _pos;
-_spawn addEventHandler ["Killed", {;null =[this] execVM "server\functions\bomb.sqf";}];
+_spawn addEventHandler ["Killed", {_this execVM "server\functions\bomb_midair.sqf";}];
 processInitCommands;
  _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 _Parachute setPos (getPos _spawn);
-_smoke = "smokeShellpurple" createVehicle position _spawn;
-_smoke setPos (getPos _spawn);
 _spawn attachTo [_Parachute,[0,0,-1.5]];
-_smoke attachTo [_Parachute,[0,0,-1.5]];
-
 waitUntil {(getPos _spawn select 2) < 2};
 deTach _spawn;
 deleteVehicle _Parachute;

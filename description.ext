@@ -4,7 +4,7 @@ respawn="BASE";
 respawnDelay=5;
 disabledAI=1;
 disableChannels[]={2};
-
+minScore = 0;
 class Header
 {
 	gameType=COOP;
@@ -42,7 +42,42 @@ class RscTitles {
 
 class CfgSounds
 {
-    sounds[] = {};
+	sounds[] = {trueno1,trueno2,trueno3,trueno4,viento1};
+
+	class trueno1
+	{
+		name = "trueno1";
+		sound[] = {"trueno1.ogg", db-0, 1.0};
+		titles[] = {0};
+	};
+
+	class trueno2
+	{
+		name = "trueno2";
+		sound[] = {"trueno2.ogg", db-0, 1.0};
+		titles[] = {0};
+	};
+
+	class trueno3
+	{
+		name = "trueno3";
+		sound[] = {"trueno3.ogg", db-0, 1.0};
+		titles[] = {0};
+	};
+
+	class trueno4
+	{
+		name = "trueno4";
+		sound[] = {"trueno4.ogg", db-0, 1.0};
+		titles[] = {0};
+	};
+
+	class viento1
+	{
+		name = "viento1";
+		sound[] = {"viento1.ogg", db-0, 1.0};
+		titles[] = {0};
+	};
 };
 class CfgIdentities
 {

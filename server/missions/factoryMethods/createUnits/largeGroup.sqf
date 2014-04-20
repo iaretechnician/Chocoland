@@ -31,7 +31,7 @@ _man2 addMagazine "75Rnd_545x39_RPK";
 _man2 addMagazine "75Rnd_545x39_RPK";
 _man2 addMagazine "75Rnd_545x39_RPK";
 _man2 addWeapon "RPK_74";
-_man2 setskill ["aimingaccuracy",0.1];
+_man2 setskill ["aimingaccuracy",0.3];
 _man2 setIdentity "name8";
 //Rifle_man
 _man3 = _group createunit ["Woodlander4", [_pos select 0, (_pos select 1) + 30, 0], [], 0.5, "Form"];
@@ -55,7 +55,7 @@ _man4 addMagazine "30Rnd_762x39_AK47";
 _man4 addMagazine "30Rnd_762x39_AK47";
 _man4 addMagazine "30Rnd_762x39_AK47";
 _man4 addWeapon "AK_47_M";
-_man4 setskill ["aimingaccuracy",0.2];
+_man4 setskill ["aimingaccuracy",0.3];
 _man4 setIdentity "name10";
 //Sniper
 _man5 = _group createunit ["Woodlander4", [_pos select 0, (_pos select 1) - 30, 0], [], 0.5, "Form"];
@@ -65,7 +65,7 @@ _man5 addMagazine "10Rnd_762x54_SVD";
 _man5 addMagazine "10Rnd_762x54_SVD";
 _man5 addMagazine "10Rnd_762x54_SVD";
 _man5 addWeapon "SVD";
-_man5 setskill ["aimingaccuracy",0.5];
+_man5 setskill ["aimingaccuracy",0.6];
 _man5 setIdentity "name11";
 //Grenadier
 _man6 = _group createunit ["Woodlander4", [_pos select 0, (_pos select 1) - 40, 0], [], 0.5, "Form"];
@@ -78,7 +78,7 @@ _man6 addMagazine "1Rnd_HE_GP25";
 _man6 addMagazine "1Rnd_HE_GP25";
 _man6 addMagazine "1Rnd_HE_GP25";
 _man6 addWeapon "AK_74_GL";
-_man6 setskill ["aimingaccuracy",0.2];
+_man6 setskill ["aimingaccuracy",0.5];
 _man6 setIdentity "name12";
 //Support
 _man7 = _group createunit ["Woodlander4", [(_pos select 0) - 40, _pos select 1, 0], [], 0.5, "Form"];
@@ -87,7 +87,7 @@ _man7 addMagazine "75Rnd_545x39_RPK";
 _man7 addMagazine "75Rnd_545x39_RPK";
 _man7 addMagazine "75Rnd_545x39_RPK";
 _man7 addWeapon "RPK_74";
-_man7 setskill ["aimingaccuracy",0.2];
+_man7 setskill ["aimingaccuracy",0.5];
 _man7 setIdentity "name13";
 //Grenadier
 _man8 = _group createunit ["Woodlander4", [_pos select 0, (_pos select 1) + 50, 0], [], 0.5, "Form"];

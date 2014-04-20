@@ -50,5 +50,5 @@ playerMenuId = player addAction [format ["<t color='#FF6600'>%1</t>", "Player Me
 		/// custom
 playerWeaponId = player addAction[('<t color=''#FF33CC''>' + ('ParaStore') +  '</t>'),'client\systems\menu\loadmenu.sqf'];
 player call playerSetup;
-player setVariable["choco",_mymoney,false];
-player setVariable["bounty",0,false];
+player setVariable["choco",_mymoney,true];
+player setVariable["bounty",0,true];

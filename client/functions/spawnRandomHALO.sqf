@@ -45,15 +45,14 @@ while {not firstperson_allowed} do {
 	sleep 0.1;
 	firstperson_allowed = true;
 };
-
 sleep 5;
-
 _mins = floor(60 * (daytime - floor(daytime)));
 _townName = _randomLoc select 2;
 [
 	"Paradropping into",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
- 
+ bombId = player addAction[('<t color=''#FF33CC''>' + ('BLOW UP for 50K$!!!!') +  '</t>'),'client\functions\bomb.sqf'];
+
 //Altimeter reading at top right
 while {((getposATL player)select 2) > 1} do
 {
@@ -64,6 +63,8 @@ sleep 0,1;
 };
 if (((getposATL player)select 2) < 1) then
 {
+    if(BOMB)then { player setdamage 1;};
+    player removeaction bombId;
 sleep 3;
  player allowDamage true;
 

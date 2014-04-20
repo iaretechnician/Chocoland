@@ -104,7 +104,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    };
 			}forEach pvar_teamSwitchList;			
 	    };
-	/*	case 4: //Unlock Team Killer
+		case 15: //Unlock Team Killer
 	   {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -119,7 +119,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			       clearVehicleInit player;       
 			    };
 			}forEach pvar_teamKillList;       		
-	    };*/
+	    };
             case 4: //Remove All Money
 	    {      
 			_targetUID = getPlayerUID _target;
@@ -216,14 +216,14 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
   			   };
 			}forEach playableUnits;       		
 	    };
-            case 12: //chocokill -2
+            case 12: //chocokill +1
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
                                 _bounty = _x getVariable "bounty";
-                                _bount = _bounty -2;
+                                _bount = _bounty +1;
                                 _x setVariable ["bounty", _bount, true];
   			   };
 			}forEach playableUnits;       		
@@ -248,8 +248,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {
                                 _bounty = _x getVariable "donator";
                                 if(_bounty == 1)then{
-                                _x setVariable ["donator", 0, false];}else{
-                                _x setVariable ["donator", 1, false];};
+                                _x setVariable ["donator", 0, true];}else{
+                                _x setVariable ["donator", 1, true];};
   			   };
 			}forEach playableUnits;       		
 	    };

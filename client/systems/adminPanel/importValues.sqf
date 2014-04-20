@@ -20,6 +20,7 @@
 #define playerMenuPlayerObject 55507
 #define playerMenuPlayerHealth 55508
 #define playerMenuPlayerck 55522
+#define playerMenuPlayerdonate 55523
 disableSerialization;
 
 private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];

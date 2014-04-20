@@ -40,7 +40,7 @@ sleep 300;
 //step
 _bounty = 100 max floor((Player getvariable "bounty") * 100);
 player setVariable["choco",(player getVariable"choco")+ _bounty,true];
-_hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Please advertise for us to keep these server alive!, without advertising would the game fun suffer !<br />------------------------<br /><t color='#17FF41' size='1.5' shadow='2' shadowColor='#000000' align='center'>Reward $%1 </t>",_bounty];
+_hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Please advertise for us to keep these server alive!, without advertising would the game fun would suffer !<br />------------------------<br /><t color='#17FF41' size='1.5' shadow='2' shadowColor='#000000' align='center'>Reward $%1 </t>",_bounty];
 [nil,player,"loc",rHINT,_hint] call RE;
 sleep 300;
 //step

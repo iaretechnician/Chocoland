@@ -19,9 +19,10 @@ _stringEscapePercent = "%";
 
 switch (_lockState) do {
     case 0:{ // LOCK
-    
+  
     	R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 4;
+                if ((getplayerUID player) in reserved_uids2) then {_totalDuration = 1;};
 		_lockDuration = _totalDuration;
 		_iteration = 0;
 	
@@ -66,6 +67,7 @@ switch (_lockState) do {
          
         R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 8;
+                if ((getplayerUID player) in reserved_uids2) then {_totalDuration = 1;};
 		_unlockDuration = _totalDuration;
 		_iteration = 0;
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
@@ -80,7 +82,7 @@ switch (_lockState) do {
 			
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you too far away...", "PLAIN DOWN", 1];
-                              R3F_LOG_mutex_local_verrou = false; };
+                              R3F_LOG_mutex_local_verrou = false;};
                                
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";

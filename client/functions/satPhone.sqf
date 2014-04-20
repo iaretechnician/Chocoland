@@ -35,7 +35,7 @@ _stringEscapePercent = "%";
 titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];
 _ck=_bounty +1;
                 deletevehicle _currObject;
-                player setvariable["bounty", _ck,false];
+                player setvariable["bounty", _ck,true];
                 process = false;
                 }; 
 		};

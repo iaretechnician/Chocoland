@@ -56,7 +56,6 @@ bombId = player addAction[('<t color=''#FF33CC''>' + ('BLEW UP!!!!') +  '</t>'),
 player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
-player setVariable["choco",_mymoney,false];
+player setVariable["choco",_mymoney,true];
 player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 player addEventHandler ["Killed", {[_this] call onKilled;}];
-player call playerSetup;

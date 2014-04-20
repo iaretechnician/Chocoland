@@ -51,6 +51,7 @@ ProfileFound%1;
 "dammage" call PersistentDBLCStuff;		
 "cmoney" call PersistentDBLCStuff;
 "bounty" call PersistentDBLCStuff;
+"saveVehicle" call PersistentDBLCStuff;
 "donator" call PersistentDBLCStuff;
 "canfood" call PersistentDBLCStuff;		
 "medkits" call PersistentDBLCStuff;		
@@ -79,7 +80,7 @@ PDB_saveLoop = {
 		{
 			player setVariable[_x, (player getVariable _x), true];
 		}foreach _varArr;
-		sleep 5;
+		sleep 10;
 		waitUntil{!respawnDialogActive && (alive player) && !PDB_isDead};
 		PDB_saveReq = getPlayerUID player;
 		publicVariableServer "PDB_saveReq";
@@ -108,9 +109,9 @@ _PDB_checkDeadLoop = {
 if (!_profileFound) exitWith{
 hint "Persistent DB: No profile found";
 player setDammage 0;
-player setVariable["bounty",0,false];
-player setVariable["donator",0,false];
-player setVariable["choco",500,false];
+player setVariable["bounty",0,true];
+player setVariable["donator",0,true];
+player setVariable["choco",500,true];
 player setVariable["canfood",2,false];
 player setVariable["medkits",0,false];
 player setVariable["water",2,false];
@@ -123,18 +124,17 @@ player setVariable["spawnBeacon",0,false];
 player setVariable["camonet",0,false];
 player setVariable["canDrop",false,false];
  player addMagazine "7Rnd_45ACP_1911";
-    player addMagazine "7Rnd_45ACP_1911";
+ player addMagazine "7Rnd_45ACP_1911";
 	player addWeapon "Colt1911";
 	player selectWeapon "Colt1911";
-        spawnHalo = true;sleep 30;spawnHalo = false;
-    };
+ };
 _curVal = "weapons" call persistentDBLCConvert;//Test if got values
 if(isnil "_curVal") exitWith {
 hint "PersistentDB: No profile on this team.";
 player setDammage 0;
-player setVariable["bounty",0,false];
-player setVariable["donator",0,false];
-player setVariable["choco",500,false];
+player setVariable["bounty",0,true];
+player setVariable["donator",0,true];
+player setVariable["choco",500,true];
 player setVariable["canfood",2,false];
 player setVariable["medkits",0,false];
 player setVariable["water",2,false];
@@ -151,8 +151,7 @@ player setVariable["canDrop",false,false];
 	player addWeapon "Colt1911";
 	player selectWeapon "Colt1911";
         spawnHalo = true;sleep 30;spawnHalo = false;
-        ///end new
-        };
+     };
 hint "Persistent DB: Profile found";
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
@@ -196,6 +195,7 @@ _varArr = [
 "cmoney",
 "bounty",
 "donator",
+"saveVehicle",
 "canfood",	
 "medkits",	
 "water",		

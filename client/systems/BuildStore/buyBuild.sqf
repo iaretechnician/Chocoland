@@ -9,9 +9,6 @@ _size = 0;
 _price = 0;
 _ObjectsInArea = [];
 
-//_price = _x select 1;
-//if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
-
 // Grab access to the controls
 _dialog = findDisplay buildshop_DIALOG;
 _cartlist = _dialog displayCtrl buildshop_cart;
@@ -26,8 +23,8 @@ closeDialog objshop_DIALOG;
  pos = getPos player;
 
 
- pos = [(pos select 0),(pos select 1),100];
-
+// pos = [(pos select 0),(pos select 1),100];
+pos = [(pos select 0)+4*sin(dir),(pos select 1)+4*cos(dir),100];
  
  
 //Buy

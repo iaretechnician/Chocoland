@@ -41,7 +41,7 @@ aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\func
 //Cancel action
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];
 
-aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\getonBoard.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  500] select 0) < 800']];
+aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\getonBoard.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  500] select 0) < 800 && ((getposatl player) select 2) < 102']];
 aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5']];
 
 aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5 ']];

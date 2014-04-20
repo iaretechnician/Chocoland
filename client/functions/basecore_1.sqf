@@ -19,13 +19,16 @@ while {alive player && alive _currObject} do {
     if (player distance _currObject < 60 and player getvariable"basecore"== 1)
         then {
             _money = 10 + (player getVariable"bounty");
-                player setVariable["choco",(player getVariable"choco") + _money,false];
+                player setVariable["choco",(player getVariable"choco") + _money,true];
  
                 _currObject setVariable["wallet",(_currObject getVariable"wallet") + _money2,true];
                 _pos = getPos _currObject;
                 _test = _currObject getVariable"wallet";
                 marker setMarkerText format ["%1 BC %2 $)", name player,_test];
                marker setMarkerPos _pos;
+               
+                  marker set [count marker,[name player,_pos,_markerName]];
+                  publicVariable "marker";
  };
             if (player distance _currObject > 60 and player getvariable"basecore"== 1)
         then {

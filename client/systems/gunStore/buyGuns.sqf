@@ -245,7 +245,7 @@ switch(_switch) do
             }forEach accessoriesArray;
 		};
 
-		player setVariable["choco",_playerMoney - gunStoreCart,false];
+		player setVariable["choco",_playerMoney - gunStoreCart,true];
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 
 		gunStoreCart = 0;

@@ -12,7 +12,7 @@ switch (_action) do{
 		titleText [format["%1", _victim], "PLAIN DOWN", 0];
 		_killerMoney = player getVariable "choco";
 		_newMoney = _killerMoney + _reward;
-		player setVariable ["choco", _newMoney, false];
+		player setVariable ["choco", _newMoney, true];
             
 	};
 };

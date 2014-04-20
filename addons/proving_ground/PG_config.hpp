@@ -168,8 +168,8 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "Player Marker";
-				action = "[] execVM 'markers\esp.sqf'"; 
+				text = "OLD TAGS";
+				action = "[] execVM 'addons\proving_ground\fnc_esp.sqf'"; 
 			};
 		    
 			class balca_spectate_btn : balca_debug_btn

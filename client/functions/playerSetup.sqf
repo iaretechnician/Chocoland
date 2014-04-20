@@ -10,6 +10,7 @@ _player = _this;
 
 reserved_units = [admin1, admin3, admin2];
 reserved_uids = ["3771202","108720582","149964550"];
+reserved_uids2 = ["108720582","149964550"];
 _uid = getPlayerUId _player;
 if ((_player in reserved_units)&& !(_uid in reserved_uids)) then {
    _player globalChat "You are in a reserved slot, kicking to lobby in 5 seconds";
@@ -84,9 +85,9 @@ _player switchMove "amovpknlmstpsraswpstdnon_gear";
 thirstLevel = 100;
 hungerLevel = 100;
 
-_player setVariable["bounty",0,false];
+_player setVariable["bounty",0,true];
 /*if(firstspawn) then {
-	_player setVariable["choco",500,false];
+	_player setVariable["choco",500,true];
 	firstspawn = false;
 };*/
 _player setVariable["canfood",1,false];

@@ -7,7 +7,8 @@ while {true} do {
 		if(!isNil "_var" && (alive _x)) then {
 			_classname = typeOf _x;
 			_pos = getPosASL _x;
-                       // _playerGUID = _x getvariable"playerGUID";
+                        _playerGUID = _x getvariable"playerGUID";
+                        if(isnil "_playerGUID")then{_playerGUID = 1;};
 			_dir = [vectorDir _x] + [vectorUp _x];
 
 			_supplyleft = 0;
@@ -33,7 +34,7 @@ while {true} do {
 			_objSaveName = format["obj%1", PersistentDB_ObjCount];
 
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "classname", _classname] call iniDB_write;
-                     //   ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", _playerGUID] call iniDB_write;
+                         ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", _playerGUID] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "pos", _pos] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "dir", _dir] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", _supplyleft] call iniDB_write;

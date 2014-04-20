@@ -168,12 +168,13 @@ class PlayersMenu
                 class Choco2Button: w_RscButton
 		{
 			idc = -1;
-			text = "choco-2";
+			text = "choco+1";
 			onButtonClick = "[12] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.25 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
+                        color[] = {0.1,0.95,0.1,1};
 		};
                 class Choco5Button: w_RscButton
 		{
@@ -195,6 +196,17 @@ class PlayersMenu
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
+                 class teamkillsButton: w_RscButton
+		{
+			idc = -1;
+			text = "remove tKill";
+			onButtonClick = "[15] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.4 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+                        color[] = {0.1,0.95,0.1,1};
+		};
 		class SlayButton: w_RscButton
 		{
 			idc = -1;
@@ -205,7 +217,7 @@ class PlayersMenu
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			color[] = {0.95,0.1,0.1,1};
+			
 		};
 
 		class UnlockTeamSwitchButton: w_RscButton
@@ -262,7 +274,7 @@ class PlayersMenu
 			y = 0.730 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
 			h = 0.04 * safezoneH;
-			color[] = {0.95,0.1,0.1,1};
+			color[] = {0.1,0.95,0.1,1};
 		};
                 class telButton: w_RscButton
 		{
@@ -295,6 +307,7 @@ class PlayersMenu
 			y = 0.755 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
+                        color[] = {0.1,0.95,0.1,1};
 		};
 		class CheckPlayerGearButton4: w_RscButton
 		{
@@ -305,7 +318,7 @@ class PlayersMenu
 			y = 0.730 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-                        color[] = {0.95,0.1,0.1,1};
+                        color[] = {0.1,0.95,0.1,1};
 		};
 
 		class WarnButton: w_RscButton

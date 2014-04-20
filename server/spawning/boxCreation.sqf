@@ -133,7 +133,7 @@ switch(_selectedBox) do {
         // Add new weapons before ammunition
         _currBox addWeaponCargoGlobal ["AK_47_M",20];
 		_currBox addWeaponCargoGlobal ["AK_74",20];
-		_currBox addWeaponCargoGlobal ["Saiga12K",20];
+		//_currBox addWeaponCargoGlobal ["Saiga12K",20];
 	        _currBox addWeaponCargoGlobal ["M9SD",20];
 		_currBox addWeaponCargoGlobal ["MakarovSD",20];
 		_currBox addWeaponCargoGlobal ["BAF_AS50_scoped",1];
@@ -155,8 +155,8 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal ["30Rnd_762x39_AK47",65];
         _currBox addMagazineCargoGlobal ["8Rnd_9x18_Makarov",64];
         _currBox addMagazineCargoGlobal ["HandGrenade",10];
-        _currBox addMagazineCargoGlobal ["8Rnd_B_Saiga12_74Slug",75];
-        _currBox addMagazineCargoGlobal ["8Rnd_B_Saiga12_Pellets",75];
+    //    _currBox addMagazineCargoGlobal ["8Rnd_B_Saiga12_74Slug",75];
+    //   _currBox addMagazineCargoGlobal ["8Rnd_B_Saiga12_Pellets",75];
        _currBox addMagazineCargoGlobal ["5Rnd_127x99_as50",10];
     };
     case "basicGER": { // G36's everywhere...
@@ -217,7 +217,7 @@ switch(_selectedBox) do {
 		_currBox addWeaponCargoGlobal ["RPK_74",1];
 		_currBox addWeaponCargoGlobal ["SVD",1];
 		_currBox addWeaponCargoGlobal ["VSS_Vintorez",1];	
-		_currBox addWeaponCargoGlobal ["Saiga12K",20];	
+		//_currBox addWeaponCargoGlobal ["Saiga12K",20];	
 		_currBox addWeaponCargoGlobal ["Huntingrifle",1];	
 		_currBox addWeaponCargoGlobal ["MakarovSD",20];
                 _currBox addWeaponCargoGlobal ["Binocular_Vector",10];

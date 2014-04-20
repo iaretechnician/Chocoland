@@ -1,15 +1,28 @@
-if (isnil "pm") then {pm = 0;}; if (pm == 0) then {pm = 1; hint "Player Markers ON";} else {pm = 0; hint "Player Markers OFF";};
-setGroupIconsVisible [true, true];
-while {pm == 1} do
-{
-    {
-        if (getPlayerUID _x != "") then
-        {
-            clearGroupIcons group _x;
-            group _x addGroupIcon ["x_art"];
-            group _x setGroupIconParams [[1, 0.35, 0, 1], format ["%1 (%2m)", name _x, round (_x distance player)], 0.7, true];
-        };
-    } forEach entities "AllVehicles";
-    sleep 1;
+if (isNil "playericons") then {playericons = true;} else {playericons = !playericons};
+if(playericons) then {titleText ["Player ESP activated!","PLAIN DOWN"]; titleFadeOut 4;};
+setGroupIconsVisible [false,true];
+while {playericons} do {
+ _i = 0;
+ _j = count allUnits;
+
+ for "_i" from 0 to _j do
+ {
+  _unit = allUnits select _i;
+  if (alive _unit && player != _unit) then{
+   _group = group _unit;
+   _group addGroupIcon ["b_inf", [0,0]];
+   _group setGroupIconParams [[0,0,1,1],format ["%1 - %2m", name _unit, ceil (_unit distance player)],0.8,true];
+  };
+ };
+ sleep 1;
+ _i = 0;
+ _j = count allUnits;
+ for "_i" from 0 to _j do
+ {
+  _unit = allUnits select _i; 
+  _group = group _unit;
+  clearGroupIcons _group;
+ };
 };
-{clearGroupIcons group _x;} forEach entities "AllVehicles";
+
+titleText ["Player ESP deactivated!","PLAIN DOWN"]; titleFadeOut 4;};
