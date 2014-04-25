@@ -42,12 +42,12 @@ aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\func
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];
 
 aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\getonBoard.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  500] select 0) < 800 && ((getposatl player) select 2) < 102']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5']];
 
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5 ']];
-//
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore2", "client\functions\basecore_1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20']];
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore2", "client\functions\basecore_d1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore2", "client\functions\basecore_1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20; _obj = (nearestobjects [player, ["76n6ClamShell"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore2", "client\functions\basecore_d1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20; _obj = (nearestobjects [player, ["76n6ClamShell"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
+
 aActionsIDs = aActionsIDs + [player addAction["Redeem ChocoKill", "client\functions\satPhone.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["SatPhone"],  20] select 0) < 3']];
 //HaloSpawn
 

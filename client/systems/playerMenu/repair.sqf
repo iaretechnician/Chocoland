@@ -22,7 +22,7 @@ if(vehicle player != player) exitWith { player globalChat localize "STR_WL_Error
 // PRECONDITION: Check for vehicle near-by, if exists then select closest.
 if(isNil{_currVehicle}) exitWith { hint "No vehicle within range"; };
 
-if(((damage _currVehicle) > 0.05) OR !(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _currVehicle > 0) AND (count(configFile >> "CfgVehicles" >> (_currVehicleType) >> "Turrets") > 0) AND !(canFire _currVehicle))) then {
+if(!(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _currVehicle > 0) AND (count(configFile >> "CfgVehicles" >> (_currVehicleType) >> "Turrets") > 0) AND !(canFire _currVehicle))) then {
 	
     mutexScriptInProgress = true;  
     _currPlayerState = animationState player;
@@ -47,7 +47,7 @@ if(((damage _currVehicle) > 0.05) OR !(canMove _currVehicle) OR (_currVehicle is
 			2 cutText ["Vehicle is too far away...", "PLAIN DOWN", 1];
 		};
                 
-		if(player distance _currVehicle > 5) exitWith { // If the player leaves, revert state.
+		if(player distance _currVehicle > 7) exitWith { // If the player leaves, revert state.
 			2 cutText ["Vehicle is too far away...", "PLAIN DOWN", 1];
 		}; 
             
@@ -77,5 +77,5 @@ if(((damage _currVehicle) > 0.05) OR !(canMove _currVehicle) OR (_currVehicle is
 };
 
 sleep 1;
-2 cutText ["", "PLAIN DOWN", 1];
+2 cutText ["repaired", "PLAIN DOWN", 1];
 mutexScriptInProgress = false;

@@ -65,6 +65,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
     case "Pastor":{[] execVM "client\systems\FunStore\adds\animal_3.sqf";};
     case "SeaGull":{[] execVM "client\systems\FunStore\adds\animal_4.sqf";};
     case "ButterFly":{[] execVM "client\systems\FunStore\adds\animal_0.sqf";};
+     case "ship" :{player globalChat format["watch your MouseWheel Commands"];playershieldObject = player addAction[('<t color=''#17FF41''>' + ('Spawn here my MotherShip') +  '</t>'),'client\systems\FunStore\adds\ship.sqf'];};
      };
 hintsilent "funnystuff bought";
 

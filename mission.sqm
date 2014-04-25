@@ -107,7 +107,7 @@ class Mission
 					skill=0.60000002;
 					text="jake";
 name="jake";
-description=" Jake  |  Reserved Slot   |  ChocoLand";
+
 				};
 			};
 		};
@@ -262,7 +262,7 @@ description=" Jake  |  Reserved Slot   |  ChocoLand";
 					skill=0.60000002;
 					text="jake2";
 name="jake2";
-description=" Jake  |  Reserved Slot   |  ChocoLand";
+
 				
 				};
 			};
@@ -550,7 +550,7 @@ description=" Jake  |  Reserved Slot   |  ChocoLand";
 					skill=0.60000002;
 					text="jake1";
 name="jake1";
-description=" Jake  |  Reserved Slot   |  ChocoLand";
+
 				};
 			};
 		};

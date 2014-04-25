@@ -64,13 +64,13 @@ class balca_debug_main
 				action = "[] execVM 'addons\proving_ground\fnc_ammo.sqf'"; 
 			};
 			
-			/*class balca_fun_btn : balca_debug_btn
+			class balca_fun_btn : balca_debug_btn
 			{
 				x = 0; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "Big Guns";
-				action = "[] execVM 'addons\proving_ground\fnc_fun.sqf'"; 
-			};*/
+				text = " repair all 100 meter";
+				action = "[] execVM 'addons\proving_ground\fnc_repair100.sqf'"; 
+			};
 			
 			class balca_godmode_btn : balca_debug_btn
 			{
@@ -128,8 +128,8 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*2;
-				text = "Repair";
-				action = "[] execVM 'addons\proving_ground\fnc_repkit.sqf'"; 
+				text = "heal /repair Target";
+				action = "cursorTarget setdamage 0;closeDialog 0;"; 
 			};
 
 			class balca_sattelite_btn : balca_debug_btn
@@ -144,7 +144,7 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*4;
-				text = "FLY1";
+				text = "FLY on";
 				action = "[] execVM 'addons\proving_ground\fnc_fly1.sqf'"; 
 			};
 			
@@ -152,7 +152,7 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "FLY2";
+				text = "FLY - off";
 				action = "[] execVM 'addons\proving_ground\fnc_fly2.sqf'"; 
 			};
 			
@@ -160,16 +160,16 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*6;
-				text = "Air Marker";
-				action = "[] execVM 'markers\air.sqf'"; 
+				text = "Destroy all (30m)";
+				action = "[] execVM 'addons\proving_ground\fnc_destroy30.sqf'"; 
 			};
 			
 			class balca_playershield_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "OLD TAGS";
-				action = "[] execVM 'addons\proving_ground\fnc_esp.sqf'"; 
+				text = "animal +map";
+				action = "[] execVM 'addons\proving_ground\fnc_map.sqf'"; 
 			};
 		    
 			class balca_spectate_btn : balca_debug_btn
@@ -193,16 +193,16 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*0;
-				text = "Sound player";
-				action = "closeDialog 0;createDialog ""balca_sound_player"";[0] call c_proving_ground_fnc_sound;"; 
+				text = "Yanniks AdminSchiff";
+				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_yannik1.sqf'"; 
 			};
 
 			class balca_stat_btn : balca_debug_btn
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*1;
-				text = "Statistics";
-				action = "closeDialog 0;createDialog ""balca_statistics"";[0] call c_proving_ground_fnc_statistics"; 
+				text = "Yannik Mv22 +Flares";
+				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_yannik2.sqf'"; 
 			};
 			
 			class balca_environment_btn : balca_debug_btn
@@ -233,8 +233,8 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "Reloader";
-				action = "closeDialog 0;(vehicle player) spawn c_proving_ground_reloader_fnc_act_open_dialog;"; 
+				text = "spawn here AShip";
+				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_ship.sqf'"; 
 			};
 
 			class balca_cfgexplorer_btn : balca_debug_btn

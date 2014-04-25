@@ -13,16 +13,29 @@ private ["_SMarray","_lastMission","_randomIndex","_mission","_missionType","_ne
 diag_log format["WASTELAND SERVER - Started Side Mission State"];
 
 //Side Mission Array
-_SMarray = [
+_SMarray = [[mission_SmallHeli,"mission_SmallHeli"],
 			[mission_WepCache,"mission_WepCache"],
             [mission_ReconVeh,"mission_ReconVeh"],
+             [mission_ReconVeh,"mission_ReconVeh"],
             [mission_AirWreck,"mission_AirWreck"],
             [mission_SmallHeli,"mission_SmallHeli"],
             [mission_Truck,"mission_Truck"]];
 
 _lastMission = "nomission";
+
 while {true} do
 {
+    //waiting
+    _countppl= 300;
+    {
+	if (alive _x) then
+		{
+                _countppl= _countppl -10;	
+		};
+	} forEach playableUnits; 
+       
+        sleep _countppl;
+
 	//Select Mission
     _randomIndex = (random (count _SMarray - 1));
 	_mission = _SMarray select _randomIndex select 0;

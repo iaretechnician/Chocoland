@@ -29,11 +29,11 @@ else
 	private ["_objet", "_est_calculateur", "_arme_principale", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon"];
 	
 	_objet = _this select 0;
-	if(isNil {_objet getVariable "R3F_Side"}) then {
+	/*if(isNil {_objet getVariable "R3F_Side"}) then {
 		_objet setVariable ["R3F_Side", (side player), true];
-	};
+	};*/
 	_tempVar = false;
-	if(!isNil {_objet getVariable "R3F_Side"}) then {
+	/*if(!isNil {_objet getVariable "R3F_Side"}) then {
 		if(side player != (_objet getVariable "R3F_Side")) then {
 			{if(side _x ==  (_objet getVariable "R3F_Side") && alive _x && _x distance _objet < 150) exitwith {_tempVar = true;};} foreach AllUnits;
 		};
@@ -41,7 +41,7 @@ else
 	if(_tempVar) exitwith {
 		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
 	};
-	_objet setVariable ["R3F_Side", (side player), true];
+	_objet setVariable ["R3F_Side", (side player), true];*/
 	
 	// Si l'objet est un calculateur d'artillerie, on laisse le script spécialisé gérer
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";

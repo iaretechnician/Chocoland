@@ -62,7 +62,8 @@ true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable du
 [] execVM "client\functions\groupTags.sqf";
 [] call updateMissionsMarkers;
 [] call updateRadarMarkers;
-if (isNil "FZF_IC_INIT") then   {
+if (isNil "FZF_IC_INIT") then   
+{
 	call compile preprocessFileLineNumbers "client\functions\newPlayerIcons.sqf";
 };
 sleep 1;

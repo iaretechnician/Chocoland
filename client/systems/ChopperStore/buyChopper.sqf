@@ -15,8 +15,8 @@ _itemlist = _dialog displayCtrl chopshop_item_list;
 hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
    dir = getdir player;
-   pos = getPos player;
-     pos = [(pos select 0),(pos select 1),100];
+   pos = getPosATL player;
+     pos = [(pos select 0),(pos select 1),(pos select 2)+100];
 
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -33,14 +33,14 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                         closeDialog 0;
                         _spawn = createVehicle[(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir;
-                        _spawn allowdamage false;
+                     _spawn allowdamage false;
 			clearMagazineCargoGlobal _spawn;
 			clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];
 			              
               _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
-		_Parachute setPos (getPos _spawn);
+		_Parachute setPosATL (getPosATL _spawn);
                 _Parachute setVelocity [0, 3, 0];
                 _random = Round (random 5);
                 _spawn attachTo [_Parachute,[0,0,-1.5]];
@@ -49,7 +49,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		_smoke setPos (getPos _spawn);
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
                 };
-          
+                
+   
               waitUntil {(getPos _spawn select 2) < 2};
 		deTach _spawn;
 		sleep 15;

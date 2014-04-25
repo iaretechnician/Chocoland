@@ -13,18 +13,18 @@ reserved_uids = ["3771202","108720582","149964550"];
 reserved_uids2 = ["108720582","149964550"];
 _uid = getPlayerUId _player;
 if ((_player in reserved_units)&& !(_uid in reserved_uids)) then {
-   _player globalChat "You are in a reserved slot, kicking to lobby in 5 seconds";
+   _player globalChat "You are in a adminslot, kicking to lobby in 5 seconds";
    sleep 5;
    failMission "end1";
  };
- donator_units = [jake, jake1, jake2];
+/*donator_units = [jake, jake1, jake2];
  donator_uids = ["125670982"];
 _uid = getPlayerUId _player;
 if ((_player in donator_units)&& !(_uid in donator_uids)) then {
    _player globalChat "You are in Jake`s reserved slot, kicking to lobby in 5 seconds";
    sleep 5;
    failMission "end1";
- };
+ };*/
 //end Reserved slots
 _player setskill 0;
 {_player disableAI _x} foreach ["move","anim","target","autotarget"];

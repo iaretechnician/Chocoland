@@ -305,6 +305,7 @@ R3F_LOG_CFG_transporteurs = [
  */
  
 R3F_LOG_CFG_objets_transportables =  [
+["Land_CamoNet_NATO",5],
 ["TK_WarfareBFieldhHospital_EP1",15],
 ["US_WarfareBFieldhHospital_EP1",20],
 	
@@ -432,7 +433,6 @@ R3F_LOG_CFG_objets_transportables =  [
 	["Land_CncBlock_Stripes", 2],
 	["Land_CncBlock", 2],
 	["Land_fortified_nest_big", 15],
-	
 	["Land_RedWhiteBarrier", 2],
 	["Land_ladder_half", 3],
 	["Land_ladder", 5],
@@ -534,7 +534,9 @@ R3F_LOG_CFG_objets_transportables =  [
  * Liste des noms de classes des objets transportables par le joueur.
  */
 
-R3F_LOG_CFG_objets_deplacables = ["Land_A_Castle_Bastion",
+R3F_LOG_CFG_objets_deplacables = ["76n6ClamShell",
+"Land_CamoNet_NATO",
+"Land_A_Castle_Bastion",
 "Land_A_CraneCon","Land_A_statue02",
 "Land_A_GeneralStore_01a",
 "Land_A_TVTower_Base",
@@ -596,7 +598,6 @@ R3F_LOG_CFG_objets_deplacables = ["Land_A_Castle_Bastion",
 	"FlagCarrierINDFOR_EP1",
 	"FlagCarrierRedCross_EP1",
 	"FlagCarrierNATO_EP1",
-	
 	"TK_WarfareBFieldhHospital_EP1",
 	"ZavoraAnim",
 	"Land_Misc_Cargo2E_EP1",

@@ -31,16 +31,15 @@ _hint = parseText format ["<t align='center' color='#17FF41' shadow='2' size='1.
         
       _objects = nearestObjects [_pos, ["Air", "LandVehicle"], 20000]; //Get all units, vehicles and air vehicles in the map
         {
-            if ((damage _x) >=0.8) then { deleteVehicle vehicle _x; deleteVehicle _x; };
-            if((damage _x) <0.8) then {
+            if ((damage _x) >=0.7) then { deleteVehicle vehicle _x; deleteVehicle _x; };
+            if((damage _x) <0.7) then {
             _x setdamage 0;
             _x setfuel 1;
             _x setVehicleAmmo 1;
             clearMagazineCargoGlobal _x;
             clearWeaponCargoGlobal _x;
             [_x] call randomWeapons;};
-            //Delete all that are 20m far from player
-         } forEach _objects; 
+          } forEach _objects; 
              
  };
    

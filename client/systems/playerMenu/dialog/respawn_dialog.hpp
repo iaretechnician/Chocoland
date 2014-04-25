@@ -91,7 +91,7 @@
 		class MissionUptimeText: w_RscText
 		{
 			idc = respawn_MissionUptime_Text;
-			text = "Server Uptime: 00:00:00";
+			text = "Choco Uptime: 00:00:00";
 
 			x = 0.562 * safezoneW + safezoneX;
 			y = 0.752 * safezoneH + safezoneY;
@@ -173,7 +173,7 @@
 		{
 			idc = -1;
 			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
-			text = "Suicide";
+			text = "Paradrop";
 
 			x = 0.515 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;

@@ -19,7 +19,7 @@ _bannedWeapons = [
     "M134_2","M168","M197","M230","M242","M242BC","M252","M256","M2BC","M32_heli","M3P","M621",
     "M68","MaverickLauncher","MissileLauncher","Mk82BombLauncher","Mk82BombLauncher_6","MLRS","R73Launcher","R73Launcher_2","RocketPods","S8Launcher",
     "SmokeLauncher","SPG9","StingerLaucher_4x","StingerLauncher_twice","TOWLauncherSingle","TwinM134","TwinVickers","VikhrLauncher",
-    "ZiS_S_53" ];
+    "ZiS_S_53"];
     
 // TODO: Make mission vehicles sit in public arrays, then extrapolate the vehicles out of the cfgVehicles in full
 //  and just compare to make sure the selected vehicle is not in any of the mission arrays.
@@ -38,7 +38,7 @@ _bannedVehicles = [
     "Mi171Sh_rockets_CZ_EP1""AH6J_EP1","Mi24_D_CZ_ACR","M1114_AGS_ACR","M1114_DSK_ACR"];
     
     
-_currencyLimit = 999000000; // 10k money limit for initial config.
+_currencyLimit = 99000000; // 10k money limit for initial config.
 
 _instantKick = true; // Kick the bastards immediately or taunght them a little?
 _moneyKick = true; // Kick players who greatly exceed the money limit? Note: THIS MAY LEAD TO FALSE-POSITIVES! YOU HAVE BEEN WARNED...
@@ -52,7 +52,8 @@ func_tauntHacker = {
 };
 while {true} do {
      
-	
+	player addEventHandler ["killed", {[0] call FUNC(playerkr)}];
+player addEventHandler ["respawn", {[1] call FUNC(playerkr)}];
 //	player enableSimulation true;
    //    disableUserInput false;
 	        

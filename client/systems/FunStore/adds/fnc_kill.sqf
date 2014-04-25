@@ -1,3 +1,4 @@
+
 /*
 [AlPmaker Spectator] 
 07:44 24/09/12
@@ -16,22 +17,20 @@ v 1.01
 3) \0/ Profit! :)
 
 */
-
+_name = name player;
 mycv = cameraView;
 spect = 
 {
 	_splr = _this select 0;
 	F3_EH = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == 0x3D) then {spectate = false;};"];	
 	(vehicle _splr) switchCamera "EXTERNAL";
-sleep 3;_name = name mycv;
+	
 	titleText ["he will get this Message:omg you will killed in 5 seconds...","PLAIN DOWN"];titleFadeOut 4;
 
 _splr globalChat format [" omg you will killed by %1 in 5 seconds....",_name];
 sleep 5;
-__splr setDamage 1;
-	waitUntil { !(alive _splr) or !(alive player) or !(spectate)};
-	(findDisplay 46) displayRemoveEventHandler ["KeyDown", F3_EH];
-	player switchCamera mycv;	 
+_splr setDamage 1;	
+spectate = false;
 };
 
 
@@ -72,7 +71,7 @@ if (spectate) then
 	spectate = false;
 	
 };
-if (!spectate) then 
+if (!spectate) exitwith
 {	
 	titleText ["Back to player...","PLAIN DOWN"];titleFadeOut 4;
 };

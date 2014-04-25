@@ -66,15 +66,14 @@ else
 			// Si l'objet loge dans le véhicule
 			if (_chargement_actuel + _cout_capacite_objet <= _chargement_maxi) then
 			{
-				if (_objet distance _transporteur <= 30) then
+				if (_objet distance _transporteur <= 40) then
 				{
 					// On mémorise sur le réseau le nouveau contenu du véhicule
 					_objets_charges = _objets_charges + [_objet];
 					_transporteur setVariable ["R3F_LOG_objets_charges", _objets_charges, true];
 					
-					player globalChat STR_R3F_LOG_action_charger_selection_en_cours;
-					
-					sleep 2;
+					//player globalChat STR_R3F_LOG_action_charger_selection_en_cours;
+										sleep 0.1;
 					
 					// Choisir une position dégagée (sphère de 50m de rayon) dans le ciel dans un cube de 9km^3
 					private ["_nb_tirage_pos", "_position_attache"];

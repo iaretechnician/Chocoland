@@ -11,7 +11,9 @@ switch (_action) do{
 	case "reward" :{
 		
 		_killerMoney = player getVariable "choco";
-                _bounty = player getVariable "bounty";if(_bounty ==0) then{_bounty =1;};
+                _bounty = player getVariable "bounty";
+                if(_bounty ==0) then{_bounty =1;};
+                if(_bounty >=10) then{_bounty =10;};
 		_newMoney = (_reward * _bounty)+ _killerMoney;
                 _missionreward= _reward * _bounty;
 		player setVariable ["choco", _newMoney, true];

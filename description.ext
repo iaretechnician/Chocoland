@@ -3,7 +3,7 @@ loadScreen = "Loading.jpg";
 respawn="BASE";
 respawnDelay=5;
 disabledAI=1;
-disableChannels[]={2};
+disableChannels[]={2,6};
 minScore = 0;
 class Header
 {

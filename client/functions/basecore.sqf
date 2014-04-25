@@ -4,54 +4,54 @@ _count = 0;
 _money = 0;
 _money2 = 2;
 _currObject = getPos player nearestObject "Misc_cargo_cont_tiny"; 
-hint format["%1 `BaseCore is Online and Marked on the Map", name player];
-if((player getVariable"basecore") == 0)then
+if((_currObject getVariable"basecore") == 0 and (player getVariable"basecore") == 0)then
 {
 player setVariable ["basecore",1, true];
 _currObject setVariable ["wallet",0, true];
 _currObject setVariable ["basecore",1, true];
-titleText [format["\n+ BaseCore Activated"], "PLAIN DOWN", 0];
+hint format["%1 `BaseCore is Online and Marked on the Map", name player];
+titleText [format["\n BaseCore Activated"], "PLAIN DOWN", 0];
 _pos = getPos _currObject;
- marker = createMarker ["1",_pos];
- marker setMarkerType "mil_objective";
-marker setMarkerColor "ColorRed"; 
-while {alive player && alive _currObject} do {    
+while {alive _currObject and (_currObject getvariable"basecore" == 1)} do {    
 
-   
+    _currObject setdamage 0;
                 
         if (player distance _currObject < 60 and player getvariable"basecore"== 1)
         then {
             
-                _money = 2 + (player getVariable"bounty");
+                _money = _money2 + (player getVariable"bounty");
                 player setVariable["choco",(player getVariable"choco") + _money,true];
  
                 _currObject setVariable["wallet",(_currObject getVariable"wallet") + _money2,true];
                 _pos = getPos _currObject;
-                _test = _currObject getVariable"wallet";
-               _markerName= marker setMarkerText format ["%1 BC %2 $)", name player,_test];
-               marker setMarkerPos _pos;
-                  marker set [count marker,[name player,_pos,_markerName]];
-publicVariable "marker";
- };
-            if (player distance _currObject > 60 and player getvariable"basecore"== 1)
-        then {
+               
+            
+        
+ }else{
+      titleText [format["\n your BaseCore is too far away"], "PLAIN DOWN", 0];
+      _currObject setdamage 0;
         _random = Round (random 5);
         if ( _random == 5)then 
             {
-                titleText [format["\n+ your BaseCore is too far away"], "PLAIN DOWN", 0];
-                _count = _count +1;
-                if(_count == 10)then {
-                    if(true)exitwith{player setvariable["basecore",0,true];
-                                            _currObject setvariable["basecore",0,true];}
+                if(true)exitwith {
+                    player setvariable["basecore",0,true];
+                     _currObject setvariable["basecore",0,true];
+                    titleText [format["\n BaseCore Deactivated"], "PLAIN DOWN", 0];
                     };
             };
             };
+            nul = [_currObject,name player,_currObject getVariable"wallet"] execVM "client\functions\createMarkers.sqf";
             sleep 1;  
            
            
             };
+            
                                             player setvariable["basecore",0,true];
                                             _currObject setvariable["basecore",0,true];
-                                            deletemarker marker; 
+                                       
 }
-else{hint "this Core is allready Activated"};
+else{
+    if((_currObject getVariable"basecore") == 1)then {hint "this Core is allready Activated"};
+    
+    if((player getVariable"basecore") == 1) then {player globalchat "you have allready activated core"};
+    };

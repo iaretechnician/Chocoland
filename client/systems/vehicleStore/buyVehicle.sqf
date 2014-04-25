@@ -23,8 +23,8 @@ _itemlist = _dialog displayCtrl vehshop_item_list;
 hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
    dir = getdir player;
-   pos = getPos player;
-   pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),100];
+   pos = getPosatl player;
+   pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),(pos select 2)+100];
 
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -47,7 +47,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];                
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
-		_Parachute setPos (getPos _spawn);
+		_Parachute setPosatl (getPosatl _spawn);
                 _Parachute setVelocity [0, 3, 1];
                 _random = Round (random 5);
                 _spawn attachTo [_Parachute,[0,0,-1.5]];

@@ -21,22 +21,22 @@ STR_UNLOCK_OBJECT = "Unlock this Object";
 STR_RELEASE_HORIZONTAL = "Release the object horizontally";
 
 STR_R3F_LOG_action_selectionner_objet_charge = "Load in...";
-STR_R3F_LOG_action_selectionner_objet_charge_fait = "Now select the vehicle in which to load the object ""%1""...";
+STR_R3F_LOG_action_selectionner_objet_charge_fait = "Now select the vehicle";
 
 STR_R3F_LOG_action_charger_selection = "... load the selected object in this vehicle";
 STR_R3F_LOG_action_charger_selection_en_cours = "Loading in progress...";
-STR_R3F_LOG_action_charger_selection_fait = "The object ""%1"" has been loaded in the vehicle.";
+STR_R3F_LOG_action_charger_selection_fait = "object has been loaded in the vehicle.";
 STR_R3F_LOG_action_charger_selection_trop_loin = "The object ""%1"" is too far from the vehicle to be loaded.";
 STR_R3F_LOG_action_charger_selection_pas_assez_de_place = "There is not enough space in this vehicle. Space left: %1, Required: %2";
 STR_R3F_LOG_action_charger_selection_objet_transporte = "The object ""%1"" is in transit.";
 
 STR_R3F_LOG_action_charger_deplace = "Load in the vehicle";
 STR_R3F_LOG_action_charger_deplace_en_cours = "Loading in progress...";
-STR_R3F_LOG_action_charger_deplace_fait = "The object has been loaded in the vehicle ""%1"".";
+STR_R3F_LOG_action_charger_deplace_fait = "object has been loaded in the vehicle";
 STR_R3F_LOG_action_charger_deplace_pas_assez_de_place = "There is not enough space in this vehicle.";
 
 STR_R3F_LOG_action_selectionner_objet_remorque = "Tow to a vehicle";
-STR_R3F_LOG_action_selectionner_objet_remorque_fait = "Now select the vehicle in which to load the object ""%1""...";
+STR_R3F_LOG_action_selectionner_objet_remorque_fait = "select vehicle in which to load the object";
 
 STR_R3F_LOG_action_remorquer_selection = "... tow the selected object to this vehicle";
 STR_R3F_LOG_action_remorquer_selection_trop_loin = "The object ""%1"" is too far from the vehicle to be towed.";

@@ -25,8 +25,20 @@ _MMarray = [[mission_SupplyDrop,"mission_SupplyDrop"],
            //[mission_VIP,"mission_VIP"]];
             
 _lastMission = "nomission";
+
 while {true} do
 {
+    //waiting 
+    _countppl= 300;
+    {
+	if (alive _x) then
+		{
+                _countppl= _countppl -10;	
+		};
+	} forEach playableUnits; 
+        
+        sleep _countppl;
+  
     //Select Mission
     _randomIndex = (random (count _MMarray - 1));
 	_mission = _MMarray select _randomIndex select 0;
