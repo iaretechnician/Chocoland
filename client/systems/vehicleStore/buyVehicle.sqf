@@ -1,18 +1,11 @@
 #include "dialog\vehstoreDefines.sqf";
 disableSerialization;
 
-//if(objStoreCart > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
-//objshop_cart
-
 _playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
 
-//_price = _x select 1;
-//if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
-
-// Grab access to the controls
 _dialog = findDisplay vehshop_DIALOG;
 _cartlist = _dialog displayCtrl vehshop_cart;
 _totalText = _dialog displayCtrl vehshop_total;
@@ -25,6 +18,7 @@ closeDialog objshop_DIALOG;
    dir = getdir player;
    pos = getPosatl player;
    pos = [(pos select 0)+20*sin(dir),(pos select 1)+20*cos(dir),(pos select 2)+100];
+   on = false;
 
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
@@ -42,8 +36,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir+270;
                         _spawn allowdamage false;
-				clearMagazineCargoGlobal _spawn;
-				clearWeaponCargoGlobal _spawn;
+			clearMagazineCargoGlobal _spawn;
+			clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];                
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
@@ -54,20 +48,25 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		 if (_random == 5) then {
 		_smoke = "smokeShellblue" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
-		
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
                 };
-                waitUntil {(getPos _spawn select 2) < 2};
+               /// waitUntil {(getPos _spawn select 2) < 2};
+               player globalchat"use W,A,S,D to controll your Parachute, you can also Release with mousewheel";
+               paraId = player addAction[('<t color=''#FF33CC''>' + ('release Vehicle') +  '</t>'),'client\functions\on.sqf'];
+               while {(getPos _spawn select 2) > 2}do
+               {_Parachute setVelocity [(velocity player select 0)*2, (velocity player select 1)*2, (velocity _Parachute select 2)];
+             if(on)then {deTach _spawn;_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),(getPos _spawn select 2)];};
+            // _dropi= [player addAction[("<t color=""#21DE31"">release Vehicle</t>"), "noscript.sqf", nil, 6, false, true, "", 'deTach _spawn;_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),(getPos _spawn select 2)];']];
+sleep 0.1;
+};
+player removeaction paraId;
+on = false;
 		deTach _spawn;
 		sleep 3;
-             
 		//_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.001];
-
     		// Delete parachute
 		sleep 15;
-		
 		deleteVehicle _Parachute;
-                
                  _spawn setDamage (0.00);
                  _spawn allowdamage true;
 		} else {

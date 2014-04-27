@@ -41,10 +41,7 @@ sleep 1;
 removeAllWeapons _player;
 removeAllitems _player;
 removeBackpack player;
- 
-_player addMagazine "15Rnd_9x19_M9";
-_player addMagazine "15Rnd_9x19_M9";
-_player addWeapon "M9";
+
  
 
  
@@ -58,6 +55,6 @@ player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 player setVariable["choco",mymoney,true];
 player setVariable["choco",mybounty,true];
-player addEventHandler ["Respawn", {[player] call onRespawn;}];
+//player addEventHandler ["Respawn", {;null1 =[player] execVM "client\functions\playerActions.sqf";null2 =[player] execVM "client\clientEvents\onMouseWheel.sqf";}];
 player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
 processInitCommands;

@@ -1,7 +1,7 @@
 #include "dialog\menuDefines.sqf";
 disableSerialization;
 
-_chopshopDialog = createDialog "confirm";
+_chopshopDialog = createDialog "confirmpd";
 
 _Dialog = findDisplay confirm_DIALOG;
 CopperShop = str(_this select 0);

@@ -28,12 +28,16 @@ PDB_savePlayer = {
 			if(!isNil "_donator") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "donator", _donator] call iniDB_write;
 			};
-                        if(_donator == 1) then {
                         _saveVehicle =_x getVariable"saveVehicle";
                         if(!isNil"_saveVehicle")then {
                                 [_playerUID call PDB_databaseNameCompiler, _playerSide, "saveVehicle", _saveVehicle] call iniDB_write;
-                                };
                         };
+                  
+                        _chocopack = _x getvariable"chocopack";
+                        if(!isnil"_chocopack")then {
+                            [_playerUID call PDB_databaseNameCompiler, _playerSide, "chocopack", _chocopack] call iniDB_write;
+                        };
+                        
                         _bounty = _x getVariable "bounty";
 			if(!isNil "_bounty") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;

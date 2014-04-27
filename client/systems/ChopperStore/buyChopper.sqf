@@ -17,7 +17,7 @@ closeDialog objshop_DIALOG;
    dir = getdir player;
    pos = getPosATL player;
      pos = [(pos select 0),(pos select 1),(pos select 2)+100];
-
+on = false;
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
@@ -51,7 +51,17 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 };
                 
    
-              waitUntil {(getPos _spawn select 2) < 2};
+          //    waitUntil {(getPos _spawn select 2) < 2};
+            player globalchat"use W,A,S,D to controll your Parachute, you can also Release with mousewheel";
+               paraId = player addAction[('<t color=''#FF33CC''>' + ('release Vehicle') +  '</t>'),'client\functions\on.sqf'];
+               while {(getPos _spawn select 2) > 2}do
+               {_Parachute setVelocity [(velocity player select 0)*2, (velocity player select 1)*2, (velocity _Parachute select 2)];
+             if(on)then {deTach _spawn;_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),(getPos _spawn select 2)];on = false;};
+            
+                sleep 0.1;
+};
+player removeaction paraId;
+on = false;
 		deTach _spawn;
 		sleep 15;
 		deleteVehicle _Parachute;

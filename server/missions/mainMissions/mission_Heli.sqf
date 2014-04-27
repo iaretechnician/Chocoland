@@ -65,7 +65,7 @@ waitUntil
     if(_currTime - _startTime >= mainMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _vehicle <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
     _unitsAlive = ({alive _x} count units CivGrpM);
-    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _vehicle) == 1)
+    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) 
 };
 
 _vehicle setVehicleLock "UNLOCKED";

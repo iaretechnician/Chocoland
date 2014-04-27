@@ -40,6 +40,9 @@ _hint = parseText format ["<t align='center' color='#17FF41' shadow='2' size='1.
             clearWeaponCargoGlobal _x;
             [_x] call randomWeapons;};
           } forEach _objects; 
-             
+       //delete spawnzone
+       _randomPos = [2103.3293,4300.7207,0];_baseToDelete = nearestObjects [_randomPos, ["All"], 150]; { if(typeof _x !="ProtectionZone_Ep1")then{deleteVehicle _x;}; } forEach _baseToDelete;
+     //  _randomPos = [2103.3293,4300.7207,0];_baseToDelete = nearestObjects [_randomPos, ["All"], 150];      { if ((_x select 0) !="ProtectionZone_Ep1")then{deleteVehicle _x;}; } forEach _baseToDelete;
+
  };
    

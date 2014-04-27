@@ -74,7 +74,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
-	            _currentbountyText ctrlSetText format["ChocoKills: %1",_x getVariable "bounty"];
+	            _currentbountyText ctrlSetText format["chocos: %1",_x getVariable "bounty"];
                      _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable "donator"];
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;

@@ -61,7 +61,7 @@ waitUntil
 	#endif
     if(_currTime - _startTime >= sideMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _vehicle <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
-    (_result == 1) OR (_playerPresent) OR ((damage _vehicle) == 1)
+    (_result == 1) OR (_playerPresent) 
 };
 
 _vehicle setVehicleLock "UNLOCKED";

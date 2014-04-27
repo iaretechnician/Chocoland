@@ -51,7 +51,7 @@ _townName = _randomLoc select 2;
 [
 	"Paradropping into",_townName,format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
- bombId = player addAction[('<t color=''#FF33CC''>' + ('BLOW UP for 50K$!!!!') +  '</t>'),'client\functions\bomb.sqf'];
+ bombId = player addAction[('<t color=''#FF33CC''>' + ('arm with ChocoBomb for 25K$') +  '</t>'),'client\systems\confirm\loadmenu.sqf'];
 
 //Altimeter reading at top right
 while {((getposATL player)select 2) > 1} do

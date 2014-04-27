@@ -5,7 +5,7 @@ private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
   mybounty = player getVariable"bounty";
  _oldUnit = player;
 _type = _skin;
- 
+player setvariable["skin",1,true];
 _ar = [weapons _oldUnit, magazines _oldUnit, rank _oldUnit, score _oldUnit, group _oldUnit, getPos _oldUnit, (leader _oldUnit) == _oldUnit, vehicleVarName _oldUnit];
  
 _dummyGroup = createGroup (side _oldUnit);
@@ -42,12 +42,7 @@ removeAllWeapons _player;
 removeAllitems _player;
 removeBackpack player;
  
-_player addMagazine "15Rnd_9x19_M9";
-_player addMagazine "15Rnd_9x19_M9";
-_player addWeapon "M9";
- 
 
- 
 _secondaryWeapon = secondaryWeapon _player;
 _player selectweapon _secondaryWeapon;
  player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
@@ -58,6 +53,6 @@ player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 player setVariable["choco",mymoney,true];
 player setVariable["choco",mybounty,true];
-player addEventHandler ["Respawn", {[player] call onRespawn;}];
+//player addEventHandler ["Respawn", {;null1 =[player] execVM "client\functions\playerActions.sqf";null2 =[player] execVM "client\clientEvents\onMouseWheel.sqf";}];
 player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
 processInitCommands;

@@ -1,8 +1,9 @@
- process = false;
+
  _currObject = getPos player nearestObject "Misc_cargo_cont_tiny"; 
  if (player distance _currObject < 3)
  then {
        process = true;
+       _currObject setVariable ["basecore",0, true];
 		_totalDuration = 8;
 		_unlockDuration = _totalDuration;
 		_iteration = 0;
@@ -13,11 +14,11 @@ _stringEscapePercent = "%";
                     
                     if(player distance _currObject > 3) exitWith {  process = false;
                           2 cutText ["Object destroy failed, you too far away...", "PLAIN DOWN", 1];
-                           process = false;};
+                           _currObject setVariable ["basecore",1, true];};
 			
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you are dead...", "PLAIN DOWN", 1];
-                              process = false; };
+                              _currObject setVariable ["basecore",1, true]; };
                                
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
@@ -28,7 +29,7 @@ _stringEscapePercent = "%";
 		    sleep 1;
 			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed
 		        sleep 1;
-                
+                _currObject setVariable ["basecore",0, true];
                
                 _money = _currObject getVariable "wallet";
                 _bounty = player getVariable"bounty";if(_bounty==0)then{_bounty=1;};

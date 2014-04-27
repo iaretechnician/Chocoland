@@ -58,6 +58,7 @@ loadChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\l
 PopulateChopStore = compile preprocessFileLineNumbers "client\systems\ChopperStore\populateChopStore.sqf";
 chopItemInfo = compile preprocessFileLineNumbers "client\systems\ChopperStore\itemInfo.sqf";
 
+loadconfirm = compile preprocessFileLineNumbers "client\systems\confirm\loadmenu.sqf";
 sleep 1;
 playerCompiledScripts = true;
 

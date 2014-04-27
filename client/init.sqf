@@ -11,7 +11,7 @@ player enableSimulation false;
 removeAllWeapons player;
 [] execVM "client\functions\playerAbort.sqf";
 // Start the loading screen ASAP.
-titleText ["setting up HeavensDelight Network  E5-2620", "BLACK OUT", 0];
+titleText ["connecting to HeavensDelight...", "BLACK OUT", 0];
 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
@@ -70,3 +70,6 @@ sleep 1;
 true spawn playerSpawn;
 [] execVM "client\functions\antiCheatClient.sqf";
 [] spawn FZF_IC_INIT;
+_mapcenter = [3445.93,3665.25, 0.0013];
+_buildings = nearestObjects [_mapcenter, ["house"], 15000];
+{_x allowdamage false} forEach _buildings;

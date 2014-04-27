@@ -89,6 +89,8 @@ ProfileFound%1 = nil;
 		
                 [_uid, _playerSide, "saveVehicle", _id, "STRING"] spawn PersistentDBLoadStuff;
                 
+                [_uid, _playerSide, "chocopack", _id, "STRING"] spawn PersistentDBLoadStuff;
+                
 		[_uid, _playerSide, "canfood", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		[_uid, _playerSide, "medkits", _id, "NUMBER"] spawn PersistentDBLoadStuff;

@@ -37,12 +37,12 @@ player createDiaryRecord["ChocoLand",
                         - New Missions.Warning,Bounty,SuperAI, Reward, filled Vehicle<br/>
 			- New Money Spawn  random Count, random Value<br/>
                         - New Events, Money Zone, Invasion and SandStorms<br/>
-                        - New Reward System, get every 5 min Money Multiplier your chocokills, <br/>
+                        - New Reward System, get every 5 min Money Multiplier your chocos, <br/>
 			- New Killing System,when you kill an Enemy, you will get a fix Value of Money multiplied by your and your enemys Score)<br/>
 			- New Respawn System (you can Spawn Random or Suicide,where you can touch of Bomb, <br/>
                         - New Store (the Parastore will full fill you wishes), <br/>
                         - Modifier Lock / Unlock System( players can only unlock his locked Obejcts) <br/>
-                        - New Reward System, get every 5 min Money Multiplier your Chocokills, <br/>
+                        - New Reward System, get every 5 min Money Multiplier your chocos, <br/>
                         - New TeamKilling Punish(Teamkill #1 = Loose 10% Money and 1m no Weapons <br/>
 			- Server dont need Restarts, Objects will Respawn, cars refuel, rearm, repair and old Destroyed Buildings will Reset<br/>
 "
@@ -57,8 +57,8 @@ Chocoland is a team versus team versus team sandbox survival experience. The obj
 <br/><br/>
 
 FAQ<br/>
-Q. What are Chocokills and how to use?<br/>
-A. you get ChocoKills for killing npcs and players and you can find them on the island, all your money will be multiplied by your Chocokills!<br/>
+Q. What are chocos and how to use?<br/>
+A. you get chocos for killing npcs and players and you can find them on the island, all your money will be multiplied by your chocos!<br/>
 <br/>
 Q. Where can I get a gun?<br/>
 A. Weapons are found in one of three places, first in ammo caches that randomly spawn around the map inside and outside buildings, and second, in the gear section of the vehicles, which also randomly spawn around the map. The last place to find a gun would be at the weapons at the ParaStore. You can also find them on dead players whose bodies have not yet been looted.

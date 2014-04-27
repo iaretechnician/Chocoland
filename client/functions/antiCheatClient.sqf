@@ -4,12 +4,7 @@
 //	@file Created: 03/05/13
 //	@file Args:
 
-// This anti-cheat file is a a work-in-progress and is not intended to replace vigilance and or anticheat software.
-// The reason that I wrote this file is to mitigate some of the most irritating but not server destroying hacks that
-// players complain about the most.
 
-// I couldn't figure out a way to extract all weapons of superClass "cannonBase" and as a result, we have this ugly monstrosity below.
-// TODO: Find a better way of doing this...
 _bannedWeapons = [
     "2A14","2A38M","2A42","2A46M","2A46MRocket","2A70","2A70Rocket","2A72","2B14","57mmLauncher","57mmLauncher_128","57mmLauncher_64",
     "80mmLauncher","9M311Laucher","AALauncher_twice","AGS17","AGS30_heli","AirBombLauncher","AT10LauncherSingle","AT11LauncherSingle","AT13LauncherSingle","AT5Launcher","AT5LauncherSingle",
@@ -51,10 +46,7 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
-     
-	player addEventHandler ["killed", {[0] call FUNC(playerkr)}];
-player addEventHandler ["respawn", {[1] call FUNC(playerkr)}];
-//	player enableSimulation true;
+     //	player enableSimulation true;
    //    disableUserInput false;
 	        
 	   { // Check for illegal weapons. 

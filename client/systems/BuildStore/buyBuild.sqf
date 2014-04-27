@@ -25,8 +25,7 @@ closeDialog objshop_DIALOG;
 
 // pos = [(pos select 0),(pos select 1),100];
 pos = [(pos select 0)+4*sin(dir),(pos select 1)+4*cos(dir),(pos select 2)+100];
- 
- 
+
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
@@ -49,7 +48,11 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPosatl (getPosatl _spawn);
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
-                waitUntil {(getPos _spawn select 2) < 2};
+              //  waitUntil {(getPos _spawn select 2) < 2};
+               while {(getPos _spawn select 2) > 2 }do
+               {_Parachute setVelocity [(velocity player select 0)*2, (velocity player select 1)*2, (velocity _Parachute select 2)];
+                sleep 0.1;
+};
 		deTach _spawn;
 		sleep 3;
 if((_x select 2) == "Land_Barrel_water") then 

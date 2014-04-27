@@ -62,9 +62,12 @@ while {mando_storm && ((dayTime * 3600) < (_stormtimeini + _duration))} do
    _soundn = (_rand - (_rand mod 1));
    _sound = _sounds select _soundn;
    _posp = getPos player;
-   _posl = [(_posp select 0) + _disl*sin(_ang),(_posp select 1) + _disl*cos(_ang), 100];
-   _posb = [(_posp select 0) + _disl*sin(_ang)*5,(_posp select 1) + _disl*cos(_ang)*5, 100];
-   _numlights = 10 + random 3;
+   _posl = [(_posp select 0) + _disl*sin(_ang),(_posp select 1) + _disl*cos(_ang), 50];
+   _pos2 = [(_posp select 0) + _disl*sin(_ang),(_posp select 1) + _disl*cos(_ang), 50];
+   _pos3 = [(_posp select 0) + _disl*sin(_ang),(_posp select 1) + _disl*cos(_ang), 50];
+   _pos4 = [(_posp select 0) + _disl*sin(_ang),(_posp select 1) + _disl*cos(_ang), 50];
+   _posb = [(_posp select 0) + _disl*sin(_ang)*5,(_posp select 1) + _disl*cos(_ang)*5, 50];
+   _numlights = 3 + random 3;
 
    drop["\ca\data\blesk2","","Spaceobject",0.01,0.2,_posb,[0,0,0],0,1.27,1,0,[10],[[1,1,1,1],[1,1,1,0.5],[1,1,1,0.1]],[1,0],0,0,"","",""];
    for [{_i = 0},{_i < _numlights},{_i = _i + 1}] do
@@ -77,6 +80,33 @@ while {mando_storm && ((dayTime * 3600) < (_stormtimeini + _duration))} do
       _lightning setLightBrightness 0.5;
       Sleep 0.1;
       _lightning setLightBrightness 0;
+      /////
+      _lightning2 setPos _pos2;
+      _lightning2 setLightBrightness 1;
+      Sleep 0.1;
+      _lightning2 setLightBrightness 0;
+      Sleep 0.1;
+      _lightning2 setLightBrightness 0.5;
+      Sleep 0.1;
+      _lightning2 setLightBrightness 0;
+      /////
+      _lightning3 setPos _pos3;
+      _lightning3 setLightBrightness 1;
+      Sleep 0.1;
+      _lightning3 setLightBrightness 0;
+      Sleep 0.1;
+      _lightning3 setLightBrightness 0.5;
+      Sleep 0.1;
+      _lightning3 setLightBrightness 0;
+      /////
+      _lightning4 setPos _pos4;
+      _lightning4 setLightBrightness 1;
+      Sleep 0.1;
+      _lightning4 setLightBrightness 0;
+      Sleep 0.1;
+      _lightning4 setLightBrightness 0.5;
+      Sleep 0.1;
+      _lightning4 setLightBrightness 0;
     };
     Sleep (_dist / _maxdist)*2;
    _posp = getPos player;

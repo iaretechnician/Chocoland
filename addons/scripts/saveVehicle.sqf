@@ -9,8 +9,8 @@ then {
   sleep 0.2;
     if (!isPlayer _vehicleSave) then {
        vehicleSave=_vehicleSave;
-       if(player getvariable"donator" == 1)then{
-       _xveh = typeof vehicleSave; player setvariable["saveVehicle",_xveh,true];};
+      
+_xveh = typeof vehicleSave; player setvariable["saveVehicle",_xveh,true];
 _nic = [nil, vehicleSave, "per", rHideobject, true] call RE; 
     hint format ["%1 saved to Hangar! (order in PlayerMenu )", vehicleSave1];
     sleep 1;

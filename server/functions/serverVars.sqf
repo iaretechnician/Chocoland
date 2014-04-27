@@ -155,35 +155,7 @@ staticWeaponsList = ["M2StaticMG_US_EP1",
 //Object List - Random Helis.
 staticHeliList = [];
 
-vehicleWeapons = ["m240_scoped_EP1",
-			        "M14_EP1",
-                                "UZI_SD_EP1",
-				"BAF_L85A2_RIS_ACOG",
-				"bizon",
-                                "MG36_camo",
-				"bizon_silenced",
-				"FN_FAL",
-                                "BAF_L110A1_Aim",
-				"G36a",
-                                "m8_holo_sd",
-				"LeeEnfield",
-                                "m8_sharpshooter",
-                                "M24",
-				"M16A2",
-                                "M249",
-                                "M4A1_Aim_camo",
-                                "AKS_74_U",
-				"m16a4",
-                                "RPG7V",
-				"M4A1_Aim",
-                                "SCAR_L_CQC_CCO_SD",
-                                "M4A1_RCO_GL",
-                                "G36C_camo",
-				"SCAR_L_CQC",
-                                "BAF_L85A2_RIS_Holo",
-                                "SCAR_H_STD_EGLM_Spect",
-                                "M32_EP1"
-                                ];
+vehicleWeapons = [];
                 
 MissionSpawnMarkers = [
             ["Mission_1",false],

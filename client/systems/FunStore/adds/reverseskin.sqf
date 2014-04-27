@@ -46,9 +46,11 @@ removeBackpack player;
 _secondaryWeapon = secondaryWeapon _player;
 _player selectweapon _secondaryWeapon;
  player playmove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
+ 
 playerMenuId = player addAction [format ["<t color='#FF6600'>%1</t>", "Player Menu"], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
-		/// custom
+	
 playerWeaponId = player addAction[('<t color=''#FF33CC''>' + ('ParaStore') +  '</t>'),'client\systems\menu\loadmenu.sqf'];
-player call playerSetup;
+player addEventHandler ["Respawn", {[player] call onRespawn;}];
+player addEventHandler ["Killed", {[_this] call onKilled;}];
 player setVariable["choco",_mymoney,true];
 player setVariable["bounty",0,true];

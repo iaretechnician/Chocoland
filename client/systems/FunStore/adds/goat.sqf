@@ -2,7 +2,7 @@
 private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
 skinText = typeOf(player);
  _mymoney = player getVariable"choco";
-
+player setvariable["skin",1,true];
 _oldUnit = player;
 _type = _skin;
  
@@ -57,5 +57,5 @@ player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 player setVariable["choco",_mymoney,true];
-player addEventHandler ["Respawn", {[_this] call onRespawn;}];
+//player addEventHandler ["Respawn", {;null1 =[player] execVM "client\functions\playerActions.sqf";null2 =[player] execVM "client\clientEvents\onMouseWheel.sqf";}];
 player addEventHandler ["Killed", {[_this] call onKilled;}];

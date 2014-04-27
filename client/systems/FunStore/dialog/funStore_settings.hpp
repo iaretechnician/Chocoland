@@ -23,7 +23,7 @@ class funshopd {
 		class DialogTitleText: w_RscText
 		{
 			idc = -1;
-			text = "Funniest";
+			text = "Funny chocos";
                       x = 0.001 * safezoneW + safezoneX;
 			y = 0.013 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
@@ -33,7 +33,7 @@ class funshopd {
 		class PlayerMoneyText: w_RscText
 		{
 			idc = funshop_money;
-			text = "Price:";
+			text = "chocos:";
 
 			  x = 0.10 * safezoneW + safezoneX;
 			y = 0.013 * safezoneH + safezoneY;

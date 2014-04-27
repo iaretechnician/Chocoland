@@ -1,7 +1,7 @@
- process = false;
+
  _currObject = getPos player nearestObject "76n6ClamShell"; 
  if (player distance _currObject < 30)
- then {
+ then {_currObject setVariable ["basecore",0, true];
        process = true;
 		_totalDuration = 8;
 		_unlockDuration = _totalDuration;
@@ -13,11 +13,11 @@ _stringEscapePercent = "%";
                     
                     if(player distance _currObject > 30) exitWith {hint"too far away";  process = false;
                           2 cutText ["Object destroy failed, you too far away...", "PLAIN DOWN", 1];
-                           process = false;};
+                           _currObject setVariable ["basecore",1, true];};
 			
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you are dead...", "PLAIN DOWN", 1];
-                              process = false; };
+                              _currObject setVariable ["basecore",1, true]; };
                                
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";

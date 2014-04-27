@@ -5,8 +5,8 @@ _mainTextColour = "#0095FF";
 _subTextColour = "#FFFFFF";
 
 
-          _xCord1 = Round (random 1900) + 2757.01;
-          _yCord1 = Round (random 1400) + 3108.21;
+          _xCord1 = Round (random 1500) + 2757.01;
+          _yCord1 = Round (random 1200) + 3108.21;
           _pos1 = [_xCord1, _yCord1,-14];
      
 	//_pos1 = [3445.93,3665.25, 0.0013];
@@ -19,7 +19,7 @@ _timer = 0;
 _war1 = "yeah 999$";
 _reward = 999;
 _pos1 = [_xCord1, _yCord1,0.0014];
- [_smoke1]execVM"test.sqf";
+ [_smoke1]execVM "server\missions\events\moneyzoneEffect.sqf";
 while {_timer <=60} do
 {     
    

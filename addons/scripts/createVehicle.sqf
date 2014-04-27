@@ -1,5 +1,6 @@
+// database spawn
 _test =player getVariable"saveVehicle";
-if(player getvariable"donator" == 1 and (isNil "vehicleSave")) exitwith{
+if(isNil "vehicleSave") then{
     if(!(isnil "_test"))then{
   player playmove "AinvPknlMstpSlayWrflDnon";
 closeDialog 0;
@@ -7,7 +8,7 @@ sleep 3;
 _dir = getdir player;
 _pos = getPos player;
 _pos = [(_pos select 0)+20*sin(_dir),(_pos select 1)+20*cos(_dir),50];  
-vehicleSave = createvehicle [_test,_pos,[],0,"FLY"];
+vehicleSave = createvehicle [_test,_pos,[],0,"CAN_COLLIDE"];
 _veh = vehicleSave;
 _veh setpos _pos;
 _veh setdir _dir+270;
@@ -18,7 +19,6 @@ _veh allowdamage false;
 vehicleSave = objNull; 
 vehicleSave1  = objNull;
 player setVariable["saveVehicle",nil,true];
-if((player getvariable"donator") == 1)then {player setvariable["saveVehicle",nil,false];};
 _Parachute = createVehicle ["ParachuteBigWest_EP1",_pos,[], 0,"FLY"];
 _Parachute setPos _pos;
 _Parachute setVelocity [0, 1, 0];
@@ -29,12 +29,12 @@ sleep 5;
 deleteVehicle _Parachute;
 _veh allowdamage true;
 player globalChat "Hangar is Empty"; 
-}else {hint " hangar is emtpy";};};
+};};
 
-// donator end
+// client spawn
 if(!isNull vehicleSave)then 
-
-{player playmove "AinvPknlMstpSlayWrflDnon";
+{
+player playmove "AinvPknlMstpSlayWrflDnon";
 closeDialog 0;
 sleep 3;
 _dir = getdir player;
@@ -51,7 +51,7 @@ _veh allowdamage false;
  hint format ["%1 spawned in the Sky", vehicleSave1]; 
 vehicleSave = objNull; 
 vehicleSave1  = objNull;
-if((player getvariable"donator") == 1)then {player setvariable["saveVehicle",nil,false];};
+player setvariable["saveVehicle",nil,false];
 _Parachute = createVehicle ["ParachuteBigWest_EP1",_pos,[], 0,"FLY"];
 _Parachute setPos _pos;
 _Parachute setVelocity [0, 1, 0];

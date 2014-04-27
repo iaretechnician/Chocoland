@@ -11,7 +11,7 @@ if(!isServer) exitWith {};
 diag_log format["WASTELAND SERVER - Started event State"];
 
 //Main Mission Array
-_MMarray1 = ["moneyzone","night","moneyzone","storm"];//storm
+_MMarray1 = ["moneyzone","night","moneyzone","storm","moneyzone"];//storm
 
 eventRunning = false;
 while {true} do
@@ -19,7 +19,7 @@ while {true} do
   sleep 1800;
     if(!eventRunning) then
     {
-        _currTime = Round (random 5);
+        _currTime = Round (random 3);
 	if(_currTime == 1) then 
         {
            

@@ -25,7 +25,7 @@ if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["connecting to HeavensDelight Network  E5-2620...", "BLACK", 0];
+		titleText ["connecting to HeavensDelight...", "BLACK", 0];
 		waitUntil {player == player};
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
@@ -49,7 +49,7 @@ if(X_Client) then {
 };
 
 if(X_Server) then {
-	diag_log format ["############################# %1 #############################", missionName];
+	diag_log format ["############################# ChocoLand #############################"];
 	#ifdef __DEBUG__
 	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
 	#endif
@@ -64,5 +64,4 @@ if(X_Server) then {
 [] execVM "motd.sqf";
 _null = [] execVM "addons\scripts\cleanupnew.sqf";
 
-[] execVM "addons\Backpacks\init.sqf";
 execVM "persistentscripts\init.sqf";

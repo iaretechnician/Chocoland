@@ -48,7 +48,24 @@ aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functi
 aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore2", "client\functions\basecore_1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20; _obj = (nearestobjects [player, ["76n6ClamShell"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
 aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore2", "client\functions\basecore_d1.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  20] select 0) < 20; _obj = (nearestobjects [player, ["76n6ClamShell"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
 
-aActionsIDs = aActionsIDs + [player addAction["Redeem ChocoKill", "client\functions\satPhone.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["SatPhone"],  20] select 0) < 3']];
+aActionsIDs = aActionsIDs + [player addAction["Redeem chocos", "client\functions\satPhone.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["SatPhone"],  20] select 0) < 3']];
 //HaloSpawn
 
 aActionsIDs = aActionsIDs + [player addAction["Ready for HaloSpawn", "client\functions\spawnHalo.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["ProtectionZone_Ep1"],  30] select 0) < 30 And spawnHalo']];
+
+// chocopack BEBEBE
+
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">weapon to Chocopack</t>"), "addons\scripts\saveChocopack.sqf",[],-10,false,false,"", '_test = player getVariable "chocopack";_test != "";_primary = primaryWeapon player;_primary != ""']];
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">Chocopack</t>"), "addons\scripts\createChocopack.sqf",[],-10,false,false,"", '_test = player getVariable "chocopack";_test != "";_primary = primaryWeapon player;_primary == ""']];
+if(player getvariable"fly" == 1)then 
+{playerflyId = player addAction [format ["<t color='#585858'>%1</t>", "FLY OFF"], "addons\proving_ground\fnc_fly1.sqf",[],-12,false,false,"","local player"];
+ playerflyoff = player addAction [format ["<t color='#D8D8D8'>%1</t>", "FLY ON"], "addons\proving_ground\fnc_fly2.sqf",[],-10,false,false,"","local player"];
+};
+if(player getvariable"skin" == 1)then 
+{ skinId = player addAction[('<t color=''#FF33CC''>' + ('get back to Player') +  '</t>'),'client\systems\FunStore\adds\reverseskin.sqf'];
+  bombId = player addAction[('<t color=''#FF33CC''>' + ('BLEW UP!!!!') +  '</t>'),'client\systems\FunStore\adds\bomb.sqf'];
+};
+if(player getvariable"sat" == 1)then 
+{playersatId = player addAction [format ["<t color='#585858'>%1</t>", "activate Sattelite"], "client\systems\FunStore\adds\fnc_sattelite_fnc.sqf",[],-12,false,false,"","local player"];
+ player globalchat"check mouseWheel commands for Sattelite";
+};

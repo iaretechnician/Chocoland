@@ -73,7 +73,7 @@ class PlayersMenu
                 class PlayerckText: w_RscText
 		{
 			idc = playerMenuPlayerck;
-			text = "ChocoKills:";
+			text = "chocos:";
 			sizeEx = 0.030;
 			x = 0.52 * safezoneW + safezoneX;
 			y = 0.37 * safezoneH + safezoneY;
@@ -245,7 +245,7 @@ class PlayersMenu
 		};*/class UnlockTeamKillerButton: w_RscButton
                 {
 			idc = -1;
-			text = "Set ChocoKill to 0";
+			text = "Set chocos to 0";
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;

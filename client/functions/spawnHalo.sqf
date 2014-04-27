@@ -13,7 +13,7 @@ _mapside = Round (random 2);
      };
 //layer setPos _pos;
 		    
-    2 cutText ["Suicide jump initialized. Open Your Parachute at the Ground!!Use MOUSEWHEEL", "PLAIN DOWN", 3];
+    2 cutText ["Suicide jump initialized. Open Your Parachute at alt 150+!!Use MOUSEWHEEL", "PLAIN DOWN", 3];
 player globalChat " Open your parachute at the ground.";
 player setPos _pos; // Stop the player appearing on the ground for a split second before the HALO 
     [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";   

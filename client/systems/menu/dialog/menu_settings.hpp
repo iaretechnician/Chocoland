@@ -86,7 +86,7 @@ class menu1d {
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> Funny expensives";
+			text = "-> Funny chocos";
 
 			x = 0.220313 * safezoneW + safezoneX;
 			y = 0.421852 * safezoneH + safezoneY;

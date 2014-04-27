@@ -15,7 +15,7 @@ while {alive _currObject} do {
 
     _currObject setdamage 0;
                 
-        if (player distance _currObject < 60 and player getvariable"basecore"== 1)
+        if (player distance _currObject < 80 and player getvariable"basecore"== 1)
         then {
             
                 _money = _money2 + (player getVariable"bounty");

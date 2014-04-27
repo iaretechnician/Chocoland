@@ -1,9 +1,9 @@
 #include "menuDefines.sqf"
 
-class confirm {
+class confirmpd {
 
 	idd = confirm_DIALOG;
-	movingEnable = false;
+	movingEnable = true;
 	enableSimulation = true;
 		class controlsBackground {
                 class MainBackground2: w_RscPicture
@@ -19,10 +19,10 @@ class confirm {
 };
 class controls {
 
-                 class loadChopStore3: w_RscButton
+                 class loadChopStore7: w_RscButton
 		{
 			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
+			onButtonClick = "closeDialog 0; [] execVM 'client\functions\bomb.sqf'";
 			text = "yes";
 
 			x = 0.020313 * safezoneW + safezoneX;
@@ -32,10 +32,10 @@ class controls {
 
 		};
                                  
-                 class loadfunStore2: w_RscButton
+                 class loadfunStore8: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
+			onButtonClick = "closeDialog 0;";
 			text = "no";
 
 			x = 0.220313 * safezoneW + safezoneX;

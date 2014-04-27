@@ -17,7 +17,7 @@ switch (_action) do{
 		_newMoney = (_reward * _bounty)+ _killerMoney;
                 _missionreward= _reward * _bounty;
 		player setVariable ["choco", _newMoney, true];
-                titleText [format["\n+%1$ * Your ChocoKills for Mission %2", _missionreward,_victim], "PLAIN DOWN", 0];
+                titleText [format["\n+%1$ * Your chocos for Mission %2", _missionreward,_victim], "PLAIN DOWN", 0];
             
 	};
 };

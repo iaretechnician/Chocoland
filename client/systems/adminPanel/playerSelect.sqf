@@ -204,7 +204,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
   			   };
 			}forEach playableUnits;       		
 	    };
-             case 11: //chocokill -1
+             case 11: //chocos -1
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -216,7 +216,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
   			   };
 			}forEach playableUnits;       		
 	    };
-            case 12: //chocokill +1
+            case 12: //chocos +1
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -228,7 +228,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
   			   };
 			}forEach playableUnits;       		
 	    };
-            case 13: //chocokill -5
+            case 13: //chocos -5
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {

@@ -14,45 +14,45 @@ if(!isServer) exitwith {};
 diag_log format["WASTELAND SERVER -event Started"];
 
 //Mission Initialization.
-_randomPos = [3707, 3608,0.0014];
+
 _missionType = "Night Event";
 _mainTextColour = "#52bf90";
 _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
 _subTextColour = "#FFFFFF";
-_missionRewardRadius = 50000;
+
 
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Storm Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Starting in 1 Minutes, prepare for death</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
  sleep 60; 
- [1, 1, 0.6, 60, 300, 0, [1,1,1]] execVM "server\missions\events\stormEffect.sqf";
- _inArea = _randomPos nearEntities _missionRewardRadius;
+ //[1, 1, 0.6, 60, 300, 0, [1,1,1]] execVM "server\missions\events\stormEffect.sqf";
+
 	{
 	if (isPlayer _x) then {
-           _x setVehicleInit "";
+           _x setVehicleInit "[1, 1, 0.2, 10, 240, 0, [1,1,1]] execVM 'server\missions\events\stormEffect.sqf';";
            processInitCommands;
 	};
-	} forEach _inArea;
+	} forEach playableunits;
  _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'>Storm Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>has begun, beware of the Lightning strike</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 sleep 240;
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-          _x setVehicleInit "";
+         _x setVehicleInit "[0, 0, 0.6, 10, 60, 0, [0,1,1]] execVM 'server\missions\events\stormEffect.sqf';";
            processInitCommands;
 	};
-	} forEach _inArea;
+	} forEach playableunits;
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Storm Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'> will end in 1 minutes</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;	
 sleep 60;
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-          _x setVehicleInit "";
+         _x setVehicleInit "[1, 1, 0.6, 60, 300, 0, [1,0,0]] execVM 'server\missions\events\stormEffect.sqf';";
            processInitCommands;
 	};
-	} forEach _inArea;
+	} forEach playableunits;
 
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Storm Event is finished</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>You are Alive.</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;

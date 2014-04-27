@@ -4,7 +4,7 @@ private ["_type", "_ar", "_oldUnit", "_newUnit", "_dummyUnit", "_dummyGroup"];
   _mymoney = player getVariable"choco";
  _oldUnit = player;
 _type = _skin;
- 
+ player setvariable["skin",1,true];
 _ar = [weapons _oldUnit, magazines _oldUnit, rank _oldUnit, score _oldUnit, group _oldUnit, getPos _oldUnit, (leader _oldUnit) == _oldUnit, vehicleVarName _oldUnit];
  
 _dummyGroup = createGroup (side _oldUnit);
@@ -56,6 +56,6 @@ player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 player setVariable["choco",_mymoney,true];
-player addEventHandler ["Respawn", {[player] call onRespawn;}];
+// addEventHandler ["Respawn", {;null1 =[player] execVM "client\functions\playerActions.sqf";null2 =[player] execVM "client\clientEvents\onMouseWheel.sqf";}];
 player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
 processInitCommands;

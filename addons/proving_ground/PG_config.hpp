@@ -193,7 +193,7 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*0;
-				text = "Yanniks AdminSchiff";
+				text = "Yanniks Adminplane";
 				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_yannik1.sqf'"; 
 			};
 
@@ -201,7 +201,7 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*1;
-				text = "Yannik Mv22 +Flares";
+				text = "Yanniks Mv22 +Flares";
 				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_yannik2.sqf'"; 
 			};
 			

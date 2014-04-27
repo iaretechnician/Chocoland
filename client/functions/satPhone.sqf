@@ -24,7 +24,7 @@ _stringEscapePercent = "%";
             };
 			_unlockDuration = _unlockDuration - 1;
 		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
-			2 cutText [format["redeeming ChocoKill %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+			2 cutText [format["redeeming chocos %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		    sleep 1;
 			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed
 		        sleep 1;
@@ -32,7 +32,7 @@ _stringEscapePercent = "%";
                
  _bounty= player getVariable"bounty";
 
-titleText [format["\n you got 1 ChocoKill"], "PLAIN DOWN", 0];
+titleText [format["\n you got 1 chocos"], "PLAIN DOWN", 0];
 _ck=_bounty +1;
                 deletevehicle _currObject;
                 player setvariable["bounty", _ck,true];

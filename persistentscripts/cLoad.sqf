@@ -52,6 +52,7 @@ ProfileFound%1;
 "cmoney" call PersistentDBLCStuff;
 "bounty" call PersistentDBLCStuff;
 "saveVehicle" call PersistentDBLCStuff;
+"chocopack" call PersistentDBLCStuff;
 "donator" call PersistentDBLCStuff;
 "canfood" call PersistentDBLCStuff;		
 "medkits" call PersistentDBLCStuff;		
@@ -111,14 +112,15 @@ hint "Persistent DB: No profile found";
 player setDammage 0;
 player setVariable["bounty",0,true];
 player setVariable["donator",0,true];
-player setVariable["choco",500,true];
+player setVariable["choco",0,true];
+player setVariable["choco",500,false];
 player setVariable["canfood",2,false];
 player setVariable["medkits",0,false];
 player setVariable["water",2,false];
 player setVariable["fuel",0,false];
 player setVariable["repairkits",0,false];
-player setVariable["fuelFull", 1, false];
-player setVariable["fuelEmpty",0, false];
+player setVariable["fuelFull", 1,false];
+player setVariable["fuelEmpty",0,false];
 player setVariable["bombs",false,false];
 player setVariable["spawnBeacon",0,false];
 player setVariable["camonet",0,false];
@@ -134,7 +136,8 @@ hint "PersistentDB: No profile on this team.";
 player setDammage 0;
 player setVariable["bounty",0,true];
 player setVariable["donator",0,true];
-player setVariable["choco",500,true];
+player setVariable ["choco",0,true];
+player setVariable["choco",500,false];
 player setVariable["canfood",2,false];
 player setVariable["medkits",0,false];
 player setVariable["water",2,false];
@@ -190,12 +193,13 @@ if(!isNil "_curVal") then
 {
 	player setDammage _curVal;
 };
-
+player setVariable ["choco",0,true];
 _varArr = [
 "cmoney",
 "bounty",
 "donator",
 "saveVehicle",
+"chocopack",
 "canfood",	
 "medkits",	
 "water",		
@@ -213,8 +217,10 @@ _varArr = [
 	{
 		player setVariable [_x,_curVal,true];
                 if(_x == "cmoney") then
-	{player setVariable ["choco",_curVal,true];
-		player setVariable [_x, nil];
+	{
+            player setVariable ["choco",0,false];
+            player setVariable ["choco",_curVal,true];
+		player setVariable [_x,nil,false];
 	};
 	};
 }foreach _varArr;
