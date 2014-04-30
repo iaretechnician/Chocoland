@@ -22,7 +22,7 @@ switch (_lockState) do {
   
     	R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 4;
-                if ((getplayerUID player) in reserved_uids2) then {_totalDuration = 1;};
+                if ((getplayerUID player) in reserved_uids2 || (player getvariable"basebuilder")==1) then {_totalDuration = 1;};
 		_lockDuration = _totalDuration;
 		_iteration = 0;
 	
@@ -56,7 +56,7 @@ switch (_lockState) do {
                 //CUSTOM
                 _uid = name player;
                 _currObject setVariable ["playerGUID", _uid, true];
-             
+             if(player getvariable"basebuilder" == 1)then{_currObject setVariable ["base",1, true];};
                 2 cutText ["", "PLAIN DOWN", 1];
                 R3F_LOG_mutex_local_verrou = false;
 		    }; 
@@ -67,13 +67,13 @@ switch (_lockState) do {
          
         R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 8;
-                if ((getplayerUID player) in reserved_uids2) then {_totalDuration = 1;};
+                if ((getplayerUID player) in reserved_uids2 || (player getvariable"basebuilder")==1) then {_totalDuration = 1;};
 		_unlockDuration = _totalDuration;
 		_iteration = 0;
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		for "_iteration" from 1 to _unlockDuration do {
                     if ((_currObject getVariable"playerGUID")!=(name player)) exitWith{
-                          2 cutText ["You Cannot Unlock this Object, you are not the Owner of this Object", "PLAIN DOWN", 1];
+                          2 cutText format[["You Cannot Unlock this Object, %1 is the Owner of this Object",_currObject getVariable"playerGUID"], "PLAIN DOWN", 1];
                            R3F_LOG_mutex_local_verrou = false;};
                            
                     if(player distance _currObject > 7) exitWith {  R3F_LOG_mutex_local_verrou = false;

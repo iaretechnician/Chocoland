@@ -4,7 +4,7 @@ while {true} do {
 	PersistentDB_ObjCount = 0;
 	{
 		_var = _x getVariable "objectLocked";
-		if(!isNil "_var" && (alive _x)) then {
+		if(!isNil "_var" && (alive _x)&& (_x getvariable"base") ==1) then {
 			_classname = typeOf _x;
 			_pos = getPosASL _x;
                         _playerGUID = _x getvariable"playerGUID";
@@ -34,7 +34,8 @@ while {true} do {
 			_objSaveName = format["obj%1", PersistentDB_ObjCount];
 
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "classname", _classname] call iniDB_write;
-                         ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", _playerGUID] call iniDB_write;
+                        ["Objects" call PDB_databaseNameCompiler, _objSaveName, "playerGUID", _playerGUID] call iniDB_write;
+                        ["Objects" call PDB_databaseNameCompiler, _objSaveName, "base", 1] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "pos", _pos] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "dir", _dir] call iniDB_write;
 			["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", _supplyleft] call iniDB_write;

@@ -51,6 +51,8 @@ ProfileFound%1;
 "dammage" call PersistentDBLCStuff;		
 "cmoney" call PersistentDBLCStuff;
 "bounty" call PersistentDBLCStuff;
+"basebuilder" call PersistentDBLCStuff;
+"decoder" call PersistentDBLCStuff;
 "saveVehicle" call PersistentDBLCStuff;
 "chocopack" call PersistentDBLCStuff;
 "donator" call PersistentDBLCStuff;
@@ -107,59 +109,15 @@ _PDB_checkDeadLoop = {
 
 [] spawn _PDB_checkDeadLoop;
 
-if (!_profileFound) exitWith{
-hint "Persistent DB: No profile found";
-player setDammage 0;
-player setVariable["bounty",0,true];
-player setVariable["donator",0,true];
-player setVariable["choco",0,true];
-player setVariable["choco",500,false];
-player setVariable["canfood",2,false];
-player setVariable["medkits",0,false];
-player setVariable["water",2,false];
-player setVariable["fuel",0,false];
-player setVariable["repairkits",0,false];
-player setVariable["fuelFull", 1,false];
-player setVariable["fuelEmpty",0,false];
-player setVariable["bombs",false,false];
-player setVariable["spawnBeacon",0,false];
-player setVariable["camonet",0,false];
-player setVariable["canDrop",false,false];
- player addMagazine "7Rnd_45ACP_1911";
- player addMagazine "7Rnd_45ACP_1911";
-	player addWeapon "Colt1911";
-	player selectWeapon "Colt1911";
- };
-_curVal = "weapons" call persistentDBLCConvert;//Test if got values
-if(isnil "_curVal") exitWith {
-hint "PersistentDB: No profile on this team.";
-player setDammage 0;
-player setVariable["bounty",0,true];
-player setVariable["donator",0,true];
-player setVariable ["choco",0,true];
-player setVariable["choco",500,false];
-player setVariable["canfood",2,false];
-player setVariable["medkits",0,false];
-player setVariable["water",2,false];
-player setVariable["fuel",0,false];
-player setVariable["repairkits",0,false];
-player setVariable["fuelFull", 1, false];
-player setVariable["fuelEmpty",0, false];
-player setVariable["bombs",false,false];
-player setVariable["spawnBeacon",0,false];
-player setVariable["camonet",0,false];
-player setVariable["canDrop",false,false];
- player addMagazine "7Rnd_45ACP_1911";
-    player addMagazine "7Rnd_45ACP_1911";
-	player addWeapon "Colt1911";
-	player selectWeapon "Colt1911";
-        spawnHalo = true;sleep 30;spawnHalo = false;
-     };
+if (!_profileFound) exitWith{hint "Persistent DB: No profile found";};
+_curVal = "dammage" call persistentDBLCConvert;//Test if got values
+if(isnil "_curVal") exitWith {hint "PersistentDB: No profile on this team.";};
+_test = 0;
 hint "Persistent DB: Profile found";
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
 {
-	if(_curVal == 1) exitWith {hint "test";};
+	if(_curVal == 1) then {_test = 1;};
 };
 
 _curVal = ("weapons" call persistentDBLCConvert);
@@ -191,15 +149,21 @@ if (!isNil "_curVal") then
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
 {
+    if(_test == 1)then {_curVal =0;};
 	player setDammage _curVal;
+        
+        
 };
 player setVariable ["choco",0,true];
+player setVariable["chocopack",0,true];
 _varArr = [
 "cmoney",
 "bounty",
 "donator",
 "saveVehicle",
 "chocopack",
+"basebuilder",
+"decoder",
 "canfood",	
 "medkits",	
 "water",		
@@ -218,9 +182,9 @@ _varArr = [
 		player setVariable [_x,_curVal,true];
                 if(_x == "cmoney") then
 	{
-            player setVariable ["choco",0,false];
+            player setVariable ["choco",0,true];
             player setVariable ["choco",_curVal,true];
-		player setVariable [_x,nil,false];
+		player setVariable [_x,nil,true];
 	};
 	};
 }foreach _varArr;

@@ -33,7 +33,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
 	if(0 <= 1) then {
-			_price = _x select 1;
+			_price = _x select 1;if(player getvariable"basebuilder" == 1)then{_price = Round(_price /2);};
 			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["choco",_playerMoney - _price,true];
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];

@@ -46,6 +46,17 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
+    _uid = getPlayerUID player;
+    if ((_uid in serverAdministrators) and (side player == civilian)) then {
+ player addeventhandler ["hit",{player setdammage 0}];
+player addeventhandler ["dammaged",{player setdammage 0}];
+(vehicle player) addeventhandler ["hit",	{vehicle player setdammage 0}];
+(vehicle player) addeventhandler ["dammaged",{vehicle player setdammage 0}];
+(vehicle player) removeAllEventHandlers "handleDamage";
+(vehicle player) addEventHandler ["handleDamage", { false }];	
+(vehicle player) allowDamage false;
+    
+        };
      //	player enableSimulation true;
    //    disableUserInput false;
 	        

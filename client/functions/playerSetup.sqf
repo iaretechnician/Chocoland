@@ -69,7 +69,7 @@ if(str(playerSide) in ["GUER"]) then
 	_player selectWeapon "glock17_EP1";
 };
 if(_player getvariable"donator" == 1)then
-{_curVal = Donatorweapon;
+_curVal = Donatorweapon;
 if (!isNil"_curVal") then 
 {
 	removeAllWeapons _player;
@@ -78,7 +78,7 @@ if (!isNil"_curVal") then
                 _player selectWeapon _x;
 	}foreach _curVal;
 };
-};
+
 _player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
@@ -86,10 +86,32 @@ thirstLevel = 100;
 hungerLevel = 100;
 
 _player setVariable["bounty",0,true];
-/*if(firstspawn) then {
-	_player setVariable["choco",500,true];
+if(firstspawn) then {
+	player setDamage 0;
+player setVariable["bounty",0,true];
+player setVariable["donator",0,true];
+player setVariable["decoder",0,true];
+player setVariable["basebuilder",0,true];
+player setVariable["choco",500,true];
+player setVariable["canfood",2,false];
+player setVariable["chocopack",0,true];
+player setVariable["saveVehicle",0,true];
+player setVariable["medkits",0,false];
+player setVariable["water",2,false];
+player setVariable["fuel",0,false];
+player setVariable["repairkits",0,false];
+player setVariable["fuelFull", 1,false];
+player setVariable["fuelEmpty",0,false];
+player setVariable["bombs",false,false];
+player setVariable["spawnBeacon",0,false];
+player setVariable["camonet",0,false];
+player setVariable["canDrop",false,false];
+ player addMagazine "7Rnd_45ACP_1911";
+ player addMagazine "7Rnd_45ACP_1911";
+	player addWeapon "Colt1911";
+	player selectWeapon "Colt1911";
 	firstspawn = false;
-};*/
+};
 _player setVariable["canfood",1,false];
 _player setVariable["medkits",0,false];
 _player setVariable["water",1,false];
@@ -110,4 +132,4 @@ playerSetupComplete = true;
 //coroutine
 
 spawni setObjectTexture [0, ""];
-_player setVariable["basecore",0,false];
+_player setVariable["basecore",0,true];

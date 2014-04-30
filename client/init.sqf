@@ -72,4 +72,4 @@ true spawn playerSpawn;
 [] spawn FZF_IC_INIT;
 _mapcenter = [3445.93,3665.25, 0.0013];
 _buildings = nearestObjects [_mapcenter, ["house"], 15000];
-{_x allowdamage false} forEach _buildings;
+{_x allowdamage false;} forEach _buildings;

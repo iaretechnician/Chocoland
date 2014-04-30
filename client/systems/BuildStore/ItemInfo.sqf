@@ -21,6 +21,7 @@ _itemlisttext ctrlSetText format ["Price: 0$"];
 {if(_itemText == _x select 0) then{ 
 	_type = _x select 2;
 	_price = _x select 1;
+        if(player getvariable"basebuilder" == 1)then{_price = Round(_price /2);};
 	_item = (configFile >> "CfgVehicles" >> _type);
     //    _picture = getText (configFile >> "cfgVehicles" >> _type >> "picture");
      //   _vehiclepicture ctrlSettext _picture;

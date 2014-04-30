@@ -92,7 +92,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {      
 					player setVariable["choco", (player getVariable "choco")+100000,true];
 			    };
-	            case 5: //Debug Menu
+                    case 5: //bounty
+			    {      
+					player setVariable["bounty", (player getVariable "bounty")+10,true];
+			    };
+	            case 6: //Debug Menu
 			    {   
 	            	closeDialog 0;   
 	                execVM "client\systems\adminPanel\loadDebugMenu.sqf";

@@ -131,6 +131,24 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	genStoreCart = genStoreCart - _price;    
             };
         };
+        //unlock
+        case "Unlock Decoder":{
+        _test = player getvariable"decoder";
+        if(_test ==1)then{hint "you are allready a Decoder!";player setvariable["choco",(player getvariable"choco") +250000,true];
+        }else{
+            player globalchat" you unlocked Decoder Feature,destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams, use it with mouseWheel near object";
+            player setvariable["decoder",1,true];
+            };
+ };   
+    
+    case "Unlock Basebuilder":{
+        _test = player getvariable"basebuilder";
+        if(_test ==1)then{hint "you are allready a Basebuilder!";player setvariable["choco",(player getvariable"choco") +250000,true];
+        }else{
+            player globalchat" you unlocked Basebuilder Feature,create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever, and you only pay 50%";
+            player setvariable["basebuilder",1,true];
+            }; 
+    };
 	};
 };
 

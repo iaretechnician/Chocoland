@@ -9,20 +9,23 @@ playerSetupComplete = false;
 
 _player = (_this select 0) select 0;
 _corpse = (_this select 0) select 1;
-_player setPos [2101.75,4314.7,0.00130653];
+//_player setPos [2101.75,4314.7,0.00130653];
 _corpse removeAction playerMenuId;
 _corpse removeAction playerWeaponId;
-_corpse removeAction  saveVehId;
+_corpse removeAction saveVehId;
 _corpse removeAction bombId;
 _corpse removeAction playerflyId;
 _corpse removeaction playerflyoff;
 _corpse removeaction playersatId;
-//_player setPos [2101.75,4314.7,0.00130653];
+
 {
 	_corpse removeAction _x;
 } forEach aActionsIDs;
 if(player getvariable"donator" == 1)then
 {deletevehicle _corpse;};
+if(player getvariable"decoder" == 1)then
+{_corpse removeaction decoderId;};
+
 player call playerSetup;
 waitUntil {playerSetupComplete};
 

@@ -29,12 +29,15 @@ switch _key do
     //tilde ~
     case 41:
     {
+       // if(vehicle player != player) exitwith{};  // Check the player is not a car.
+        if(!alive player) exitwith{};  // Check the player is not dead.
+       // [] execVM "client\systems\menu\loadmenu.sqf";
         [] call loadPlayerMenu;
     };
     
     //E key
 	case 18:
-    {	
+    {	/*
         if(vehicle player != player) exitwith{};  // Check the player is not a car.
         if(!alive player) exitwith{};  // Check the player is not dead.
         
@@ -68,7 +71,7 @@ switch _key do
             	[] spawn loadGeneralStore;
         	};   
         };  
-        
+        */
     };
 };
 

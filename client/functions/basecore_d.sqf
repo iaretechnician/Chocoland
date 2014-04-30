@@ -7,19 +7,16 @@
 		_totalDuration = 8;
 		_unlockDuration = _totalDuration;
 		_iteration = 0;
-               
 _stringEscapePercent = "%";
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		for "_iteration" from 1 to _unlockDuration do {
-                    
                     if(player distance _currObject > 3) exitWith {  process = false;
                           2 cutText ["Object destroy failed, you too far away...", "PLAIN DOWN", 1];
                            _currObject setVariable ["basecore",1, true];};
-			
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you are dead...", "PLAIN DOWN", 1];
                               _currObject setVariable ["basecore",1, true]; };
-                               
+                            
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
             };

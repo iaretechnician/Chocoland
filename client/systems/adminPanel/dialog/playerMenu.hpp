@@ -9,12 +9,16 @@
 #define playerMenuPlayerHealth 55508
 #define playerMenuWarnMessage 55509
 #define playerMenuPlayerck 55522
+#define playerMenuPlayerdonate 55599
+#define playerMenusavevehicle 55600
+#define playerMenusaveweapon 55601
+#define playerMenudecode 55602
+#define playerMenubasebuilder 55603
 class PlayersMenu
 {
 	idd = playerMenuDialog;
 	movingEnable = false;
 	enableSimulation = true;
-
 	class controlsBackground {
 		
 		class MainBackground: w_RscPicture
@@ -26,7 +30,6 @@ class PlayersMenu
 			w = 0.837499 * safezoneW;
 			h = 0.661111 * safezoneH;
 		};
-
 		class DialogTitleText: w_RscText
 		{
 			idc = -1;
@@ -86,11 +89,52 @@ class PlayersMenu
 			text = "Donator:";
 			sizeEx = 0.030;
 			x = 0.52 * safezoneW + safezoneX;
+			y = 0.39 * safezoneH + safezoneY;
+			w = 0.25 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                class PlayersavevehicleText: w_RscText
+		{
+			idc = playerMenusavevehicle;
+			text = "savevehicle:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
 			y = 0.41 * safezoneH + safezoneY;
 			w = 0.25 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-		class PlayerItemsText: w_RscText
+                class PlayersaveweaponText: w_RscText
+		{
+			idc = playerMenusaveweapon;
+			text = "saveWeapon:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.43 * safezoneH + safezoneY;
+			w = 0.25 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+        
+                 class playerMenubasebuildertext: w_RscText
+		{
+			idc = playerMenubasebuilder;
+			text = "basebuilder:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.45 * safezoneH + safezoneY;
+			w = 0.25 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+		class playerMenudecodeText: w_RscText
+		{
+			idc = playerMenudecode;
+			text = "decoder:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.47 * safezoneH + safezoneY;
+			w = 0.40 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                class PlayerItemsText: w_RscText
 		{
 			idc = playerMenuPlayerItems;
 			text = "Items:";
@@ -99,8 +143,7 @@ class PlayersMenu
 			y = 0.30 * safezoneH + safezoneY;
 			w = 0.40 * safezoneW;
 			h = 0.04 * safezoneH;
-		};
-
+		};    
 		class PlayerHealthText: w_RscText
 		{
 			idc = playerMenuPlayerHealth;

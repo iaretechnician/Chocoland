@@ -1,4 +1,5 @@
 
+//_currObject = nearestObject [player, "Misc_cargo_cont_tiny"];
 _count = 0;
 _money = 0;
 _money2 = 10;
@@ -8,14 +9,14 @@ if((_currObject getVariable"basecore") == 0 and (player getVariable"basecore") =
 player setVariable ["basecore",1, true];
 _currObject setVariable ["wallet",0, true];
 _currObject setVariable ["basecore",1, true];
-hint format["%1 `BaseCore level 2 is Online and Marked on the Map", name player];
+hint format["%1 `BaseCore is Online and Marked on the Map", name player];
 titleText [format["\n BaseCore Activated"], "PLAIN DOWN", 0];
 _pos = getPos _currObject;
-while {alive _currObject} do {    
+while {alive _currObject and (_currObject getvariable"basecore" == 1) and (player getVariable"basecore") == 1} do {    
 
     _currObject setdamage 0;
                 
-        if (player distance _currObject < 80 and player getvariable"basecore"== 1)
+        if (player distance _currObject < 60 and player getvariable"basecore"== 1)
         then {
             
                 _money = _money2 + (player getVariable"bounty");
@@ -23,27 +24,24 @@ while {alive _currObject} do {
  
                 _currObject setVariable["wallet",(_currObject getVariable"wallet") + _money2,true];
                 _pos = getPos _currObject;
-                _test = _currObject getVariable"wallet";
+               
+            
         
  }else{
+      titleText [format["\n your BaseCore is too far away"], "PLAIN DOWN", 0];
       _currObject setdamage 0;
-        _random = Round (random 5);
-        if ( _random == 5)then 
-            {
-                titleText [format["\n+ your BaseCore is too far away"], "PLAIN DOWN", 0];
-                _count = _count +1;
-                if(_count == 10)exitwith {
-                    player setvariable["basecore",0,true];
-                     _currObject setvariable["basecore",0,true];
-                    titleText [format["\n+ your BaseCore is too far away"], "PLAIN DOWN", 0];
-                    };
+       player setvariable["basecore",0,true];
+      _currObject setvariable["basecore",0,true];
+                    titleText [format["\n BaseCore Deactivated"], "PLAIN DOWN", 0];
+                  
             };
-            };
+           
             nul = [_currObject,name player,_currObject getVariable"wallet"] execVM "client\functions\createMarkers.sqf";
             sleep 1;  
            
            
             };
+            
                                             player setvariable["basecore",0,true];
                                             _currObject setvariable["basecore",0,true];
                                        

@@ -10,7 +10,7 @@ PDB_savePlayer = {
 			
 			_magazines = magazines _x;
 			[_playerUID call PDB_databaseNameCompiler, _playerSide, "magazines", _magazines] call iniDB_write;
-			
+		                        
 			_dir = getDir _x;
 			[_playerUID call PDB_databaseNameCompiler, _playerSide, "dir", _dir] call iniDB_write;
 			
@@ -28,16 +28,24 @@ PDB_savePlayer = {
 			if(!isNil "_donator") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "donator", _donator] call iniDB_write;
 			};
+                        _decoder = _x getVariable "decoder";
+			if(!isNil "_decoder") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "decoder", _decoder] call iniDB_write;
+			};
+                        _basebuilder = _x getVariable "basebuilder";
+			if(!isNil "_basebuilder") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "basebuilder", _basebuilder] call iniDB_write;
+			};
                         _saveVehicle =_x getVariable"saveVehicle";
                         if(!isNil"_saveVehicle")then {
                                 [_playerUID call PDB_databaseNameCompiler, _playerSide, "saveVehicle", _saveVehicle] call iniDB_write;
                         };
                   
-                        _chocopack = _x getvariable"chocopack";
+                        _chocopack = _x getVariable"chocopack";
                         if(!isnil"_chocopack")then {
                             [_playerUID call PDB_databaseNameCompiler, _playerSide, "chocopack", _chocopack] call iniDB_write;
                         };
-                        
+                 
                         _bounty = _x getVariable "bounty";
 			if(!isNil "_bounty") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "bounty", _bounty] call iniDB_write;

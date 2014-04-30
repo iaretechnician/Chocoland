@@ -29,21 +29,9 @@ else
 	private ["_objet", "_est_calculateur", "_arme_principale", "_action_menu_release_relative", "_action_menu_release_horizontal" , "_action_menu_45", "_action_menu_90", "_action_menu_180", "_azimut_canon"];
 	
 	_objet = _this select 0;
-	/*if(isNil {_objet getVariable "R3F_Side"}) then {
-		_objet setVariable ["R3F_Side", (side player), true];
-	};*/
+
 	_tempVar = false;
-	/*if(!isNil {_objet getVariable "R3F_Side"}) then {
-		if(side player != (_objet getVariable "R3F_Side")) then {
-			{if(side _x ==  (_objet getVariable "R3F_Side") && alive _x && _x distance _objet < 150) exitwith {_tempVar = true;};} foreach AllUnits;
-		};
-	};
-	if(_tempVar) exitwith {
-		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
-	};
-	_objet setVariable ["R3F_Side", (side player), true];*/
-	
-	// Si l'objet est un calculateur d'artillerie, on laisse le script spécialisé gérer
+
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";
 	if !(isNil "_est_calculateur") then
 	{
@@ -60,9 +48,7 @@ else
 		_arme_principale = primaryWeapon player;
 		if (_arme_principale != "") then
 		{
-                   
-			/*player playMove "AidlPercMstpSnonWnonDnon04";
-			sleep 1.5;*/
+                
 			player removeWeapon _arme_principale;
                         		}
 		else {sleep 0.5;};
@@ -108,7 +94,9 @@ else
 			
 			_action_menu_release_relative = player addAction [("<t color=""#21DE31"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
 			_action_menu_release_horizontal = player addAction [("<t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
-			_action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
+			_action_menu_up = player addAction [("<t color=""#dddd00"">Move up</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\upanddown.sqf", 1, 5, true, true];
+			_action_menu_down = player addAction [("<t color=""#dddd00"">Move down</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\upanddown.sqf", 2, 5, true, true];
+	                _action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
 			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
 			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
 			
@@ -136,15 +124,17 @@ else
 				_opos2 = +_opos;
 				_opos2 set [2, (_opos2 select 2) - 1];
 				if(terrainIntersectASL [_opos, _opos2]) then {
-					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
+					_objet setPos [getPos _objet select 0, getPos _objet select 1, 0.0014];
+                                        
 				} else {
-					_objet setPosASL _opos;
+					//_objet setPosASL _opos;
+                                        _objet setPos [getPos _objet select 0, getPos _objet select 1, 0.0014];
 				};
 			} else {
 				if((getPosATL player select 2) < 5) then {
-					_objet setPos [getPos _objet select 0, getPos _objet select 1, getPosATL player select 2];
+					_objet setPos [getPos _objet select 0, getPos _objet select 1, getPosATL _objet select 2];
 				} else {
-					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL player select 2];
+					_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL _objet select 2];
 				};
 			};
 			
@@ -155,6 +145,8 @@ else
 			player removeAction _action_menu_45;
 			player removeAction _action_menu_90;
 			player removeAction _action_menu_180;
+                        player removeAction _action_menu_up;
+			player removeAction _action_menu_down;
 			R3F_LOG_joueur_deplace_objet = objNull;
 			
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];

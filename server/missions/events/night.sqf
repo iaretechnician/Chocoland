@@ -62,7 +62,7 @@ setDate[2014,03,07,12,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-         _x setVehicleInit "setDate[2014,03,07,12,00]";
+         _x setVehicleInit "titleText ['', 'BLACK IN', 8;setDate[2014,03,07,12,00]";
            processInitCommands;
 	};
 	} forEach _inArea;

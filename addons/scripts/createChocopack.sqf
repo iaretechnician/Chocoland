@@ -7,9 +7,10 @@ _backpack = player getvariable"chocopack";
    player addweapon _backpack;
     player selectWeapon _backpack;
     {player addMagazine _x} forEach magsbackpack;
-    player setvariable["chocopack",nil,false];
+    player setvariable["chocopack",nil,true];
     
     }else{
+    if(_primary != "" and !(isNil "_backpack"))then {
                     
 // wenn waffe schon im inventar vorhanden ist
 _oldweapon = primaryWeapon player;
@@ -31,7 +32,7 @@ _oldweapon = primaryWeapon player;
    player addweapon _backpack;
     player selectWeapon _backpack;
     {player addMagazine _x} forEach magsbackpack;
-    player setvariable["chocopack",_oldweapon,false];
+    player setvariable["chocopack",_oldweapon,true];
     magsbackpack = _oldmagsbackpack;
     
-    };
+    };};

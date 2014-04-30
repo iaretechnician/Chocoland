@@ -12,7 +12,7 @@ _currObject setVariable ["basecore",1, true];
 hint format["%1 `BaseCore is Online and Marked on the Map", name player];
 titleText [format["\n BaseCore Activated"], "PLAIN DOWN", 0];
 _pos = getPos _currObject;
-while {alive _currObject and (_currObject getvariable"basecore" == 1)} do {    
+while {alive _currObject and (_currObject getvariable"basecore" == 1) and (player getVariable"basecore") == 1} do {    
 
     _currObject setdamage 0;
                 
@@ -30,16 +30,12 @@ while {alive _currObject and (_currObject getvariable"basecore" == 1)} do {
  }else{
       titleText [format["\n your BaseCore is too far away"], "PLAIN DOWN", 0];
       _currObject setdamage 0;
-        _random = Round (random 5);
-        if ( _random == 5)then 
-            {
-                if(true)exitwith {
-                    player setvariable["basecore",0,true];
-                     _currObject setvariable["basecore",0,true];
+       player setvariable["basecore",0,true];
+      _currObject setvariable["basecore",0,true];
                     titleText [format["\n BaseCore Deactivated"], "PLAIN DOWN", 0];
-                    };
+                  
             };
-            };
+           
             nul = [_currObject,name player,_currObject getVariable"wallet"] execVM "client\functions\createMarkers.sqf";
             sleep 1;  
            

@@ -14,7 +14,7 @@ _backpack = player getvariable"chocopack";
 			_magtypes = getArray(configFile>> "cfgWeapons" >> _primary >> (_muzzles select 1) >> "magazines");
 			{_tou = toUpper _x;if (_tou in _magtypes) then {magsbackpack set [count magsbackpack, _tou]}} forEach _magazines;
 		};
-                player setvariable["chocopack",_primary,false];
+                player setvariable["chocopack",_primary,true];
     //ende
     {
     player removeMagazine _x} forEach magsbackpack;
@@ -37,7 +37,7 @@ _oldweapon = player getvariable"chocopack";
 			_magtypes = getArray(configFile>> "cfgWeapons" >> _primary >> (_muzzles select 1) >> "magazines");
 			{_tou = toUpper _x;if (_tou in _magtypes) then {magsbackpack set [count magsbackpack, _tou]}} forEach _magazines;
 		};
-                player setvariable["chocopack",_primary,false];
+                player setvariable["chocopack",_primary,true];
     //ende
     {
     player removeMagazine _x} forEach magsbackpack;

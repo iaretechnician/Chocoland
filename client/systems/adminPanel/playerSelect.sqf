@@ -183,7 +183,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
                              _playerName = name player;
-                            _target setVehicleInit format["if (name player == ""%1"") then {titleText [""Admin %2: approaches you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
+                            _target setVehicleInit format["if (name player == ""%1"") then {titleText [""Admin %2 is approaching you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
                               processInitCommands;
                              clearVehicleInit _target;
                             _pos1 = getPos _x;

@@ -64,6 +64,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
     case "SeaGull":{[] execVM "client\systems\FunStore\adds\animal_4.sqf";};
     case "ButterFly":{[] execVM "client\systems\FunStore\adds\animal_0.sqf";};
      case "ship" :{player globalChat format["watch your MouseWheel Commands"];playershieldObject = player addAction[('<t color=''#17FF41''>' + ('Spawn here my MotherShip') +  '</t>'),'client\systems\FunStore\adds\ship.sqf'];};
+     case "decoder":{["decoder"] execVM "client\systems\FunStore\adds\fnc_unlock.sqf";};
+     case "basebuilder":{["basebuilder"] execVM "client\systems\FunStore\adds\fnc_unlock.sqf";};
      };
 hintsilent "funnystuff bought";
 

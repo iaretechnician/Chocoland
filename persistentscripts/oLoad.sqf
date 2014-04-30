@@ -40,7 +40,8 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 			_obj addMagazineCargoGlobal [(_magazines select 0) select _ii, (_magazines select 1) select _ii];
 		};
 		_obj setVariable ["objectLocked", true, true];
-                if(isNil "_playerGUID")then{
+                _obj setVariable ["base",1, true];
+                if(!isNil "_playerGUID")then{
                 _obj setVariable ["playerGUID", _playerGUID, true];};
 	};
 };

@@ -16,7 +16,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 		[] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
         hint "Welcome Admin";		
 	};
-    if ((_uid in serverAdministrators) and (player in reserved_units)) then {
+    if ((_uid in serverAdministrators) and (side player == civilian)) then {
     
     	if ((_this select 0) == 1) then {
         	closeDialog 0;      

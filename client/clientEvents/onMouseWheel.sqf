@@ -9,7 +9,7 @@ playerMenuHandle = [] spawn {
 		if (!isnil "_veh") then {_veh removeaction playerMenuId;_veh removeaction saveVehId};
 		playerMenuId = player addAction [format ["<t color='#FF6600'>%1</t>", "Player Menu"], "client\systems\playerMenu\init.sqf",[],-10,false,false,"","local player"];
 		/// custom
-                playerWeaponId = player addAction [format ["<t color='#FF33CC'>%1</t>", "ParaStore"], "client\systems\menu\loadmenu.sqf",[],-9,false,false,"","local player"];
+                playerWeaponId = player addAction [format ["<t color='#219eff'>%1</t>", "ParaStore"], "client\systems\menu\loadmenu.sqf",[],-9,false,false,"","local player"];
 
                 waituntil {vehicle player != player};
 		player removeaction playerMenuId;
