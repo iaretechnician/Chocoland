@@ -3,7 +3,7 @@
 class gunshopd {
 
 	idd = gunshop_DIALOG;
-	movingEnable = false;
+	movingEnable = true;
 	enableSimulation = true;
 	onLoad = "[0] execVM 'client\systems\gunStore\populateGunStore.sqf'";
 
@@ -53,7 +53,28 @@ class gunshopd {
 			h = 0.068889 * safezoneH;
 		};
 
-		
+		class DialogTitleText: w_RscText
+		{
+			idc = -1;
+			text = "Gun Store Menu";
+
+			x = 0.203125 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+		};
+
+		class PlayerMoneyText: w_RscText
+		{
+			idc = gunshop_money;
+			text = "Cash:";
+
+			x = 0.6875 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+		};
+
 		class CartTotalText: w_RscText
 		{
 			idc = gunshop_total;
@@ -67,68 +88,7 @@ class gunshopd {
 	};
 	
 	class controls {
-		///custom
-                class loadVehStore: w_RscButton
-		{
-			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\vehicleStore\loadVehStore.sqf'";
-			text = "-> Vehicles";
-
-			x = 0.22 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadChopStore: w_RscButton
-		{
-			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "->Choppers";
-
-			x = 0.32 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadBuildStore: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\BuildStore\loadBuildStore.sqf'";
-			text = "-> Buildings";
-
-			x = 0.42 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadBuildStore2: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\generalStore\loadGenStore.sqf'";
-			text = "-> Generals";
-
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadBuildStore3: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> Funniest";
-
-			x = 0.62 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                ////////end custom
+		
 		class SelectionList: w_RscListbox
 		{
 			idc = gunshop_gun_list;
@@ -194,7 +154,7 @@ class gunshopd {
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
-			text = "Buy";
+			text = "Buy to Player";
 
 			x = 0.703125 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
@@ -204,7 +164,19 @@ class gunshopd {
 
 		};
 
-	
+		class BuySellEquipment: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[] execVM 'client\systems\gunStore\sellWeapon.sqf'";
+			text = "Sell Current Weapon";
+
+			x = 0.40625 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.096 * safezoneW;
+			h = 0.040 * safezoneH;
+
+		};
+
 		class CancelButton: w_RscButton
 		{
 			idc = -1;
@@ -219,7 +191,7 @@ class gunshopd {
 
 		};
 
-		// LEFT HAND BUTTONS
+		///////////////////////////////////////////////////////////// LEFT HAND BUTTONS /////////////////////////////////////////////////////
 
 		class WeaponsButton: w_RscButton
 		{

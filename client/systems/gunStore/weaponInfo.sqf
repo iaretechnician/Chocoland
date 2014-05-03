@@ -24,6 +24,7 @@ _gunInfo = _dialog displayCtrl gunshop_gun_Info;
 //Get Selected Item
 _selectedItem = lbCurSel _gunlist;
 _itemText = _gunlist lbText _selectedItem;
+
 _gunpicture ctrlSettext _picture;
 _gunlisttext ctrlSetText format [""];	
 

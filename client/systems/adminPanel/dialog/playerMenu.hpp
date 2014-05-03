@@ -8,17 +8,13 @@
 #define playerMenuPlayerObject 55507
 #define playerMenuPlayerHealth 55508
 #define playerMenuWarnMessage 55509
-#define playerMenuPlayerck 55522
-#define playerMenuPlayerdonate 55599
-#define playerMenusavevehicle 55600
-#define playerMenusaveweapon 55601
-#define playerMenudecode 55602
-#define playerMenubasebuilder 55603
+
 class PlayersMenu
 {
 	idd = playerMenuDialog;
 	movingEnable = false;
 	enableSimulation = true;
+
 	class controlsBackground {
 		
 		class MainBackground: w_RscPicture
@@ -30,6 +26,7 @@ class PlayersMenu
 			w = 0.837499 * safezoneW;
 			h = 0.661111 * safezoneH;
 		};
+
 		class DialogTitleText: w_RscText
 		{
 			idc = -1;
@@ -73,68 +70,8 @@ class PlayersMenu
 			w = 0.25 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-                class PlayerckText: w_RscText
-		{
-			idc = playerMenuPlayerck;
-			text = "chocos:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.37 * safezoneH + safezoneY;
-			w = 0.25 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class PlayerdonText: w_RscText
-		{
-			idc = playerMenuPlayerdonate;
-			text = "Donator:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.39 * safezoneH + safezoneY;
-			w = 0.25 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class PlayersavevehicleText: w_RscText
-		{
-			idc = playerMenusavevehicle;
-			text = "savevehicle:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.41 * safezoneH + safezoneY;
-			w = 0.25 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class PlayersaveweaponText: w_RscText
-		{
-			idc = playerMenusaveweapon;
-			text = "saveWeapon:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.43 * safezoneH + safezoneY;
-			w = 0.25 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-        
-                 class playerMenubasebuildertext: w_RscText
-		{
-			idc = playerMenubasebuilder;
-			text = "basebuilder:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.45 * safezoneH + safezoneY;
-			w = 0.25 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-		class playerMenudecodeText: w_RscText
-		{
-			idc = playerMenudecode;
-			text = "decoder:";
-			sizeEx = 0.030;
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.47 * safezoneH + safezoneY;
-			w = 0.40 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class PlayerItemsText: w_RscText
+
+		class PlayerItemsText: w_RscText
 		{
 			idc = playerMenuPlayerItems;
 			text = "Items:";
@@ -143,7 +80,8 @@ class PlayersMenu
 			y = 0.30 * safezoneH + safezoneY;
 			w = 0.40 * safezoneW;
 			h = 0.04 * safezoneH;
-		};    
+		};
+
 		class PlayerHealthText: w_RscText
 		{
 			idc = playerMenuPlayerHealth;
@@ -198,75 +136,23 @@ class PlayersMenu
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-                class Choco1Button: w_RscButton
-		{
-			idc = -1;
-			text = "choco-1";
-			onButtonClick = "[11] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.2 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class Choco2Button: w_RscButton
-		{
-			idc = -1;
-			text = "choco+1";
-			onButtonClick = "[12] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.25 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-                        color[] = {0.1,0.95,0.1,1};
-		};
-                class Choco5Button: w_RscButton
-		{
-			idc = -1;
-			text = "choco-5";
-			onButtonClick = "[13] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.3 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                class donatorButton: w_RscButton
-		{
-			idc = -1;
-			text = "dona ON/Off";
-			onButtonClick = "[14] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.35 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-		};
-                 class teamkillsButton: w_RscButton
-		{
-			idc = -1;
-			text = "remove tKill";
-			onButtonClick = "[15] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.4 * safezoneW + safezoneX;
-			y = 0.700 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-                        color[] = {0.1,0.95,0.1,1};
-		};
+
 		class SlayButton: w_RscButton
 		{
 			idc = -1;
-                        text = "TtoPlayer";
-			onButtonClick = "[9] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			
+			text = "Slay";
+			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.2 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-			
+			color[] = {0.95,0.1,0.1,1};
 		};
 
 		class UnlockTeamSwitchButton: w_RscButton
 		{
 			idc = -1;
-			text = "UTeamSwitch";
+			text = "Unlock Team Switch";
 			onButtonClick = "[3] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -275,20 +161,10 @@ class PlayersMenu
 			color[] = {0.1,0.95,0.1,1};
 		};
 
-		/*class UnlockTeamKillerButton: w_RscButton
+		class UnlockTeamKillerButton: w_RscButton
 		{
 			idc = -1;
 			text = "Unlock Team Kill";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.250 * safezoneW + safezoneX;
-			y = 0.760 * safezoneH + safezoneY;
-			w = 0.080 * safezoneW;
-			h = 0.04 * safezoneH;
-			color[] = {0.1,0.95,0.1,1};
-		};*/class UnlockTeamKillerButton: w_RscButton
-                {
-			idc = -1;
-			text = "Set chocos to 0";
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
@@ -300,7 +176,7 @@ class PlayersMenu
 		class RemoveAllMoneyButton: w_RscButton
 		{
 			idc = -1;
-			text = "RA Money";
+			text = "Remove All Money";
 			onButtonClick = "[5] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.330 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
@@ -308,32 +184,11 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-                class addMoneyButton: w_RscButton
-		{
-			idc = -1;
-			text = "add 25k$ Money";
-			onButtonClick = "[8] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.410 * safezoneW + safezoneX;
-			y = 0.730 * safezoneH + safezoneY;
-			w = 0.080 * safezoneW;
-			h = 0.04 * safezoneH;
-			color[] = {0.1,0.95,0.1,1};
-		};
-                class telButton: w_RscButton
-		{
-			idc = -1;
-			text = "Slay";
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.410 * safezoneW + safezoneX;
-			y = 0.760 * safezoneH + safezoneY;
-			w = 0.080 * safezoneW;
-			h = 0.04 * safezoneH;
-			color[] = {0.95,0.1,0.1,1};
-		};
+
 		class RemoveAllWeaponsButton: w_RscButton
 		{
 			idc = -1;
-			text = "RA Weapons";
+			text = "Remove All Weapons";
 			onButtonClick = "[6] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.330 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
@@ -341,27 +196,16 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-                class CheckPlayerGearButton3: w_RscButton
+
+		class CheckPlayerGearButton: w_RscButton
 		{
 			idc = -1;
 			text = "Check Gear";
 			onButtonClick = "[7] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.485 * safezoneW + safezoneX;
-			y = 0.755 * safezoneH + safezoneY;
+			y = 0.750 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-                        color[] = {0.1,0.95,0.1,1};
-		};
-		class CheckPlayerGearButton4: w_RscButton
-		{
-			idc = -1;
-			text = "Tel player";
-			onButtonClick = "[10] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.485 * safezoneW + safezoneX;
-			y = 0.730 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-                        color[] = {0.1,0.95,0.1,1};
 		};
 
 		class WarnButton: w_RscButton

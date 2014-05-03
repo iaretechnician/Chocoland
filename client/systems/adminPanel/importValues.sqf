@@ -19,12 +19,7 @@
 #define playerMenuPlayerList 55505
 #define playerMenuPlayerObject 55507
 #define playerMenuPlayerHealth 55508
-#define playerMenuPlayerck 55522
-#define playerMenuPlayerdonate 55599
-#define playerMenusavevehicle 55600
-#define playerMenusaveweapon 55601
-#define playerMenudecode 55602
-#define playerMenubasebuilder 55603
+
 disableSerialization;
 
 private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];
@@ -39,6 +34,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_userText = _dialog displayCtrl vehicleUsersText;
 	_damageText = _dialog displayCtrl vehicleDamageText;
 	_speedText = _dialog displayCtrl vehicleSpeedText;
+	
 	_dialogPlayer = findDisplay playerMenuDialog;
 	_skinText = _dialogPlayer displayCtrl playerMenuPlayerSkin;
 	_currentGunText = _dialogPlayer displayCtrl playerMenuPlayerGun;
@@ -47,12 +43,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	_healthText = _dialogPlayer displayCtrl playerMenuPlayerHealth;
 	_objectText = _dialogPlayer displayCtrl playerMenuPlayerObject;
 	_playerListBox = _dialogPlayer displayCtrl playerMenuPlayerList;
-	_currentbountyText = _dialogPlayer displayCtrl playerMenuPlayerck;
-        _currentdonatorText = _dialogPlayer displayCtrl playerMenuPlayerdonate;
-        _currentsavevehicleText = _dialogPlayer displayCtrl playerMenusavevehicle;
-        _currentsaveweaponText = _dialogPlayer displayCtrl playerMenusaveweapon;
-          _currentdecodeText = _dialogPlayer displayCtrl playerMenudecode;
-            _currentbasebuilderText = _dialogPlayer displayCtrl playerMenubasebuilder;
+	
 	_inCar = ["No Passengers"];
 	_driver = "No Driver";
 	if (_type1 == 1) then {
@@ -77,18 +68,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	    {
 	        if (str(_x) == _data1) exitwith {
 	            _itemsText ctrlSetText format["Items: %1",weapons _x];
-	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "choco"];
+	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "cmoney"];
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
-	            _currentbountyText ctrlSetText format["chocos: %1",_x getVariable "bounty"];
-                     _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable"donator"];
-                      _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"donator"];
-                       _currentdecoderText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                      _currentsavevehicleText ctrlSetText format["savevehicle: %1",_x getVariable"saveVehicle"];
-                     _currentsaveweaponText ctrlSetText format["saveweapon: %1",_x getVariable"chocopack"];
-                      _currentdecodeText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                       _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"basebuilder"];
+	            
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;

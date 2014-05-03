@@ -4,7 +4,7 @@
 //	@file Created: 28/11/2012 05:19
 //	@file Args:
 
-/*_generalStores = ["generalStore1","generalStore2"];
+_generalStores = ["generalStore1","generalStore2","generalStore3","generalStore4","generalStore5"];
 
 //Creates the markers around general stores.
 waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _generalStores == count _generalStores};
@@ -22,5 +22,4 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
 	_markerName setMarkerTextLocal "General Store";
 
 } forEach _generalStores;
-*/
 

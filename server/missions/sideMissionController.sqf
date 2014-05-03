@@ -13,29 +13,16 @@ private ["_SMarray","_lastMission","_randomIndex","_mission","_missionType","_ne
 diag_log format["WASTELAND SERVER - Started Side Mission State"];
 
 //Side Mission Array
-_SMarray = [[mission_SmallHeli,"mission_SmallHeli"],
+_SMarray = [
 			[mission_WepCache,"mission_WepCache"],
             [mission_ReconVeh,"mission_ReconVeh"],
-             [mission_ReconVeh,"mission_ReconVeh"],
             [mission_AirWreck,"mission_AirWreck"],
             [mission_SmallHeli,"mission_SmallHeli"],
             [mission_Truck,"mission_Truck"]];
 
 _lastMission = "nomission";
-
 while {true} do
 {
-    //waiting
-    _countppl= 300;
-    {
-	if (alive _x) then
-		{
-                _countppl= _countppl -10;	
-		};
-	} forEach playableUnits; 
-       
-        sleep _countppl;
-
 	//Select Mission
     _randomIndex = (random (count _SMarray - 1));
 	_mission = _SMarray select _randomIndex select 0;
@@ -54,7 +41,8 @@ while {true} do
     
 	_missionRunning = [] spawn _mission;
     diag_log format["WASTELAND SERVER - Execute New Side Mission: %1",_missionType];
-  
+    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", sideMissionDelayTime / 60, sideMissionColor, subTextColor];
+	[nil,nil,rHINT,_hint] call RE;
     _lastMission = _missionType;
 	waitUntil{sleep 0.1; scriptDone _missionRunning};
     sleep 5;

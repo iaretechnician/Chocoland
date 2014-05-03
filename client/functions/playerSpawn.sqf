@@ -53,7 +53,8 @@ if(doKickTeamSwitcher) exitWith {
 };
 
 //Send player to debug to stop fake spawn locations.
-player setPos [2101.75,4314.7,0.00130653];
+player setPos [-20000 - (random 10000), 5000 + random 15000, 0];
+
 
 true spawn client_respawnDialog;
 

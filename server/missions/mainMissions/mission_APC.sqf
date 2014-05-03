@@ -27,22 +27,19 @@ _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
 
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
-[mainMissionDelayTime,_randomPos] call createWaitCondition;
-
+[mainMissionDelayTime] call createWaitCondition;
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
 
-_vehicleClass = ["BTR60_TK_EP1","M1126_ICV_MK19_EP1","BRDM2_TK_GUE_EP1","HMMWV_Avenger_DES_EP1", "BTR40_MG_TK_GUE_EP1"] call BIS_fnc_selectRandom;
+_vehicleClass = ["BTR60_TK_EP1","M1126_ICV_MK19_EP1","BRDM2_TK_GUE_EP1","M113_UN_EP1","BTR90","LAV25","M6_EP1"] call BIS_fnc_selectRandom;
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage, State
-_vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
+_vehicle = [_vehicleClass,_randomPos,0,1,0.75,"NONE"] call createMissionVehicle;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
-    _war1 = Round (random 100)+100;
-     
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t> has been immobilized; go get it for your team!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor, _war1];
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t> has been immobilized; go get it for your team!</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 [nil,nil,rHINT,_hint] call RE;
 
 CivGrpM = createGroup civilian;
@@ -66,7 +63,7 @@ waitUntil
     if(_currTime - _startTime >= mainMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _vehicle <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
     _unitsAlive = ({alive _x} count units CivGrpM);
-    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) 
+    (_result == 1) OR ((_playerPresent) AND (_unitsAlive < 1)) OR ((damage _vehicle) == 1)
 };
 
 _vehicle setVehicleLock "UNLOCKED";
@@ -78,32 +75,17 @@ if(_result == 1) then
     deleteVehicle _vehicle;
     {deleteVehicle _x;}forEach units CivGrpM;
     deleteGroup CivGrpM;
-   
-{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
-}forEach units CivGrpM;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time.</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor, _war1];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time.</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
 	//Reset the mission spawn bool
     diag_log format["WASTELAND SERVER - Main Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
     deleteGroup CivGrpM;
-    
-{_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
-}forEach units CivGrpM;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The APC has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The APC has been captured.</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
 	//Reset the mission spawn bool
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
-    //Cash Reward
-        _missionRewardRadius =200;
-_reward = Round(random 750) +5000;
-	_inArea = _randomPos nearEntities _missionRewardRadius;
-	{
-	if (isPlayer _x) then {
-           [nil,_x, "loc", rEXECVM, "client\functions\missionReward.sqf", "reward", _war1, _reward] call RE;
-	};
-	} forEach _inArea;
 };
 
 //Reset Mission Spot.

@@ -17,7 +17,7 @@ private ["_base","_unitsAlive","_playerPresent","_missionType","_successTextColo
 //Mission Initialization.
 _rad=20000;
 _result = 0;
-_missionType = "Choco Base";
+_missionType = "Capture Military Base";
 _mainTextColour = "#52bf90";
 _successTextColour = "#17FF41";
 _failTextColour = "#FF1717";
@@ -43,12 +43,9 @@ while {!_GotLoc} do
 
 //ensure the rest of the script doesn't continue until we are done
 waitUntil {_GotLoc};
-_smoke = createVehicle ["smokeShellred",_randomPos,[],1,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 //Tell everyone their will be a mission soon.
-_war1 = Round (random 100)+1300;
-_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Mission %4</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour, _war1];
+_hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", _missionDelayTime / 60, _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 
 //Wait till the mission is ready to be ran.
@@ -75,15 +72,12 @@ _result = 0;
 //Add marker to client marker array.
 clientMissionMarkers set [count clientMissionMarkers,["Base_Marker",_randomPos,"Capture Military Base"]];
 publicVariable "clientMissionMarkers";
-_smoke = createVehicle ["smokeShellred",_randomPos,[],0,"FLY"];
-_smoke setPos _randomPos;
-sleep 10;
+
 _veh = ["outpostUS1"] call BIS_fnc_selectRandom;
 _base = [_veh, 0, _randomPos] execVM "server\functions\createBase.sqf";
 
 _vehicleName = "Outpost";
-
-_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t>, has been spotted near the marker go capture it.</t>", _missionType, _vehicleName, _mainTextColour, _subTextColour, _war1];
+_hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>A<t color='%3'> %2</t>, has been spotted near the marker go capture it.</t>", _missionType, _vehicleName, _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
 
 _group = createGroup civilian;
@@ -106,17 +100,13 @@ waitUntil
 if(_result == 1) then
 {
 	//Mission Failed.
-    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, _failTextColour, _subTextColour, _war1];
+    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>Objective failed, better luck next time</t>", _missionType, _vehicleName, _failTextColour, _subTextColour];
 	[nil,nil,rHINT,_hint] call RE;
-         {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
-}forEach units CivGrpM;
     diag_log format["WASTELAND SERVER - Mission Failed"];
 } else {
 	//Mission Complete.
-    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Mission %5 Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The base has been captured, use what you found to help you crush the enemy</t>", _missionType, _vehicleName, _successTextColour, _subTextColour, _war1];
+    _hint = parseText format ["<t align='center' color='%3' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%3'>------------------------------</t><br/><t align='center' color='%4' size='1.25'>%1</t><br/><t align='center' color='%4'>The base has been captured, use what you found to help you crush the enemy</t>", _missionType, _vehicleName, _successTextColour, _subTextColour];
 	[nil,nil,rHINT,_hint] call RE;
-         {_x spawn{_this setDamage 1; sleep 3; hidebody _this; sleep 3; deleteVehicle _this;};
-}forEach units CivGrpM;
     diag_log format["WASTELAND SERVER - Mission Finished"];
 };
 

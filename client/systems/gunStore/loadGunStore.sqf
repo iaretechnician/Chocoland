@@ -12,14 +12,12 @@ gunStoreCart = 0;
 
 _dialog = findDisplay gunshop_DIALOG;
 _playerMoney = _dialog displayCtrl gunshop_money;
-_money = player getVariable "choco";
+_money = player getVariable "cmoney";
 _playerMoney CtrlsetText format["Cash: $%1", _money];
 
 gsLocation = str(_this select 0);
 
-if(gsLocation == "gunstore1");
-if(gsLocation == "gunstore2");
-if(gsLocation == "gunstore3");
-if(gsLocation == "gunstore4");
-if(gsLocation == "gunstore5");
-if(gsLocation == "gunstore6");
+if(gsLocation == "gs1") then {gsCrate = g_ammo_1;};
+if(gsLocation == "gs2") then {gsCrate = g_ammo_2;};
+if(gsLocation == "gs3") then {gsCrate = g_ammo_3;};
+if(gsLocation == "gs4") then {gsCrate = g_ammo_4;};

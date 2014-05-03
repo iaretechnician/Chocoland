@@ -10,7 +10,15 @@ _positionVIP = getPosATL _unitVIP;
 if (!(alive _unitVIP)) then {
 	hint "The VIP is dead...";
 } else {
+	_droppedCash = "Evmoney" createVehicle (_positionVIP); 
+	_droppedCash setPos _positionVIP;
+	_droppedCash setVariable["money",1000,true];
+	_droppedCash setVariable["owner","world",true];
 	
+	_droppedCash = "Evmoney" createVehicle (_positionVIP); 
+	_droppedCash setPos _positionVIP;
+	_droppedCash setVariable["money",1000,true];
+	_droppedCash setVariable["owner","world",true];
 };
 
 processVIP = _unitVIP;

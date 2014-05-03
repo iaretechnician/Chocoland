@@ -1,3 +1,10 @@
+//	@file Version: 1.0
+//	@file Name: item_list.sqf
+//	@file Author: [404] Costlyy, Tonic
+//	@file Created: NA
+//	@file Args:
+
+
 #include "dialog\player_sys.sqf";
 disableSerialization;
 
@@ -31,7 +38,7 @@ if(player getVariable "camonet" > 0) then {
 	} else {
 	    _str = "Camo Net";
 	};
-	_itemListIndex = _itemList lbAdd format["%1x - ChocoBomb", player getVariable "camonet"];
+	_itemListIndex = _itemList lbAdd format["%1x - Camo Net", player getVariable "camonet"];
 	_itemList lbSetData [(lbSize _itemList)-1, "camonet"];
 };
 if(player getVariable "repairkits" > 0) then {

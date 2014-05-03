@@ -27,104 +27,87 @@ switch(_switch) do
     case 0:
     {
         {
-			_name = name _x;
-			if(_x in units group player) then
+			_name = _x select 2;
+			if(ctrlText _buttonZero == _name) then
 			{
-                                 _townName = _name;
-				_pos = getPos _x ;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 500];				
+                _townName = _name;
+				_pos = getMarkerPos (_x select 0);
+				_rad = _x select 1;
+				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];				
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach allUnits;
-                
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground! over 150 ALT", "PLAIN DOWN", 5];
-        player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
+		}forEach cityList;
     };
     case 1:
     {
         {
-		_name = name _x;
-			if(_x in units group player) then
+			_name = _x select 2;
+			if(ctrlText _buttonOne == _name) then
 			{
-                                 _townName = _name;
-				_pos = getPos _x ;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 500];				
+                _townName = _name;
+				_pos = getMarkerPos (_x select 0);
+				_rad = _x select 1;
+				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach allUnits;
-                
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!over 150 ALT", "PLAIN DOWN", 5];
-        player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
+		}forEach cityList;
     };
     case 2:
     {
         {
-		_name = name _x;
-			if(_x in units group player) then
+			_name = _x select 2;
+			if(ctrlText _buttonTwo == _name) then
 			{
-                                 _townName = _name;
-				_pos = getPos _x ;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 500];				
+                _townName = _name;
+				_pos = getMarkerPos (_x select 0);
+				_rad = _x select 1;
+				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach allUnits;
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-        player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
+		}forEach cityList;
     };
     case 3:
     {
         {
-		_name = name _x;
-			if(_x in units group player) then
+			_name = _x select 2;
+			if(ctrlText _buttonThree == _name) then
 			{
-                                 _townName = _name;
-				_pos = getPos _x ;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 500];				
+                _townName = _name;
+				_pos = getMarkerPos (_x select 0);
+				_rad = _x select 1;
+				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach allUnits;
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-        player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
+		}forEach cityList;
     };
     case 4:
     {
         {
-		_name = name _x;
-			if(_x in units group player) then
+			_name = _x select 2;
+			if(ctrlText _buttonFour == _name) then
 			{
-                                 _townName = _name;
-				_pos = getPos _x ;
-				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 500];				
+                _townName = _name;
+				_pos = getMarkerPos (_x select 0);
+				_rad = _x select 1;
+				_pos = [_pos,5,_rad,1,0,0,0] call BIS_fnc_findSafePos;
+				_pos = [_pos select 0, _pos select 1, (_pos select 2) + 10];			
 				player setPos _pos;
 				respawnDialogActive = false;
 				closeDialog 0;
 			};
-		}forEach allUnits;
-                 2 cutText ["HALO jump activated. Open your chute before you hit the ground!", "PLAIN DOWN", 5];
-        player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500]; // Stop the player appearing on the ground for a split second before the HALO 
-        [player, 500] exec "ca\air2\halo\data\Scripts\HALO_init.sqs";    
-        respawnDialogActive = false;
-		closeDialog 0;
+		}forEach cityList;
     };
 };
 sleep 5;

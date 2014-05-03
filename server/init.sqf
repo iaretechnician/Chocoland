@@ -46,11 +46,7 @@ if (sideMissions == 1) then {
     [] execVM "server\missions\sideMissionController.sqf";
     sleep 5;
     [] execVM "server\missions\mainMissionController.sqf";
-    sleep 5;
-  [] execVM "server\missions\spawnController.sqf";
-  sleep 5;
-  [] execVM "server\missions\eventController.sqf";
- 
+    //[] execVM "server\missions\worldMissionController.sqf";
 };
 
 if (isDedicated) then {

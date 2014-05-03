@@ -17,7 +17,6 @@ switch(_switch) do
 	    	[_button] execVM "client\functions\spawnInTown.sqf"
 	    }; 
     };
-    case 2:{execVM "client\functions\spawnRandomHALO.sqf"};
 };
 
 if(isNil{client_firstSpawn}) then {

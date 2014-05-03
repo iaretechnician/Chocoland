@@ -11,7 +11,7 @@ if(!isServer) exitWith {};
 diag_log format["WASTELAND SERVER - Started Mission State"];
 
 //Main Mission Array
-_MMarray = ["mission_invasion"];
+_MMarray = [];
 
 worldMissionRunning = false;
 #ifdef __A2NET__
@@ -19,7 +19,7 @@ _startTime = floor(netTime);
 #else
 _startTime = floor(time);
 #endif
-_result = 1;
+_result = 0;
 
 while {true} do
 {
@@ -33,18 +33,18 @@ while {true} do
     
 	if(!worldMissionRunning) then
     {
-              _mission = _MMarray select (random (count _MMarray - 1));
-                 execVM format ["server\missions\otherMissions\%1.sqf",_mission];
+        sleep 120;
+        _mission = _MMarray select (random (count _MMarray - 1));
+        execVM format ["server\missions\otherMissions\%1.sqf",_mission];
 		worldMissionRunning = true;
-                 diag_log format["WASTELAND SERVER - Execute New Mission"];
+        diag_log format["WASTELAND SERVER - Execute New Mission"];
 		#ifdef __A2NET__
 		_startTime = floor(netTime);
 		#else
 		_startTime = floor(time);
 		#endif
         _result = 0;
-               
     } else {
-    	sleep 100;  
+    	sleep 1;  
     };    
 };

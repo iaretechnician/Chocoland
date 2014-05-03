@@ -5,8 +5,8 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-foodDelay = 600; // 15 Minutes.
-waterDelay = 500; // 12.5 Minutes. 
+foodDelay = 900; // 15 Minutes.
+waterDelay = 750; // 12.5 Minutes. 
 
 [] spawn  {
 	while { true } do {

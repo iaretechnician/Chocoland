@@ -116,19 +116,7 @@ class w_RscStructuredText
 	size = 0.03921;
 	shadow = 2;
 };
-class balca_debug_image
-	{
-		idc = -1;
-		type = CT_STATIC;
-		style = ST_PICTURE+ST_KEEP_ASPECT_RATIO;
-		x = 0.25; w = 0.1;
-		y = 0.1; h = 0.1;
-		colorText[] = {1, 1, 1, 1};
-		colorBackground[] = {0,0,0,0};
-		text = "";
-		font = "Zeppelin32";
-		sizeEx = 0.032;
-	};
+
 class w_RscBackground
 {
 

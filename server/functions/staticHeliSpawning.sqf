@@ -1,55 +1,46 @@
+//	@file Version: 1.0
+//	@file Name: staticHeliSpawning.sqf
+//	@file Author: [404] Costlyy
+//	@file Created: 20/12/2012 21:00
+//	@file Description: Random static helis
+//	@file Args:
 
 if(!X_Server) exitWith {};
 
-private ["_count","_pos","_mapside","_xCord","_yCord","_obj","_moneyCount", "_smoke"];
+private ["_counter","_position","_markerName","_marker","_hint","_newPos","_countActual", "_i", "_doSpawnWreck"];
+_counter = 0;
+_countActual = 0;
+_i = 0;
 
-_moneyCount = Round (random 200) + 250;
-for "_i" from 1 to _moneyCount do
-    {
-    //GREAT THX to Viba and KiloSwiss =D
-    _count = Round (random 250)+200;
-    if(_count == 450) then
-        {
-         _random = Round (random 6);
-         _count = 10000;
-         if(_random == 2) then{_random = 20000;};
-        };
-     if(_count < 450 AND _count > 150) then 
-        {
-            _random = Round (random 10);
-     if(_random == 2) then{_count = _count *2;};
-     if(_random == 3) then{_count = _count *3;};
-  if(_random == 4) then{_count = _count *4;};
-        };
-    if(_count < 100 AND _count > 1) then 
-        {
-          _count = 600;
-          _random= Round (random 3);
-          if(_random == 2) then{_count = 2000;};
-          if(_random == 3) then{_count = 1000;};
-        };
-     _mapside = Round (random 2);
-     if(_mapside == 1) then 
-     {
-          _xCord = Round (random 2000) + 2436.33;
-          _yCord = Round (random 1140) + 3501.65;
-          _pos = [_xCord, _yCord,0.0014];
-     }
-     else 
-     {
-         _xCord = Round (random 1550)+3197.88;
-         _yCord = Round (random 1375)+ 2857;
-         _pos = [_xCord,_yCord, 0.0014];
-     };
+while {_counter < 8} do // 8 helis spawn at the beginning
+{
+	_selectedMarker = floor (random 24);
+    _position = getMarkerPos format ["heliSpawn_%1", _selectedMarker];
+    _newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+	[0, _newPos] call staticHeliCreation;
+    
+	currentStaticHelis set [count currentStaticHelis, _selectedMarker];
 
-    //Now create Object
-    _obj = "EvMoney" createVehicle _pos;
-    _obj setpos (getpos _obj);
-    _obj setVariable["cash",_count,true];
-    _obj setVariable["server",1,true];
-    _obj setVariable["owner","world",true]; 
-   
- 
- //////////////////////////
+    _counter = _counter + 1;
+    _countActual = _countActual + 1;
 };
-diag_log format["WASTELAND SERVER - %1 Money Spawned",_moneyCount];
+
+//{diag_log format["Heli %1 = %2",_forEachIndex, _x];} forEach currentStaticHelis;
+
+for "_i" from 1 to 24 do {
+    _doSpawnWreck = true;
+    
+    { // Check if current iteration already exists as a live heli...
+    	if (_i == _x) then {
+			_doSpawnWreck = false;
+        };
+    } forEach currentStaticHelis;
+    
+    if (_doSpawnWreck) then {
+    	_position = getMarkerPos format ["heliSpawn_%1", _i];
+    	_newPos = [_position, 25, 50, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+		[1, _newPos] call staticHeliCreation;
+    };
+};
+
+diag_log format["WASTELAND SERVER - %1 Static helis Spawned",_countActual];

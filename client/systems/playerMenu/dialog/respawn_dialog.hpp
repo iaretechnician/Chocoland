@@ -1,4 +1,3 @@
-
 #define respawn_dialog 3400
 #define respawn_Content_Text 3401
 #define respawn_MissionUptime_Text 3402
@@ -12,8 +11,6 @@
 #define respawn_PlayersInTown_Text2 3410
 #define respawn_PlayersInTown_Text3 3411
 #define respawn_PlayersInTown_Text4 3412
-#define respawn_BlockedSpawns_Text 3413
-
 
 
 	class RespawnSelectionDialog {
@@ -38,12 +35,12 @@
 		class RespawnMenuTitle: w_RscText
 		{
 			idc = -1;
-			text = "ChocoSpawn";
+			text = "Respawn Menu";
 			sizeEx = 0.06;
 
 			x = 0.4475 * safezoneW + safezoneX;
 			y = 0.190 * safezoneH + safezoneY;
-			w = 0.155 * safezoneW;
+			w = 0.105 * safezoneW;
 			h = 0.035 * safezoneH;
 		};
 
@@ -101,33 +98,10 @@
 			w = 0.110 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-
-		class BlockedSpawnsText1: w_RscText
-		{
-			idc = -1;
-			text = "Blocked Spawns:";
-
-			x = 0.343 * safezoneW + safezoneX;
-			y = 0.693 * safezoneH + safezoneY;
-			w = 0.095 * safezoneW;
-			h = 0.025 * safezoneH;
-		};
-
-		class BlockedSpawnsText2: w_RscText
-		{
-			idc = respawn_BlockedSpawns_Text;
-			text = "";
-
-			x = 0.443 * safezoneW + safezoneX;
-			y = 0.693 * safezoneH + safezoneY;
-			w = 0.230 * safezoneW;
-			h = 0.025 * safezoneH;
-		};
-
 	};
 	
 	class controls {
-
+	
 		class PlayersInTown0: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text0;
@@ -182,30 +156,19 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-
+		
 		class RandomSpawnButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
 			text = "Random";
 
-			x = 0.406 * safezoneW + safezoneX;
+			x = 0.460* safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-                
-		class RandomSpawnButtonHALO: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
-			text = "Paradrop";
-
-			x = 0.515 * safezoneW + safezoneX;
-			y = 0.310 * safezoneH + safezoneY;
-			w = 0.078 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
+	
 		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;

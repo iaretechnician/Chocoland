@@ -21,7 +21,7 @@ if(!(alive player)) exitWith {
 mutexScriptInProgress = true;
 
 //Initialize Values
-_playerMoney = player getVariable "choco";
+_playerMoney = player getVariable "cmoney";
 _size = 0;
 
 // Grab access to the controls
@@ -51,8 +51,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	};
 };
 
-player setVariable["choco",_playerMoney + genStoreCart,true];
-_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
+player setVariable["cmoney",_playerMoney + genStoreCart,false];
+_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 
 genStoreCart = 0;
 _totalText CtrlsetText format["Total: $%1", genStoreCart];

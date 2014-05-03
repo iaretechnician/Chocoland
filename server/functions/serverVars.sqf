@@ -21,6 +21,11 @@ CVG_weapons = CVG_weapons + CVG_Heavy;
 CVG_weapons = CVG_weapons + CVG_pistols;
 CVG_weapons = CVG_weapons + CVG_Launchers;
 
+#ifdef __A2NET__
+missionStartTime = 0;
+netTime = 0;
+#endif
+
 sideMissionPos = "";
 mainMissionPos = "";
 
@@ -30,12 +35,12 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
-pvar_beaconListBlu = [];
+pvar_beaconListBlu = []; 
 publicVariable "pvar_beaconListBlu";
-pvar_beaconListRed = [];
+pvar_beaconListRed = []; 
 publicVariable "pvar_beaconListRed";
-pvar_beaconListInd = [];
-publicVariable "pvar_beaconListInd";
+pvar_beaconListIndep = []; 
+publicVariable "pvar_beaconListIndep";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 clientRadarMarkers = [];
@@ -44,42 +49,65 @@ currentDate = [];
 publicVariable "currentDate";
 currentInvites = [];
 publicVariable "currentInvites";
+
+"processVIP" addPublicVariableEventHandler {[_this] spawn server_VIPEscape};
                   
 "PlayerCDeath" addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 
-currentStaticHelis = [];
+currentStaticHelis = []; // Storage for the heli marker numbers so that we don't spawn wrecks on top of live helis
+
+staticHeliWrecks = [
+	"UH1Wreck",
+    "UH1Wreck",
+    "Mi8Wreck",
+    "Mi8Wreck",
+    "C130J_wreck_EP1",
+    "UH60_wreck_EP1",
+    "UH60_wreck_EP1"];
 
 //Civilian Vehicle List - Random Spawns
 civilianVehicles = ["car_hatchback",
-                                        "HMMWV_Ambulance",
 					"car_sedan",
 					"datsun1_civil_2_covered",
 					"SkodaGreen",
 					"Lada2",
-                                       "TT650_Ins",
-                                       "hilux1_civil_3_open",
 					"V3S_Civ",
 					"UralCivil",
 					"VWGolf",
 					"MMT_Civ",
+                    "V3S_TK_GUE_EP1",
 					"Ikarus_TK_CIV_EP1",
 					"Lada1_TK_CIV_EP1",
 					"Old_moto_TK_Civ_EP1",
 					"S1203_TK_CIV_EP1",
 					"UAZ_Unarmed_TK_CIV_EP1",
+					"ATV_US_EP1",
 					"BAF_Offroad_W",
-					"S1203_ambulance_EP1"];
+					"S1203_ambulance_EP1",
+                    "tractorOld",
+                    "hilux1_civil_2_covered",
+                    "Lada2_TK_CIV_EP1",
+                    "HMMWV_M1035_DES_EP1",
+                    "LadaLM",
+                    "Tractor",
+                    "TT650_TK_EP1",
+					"TT650_Gue",
+					"M1030",               
+                    "Kamaz",
+                    "LadaLM",
+                    "Lada1",
+                    "hilux1_civil_1_open",
+                    "VolhaLimo_TK_CIV_EP1"];
 
 //Military Vehicle List - Random Spawns
 militaryVehicles = ["UAZ_CDF",
-"HMMWV_TOW",
-"SUV_PMC",
-"MTVR",
-"BAF_Offroad_W",
-"HMMWV",
-"HMMWV_Ambulance",
-"S1203_ambulance_EP1",
-"GAZ_Vodnik_MedEvac"];
+					"SUV_PMC",
+					"MTVR",
+					"BAF_Offroad_W",
+					"HMMWV",
+					"HMMWV_Ambulance",
+					"S1203_ambulance_EP1",
+					"GAZ_Vodnik_MedEvac"];
 
 //Armed Military Vehicle List - Random Spawns
 armedMilitaryVehicles = ["ArmoredSUV_PMC",
@@ -90,8 +118,7 @@ armedMilitaryVehicles = ["ArmoredSUV_PMC",
 							"HMMWV_Armored",
 							"HMMWV_MK19",
 							"HMMWV_TOW",
-							"GAZ_Vodnik"
-                                                        ];
+							"GAZ_Vodnik"];
 
 //Item Config
 pickupList = ["Satelit",
@@ -103,7 +130,7 @@ pickupList = ["Satelit",
 objectList = ["Land_Barrel_water",
 				"Land_prebehlavka",
 				"Land_leseni2x",
-                                "Fort_Crate_wood",
+                "Fort_Crate_wood",
                 "Land_CamoNet_NATO",
 				"Land_Barrel_water",
 				"Land_stand_small_EP1",
@@ -136,6 +163,7 @@ objectList = ["Land_Barrel_water",
                 "Land_Fort_Watchtower",
 				"Land_fortified_nest_big",
 				"RampConcrete",
+				"WarfareBDepot",
 				"WarfareBCamp",
                 "Hedgehog",
                 "Land_ConcreteRamp",
@@ -147,12 +175,48 @@ objectList = ["Land_Barrel_water",
                                          
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
-				"DSHKM_TK_INS_EP1"];
+				"DSHKM_TK_INS_EP1",
+                "BAF_L2A1_Tripod_D",
+				"MK19_TriPod",
+				"KORD_high"];
 
 //Object List - Random Helis.
-staticHeliList = [];
+staticHeliList = ["UH1H_TK_GUE_EP1",
+				"Mi17_Civilian",
+                "MV22",
+                "CH_47F_EP1",
+                "MH6J_EP1",
+                "UH60M_MEV_EP1",
+                "AH6X_EP1",
+                "BAF_Merlin_HC3_D",
+                "Ka137_MG_PMC"];
 
-vehicleWeapons = [];
+//Random Weapon List - Change this to what you want to spawn in cars.
+vehicleWeapons = [
+				"AK_47_M",
+				"AK_47_S",
+				"AK_74",
+				"bizon",
+				"bizon_silenced",
+                "MP5SD",
+				"LeeEnfield",
+				"M1014",
+				"M16A2",
+                "M4A1",
+				"M79_EP1",
+				"MP5A5",
+				"Sa58V_EP1",
+				"Saiga12K",
+				"SCAR_L_CQC",
+                "M9",
+                "M9SD",
+                "revolver_EP1",
+                "Sa61_EP1",
+                "huntingrifle",
+                "Mk13_EP1",
+                "MakarovSD",
+                "AKS_74_U",
+                "UZI_EP1"];
                 
 MissionSpawnMarkers = [
             ["Mission_1",false],
@@ -174,15 +238,35 @@ MissionSpawnMarkers = [
             ["Mission_17",false],
             ["Mission_18",false],
             ["Mission_19",false],
-            ["Mission_20",false]
-];
-CarrierMarkers = [
-[carrier_1, false],
-[carrier_2, false],
-[carrier_3, false],
-[carrier_4, false],
-[carrier_5, false],
-[carrier_6, false],
-[carrier_7, false],
-[carrier_8, false]
+            ["Mission_20",false],
+            ["Mission_21",false],
+            ["Mission_22",false],
+            ["Mission_23",false],
+            ["Mission_24",false],
+            ["Mission_25",false],
+            ["Mission_26",false],
+            ["Mission_27",false],
+            ["Mission_28",false],
+            ["Mission_29",false],
+            ["Mission_30",false],
+            ["Mission_31",false],
+            ["Mission_32",false],
+            ["Mission_33",false],
+            ["Mission_34",false],
+            ["Mission_35",false],
+            ["Mission_36",false],
+            ["Mission_37",false],
+            ["Mission_38",false],
+            ["Mission_39",false],
+            ["Mission_40",false],
+            ["Mission_41",false],
+            ["Mission_42",false],
+            ["Mission_43",false],
+            ["Mission_44",false],
+            ["Mission_45",false],
+            ["Mission_46",false],
+            ["Mission_47",false],
+            ["Mission_48",false],
+            ["Mission_49",false],
+            ["Mission_50",false]
 ];

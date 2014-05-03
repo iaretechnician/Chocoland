@@ -1,15 +1,15 @@
 #include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 loadScreen = "Loading.jpg";
 respawn="BASE";
-respawnDelay=5;
+respawnDelay=15;
 disabledAI=1;
-disableChannels[]={2,6};
-minScore = 0;
+disableChannels[]={2};
+enableItemsDropping = 0;
 class Header
 {
 	gameType=COOP;
 	minPlayers=1;
-	maxPlayers=50;
+	maxPlayers=120;
 };
 
 //Dialog includes
@@ -28,13 +28,7 @@ class Header
 #include "client\systems\playerMenu\dialog\respawn_dialog.hpp"
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
 #include "addons\proving_ground\PG_config.hpp"
-#include "client\systems\BuildStore\dialog\buildshop_settings.hpp"
-#include "client\systems\class\dialog\class_settings.hpp"
-#include "client\systems\vehicleStore\dialog\vehshop_settings.hpp"
-#include "client\systems\ChopperStore\dialog\chopshop_settings.hpp"
-#include "client\systems\menu\dialog\menu_settings.hpp"
-#include "client\systems\FunStore\dialog\funStore_settings.hpp"
-#include "client\systems\confirm\dialog\menu_settings.hpp"
+
 class RscTitles {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
     #include "client\systems\hud\dialog\hud.hpp"
@@ -42,254 +36,6 @@ class RscTitles {
 	#include "client\systems\newicons.hpp"
 };
 
-class CfgSounds
-{
-	sounds[] = {trueno1,trueno2,trueno3,trueno4,viento1};
-
-	class trueno1
-	{
-		name = "trueno1";
-		sound[] = {"trueno1.ogg", db-0, 1.0};
-		titles[] = {0};
-	};
-
-	class trueno2
-	{
-		name = "trueno2";
-		sound[] = {"trueno2.ogg", db-0, 1.0};
-		titles[] = {0};
-	};
-
-	class trueno3
-	{
-		name = "trueno3";
-		sound[] = {"trueno3.ogg", db-0, 1.0};
-		titles[] = {0};
-	};
-
-	class trueno4
-	{
-		name = "trueno4";
-		sound[] = {"trueno4.ogg", db-0, 1.0};
-		titles[] = {0};
-	};
-
-	class viento1
-	{
-		name = "viento1";
-		sound[] = {"viento1.ogg", db-0, 1.0};
-		titles[] = {0};
-	};
-};
-class CfgIdentities
-{
-	// this setIdentity "John_Buckman";
-	class name1 // President of the Republic of Colemania
-	{
-		name="Amos S. Ferguson";
-		face="Face74";
-		glasses="Spectacles";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name2 // Main Character Thread #1
-	{
-		name="Thomas K. Pablo";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name3 // Main Character, Thread #3
-	{
-		name="Norman Despain";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Federated Republics of Ekhrenia
-	class name4 // Main Character, Thread #4
-	{
-		name="Dalibor Kati?";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name5// Ekhrenian assassin of Residency X, Thread #5
-	{
-		name="Torsten Diederich";
-		face="Face20";
-		glasses="BlackSun";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Republic of Chernaskriya
-	class name6 // Police Officer, Thread #2
-	{
-		name="Dominik Hartmann";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-        class name7 // President of the Republic of Colemania
-	{
-		name="Ryder Pike";
-		face="Face74";
-		glasses="Spectacles";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name8 // Main Character Thread #1
-	{
-		name="Anthony Dennis";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name9 // Main Character, Thread #3
-	{
-		name="Lasse S. Rasmussen";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Federated Republics of Ekhrenia
-	class name10 // Main Character, Thread #4
-	{
-		name="Hending Brownlock";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name11// Ekhrenian assassin of Residency X, Thread #5
-	{
-		name="Lee Tsai";
-		face="Face20";
-		glasses="BlackSun";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Republic of Chernaskriya
-	class name12 // Police Officer, Thread #2
-	{
-		name="Shi Li";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-        class name13 // President of the Republic of Colemania
-	{
-		name="Matthias Lundström";
-		face="Face74";
-		glasses="Spectacles";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name14 // Main Character Thread #1
-	{
-		name="Olle Larsson";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name15 // Main Character, Thread #3
-	{
-		name="Kalle Lindqvist";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Federated Republics of Ekhrenia
-	class name16 // Main Character, Thread #4
-	{
-		name="Ciriaco Rossi";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name17// Ekhrenian assassin of Residency X, Thread #5
-	{
-		name="Celso Castiglione";
-		face="Face20";
-		glasses="BlackSun";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Republic of Chernaskriya
-	class name18 // Police Officer, Thread #2
-	{
-		name="Dobrogost Kucharski";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-        class name19 // President of the Republic of Colemania
-	{
-		name="Tomasz Jaworski";
-		face="Face74";
-		glasses="Spectacles";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name20 // Main Character Thread #1
-	{
-		name="Myron Efremov";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name21 // Main Character, Thread #3
-	{
-		name="Vlad Ibrahimov";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Federated Republics of Ekhrenia
-	class name22 // Main Character, Thread #4
-	{
-		name="Timmie Arvidsson";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
-	class name23// Ekhrenian assassin of Residency X, Thread #5
-	{
-		name="Klaus Baader";
-		face="Face20";
-		glasses="BlackSun";
-		speaker="Dan";
-		pitch=.95;
-	};
-	
-	// Republic of Chernaskriya
-	class name24 // Police Officer, Thread #2
-	{
-		name="Phillipp Unger";
-		face="Face74";
-		glasses="none";
-		speaker="Dan";
-		pitch=.95;
-	};
+class CfgSounds {
+	sounds[] = {};	
 };

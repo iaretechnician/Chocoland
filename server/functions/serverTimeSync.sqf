@@ -16,7 +16,7 @@ _startTime = netTime;
 #else
 _startTime = time;
 #endif
-/*
+
 while{true} do
 {	
 	#ifdef __A2NET__
@@ -37,4 +37,4 @@ while{true} do
 		#endif	
     };
 	sleep 10;
-};*/
+};
