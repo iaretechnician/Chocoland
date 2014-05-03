@@ -37,6 +37,10 @@ if (local player) then {
                 if(_x select 0 == _itemText) then
                 {
                     _price = _x select 4;
+                    if(_x select 0 == "Bet Chocos")then {
+                        _chocos = player getvariable"bounty";if(_chocos <= 1)then {_chocos = 1;};
+                        _price = 10000 * _chocos;
+                        };
                 } 
             };   
         }forEach generalStore;

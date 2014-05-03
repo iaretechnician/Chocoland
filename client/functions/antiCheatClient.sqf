@@ -46,16 +46,27 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
-    _uid = getPlayerUID player;
-    if ((_uid in serverAdministrators) and (side player == civilian)) then {
- player addeventhandler ["hit",{player setdammage 0}];
-player addeventhandler ["dammaged",{player setdammage 0}];
-(vehicle player) addeventhandler ["hit",	{vehicle player setdammage 0}];
-(vehicle player) addeventhandler ["dammaged",{vehicle player setdammage 0}];
-(vehicle player) removeAllEventHandlers "handleDamage";
-(vehicle player) addEventHandler ["handleDamage", { false }];	
-(vehicle player) allowDamage false;
-    
+     _uid = getPlayerUID player;
+    if ((_uid in serverAdministrators)) then {
+thirstLevel = 100;
+hungerLevel = 100;
+    	_targetUID = getPlayerUID player;
+	        {
+			    if(_x select 0 == _targetUID) then
+			    {
+			    	pvar_teamSwitchList set [_forEachIndex, "REMOVETHISCRAP"];
+					pvar_teamSwitchList = pvar_teamSwitchList - ["REMOVETHISCRAP"];
+			        publicVariableServer "pvar_teamSwitchList";
+	                
+	                player setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name player];
+			        processInitCommands;
+			        clearVehicleInit player;
+	                
+	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
+			        processInitCommands;
+			        clearVehicleInit player;         
+			    };
+			}forEach pvar_teamSwitchList;
         };
      //	player enableSimulation true;
    //    disableUserInput false;
@@ -78,6 +89,6 @@ player addeventhandler ["dammaged",{player setdammage 0}];
     }forEach _bannedVehicles;
               	
 	// Loop speed not much of an issue clientside.
-	sleep 1; 
+	sleep 10; 
 };
 

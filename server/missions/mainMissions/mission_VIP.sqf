@@ -29,7 +29,7 @@ _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
 
 diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionType];
-[mainMissionDelayTime] call createWaitCondition;
+[mainMissionDelayTime,_randomPos] call createWaitCondition;
 
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
@@ -114,8 +114,8 @@ if(_result == 1) then
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
       //Cash Reward
-        _missionRewardRadius = 100;
-_reward = Round(random 1000) +500;
+        _missionRewardRadius =200;
+_reward = Round(random 1000) +5000;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {

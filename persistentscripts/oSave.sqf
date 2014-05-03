@@ -6,10 +6,10 @@ while {true} do {
 		_var = _x getVariable "objectLocked";
 		if(!isNil "_var" && (alive _x)&& (_x getvariable"base") ==1) then {
 			_classname = typeOf _x;
-			_pos = getPosASL _x;
+			_pos = getPosatl _x;
                         _playerGUID = _x getvariable"playerGUID";
-                        if(isnil "_playerGUID")then{_playerGUID = 1;};
-			_dir = [vectorDir _x] + [vectorUp _x];
+                      //  if(isnil"_playerGUID")then {_playerGUID = 0};
+                       	_dir = [vectorDir _x] + [vectorUp _x];
 
 			_supplyleft = 0;
 
@@ -46,5 +46,5 @@ while {true} do {
 		};
 	} forEach allMissionObjects "All";
 	["Objects" call PDB_databaseNameCompiler, "Count", "Count", PersistentDB_ObjCount] call iniDB_write;
-	sleep 120;
+	sleep 1200;
 };

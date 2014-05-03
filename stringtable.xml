@@ -91,13 +91,14 @@
 			<English>Become a Choco, Explode everything you want. Warning this does only work With chocos (1 chocos ->1 Destroyed Object, 10chocos -> 10 Objects)</English>
 		</Key>
 <Key ID="STR_WL_ShopDescriptions_decoder">
-			<English>Become a Decoder, Destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams and if you Sucess you have a chance to get 1,2,5,10 Chocos(Important: you cannot destroy BasebuilderObjects)</English>
+			<English>Become a Decoder, Destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams and if you Sucess you have a chance to get 1,2,5,10 Chocos(Important: you have only a chance to destroy BasebuilderObjects by 10%)</English>
 		</Key>
 <Key ID="STR_WL_ShopDescriptions_basebuilder">
-			<English>Become a BaseBuilder, create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever, Decoders cannot destroy your Objects and you only pay 50% forEver in the ParaStore-Buildings</English>
+			<English>Become a BaseBuilder, create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever and you only pay 50% forEver in the ParaStore-Buildings</English>
 		</Key>
+
 <Key ID="STR_WL_ShopDescriptions_chocos">
-			<English>you get a chance of 50% to double 1 of your Chocos</English>
+			<English>you get a chance of 50% to double your Chocos</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
 			<English>Choco Value Cat food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>

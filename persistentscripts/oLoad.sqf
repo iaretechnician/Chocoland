@@ -16,7 +16,7 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 	{
 
 		_obj = createVehicle [_class,_pos, [], 0, "CAN COLLIDE"];
-		_obj setPosASL _pos;
+		_obj setPosatl _pos;
 		_obj setVectorDirAndUp _dir;
 
 		if(_class == "Land_stand_small_EP1") then 

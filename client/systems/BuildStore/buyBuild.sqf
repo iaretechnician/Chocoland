@@ -50,7 +50,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
               //  waitUntil {(getPos _spawn select 2) < 2};
                while {(getPos _spawn select 2) > 2 }do
-               {_Parachute setVelocity [(velocity player select 0)*2, (velocity player select 1)*2, (velocity _Parachute select 2)];
+               {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)];
                 sleep 0.1;
 };
 		deTach _spawn;

@@ -64,7 +64,7 @@ for "_iteration" from 1 to _lockDuration do
 			mutexScriptInProgress = false;
             _moneyObject setVariable ["owner", "world", true];
 		} else {
-			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "money");
+			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "cash");
                         _server = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "server");
 			deleteVehicle (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
                         if(_server == 1) then {_money = _money max floor(_money * (player getVariable "bounty"));};

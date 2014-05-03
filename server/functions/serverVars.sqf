@@ -21,11 +21,6 @@ CVG_weapons = CVG_weapons + CVG_Heavy;
 CVG_weapons = CVG_weapons + CVG_pistols;
 CVG_weapons = CVG_weapons + CVG_Launchers;
 
-/*#ifdef __A2NET__
-missionStartTime = 0;
-netTime = 0;
-#endif*/
-
 sideMissionPos = "";
 mainMissionPos = "";
 
@@ -35,10 +30,12 @@ pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 pvar_teamKillList = [];
 publicVariable "pvar_teamKillList";
-pvar_beaconListBlu = []; 
+pvar_beaconListBlu = [];
 publicVariable "pvar_beaconListBlu";
-pvar_beaconListRed = []; 
+pvar_beaconListRed = [];
 publicVariable "pvar_beaconListRed";
+pvar_beaconListInd = [];
+publicVariable "pvar_beaconListInd";
 clientMissionMarkers = [];
 publicVariable "clientMissionMarkers";
 clientRadarMarkers = [];

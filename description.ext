@@ -29,6 +29,7 @@ class Header
 #include "client\systems\playerMenu\dialog\teamkill_dialog.hpp"
 #include "addons\proving_ground\PG_config.hpp"
 #include "client\systems\BuildStore\dialog\buildshop_settings.hpp"
+#include "client\systems\class\dialog\class_settings.hpp"
 #include "client\systems\vehicleStore\dialog\vehshop_settings.hpp"
 #include "client\systems\ChopperStore\dialog\chopshop_settings.hpp"
 #include "client\systems\menu\dialog\menu_settings.hpp"

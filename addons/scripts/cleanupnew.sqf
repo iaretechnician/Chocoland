@@ -199,5 +199,5 @@ _allV = vehicles;
 if (_groupDel) then {{if ((count (units _x)) == 0) then {deleteGroup _x; _x = grpNull; _x = nil}} foreach allGroups};
 
 // sleep 10 seconds, then check if there are any changes to dead or vehicles that are not processed.
-sleep 10;
+sleep 60;
 };

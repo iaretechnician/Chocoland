@@ -1,3 +1,4 @@
+
 #define respawn_dialog 3400
 #define respawn_Content_Text 3401
 #define respawn_MissionUptime_Text 3402
@@ -11,6 +12,8 @@
 #define respawn_PlayersInTown_Text2 3410
 #define respawn_PlayersInTown_Text3 3411
 #define respawn_PlayersInTown_Text4 3412
+#define respawn_BlockedSpawns_Text 3413
+
 
 
 	class RespawnSelectionDialog {
@@ -40,7 +43,7 @@
 
 			x = 0.4475 * safezoneW + safezoneX;
 			y = 0.190 * safezoneH + safezoneY;
-			w = 0.105 * safezoneW;
+			w = 0.155 * safezoneW;
 			h = 0.035 * safezoneH;
 		};
 
@@ -91,17 +94,40 @@
 		class MissionUptimeText: w_RscText
 		{
 			idc = respawn_MissionUptime_Text;
-			text = "Choco Uptime: 00:00:00";
+			text = "Mission Uptime: 00:00:00";
 
 			x = 0.562 * safezoneW + safezoneX;
 			y = 0.752 * safezoneH + safezoneY;
 			w = 0.110 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
+
+		class BlockedSpawnsText1: w_RscText
+		{
+			idc = -1;
+			text = "Blocked Spawns:";
+
+			x = 0.343 * safezoneW + safezoneX;
+			y = 0.693 * safezoneH + safezoneY;
+			w = 0.095 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+
+		class BlockedSpawnsText2: w_RscText
+		{
+			idc = respawn_BlockedSpawns_Text;
+			text = "";
+
+			x = 0.443 * safezoneW + safezoneX;
+			y = 0.693 * safezoneH + safezoneY;
+			w = 0.230 * safezoneW;
+			h = 0.025 * safezoneH;
+		};
+
 	};
 	
 	class controls {
-	
+
 		class PlayersInTown0: w_RscText
 		{
 			idc = respawn_PlayersInTown_Text0;
@@ -156,8 +182,8 @@
 			w = 0.230 * safezoneW;
 			h = 0.025 * safezoneH;
 		};
-		
-		class RandomSpawnButtonFloor: w_RscButton
+
+		class RandomSpawnButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
@@ -168,7 +194,7 @@
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		
+                
 		class RandomSpawnButtonHALO: w_RscButton
 		{
 			idc = -1;
@@ -180,13 +206,11 @@
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-	
 		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
-		onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
-			
-                        text = "GroupSpawn";
+			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
+			text = "Towns";
 
 			x = 0.406 * safezoneW + safezoneX;
 			y = 0.384 * safezoneH + safezoneY;

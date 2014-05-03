@@ -138,6 +138,7 @@ class playerSettings {
             		x = 0.150; y = 0.28;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
+               
                class SafeButton : w_RscButton {
 			idc = safeButton;
 			text = "Save Player";

@@ -11,7 +11,7 @@ player enableSimulation false;
 removeAllWeapons player;
 [] execVM "client\functions\playerAbort.sqf";
 // Start the loading screen ASAP.
-titleText ["connecting to HeavensDelight...", "BLACK OUT", 0];
+//titleText ["connecting to HeavensDelight...", "BLACK OUT", 0];
 
 mutexScriptInProgress = false;
 respawnDialogActive = false;
@@ -27,13 +27,17 @@ playerSetupComplete = false;
 
 waitUntil {!isNull player};
 waitUntil{time > 2};
-
+_classUID = ["3771202","108720582","149964550","125670982","247641030"];
+_uid = getPlayerUId player;
 //Call client compile list.
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
-
+if(_uid in _classUID)then {
+[] execVM "client\systems\class\loadclass.sqf";
+waitUntil { sleep 1;classSelect==1; };
+};
 //Player setup
 player call playerSetup;
-
+//classSelection
 //Setup player events.
 if(!isNil "client_initEH") then {player removeEventHandler ["Respawn", client_initEH];};
 player addEventHandler ["Respawn", {[_this] call onRespawn;}];

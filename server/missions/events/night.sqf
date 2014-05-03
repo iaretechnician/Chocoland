@@ -24,12 +24,13 @@ _missionRewardRadius = 50000;
 
 _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Starting in 1 Minutes, you can find NightVision googles in Parastore - Weapons - Equipment</t>", _mainTextColour, _subTextColour];
 [nil,nil,rHINT,_hint] call RE;
+
  sleep 60; 
  setDate[2014,03,07,00,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-           _x setVehicleInit "setDate[2014,03,07,00,00]";
+           _x setVehicleInit "night=true;setDate[2014,03,07,00,00]";
            processInitCommands;
 	};
 	} forEach _inArea;
@@ -62,7 +63,7 @@ setDate[2014,03,07,12,00];
  _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {
-         _x setVehicleInit "titleText ['', 'BLACK IN', 8;setDate[2014,03,07,12,00]";
+         _x setVehicleInit "titleText ['', 'BLACK IN', 8];setDate[2014,03,07,12,00];night=false";
            processInitCommands;
 	};
 	} forEach _inArea;

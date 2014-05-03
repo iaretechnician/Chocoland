@@ -7,7 +7,7 @@
 
 #include "setup.sqf"
 if (isnil "RE") then {[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"};
-
+[] execVM "addons\bisfix11\init.sqf";
 StartProgress = false;
 enableSaving[false,false];
 
@@ -27,7 +27,8 @@ if(isNull player) then {X_JIP = true;};
 true spawn {
 	if(!isDedicated) then {
 		titleText ["connecting to HeavensDelight...", "BLACK", 0];
-		waitUntil {player == player};
+		//waitUntil {player == player};
+                classselect =0;
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
 };
@@ -37,7 +38,7 @@ true spawn {
 [] execVM "briefing.sqf";
 
 if(X_Client) then {
-	waitUntil {player == player};
+	//waitUntil {player == player};
 
 	//Wipe Group.
 	if(count units group player > 1) then

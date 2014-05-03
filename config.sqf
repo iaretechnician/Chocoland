@@ -6,6 +6,37 @@
                                                                                                 
 //Gunstore Weapon List - Gun Store Base List
 // Type, Text name, classname, buy cost, sell amount
+donatorClassrray = [
+["Operator (Silenced)","US_Delta_Force_SD_EP1"],
+["RU Marksman","MVD_Soldier_Marksman"],
+["Ins Commander","Ins_Commander"],
+["Ins Lopotev","Ins_Lopotev"],
+["Ins Pilot","Ins_Soldier_Pilot"],
+["LHD Crew (Blue)","USMC_LHD_Crew_Blue"],
+["Ru Priest","RU_Priest"],
+["Ru Functionary","RU_Functionary1"],
+["Ru Doctor","RU_Doctor"],
+["Commander","GUE_Commander"],
+["Blufor Sniper","USMC_SoldierS_Sniper"],
+["Blufor Soldier At","USMC_Soldier_AT"],
+["Blufor Officer","BAF_Soldier_Officer_MTP"],
+["Blufor Engineer","USMC_SoldierS_Engineer"],
+["Blufor Medic","Ins_Soldier_Medic"],
+["Opfor Sniper","RU_Soldier_Sniper"],
+["Opfor Soldier Co","Ins_Soldier_CO"],
+["Opfor Soldier At","USMC_Soldier_AT"],
+["Opfor Officer","BAF_Soldier_Officer_MTP"],
+["Opfor Engineer","USMC_SoldierS_Engineer"],
+["Opfor Medic","Ins_Soldier_Medic"],
+["Independent Sniper","GUE_Soldier_Sniper"],
+["Independent Soldier Co","Ins_Soldier_CO"],
+["Independent Soldier At","USMC_Soldier_AT"],
+["Independent Officer","UN_CDF_Soldier_Officer_EP1"],
+["Independent Engineer","Soldier_Engineer_PMC"],
+["Independent Medic","Soldier_Medic_PMC"]
+];
+
+
 weaponsArray = [
     [1, "Glock 17","glock17_EP1",25,10],
     [1, "Sa.61 Skorpion","Sa61_EP1",35,13],
@@ -88,6 +119,7 @@ weaponsArray = [
     [2, "Sa-58V ACOG","Sa58V_RCO_EP1",300,150],
     [2, "Sa-58V","Sa58V_EP1",225,110],
     // Sniper rifles 
+    [3,"CZ 550","huntingrifle",8000,8000],
     [3, "M8 Sharpshooter","m8_sharpshooter",1000,250],
     [3, "M14 AIM","M14_EP1", 1000,500],
     [3, "SVD","SVD",8000,2500],
@@ -148,7 +180,8 @@ weaponsArray = [
 //Gun Store Ammo List
 //Text name, classname, buy cost
 ammoArray = [  
-["LeeEnfield 10x_303","10x_303",100],
+["CZ 550 5x_22HMR","5x_22_LR_17_HMR",100],
+["LeeEnfield 10x 303","10x_303",100],
 ["5Rnd 127x99 as50","5Rnd_127x99_as50",200],
     ["5Rnd. 338 Lapua Magnum Clip","5Rnd_86x70_L115A1",60],
     ["5Rnd. M24 Clip","5Rnd_762x51_M24",40],
@@ -226,16 +259,16 @@ accessoriesArray = [
 generalStore = [
 	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,150],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",300,150],
-	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",5000,2000],
+	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,10000],
 	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",2000,1000],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,750],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,250],
 	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",50000,50000],
     ["ChocoBomb", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",5000,5000],
-    ["Bet one Chocos","chocos",localize "STR_WL_ShopDescriptions_chocos","client\icons\health.paa",10000,10000],
+    ["Bet Chocos","chocos",localize "STR_WL_ShopDescriptions_chocos","client\icons\health.paa",10000,10000],
     ["Unlock Decoder", "decoder", localize "STR_WL_ShopDescriptions_decoder", "client\icons\gunner.paa",250000,250000], 
-    ["Unlock Basebuilder", "basebuilder", localize "STR_WL_ShopDescriptions_basebuilder", "client\icons\passenger.paa",250000,250000] 
-];
+    ["Unlock Basebuilder", "basebuilder", localize "STR_WL_ShopDescriptions_basebuilder", "client\icons\passenger.paa",250000,250000]
+   ];
 ChopperStoreArray = [
         ["Littlebird", 1000,"AH6X_EP1"],
         ["Osprey - Mv22", 1000, "MV22"],
@@ -429,16 +462,17 @@ BuildStoreArray = [
 ["Red Cross Flag",500,"FlagCarrierRedCross_EP1"],
 ["Nato Flag",500,"FlagCarrierNATO_EP1"],
 ["~~~~~~ BIG BUILDINGS (!MoveDisabled)~~~", 99999999,""],
-["Castle Bastion",500000,"Land_A_Castle_Bastion"],
-["CraneCon",500000,"Land_A_CraneCon"],
-["Tank Statue",500000,"Land_A_statue02"],
-["General Store",700000,"Land_A_GeneralStore_01a"],
-["TV Tower",700000,"Land_A_TVTower_Base"],
-["Starry Metal Barn",700000,"Land_Barn_Metal"],
-["Office Building",900000,"Land_A_Office01"],
-["Building WIP",900000,"Land_A_BuildingWIP"],
-["Hospital",900000,"Land_A_Hospital"],
-["Hotel",999999,"Land_HouseB_Tenement"],
+["AA Hangar",100000,"Land_SS_hangar"],
+["Hospital",100000,"Land_A_Hospital"],
+["CraneCon",100000,"Land_A_CraneCon"],
+["Tank Statue",100000,"Land_A_statue02"],
+["Starry Metal Barn",100000,"Land_Barn_Metal"],
+["Office Building",200000,"Land_A_Office01"],
+["Castle Bastion",200000,"Land_A_Castle_Bastion"],
+["General Store",300000,"Land_A_GeneralStore_01a"],
+["TV Tower",300000,"Land_A_TVTower_Base"],
+["Building WIP",300000,"Land_A_BuildingWIP"],
+["Hotel",300000,"Land_HouseB_Tenement"],
 ["~~~~~~ GUNSSS ~~~~~~", 99999999,""],
 ["Searchlight (Tripod)",500,"SearchLight_TK_EP1"],
 ["MG Nest PKT",2500,"WarfareBMGNest_PK_TK_EP1"],

@@ -186,8 +186,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
                             _target setVehicleInit format["if (name player == ""%1"") then {titleText [""Admin %2 is approaching you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
                               processInitCommands;
                              clearVehicleInit _target;
-                            _pos1 = getPos _x;
-                             player setPos _pos1;
+                            _pos1 = getPosATL _x;
+                             player setPosATL _pos1;
   			   };
 			}forEach playableUnits;       		
 	    };
@@ -199,8 +199,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 			    {
                              _playerName = name player;
                            clearVehicleInit _target;
-                            _pos1 = getPos player;
-                             _x setPos _pos1;
+                            _pos1 = getPosATL player;
+                             _x setPosATL _pos1;
   			   };
 			}forEach playableUnits;       		
 	    };

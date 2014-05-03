@@ -140,7 +140,13 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             player setvariable["decoder",1,true];
             };
  };   
-    
+ 
+   case "Bet Chocos": {
+       _chocos = player getvariable"bounty";if(_chocos <=1)then {_chocos = 1;};
+       _random = Round (random 2);
+       if(_random ==1)then {player setvariable["bounty",_chocos *2,true];hint format ["your realy lucky you won %1 chocos",_chocos];}else{hint"your not luck this time, try again.";};
+       };
+        
     case "Unlock Basebuilder":{
         _test = player getvariable"basebuilder";
         if(_test ==1)then{hint "you are allready a Basebuilder!";player setvariable["choco",(player getvariable"choco") +250000,true];

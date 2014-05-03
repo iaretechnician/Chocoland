@@ -23,32 +23,14 @@ if(!X_Server) exitWith {};
           if(_random == 2) then{_count = 2000;};
           if(_random == 3) then{_count = 1000;};
         };
-  //berechne marker
-_mapside = Round(random 2);
- _xCord = Round (random 500);
-_yCord = Round (random 500);
-_plusminus=Round(random 2);
-_plusminus2=Round(random 2);
-_pos=[3710,3606,500];
-//mapside 1   
-if(_mapside == 1)then{
-if(_plusminus == 1)then{_xCord = 3283 + _xCord;}else{_xCord = 3283 - _xCord;};
-if(_plusminus2 == 1)then{_yCord=4042 +_yCord;}else{_yCord= 4042 -_yCord;};
-_pos=[_xCord,_yCord,500];};
-
-
-//mapside2
-if(_mapside == 2)then{
-if(_plusminus == 1)then{_xCord = 2800 + _xCord;};
-if(_plusminus2 == 1)then{_yCord=4042 +_yCord;}else{_yCord= 4042 -_yCord;};
-_pos=[_xCord,_yCord,500];};
-
-
+_private=["_pos1"];
+_pos1=_this;
+_pos =[_pos1 select 0,_pos1 select 1,500];
 
   _spawn = createVehicle ["EvMoney",_pos,[], 0,"CAN_COLLIDE"];
 			
                         _spawn setPos _pos;
-   _spawn setVariable["money",_count,true];
+   _spawn setVariable["cash",_count,true];
    _spawn setVariable["server",1,true];
    _spawn setVariable["owner","world",true]; 
    _Parachute = "ParachuteMediumEast" createVehicle _pos;

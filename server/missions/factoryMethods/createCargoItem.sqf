@@ -90,3 +90,6 @@ if(_itemClass == "RUBasicWeaponsBox") then
 
 _effectSmoke = "smokeShellPurple" createVehicle _dropPosition;
 _effectSmoke attachto [_cargo, [0,0,0]];
+ waituntil {(getPos _cargo select 2) < 5};
+		deTach _parachute;
+		sleep 3;

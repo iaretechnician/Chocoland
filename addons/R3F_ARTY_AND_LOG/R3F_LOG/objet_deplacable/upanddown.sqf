@@ -4,9 +4,9 @@ if (R3F_LOG_mutex_local_verrou) then {
 	player globalChat STR_R3F_LOG_mutex_action_en_cours;
 } else {
 	_object = R3F_LOG_joueur_deplace_objet;
-	_pos = getPos _object;
+	_pos = getPosATL _object;
 	_newheight = _pos select 2;
-	_ppos = getPos player;
+	_ppos = getPosATL player;
 	_playerheight = _ppos select 2;
 	_objbound = boundingBox _object;
 	_objmax = _objbound select 1;
@@ -21,4 +21,4 @@ if (R3F_LOG_mutex_local_verrou) then {
 		{_object attachTo [player, [ 0, (((boundingBox _object select 1 select 1) max (-(boundingBox _object select 0 select 1))) max ((boundingBox _object select 1 select 0) max (-(boundingBox _object select 0 select 0)))) + 1, _atth - 0.2]];};
 	};
 	R3F_LOG_mutex_local_verrou = false;
-};
+};//_smoke attachTo [_Parachute,[0,0,-1.5]];

@@ -42,23 +42,24 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
               _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPosATL (getPosATL _spawn);
                 _Parachute setVelocity [0, 3, 0];
-                _random = Round (random 5);
+                
                 _spawn attachTo [_Parachute,[0,0,-1.5]];
-		 if (_random == 5) then {
+		
 		_smoke = "smokeShellblue" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
-                };
+                
                 
    
           //    waitUntil {(getPos _spawn select 2) < 2};
             player globalchat"use W,A,S,D to controll your Parachute, you can also Release with mousewheel";
-               paraId = player addAction[('<t color=''#FF33CC''>' + ('release Vehicle') +  '</t>'),'client\functions\on.sqf'];
+               paraId = player addAction[('<t color=''#FF33CC''>' + ('Rotate Vehicle 90°') +  '</t>'),'client\functions\on.sqf'];
                while {(getPos _spawn select 2) > 2}do
-               {_Parachute setVelocity [(velocity player select 0)*2, (velocity player select 1)*2, (velocity _Parachute select 2)];
-             if(on)then {deTach _spawn;_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),(getPos _spawn select 2)];on = false;};
-            
-                sleep 0.1;
+               {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)];
+             if(on)then {_target = (getDir _spawn) + 90;
+	_target = _target - getDir player;_spawn setdir _target;rotate9 = [rotate9, _target];
+	publicVariable "rotate9";on = false;};
+        sleep 0.1;
 };
 player removeaction paraId;
 on = false;

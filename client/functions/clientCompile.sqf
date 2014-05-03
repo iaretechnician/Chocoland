@@ -44,6 +44,11 @@ sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore
 loadbuildStore = compile preprocessFileLineNumbers "client\systems\BuildStore\loadBuildStore.sqf";
 PopulatebuildStore = compile preprocessFileLineNumbers "client\systems\BuildStore\populateBuildStore.sqf";
 buildItemInfo = compile preprocessFileLineNumbers "client\systems\BuildStore\itemInfo.sqf";
+// class Dialog compiles
+loadclass = compile preprocessFileLineNumbers "client\systems\class\loadclass.sqf";
+Populateclass = compile preprocessFileLineNumbers "client\systems\class\populateclass.sqf";
+classItemInfo = compile preprocessFileLineNumbers "client\systems\class\itemInfo.sqf";
+
 // funstore Dialog compiles
 loadFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\loadFunStore.sqf";
 PopulateFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\populateFunStore.sqf";

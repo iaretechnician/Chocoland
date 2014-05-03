@@ -23,8 +23,8 @@ aActionsIDs = aActionsIDs + [player addAction["Fill Water Bottle", "noscript.sqf
 aActionsIDs = aActionsIDs + [player addAction["Pickup Money", "client\actions\pickupMoney.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["EvMoney"],  5] select 0) < 5']];
 
 //Pickup SpawnBeacon (Satelit)
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#E01B1B"">Destroy spawn beacon</t>"), "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"],  5]); player distance (_currBeacon select 0) < 5; ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "ownerUID") == (getPlayerUID player) OR str(playerSide) == "GUER" OR str(playerSide) != ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "faction") OR ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "faction") == "WORLD"']];
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Repack spawn beacon</t>"), "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", '_currBeacon = (nearestobjects [player, ["Satelit"],  5]); player distance (_currBeacon select 0) < 5; ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "ownerUID") == (getPlayerUID player) OR str(playerSide) == "GUER" OR str(playerSide) != ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "faction") OR ((nearestObjects[player, ["Satelit"], 3] select 0) getVariable "faction") == "WORLD"']];
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#E01B1B"">Destroy spawn beacon</t>"), "client\actions\pickupBeacon.sqf", 1, 1, false, false, "", 'player distance (nearestobjects [player, ["Satelit"],  5] select 0) < 5']];
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Steal spawn beacon</t>"), "client\actions\pickupBeacon.sqf", 0, 1, false, false, "", 'player distance (nearestobjects [player, ["Satelit"],  5] select 0) < 5']];
 
 //Interact with radar trucks
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Deploy radar</t>"), "client\functions\radarDeploy.sqf",nil, 6, false, false, "", '_currRadar = (nearestobjects [player, ["M1133_MEV_EP1"],  5]); player distance (_currRadar select 0) < 5; ((nearestObjects[player, ["M1133_MEV_EP1"], 10] select 0) getVariable "deployed") == 0 AND str(playerSide) != "GUER"']];
@@ -35,7 +35,7 @@ aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Release VIP
 
 //Camonet pickup
 aActionsIDs = aActionsIDs + [player addAction["Pickup ChocoBomb", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
-aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\functions\chocobomb.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
+aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\functions\chocobomb.sqf", [_bomb], 1, false, false, "", '_bomb = (nearestobjects [player, ["Explosive"],  5] select 0);player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
 
 //Cancel action
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];

@@ -45,7 +45,7 @@ for "_i" from 1 to _moneyCount do
     //Now create Object
     _obj = "EvMoney" createVehicle _pos;
     _obj setpos (getpos _obj);
-    _obj setVariable["money",_count,true];
+    _obj setVariable["cash",_count,true];
     _obj setVariable["server",1,true];
     _obj setVariable["owner","world",true]; 
    

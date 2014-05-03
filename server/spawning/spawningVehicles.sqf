@@ -8,23 +8,9 @@
 if(!X_Server) exitWith {};
 
 _randomObject = randomVehicleArray  call BIS_fnc_selectRandom; 
-//berechne marker
-_mapside = Round(random 2);
- _xCord = Round (random 500);
-_yCord = Round (random 500);
-_plusminus=Round(random 2);
-_plusminus2=Round(random 2);
-_pos=[3710,3606,500];
-//mapside 1   
-if(_mapside == 1)then{
-if(_plusminus == 1)then{_xCord = 3283 + _xCord;}else{_xCord = 3283 - _xCord;};
-if(_plusminus2 == 1)then{_yCord=4042 +_yCord;}else{_yCord= 4042 -_yCord;};
-_pos=[_xCord,_yCord,500];};
-//mapside2
-if(_mapside == 2)then{
-if(_plusminus == 1)then{_xCord = 2800 + _xCord;};
-if(_plusminus2 == 1)then{_yCord=4042 +_yCord;}else{_yCord= 4042 -_yCord;};
-_pos=[_xCord,_yCord,500];};
+_private=["_pos1"];
+_pos1=_this;
+_pos =[_pos1 select 0,_pos1 select 1,500];
 //coroutine
 _spawn = createVehicle[_randomObject,_pos,[], 0,"CAN_COLLIDE"];
 _spawn setDir 70;

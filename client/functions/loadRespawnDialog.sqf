@@ -1,7 +1,7 @@
-//	@file Version: 1.0
+//	@file Version: 1.1
 //	@file Name: loadRespawnDialog.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:19
+//	@file Author: [404] Deadbeat, [404] Costlyy, Redshirt_Ensign
+//	@file Created: 05/04/2013 02:00
 //	@file Args:
 
 #define respawn_Content_Text 3401
@@ -16,18 +16,19 @@
 #define respawn_PlayersInTown_Text2 3410
 #define respawn_PlayersInTown_Text3 3411
 #define respawn_PlayersInTown_Text4 3412
+#define respawn_BlockedSpawns_Text 3413
 
 waitUntil{!isnil "bis_fnc_init"};
 disableSerialization;
 
-private["_player","_city","_radius","_name","_enemyCount","_friendlyCount","_side","_dynamicControlsArray", "_enemyPresent","_inGroup","_tempArray", "_text", "_players", "_playerArray"];
+private["_pos", "_rad", "_name", "_enemyCount", "_friendlyCount", "_friendlyTowns", "_side", "_dynamicControlsArray", "_dynamicControlsIndex", "_groupArray", "_text", "_players", "_playerArray"];
 
 createDialog "RespawnSelectionDialog";
 _display = uiNamespace getVariable "RespawnSelectionDialog";
 _display displayAddEventHandler ["KeyDown", "_return = false; if(respawnDialogActive && (_this select 1) == 1) then {_return = true;}; _return"];
 _respawnText = _display displayCtrl respawn_Content_Text;
 _missionUptimeText = _display displayCtrl respawn_MissionUptime_Text;
-_beaconBlockDistance = 300;
+_blockedSpawns_Text = _display displayCtrl respawn_BlockedSpawns_Text;
 
 if(playerSide in [west]) then {_side = "Blufor"};
 if(playerSide in [east]) then {_side = "Opfor"};
@@ -36,7 +37,7 @@ _respawnText ctrlSetStructuredText parseText (format["You are on %1.<br/>Please 
 respawnDialogActive = true;
 
 _dynamicControlsArray = [
-	[respawn_Town_Button0,respawn_PlayersInTown_Text0],
+    [respawn_Town_Button0,respawn_PlayersInTown_Text0],
     [respawn_Town_Button1,respawn_PlayersInTown_Text1],
     [respawn_Town_Button2,respawn_PlayersInTown_Text2],
     [respawn_Town_Button3,respawn_PlayersInTown_Text3],
@@ -48,17 +49,20 @@ _dynamicControlsArray = [
     _button ctrlShow false;
 }foreach _dynamicControlsArray;
 
+_groupArray = [];
 _friendlyTowns = [];
-_tempArray = [];
+_blockedSpawnsArray = [];
 showBeacons = false;
-_inGroup = false;
 while {respawnDialogActive} do
 {
     _timeText = [time/60/60] call BIS_fnc_timeToString;
     _missionUptimeText ctrlSetText format["Mission Uptime: %1", _timeText];
-       
+    _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
+    _blockedSpawnsArray = [];
+
     if(_side != "Independent") then
-    {  
+    {
+        // Towns
         if(!showBeacons) then {
             {
                 _pos = getMarkerPos (_x select 0);
@@ -72,7 +76,7 @@ while {respawnDialogActive} do
                         if(side _x == playerSide AND alive _x) then
                         {
                             _friendlyCount = _friendlyCount + 1;
-                            _playerArray set [count _playerArray, name _x];      
+                            _playerArray set [count _playerArray, name _x];
                         }else{
                             _enemyCount = _enemyCount + 1;
                         };
@@ -81,12 +85,18 @@ while {respawnDialogActive} do
 
                 if((_friendlyCount > 0) AND (_enemyCount == 0)) then
                 {
-                    _friendlyTowns set [count _friendlyTowns, [_name, _playerArray]];                    
+                    _friendlyTowns set [count _friendlyTowns, [_name, _playerArray]];
                 };
+                if((_friendlyCount > 0) AND (_enemyCount > 0)) then
+                {
+                    _blockedSpawnsArray set [count _blockedSpawnsArray, _name];
+                    _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
+                };
+
                 _friendlyCount = 0;
                 _enemyCount = 0; 
                 
-            }forEach cityList; 
+            }forEach cityList;
 
             {
                 _button = _display displayCtrl (_x select 0);
@@ -115,105 +125,109 @@ while {respawnDialogActive} do
             
             _friendlyTowns = [];    
             
-        } else {
+        } else { //Beacons
             _enemyCount = 0;
+            _dynamicControlsIndex = 0;
             {
                 _button = _display displayCtrl (_x select 0);
                 _text = _display displayCtrl (_x select 1);
-                
+
                 _button ctrlSetText format[""];
-                _button ctrlShow false;   
+                _button ctrlShow false;
                 _text ctrlSetText format[""];
-                _text ctrlShow false;  
-                
+                _text ctrlShow false;
+
             }foreach _dynamicControlsArray;
-            
+
             {
                 if(_side == "Blufor") then {
-                    _button = _display displayCtrl (_dynamicControlsArray select _forEachIndex select 0);
-                    _centrePos = (pvar_beaconListBlu select _forEachIndex) select 1;
+                    _pos = (pvar_beaconListBlu select _forEachIndex) select 1;
+                    _name = (pvar_beaconListBlu select _forEachIndex) select 0;
+                    _rad = (pvar_beaconListBlu select _forEachIndex) select 2;
 
                     {
-                        _onTeam = str(side _x) in ["EAST","GUER"];   
-                        if(_onTeam) then {
-                            if((getPos _x distance _centrePos) < _beaconBlockDistance) then {
-                                if(!(side _x == playerSide)) then {
-                                    _enemyCount = _enemyCount + 1; 
-                                };   
-                            }; 
-                        };  
+                        if((getPos _x distance _pos) < _rad) then
+                        {
+                            _onTeam = str(side _x) in ["EAST","GUER"];
+                            if(_onTeam) then {
+                                if(!(side _x == playerSide)) then
+                                {
+                                    _enemyCount = _enemyCount + 1;
+                                };
+                            };
+                        };
                     }forEach playableUnits;
 
                     if(_enemyCount == 0) then {
-                        _button ctrlShow true;   
-                        _name = (pvar_beaconListBlu select _forEachIndex) select 0;
-                        _button ctrlSetText	format["%1",_name]; 
+                        _button = _display displayCtrl (_dynamicControlsArray select _dynamicControlsIndex select 0);
+                        _button ctrlShow true;
+                        _button ctrlSetText	format["%1",_name];
+                        _dynamicControlsIndex = _dynamicControlsIndex + 1;
                     } else {
-                        _name = "";
-                        _button ctrlSetText _name;
-                        _button ctrlShow false; 
+                        _blockedSpawnsArray set [count _blockedSpawnsArray, _name];
+                        _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
                     };
-                }; 
-                _enemyCount = 0;         
+                };
+                _enemyCount = 0;
             }forEach pvar_beaconListBlu;
 
             {
                 if(_side == "Opfor") then {
-                    _button = _display displayCtrl (_dynamicControlsArray select _forEachIndex select 0);
-                    _centrePos = (pvar_beaconListRed select _forEachIndex) select 1;
+                    _pos = (pvar_beaconListRed select _forEachIndex) select 1;
+                    _name = (pvar_beaconListRed select _forEachIndex) select 0;
+                    _rad = (pvar_beaconListRed select _forEachIndex) select 2;
 
                     {
-                        _onTeam = str(side _x) in ["WEST","GUER"];   
-                        if(_onTeam) then {
-                            if((getPos _x distance _centrePos) < _beaconBlockDistance) then {
-                                if(!(side _x == playerSide)) then {
-                                    _enemyCount = _enemyCount + 1; 
-                                };   
-                            }; 
-                        };  
+                        if((getPos _x distance _pos) < _rad) then
+                        {
+                            _onTeam = str(side _x) in ["WEST","GUER"];
+                            if(_onTeam) then {
+                                if(!(side _x == playerSide)) then
+                                {
+                                    _enemyCount = _enemyCount + 1;
+                                };
+                            };
+                        };
                     }forEach playableUnits;
 
-
                     if(_enemyCount == 0) then {
-                        _button ctrlShow true;   
-                        _name = (pvar_beaconListRed select _forEachIndex) select 0;
-                        _button ctrlSetText	format["%1",_name]; 
+                        _button = _display displayCtrl (_dynamicControlsArray select _dynamicControlsIndex select 0);
+                        _button ctrlShow true;
+                        _button ctrlSetText	format["%1",_name];
+                        _dynamicControlsIndex = _dynamicControlsIndex + 1;
                     } else {
-                        _name = "";
-                        _button ctrlSetText _name;
-                        _button ctrlShow false; 
-                    };   
+                        _blockedSpawnsArray set [count _blockedSpawnsArray, _name];
+                        _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
+                    };
                 };
-                _enemyCount = 0;                   
-            }forEach pvar_beaconListRed;       
+                _enemyCount = 0;
+            }forEach pvar_beaconListRed;
         };
     };
     
     if((count units group player > 1) AND (_side == "Independent")) then
     {
-        _tempArray = [];
+        _groupArray = [];
         {
-        	_tempArray set [count _tempArray,getPlayerUID _x];    
+            _groupArray set [count _groupArray,getPlayerUID _x];
         }forEach units player;
-                    
+
         //Towns
-    	if(!showBeacons) then 
+    	if(!showBeacons) then
         {
-        	{
+       	    {
                 _pos = getMarkerPos (_x select 0);
                 _name = _x select 2;
                 _rad = _x select 1;
-                _friendlyCount = 0;
-                _enemyCount = 0; 
                 _playerArray = [];
 
                 {
                     if((getPos _x distance _pos) < _rad) then
                     {
-                        if(getPlayerUID _x in _tempArray) then
+                        if(getPlayerUID _x in _groupArray) then
                         {
                             _friendlyCount = _friendlyCount + 1;
-                            _playerArray set [count _playerArray, name _x]; 
+                            _playerArray set [count _playerArray, name _x];
                         }else{
                             _enemyCount = _enemyCount + 1;
                         };
@@ -222,73 +236,92 @@ while {respawnDialogActive} do
 
                 if((_friendlyCount > 0) AND (_enemyCount == 0)) then
                 {
-                    _friendlyTowns set [count _friendlyTowns, [_name, _playerArray]]; 
+                    _friendlyTowns set [count _friendlyTowns, [_name, _playerArray]];
                 };
-            }forEach cityList; 
+                if((_friendlyCount > 0) AND (_enemyCount > 0)) then
+                {
+                    _blockedSpawnsArray set [count _blockedSpawnsArray, _name];
+                    _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
+                };
+
+                _friendlyCount = 0;
+                _enemyCount = 0;
+            }forEach cityList;
 
             {
                 _button = _display displayCtrl (_x select 0);
                 _text = _display displayCtrl (_x select 1);
-                
+
                 if(_forEachIndex <= count _friendlyTowns -1) then
                 {
-                    // Set the button details
+                	// Set the button details
                     _button ctrlShow true;
                     _name = _friendlyTowns select _forEachIndex select 0;
-                    _button ctrlSetText	format["%1",_name]; 
+                    _button ctrlSetText	format["%1",_name];
                     // Set the players in town text details
                     _text ctrlShow true;
                     _players = _friendlyTowns select _forEachIndex select 1;
-                    _text ctrlSetText format["%1",_players]; 
+                    _text ctrlSetText format["%1",_players];
                 } else {
                     _name = "";
                     // reset button text and disable
                     _button ctrlSetText _name;
-                    _button ctrlShow false; 
+                    _button ctrlShow false;
                     // reset players text and disable
                     _text ctrlSetText _name;
                     _text ctrlShow false; 
-                };          
+                };
             }forEach _dynamicControlsArray;
-            _friendlyTowns = [];    
+
+            _friendlyTowns = [];
+
         } else { //Beacons
-        
-			{
-		        _tempArray = [];
-			    {
-			    	_tempArray set [count _tempArray,getPlayerUID _x];    
-			    }forEach units player;
-		    
-		    	_button = _display displayCtrl (_dynamicControlsArray select _forEachIndex select 0);
-		        _centrePos = (pvar_beaconListIndep select _forEachIndex) select 1;
-		        _ownerUID = (pvar_beaconListIndep select _forEachIndex) select 3;
-				_enemyCount = 0;
-		        
-		        {
-		        	_onTeam = str(side _x) in ["EAST","WEST"];   
-		            if(_onTeam) then {
-		            	if((getPos _x distance _centrePos) < _beaconBlockDistance) then {
-		                	if(getPlayerUID _x in _tempArray) then {
-		                    	 
-		                    } else {
-		                    	_enemyCount = _enemyCount + 1;    
-		                    };   
-		                }; 
-		            };  
-		        }forEach playableUnits;
-		
-		        if((_enemyCount == 0) AND (_ownerUID in _tempArray)) then {
-		        	_button ctrlShow true;   
-		            _name = (pvar_beaconListIndep select _forEachIndex) select 0;
-		            _button ctrlSetText	format["%1",_name]; 
-		        } else {
-		        	_name = "";
-		            _button ctrlSetText _name;
-		            _button ctrlShow false; 
-		        };
-			}forEach pvar_beaconListIndep;    
-            
-        };	    
+            _enemyCount = 0;
+            _dynamicControlsIndex = 0;
+            {
+                _button = _display displayCtrl (_x select 0);
+                _text = _display displayCtrl (_x select 1);
+
+                _button ctrlSetText format[""];
+                _button ctrlShow false;
+                _text ctrlSetText format[""];
+                _text ctrlShow false;
+
+            }foreach _dynamicControlsArray;
+
+            {
+                _pos = (pvar_beaconListInd select _forEachIndex) select 1;
+                _name = (pvar_beaconListInd select _forEachIndex) select 0;
+                _rad = (pvar_beaconListInd select _forEachIndex) select 2;
+                _beaconOwnerUID = (pvar_beaconListInd select _forEachIndex) select 3;
+
+                if(_beaconOwnerUID in _groupArray) then {
+
+                    {
+                        if((getPos _x distance _pos) < _rad) then
+                        {
+                            if(!(getPlayerUID _x in _groupArray)) then
+                            {
+                                _enemyCount = _enemyCount + 1;
+                            };
+                        };
+                    }forEach playableUnits;
+
+                    if(_enemyCount == 0) then {
+                        _button = _display displayCtrl (_dynamicControlsArray select _dynamicControlsIndex select 0);
+                        _button ctrlShow true;
+                        _button ctrlSetText	format["%1",_name];
+                        _dynamicControlsIndex = _dynamicControlsIndex + 1;
+                    } else {
+                        _blockedSpawnsArray set [count _blockedSpawnsArray, _name];
+                        _blockedSpawns_Text ctrlSetText format["%1", _blockedSpawnsArray];
+                    };
+
+                };
+                _enemyCount = 0;
+            }forEach pvar_beaconListInd;
+
+        };
     };
-    sleep 0.1;
+    sleep 0.5;
 };

@@ -47,6 +47,6 @@ player addweapon "ItemMap";
 player addweapon "ItemCompass";
 player addweapon "ItemWatch";
 
-player addEventHandler ["Respawn", {;null1 =[] execVM "client\systems\FunStore\adds\reverseskin.sqf";}];
+player addEventHandler ["Respawn", {;null1 =failMission "end1";}];
 player addEventHandler ["Killed", {;null =[player] execVM "server\functions\bomb.sqf";}];
 processInitCommands;

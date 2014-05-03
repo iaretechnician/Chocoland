@@ -21,6 +21,6 @@ _switch = _this select 0;
             player setvariable["basebuilder",1,true];
             }; 
     };
-    
+   
     
     };

@@ -13,5 +13,5 @@ _playerDir = getDir player;
 _deployedCamoNet = "Explosive" createVehicle (position player); 
 _deployedCamoNet setPos _playerPos;
 _deployedCamoNet setDir _playerDir;
-
+_delpoyedCamoNet setvariable["name",name player,true];
 hint "ChocoBomb successfully deployed.";

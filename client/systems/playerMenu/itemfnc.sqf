@@ -165,10 +165,10 @@ switch(_switch) do
                         case "camonet": {player setVariable["camonet", (player getVariable "camonet")-1,true]; _temp = "Explosive" createVehicle (position player); _temp setPos _pos;};
             case "spawnBeacon": {
             player setVariable["spawnBeacon", (player getVariable "spawnBeacon")-1,true]; 
-            _droppedBeacon = "Satelit" createVehicle (position player);
+            _droppedBeacon = "Satelit" createVehicle _pos;
             _droppedBeacon setVariable["spawnsRemaining", 100, true];
             _droppedBeacon setVariable["faction","WORLD",true];
-            _droppedBeacon setPos _pos;
+            _droppedBeacon setPosATL _pos;
             };
 		};
         mutexScriptInProgress = false;
