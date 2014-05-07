@@ -28,7 +28,7 @@ _randomPos = _returnData select 0;
 _randomIndex = _returnData select 1;
 
 diag_log format["WASTELAND SERVER - Side Mission Waiting to run: %1",_missionType];
-[sideMissionDelayTime] call createWaitCondition;
+[sideMissionDelayTime,_randomPos] call createWaitCondition;
 diag_log format["WASTELAND SERVER - Side Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
@@ -40,7 +40,8 @@ _vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
 
 _picture = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "picture");
 _vehicleName = getText (configFile >> "cfgVehicles" >> typeOf _vehicle >> "displayName");
-_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Side Objective</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has been spotted at the marker go get it for your team.</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor];
+  _war1 = Round (random 100)+30;
+_hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>A<t color='%4'> %3</t>, has been spotted at the marker go get it for your team.</t>", _missionType, _picture, _vehicleName, sideMissionColor, subTextColor, _war1];
 [nil,nil,rHINT,_hint] call RE;
 
 diag_log format["WASTELAND SERVER - Side Mission Waiting to be Finished: %1",_missionType];
@@ -60,7 +61,7 @@ waitUntil
 	#endif
     if(_currTime - _startTime >= sideMissionTimeout) then {_result = 1;};
     {if((isPlayer _x) AND (_x distance _vehicle <= missionRadiusTrigger)) then {_playerPresent = true};}forEach playableUnits;
-    (_result == 1) OR (_playerPresent) OR ((damage _vehicle) == 1)
+    (_result == 1) OR (_playerPresent) 
 };
 
 _vehicle setVehicleLock "UNLOCKED";
@@ -70,14 +71,23 @@ if(_result == 1) then
 {
 	//Mission Failed.
     deleteVehicle _vehicle;
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>Objective failed, better luck next time</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Side Mission Failed: %1",_missionType];
 } else {
 	//Mission Complete.
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Objective Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The truck has been captured, should help the team</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission %6 Complete</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The truck has been captured, should help the team</t>", _missionType, _picture, _vehicleName, successMissionColor, subTextColor, _war1];
 	[nil,nil,rHINT,_hint] call RE;
     diag_log format["WASTELAND SERVER - Side Mission Success: %1",_missionType];
+     //Cash Reward
+        _missionRewardRadius =200;
+_reward = Round(random 100) + 2000;
+	_inArea = _randomPos nearEntities _missionRewardRadius;
+	{
+	if (isPlayer _x) then {
+         [nil,_x, "loc", rEXECVM, "client\functions\missionReward.sqf", "reward", _war1, _reward] call RE;
+	};
+	} forEach _inArea;
 };
 
 //Reset Mission Spot.

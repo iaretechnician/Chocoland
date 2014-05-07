@@ -7,7 +7,7 @@
 
 #include "setup.sqf"
 if (isnil "RE") then {[] execVM "\ca\Modules\MP\data\scripts\MPframework.sqf"};
-
+[] execVM "addons\bisfix11\init.sqf";
 StartProgress = false;
 enableSaving[false,false];
 
@@ -15,16 +15,20 @@ X_Server = false;
 X_Client = false;
 X_JIP = false;
 hitStateVar = false;
-versionName = "v3.0";
-
+versionName = "v1.0";
+spawnHalo = false;
+basecoreState = false;
+Donatorweapon = [];
+firstspawn = true;
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};
 
 true spawn {
 	if(!isDedicated) then {
-		titleText ["Setting up player...", "BLACK", 0];
-		waitUntil {player == player};
+		titleText ["connecting to HeavensDelight...", "BLACK", 0];
+		//waitUntil {player == player};
+                classselect =0;
 		client_initEH = player addEventHandler ["Respawn", {removeAllWeapons (_this select 0);}];
 	};
 };
@@ -34,7 +38,8 @@ true spawn {
 [] execVM "briefing.sqf";
 
 if(X_Client) then {
-	waitUntil {player == player};
+   
+	//waitUntil {player == player};
 
 	//Wipe Group.
 	if(count units group player > 1) then
@@ -47,7 +52,7 @@ if(X_Client) then {
 };
 
 if(X_Server) then {
-	diag_log format ["############################# %1 #############################", missionName];
+	diag_log format ["############################# ChocoLand #############################"];
 	#ifdef __DEBUG__
 	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
 	#endif
@@ -56,6 +61,10 @@ if(X_Server) then {
 };
 
 //init 3rd Party Scripts
-[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
-[] execVM "addons\proving_Ground\init.sqf";
-[0.1, 0.5, 0.5] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+[] execVM "addons\R3F\init.sqf";
+
+[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+[] execVM "motd.sqf";
+_null = [] execVM "addons\scripts\cleanupnew.sqf";
+ [] execVM "addons\proving_Ground\init.sqf";
+execVM "persistentscripts\init.sqf";

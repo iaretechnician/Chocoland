@@ -27,8 +27,8 @@ if (_isWreck == 0) then {
 	//Set original status to stop ner-do-wells
 	_currHeli setVariable["newVehicle",1,true];
 } else {
-	//diag_log "Spawning heli wreck...";staticHeliWrecks
-	_spawnType = staticHeliWrecks select (random (count staticHeliWrecks - 1));
+	//diag_log "Spawning heli wreck...";
+	_spawnType = staticHeliWrecks select (random (count staticHeliList - 1));
 	_currHeli = createVehicle [_spawnType,_spawnPos,[], 50,"None"]; 
 	
 	_currHeli setpos [getpos _currHeli select 0,getpos _currHeli select 1,0];
@@ -39,7 +39,12 @@ if (_isWreck == 0) then {
     
     // Spawn a weapon crate.
 	_currBox = _nerfBoxes select (random (count _nerfBoxes - 1));
-	_safePos = [_currHeliLocation, 2, 8, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+	_safePos = [_currHeliLocation, 1, 10, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
+	[_currBox, _safePos] execVM "server\spawning\boxCreation.sqf";   
+	
+	// Spawn a weapon crate.
+	_currBox = _nerfBoxes select (random (count _nerfBoxes - 1));
+	_safePos = [_currHeliLocation, 1, 20, 1, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
 	[_currBox, _safePos] execVM "server\spawning\boxCreation.sqf";   
     
     // Stop the heli wreck from being destroyed.

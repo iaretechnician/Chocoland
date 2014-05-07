@@ -13,18 +13,33 @@ diag_log format["WASTELAND SERVER - Started Main Mission State"];
 
 //Main Mission Array
 _MMarray = [[mission_SupplyDrop,"mission_SupplyDrop"],
-			[mission_APC,"mission_APC"],
+	[mission_APC,"mission_APC"],
             [mission_Heli,"mission_Heli"],
             [mission_LightArmVeh,"mission_LightArmVeh"],
             [mission_LightTank,"mission_LightTank"],
             [mission_MBT,"mission_MBT"],
+              [mission_MBT,"mission_MBT"],
+                [mission_MBT,"mission_MBT"],
             [mission_Outpost,"mission_Outpost"],
-            [mission_RadarTruck,"mission_RadarTruck"],
-            [mission_VIP,"mission_VIP"]];
+            [mission_RadarTruck,"mission_RadarTruck"]];
+           //[mission_VIP,"mission_VIP"]];
             
 _lastMission = "nomission";
+
 while {true} do
 {
+    setDate[2014,03,07,12,00];
+    //waiting 
+    _countppl= 150;
+    {
+	if (alive _x) then
+		{
+                _countppl= _countppl -5;	
+		};
+	} forEach playableUnits; 
+       if(_countppl < 0)then {_countppl =0;}; 
+        sleep _countppl;
+  
     //Select Mission
     _randomIndex = (random (count _MMarray - 1));
 	_mission = _MMarray select _randomIndex select 0;
@@ -43,9 +58,8 @@ while {true} do
     
 	_missionRunning = [] spawn _mission;
     diag_log format["WASTELAND SERVER - Execute New Main Mission: %1",_missionType];
-    _hint = parseText format ["<t align='center' color='%2' shadow='2' size='1.75'>Main Objective</t><br/><t align='center' color='%2'>------------------------------</t><br/><t color='%3' size='1.0'>Starting in %1 Minutes</t>", mainMissionDelayTime / 60, mainMissionColor, subTextColor];
-	[nil,nil,rHINT,_hint] call RE;
+   
     _lastMission = _missionType;
-	waitUntil{sleep 0.1; scriptDone _missionRunning};
-    sleep 5; 
+waitUntil{sleep 1; scriptDone _missionRunning};
+ 
 };

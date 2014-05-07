@@ -9,13 +9,14 @@ class playerSettings {
 	
 	class controlsBackground {
 		
-		class MainBG : w_RscPicture {
+			class MainBG : w_RscPicture {
 			idc = -1;
 			text = "\ca\ui\data\ui_background_controlers_ca.paa";		
 			moving = true;
 			x = 0.0; y = 0.1;
 			w = 1.0; h = 0.65;
 		};
+		
 		
 		class MainTitle : w_RscText {
 			idc = -1;
@@ -112,15 +113,45 @@ class playerSettings {
 			text = "Drop Money";
 			onButtonClick = "[] execVM 'client\systems\playerMenu\dropMoney.sqf'";
 			x = 0.48; y = 0.60;
-			w = 0.135; h = 0.033 * safezoneH;
+                            w = 0.135; h = 0.033 * safezoneH;
 		};
 		
 		class CloseButton : w_RscButton {
 			text = "Close";
 			onButtonClick = "closeDialog 0;";
 			x = 0.02; y = 0.68;
-			w = 0.125; h = 0.033 * safezoneH;
+			w = 0.125; h = 0.046 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
+		};
+	class btnflipvehicle : w_RscButton {
+		
+			text = "Flip Vehicle";
+			onButtonClick = "[] execVM 'client\systems\playerMenu\flipvehicle.sqf'";
+			
+			x = 0.150; y = 0.38;
+			w = 0.225; h = 0.046 * safezoneH;
+		};
+                class btnflipvehicle4 : w_RscButton {
+		
+			text = "fix PickupMoney";
+			onButtonClick = "[] execVM 'client\systems\playerMenu\fixmoney.sqf';closeDialog 0;";
+            		x = 0.150; y = 0.28;
+			w = 0.225; h = 0.046 * safezoneH;
+		};
+               
+               class SafeButton : w_RscButton {
+			idc = safeButton;
+			text = "Save Player";
+			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf';closeDialog 0;";
+			x = 0.150; y = 0.58;
+			w = 0.225; h = 0.046 * safezoneH;
+		};
+                  class vehButton : w_RscButton {
+			idc = vehButton;
+			text = "Spawn My Vehicle";
+			onButtonClick = "[] execVM 'addons\scripts\createVehicle.sqf';closeDialog 0;";
+			x = 0.150; y = 0.48;
+			w = 0.225; h = 0.046 * safezoneH;
 		};
 
 		class GroupsButton : w_RscButton {
@@ -128,7 +159,7 @@ class playerSettings {
 			text = "Group Management";
 			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
 			x = 0.150; y = 0.68;
-			w = 0.225; h = 0.033 * safezoneH;
+			w = 0.225; h = 0.046 * safezoneH;
 		};
 
 		class btnDistanceNear : w_RscButton {

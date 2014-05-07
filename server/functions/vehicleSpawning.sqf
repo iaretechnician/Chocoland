@@ -10,17 +10,18 @@ private ["_counter","_pos","_type","_num","_markerName","_marker","_amountOfVehi
 
 _counter = 0;
 
-for "_i" from 1 to 770 do
+for "_i" from 1 to 210 do
 {
 	_pos = getMarkerPos format ["Spawn_%1", _i];
 	_type = 0;
     _num = floor (random 100);
 	if (_num < 100) then {_type = 0;};
-	if (_num < 15) then {_type = 1;};
-	if (_num < 5) then {_type = 2;};
+	if (_num < 40) then {_type = 1;};
+	if (_num < 15) then {_type = 2;};
 	[_pos, _type] call vehicleCreation;
-
-	_counter = _counter + 1;
+      
+[_pos, _type] call vehicleCreation;
+	_counter = _counter + 2;
 };
 
 diag_log format["WASTELAND SERVER - %1 Vehicles Spawned",_counter];

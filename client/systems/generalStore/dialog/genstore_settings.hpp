@@ -3,7 +3,7 @@
 class genstored {
 
 	idd = genstore_DIALOG;
-	movingEnable = true;
+	movingEnable = false;
 	enableSimulation = true;
 	onLoad = "[] execVM 'client\systems\generalStore\populateGenStore.sqf'";
 
@@ -53,28 +53,6 @@ class genstored {
 			h = 0.068889 * safezoneH;
 		};
 
-		class DialogTitleText: w_RscText
-		{
-			idc = -1;
-			text = "General Store Menu";
-
-			x = 0.203125 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0880 * safezoneW;
-			h = 0.0448148 * safezoneH;
-		};
-
-		class PlayerMoneyText: w_RscText
-		{
-			idc = genstore_money;
-			text = "Cash:";
-
-			x = 0.6875 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-		};
-
 		class CartTotalText: w_RscText
 		{
 			idc = genstore_total;
@@ -89,7 +67,68 @@ class genstored {
 	};
 	
 	class controls {
-		
+		///custom
+                class loadVehStore: w_RscButton
+		{
+			idc =-1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\vehicleStore\loadVehStore.sqf'";
+			text = "-> Vehicles";
+
+			x = 0.22 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                 class loadChopStore: w_RscButton
+		{
+			idc =-1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\GunStore\loadGunStore.sqf'";
+			text = "-> Weapons";
+
+			x = 0.32 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                 class loadBuildStore: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\BuildStore\loadBuildStore.sqf'";
+			text = "-> Buildings";
+
+			x = 0.42 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                 class loadBuildStore2: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
+			text = "-> Choppers";
+
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                  class loadBuildStore3: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
+			text = "-> Funniest";
+
+			x = 0.62 * safezoneW + safezoneX;
+			y = 0.175 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+
+		};
+                ////////end custom
 		class SelectionList: w_RscListbox
 		{
 			idc = genstore_item_list;
@@ -160,18 +199,7 @@ class genstored {
 			color[] = {0.95,0.1,0.1,1};
 		};
 
-		class SaleBuy : w_RscButton {
-			
-			idc = genstore_switch;
-
-			text = "Sell Items";
-			onButtonClick = "[] execVM 'client\systems\generalStore\switchMode.sqf'";
-
-			x = 0.450 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.096 * safezoneW;
-			h = 0.040 * safezoneH;
-		};
+		
 
 		class BuyToPlayer : w_RscButton {
 			

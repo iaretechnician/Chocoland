@@ -8,7 +8,7 @@
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
 
-if(genStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
+if(genStoreCart > (player getVariable "choco")) exitWith {hint "You do not have enough money"};
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
@@ -24,7 +24,7 @@ mutexScriptInProgress = true;
 
 
 //Initialize Values
-_playerMoney = player getVariable "cmoney";
+_playerMoney = player getVariable "choco";
 _size = 0;
 
 // Grab access to the controls
@@ -74,7 +74,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             };
         };
         
-		case "Repair Kit": {
+		case "Ultima Repair Kit": {
             if((player getVariable "repairkits") + 1 <= 2) then {
                 player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
             } else {
@@ -122,7 +122,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	genStoreCart = genStoreCart - _price;    
             };
         };
-        case "Camo Net": {
+        case "ChocoBomb": {
             if(((player getVariable "camonet") + 1 <= 1) AND ((player getVariable "camonet") + 1 <= 1)) then {
                 player setVariable["camonet",(player getVariable "camonet") + 1,true];
             } else {
@@ -131,11 +131,35 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             	genStoreCart = genStoreCart - _price;    
             };
         };
+        //unlock
+        case "Unlock Decoder":{
+        _test = player getvariable"decoder";
+        if(_test ==1)then{hint "you are allready a Decoder!";player setvariable["choco",(player getvariable"choco") +250000,true];
+        }else{
+            player globalchat" you unlocked Decoder Feature,destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams, use it with mouseWheel near object";
+            player setvariable["decoder",1,true];
+            };
+ };   
+ 
+   case "Bet your Money": {
+       _chocos = player getvariable"choco";
+       _random = floor (random 2);
+       if(_random ==1)then {player setvariable["choco",_chocos *3,true];_playerMoney= player getvariable"choco";hint format ["your realy lucky you won %1 Money",_chocos];}else{hint"your not luck this time,try again.";};
+       };
+        
+    case "Unlock Basebuilder":{
+        _test = player getvariable"basebuilder";
+        if(_test ==1)then{hint "you are allready a Basebuilder!";player setvariable["choco",(player getvariable"choco") +250000,true];
+        }else{
+            player globalchat" you unlocked Basebuilder Feature,create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever, and you only pay 50%";
+            player setvariable["basebuilder",1,true];
+            }; 
+    };
 	};
 };
 
-player setVariable["cmoney",_playerMoney - genStoreCart,false];
-_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
+player setVariable["choco",_playerMoney - genStoreCart,true];
+_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 
 genStoreCart = 0;
 _totalText CtrlsetText format["Total: $%1", genStoreCart];

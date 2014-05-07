@@ -8,4 +8,4 @@ _min = parseNumber format["%1%2",toString [_timeArray select 4], toString [_time
 _sec = parseNumber format["%1%2",toString [_timeArray select 7], toString [_timeArray select 8]];
 _day = parseNumber format["%1%2",toString [_timeArray select 10], toString [_timeArray select 11]];
 _netTimeInSecs = (_day * 86400) +(_hour * 3600) + (_min * 60) + _sec;
-netTime = _netTimeInSecs - missionStartTime;
+netTime =  missionStartTime;

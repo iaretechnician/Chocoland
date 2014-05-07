@@ -16,7 +16,7 @@ if (_num < 75) then { _car addWeaponCargoGlobal ["Binocular", 1]};
 if (_num < 15) then { _car addWeaponCargoGlobal ["NVgoggles", 1]};
 
 //Get Random Gun From randomWeapons Array.
-_weapon = vehicleWeapons select (random (count vehicleWeapons - 1));
+_weapon = randomweaponarray select (random (count randomweaponarray - 1));
 _mag = (getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines")) select 0;
 
 //Add guns and magazines, note the Global at the end..

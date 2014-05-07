@@ -19,6 +19,7 @@ mission_Outpost = compile preprocessFileLineNumbers "server\missions\mainMission
 mission_RadarTruck = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_RadarTruck.sqf";
 mission_SupplyDrop = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_SupplyDrop.sqf";
 mission_VIP = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_VIP.sqf";
+mission_Invasion = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Invasion.sqf";
 
 //Side Mission Compiles
 mission_AirWreck = compile preprocessFileLineNumbers "server\missions\sideMissions\mission_AirWreck.sqf";
@@ -51,10 +52,10 @@ fn_refillbox = compile preprocessFileLineNumbers "server\functions\fn_refillbox.
 //Player Management
 server_playerDied = compile preprocessFileLineNumbers "server\functions\serverPlayerDied.sqf";
 server_VIPEscape = compile preprocessFileLineNumbers "server\functions\escapeVIP.sqf";
-
-//Event handlers
 createLootMoney = compile preprocessFileLineNumbers "server\functions\dropLoot.sqf";
 
+//Event handlers
+bomb = compile preprocessFileLineNumbers "server\functions\bomb.sqf";
 //.Net Compiles
 #ifdef __A2NET__
 arma2NetTime = compile preprocessFileLineNumbers "server\functions\netTime.sqf";

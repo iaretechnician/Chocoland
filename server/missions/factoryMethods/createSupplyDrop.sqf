@@ -18,8 +18,8 @@ _picture = _this select 2;
 _vehicleName = _this select 3;
 _missionType = _this select 4;
 
-_cargoItem_1 = "RUVehicleBox";
-_cargoItem_2 = "USVehicleBox"; 
+_cargoItem_1 = "USBasicWeaponsBox";
+_cargoItem_2 = "RUBasicWeaponsBox"; 
 _cargoItem_3 = "Barrels";
 _cargoItem_4 = "Land_stand_small_EP1"; 
 _parachute = "ParachuteMediumWest";
@@ -69,11 +69,11 @@ if(_currTime - _startTime >= 1200) then {_result = 1;};
 (_result == 1) OR ((_plane distance _randomPos) < 200) OR (damage _plane == 1) OR ((_plane distance _randomPos) > 2500)};
 
 if(damage _plane == 1) then {
-    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Drop Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, was destroyed before the target area!</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
+    _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, was destroyed before the target area!</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
 	[nil,nil,rHINT,_hint] call RE;
 } else {
     if (((getPosATL _plane select 2) > 200) OR ((_plane distance _randomPos) > 500)) then {
-        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Drop Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, could not complete due to environmental conditions</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
+        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission Failed</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, could not complete due to environmental conditions</t>", _missionType, _picture, _vehicleName, failMissionColor, subTextColor];
 		[nil,nil,rHINT,_hint] call RE;
 	} else {
 	    sleep 0.3;
@@ -113,9 +113,11 @@ if(damage _plane == 1) then {
 		_plane animate ["ramp_top",0];
 		_plane animate ["ramp_bottom",0];
 		
-        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Supply Drop Succesfull!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, has relinquished the supplies.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
+        _hint = parseText format ["<t align='center' color='%4' shadow='2' size='1.75'>Mission Succesfull!</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='%5' size='1.25'>%1</t><br/><t align='center'><img size='5' image='%2'/></t><br/><t align='center' color='%5'>The<t color='%4'> %3</t>, has relinquished the supplies.</t>", _missionType, _picture, _vehicleName, mainMissionColor, subTextColor];
 		[nil,nil,rHINT,_hint] call RE;	   
-    
+
+[_cargoItem_2,"RUBasicAmmunitionBox"] call fn_refillbox;
+[_cargoItem_1,"USBasicAmmunitionBox"] call fn_refillbox;
 	    _plane flyInHeight 1500;
 		_plane forceSpeed 600;
 		Waituntil {

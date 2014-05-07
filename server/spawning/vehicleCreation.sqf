@@ -25,8 +25,8 @@ if (_type == 0) then {
     clearWeaponCargoGlobal _car;
 
 	//Set Cars Attributes
-    _car setFuel (0.50);
-    _car setDamage (random 0.50);
+    _car setFuel (0.80);
+    _car setDamage (random 0.30);
     _car setDir (random 360);
 	_car setVelocity [0,0,1];
     [_car] call randomWeapons;

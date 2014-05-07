@@ -10,13 +10,13 @@
 #include "setup.sqf"
 #ifdef __DEBUG__
 
-#define mainMissionTimeout 500
-#define mainMissionDelayTime 50
+#define mainMissionTimeout 600
+#define mainMissionDelayTime 60
 
 #else
 
-#define mainMissionTimeout 1500
-#define mainMissionDelayTime 600
+#define mainMissionTimeout 600
+#define mainMissionDelayTime 60
 
 #endif
 

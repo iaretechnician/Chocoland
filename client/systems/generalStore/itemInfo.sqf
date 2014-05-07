@@ -32,6 +32,10 @@ if(_switchText == "Buy") then
 	{
 	    if(_itemText == _x select 0) then{
 			_price = _x select 4;
+                       if(_x select 0 == "Bet your Money")then {
+                        _chocos = player getvariable"choco";
+                        _price = _chocos;
+                        };
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
@@ -42,6 +46,7 @@ if(_switchText == "Buy") then
 	{
 	    if(_itemText == _x select 0) then{
 			_price = _x select 5;
+                        
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));

@@ -1,0 +1,10 @@
+#define funshop_DIALOG 2001
+#define funshop_item_TEXT 2002
+#define funshop_item_list 2003
+#define funshop_money 2004
+#define funshop_item_pic 2005
+#define funshop_item_info 2006
+#define funshop_cart 2007
+#define funshop_total 2008
+#define funshop_buysell 2020
+#define funshop_item_Info 2021
