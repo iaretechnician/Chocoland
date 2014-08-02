@@ -20,6 +20,7 @@ pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
 behindi =1;
 moneypick = 1;
+loadout=nil;
 currentMissionsMarkers = [];
 currentRadarMarkers = [];
 chocodoor =0;

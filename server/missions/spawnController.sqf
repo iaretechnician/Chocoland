@@ -9,7 +9,7 @@ while {true} do
 { 
 
 //waiting
- _countppl= 3600; //900 need
+ _countppl= 3000; //900 need
  _rand= 0;
 _countppl = count playableunits;
 _countppl = _countppl *45;
@@ -21,13 +21,13 @@ _countppl = 3600 - _countppl;
 
    _objects = nearestObjects [_pos, ["Air", "LandVehicle"], 30000]; //Get all units, vehicles and air vehicles in the map
         {
-            if ((damage _x) >=0.3 and (!isPlayer _x)) then { deleteVehicle vehicle _x; deleteVehicle _x; };
-            if((damage _x) <0.3) then {
+            if ((damage _x) >=0.6 and (!isPlayer _x)) then { deleteVehicle vehicle _x; deleteVehicle _x; };
+            if((damage _x) <0.6) then {
             _x setdamage 0;
             _x setfuel 1;
             _x setVehicleAmmo 1;
-            clearMagazineCargoGlobal _x;
-            clearWeaponCargoGlobal _x;
+           // clearMagazineCargoGlobal _x;
+          //  clearWeaponCargoGlobal _x;
             [_x] call randomWeapons;
             };
           } forEach _objects; 
@@ -53,7 +53,7 @@ _countppl = 3600 - _countppl;
                   _range = [1, 1000] call BIS_fnc_randomNum;
                  _direction = [1, 359] call BIS_fnc_randomNum;
                  _bubblepos = [_x,_range,_direction] call BIS_fnc_relPos;
-                 _bubblepos=[_bubblepos, 1,100, 10, 0, 30, 0] call BIS_fnc_findSafePos;
+                // _bubblepos=[_bubblepos, 1,100, 10, 0, 30, 0] call BIS_fnc_findSafePos;
 		 _bubblepos execVM "server\spawning\spawningObjects.sqf";
                  _bubblepos execVM "server\spawning\spawningVehicles.sqf";
                  _bubblepos execVM "server\spawning\spawningAnimals.sqf";

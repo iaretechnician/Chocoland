@@ -25,7 +25,7 @@ class attachd {
 		class CancelButton1: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "object1 = cursorTarget";
+			onButtonClick = "[1] execVM 'client\systems\attach\objectcheck.sqf';";
 			text = "MainObjects";
 
 			x = 0.320313 * safezoneW + safezoneX;
@@ -36,7 +36,7 @@ class attachd {
                 class CancelButto2: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "object2 = cursorTarget";
+			onButtonClick = "[2] execVM 'client\systems\attach\objectcheck.sqf';";
 			text = "Object 2";
 
 			x = 0.420313 * safezoneW + safezoneX;

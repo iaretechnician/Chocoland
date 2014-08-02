@@ -49,9 +49,18 @@ class RscTitles {
 class CfgSounds
 {
 
-	sounds[] = {multi2,multi3,multi4,multi5,multi6};
+	sounds[] = {multi2,multi3,multi4,multi5,multi6,cow};
  
-     
+     class cow
+	{
+
+		name = "cow";
+
+		sound[] = {"Sound\cow.ogg", db-0, 1};
+
+		titles[] = {0};
+	};
+
 	class multi2
 	{
 

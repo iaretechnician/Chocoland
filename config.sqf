@@ -257,6 +257,7 @@ ammoArray = [
 	["1 M203 HE","1Rnd_HE_M203",300],
 	["1 GP-25 HE","1Rnd_HE_GP25",300],
 	["1 6x40mm HE M203","6Rnd_HE_M203",1000],
+        ["*NEW 1 Claymore","PipeBomb",2000],
 	["1 Hand Grenade","BAF_L109A1_HE", 5000],
     ["1 Land Mine","Mine", 2500],
 	["1 Satchel Charges","PipeBomb",5000],

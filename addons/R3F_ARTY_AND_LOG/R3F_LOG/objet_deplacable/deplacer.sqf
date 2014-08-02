@@ -59,7 +59,7 @@ else
 			R3F_LOG_joueur_deplace_objet = objNull;
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
 			// Car attachTo de "charger" positionne l'objet en altitude :
-			_objet setPos [getPos _objet select 0, getPos _objet select 1, 0];
+			_objet setPosatl [getPosatl _objet select 0, getPosatl _objet select 1, getPosatl _objet select 2];
 			_objet setVelocity [0, 0, 0];
 			
 			R3F_LOG_mutex_local_verrou = false;
@@ -93,12 +93,11 @@ else
 			R3F_LOG_force_horizontally = false;
 			
 			_action_menu_release_relative = player addAction [("<t color=""#21DE31"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
-			_action_menu_release_horizontal = player addAction [("<t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
 			_action_menu_up = player addAction [("<t color=""#dddd00"">Move up</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\upanddown.sqf", 1, 5, true, true];
 			_action_menu_down = player addAction [("<t color=""#dddd00"">Move down</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\upanddown.sqf", 2, 5, true, true];
 	                _action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
 			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
-			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
+			_action_menu_release_horizontal = player addAction [("<t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F_ARTY_AND_LOG\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
 			
 			// On limite la vitesse de marche et on interdit de monter dans un véhicule tant que l'objet est porté
 			while {!isNull R3F_LOG_joueur_deplace_objet && alive player} do

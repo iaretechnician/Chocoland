@@ -45,7 +45,10 @@ PDB_savePlayer = {
                         if(!isNil"_saveVehicle")then {
                                 [_playerUID call PDB_databaseNameCompiler, _playerSide, "saveVehicle", _saveVehicle] call iniDB_write;
                         };
-                  
+                  _chocoload =_x getVariable"chocoload";
+                        if(!isNil"_chocoload")then {
+                                [_playerUID call PDB_databaseNameCompiler, _playerSide, "chocoload", _chocoload] call iniDB_write;
+                        };
                         _chocopack = _x getVariable"chocopack";
                         if(!isnil"_chocopack")then {
                             [_playerUID call PDB_databaseNameCompiler, _playerSide, "chocopack", _chocopack] call iniDB_write;

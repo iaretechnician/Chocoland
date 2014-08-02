@@ -60,6 +60,7 @@ ProfileFound%1;
 "fuelEmpty" call PersistentDBLCStuff;	
 "donator" call PersistentDBLCStuff;
 "decoder" call PersistentDBLCStuff;
+"chocoload" call PersistentDBLCStuff;
 "basebuilder" call PersistentDBLCStuff;
 "attach" call PersistentDBLCStuff;
 "bombs" call PersistentDBLCStuff;		
@@ -162,7 +163,8 @@ _varArr = [
 "attach",
 "canfood",	
 "medkits",	
-"water",		
+"water",	
+"chocoload",
 "fuel",		
 "repairkits",		
 "fuelFull",		

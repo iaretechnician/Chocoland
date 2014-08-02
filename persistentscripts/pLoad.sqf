@@ -86,7 +86,7 @@ ProfileFound%1 = nil;
                 [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                 
                 [_uid, _playerSide, "donator", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-                 
+                  [_uid, _playerSide, "chocoload", _id, "ARRAY"] spawn PersistentDBLoadStuff;
                 [_uid, _playerSide, "basebuilder", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                   
                 [_uid, _playerSide, "decoder", _id, "NUMBER"] spawn PersistentDBLoadStuff;  

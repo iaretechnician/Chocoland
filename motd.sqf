@@ -1,4 +1,6 @@
 if(!X_Client) exitWith {};
+sleep 10; 
+player globalchat" patchnotes:working Loadouts, gunshop ammo fix, move up/down on carrier or midair, new Weapon Claymore Mine, and Attach-Mode fix(condition)!disable night event(creating nightday cycle)";
 sleep 60;
 _hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Welcome To ChocoLands - Wasteland MOD BaseDefense, on this Chocoland you may to be an Animal, you can ATtach objects , you can hide objects, you can hide yourself, you can get infinite Ammunition,you are god in Parajump, you cannot unlock enemy locked objects"];
 [nil,player,"loc",rHINT,_hint] call RE;
@@ -58,5 +60,6 @@ _bounty = 100 max floor((Player getvariable "bounty") * 250);
 player setVariable["choco",(player getVariable"choco")+ _bounty,true];
 _hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Have an idea? let us know what it is and maybe we can implement it on one of our server!<br />------------------------<br /><t color='#17FF41' size='1.5' shadow='2' shadowColor='#000000' align='center'>Reward $%1 </t>",_bounty];
 [nil,player,"loc",rHINT,_hint] call RE;
+player globalchat"comming new events ( ChocoZeds, Burning Helicopters , Flying Takistanis) new weapons. custom Keyboard Hokeyselection, introduction for newbies)";
 sleep 300;
 };

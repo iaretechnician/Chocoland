@@ -13,7 +13,7 @@ private ["_result","_missionMarkerName","_missionType","_startTime","_returnData
 //Mission Initialization.
 _result = 0;
 _missionMarkerName = "MBT_Marker";
-_missionType = "Special Random Vehicle";
+_missionType = "Random Vehicle";
 #ifdef __A2NET__
 _startTime = floor(netTime);
 #else

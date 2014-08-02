@@ -50,7 +50,7 @@ while {true} do {
 _nObject = nearestObject [player, "EvMoney"];
 //if(player distance (nearestobjects [player, ["EvMoney"],  2] select 0) < 2)then { []execVM "client\actions\pickupMoney.sqf";};
 if(player distance _nObject < 2 && moneypick == 1)then { []execVM "client\actions\pickupMoney.sqf";};
-
+_nObject = nearestObject [player, "PipeBomb"];
 //[] execVM "client\functions\antiCheatClient.sqf";
 
      _uid = getPlayerUID player;

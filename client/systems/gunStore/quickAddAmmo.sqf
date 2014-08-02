@@ -25,7 +25,7 @@ disableSerialization;
 	//Check Items Price
         _weapon =[];
 		
-	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1;} }forEach ammoArray;
+	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1;_itemText = (_x select 1);} }forEach ammoArray;
 	
 	gunStoreCart = gunStoreCart + _price;
 	_totalText CtrlsetText format["Total: $%1", gunStoreCart];

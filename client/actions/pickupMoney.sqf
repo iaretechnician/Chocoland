@@ -10,7 +10,7 @@ if(mutexScriptInProgress || geldaction) exitWith
 	//player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 };
 
-_totalDuration = 2;
+_totalDuration = 1;
 _lockDuration = _totalDuration;
 _originalState = animationState player;
 mutexScriptInProgress = true;
@@ -55,7 +55,7 @@ for "_iteration" from 1 to _lockDuration do
 				    
 	if (_iteration >= _totalDuration) exitWith 
 	{
-		sleep 1;
+		
 		_currMoneyTemp = (nearestObjects [getpos player, ["EvMoney"],  5]);
                     
 		if(count _currMoneyTemp == 0) then 
@@ -73,10 +73,10 @@ for "_iteration" from 1 to _lockDuration do
 			player globalChat format["You have picked up $%1",_money];
 			mutexScriptInProgress = false;
 			player switchMove _originalState;
-			sleep 5;
-			geldaction =false;
+			
                         PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+                        publicVariableServer "PDB_saveReq";
+                        geldaction =false;
 		};      
 	};     
 };

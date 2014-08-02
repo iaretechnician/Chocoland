@@ -28,7 +28,11 @@ PDB_savePlayer = {
 			if(!isNil "_donator") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "donator", _donator] call iniDB_write;
 			};
-                        
+                       
+                         _chocoload = _x getVariable "chocoload";
+			if(!isNil "_chocoload") then {
+				[_playerUID call PDB_databaseNameCompiler, _playerSide, "chocoload", _chocoload] call iniDB_write;
+			};
                         _decoder = _x getVariable "decoder";
 			if(!isNil "_decoder") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "decoder", _decoder] call iniDB_write;

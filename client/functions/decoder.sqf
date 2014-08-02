@@ -5,7 +5,7 @@ if((typeof cursortarget) in R3F_LOG_CFG_objets_deplacables and !R3F_LOG_mutex_lo
     _price = 5000;
     {  if(_x select 2 == typeof _currObject)then {_price =_x select 1;};   
          } foreach BuildStoreArray; 
-         _costs=round (_price *2);
+         _costs=(round (_price *2)) min 10000;
          _choco= player getVariable"choco";
          if(_costs > _choco)exitWith {// If the player have not enough money 
           titleText [format["\n Object decode failed, you have not enough money (%1 $)",_costs], "PLAIN DOWN", 0];

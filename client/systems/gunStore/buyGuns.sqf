@@ -122,7 +122,8 @@ publicvariableserver "diag_log_server";
 			}forEach weaponsArray;
 
 			{
-				if(_itemText == _x select 0) then {
+				//if(_itemText == _x select 0) then {
+                                    if(_itemText == _x select 1 ||_itemText == _x select 0) then {
 					_class = _x select 1;
 					_mag = (configFile >> "cfgMagazines" >> _class);
 					_type = (getNumber(_mag >> "type"));
@@ -183,8 +184,7 @@ publicvariableserver "diag_log_server";
 					if(_class == "Binocular_Vector" OR _class== "NVGoggles") then {
 						if((_playerSlots select 5) >= 1) then {
 							player addWeapon _class;
-                                                        diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 2, (player getVariable"choco")];
-publicvariableserver "diag_log_server";
+                                                        
 						} else {
 							{
                             	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
@@ -195,8 +195,7 @@ publicvariableserver "diag_log_server";
 						};
 					} else {
 						player addWeapon _class;
-                                                diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 2, (player getVariable"choco")];
-publicvariableserver "diag_log_server";
+                                                
 					};
 				};
             }forEach accessoriesArray;

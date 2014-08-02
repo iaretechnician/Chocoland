@@ -14,9 +14,9 @@ playerMenuHandle = [] spawn {
                 waituntil {vehicle player != player};
 		player removeaction playerMenuId;
                 player removeaction playerWeaponId;
-              
-		_veh = vehicle player;
-              saveVehId = _veh addAction [format ["<t color='#FF9900'>%1</t>", "Save Vehicle"], "addons\scripts\saveVehicle.sqf",[],-10,false,false,"","local player"];
+               _veh = vehicle player;
+if(typeof vehicle player == "Old_moto_TK_Civ_EP1")then {saveVehId = _veh addAction [format ["<t color='#FF9900'>%1</t>", "hey cow <3"], "addons\scripts\cow.sqf",[],10,false,false,"","local player"];};
+		saveVehId = _veh addAction [format ["<t color='#FF9900'>%1</t>", "Save Vehicle"], "addons\scripts\saveVehicle.sqf",[],-10,false,false,"","local player"];
 			  if(rainbow==1) then {player removeAction playerbaseObject; playerbaseObject = _veh addAction[('<t color=''#17FF41''>' + ('give me Rainbow Power') +  '</t>'),'client\systems\FunStore\adds\rainbow.sqf'];};
         };
 };

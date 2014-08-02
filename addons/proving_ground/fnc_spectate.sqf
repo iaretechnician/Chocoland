@@ -16,6 +16,10 @@ v 1.01
 3) \0/ Profit! :)
 
 */
+private [_test,_player];
+
+_test = _this select 0;
+_player = _this select 1;
 
 mycv = cameraView;
 spect = 
@@ -28,7 +32,7 @@ spect =
 	(findDisplay 46) displayRemoveEventHandler ["KeyDown", F3_EH];
 	player switchCamera mycv;	 
 };
-
+if(_test == 1)then {[_player] call spect;};
 
 _n2sh = 10; _n2c = "Select Player:";shnext = false; nlist = [];  selecteditem = "";
 

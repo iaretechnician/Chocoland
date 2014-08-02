@@ -13,7 +13,7 @@ gunStoreCart = 0;
 _dialog = findDisplay gunshop_DIALOG;
 _playerMoney = _dialog displayCtrl gunshop_money;
 //_money = player getVariable "choco";
-_money = player getVariable "cmoney";
+_money = player getVariable "choco";
 _playerMoney CtrlsetText format["Cash: $%1", _money];
 loadout[];
 gsLocation = str(_this select 0);

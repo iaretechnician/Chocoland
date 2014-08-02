@@ -25,7 +25,7 @@ if (local player) then {
         _weapon= 0;
 	//Check Items Price
 	{ if(_itemText == _x select 1) then { _price = _x select 3;_weapon = _x select 2; } }forEach weaponsArray;
-	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1; } }forEach ammoArray;
+	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1;} }forEach ammoArray;
 	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1; } }forEach accessoriesArray;
 
 	gunStoreCart = gunStoreCart + _price;

@@ -2,10 +2,9 @@
 	while {true} do {
 		waitUntil {((isNil "BIS_Effects_Rifle") OR {(count(toArray(str(BIS_Effects_Rifle)))!=7)})};
 		diag_log "Res3tting B!S effects...";
-		BIS_Effects_EH_Killed = compile preprocessFileLineNumbers "addons\bisfix11\killed.sqf";
 		BIS_Effects_AirDestruction = compile preprocessFileLineNumbers "addons\bisfix11\AirDestruction.sqf";
 		BIS_Effects_AirDestructionStage2 = compile preprocessFileLineNumbers "addons\bisfix11\AirDestructionStage2.sqf";
-		BIS_Effects_Secondaries = compile preprocessFileLineNumbers "addons\bisfix11\secondaries.sqf";
+		
 		BIS_Effects_globalEvent = {
 			BIS_effects_gepv = _this;
 			publicVariable "BIS_effects_gepv";
@@ -29,6 +28,6 @@
 		};
 		BIS_Effects_EH_Fired = {false};
 		BIS_Effects_Rifle = {false};
-		sleep 1;
+		sleep 600;
 	};
 };
