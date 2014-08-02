@@ -25,10 +25,10 @@ class gunshopd {
 			idc = gunshop_gun_pic;
 			text = "";
 
-			x = 0.502604 * safezoneW + safezoneX;
+			x = 0.452604 * safezoneW + safezoneX;
 			y = 0.236111 * safezoneH + safezoneY;
-			w = 0.0891668 * safezoneW;
-			h = 0.0753702 * safezoneH;
+			w = 0.18 * safezoneW;
+			h = 0.160 * safezoneH;
 		};
 
 		class ItemSelectedInfo: w_RscStructuredText
@@ -36,7 +36,7 @@ class gunshopd {
 			idc = gunshop_gun_Info;
 			text = "";
 
-			x = 0.440104 * safezoneW + safezoneX;
+			x = 0.400104 * safezoneW + safezoneX;
 			y = 0.50463 * safezoneH + safezoneY;
 			w = 0.214166 * safezoneW;
 			h = 0.192963 * safezoneH;
@@ -47,8 +47,8 @@ class gunshopd {
 			idc = gunshop_gun_TEXT;
 			text = "";
 
-			x = 0.502604 * safezoneW + safezoneX;
-			y = 0.317594 * safezoneH + safezoneY;
+			x = 0.45 * safezoneW + safezoneX;
+			y = 0.657594 * safezoneH + safezoneY;
 			w = 0.0891667 * safezoneW;
 			h = 0.068889 * safezoneH;
 		};
@@ -68,71 +68,50 @@ class gunshopd {
 	
 	class controls {
 		///custom
-                class loadVehStore: w_RscButton
-		{
-			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\vehicleStore\loadVehStore.sqf'";
-			text = "-> Vehicles";
-
-			x = 0.22 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadChopStore: w_RscButton
-		{
-			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "->Choppers";
-
-			x = 0.32 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
-                 class loadBuildStore: w_RscButton
+               
+              class saveLoadout: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\BuildStore\loadBuildStore.sqf'";
-			text = "-> Buildings";
+			onButtonClick = "[] execVM 'client\systems\gunStore\sLoadout.sqf'";
+			text = "save loadout";
 
-			x = 0.42 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
+			x = 0.603125 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;
+			h = 0.040 * safezoneH;
+			color[] = {0.1,0.95,0.1,1};
 
 		};
-                 class loadBuildStore2: w_RscButton
+                class resetLoadout: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\generalStore\loadGenStore.sqf'";
-			text = "-> Generals";
+			onButtonClick = "loadout =[];player setvariable['chocoload',[],true];";
+			text = "reset loadout";
 
-			x = 0.52 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
+			x = 0.503125 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.078 * safezoneW;
+			h = 0.040 * safezoneH;
+			color[] = {0.95,0.1,0.1,1};
 
 		};
-                 class loadBuildStore3: w_RscButton
+                 class howLoadout: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> Funniest";
+			onButtonClick = "player globalchat'add your favorite weapons and magazines to GunStore Cart and press Save Loadout';";
+			text = "how to save loadout";
 
-			x = 0.62 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
+			x = 0.403125 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.1 * safezoneW;
+			h = 0.040 * safezoneH;
+			
 
 		};
-                ////////end custom
 		class SelectionList: w_RscListbox
 		{
 			idc = gunshop_gun_list;
-			onLBSelChanged = "[] execvm 'client\systems\gunStore\weaponInfo.sqf'";
+			onLBSelChanged = "[1] execvm 'client\systems\gunStore\weaponInfo.sqf'";
 
 			x = 0.3125 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
@@ -150,6 +129,16 @@ class gunshopd {
 			w = 0.0916666 * safezoneW;
 			h = 0.422222 * safezoneH;
 		};
+                class SelectionammoList: w_RscListbox
+		{
+			idc = gunshop_ammo_list;
+			//onLBSelChanged = "[] execVM 'client\systems\gunStore\quickAddAmmo.sqf'";
+
+			x = 0.590 * safezoneW + safezoneX;
+			y = 0.41 * safezoneH + safezoneY;
+			w = 0.085 * safezoneW;
+			h = 0.22 * safezoneH;
+		};
 
 		class QuickAddAmmo: w_RscButton
 		{
@@ -157,8 +146,8 @@ class gunshopd {
 			onButtonClick = "[] execVM 'client\systems\gunStore\quickAddAmmo.sqf'";
 			text = "+ Ammo";
 
-			x = 0.590 * safezoneW + safezoneX;
-			y = 0.375 * safezoneH + safezoneY;
+			x = 0.6 * safezoneW + safezoneX;
+			y = 0.35 * safezoneH + safezoneY;
 			w = 0.055 * safezoneW;
 			h = 0.040 * safezoneH;
 
@@ -170,8 +159,8 @@ class gunshopd {
 			onButtonClick = "[] execVM 'client\systems\gunStore\addToCart.sqf'";
 			text = "Add";
 
-			x = 0.515625 * safezoneW + safezoneX;
-			y = 0.375 * safezoneH + safezoneY;
+			x = 0.42 * safezoneW + safezoneX;
+			y = 0.43 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
 			h = 0.040 * safezoneH;
 
@@ -183,8 +172,8 @@ class gunshopd {
 			onButtonClick = "[] execVM 'client\systems\gunStore\removeFromCart.sqf'";
 			text = "Remove";
 
-			x = 0.515625 * safezoneW + safezoneX;
-			y = 0.425 * safezoneH + safezoneY;
+			x = 0.50 * safezoneW + safezoneX;
+			y = 0.43 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
 			h = 0.040 * safezoneH;
 
@@ -197,9 +186,9 @@ class gunshopd {
 			text = "Buy";
 
 			x = 0.703125 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.088 * safezoneW;
-			h = 0.040 * safezoneH;
+			y = 0.740 * safezoneH + safezoneY;
+			w = 0.098 * safezoneW;
+			h = 0.050 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
 
 		};

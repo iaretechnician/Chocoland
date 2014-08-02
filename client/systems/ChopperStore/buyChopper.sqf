@@ -4,7 +4,6 @@ _playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
-
 _dialog = findDisplay chopshop_DIALOG;
 _cartlist = _dialog displayCtrl chopshop_cart;
 _totalText = _dialog displayCtrl chopshop_total;
@@ -24,10 +23,13 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_selectedItem = lbCurSel _itemlist;
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
+          
 	if(0 <= 1) then {
 			_price = _x select 1;
                         if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["choco",_playerMoney - _price,true];
+                        PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 			hintsilent "Chopper bought - watch the sky";
                         closeDialog 0;
@@ -52,27 +54,28 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                 
    
           //    waitUntil {(getPos _spawn select 2) < 2};
-            player globalchat"use W,A,S,D to controll your Parachute, you can also Release with mousewheel";
-               paraId = player addAction[('<t color=''#FF33CC''>' + ('Rotate Vehicle 90°') +  '</t>'),'client\functions\on.sqf'];
-               while {(getPos _spawn select 2) > 2}do
-               {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)];
-             if(on)then {_target = (getDir _spawn) + 90;
-	_target = _target - getDir player;_spawn setdir _target;rotate9 = [rotate9, _target];
+            player globalchat"use W,A,S,D to controll your Parachute, you can Rotate with mousewheel";
+              if(multiobjects== 0)then{ paraId = player addAction[('<t color=''#FF33CC''>' + ('Rotate Vehicle 90°') +  '</t>'),'client\functions\on.sqf'];};multiobjects= 1;
+               while {(getPos _spawn select 2) > 2 and  (alive _Parachute)and (alive _spawn)}do
+               {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)*1.07];
+             if(on)then {_spawn setdir ((getDir _spawn) + 90);
+	rotate9 = [rotate9, _spawn];
 	publicVariable "rotate9";on = false;};
         sleep 0.1;
 };
 player removeaction paraId;
 on = false;
 		deTach _spawn;
-		sleep 15;
+		sleep 5;
 		deleteVehicle _Parachute;
                  _spawn setDamage (0.00);
                  _spawn allowdamage true;
 
+diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 2, _price, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
 		} else {
 			hintsilent "There is another chopper or player blocking the spawn point!";
 		};
 	}}forEach ChopperStoreArray;
 };
 
-diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];

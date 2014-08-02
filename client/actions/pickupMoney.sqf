@@ -5,9 +5,9 @@
 //	@file Args:
 
 // Check if mutex lock is active.
-if(mutexScriptInProgress) exitWith 
+if(mutexScriptInProgress || geldaction) exitWith 
 {
-	player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
+	//player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 };
 
 _totalDuration = 2;
@@ -25,15 +25,15 @@ for "_iteration" from 1 to _lockDuration do
 {	
 	if((_moneyObject getVariable "owner") != getPlayerUID player) exitWith
 	{
-		player globalChat "This object is already in use.";
+		
         mutexScriptInProgress = false;  
 	};
     	
 	if(vehicle player != player) exitWith 
 	{
 		player globalChat "You can't pick up money whilst in a car";
-		player action ["eject", vehicle player];
-		sleep 1;
+	//	player action ["eject", vehicle player];
+	//	sleep 1;
 		mutexScriptInProgress = false;
         
         _moneyObject setVariable ["owner", "world", true];
@@ -60,10 +60,11 @@ for "_iteration" from 1 to _lockDuration do
                     
 		if(count _currMoneyTemp == 0) then 
 		{
-			player globalChat format["You failed to pick the money up"];
+			
 			mutexScriptInProgress = false;
             _moneyObject setVariable ["owner", "world", true];
 		} else {
+		geldaction = true;
 			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "cash");
                         _server = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "server");
 			deleteVehicle (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
@@ -72,6 +73,10 @@ for "_iteration" from 1 to _lockDuration do
 			player globalChat format["You have picked up $%1",_money];
 			mutexScriptInProgress = false;
 			player switchMove _originalState;
+			sleep 5;
+			geldaction =false;
+                        PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 		};      
 	};     
 };

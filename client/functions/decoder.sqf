@@ -39,17 +39,15 @@ _totalDuration = _dist;
 		    sleep 0.5;
                     _base = _currObject getvariable"base";
                     if (_base == 1)exitwith {R3F_LOG_mutex_local_verrou = false;
-                        _random = round (random 6);
+                        _random = round (random 10);
                         if(_random == 4)then {hint "your lucky the basebuilder-object is deleted";deletevehicle _currObject;}else{hint"your not lucky the basebuilder-object is still locked";};
                         
                 };
                     deletevehicle _currObject;
          
-         _random = Round (random 26);
-         if(_random <= 16 and _random >=3)then {player setvariable["bounty",(player getvariable"bounty")+1,true];player globalchat"hey you found 1 chocos";};
-         if(_random <= 21 and _random >=17)then {player setvariable["bounty",(player getvariable"bounty")+2,true];player globalchat"hey you found 2 chocos";};
-         if(_random == 24 || _random ==23|| _random ==22)then {player setvariable["bounty",(player getvariable"bounty")+5,true];player globalchat"hey you found 5 chocos";};
-        if(_random == 25)then {player setvariable["bounty",(player getvariable"bounty")+10,true];player globalchat"hey you found 10 chocos";};
+         _random = Round (random 5);
+         if (_random == 1)then {player setvariable["bounty",(player getvariable"bounty")+1,true];player globalchat"hey you found 1 chocos";};
+         
          
          };
 		};

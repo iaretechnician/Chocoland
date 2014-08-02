@@ -38,7 +38,6 @@ true spawn {
 [] execVM "briefing.sqf";
 
 if(X_Client) then {
-   
 	//waitUntil {player == player};
 
 	//Wipe Group.
@@ -61,10 +60,10 @@ if(X_Server) then {
 };
 
 //init 3rd Party Scripts
-[] execVM "addons\R3F\init.sqf";
-
-[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
+[] execVM "addons\R3F_ARTY_AND_LOG\init.sqf";
+[] execVM "addons\proving_Ground\init.sqf";
+//[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "motd.sqf";
 _null = [] execVM "addons\scripts\cleanupnew.sqf";
- [] execVM "addons\proving_Ground\init.sqf";
+
 execVM "persistentscripts\init.sqf";

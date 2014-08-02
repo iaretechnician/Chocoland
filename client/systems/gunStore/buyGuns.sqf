@@ -19,16 +19,36 @@ if(!(alive player)) exitWith {
 	player globalChat "ERROR: YOU ARE CURRENTLY DEAD.";
     closeDialog 0;
 };	
-
+dropweapon = "WeaponHolder" createVehicle getPos player; 
+dropweapon setPos [getPos player select 0,getPos player select 1,getPos player select 2];
 mutexScriptInProgress = true;
-
-
-
+//delete switch weapon
+fnc_drop_weapon = {
+	_weapon = _this select 0;
+	_weaponCfg = (configFile >> "cfgWeapons" >> _weapon);
+	_type = getNumber(_weaponCfg >> "type");
+	if (_type in [1,2,4,5]) then {
+		{_cWepType = [getNumber(configFile >> "cfgWeapons" >> _x >> "type")];
+		if (_cWepType select 0 in [1,5]) then {_cWepType = [1,5];};
+		if (_type in _cWepType) then {
+			player removeWeapon _x;
+                         dropweapon addWeaponCargo [_x,1];
+			_current_magazines = magazines player;
+			_compatible_magazines = getArray(configFile >> "cfgWeapons" >> _x >> "magazines");
+			{if (_x in _compatible_magazines) then {
+				player removeMagazine _x;
+                                 dropweapon addMagazineCargo [_x,1];
+			};} forEach _current_magazines;
+		};} forEach (weapons player);
+	};
+	player addWeapon _weapon;
+	player selectWeapon _weapon;
+	
+};
 private ["_name"];
 
 //Initialize Values
 _switch = _this select 0;
-
 _playerMoney = player getVariable "choco";
 _size = 0;
 _price = 0;
@@ -38,6 +58,7 @@ _cartlist = _dialog displayCtrl gunshop_cart;
 _totalText = _dialog displayCtrl gunshop_total;
 _playerMoneyText = _Dialog displayCtrl gunshop_money;
 _size = lbSize _cartlist;
+_pos = getposatl player;
 
 switch(_switch) do 
 {
@@ -60,59 +81,40 @@ switch(_switch) do
                     switch (_type) do {
                     
                     	case 1: { //Main Rifle
-                        
-                        	if((_playerSlots select 0) >= 1) then {
+                         diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
+                         publicvariableserver "diag_log_server";
+                        	if((_playerSlots select 0) >= 1) then { 
 								player addWeapon _class;
-							} else {
-								{
-                                	if(_x select 2 == _class) then{_price = _x select 3; _name = _x select 1;};
-                                }forEach weaponsArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];  
-							};
+                                                                player selectWeapon _class;
+							} else {  [_class]call fnc_drop_weapon;};
                         };
                         
                         case 2: { //Side Arm
-                        	
+                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
                             if((_playerSlots select 1) >= 1) then {
 								player addWeapon _class;
-							} else {
-								{
-                                	if(_x select 2 == _class) then{_price = _x select 3; _name = _x select 1;};
-                                }forEach weaponsArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];  
-							};
+                                                                player selectWeapon _class;
+							} else {[_class]call fnc_drop_weapon;};
                         };
                         
                         case 4: { //Rocket launcher
-                        	
+                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
                             if((_playerSlots select 2) >= 1) then {
 								player addWeapon _class;
-							} else {
-								{
-                                	if(_x select 2 == _class) then{_price = _x select 3; _name = _x select 1;};
-                                }forEach weaponsArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];  
-							};
+                                                                player selectWeapon _class;
+							} else {[_class]call fnc_drop_weapon;};
                         };
                         
                         case 5: { //Machinegun
-                        	
+                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
                             if(((_playerSlots select 2) >= 1) AND ((_playerSlots select 0) >= 1)) then {
 								player addWeapon _class;
-							} else {
-								{
-                                	if(_x select 2 == _class) then { _price = _x select 3; _name = _x select 1; };
-                                }forEach weaponsArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];  
-							};
+                                                                player selectWeapon _class;
+                                                                
+							} else {[_class]call fnc_drop_weapon;};
                         };
                     };          
 				};   
@@ -130,95 +132,46 @@ switch(_switch) do
                     switch (_type) do {
                     
                     	case 256: {
-                        	if((_playerSlots select 4) >= 1) then
-							{
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+						
                         };
                         
                         case 512: {
-                        	if((_playerSlots select 4) >= 2) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+							
                         };
                         
                         case 768: {
-                        	if((_playerSlots select 4) >= 3) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+							
                         };
                         
                         case 1024: {
-                        	if((_playerSlots select 4) >= 4) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+							
                         };
                         
                         case 1280: {
-                        	if((_playerSlots select 4) >= 5) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+							
                         };
                         
                         case 1536: {
-                        	if((_playerSlots select 4) >= 6) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+							
                         };
                         
                         case 16: {
-                        	if((_playerSlots select 3) >= 1) then {
+                        	
 								player addMagazine _class;
-							} else {
-								{
-                                	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
-                                }forEach ammoArray;
-                                
-								gunStoreCart = gunStoreCart - _price;
-								hint format["You do not have space for this item %1",_name];
-							};
+
+							
                         };
                     };
 				};
@@ -230,6 +183,8 @@ switch(_switch) do
 					if(_class == "Binocular_Vector" OR _class== "NVGoggles") then {
 						if((_playerSlots select 5) >= 1) then {
 							player addWeapon _class;
+                                                        diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 2, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
 						} else {
 							{
                             	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
@@ -240,14 +195,17 @@ switch(_switch) do
 						};
 					} else {
 						player addWeapon _class;
+                                                diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 2, (player getVariable"choco")];
+publicvariableserver "diag_log_server";
 					};
 				};
             }forEach accessoriesArray;
 		};
 
 		player setVariable["choco",_playerMoney - gunStoreCart,true];
+                PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
-
 		gunStoreCart = 0;
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 		lbClear _cartlist;

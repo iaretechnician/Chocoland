@@ -47,7 +47,7 @@
 			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;chocos :you get chocos for killing npcs and Players and you can find it on the Island, all your money will multiplier your chocos!&lt;/t&gt;&lt;br/&gt; CHANGES:Check our website for the patchnotes: www.heavensdelight.de</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;chocos :you get chocos for killing npcs and Players and you can find it on the Island, all your money will multiplier your chocos!&lt;/t&gt;&lt;br/&gt; CHANGES:HARD GAMEPLAY CHANGE! Check our website for the patchnotes: www.heavensdelight.de</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
@@ -96,9 +96,11 @@
 <Key ID="STR_WL_ShopDescriptions_basebuilder">
 			<English>Become a BaseBuilder, create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever and you only pay 50% forEver in the ParaStore-Buildings</English>
 		</Key>
-
+<Key ID="STR_WL_ShopDescriptions_attach">
+				<English>Enjoy Attach, create wonderful Custom Vehicles  with your Special bonus, your Object will attach to an other for some Cash.</English>
+		</Key>
 <Key ID="STR_WL_ShopDescriptions_chocos">
-			<English>you have a chance of 50% to double your Money, if you're unlucky you'll loose your Money</English>
+			<English>you get a chance of 50% to double your Chocos</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
 			<English>Choco Value Cat food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>

@@ -59,7 +59,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=65;
+		items=70;
 		class Item0
 		{
 			side="LOGIC";
@@ -94,7 +94,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="jake";
-description="jakes reserved slot";
+
 				};
 			};
 		};
@@ -113,8 +113,8 @@ description="jakes reserved slot";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					ext="patrick";
-description="patricks reserved slot";
+					text="patrick";
+
 				};
 			};
 		};
@@ -248,7 +248,7 @@ description="patricks reserved slot";
 					leader=1;
 					skill=0.60000002;
 					text="jake2";
-description="jakes reserved slot";
+
 				};
 			};
 		};
@@ -268,7 +268,7 @@ description="jakes reserved slot";
 					leader=1;
 					skill=0.60000002;
 					ext="patrick1";
-description="patricks reserved slot";
+
 				};
 			};
 		};
@@ -535,7 +535,7 @@ description="patricks reserved slot";
 					leader=1;
 					skill=0.60000002;
 					text="jake1";
-description="jakes reserved slot";
+
 				};
 			};
 		};
@@ -554,8 +554,8 @@ description="jakes reserved slot";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					ext="patrick2";
-description="patricks reserved slot";
+					text="patrick2";
+
 				};
 			};
 		};
@@ -1015,41 +1015,42 @@ description="patricks reserved slot";
 				};
 			};
 		};
+	
 		class Item50
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="CDF_Soldier_Medic";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=50;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor50";
+					text="guer16";
 				};
 			};
 		};
 		class Item51
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="CDF_Soldier_Medic";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=51;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor50";
+					text="guer17";
 				};
 			};
 		};
@@ -1061,52 +1062,52 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=52;
 					side="GUER";
-					vehicle="CDF_Soldier_Medic";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer50";
+					text="guer18";
 				};
 			};
 		};
 		class Item53
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="USMC_Soldier_AT";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=53;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor51";
+					text="guer53";
 				};
 			};
 		};
 		class Item54
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=54;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor51";
+					text="guer54";
 				};
 			};
 		};
@@ -1118,52 +1119,52 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=55;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer51";
+					text="guer55";
 				};
 			};
 		};
 		class Item56
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="USMC_Soldier_AT";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=56;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor52";
+					text="guer56";
 				};
 			};
 		};
 		class Item57
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=57;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor52";
+					text="guer57";
 				};
 			};
 		};
@@ -1175,52 +1176,52 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=58;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer52";
+					text="guer58";
 				};
 			};
 		};
 		class Item59
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="USMC_Soldier_AT";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=59;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor53";
+					text="guer59";
 				};
 			};
 		};
 		class Item60
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=60;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor53";
+					text="guer60";
 				};
 			};
 		};
@@ -1232,52 +1233,52 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=61;
 					side="GUER";
-					vehicle="GUE_Soldier_Scout";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer53";
+					text="guer61";
 				};
 			};
 		};
 		class Item62
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="Soldier_Engineer_PMC";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=62
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor54";
+					text="guer62";
 				};
 			};
 		};
 		class Item63
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="Soldier_Engineer_PMC";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=63;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor54";
+					text="guer63";
 				};
 			};
 		};
@@ -1289,52 +1290,52 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=64;
 					side="GUER";
-					vehicle="Soldier_Engineer_PMC";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer54";
+					text="guer64";
 				};
 			};
 		};
 		class Item65
 		{
-			side="WEST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2096.3074,23.884899,4290.3867};
-					id=8;
-					side="WEST";
-					vehicle="CDF_Soldier_Medic";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=65;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="blufor55";
+					text="guer65";
 				};
 			};
 		};
 		class Item66
 		{
-			side="EAST";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2092.4248,21.299046,4293.9072};
-					id=18;
-					side="EAST";
-					vehicle="CDF_Soldier_Medic";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=66;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="opfor55";
+					text="guer66";
 				};
 			};
 		};
@@ -1346,14 +1347,71 @@ description="patricks reserved slot";
 				items=1;
 				class Item0
 				{
-					position[]={2095.7483,23.118876,4293.5181};
-					id=33;
+					position[]={2114.2546,21.643749,4294.0864};
+					id=67;
 					side="GUER";
-					vehicle="CDF_Soldier_Medic";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="guer55";
+					text="guer67";
+				};
+			};
+		};
+		class Item68
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2114.2546,21.643749,4294.0864};
+					id=68;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="guer68";
+				};
+			};
+		};
+		class Item69
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2114.2546,21.643749,4294.0864};
+					id=69;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="guer69";
+				};
+			};
+		};
+		class Item70
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2114.2546,21.643749,4294.0864};
+					id=70;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="guer70";
 				};
 			};
 		};

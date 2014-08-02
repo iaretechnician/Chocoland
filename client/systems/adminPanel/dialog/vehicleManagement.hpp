@@ -150,12 +150,22 @@ class VehicleManagement {
 			w = 0.065 * safezoneW;
 			h = 0.040 * safezoneH;
 		};
+                class tankButton5: w_RscButton
+		{
+			idc = vehicleManagementTankButton;
+			onButtonClick = "[5] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
+			text = "Full damaged";
+			x = 0.455 * safezoneW + safezoneX;
+			y = 0.67 * safezoneH + safezoneY;
+			w = 0.065 * safezoneW;
+			h = 0.040 * safezoneH;
+		};
 
 		class hackedVehiclesButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\populateVehicles.sqf'";
-			text = "Hacked Vehicles";
+			text = "created Vehicles";
 			x = 0.455 * safezoneW + safezoneX;
 			y = 0.72 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
@@ -173,7 +183,7 @@ class VehicleManagement {
 			h = 0.040 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-
+              
 		class deleteAllButton: w_RscButton
 		{
 			idc = -1;

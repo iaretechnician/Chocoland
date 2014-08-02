@@ -9,19 +9,18 @@ disableSerialization;
 
 private ["_start","_panelOptions","_displayServerAdmin","_serverAdminSelect"];
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
 	_start = createDialog "ServerAdminMenu";
 	
 	_displayServerAdmin = uiNamespace getVariable "ServerAdminMenu";
 	_serverAdminSelect = _displayServerAdmin displayCtrl serverAdminMenu_option;
 	
 	_panelOptions = ["Player Menu",
-					"Vehicle Management",
-					"Tags",
-					"Teleport",
-	                "Money",
-                        "chocos",
-	                "Debug Menu"
+			"Vehicle Management",
+			"Teleport",
+	                "Money +100k",
+                        "chocos +10",
+	                "Show Server FPS"
 	];
 	
 	{

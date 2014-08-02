@@ -141,10 +141,10 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             };
  };   
  
-   case "Bet your Money": {
-       _chocos = player getvariable"choco";
-       _random = floor (random 2);
-       if(_random ==1)then {player setvariable["choco",_chocos *3,true];_playerMoney= player getvariable"choco";hint format ["your realy lucky you won %1 Money",_chocos];}else{hint"your not luck this time,try again.";};
+   case "Bet Chocos": {
+       _chocos = player getvariable"bounty";if(_chocos <=1)then {_chocos = 1;};
+       _random = Round (random 2);
+       if(_random ==1)then {player setvariable["bounty",_chocos *2,true];hint format ["your realy lucky you won %1 chocos",_chocos];}else{hint"your not luck this time, try again.";};
        };
         
     case "Unlock Basebuilder":{
@@ -155,10 +155,20 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             player setvariable["basebuilder",1,true];
             }; 
     };
+	case "Unlock Attach":{
+        _test = player getvariable"attach";
+        if(_test ==1)then{hint "you are allready a attach!";player setvariable["choco",(player getvariable"choco") +250000,true];
+        }else{
+            player globalchat" you unlocked attach Feature,create wonderful vehicles with your Special bonus, you can open it with B - Button";
+            player setvariable["attach",1,true];
+            }; 
+    };
 	};
 };
 
 player setVariable["choco",_playerMoney - genStoreCart,true];
+PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 _playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 
 genStoreCart = 0;

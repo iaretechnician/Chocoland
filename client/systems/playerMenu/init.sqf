@@ -16,9 +16,18 @@ _mvalue = _Dialog displayCtrl money_value;
 _rogue = _Dialog displayCtrl rogue_text;
 _uptime = _Dialog displayCtrl uptime_text;
 _groupButton = _Dialog displayCtrl groupButton;
+_saveVehicle = _Dialog displayCtrl saveVehicleText_text;
+_saveVehicle2 = _Dialog displayCtrl saveVehicleText2_text;
+
 _foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
 _watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
 _moneytext ctrlSetText format["%1", player getVariable "choco"];
+_vehicle = player getvariable"saveVehicle";
+_vehicle2 = player getvariable"saveVehicle2";
+_vehicle = (configFile >> "CfgVehicles" >> _vehicle);  _vehicle = getText(_vehicle >> "displayName");
+_vehicle2 = (configFile >> "CfgVehicles" >>  _vehicle2);  _vehicle2 = getText(_vehicle2 >> "displayName");
+_saveVehicle ctrlSetText format["Hangar: %1", _vehicle];
+_saveVehicle2 ctrlSetText format["DonatorHangar: %1", _vehicle2];
 
 _mIndex = _mvalue lbadd "$10"; _mvalue lbSetData [(lbSize _mvalue)-1, "10"];
 _mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];

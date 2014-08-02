@@ -21,8 +21,11 @@
 // [1, 1, 1, 60, 1800, 300, [1,1,1]] execVM "mando_storm.sqf"
 //
 
+5 setovercast 1;
+5 setrain 1;
+5 setfog (random 1);
+setwind[8,8,true];
 
-_sounds = ["trueno1","trueno2","trueno3", "trueno4"];
 _overcastlevel = _this select 0;
 _rainlevel  = _this select 1;
 _foglevel   = _this select 2;
@@ -86,11 +89,10 @@ while {mando_storm && ((dayTime * 3600) < (_stormtimeini + _duration))} do
    _posp = getPos player;
    _poss = [(_posp select 0) + _dist*sin(_ang),(_posp select 1) + _dist*cos(_ang), 1];
    _log setPos _poss;
-   _log say _sound;
    Sleep 1;
    if ((dayTime * 3600) > (_windtimeini + 60)) then
    {
-      player say "viento1";
+     
       _windtimeini  = dayTime * 3600;
    };
 };

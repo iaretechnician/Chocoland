@@ -12,6 +12,7 @@ sideMissions = 1;
 serverSpawning = 1;
 
 //Execute Server Side Scripts.
+"diag_log_server" addPublicVariableEventHandler {diag_log (_this select 1)};
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
@@ -50,6 +51,7 @@ if (sideMissions == 1) then {
   [] execVM "server\missions\spawnController.sqf";
   sleep 5;
   [] execVM "server\missions\eventController.sqf";
+[] execVM "server\missions\events\moneyzone.sqf";
  
 };
 

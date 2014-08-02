@@ -1,4 +1,4 @@
-#include "addons\R3F\desc_include.h"
+#include "addons\R3F_ARTY_AND_LOG\desc_include.h"
 loadScreen = "Loading.jpg";
 respawn="BASE";
 respawnDelay=5;
@@ -9,11 +9,13 @@ class Header
 {
 	gameType=COOP;
 	minPlayers=1;
-	maxPlayers=60;
+	maxPlayers=50;
 };
 
 //Dialog includes
 #include "client\systems\common.hpp"
+
+#include "client\systems\playerMenu\dialog\player_settings_2.hpp"
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
 #include "client\systems\groups\dialog\groupManagement.hpp"
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
@@ -35,6 +37,8 @@ class Header
 #include "client\systems\menu\dialog\menu_settings.hpp"
 #include "client\systems\FunStore\dialog\funStore_settings.hpp"
 #include "client\systems\confirm\dialog\menu_settings.hpp"
+#include "client\systems\attach\dialog\attach_settings.hpp"
+
 class RscTitles {
 	#include "addons\proving_ground\PG_rsctitles.hpp"
     #include "client\systems\hud\dialog\hud.hpp"
@@ -44,40 +48,56 @@ class RscTitles {
 
 class CfgSounds
 {
-	sounds[] = {trueno1,trueno2,trueno3,trueno4,viento1};
-      
-	class trueno1
+
+	sounds[] = {multi2,multi3,multi4,multi5,multi6};
+ 
+     
+	class multi2
 	{
-		name = "trueno1";
-		sound[] = {"Sound\trueno1.ogg", db-0, 1.0};
+
+		name = "multi2";
+
+		sound[] = {"Sound\multi2.ogg", db-0, 1};
+
 		titles[] = {0};
 	};
 
-	class trueno2
+
+	class multi3
 	{
-		name = "trueno2";
-		sound[] = {"Sound\trueno2.ogg", db-0, 1.0};
+		name = "multi3";
+
+		sound[] = {"Sound\multi3.ogg", db-0, 1};
+
 		titles[] = {0};
 	};
 
-	class trueno3
+
+	class multi4
 	{
-		name = "trueno3";
-		sound[] = {"Sound\trueno3.ogg", db-0, 1.0};
+		name = "multi4";
+
+		sound[] = {"Sound\multi4.ogg", db-0, 1};
+
 		titles[] = {0};
 	};
 
-	class trueno4
+
+	class multi5
 	{
-		name = "trueno4";
-		sound[] = {"Sound\trueno4.ogg", db-0, 1.0};
+		name = "multi5";
+
+		sound[] = {"Sound\multi5.ogg", db-0, 1};
+
 		titles[] = {0};
 	};
 
-	class viento1
+        class multi6
 	{
-		name = "viento1";
-		sound[] = {"Sound\viento1.ogg", db-0, 1.0};
+		name = "multi6";
+
+		sound[] = {"Sound\multi6.ogg", db-0, 1};
+
 		titles[] = {0};
 	};
 };

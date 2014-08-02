@@ -10,7 +10,6 @@
 #define vehicleUsersText 12004
 #define vehicleDamageText 12005
 #define vehicleSpeedText 12006
-
 #define playerMenuDialog 55500
 #define playerMenuPlayerSkin 55501
 #define playerMenuPlayerGun 55502
@@ -25,11 +24,14 @@
 #define playerMenusaveweapon 55601
 #define playerMenudecode 55602
 #define playerMenubasebuilder 55603
+#define playerMenuattach 55606
+#define playerMenuupgrades 55605
+#define playerMenusavevehicle2 55607
 disableSerialization;
 
 private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
 	_index1 = _this select 1;
 	_type1 = _this select 0;
 	
@@ -51,8 +53,11 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
         _currentdonatorText = _dialogPlayer displayCtrl playerMenuPlayerdonate;
         _currentsavevehicleText = _dialogPlayer displayCtrl playerMenusavevehicle;
         _currentsaveweaponText = _dialogPlayer displayCtrl playerMenusaveweapon;
-          _currentdecodeText = _dialogPlayer displayCtrl playerMenudecode;
-            _currentbasebuilderText = _dialogPlayer displayCtrl playerMenubasebuilder;
+       _currentdecodeText = _dialogPlayer displayCtrl playerMenudecode;
+       _currentbasebuilderText = _dialogPlayer displayCtrl playerMenubasebuilder;
+        _currentattach = _dialogPlayer displayCtrl playerMenuattach;
+       _currentupgrades = _dialogPlayer displayCtrl playerMenuupgrades;
+       _currentsavevehicle2 = _dialogPlayer displayCtrl playerMenusavevehicle2;
 	_inCar = ["No Passengers"];
 	_driver = "No Driver";
 	if (_type1 == 1) then {
@@ -82,18 +87,21 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
 	            _currentbountyText ctrlSetText format["chocos: %1",_x getVariable "bounty"];
-                     _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable"donator"];
-                      _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"donator"];
-                       _currentdecoderText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                      _currentsavevehicleText ctrlSetText format["savevehicle: %1",_x getVariable"saveVehicle"];
-                     _currentsaveweaponText ctrlSetText format["saveweapon: %1",_x getVariable"chocopack"];
-                      _currentdecodeText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                       _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"basebuilder"];
+                    _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable"donator"];
+                    _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"basebuilder"];
+                    _currentdecoderText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
+                    _currentsavevehicleText ctrlSetText format["savevehicle: %1",_x getVariable"saveVehicle"];
+                    _currentsaveweaponText ctrlSetText format["saveweapon: %1",_x getVariable"chocopack"];
+                    _currentdecodeText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
+                    _currentattach ctrlSetText format["attach: %1",_x getVariable"attach"];
+                    _currentupgrades ctrlSetText format["upgrades: %1",_x getVariable"upgrades"];
+                    _currentsavevehicle2 ctrlSetText format["saveVehicle2: %1",_x getVariable"saveVehicle2"];
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;
-				_health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
-				_health = 100 - (_health * 100);
+				//_health = round (_health * (10 ^ _decimalPlaces)) / (10 ^ _decimalPlaces);
+				_health = round(_health);
+                                _health = 100 - (_health * 100);
 	            
 	            _healthText ctrlSetText format["Health: %1",_health];
 	        };

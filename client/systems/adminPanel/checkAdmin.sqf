@@ -7,17 +7,15 @@
 private ["_uid","_handle"];
 
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
     if ((_uid in moderators)) then {
-		execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
+	execVM "client\systems\adminPanel\loadModeratorMenu.sqf";
         hint "Welcome Moderator";		
 	};
-    if ((_uid in administrators)) then {
-		[] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
-        hint "Welcome Admin";		
+    if ((_uid in administrators) and (player in reserved_units)) then {
+	[] execVM "client\systems\adminPanel\loadAdministratorMenu.sqf";
 	};
-    //if ((_uid in serverAdministrators) and (side player == civilian)) then {
-    if (_uid in serverAdministrators) then {
+       if (_uid in serverAdministrators) then {
     	if ((_this select 0) == 1) then {
         	closeDialog 0;      
 			createDialog "balca_debug_main";

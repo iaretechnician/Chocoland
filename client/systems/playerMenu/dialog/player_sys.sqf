@@ -9,3 +9,5 @@
 #define distance_text 2009
 #define uptime_text 2010
 #define groupButton 2011
+#define saveVehicleText2_text 2012
+#define saveVehicleText_text 2013

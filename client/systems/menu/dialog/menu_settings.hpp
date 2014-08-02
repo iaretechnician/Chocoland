@@ -94,6 +94,17 @@ class menu1d {
 			h = 0.07 * safezoneH;
 
 		};
-              
+          class smartammo: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[] execVM 'client\systems\gunStore\smartammo.sqf'";
+			text = "-> add Ammo";
+
+			x = 0.280313 * safezoneW + safezoneX;
+			y = 0.491852 * safezoneH + safezoneY;
+			w = 0.09 * safezoneW;
+			h = 0.05 * safezoneH;
+
+		};    
 	};
 };

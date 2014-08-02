@@ -1,0 +1,1 @@
+private [_switch];_switch = _this select 0;switch (_switch) do{		case 1:{TEST ="195.200.192.145:9989";copyToClipboard (""+TEST+"");player globalchat"go to desktop and press STRG+V to paste the Teamspeak ip";};case 2:{TEST ="37.59.14.143:2402";copyToClipboard (""+TEST+"");player globalchat"go to desktop and press STRG+V to paste the Server ip";};};

@@ -10,6 +10,6 @@ _money = player getVariable "choco";
 _playerMoney CtrlsetText format[""];
 
 CopperShop = str(_this select 0);
-
+multiobjects= 0;
 if(ChopperShop == "ChopStore2") then {ShopSpawn = ChopSpawn2;};
 if(ChopperShop == "ChopStore3") then {ShopSpawn = ChopSpawn3;};

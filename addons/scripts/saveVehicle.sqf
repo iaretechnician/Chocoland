@@ -10,9 +10,13 @@ then {
     if (!isPlayer _vehicleSave) then {
        vehicleSave=_vehicleSave;
       
+vehiclesaveattach = "HeliHEmpty" createVehicle [0, 0, 0];
 _xveh = typeof vehicleSave; player setvariable["saveVehicle",_xveh,true];
 _nic = [nil, vehicleSave, "per", rHideobject, true] call RE; 
-    hint format ["%1 saved to Hangar! (order in PlayerMenu )", vehicleSave1];
+_position_attache = [random 3000, random 3000, (10000 + (random 3000))];
+vehicleSave attachTo [vehiclesaveattach, _position_attache];
+
+    hint format ["%1 saved to Hangar! (press L to spawn)", vehiclename];
     sleep 1;
     player globalChat "Vehicle Saved.";
     player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";

@@ -21,16 +21,21 @@ _bannedWeapons = [
 _bannedVehicles = [
 	"CruiseMissile1","CruiseMissile2","RM70_ACR","T810_Des_ACR","T810_ACR","T810Reammo_ACR",
     "Ka52Black","Su25_Ins","F35","Su25_TK_EP1","Mi24_D_TK_EP1","T810Reammo_Des_ACR","M1114_AGS_ACR","T810Refuel_ACR","T810Refuel_Des_ACR",
-    "L159_ACR","L39_ACR","Chukar", "L39_2_ACR","T810A_Des_MG_ACR","BRDM2_Gue","BRDM2_HQ_Gue","BRDM2_INS","GRAD_CDF","T810A_MG_ACR",
-	"GRAD_RU","GRAD_CDF","KamazOpen","RM70_ACR","LAV25_HQ","MMT_USMC","BMP2_Ambul_CDF","BMP2_Gue","BMP2_HQ_CDF","BMP2_HQ_INS",
-        "BMP2_INS","MLRS","T72_CDF","T72_Gue","ZSU_CDF","ZSU_INS","AH64D_Sidewinders","Ka52Black","Mi17_CDF","Mi17_Ins", 
-        "Pandur2_ACR", "BVP1_TK_ACR", "BVP1_TK_GUE_ACR", "BRDM2_Desert_ACR", "BRDM2_ACR", "BMP2_ACR","Mi17_rockets_RU","Mi24_V",
-        "Mi17_TK_EP1","Mi17_UN_CDF_EP1","Mi171Sh_CZ_EP1", "BMP2_Des_ACR","T810_Open_ACR","T810_Open_Des_ACR","T810Repair_ACR",
-        "T810Repair_Des_ACR","Dingo_GL_DST_ACR","Dingo_GL_Wdl_ACR","Dingo_WDL_ACR","Dingo_DST_ACR","LandRover_ACR",
-        "LandRover_Ambulance_ACR","LandRover_Ambulance_Des_ACR","Octavia_ACR","UAZ_Unarmed_ACR","Mi171Sh_rockets_CZ_EP1""AH6J_EP1",
-        "Mi24_D_CZ_ACR","M1114_AGS_ACR","M1114_DSK_ACR"];
+    "L159_ACR","L39_ACR", "L39_2_ACR","T810A_Des_MG_ACR",
+    "BRDM2_Gue","BRDM2_HQ_Gue","BRDM2_INS","GRAD_CDF","T810A_MG_ACR",
+	"GRAD_RU","GRAD_CDF","KamazOpen","RM70_ACR",
+	"LAV25_HQ","MMT_USMC","BMP2_Ambul_CDF","BMP2_Gue",
+	"BMP2_HQ_CDF","BMP2_HQ_INS","BMP2_INS","MLRS","T72_CDF","T72_Gue","ZSU_CDF","ZSU_INS","AH64D_Sidewinders",
+    "Ka52Black","Mi17_CDF","Mi17_Ins", "Pandur2_ACR", "BVP1_TK_ACR", "BVP1_TK_GUE_ACR", "BRDM2_Desert_ACR", "BRDM2_ACR", "BMP2_ACR",
+	"Mi17_rockets_RU","Mi24_V","Mi17_TK_EP1","Mi17_UN_CDF_EP1","Mi171Sh_CZ_EP1", "BMP2_Des_ACR",
+    "T810_Open_ACR","T810_Open_Des_ACR","T810Repair_ACR","T810Repair_Des_ACR","Dingo_GL_DST_ACR","Dingo_GL_Wdl_ACR","Dingo_WDL_ACR","Dingo_DST_ACR",
+    "LandRover_ACR","LandRover_Ambulance_ACR","LandRover_Ambulance_Des_ACR","Octavia_ACR","UAZ_Unarmed_ACR",
+    "Mi171Sh_rockets_CZ_EP1""AH6J_EP1","Mi24_D_CZ_ACR","M1114_AGS_ACR","M1114_DSK_ACR"];
     
-    _instantKick = true; // Kick the bastards immediately or taunght them a little?
+    
+_currencyLimit = 99000000; // 10k money limit for initial config.
+
+_instantKick = true; // Kick the bastards immediately or taunght them a little?
 _moneyKick = true; // Kick players who greatly exceed the money limit? Note: THIS MAY LEAD TO FALSE-POSITIVES! YOU HAVE BEEN WARNED...
 
 func_tauntHacker = {                
@@ -41,6 +46,13 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
+//_currObject = getPos player nearestObject "EvMoney";
+_nObject = nearestObject [player, "EvMoney"];
+//if(player distance (nearestobjects [player, ["EvMoney"],  2] select 0) < 2)then { []execVM "client\actions\pickupMoney.sqf";};
+if(player distance _nObject < 2 && moneypick == 1)then { []execVM "client\actions\pickupMoney.sqf";};
+
+//[] execVM "client\functions\antiCheatClient.sqf";
+
      _uid = getPlayerUID player;
     if ((_uid in serverAdministrators)) then {
 thirstLevel = 100;
@@ -63,8 +75,8 @@ hungerLevel = 100;
 			    };
 			}forEach pvar_teamSwitchList;
         };
-  	player enableSimulation true;
-  disableUserInput false;
+     //	player enableSimulation true;
+   //    disableUserInput false;
 	        
 	   { // Check for illegal weapons. 
     	if (currentWeapon player == _x) exitWith {
@@ -84,6 +96,6 @@ hungerLevel = 100;
     }forEach _bannedVehicles;
               	
 	// Loop speed not much of an issue clientside.
-	sleep 10; 
+	sleep 2; 
 };
 

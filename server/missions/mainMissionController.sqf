@@ -28,8 +28,7 @@ _lastMission = "nomission";
 
 while {true} do
 {
-    setDate[2014,03,07,12,00];
-    //waiting 
+   //waiting 
     _countppl= 150;
     {
 	if (alive _x) then

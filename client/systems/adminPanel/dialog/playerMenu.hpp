@@ -11,9 +11,12 @@
 #define playerMenuPlayerck 55522
 #define playerMenuPlayerdonate 55599
 #define playerMenusavevehicle 55600
+#define playerMenusavevehicle2 55607
 #define playerMenusaveweapon 55601
 #define playerMenudecode 55602
 #define playerMenubasebuilder 55603
+#define playerMenuattach 55606
+#define playerMenuupgrades 55605
 class PlayersMenu
 {
 	idd = playerMenuDialog;
@@ -103,6 +106,16 @@ class PlayersMenu
 			w = 0.25 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
+                 class PlayersavevehicleText4: w_RscText
+		{
+			idc = playerMenusavevehicle2;
+			text = "savevehicle2:";
+			sizeEx = 0.030;
+			x = 0.65 * safezoneW + safezoneX;
+			y = 0.41 * safezoneH + safezoneY;
+			w = 0.25 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
                 class PlayersaveweaponText: w_RscText
 		{
 			idc = playerMenusaveweapon;
@@ -124,13 +137,33 @@ class PlayersMenu
 			w = 0.25 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-		class playerMenudecodeText: w_RscText
+		class playerMenudecodeText5: w_RscText
 		{
 			idc = playerMenudecode;
 			text = "decoder:";
 			sizeEx = 0.030;
 			x = 0.52 * safezoneW + safezoneX;
 			y = 0.47 * safezoneH + safezoneY;
+			w = 0.40 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                class playerMenudecodeText11: w_RscText
+		{
+			idc = playerMenuattach;
+			text = "attach:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.49 * safezoneH + safezoneY;
+			w = 0.40 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                class playerMenudecodeText23: w_RscText
+		{
+			idc = playerMenuupgrades;
+			text = "upgrades:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.51 * safezoneH + safezoneY;
 			w = 0.40 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
@@ -143,7 +176,7 @@ class PlayersMenu
 			y = 0.30 * safezoneH + safezoneY;
 			w = 0.40 * safezoneW;
 			h = 0.04 * safezoneH;
-		};    
+		};
 		class PlayerHealthText: w_RscText
 		{
 			idc = playerMenuPlayerHealth;
@@ -232,24 +265,54 @@ class PlayersMenu
                 class donatorButton: w_RscButton
 		{
 			idc = -1;
-			text = "dona ON/Off";
+			text = "donate 0/1";
 			onButtonClick = "[14] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.35 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-                 class teamkillsButton: w_RscButton
+                   class donatorButton1: w_RscButton
 		{
 			idc = -1;
-			text = "remove tKill";
+			text = "baseb0/1";
 			onButtonClick = "[15] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.4 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
-                        color[] = {0.1,0.95,0.1,1};
 		};
+                   class donatorButton2: w_RscButton
+		{
+			idc = -1;
+			text = "decoder 0/1";
+			onButtonClick = "[16] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.45 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                   class donatorButton3: w_RscButton
+		{
+			idc = -1;
+			text = "attach 0/1";
+			onButtonClick = "[17] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                   class donatorButton4: w_RscButton
+		{
+			idc = -1;
+			text = "upgrades 0/1";
+			onButtonClick = "[18] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.55 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
+			h = 0.04 * safezoneH;
+		};
+                
 		class SlayButton: w_RscButton
 		{
 			idc = -1;
@@ -275,20 +338,21 @@ class PlayersMenu
 			color[] = {0.1,0.95,0.1,1};
 		};
 
-		/*class UnlockTeamKillerButton: w_RscButton
+		class UnlockTeamKillerButton2: w_RscButton
 		{
 			idc = -1;
-			text = "Unlock Team Kill";
+			text = "UnTKill";
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
-			x = 0.250 * safezoneW + safezoneX;
-			y = 0.760 * safezoneH + safezoneY;
-			w = 0.080 * safezoneW;
+			x = 0.6 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
+			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
-		};*/class UnlockTeamKillerButton: w_RscButton
+		};
+                class UnlockTeamKillerButton: w_RscButton
                 {
 			idc = -1;
-			text = "Set chocos to 0";
+			text = "Set chocos = 0";
 			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
@@ -315,6 +379,17 @@ class PlayersMenu
 			onButtonClick = "[8] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.410 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;
+			w = 0.080 * safezoneW;
+			h = 0.04 * safezoneH;
+			color[] = {0.1,0.95,0.1,1};
+		};
+                  class addMoneyButton11: w_RscButton
+		{
+			idc = -1;
+			text = "add 100k$ Money";
+			onButtonClick = "[19] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+                        x = 0.65 * safezoneW + safezoneX;
+			y = 0.700 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
 			h = 0.04 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};

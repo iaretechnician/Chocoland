@@ -25,8 +25,11 @@ _gunInfo = _dialog displayCtrl gunshop_gun_Info;
 _selectedItem = lbCurSel _gunlist;
 _itemText = _gunlist lbText _selectedItem;
 _gunpicture ctrlSettext _picture;
-_gunlisttext ctrlSetText format [""];	
 
+//_selectedItem2 = lbCurSel _ammoselect;
+//_itemText2 = _ammoselect lbText _selectedItem2;
+_gunlisttext ctrlSetText format [""];	
+_gunlistammo = _dialog displayCtrl gunshop_ammo_list;
 //Check Items Price
 {
 	if(_itemText == _x select 1) then {
@@ -35,11 +38,18 @@ _gunlisttext ctrlSetText format [""];
 	    
 		_weapon = (configFile >> "cfgWeapons" >> _weap_type);
 	    _gunInfo ctrlSetStructuredText parseText (format ["%1<br/>%2",getText(_weapon >> "displayName"),getText(_weapon >> "descriptionShort")]);
-	    
 	    _picture = getText(_weapon >> "picture");
 		_gunpicture ctrlSettext _picture;
-	    
+                _com_magazines = getArray(configFile >> "cfgWeapons" >> _weap_type>> "magazines");
+lbClear _gunlistammo;
+_gunlistammo lbSetCurSel -1;
+magazine1=[];
+	   {_displayName = getText (configFile >> "CfgMagazines" >> _x >> "displayName");
+       _gunlistIndex = _gunlistammo lbAdd format["%1",_displayName];magazine1=magazine1+ [_x]
+           }foreach _com_magazines;
 		_gunlisttext ctrlSetText format ["Price: $%1", _price];	
+                
+               
 	}
 }forEach weaponsArray;
 

@@ -15,7 +15,7 @@ disableSerialization;
 
 private ["_switch","_vehicleType","_vehicleSummary","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_check"];
 _uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
 	_switch = _this select 0;
 	_allVehicles = vehicles;
 	
@@ -144,6 +144,51 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministr
 				    };
 	            };
 			} forEach _allVehicles;    
+	    };
+             case 5:
+	    {
+		{
+	           
+				    _vehicleType = Format["%1",typeOf _x];
+				    if(_vehicleType isKindOf "Car") then {
+		            	if(_vehicleType isKindOf "MotorCycle" and (damage _x == 1)) then {
+		                	_vehicleSummary = format["[Class: MotorCycle] [Type: %1]",_vehicleType];
+				        	_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        	_vehicleListBox lbSetData [_index, str(_x)];    
+		                };
+		                if(_vehicleType isKindOf "Truck" and (damage _x == 1)) then {
+		                	_vehicleSummary = format["[Class: Truck] [Type: %1]",_vehicleType];
+				        	_index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        	_vehicleListBox lbSetData [_index, str(_x)];    
+		                };
+		                if(!(_vehicleType isKindOf "Truck" and (damage _x == 1)) AND !(_vehicleType isKindOf "MotorCycle") AND !(_vehicleType isKindOf "Wheeled_APC")) then {
+		                	_vehicleSummary = format["[Class: Car] [Type: %1]",_vehicleType];
+					        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+					        _vehicleListBox lbSetData [_index, str(_x)];    
+		                };
+				    };
+	                if(_vehicleType isKindOf "Helicopter" and (damage _x == 1)) then {
+				        _vehicleSummary = format["[Class: Helicopter] [Type: %1]",_vehicleType];
+				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        _vehicleListBox lbSetData [_index, str(_x)];
+			    	};
+	                if(_vehicleType isKindOf "Plane" and (damage _x == 1)) then {
+				        _vehicleSummary = format["[Class: Plane] [Type: %1]",_vehicleType];
+				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        _vehicleListBox lbSetData [_index, str(_x)];
+			    	};
+	                if(_vehicleType isKindOf "Tank" and (damage _x == 1)) then {
+				        _vehicleSummary = format["[Class: Tank] [Type: %1]",_vehicleType];
+				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        _vehicleListBox lbSetData [_index, str(_x)];
+				    };
+		            if(_vehicleType isKindOf "Wheeled_APC" and (damage _x == 1)) then {
+				        _vehicleSummary = format["[Class: APC] [Type: %1]",_vehicleType];
+				        _index = _vehicleListBox lbAdd format["%1",_vehicleSummary];
+				        _vehicleListBox lbSetData [_index, str(_x)];
+				    };
+	          
+			} forEach _allVehicles;   	
 	    };
 	};
 } else {

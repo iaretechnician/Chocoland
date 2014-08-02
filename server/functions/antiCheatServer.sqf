@@ -5,7 +5,7 @@
 //	@file Args:
 
 if(!X_Server) exitWith {};
-
+/*
 while {true} do {
     //Iterate through the playable object and set some values.
     {
@@ -16,3 +16,4 @@ while {true} do {
 	// Don't loop too fast, with 60+ people connected this might be quite straining.
     sleep 60; 
 };
+*/

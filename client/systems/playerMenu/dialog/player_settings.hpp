@@ -78,7 +78,28 @@ class playerSettings {
 			sizeEx = 0.025;
 			x = 0.03; y = 0.40;
 			w = 0.3; h = 0.02;
-		};			
+		};
+                class vehIcon : w_RscPicture {
+      		idc = -1;
+        	text = "client\icons\driver.paa";
+        	x = 0.02; y = 0.26;
+			w = 0.04; h = 0.04;
+		};
+		
+		class saveVehicleText : w_RscText {
+			idc = saveVehicleText_text;
+			text = "";
+			sizeEx = 0.04;
+			x = 0.160; y = 0.46;
+			w = 0.3; h = 0.05;
+		};
+                class saveVehicle2Text : w_RscText {
+			idc = saveVehicleText2_text;
+			text = "";
+			sizeEx = 0.04;
+			x = 0.160; y = 0.55;
+			w = 0.3; h = 0.05;
+		};
 	};
 	
 	class controls {
@@ -123,43 +144,57 @@ class playerSettings {
 			w = 0.125; h = 0.046 * safezoneH;
 			color[] = {0.95,0.1,0.1,1};
 		};
-	class btnflipvehicle : w_RscButton {
+              
+                class btnflipvehicle112 : w_RscButton {
 		
-			text = "Flip Vehicle";
-			onButtonClick = "[] execVM 'client\systems\playerMenu\flipvehicle.sqf'";
-			
-			x = 0.150; y = 0.38;
+			text = "Helpful TAB";
+			onButtonClick = "closeDialog 0;_playerDialog = createDialog 'playerSettings2';";
+            		x = 0; y = 0.12;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
-                class btnflipvehicle4 : w_RscButton {
+                    class btnflipvehicle12 : w_RscButton {
 		
-			text = "fix PickupMoney";
-			onButtonClick = "[] execVM 'client\systems\playerMenu\fixmoney.sqf';closeDialog 0;";
-            		x = 0.150; y = 0.28;
+			text = ".";
+			onButtonClick = "[]execVM'client\functions\getoutParachute.sqf';closeDialog 0;";
+            		x = 0.59; y = 0.12;
+			w = 0.05; h = 0.05;
+		};
+                 class btnf2lipvehicle4 : w_RscButton {
+		
+			text = "set ChocoDoor again";
+			onButtonClick = "chocodoor =0;closeDialog 0;";
+            		x = 0.160; y = 0.68;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
                
+               class SafeB2utton : w_RscButton {
+			idc = safeButton;
+			text = "autoPickupMoney on/off";
+			onButtonClick = "[] execVM 'addons\scripts\moneypickup.sqf';closeDialog 0;";
+			x = 0.360; y = 0.68;
+			w = 0.225; h = 0.046 * safezoneH;
+		};
                class SafeButton : w_RscButton {
 			idc = safeButton;
-			text = "Save Player";
-			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf';closeDialog 0;";
-			x = 0.150; y = 0.58;
-			w = 0.225; h = 0.046 * safezoneH;
+			text = "BaseCore Markers On/Off";
+			onButtonClick = "[]execVM'client\functions\createBaseMarker.sqf';closeDialog 0;";
+            		x = 0.160; y = 0.28;
+			w = 0.235; h = 0.049 * safezoneH;
 		};
                   class vehButton : w_RscButton {
 			idc = vehButton;
 			text = "Spawn My Vehicle";
 			onButtonClick = "[] execVM 'addons\scripts\createVehicle.sqf';closeDialog 0;";
-			x = 0.150; y = 0.48;
-			w = 0.225; h = 0.046 * safezoneH;
+			x = 0.160; y = 0.38;
+			w = 0.235; h = 0.049 * safezoneH;
 		};
 
 		class GroupsButton : w_RscButton {
 			idc = groupButton;
 			text = "Group Management";
 			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
-			x = 0.150; y = 0.68;
-			w = 0.225; h = 0.046 * safezoneH;
+			x = 0.160; y = 0.48;
+			w = 0.235; h = 0.049 * safezoneH;
 		};
 
 		class btnDistanceNear : w_RscButton {

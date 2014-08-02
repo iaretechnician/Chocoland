@@ -26,11 +26,11 @@ _lastMission = "nomission";
 while {true} do
 {
     //waiting
-    _countppl= 300;
+    _countppl= 150;
     {
 	if (alive _x) then
 		{
-                _countppl= _countppl -10;	
+                _countppl= _countppl -5;	
 		};
 	} forEach playableUnits; 
        if(_countppl < 0)then {_countppl =0;};

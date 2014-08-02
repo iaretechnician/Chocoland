@@ -14,5 +14,7 @@ _itempicture ctrlSettext "";
 _itemlisttext ctrlSettext "";
 _itemInfo ctrlSetStructuredText parseText "";
 {
-	_itemlistIndex = _itemlist lbAdd format["%1",_x select 0];
+	if ((_x select 2) == 2 and (side player == east))then{  _itemlistIndex = _itemlist lbAdd format["%1",_x select 0];};
+	if ((_x select 2) == 1 and (side player == west))then{  _itemlistIndex = _itemlist lbAdd format["%1",_x select 0];};
+	if ((_x select 2) == 3 and (side player == resistance))then{ _itemlistIndex = _itemlist lbAdd format["%1",_x select 0];};
 } forEach donatorClassrray;

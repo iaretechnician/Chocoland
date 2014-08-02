@@ -9,31 +9,15 @@ _player = _this;
 
 process = false;
 reserved_units = [admin1, admin3, admin2];
-reserved_uids = ["3771202","108720582","149964550"];
+reserved_uids = ["76561198078783807","76561198010316297","76561198032150693","76561198135184514"];
 reserved_uids2 = ["108720582","149964550"];
 _uid = getPlayerUId _player;
-if ((_player in reserved_units)&& !(_uid in reserved_uids)) then {
+if ((_player in reserved_units)&& !(_uid in reserved_uids)) then 
+{
    _player globalChat "You are in a adminslot, kicking to lobby in 5 seconds";
    sleep 5;
    failMission "end1";
  };
-donator_jake = [jake, jake1, jake2];
- donator_jakeuid = ["125670982"];
-_uid = getPlayerUId _player;
-if ((_player in donator_jake)&& !(_uid in donator_jakeuid)) then {
-   _player globalChat "You are in Jake`s reserved slot, kicking to lobby in 5 seconds";
-   sleep 5;
-   failMission "end1";
- };
- donator_patrick = [patrick, patrick1, patrick2];
- donator_patrickuid = ["247641030"];
-_uid = getPlayerUId _player;
-if ((_player in donator_patrick)&& !(_uid in donator_patrickuid)) then {
-   _player globalChat "You are in Patrick`s reserved slot, kicking to lobby in 5 seconds";
-   sleep 5;
-   failMission "end1";
- };
-
 //end Reserved slots
 _player setskill 0;
 {_player disableAI _x} foreach ["move","anim","target","autotarget"];
@@ -116,6 +100,7 @@ _player setVariable["bombs",false,false];
 _player setVariable["spawnBeacon",0,false];
 _player setVariable["camonet",0,false];
 _player setVariable["canDrop",false,false];
+_player setvariable["attach",0,true];
  _player addMagazine "7Rnd_45ACP_1911";
  _player addMagazine "7Rnd_45ACP_1911";
 	_player addWeapon "Colt1911";

@@ -20,7 +20,7 @@ repairVehicle = compile preprocessFile "client\systems\playerMenu\repair.sqf";
 placeCammoNet = compile preprocessFileLineNumbers "client\systems\playerMenu\placeCammoNet.sqf";
 useMedicalKit = compile preprocessFileLineNumbers "client\systems\playerMenu\useMedicalKit.sqf";
 useEdibleItem = compile preprocessFileLineNumbers "client\systems\playerMenu\useEdibleItem.sqf";
-
+loadattach = compile preprocessFile "client\systems\attach\loadattach.sqf";
 // Sync client with server time
 timeSync = compile preprocessFileLineNumbers "client\functions\clientTimeSync.sqf";
 

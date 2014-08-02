@@ -20,10 +20,16 @@ if((player getVariable "choco" < _money) OR (player getVariable "choco" < 0)) ex
 mutexScriptInProgress = true;
 _pos = getPosATL player;
 player playmove "AinvPknlMstpSlayWrflDnon";
-_cash = "Evmoney" createVehicle (position player); _cash setPos _pos;
+_cash = "Evmoney" createVehicle (position player); _cash setPosATL _pos;
 _cash setVariable["cash",_money,true];
 _cash setVariable["owner","world",true];
+_cash setvariable["multi",1,true];
 player setVariable["choco",(player getVariable "choco") - _money,true];
+ if(_money >= 100000)then{
+                        diag_log_server = parsetext format["player:%1 drop %2 now %3 Money",name player,_money, (player getVariable"choco")];
+publicvariableserver "diag_log_server";};
+PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 sleep 3;
 mutexScriptInProgress = false;
 player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation. 

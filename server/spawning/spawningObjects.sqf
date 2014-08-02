@@ -25,7 +25,7 @@ if(_randomObject == "Land_stand_small_EP1") then
 {
     _spawn setVariable["food",40,true];
 };
-waitUntil {(getPos _spawn select 2) < 2 ||!(alive _Parachute)||!(alive _spawn)};
+		waitUntil {(getPos _spawn select 2) < 2 || !alive _spawn || !alive _Parachute};
 		deTach _spawn;
 		sleep 1;
 		deleteVehicle _Parachute;

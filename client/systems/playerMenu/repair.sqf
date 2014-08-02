@@ -28,7 +28,8 @@ if(!(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _cur
     _currPlayerState = animationState player;
     player switchMove "AinvPknlMstpSlayWrflDnon_medic";
     
-    _totalDuration = 5; // 5 seconds duration
+    _totalDuration = 5;
+    _totalDuration = count playableunits;
 	_iterationAmount = _totalDuration;
     
 	for "_iteration" from 1 to _iterationAmount do {
@@ -68,7 +69,7 @@ if(!(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _cur
   			player setVariable["repairkits",(player getVariable "repairkits")-1,false];
       		_currVehicle setDamage 0;
                 _currVehicle setFuel 1;
-                _currVehicle setVehicleAmmo 1;
+               
    		};
     };
 } else {

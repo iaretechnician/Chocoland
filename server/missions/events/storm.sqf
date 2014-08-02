@@ -28,7 +28,7 @@ _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> 
 
 {
     if(alive _x) then{
-    [nil, _x, "loc", rEXECVM, "server\missions\events\stormEffect.sqf", player, [1, 1, 0.2, 10, 600, 0, [1,1,1]]] call RE;};
+    [nil, _x, "loc", rEXECVM, "server\missions\events\stormEffect1.sqf",_x] call RE;};
 }forEach playableUnits;
       
  _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'>Storm Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>has begun, beware of the Lightning strike</t>", _mainTextColour, _subTextColour];

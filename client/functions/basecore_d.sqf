@@ -32,7 +32,6 @@ _stringEscapePercent = "%";
                 _bounty = player getVariable"bounty";if(_bounty==0)then{_bounty=1;};
                 _money = _money * _bounty;
                   player setVariable["choco",(player getVariable"choco") + _money,true];
-                    player setVariable["bounty",0,true];
                 deletevehicle _currObject;
                 titleText [format["\n+ you got %1 $ for Destroy BaseCore", _money], "PLAIN DOWN", 0];
                 process = false;

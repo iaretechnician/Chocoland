@@ -18,23 +18,22 @@ respawnDialogActive = false;
 groupManagmentActive = false;
 pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
+behindi =1;
+moneypick = 1;
 currentMissionsMarkers = [];
 currentRadarMarkers = [];
-
+chocodoor =0;
+rainbow= 0;
 //Initialization Variables
 playerCompiledScripts = false;
 playerSetupComplete = false;
 
 waitUntil {!isNull player};
 waitUntil{time > 2};
-_classUID = ["3771202","108720582","149964550","125670982","247641030"];
-_uid = getPlayerUId player;
-//Call client compile list.
+
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
-if(_uid in _classUID)then {
 [] execVM "client\systems\class\loadclass.sqf";
-waitUntil { sleep 1;classSelect==1; };
-};
+waitUntil { sleep 1;classSelect==1;};
 //Player setup
 player call playerSetup;
 //classSelection
@@ -77,3 +76,4 @@ true spawn playerSpawn;
 _mapcenter = [3445.93,3665.25, 0.0013];
 _buildings = nearestObjects [_mapcenter, ["house"], 15000];
 {_x allowdamage false;} forEach _buildings;
+

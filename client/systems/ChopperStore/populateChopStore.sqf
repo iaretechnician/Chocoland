@@ -15,4 +15,4 @@ _itemlisttext ctrlSettext "";
 _itemInfo ctrlSetStructuredText parseText "";
 {
 	_itemlistIndex = _itemlist lbAdd format["%1",_x select 0];
-} forEach ChopperStoreArray;
+}forEach ChopperStoreArray;

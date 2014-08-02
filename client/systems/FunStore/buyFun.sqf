@@ -26,6 +26,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
 			if(_price > (player getVariable "bounty")) exitWith {hintsilent "You do not have enough chocos"};
 			player setVariable["bounty",_playerMoney - _price,true];
+                        PDB_saveReq = getPlayerUID player;
+publicVariableServer "PDB_saveReq";
 			_playerMoneyText CtrlsetText format["chocos: %1", player getVariable "bounty"];
             switch (_x select 2) do
 {
@@ -66,6 +68,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
      case "ship" :{player globalChat format["watch your MouseWheel Commands"];playershieldObject = player addAction[('<t color=''#17FF41''>' + ('Spawn here my MotherShip') +  '</t>'),'client\systems\FunStore\adds\ship.sqf'];};
      case "decoder":{["decoder"] execVM "client\systems\FunStore\adds\fnc_unlock.sqf";};
      case "basebuilder":{["basebuilder"] execVM "client\systems\FunStore\adds\fnc_unlock.sqf";};
+	 case "attach":{["attach"] execVM "client\systems\FunStore\adds\fnc_unlock.sqf";};
+	 
+	 case "rainbow":{player globalChat format["watch your MouseWheel Commands"];rainbow= 1;playerbaseObject = player addAction[('<t color=''#17FF41''>' + ('give me Rainbow Power') +  '</t>'),'client\systems\FunStore\adds\rainbow.sqf'];};
     
     };
 hintsilent "funnystuff bought";

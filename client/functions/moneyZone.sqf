@@ -9,7 +9,7 @@ _reward = _this select 2;
 switch (_action) do{
 	
 	case "reward" :{
-		titleText [format["%1", _victim], "PLAIN DOWN", 0];
+		titleText [format["you get %1$", _reward], "PLAIN DOWN", 0];
 		_killerMoney = player getVariable "choco";
 		_newMoney = _killerMoney + _reward;
 		player setVariable ["choco", _newMoney, true];

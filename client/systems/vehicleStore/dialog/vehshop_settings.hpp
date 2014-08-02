@@ -81,7 +81,7 @@ class vehshopd {
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "-> Choppers";
+			text = "-> Airplanes";
 
                          x = 0.230203 * safezoneW + safezoneX;
 			y = 0.40 * safezoneH + safezoneY;

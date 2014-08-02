@@ -15,7 +15,7 @@ if (local player) then {
 	_checkWeapon = "";
 	_checkAmmo = "";
 	_checkAccessor = "";
-
+_weapon ="";
 	//Grab access to the controls
 	_dialog = findDisplay gunshop_DIALOG;
 	_cartlist = _dialog displayCtrl gunshop_cart;
@@ -25,13 +25,14 @@ if (local player) then {
 	_selectedItem = lbCurSel _cartlist;
 	_itemText = _cartlist lbText _selectedItem;
 
-	{if(_itemText == _x select 1) then{_price = _x select 3;}}forEach weaponsArray;
-	{if(_itemText == _x select 0) then{_price = _x select 2;}}forEach ammoArray;
-	{if(_itemText == _x select 0) then{_price = _x select 2;}}forEach accessoriesArray;
-
+	{if(_itemText == _x select 1) then{_price = _x select 3;_weapon = _x select 2}}forEach weaponsArray;
+	{if(_itemText == _x select 0) then{_price = _x select 2;_weapon = _x select 1}}forEach ammoArray;
+	{if(_itemText == _x select 0) then{_price = _x select 2;_weapon = _x select 1}}forEach accessoriesArray;
+        if (_weapon== "")then {_weapon = ""};
 	gunStoreCart = gunStoreCart - _price;
 	_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 
 	//Remove selected item.
 	_cartlist lbDelete _selectedItem;
+        loadout= loadout -[_weapon];
 };

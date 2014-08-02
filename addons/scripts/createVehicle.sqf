@@ -42,6 +42,7 @@ _pos = getPos player;
 _pos = [(_pos select 0)+20*sin(_dir),(_pos select 1)+20*cos(_dir),50];
 
 _nic = [nil, vehicleSave, "per", rHideobject, false] call RE; 
+deTach vehicleSave;
 _veh = vehicleSave;
 _veh setpos _pos;
 _veh setdir _dir+270;

@@ -17,5 +17,6 @@ playerMenuHandle = [] spawn {
               
 		_veh = vehicle player;
               saveVehId = _veh addAction [format ["<t color='#FF9900'>%1</t>", "Save Vehicle"], "addons\scripts\saveVehicle.sqf",[],-10,false,false,"","local player"];
+			  if(rainbow==1) then {player removeAction playerbaseObject; playerbaseObject = _veh addAction[('<t color=''#17FF41''>' + ('give me Rainbow Power') +  '</t>'),'client\systems\FunStore\adds\rainbow.sqf'];};
         };
 };

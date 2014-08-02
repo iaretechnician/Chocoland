@@ -82,19 +82,21 @@ ProfileFound%1 = nil;
 		[_uid, _playerSide, "dammage", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		[_uid, _playerSide, "cmoney", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-                
+		
                 [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                 
                 [_uid, _playerSide, "donator", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                  
                 [_uid, _playerSide, "basebuilder", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                   
-                [_uid, _playerSide, "decoder", _id, "NUMBER"] spawn PersistentDBLoadStuff;                 
+                [_uid, _playerSide, "decoder", _id, "NUMBER"] spawn PersistentDBLoadStuff;  
+                
+                 [_uid, _playerSide, "attach", _id, "NUMBER"] spawn PersistentDBLoadStuff;    
 		
                 [_uid, _playerSide, "saveVehicle", _id, "STRING"] spawn PersistentDBLoadStuff;
                 
                 [_uid, _playerSide, "chocopack", _id, "STRING"] spawn PersistentDBLoadStuff;
-                
+               
 		[_uid, _playerSide, "canfood", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		[_uid, _playerSide, "medkits", _id, "NUMBER"] spawn PersistentDBLoadStuff;

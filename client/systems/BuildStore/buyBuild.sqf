@@ -36,6 +36,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;if(player getvariable"basebuilder" == 1)then{_price = Round(_price /2);};
 			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["choco",_playerMoney - _price,true];
+                        
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir;
@@ -49,9 +50,12 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		_Parachute setPosatl (getPosatl _spawn);
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
               //  waitUntil {(getPos _spawn select 2) < 2};
+              paraId = player addAction[('<t color=''#FF33CC''>' + ('Release Object') +  '</t>'),'client\functions\on.sqf'];
                while {(getPos _spawn select 2) > 2 }do
                {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)];
                 sleep 0.1;
+                 if(on)then {deTach _spawn;on = false;};
+        sleep 0.1;
 };
 		deTach _spawn;
 		sleep 3;

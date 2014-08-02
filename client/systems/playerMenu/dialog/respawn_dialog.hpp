@@ -189,7 +189,7 @@
 			onButtonClick = "[0] execVM 'client\functions\spawnAction.sqf'";
 			text = "Random";
 
-			x = 0.406 * safezoneW + safezoneX;
+			x = 0.36 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
@@ -201,34 +201,36 @@
 			onButtonClick = "[2] execVM 'client\functions\spawnAction.sqf'";
 			text = "Paradrop";
 
-			x = 0.515 * safezoneW + safezoneX;
+			x = 0.46 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
-		class LoadTownsButton: w_RscButton
+                class LoadBeaconsButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "execVM 'client\functions\spawnOnBeacon.sqf'";
+			text = "choco beacon";
+
+			x = 0.56 * safezoneW + safezoneX;
+			y = 0.310 * safezoneH + safezoneY;
+			w = 0.078 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+                //custom buttons 4
+                class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
 			text = "Towns";
 
-			x = 0.406 * safezoneW + safezoneX;
-			y = 0.384 * safezoneH + safezoneY;
+			x = 0.46 * safezoneW + safezoneX;
+			y = 0.45 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.033 * safezoneH;
 		};
 
-		class LoadBeaconsButton: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "[1] execVM 'client\functions\switchButtonNames.sqf'";
-			text = "Beacons";
-
-			x = 0.515 * safezoneW + safezoneX;
-			y = 0.384 * safezoneH + safezoneY;
-			w = 0.078 * safezoneW;
-			h = 0.033 * safezoneH;
-		};
+		
 	
 		class TownButton0: w_RscButton
 		{

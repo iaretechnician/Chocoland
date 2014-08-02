@@ -22,5 +22,12 @@ _switch = _this select 0;
             }; 
     };
    
-    
+     case "attach":{
+        _test = player getvariable"attach";
+        if(_test ==1)then{hint "you are allready a attach!";player setvariable["bounty",(player getvariable"bounty") +25,true];
+        }else{
+            player globalchat"you unlocked attach Feature,create wonderful vehicles with your Special bonus, you can open it with B - Button";
+            player setvariable["attach",1,true];
+            }; 
+    };
     };

@@ -14,7 +14,7 @@ titleText [format["\n BaseCore Activated"], "PLAIN DOWN", 0];
 _pos = getPos _currObject;
 while {alive _currObject and (_currObject getvariable"basecore" == 1) and (player getVariable"basecore") == 1} do {    
 
-
+    _currObject setdamage 0;
                 
         if (player distance _currObject < 60 and player getvariable"basecore"== 1)
         then {
@@ -29,7 +29,7 @@ while {alive _currObject and (_currObject getvariable"basecore" == 1) and (playe
         
  }else{
       titleText [format["\n your BaseCore is too far away"], "PLAIN DOWN", 0];
-     
+      _currObject setdamage 0;
        player setvariable["basecore",0,true];
       _currObject setvariable["basecore",0,true];
                     titleText [format["\n BaseCore Deactivated"], "PLAIN DOWN", 0];

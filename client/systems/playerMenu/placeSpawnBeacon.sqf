@@ -19,48 +19,21 @@ if(vehicle player != player) exitWith {
 	player globalChat localize "STR_WL_Errors_InVehicle";
 };
 
-// PRECONDITION: Check that a player is not currently over water (sea)
-{
-	if(str(_playerUID) == str(_x select 3)) then {
-    	_activeBeacon = true;
-    };
-
-}forEach pvar_beaconListBlu;
-// PRECONDITION: Check that the player does not have a currently deployed spawn beacon (RED).
-{
-    if(str(_playerUID) == str(_x select 3)) then {
-    	_activeBeacon = true;
-    };
-}forEach pvar_beaconListRed;
-// PRECONDITION: Check that the player does not have a currently deployed spawn beacon (IND).
-{
-    if(str(_playerUID) == str(_x select 3)) then {
-    	_activeBeacon = true;
-    };
-}forEach pvar_beaconListInd;
-
-//Dropped in favour of just replacing previous beacon
-// Due to the 'Undefined behaviour' of exitWith inside loops, this is the workaround.
-//if (_activeBeacon) exitWith {
-//	player globalChat localize "STR_WL_Errors_BeaconActive";
-//};
-
-// Remove active beacon so you can deploy new
-if (_activeBeacon) then {
-        hint "Deactivating existing active spawn beacon.";
-        [_playerUID] execVM "client\functions\cleanBeaconArrays.sqf";
-};
-
 player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
-_totalDuration = 60;
-_lockDuration = _totalDuration;
+_var = 0;
+_players =1;
+{if (alive _x) then{  _players = _players +1;};
+}forEach playableUnits;
+ _totalDuration = _players;
+ _lockDuration = _players;
 _iteration = 0;
 _stringEscapePercent = "%";
 mutexScriptInProgress = true;
-for "_iteration" from 1 to _lockDuration do {
+for "_iteration" from 1 to _players do {
+    
 
-	if(vehicle player != player) exitWith {
-		player globalChat "BeaconInVehicle";
+	if(vehicle player != player) exitWith {mutexScriptInProgress = false;
+	player globalChat "BeaconInVehicle";
         player action ["eject", vehicle player];
 	};  
     
@@ -73,7 +46,7 @@ for "_iteration" from 1 to _lockDuration do {
              
                                                         	    
 	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the placement.
-		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+		player switchMove "AinvPknlMstpSlayWrflDnon_medic";mutexScriptInProgress = false;
 	};
     	    
 	_lockDuration = _lockDuration - 1;
@@ -82,45 +55,28 @@ for "_iteration" from 1 to _lockDuration do {
 	2 cutText [format["Placing spawn beacon %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 	sleep 1;
 					    
-	if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that place has completed.
+	if (_iteration >= _totalDuration) exitWith { 
 		sleep 1;
 		2 cutText ["", "PLAIN DOWN", 1];
-		player setVariable["spawnBeacon",0,true];
-                _playerSide = side player;
-                _playerUID = getPlayerUId player;
-                _beaconOwner = name player;
-		_placedBeacon = "Satelit" createVehicle (position player);
-                _placedBeacon setPos [_playerPos select 0, _playerPos select 1,  _playerPos select 2];
+		
+		_placedBeacon = "Satelit" createVehicle position player;
+                _placedBeacon setPosATL _playerPos;
 		_placedBeacon addEventHandler["handleDamage", {false}];
 		_placedBeacon setVariable["R3F_LOG_disabled", true];
-		_placedBeacon setVariable["faction",_playerSide,true];
-	    _placedBeacon setVariable["ownerName",_beaconOwner,true];
-	    _placedBeacon setVariable["ownerUID",_playerUID,true];
-               _uid = name player;
+            _uid = name player;
             _placedBeacon setVariable ["playerGUID", _uid, true];
+             _placedBeacon setVariable ["objectLocked", true, true];
             _placedBeacon setVariable ["base",1,true];
             _placedBeacon enableSimulation false;
-	    _placedBeaconPos = getPos _placedBeacon;
-	   
-	    if(_playerSide == "WEST") then {
-	    	pvar_beaconListBlu set [count pvar_beaconListBlu,_beaconOwner, _placedBeaconPos, 0, _playerUID];
-	    	publicVariable "pvar_beaconListBlu";
-	    };
-
-	    if(_playerSide == "EAST") then {
-	    	pvar_beaconListRed set [count pvar_beaconListRed,_beaconOwner, _placedBeaconPos, 0, _playerUID];
-	    	publicVariable "pvar_beaconListRed";
-	    };
-
-	    if(_playerSide == "GUER") then {
-	    	pvar_beaconListInd set [count pvar_beaconListInd,_beaconOwner, _placedBeaconPos, 0, _playerUID];
-	    	publicVariable "pvar_beaconListInd";
-	    };
-
-		mutexScriptInProgress = false;
-	};
+            player setVariable["spawnBeacon",0,true];
+                player setVariable["beacon",1,true];
+                chocobeacon = _placedBeacon;
+            mutexScriptInProgress = false;
+            2 cutText [format["you got automatically linked to this choco beacon"], "PLAIN DOWN", 1];
+	sleep 1;
+};
 };
 
-player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.
+player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; 
 
           

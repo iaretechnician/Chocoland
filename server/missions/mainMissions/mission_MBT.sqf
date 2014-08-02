@@ -33,8 +33,14 @@ diag_log format["WASTELAND SERVER - Main Mission Waiting to run: %1",_missionTyp
 diag_log format["WASTELAND SERVER - Main Mission Resumed: %1",_missionType];
 
 [_missionMarkerName,_randomPos,_missionType] call createClientMarker;
-
-_vehicleClass = randomVehicleArray select (random (count randomVehicleArray - 1));
+_vehicleClass =0;
+_random = floor (random 2);
+if(_random ==1)then{
+_randomObject = vehicleStoreArray  call BIS_fnc_selectRandom;
+_vehicleClass = _randomObject select 2;
+}else {_randomObject = ChopperStoreArray  call BIS_fnc_selectRandom;
+_vehicleClass = _randomObject select 2;
+};
 
 //Vehicle Class, Posistion, Fuel, Ammo, Damage
 _vehicle = [_vehicleClass,_randomPos,1,1,0,"NONE"] call createMissionVehicle;
