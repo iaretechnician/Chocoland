@@ -22,7 +22,7 @@ switch (_lockState) do {
   
     	R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 4;
-                if ((getplayerUID player) in reserved_uids2 || (player getvariable"basebuilder")==1) exitwith {
+                if ((player getvariable"basebuilder")==1) exitwith {
                     _currObject setVariable ["objectLocked", true, true];_currObject setVariable ["base",1,true];_currObject setVariable ["playerGUID", (name player), true];R3F_LOG_mutex_local_verrou = false;2 cutText ["Object locked complete", "PLAIN DOWN", 1];};
 		_lockDuration = _totalDuration;
 		_iteration = 0;
@@ -67,7 +67,7 @@ switch (_lockState) do {
          
         R3F_LOG_mutex_local_verrou = true;
 		_totalDuration = 8;
-               if ((getplayerUID player) in reserved_uids2 || (player getvariable"basebuilder")==1) exitwith 
+               if ((player getvariable"basebuilder")==1) exitwith 
                
                   {
                    if ((_currObject getVariable"playerGUID")!=(name player))exitwith {

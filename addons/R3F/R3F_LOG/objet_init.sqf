@@ -68,7 +68,7 @@ if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_remorquables > 0) then
 	
 	_objet addAction [("<t color=""#dddd00"">" + STR_R3F_LOG_action_selectionner_objet_remorque + "</t>"), "addons\R3F\R3F_LOG\remorqueur\selectionner_objet.sqf", nil, 5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_selectionner_objet_remorque_valide && Object_canLock"];
 	
-	_objet addAction [("<t color=""#dddd00"">" + STR_R3F_LOG_action_detacher + "</t>"), "addons\R3F\R3F_LOG\remorqueur\detacher.sqf", nil, 6, true, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_detacher_valide"];
+	_objet addAction [("<t color=""#dddd00"">" + STR_R3F_LOG_action_detacher + "</t>"), "addons\R3F\R3F_LOG\remorqueur\detacher.sqf", nil, 1, true, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_detacher_valide"];
 };
 
 if ({_objet isKindOf _x} count R3F_LOG_classes_objets_transportables > 0) then

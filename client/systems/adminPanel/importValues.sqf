@@ -82,7 +82,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	    {
 	        if (str(_x) == _data1) exitwith {
 	            _itemsText ctrlSetText format["Items: %1",weapons _x];
-	            _currentGunText ctrlSetText format["Money: %1",_x getVariable "choco"];
+                    _test=[_x getVariable "choco"] call fnc_number;
+	            _currentGunText ctrlSetText format["Money: %1", _test];
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];

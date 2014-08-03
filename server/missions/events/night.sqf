@@ -1,82 +1,30 @@
-//	@file Version: 1.0
-//	@file Name: mission_Base.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 08/12/2012 04:56
-//	@file Args:
-
-//Side Mission Colour = #4BC9B0 - Turquoise 
-//Main Mission Colour = #52bf90 - Light blue
-//Fail Mission Colour = #FF1717 - Light red
-//Fail Mission Colour = #17FF41 - Light green
-//Sub Colour = #FFF - White
-#include "setup.sqf"
 if(!isServer) exitwith {};
-diag_log format["WASTELAND SERVER - Mission Started"];
 
-//Mission Initialization.
-_randomPos = [3707, 3608,0.0014];
-_missionType = "Night Event";
-_mainTextColour = "#52bf90";
-_successTextColour = "#17FF41";
-_failTextColour = "#FF1717";
-_subTextColour = "#FFFFFF";
-_missionRewardRadius = 50000;
-night=true;
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Starting in 1 Minutes, you can find NightVision googles in Parastore - Weapons - Equipment</t>", _mainTextColour, _subTextColour];
-[nil,nil,rHINT,_hint] call RE;
+// 7 uhr geht sonne auf
+// 17,29 geht sonne unter
+//tag kann 10:28 gehn  /_day
+//nacht kann 13:31 gehn
 
- sleep 60; 
- setDate[2014,03,07,00,00];
- _inArea = _randomPos nearEntities _missionRewardRadius;
-	{
-	if (isPlayer _x) then {
-           _x setVehicleInit "night=true;setDate[2014,03,07,00,00]";
-           processInitCommands;
-	};
-	} forEach _inArea;
- _hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>has begun, 10 minutes in Darkness,you can find NightVision googles in Parastore - Weapons - Equipment</t>", _mainTextColour, _subTextColour];
-[nil,nil,rHINT,_hint] call RE;
-night=true;
-sleep 300;
-setDate[2014,03,07,03,00];
- _inArea = _randomPos nearEntities _missionRewardRadius;
-	{
-	if (isPlayer _x) then {
-          _x setVehicleInit "night=true;setDate[2014,03,07,03,00]";
-           processInitCommands;
-	};
-	} forEach _inArea;
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'> will end in 5 minutes</t>", _mainTextColour, _subTextColour];
-[nil,nil,rHINT,_hint] call RE;	
-night=true;
-sleep 240;
-setDate[2014,03,07,06,00];
- _inArea = _randomPos nearEntities _missionRewardRadius;
-	{
-	if (isPlayer _x) then {
-          _x setVehicleInit "night=true;setDate[2014,03,07,06,00]";
-           processInitCommands;
-	};
-	} forEach _inArea;
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> Night Event</t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>will end in 1 minutes</t>", _mainTextColour, _subTextColour];
-[nil,nil,rHINT,_hint] call RE;
-night=true;
-sleep 60;
-setDate[2014,03,07,12,00];
- _inArea = _randomPos nearEntities _missionRewardRadius;
-	{
-	if (isPlayer _x) then {
-         _x setVehicleInit "titleText ['', 'BLACK IN', 10];setDate[2014,03,07,12,00];night=false";
-           processInitCommands;
-	};
-	} forEach _inArea;
-_hint = parseText format ["<t align='center' color='%1' shadow='2' size='1.75'> the Night Event is over </t><br/><t align='center' color='%1'>------------------------------</t><br/><t color='%2' size='1.0'>Good Morning Sir.</t>", _mainTextColour, _subTextColour];
-[nil,nil,rHINT,_hint] call RE;
-night=true;
-sleep 10;
-
-diag_log format["WASTELAND SERVER - Mission Finished"];
-eventRunning = false;
-night=false;
- 
-	
+_day= 120;
+_night=10;
+chocomin=0;
+_datehour=0;
+_dateMin=0;
+_cycleD = 628/_day;
+_cycleN = 811/_night;
+_c=0;
+//max 1439 min
+while{true}do 
+{
+   
+    if(chocomin >628)then{_c=Round(_cycleN)}else{_c=round(_cycleD)};
+    if(chocomin >=1439)then{chocomin=chocomin - 1439};//set min to 0
+     chocomin = chocomin+_c;
+     publicvariable"chocomin";
+     //aufteilen
+     sleep 60;
+    // if(_min/60 >1)then{_datehour= floor(_min/60)};
+    // if(_datehour >17)then{_datehour= _datehour -17};
+   //  _dateMin= _min % 60;
+    // setDate[2014,03,07,_datehour + 7,_dateMin];
+};

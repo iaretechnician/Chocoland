@@ -249,8 +249,8 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "saveDatabase";
-				action = "execVM 'persistentscripts\oSave_0.sqf';execVM 'persistentscripts\pSave_0.sqf';"; 
+				text = "saveDatabase to clip";
+				action = "[] execVM 'addons\proving_ground\fnc_savedatabase.sqf'"; 
 			};
 
 			class balca_BIS_cfgviewer_btn : balca_debug_btn

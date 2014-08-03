@@ -1,4 +1,4 @@
-#include "addons\R3F_ARTY_AND_LOG\desc_include.h"
+#include "addons\R3F\desc_include.h"
 loadScreen = "Loading.jpg";
 respawn="BASE";
 respawnDelay=5;

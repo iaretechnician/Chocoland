@@ -84,7 +84,7 @@ PDB_saveLoop = {
 		{
 			player setVariable[_x, (player getVariable _x), true];
 		}foreach _varArr;
-		sleep 60;
+		sleep 120;
 		waitUntil{!respawnDialogActive && (alive player) && !PDB_isDead};
 		PDB_saveReq = getPlayerUID player;
 		publicVariableServer "PDB_saveReq";

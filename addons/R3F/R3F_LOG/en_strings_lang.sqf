@@ -23,9 +23,9 @@ STR_RELEASE_HORIZONTAL = "Release the object horizontally";
 STR_R3F_LOG_action_selectionner_objet_charge = "Load in...";
 STR_R3F_LOG_action_selectionner_objet_charge_fait = "Now select the vehicle";
 
-STR_R3F_LOG_action_charger_selection = "... load the selected object in this vehicle";
+STR_R3F_LOG_action_charger_selection = "... load in this vehicle";
 STR_R3F_LOG_action_charger_selection_en_cours = "Loading in progress...";
-STR_R3F_LOG_action_charger_selection_fait = "object has been loaded in the vehicle.";
+STR_R3F_LOG_action_charger_selection_fait = "loaded in this vehicle.";
 STR_R3F_LOG_action_charger_selection_trop_loin = "The object ""%1"" is too far from the vehicle to be loaded.";
 STR_R3F_LOG_action_charger_selection_pas_assez_de_place = "There is not enough space in this vehicle. Space left: %1, Required: %2";
 STR_R3F_LOG_action_charger_selection_objet_transporte = "The object ""%1"" is in transit.";

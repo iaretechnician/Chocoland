@@ -64,6 +64,8 @@ waituntil {!(IsNull (findDisplay 46))};
 true execVM "client\functions\loadAtmosphere.sqf"; // Set to false to disable dust, ash and wind
 [] execVM "client\functions\playerTags.sqf";
 [] execVM "client\functions\groupTags.sqf";
+[]execVM"client\functions\chocotime.sqf";
+[]execVM"client\functions\fnc_numberformat.sqf";
 [] call updateMissionsMarkers;
 [] call updateRadarMarkers;
 if (isNil "FZF_IC_INIT") then   

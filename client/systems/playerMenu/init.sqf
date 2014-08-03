@@ -21,7 +21,8 @@ _saveVehicle2 = _Dialog displayCtrl saveVehicleText2_text;
 
 _foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
 _watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
-_moneytext ctrlSetText format["%1", player getVariable "choco"];
+_test=[player getVariable "choco"] call fnc_number;
+_moneytext ctrlSetText format["%1", _test];
 _vehicle = player getvariable"saveVehicle";
 _vehicle2 = player getvariable"saveVehicle2";
 _vehicle = (configFile >> "CfgVehicles" >> _vehicle);  _vehicle = getText(_vehicle >> "displayName");

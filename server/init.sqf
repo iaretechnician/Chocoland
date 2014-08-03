@@ -52,6 +52,7 @@ if (sideMissions == 1) then {
   sleep 5;
  // [] execVM "server\missions\eventController.sqf";
 [] execVM "server\missions\events\moneyzone.sqf";
+ []execVM "server\missions\events\night.sqf";
  
 };
 
