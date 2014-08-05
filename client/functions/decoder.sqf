@@ -5,17 +5,17 @@ if((typeof cursortarget) in R3F_LOG_CFG_objets_deplacables and !R3F_LOG_mutex_lo
     _price = 5000;
     {  if(_x select 2 == typeof _currObject)then {_price =_x select 1;};   
          } foreach BuildStoreArray; 
-         _costs=(round (_price *2)) min 10000;
+         _costs=(round (_price /4));
          _choco= player getVariable"choco";
-         if(_costs > _choco)exitWith {// If the player have not enough money 
+       /*  if(_costs > _choco)exitWith {// If the player have not enough money 
           titleText [format["\n Object decode failed, you have not enough money (%1 $)",_costs], "PLAIN DOWN", 0];
-			 R3F_LOG_mutex_local_verrou = false; };
-                player setvariable["choco",_choco -_costs,true];              
-                titleText [format["\n you pay %1 $",_costs], "PLAIN DOWN", 0];
+			 R3F_LOG_mutex_local_verrou = false; };*/
+                player setvariable["choco",_choco +_costs,true];              
+                titleText [format["\n you get %1 $",_costs], "PLAIN DOWN", 0];
 
 _dist=Round (player distance cursortarget);
 hint format  ["your object is %1 meters away it need some time",_dist];
-_dist = round (_dist /10);
+_dist = round (_dist /5);
 if (_dist < 1)then {_dist=1;};
 _totalDuration = _dist;
 		_unlockDuration = _totalDuration;
@@ -39,7 +39,7 @@ _totalDuration = _dist;
 		    sleep 0.5;
                     _base = _currObject getvariable"base";
                     if (_base == 1)exitwith {R3F_LOG_mutex_local_verrou = false;
-                        _random = round (random 10);
+                        _random = round (random 8);
                         if(_random == 4)then {hint "your lucky the basebuilder-object is deleted";deletevehicle _currObject;}else{hint"your not lucky the basebuilder-object is still locked";};
                         
                 };

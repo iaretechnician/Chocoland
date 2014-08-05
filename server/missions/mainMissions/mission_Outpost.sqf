@@ -93,7 +93,7 @@ if(_result == 1) then
     
     diag_log format["WASTELAND SERVER - Main Mission Success: %1",_missionType];
      //Cash Reward
-        _missionRewardRadius =200;
+        _missionRewardRadius =100;
 _reward = Round(random 1000) +5000;
 	_inArea = _randomPos nearEntities _missionRewardRadius;
 	{

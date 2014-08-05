@@ -37,8 +37,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	    case 0: //Spectate
 		{
 		[1,_target] execVM "addons\proving_ground\fnc_spectate.sqf";
-              if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *spectate* for player %1",name _target];
-                publicvariableserver "diag_log_server";};
+              
 		};
 		case 1: //Warn
 		{
@@ -47,16 +46,14 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 		_target setVehicleInit format["if (name player == ""%2"") then {titleText [""Admin %3: %1"", ""plain""]; titleFadeOut 10;};",_warnText,name _target,_playerName];
 	        processInitCommands;
 	        clearVehicleInit _target;
-                 if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *warning* for player %1",name _target];
-                publicvariableserver "diag_log_server";};
+              
 		};
 	    case 2: //Slay
 	    {
 			_target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1;deletevehicle player;};",name _target];
 			processInitCommands;
 			clearVehicleInit _target;
-                         if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *slay* for player %1",name _target];
-                publicvariableserver "diag_log_server";};
+                      
 	    };
 	    case 3: //Unlock Team Switcher
 	    {      
@@ -75,8 +72,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
 			        processInitCommands;
 			        clearVehicleInit player;  
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *teamswitch* for player %1",name _target];
-                publicvariableserver "diag_log_server";};       
+                                    
 			    };
 			}forEach pvar_teamSwitchList;		
                        
@@ -104,8 +100,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
   					_x setVariable["bounty",0,true];
-                                        if (_uid in administrators) then {diag_log_server = parsetext format["patrick used  *remove choco* for player %1",name _target];
-                publicvariableserver "diag_log_server";};    
+                                         
 			    };
 			}forEach playableUnits;    
                      
@@ -117,8 +112,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
   					_x setVariable["choco",0,true];
-                                        if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *remove money* for player %1",name _target];
-                publicvariableserver "diag_log_server";};                        
+                                                              
 			    };
 			}forEach playableUnits;      
  
@@ -134,8 +128,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 					} else {
 						removeAllWeapons _x;
 					};  
-                                        if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *remove Weapon* for player %1",name _target];
-                publicvariableserver "diag_log_server";};
+                                     
 			    };
 			}forEach playableUnits;       
                        
@@ -147,8 +140,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
   					createGearDialog [_x, "RscDisplayGear"];
-                                        if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *check gear* for player %1",name _target];
-                publicvariableserver "diag_log_server";};    
+                                         
 			    };
 			}forEach playableUnits;   
                      
@@ -162,8 +154,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 _killerMoney = _x getVariable "choco";
                                 _newMoney = _killerMoney +25000;
                                 _x setVariable ["choco", _newMoney, true];
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *25k money* for player %1",name _target];
-                publicvariableserver "diag_log_server";};      
+                                 
   			   };
 			}forEach playableUnits;    
                    
@@ -180,8 +171,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                              clearVehicleInit _target;
                             _pos1 = getPosATL _x;
                              player setPosATL _pos1;
-                             if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *teleport* for player %1",name _target];
-                publicvariableserver "diag_log_server";};  
+                          
   			   };
 			}forEach playableUnits;      
                        
@@ -196,8 +186,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                            clearVehicleInit _target;
                             _pos1 = getPosATL player;
                              _x setPosATL _pos1;  
-                             if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *teleport to admin* for player %1",name _target];
-                publicvariableserver "diag_log_server";};
+                          
   			   };
 			}forEach playableUnits;       	
                       
@@ -211,8 +200,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 _bounty = _x getVariable "bounty";
                                 _bount = _bounty -1;
                                 _x setVariable ["bounty", _bount, true];
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *-1choco* for player %1",name _target];
-                publicvariableserver "diag_log_server";};      
+                                
   			   };
 			}forEach playableUnits;   
                    
@@ -226,8 +214,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 _bounty = _x getVariable "bounty";
                                 _bount = _bounty +1;
                                 _x setVariable ["bounty", _bount, true];
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *+1 choco* for player %1",name _target];
-                publicvariableserver "diag_log_server";};                        
+                                                       
   			   };
 			}forEach playableUnits;   
  
@@ -241,8 +228,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 _bounty = _x getVariable "bounty";
                                 _bount = _bounty +5;
                                 _x setVariable ["bounty", _bount, true];
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *+5 chocos* for player %1",name _target];
-                publicvariableserver "diag_log_server";};     
+                               
   			   };
 			}forEach playableUnits;  
                     
@@ -257,15 +243,13 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 if(_bounty == 1)then{
                                 _x setVariable ["donator", 0, true];}else{
                                 _x setVariable ["donator", 1, true];};
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *+Donator* %2 for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";};  
+                             
   			   };
 			}forEach playableUnits;  
                        
 	    };
              case 15: //basebuilder
-	    {      
-			_targetUID = getPlayerUID _target;
+	    {    	_targetUID = getPlayerUID _target;
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
@@ -273,11 +257,10 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 if(_bounty == 1)then{
                                 _x setVariable ["basebuilder", 0, true];}else{
                                 _x setVariable ["basebuilder", 1, true];};
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *basebuilder* %2 for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";};  
-  			   };
-			}forEach playableUnits;     
                              
+  			   };
+			}forEach playableUnits;  
+                       
 	    };
             case 16: //decoder
 	    {      
@@ -289,8 +272,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 if(_bounty == 1)then{
                                 _x setVariable ["decoder", 0, true];}else{
                                 _x setVariable ["decoder", 1, true];};
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *decoder* %2 for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";}; 
+                                
   			   };
 			}forEach playableUnits;  
                               
@@ -305,8 +287,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 if(_bounty == 1)then{
                                 _x setVariable ["attach", 0, true];}else{
                                 _x setVariable ["attach", 1, true];};
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *+Donator* %2 for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";};       
+                                
   			   };
 			}forEach playableUnits;
                         
@@ -321,8 +302,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 if(_bounty == 1)then{
                                 _x setVariable ["upgrades", 0, true];}else{
                                 _x setVariable ["upgrades", 1, true];};
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *upgrades* %2 for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";};   
+                              
   			   };
 			}forEach playableUnits;   
                             
@@ -336,8 +316,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
                                 _killerMoney = _x getVariable "choco";
                                 _newMoney = _killerMoney +100000;
                                 _x setVariable ["choco", _newMoney, true]; 
-                                if (_uid in administrators) then {diag_log_server = parsetext format["patrick used *+100k money* for player %1",name _target,_bounty];
-                publicvariableserver "diag_log_server";};  
+                               
   			   };
 			}forEach playableUnits;       
                           

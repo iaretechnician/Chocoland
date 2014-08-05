@@ -44,5 +44,6 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
                 if(!isNil "_playerGUID")then{
                 _obj setVariable ["playerGUID", _playerGUID, true];};
 		//_obj setVariable ["objectLocked", true, true];
+                _obj setPosAtL _pos;
 	};
 };

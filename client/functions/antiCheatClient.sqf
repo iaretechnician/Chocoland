@@ -4,7 +4,10 @@
 //	@file Created: 03/05/13
 //	@file Args:
 
-
+_datehour= 0;
+_dateMin = 0;
+_min = 0;
+chocomin = 0;
 _bannedWeapons = [
     "2A14","2A38M","2A42","2A46M","2A46MRocket","2A70","2A70Rocket","2A72","2B14","57mmLauncher","57mmLauncher_128","57mmLauncher_64",
     "80mmLauncher","9M311Laucher","AALauncher_twice","AGS17","AGS30_heli","AirBombLauncher","AT10LauncherSingle","AT11LauncherSingle","AT13LauncherSingle","AT5Launcher","AT5LauncherSingle",
@@ -46,6 +49,11 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
+      _min= chocomin;
+    if(_min/60 >1)then{_datehour= floor(_min/60)};
+     if(_datehour >17)then{_datehour= _datehour -17};
+     _dateMin= _min % 60;
+     setDate[2014,03,07,_datehour + 7,_dateMin]; 
 //_currObject = getPos player nearestObject "EvMoney";
 _nObject = nearestObject [player, "EvMoney"];
 //if(player distance (nearestobjects [player, ["EvMoney"],  2] select 0) < 2)then { []execVM "client\actions\pickupMoney.sqf";};
@@ -96,6 +104,6 @@ hungerLevel = 100;
     }forEach _bannedVehicles;
               	
 	// Loop speed not much of an issue clientside.
-	sleep 2; 
+	sleep 60; 
 };
 

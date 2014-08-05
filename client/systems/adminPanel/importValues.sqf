@@ -66,7 +66,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        if (str(_x) == _data1) exitwith {
 	           _weaponText ctrlSetText format["Weapons: %1",weapons _x];
 	           _speedText ctrlSetText format["Speed: %1",speed _x];
-	           if(!isnull driver _X) then
+	           if(!isnull driver _x) then
 	           {
 					_driver = name (driver _x);	    
 	           };

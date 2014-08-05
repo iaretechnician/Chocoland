@@ -17,7 +17,7 @@ _c=0;
 while{true}do 
 {
    
-    if(chocomin >628)then{_c=Round(_cycleN)}else{_c=round(_cycleD)};
+    if(chocomin >628)then{_c=floor(_cycleN)}else{_c=floor(_cycleD)};
     if(chocomin >=1439)then{chocomin=chocomin - 1439};//set min to 0
      chocomin = chocomin+_c;
      publicvariable"chocomin";

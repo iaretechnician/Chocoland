@@ -1,6 +1,6 @@
 player say "cow";
-_randomPos=getposasl player;
-_missionRewardRadius= 20;
+_randomPos=getposatl player;
+_missionRewardRadius= 40;
 _inArea = _randomPos nearEntities _missionRewardRadius;
 	{
 	if (isPlayer _x) then {

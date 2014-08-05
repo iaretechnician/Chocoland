@@ -1,5 +1,5 @@
 
- _currObject = getPos player nearestObject "76n6ClamShell"; 
+ _currObject = getPos player nearestObject "TK_GUE_WarfareBUAVterminal_EP1"; 
  if (player distance _currObject < 30)
  then {_currObject setVariable ["basecore",0, true];
        process = true;

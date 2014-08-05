@@ -1,6 +1,6 @@
 if(!X_Client) exitWith {};
 sleep 10; 
-player globalchat" patchnotes: move up/down fix, decoder improvement, higher chance & now you get money and chance for chocos,nightdaycycle 10m/2h";
+player globalchat" patchnotes: comming with next Basecore3(chocos), NEW WEAPON showtime at 9 pm today , spawn beacons works on Carrier,RefuelTruck buyable, NEW BASECORE lvl 2 MODEL is movable , killmessages with Range and a small hint for the Position ( south east for eg.) fix the release object in buildings,basecore lvl3";
 sleep 60;
 _hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Welcome To ChocoLands - Wasteland MOD BaseDefense, on this Chocoland you may to be an Animal, you can ATtach objects , you can hide objects, you can hide yourself, you can get infinite Ammunition,you are god in Parajump, you cannot unlock enemy locked objects"];
 [nil,player,"loc",rHINT,_hint] call RE;

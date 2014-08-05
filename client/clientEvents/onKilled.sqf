@@ -6,6 +6,8 @@
 
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
+
+
 if((_player getvariable"donator") == 1)
 then {Donatorweapon = weapons _player;};
 PlayerCDeath = [_player];
@@ -35,7 +37,8 @@ if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID
 	 //_killerb = _Killer getvariable"bounty";if(_killerb==0)then{_killerb=1;};if(isnil "_killerb")then{_killerb=1;};
          _playerb = _Player getVariable"bounty";if(_playerb==0)then{_playerb=0;};if(isnil "_playerb")then{_playerb=0;};
          _reward = 100 max floor(250 * _playerb);
-[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward, _killerb, _playerb] call RE;
+[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward, _killerb, _playerb, floor(_player distance _Killer)] call RE;
+[nil,_player, "loc", rEXECVM, "client\functions\killerposition.sqf", _killer] call RE;
 		};
 	};
 };

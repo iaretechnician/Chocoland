@@ -64,6 +64,7 @@ for "_iteration" from 1 to _players do {
 		_placedBeacon addEventHandler["handleDamage", {false}];
 		_placedBeacon setVariable["R3F_LOG_disabled", true];
             _uid = name player;
+          _placedBeacon enableSimulation false;
             _placedBeacon setVariable ["playerGUID", _uid, true];
              _placedBeacon setVariable ["objectLocked", true, true];
             _placedBeacon setVariable ["base",1,true];

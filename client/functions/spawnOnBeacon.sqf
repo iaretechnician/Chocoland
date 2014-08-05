@@ -22,8 +22,8 @@ if ((player getvariable"beacon") == 1)then
     waituntil {sleep 1;_waituntil =_waituntil -1;
     2 cutText [format["spawning on choco beacon in %1 seconds",_waituntil], "PLAIN DOWN", 1];
     _waituntil==0};
-    _pos = getposatl chocobeacon;
-    player setposatl _pos;
+    _pos = getposasl chocobeacon;
+    player setposasl _pos;
     sleep 1;
 }else{player globalchat "something wrong with your beacon, pls relink"};
 }else{player globalchat "you dont have any linked Choco Beacon "};

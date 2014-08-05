@@ -3,7 +3,7 @@
 _count = 0;
 _money = 0;
 _money2 = 10;
-_currObject = getPos player nearestObject "76n6ClamShell"; 
+_currObject = getPos player nearestObject "TK_GUE_WarfareBUAVterminal_EP1";
 if((_currObject getVariable"basecore") == 0 and (player getVariable"basecore") == 0)then
 {
 player setVariable ["basecore",1, true];

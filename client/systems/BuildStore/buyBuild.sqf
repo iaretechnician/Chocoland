@@ -57,6 +57,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                  if(on)then {deTach _spawn;on = false;};
         sleep 0.1;
 };
+player removeaction paraId;
 		deTach _spawn;
 		sleep 3;
 if((_x select 2) == "Land_Barrel_water") then 
@@ -72,7 +73,7 @@ if((_x select 2) == "Misc_cargo_cont_tiny") then
 {
     _spawn setVariable ["basecore",0, true];
 };
-if((_x select 2) == "76n6ClamShell") then 
+if((_x select 2) == "TK_GUE_WarfareBUAVterminal_EP1") then 
 {
     _spawn setVariable ["basecore",0, true];
 };
