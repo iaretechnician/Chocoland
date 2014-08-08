@@ -49,16 +49,12 @@ func_tauntHacker = {
         sleep 10; titleFadeOut 10; 
 };
 while {true} do {
-      _min= chocomin;
-    if(_min/60 >1)then{_datehour= floor(_min/60)};
-     if(_datehour >17)then{_datehour= _datehour -17};
-     _dateMin= _min % 60;
-     setDate[2014,03,07,_datehour + 7,_dateMin]; 
+   
 //_currObject = getPos player nearestObject "EvMoney";
 _nObject = nearestObject [player, "EvMoney"];
 //if(player distance (nearestobjects [player, ["EvMoney"],  2] select 0) < 2)then { []execVM "client\actions\pickupMoney.sqf";};
 if(player distance _nObject < 2 && moneypick == 1)then { []execVM "client\actions\pickupMoney.sqf";};
-_nObject = nearestObject [player, "PipeBomb"];
+//_nObject = nearestObject [player, "PipeBomb"];
 //[] execVM "client\functions\antiCheatClient.sqf";
 
      _uid = getPlayerUID player;
@@ -104,6 +100,6 @@ hungerLevel = 100;
     }forEach _bannedVehicles;
               	
 	// Loop speed not much of an issue clientside.
-	sleep 60; 
+	sleep 2; 
 };
 

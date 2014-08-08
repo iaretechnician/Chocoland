@@ -11,8 +11,8 @@ class confirmpd {
 			idc = picture2;
 			text = "";
                         x = 0.04168 * safezoneW + safezoneX ;
-			y = 0.111629 * safezoneH + safezoneY ;
-			w = 0.3 * safezoneW; //0.28
+			y = 0.111629 * safezoneH + safezoneY;
+			w = 0.3 * safezoneW; 
 			h = 0.3 * safezoneH;
 
 		};
@@ -22,7 +22,7 @@ class controls {
                  class loadChopStore7: w_RscButton
 		{
 			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\functions\bomb.sqf'";
+			onButtonClick = "closeDialog 0;confirm=1;";
 			text = "yes";
 
 			x = 0.020313 * safezoneW + safezoneX;
@@ -35,7 +35,7 @@ class controls {
                  class loadfunStore8: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0;";
+			onButtonClick = "closeDialog 0;confirm=2;";
 			text = "no";
 
 			x = 0.220313 * safezoneW + safezoneX;

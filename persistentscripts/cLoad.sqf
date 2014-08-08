@@ -126,6 +126,7 @@ if (!isNil "_curVal") then
 	removeAllWeapons player;
 	{
 		player addWeapon _x;
+                 player selectWeapon _x;
 	}foreach _curVal;
 };
 _curVal = ("magazines" call PersistentDBLCConvert);

@@ -10,7 +10,7 @@ disableSerialization;
 
 _genshopDialog = createDialog "genstored";
 genStoreCart = 0;
-
+genStoreCart2 = 0;
 _Dialog = findDisplay genstore_DIALOG;
 _playerMoney = _Dialog displayCtrl genstore_money;
 _money = player getVariable "choco";

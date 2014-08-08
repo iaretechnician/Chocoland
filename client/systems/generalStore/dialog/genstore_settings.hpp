@@ -47,19 +47,39 @@ class genstored {
 			idc = genstore_item_TEXT;
 			text = "";
 
-			x = 0.502604 * safezoneW + safezoneX;
+			x = 0.45 * safezoneW + safezoneX;
 			y = 0.317594 * safezoneH + safezoneY;
-			w = 0.0891667 * safezoneW;
+			w = 0.1 * safezoneW;
+			h = 0.068889 * safezoneH;
+		};
+class ItemSelectedPrice2: w_RscStructuredText
+		{
+			idc = genstore_item_TEXT2;
+			text = "";
+
+			x = 0.55 * safezoneW + safezoneX;
+			y = 0.317594 * safezoneH + safezoneY;
+			w = 0.1 * safezoneW;
 			h = 0.068889 * safezoneH;
 		};
 
 		class CartTotalText: w_RscText
 		{
 			idc = genstore_total;
-			text = "Total: $0";
+			text = "Money Total: $0";
 
 			x = 0.6875 * safezoneW + safezoneX;
 			y = 0.65 * safezoneH + safezoneY;
+			w = 0.0844792 * safezoneW;
+			h = 0.0448148 * safezoneH;
+		};
+                class CartTotalText1: w_RscText
+		{
+			idc = genstore_total2;
+			text = " Chocos Total: $0";
+
+			x = 0.6875 * safezoneW + safezoneX;
+			y = 0.67 * safezoneH + safezoneY;
 			w = 0.0844792 * safezoneW;
 			h = 0.0448148 * safezoneH;
 		};
@@ -108,7 +128,7 @@ class genstored {
 		{
 			idc = -1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "-> Choppers";
+			text = "-> Airplanes";
 
 			x = 0.52 * safezoneW + safezoneX;
 			y = 0.175 * safezoneH + safezoneY;
@@ -116,27 +136,16 @@ class genstored {
 			h = 0.0448148 * safezoneH;
 
 		};
-                  class loadBuildStore3: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> Funniest";
-
-			x = 0.62 * safezoneW + safezoneX;
-			y = 0.175 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
-			h = 0.0448148 * safezoneH;
-
-		};
+               
                 ////////end custom
 		class SelectionList: w_RscListbox
 		{
 			idc = genstore_item_list;
 			onLBSelChanged = "[] execvm 'client\systems\generalStore\itemInfo.sqf'";
 
-			x = 0.3125 * safezoneW + safezoneX;
+			x = 0.23 * safezoneW + safezoneX;
 			y = 0.225 * safezoneH + safezoneY;
-			w = 0.0916666 * safezoneW;
+			w = 0.17 * safezoneW;
 			h = 0.422222 * safezoneH;
 		};
 
@@ -151,7 +160,7 @@ class genstored {
 			h = 0.422222 * safezoneH;
 		};
 
-		class StoreButton0: w_RscButton
+		/*class StoreButton0: w_RscButton
 		{	
 			idc = genstore_iteminventory;
 
@@ -162,8 +171,7 @@ class genstored {
 			y = 0.225 * safezoneH + safezoneY;
 			w = 0.088 * safezoneW;
 			h = 0.040 * safezoneH;
-		};
-
+		};*/
 		class AddToCart : w_RscButton {
 			
 			text = "Add";
@@ -201,18 +209,31 @@ class genstored {
 
 		
 
-		class BuyToPlayer : w_RscButton {
+		class BuyToPlayer1 : w_RscButton {
 			
 			idc = genstore_buysell;
 
-			text = "Buy";
-			onButtonClick = "[0] execVM 'client\systems\generalStore\buysellSwitch.sqf'";
+			text = "MoneyBuy";
+			onButtonClick = "[0] execVM 'client\systems\generalStore\buyitems.sqf'";
 
-			x = 0.703125 * safezoneW + safezoneX;
+			x = 0.7 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.088 * safezoneW;
 			h = 0.040 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
+		};
+                class BuyToPlayer : w_RscButton {
+			
+			idc = genstore_buysell1;
+
+			text = "ChocoBuy";
+			onButtonClick = "[1] execVM 'client\systems\generalStore\buyitems.sqf'";
+
+			x = 0.6 * safezoneW + safezoneX;
+			y = 0.750 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;
+			h = 0.040 * safezoneH;
+			color[] = {0.1,0.95,0.2,1};
 		};
 	};
 };

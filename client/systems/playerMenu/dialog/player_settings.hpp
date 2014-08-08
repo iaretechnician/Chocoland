@@ -174,13 +174,14 @@ class playerSettings {
 			x = 0.360; y = 0.68;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
-               class SafeButton : w_RscButton {
+                  class SafeButton1 : w_RscButton {
 			idc = safeButton;
-			text = "BaseCore Markers On/Off";
-			onButtonClick = "[]execVM'client\functions\createBaseMarker.sqf';closeDialog 0;";
-            		x = 0.160; y = 0.28;
+			text = "Save Player";
+			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf';closeDialog 0;";
+			x = 0.160; y = 0.28;
 			w = 0.235; h = 0.049 * safezoneH;
 		};
+             
                   class vehButton : w_RscButton {
 			idc = vehButton;
 			text = "Spawn My Vehicle";

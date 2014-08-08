@@ -53,7 +53,7 @@ if (sideMissions == 1) then {
  // [] execVM "server\missions\eventController.sqf";
 [] execVM "server\missions\events\moneyzone.sqf";
  []execVM "server\missions\events\night.sqf";
- 
+  []execVM "server\missions\factoryMethods\npcweapon.sqf";
 };
 
 if (isDedicated) then {

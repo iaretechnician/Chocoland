@@ -47,7 +47,7 @@
 			<English></English>
 		</Key>
 		<Key ID="STR_WL_MapMoreInfo">
-			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;chocos :you get chocos for killing npcs and Players and you can find it on the Island, all your money will multiplier your chocos!&lt;/t&gt;&lt;br/&gt; CHANGES:HARD GAMEPLAY CHANGE! Check our website for the patchnotes: www.heavensdelight.de</English>
+			<English>&lt;t color='#FFFFFF' size='1.5' &gt;&lt;br/&gt;Please report all bugs/problems to http://heavensdelight.de&lt;br/&gt;Server restart times: 9PM (GMT)&lt;br/&gt;&lt;t color='#17FF41' size='1.5' &gt;chocos :you get chocos for killing npcs and Players and you can find it on the Island, all your money will multiplier your chocos!&lt;/t&gt;&lt;br/&gt; CHANGES : you can find the patchnotes on our great website: www.heavensdelight.de</English>
 		</Key>
 	</Package>
 	<Package name="TeamKillWarningMessage">
@@ -57,7 +57,7 @@
 	</Package>
 	<Package name="Diary">
 		<Key ID="STR_WL_Diary_RulesContent">
-			<English>&lt;br/&gt;1. Keep bad language to a minimum. If you have a problem with another player, take it to direct.&lt;br/&gt;    2. NO VOIP IN GLOBAL. We have a public TeamSpeak for players to use.&lt;br/&gt;    3. Team killing or stealing from team mates when you BLUFOR or OPFOR is forbidden and punishable. Play as Independent if you want to be free for all.&lt;br/&gt;    4. Revealing information about your (ex)team to other teams is strictly forbidden&lt;br/&gt;    5. Do not exploit R3F or any other add-ons or you will be banned.&lt;br/&gt;    6. Using or spamming with loud\long custom sound commands will cause punishment up to permanent ban</English>
+			<English></English>
 		</Key>
 	</Package>
 	<Package name="Shop">
@@ -84,6 +84,36 @@
 		</Key>
 	</Package>
 	<Package name="ShopDescriptions">
+<Key ID="STR_betchocos"><English>Gamble with your Chockills to double them(50% Chance of winning).</English></Key>
+<Key ID="STR_cow04"><English>Transform to a cow and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_goat"><English>Transform to a goat and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_rweapon"><English>Generates a random weapon and gives it you twice!</English></Key>
+<Key ID="STR_name"><English>Advertise yourself or anger your enemys after you owned them.</English></Key>
+<Key ID="STR_rvehicle"><English>Let a random vehicle parachute above you!</English></Key>
+<Key ID="STR_dance"><English>Explains itself...</English></Key>
+<Key ID="STR_hen"><English>Transform to a hen and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_delete"><English>Delete a random object instantly(works with locked objects too).</English></Key>
+<Key ID="STR_shepard"><English>Transform to a dog and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_rabbit"><English>Transform to a rabid and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_tele"><English>Press on a place you want to be teleported to.</English></Key>
+<Key ID="STR_spectate"><English>Be NSA and spectate players in any way.</English></Key>
+<Key ID="STR_iammo1"><English>Let's your weapon shoot infinite ammo for one minute.</English></Key>
+<Key ID="STR_recoil"><English>Remove recoil untill you die and let a random vehicle parachute above you.</English></Key>
+<Key ID="STR_1click"><English>Generates a base in front of you with one click. </English></Key>
+<Key ID="STR_Satcom"><English>Google Maps ArmA 2 Edition - Impress yourself! </English></Key>
+<Key ID="STR_Baseshield"><English>Gives your base a red shield for 1 minute with a radius of 60 meters. Nothing can kill you in your shield once actived.</English></Key>
+<Key ID="STR_speed"><English>Increase your vehicles speed up to 250%! </English></Key>
+<Key ID="STR_bot"><English>Recruit up to 12 soldiers with weapons. </English></Key>
+<Key ID="STR_fly"><English>Play as Mindfreak and fly across the sky. Shooting while flying possible too! </English></Key>
+<Key ID="STR_decoder"><English> Buy Decoder for 25 Chocos / 250.000$! </English></Key>
+<Key ID="STR_basebuilder"><English>Buy Basebuilder for 25 Chocos / 250.000$! </English></Key>
+<Key ID="STR_inv"><English>Be a ghost and scare the shit out of your enemys! But watch out, you still can be killed. </English></Key>
+<Key ID="STR_kill"><English>Kills the chosen victim instantly! </English></Key>
+<Key ID="STR_iammo3"><English>Let's your weapon shoot infinite ammo for three minutes. </English></Key>
+<Key ID="STR_suicide"><English>Enough of your depressive life? Why don't you kill yourself? </English></Key>
+<Key ID="STR_Mothership"><English>Teleports you into a undestroyable frigate with ZU23's and Grenade Launchers. </English></Key>
+
+
 		<Key ID="STR_WL_ShopDescriptions_Water">
 			<English>Choco Premium Spring Water. This water contains 200% more flavour than other leading brands.</English>
 		</Key>
@@ -91,22 +121,20 @@
 			<English>Become a Choco, Explode everything you want. Warning this does only work With chocos (1 chocos ->1 Destroyed Object, 10chocos -> 10 Objects)</English>
 		</Key>
 <Key ID="STR_WL_ShopDescriptions_decoder">
-			<English>Become a Decoder, Destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams and if you Sucess you have a chance to get 1,2,5,10 Chocos(Important: you have only a chance to destroy BasebuilderObjects by 10%)</English>
+			<English>Become a Decoder, Destroy everything you want for few $ of objectcost. infritrate bases, destroy Dreams (Important: you have only a chance to destroy BasebuilderObjects by 10%)</English>
 		</Key>
 <Key ID="STR_WL_ShopDescriptions_basebuilder">
 			<English>Become a BaseBuilder, create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever and you only pay 50% forEver in the ParaStore-Buildings</English>
 		</Key>
-<Key ID="STR_WL_ShopDescriptions_attach">
-				<English>Enjoy Attach, create wonderful Custom Vehicles  with your Special bonus, your Object will attach to an other for some Cash.</English>
-		</Key>
+
 <Key ID="STR_WL_ShopDescriptions_chocos">
-			<English>you get a chance of 50% to double your Chocos</English>
+			<English>you have a chance of 50% to double your Money, if you're unlucky you'll loose your Money</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_CanFood">
 			<English>Choco Value Cat food. Heat treated and sealed in a 100% steel can for extra long shelf life. Warning: contents may contain organs.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_RepairKit">
-			<English>This magic box will repair, refuel and rearm any mechanical device to its former glory. </English>
+			<English>This magic box will repair, refuel any mechanical device to its former glory. </English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_MedKit">
 			<English>Restore your health back to full. Disclaimer: This product was tested on animals and at least 5 bunnies, 3 cows and 1 make-up wearing pig died as a result.</English>
@@ -118,7 +146,7 @@
 			<English>Straight off the back of a lorry, this 'can will last a lifetime.</English>
 		</Key>
 		<Key ID="STR_WL_ShopDescriptions_spawnBeacon">
-			<English>Choose your spawn location. Disclaimer: This product does not guarantee safe delivery of goods.</English>
+			<English>Costs 1% of your Money.Every player can link to it and spawns directly at the beacon.</English>
 		</Key>
 	</Package>
 	<Package name="Dialogs">

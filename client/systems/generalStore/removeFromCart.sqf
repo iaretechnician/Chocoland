@@ -8,10 +8,10 @@
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
 
-if (local player) then {
 
 	//Initialize Values
 	_price = 0;
+        	_price2 = 0;
 	_checkWeapon = "";
 	_checkAmmo = "";
 	_checkAccessor = "";
@@ -21,7 +21,7 @@ if (local player) then {
 	_cartlist = _dialog displayCtrl genstore_cart;
 	_itemlist = _dialog displayCtrl genstore_item_list;
 	_totalText = _dialog displayCtrl genstore_total;
-	_buysell = _dialog displayCtrl genstore_buysell;
+_totalText2 = _dialog displayCtrl genstore_total2;
 
 	_switchText = Ctrltext _buysell;
 
@@ -29,27 +29,19 @@ if (local player) then {
 	_selectedItem = lbCurSel _cartlist;
 	_itemText = _cartlist lbText _selectedItem;
 
-	if(_switchText == "Buy") then
-	{
+	
 		{
         	if(_x select 0 == _itemText) then
             {
                 _price = _x select 4;
+                _price2 = _x select 5;
+                
             };    
         }forEach generalStore;
-	} else {
-		{
-        	if(_x select 0 == _itemText) then
-            {
-                _price = _x select 5;
-            };    
-        }forEach generalStore;
-		_itemlistIndex = _itemlist lbAdd format["%1",_itemText];
-	};
-
+	
 	genStoreCart = genStoreCart - _price;
-	_totalText CtrlsetText format["Total: $%1", genStoreCart];
-
+        genStoreCart2 = genStoreCart2 - _price2;
+	_totalText CtrlsetText format["MoneyTotal: $%1", genStoreCart];
+_totalText2 CtrlsetText format["ChocoTotal: $%1", genStoreCart2];
 	//Remove selected item.
 	_cartlist lbDelete _selectedItem;
-};

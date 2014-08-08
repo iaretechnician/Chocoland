@@ -10,6 +10,7 @@ if(!X_Server) exitWith {};
 diag_log format["WASTELAND SERVER - Initilizing Server Compile"];
 
 //Main Mission Compiles
+npcRweapon = compile preprocessFileLineNumbers "server\missions\factoryMethods\npcweapon.sqf";
 mission_APC = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_APC.sqf";
 mission_Heli = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_Heli.sqf";
 mission_LightArmVeh = compile preprocessFileLineNumbers "server\missions\mainMissions\mission_LightArmVeh.sqf";

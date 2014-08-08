@@ -1,9 +1,11 @@
 //savestats
-statsDMG =          damage player;
-statsbounty =       player getVariable"bounty";
+statsDMG = damage player;
+statsbounty = player getVariable"bounty";
 statsdonator = player getVariable"donator";
 statsdecoder = player getVariable"decoder";
 statsbasebuilder = player getVariable"basebuilder";
+statsupgrades = player getVariable"upgrades";
+statsattach = player getVariable"attach";
 statschoco = player getVariable"choco";
 statscanfood = player getVariable"canfood";
 statschocopack = player getVariable"chocopack";

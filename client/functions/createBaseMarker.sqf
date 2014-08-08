@@ -1,7 +1,5 @@
 //[]execVM"client\functions\createBaseMarker.sqf";
-if(basecoreState)then {basecoreState = false;}else{basecoreState = true;};
 private ["_marker","_markerText","_temp","_unit","_vehicle","_markerNumber","_show","_injured","_text","_num","_getNextMarker","_getMarkerColor","_showAllSides","_showPlayers","_showAIs","_l"];
-
 _getNextMarker = {
 	private ["_marker"]; 
 	_markerNumber = _markerNumber + 1;
@@ -13,14 +11,11 @@ _getNextMarker = {
 	};
 	_marker;
 };
-
- if (!basecoreState)then {
-    {deleteMarkerLocal _x;}foreach _marker};
-while{alive player and basecoreState}do 
+while{alive player}do 
     {
         _markerNumber = 0; 
 _pPos = getpos player;
-_basecore = nearestObjects [_pPos, ["Misc_cargo_cont_tiny","GUE_WarfareBUAVterminal"], 30000]; 
+_basecore = nearestObjects [_pPos, ["Misc_cargo_cont_tiny","TK_GUE_WarfareBUAVterminal_EP1","USMC_WarfareBAircraftFactory"], 30000]; 
 {
     if(_x getvariable"basecore" == 1)then{
         

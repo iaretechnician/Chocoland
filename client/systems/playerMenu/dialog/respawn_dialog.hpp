@@ -218,7 +218,54 @@
 			h = 0.033 * safezoneH;
 		};
                 //custom buttons 4
-                class LoadTownsButton: w_RscButton
+                class RandomNorthWestButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[1] execVM 'client\functions\4ButtonsHALO.sqf'";
+			text = "NorthWest";
+
+			x = 0.34 * safezoneW + safezoneX;
+			y = 0.38 * safezoneH + safezoneY;
+			w = 0.068 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+                
+		class RandomNortheastHALO: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[2] execVM 'client\functions\4ButtonsHALO.sqf'";
+			text = "NorthEast";
+
+			x = 0.42 * safezoneW + safezoneX;
+			y = 0.38 * safezoneH + safezoneY;
+			w = 0.068 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+                class RandomSouthWest: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[3] execVM 'client\functions\4ButtonsHALO.sqf'";
+			text = "SouthWest";
+
+			x = 0.5 * safezoneW + safezoneX;
+			y = 0.38 * safezoneH + safezoneY;
+			w = 0.068 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+                
+		class RandomsouthEastHALO: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[4] execVM 'client\functions\4ButtonsHALO.sqf'";
+			text = "SouthEast";
+
+			x = 0.58 * safezoneW + safezoneX;
+			y = 0.38 * safezoneH + safezoneY;
+			w = 0.068 * safezoneW;
+			h = 0.033 * safezoneH;
+		};
+                //custom4 ende
+		class LoadTownsButton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";

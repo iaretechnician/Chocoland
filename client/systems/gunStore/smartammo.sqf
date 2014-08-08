@@ -8,7 +8,7 @@
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;
 if (local player) then {
-     _price =5000;
+     _price =500;
 _weapon = currentWeapon player;
 if (isnil "_weapon")exitwith{};
 _magazines = getArray(configFile >> "cfgWeapons" >> _weapon>> "magazines");

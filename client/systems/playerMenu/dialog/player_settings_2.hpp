@@ -46,14 +46,7 @@ class playerSettings2 {
             		x = 0.160; y = 0.28;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
-              class btnflipv2ehicle41 : w_RscButton {
-		
-			text = "Force Database LOAD";
-			onButtonClick = "[getPlayerUID player,name player,1] execVM 'persistentscripts\pLoad.sqf';closeDialog 0;";
-            		x = 0.160; y = 0.64;
-			w = 0.225; h = 0.046 * safezoneH;
-		};
-             
+           
                 class btnflipvehicle1121 : w_RscButton {
 		
 			text = "BACK TO PLAYERMENU";
@@ -63,13 +56,7 @@ class playerSettings2 {
 		};
                 
                
-               class SafeButton1 : w_RscButton {
-			idc = safeButton;
-			text = "Save Player";
-			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf';closeDialog 0;";
-			x = 0.160; y = 0.38;
-			w = 0.225; h = 0.046 * safezoneH;
-		};
+             
                 class SafeButton11 : w_RscButton {
 			idc = safeButton;
 			text = "Copy Teamspeak IP to Clipboard";

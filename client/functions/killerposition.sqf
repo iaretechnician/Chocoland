@@ -8,13 +8,13 @@ _k = _this select 0;
 _pos = getpos _killer;
 switch (true) do {
 	case (_k distance _ne <  (_k distance _se) and _k distance _ne > (_k distance _nw) and _k distance _ne > (_k distance _sw)): 
-        {titleText [format["\n+ %1 is near NorthEast ", name _k], "PLAIN DOWN", 0];};
+        {player globalchat format["\ %1 is near NorthEast ", name _k];};
 	case (_k distance _se <  (_k distance _ne) and _k distance _se > (_k distance _nw) and _k distance _se > (_k distance _sw)): 
-        {titleText [format["\n+ %1 is near SouthEast ", name _k], "PLAIN DOWN", 0];};
+        {player globalchat format["\ %1 is near SouthEast ", name _k];};
 case (_k distance _nw <  (_k distance _ne) and _k distance _nw > (_k distance _se) and _k distance _nw > (_k distance _sw)): 
-        {titleText [format["\n+ %1 is near NorthWest ", name _k], "PLAIN DOWN", 0];};
+        {player globalchat format["\ %1 is near NorthWest ", name _k];};
 	case (_k distance _sw <  (_k distance _ne) and _k distance _sw > (_k distance _nw) and _k distance _sw > (_k distance _se)): 
-        {titleText [format["\n+ %1 is near SouthWest ", name _k], "PLAIN DOWN", 0];};
+        {player globalchat format["\ %1 is near SouthWest ", name _k];};
 	default {};
 };
 

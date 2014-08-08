@@ -11,8 +11,7 @@ while {true} do
 	{
 		((findDisplay 49) displayCtrl 104) ctrlEnable true;
 		player globalChat "Player Saved.";
-                PDB_saveReq = getPlayerUID player;
-                publicVariableServer "PDB_saveReq";
+               
                 waitUntil {isNull (findDisplay 49)};
 	};
 };

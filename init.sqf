@@ -19,7 +19,7 @@ versionName = "v1.0";
 spawnHalo = false;
 basecoreState = false;
 Donatorweapon = [];
-firstspawn = true;
+
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
 if(isNull player) then {X_JIP = true;};

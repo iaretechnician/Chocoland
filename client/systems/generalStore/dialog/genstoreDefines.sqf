@@ -10,3 +10,6 @@
 #define genstore_buysell 2018
 #define genstore_iteminventory 2019
 #define genstore_item_Info 2022
+#define genstore_totalChoco 2023
+#define genstore_item_TEXT2 2024
+#define genstore_total2 2025

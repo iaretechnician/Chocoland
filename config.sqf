@@ -170,7 +170,7 @@ weaponsArray = [
 ];
 //Gun Store Ammo List
 //Text name, classname, buy cost
-ammoArray = [  
+ammoArray = [
 ["CZ 550-Magazin","5x_22_LR_17_HMR",100],
 ["Lee Enfield Mag.","10x_303",100],
 ["5 Schuss 12,7x99 mm NATO","5Rnd_127x99_as50",200],
@@ -278,20 +278,45 @@ accessoriesArray = [
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,150],
-	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",300,150],
-	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,10000],
-	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",2000,1000],
-	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,750],
-    ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,250],
-	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",50000,50000],
-    ["ChocoBomb", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",5000,5000],
-    ["Bet Chocos","chocos",localize "STR_WL_ShopDescriptions_chocos","client\icons\health.paa",10000,10000],
-    ["Unlock Decoder", "decoder", localize "STR_WL_ShopDescriptions_decoder", "client\icons\gunner.paa",250000,250000], 
-    ["Unlock Basebuilder", "basebuilder", localize "STR_WL_ShopDescriptions_basebuilder", "client\icons\passenger.paa",250000,250000],
-	 ["Unlock Attach", "attach", localize "STR_WL_ShopDescriptions_attach", "client\icons\passenger.paa",250000,250000]
-	 
-   ];
+//["Rainbow Flares","rflares",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,1],
+	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,1],
+	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",300,1],
+	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,3],
+	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",2000,1],
+	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,1],
+    ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,1],
+	["Spawn Beacon","spawnBeacon",localize "STR_WL_ShopDescriptions_spawnBeacon","client\icons\satellite.paa",10000,1],
+    ["ChocoBomb", "camonet", localize "STR_WL_ShopDescriptions_Camo", "client\icons\tent.paa",5000,1],
+    ["Bet your Money/chocos","chocos",localize "STR_WL_ShopDescriptions_chocos","client\icons\health.paa",0,0],
+    ["Unlock Decoder", "decoder", localize "STR_WL_ShopDescriptions_decoder", "client\icons\gunner.paa",250000,25], 
+    ["Unlock Basebuilder", "basebuilder", localize "STR_WL_ShopDescriptions_basebuilder", "client\icons\passenger.paa",250000,25],
+   ["Unlock attach", "attach","", "client\icons\passenger.paa",250000,25],
+ //  ["Unlock upgrades", "upgrades","", "client\icons\passenger.paa",250000,15],
+["Cow for the Win","cow", localize "STR_cow04", "client\images\Cow04.paa",20000,2],
+["Goat gives Milk","goat", localize "STR_goat", "client\images\Goat.paa",30000,3],
+["get 2 random Weapons","rweapon", localize "STR_rweapon", "client\images\choco.paa",6000,1],
+["get random Vehicle","rvehicle", localize "STR_rvehicle", "client\images\choco.paa",10000,3],//3
+["let all players know your Name","name", localize "STR_name", "client\images\choco.paa",50000,5],
+["Dance on the Island","dance", localize "STR_dance", "client\images\dance.paa",50000,5],
+["Hen","Hen", localize "STR_hen", "client\images\Hen.paa",50000,4],
+//["Delete Object","del", localize "STR_delete", "client\images\choco.paa",30000,6],//3
+["German shepherd","Pastor", localize "STR_shepard","client\images\Pastor.paa",100000,5],
+["Terror Rabid","rabbid", localize "STR_rabbit","client\images\Rabbit.paa",100000,5],
+["Teleport to maplocation","tel", localize "STR_tele","client\images\choco.paa",100000,5],
+//["Spectate Player","spectate", localize "STR_spectate","client\images\choco.paa",300000,6],//5
+["receive reinforcement","npc", localize "STR_bot","client\images\reinforcement.paa",200000,12],//5
+//["Infinite Ammunition 1m","ammo1", localize "STR_iammo1","client\images\iammo.paa",200000,10],
+["5m No Recoil + Random Vehicle","recoil", localize "STR_recoil","client\images\choco.paa",10000,4],
+["1ClickBase","base", localize "STR_1click","client\images\choco.paa",100000,10],
+["Satelite Camera","satcam", localize "STR_Satcom","client\images\satcam.paa",100000,10],
+["Baseshield 1m","baseshield", localize "STR_Baseshield","client\images\shieldx.paa",100000,10],
+//["FlyMode","flymode", localize "STR_fly","client\images\fly.paa",300000,10],
+//["Invisible 3min","invisible", localize "STR_inv","client\images\inv.paa",100000,10],
+["Kill Player","killplayer", localize "STR_kill","client\images\killx.paa",300000,20],
+//["Infinite Ammunition 3m","ammo10", localize "STR_iammo3","client\images\iammo.paa",300000,20],
+["Kill yourself?","death", localize "STR_suicide","client\images\death.paa",500000,50],
+["Mothership","ship", localize "STR_Mothership","client\images\frigate.paa",500000,50]
+];
 ChopperStoreArray = [
         ["Littlebird", 1000,"AH6X_EP1"],
         ["Osprey - Mv22", 1000, "MV22"],
@@ -386,8 +411,9 @@ vehicleStoreArray = [
 ];
 BuildStoreArray = [
 ["~~~~~NEW BASECOREEEE~~~~~~", 9999999,""],
-["Choco BaseCore",100,"Misc_cargo_cont_tiny"],
-["Choco BaseCore Level 2",10000,"TK_GUE_WarfareBUAVterminal_EP1"],
+["Choco BaseCore",2500,"Misc_cargo_cont_tiny"],
+["Choco BaseCore Level 2",25000,"TK_GUE_WarfareBUAVterminal_EP1"],
+["Choco BaseCore Level 3",250000,"USMC_WarfareBAircraftFactory"],
 ["~~~~~CONTAINER~~~~~~", 9999999,""],
 ["Transport Cargo Container x2",5000,"Land_Misc_Cargo2E_EP1"],
 ["Transport Cargo Container",2500,"Land_Misc_Cargo1E_EP1"],
@@ -461,7 +487,6 @@ BuildStoreArray = [
 	["Timbers Long",2500,"Land_Ind_Timbers"],
 	["Hedgehog Concrete",2500,"Hhedgehog_concrete"],
 	["Hedgehog Concrete Big",300,"Hhedgehog_concreteBig"],
-
 	["Barricade",1200,"Fort_Barricade_EP1"],
 	["Hedgehog Steel",1000,"Hedgehog_EP1"],
 	["Animated Gate",1000,"ZavoraAnim"],
@@ -531,45 +556,7 @@ BuildStoreArray = [
 ["GMG Mini TriPod",60000,"BAF_GMG_Tripod_D"],
 ["M252",100000, "M252"]
 ];
-FunStoreArray=[
-["NEW* Rainbow Flares",2,"rainbow"],
-["Cow for the Win",1,"cow"],
-["Goat gives Milk",2,"goat"],
-["get 2 random Weapons",3,"rweapon"],
-["get random Vehicle",3,"rvehicle"],
-["let all players know your Name",5,"name"],
-["Dance on the Island",5,"dance"],
-["Hen",4,"Hen"],
-["Delete Object",5,"del"],
-["German shepherd",5,"Pastor"],
-["Terror Rabid",7,"rabbid"],
-//["Change Environment",100000,"weather"],
-["bet your chocos *2 50%chance",10,"double"],
-["Teleport to maplocation",10,"tel"],
-["Spectate Player",10,"spectate"],
-["receive reinforcement",10,"npc"],
-["Infinite Ammunition 1m",10,"ammo1"],
-["No Recoil + Random Vehicle",10,"recoil"],
-["1ClickBase",15,"base"],
-["Satelite Camera",15,"satcam"],
-["Baseshield 1m",15,"baseshield"],
-["10min.Fast2Furious(Vehicles)",20,"carspeed"],
-//["FlyMode",20,"flymode"],
-["Unlock Decoder",25,"decoder"], 
-["Unlock Basebuilder",25,"basebuilder"],
-["Unlock attach",25,"attach"],
-["Invisible 5min",30,"invisible"],
-["Kill Player",30,"killplayer"],
-["Infinite Ammunition 3m",30,"ammo10"],
-["Kill yourself?",50,"death"],
-["Mothership",50,"ship"],
-["Infinite Money 20s",99,"money"],
-["unlock Upgrades(commingSoon)",9999,"invisible"],
-["Order Airstrike(commingSoon)",9999,"strike"],
-["Order BaseCarrier(commingSoon)",9999,"carrier"],
-["Unlock spotter(commingSoon)",9999,"Fin"],
-["be a SeaGull(commingSoon)",9999,"SeaGull"]
-];
+
 // Utes town and city array
 //Marker Name, Radius, City Name
 cityList = [

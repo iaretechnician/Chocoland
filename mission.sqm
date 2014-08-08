@@ -59,7 +59,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=70;
+		items=72;
 		class Item0
 		{
 			side="LOGIC";
@@ -1415,7 +1415,44 @@ class Mission
 				};
 			};
 		};
-	};
+	
+class Item71
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2109.96,24.884512,4329.5498};
+					id=73;
+					side="LOGIC";
+					vehicle="ProtectionZone_Ep1";
+					leader=1;
+					skill=0.2;
+					text="spawni2";
+				};
+			};
+		};
+		class Item72
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2089.5769,19.654554,4304.1831};
+					id=74
+					side="LOGIC";
+					vehicle="ProtectionZone_Ep1";
+					leader=1;
+					skill=0.2;
+					text="spawni3";
+				};
+			};
+		};
+};
 	class Vehicles
 	{
 		items=93;

@@ -1,6 +1,6 @@
 if(!X_Client) exitWith {};
 sleep 10; 
-player globalchat" patchnotes: comming with next Basecore3(chocos), NEW WEAPON showtime at 9 pm today , spawn beacons works on Carrier,RefuelTruck buyable, NEW BASECORE lvl 2 MODEL is movable , killmessages with Range and a small hint for the Position ( south east for eg.) fix the release object in buildings,basecore lvl3";
+player globalchat" patchnotes: Basecore lvl3 , database fix, Animal MODE, add Namalsk GK8 Sniper( nightstalker`s),MissionNpcs have random weapons,basecore marker fix, attach conditions , Suggestion: should we delete Money and still set all stores for Chocos?Buildings with FreeObjects every 15min and Weapons for 1-5 Chocos,vehicles 1-10, pls vote";
 sleep 60;
 _hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Welcome To ChocoLands - Wasteland MOD BaseDefense, on this Chocoland you may to be an Animal, you can ATtach objects , you can hide objects, you can hide yourself, you can get infinite Ammunition,you are god in Parajump, you cannot unlock enemy locked objects"];
 [nil,player,"loc",rHINT,_hint] call RE;

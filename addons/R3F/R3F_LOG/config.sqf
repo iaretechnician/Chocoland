@@ -539,6 +539,7 @@ R3F_LOG_CFG_objets_transportables =  [
  */
 
 R3F_LOG_CFG_objets_deplacables = [
+"USMC_WarfareBAircraftFactory",
 "TK_GUE_WarfareBUAVterminal_EP1",
 "GraveCross2_EP1",
 "Land_Carpet_EP1",

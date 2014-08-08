@@ -17,39 +17,40 @@ _price = 0;
 _dialog = findDisplay genstore_DIALOG;
 _itemlist = _dialog displayCtrl genstore_item_list;
 _itemlisttext = _dialog displayCtrl genstore_item_TEXT;
+_itemlisttext2 = _dialog displayCtrl genstore_item_TEXT2;
 _picture = _dialog displayCtrl genstore_item_pic;
 _buysell = _dialog displayCtrl genstore_buysell;
 _itemInfo = _dialog displayCtrl genstore_item_Info;
+_chocomoney = _dialog displayCtrl genstore_totalChoco;
 
 //Get Selected Item
 _selectedItem = lbCurSel _itemlist;
 _itemText = _itemlist lbText _selectedItem;
 
 //Check which state we want to be in.
-_switchText = Ctrltext _buysell;
-if(_switchText == "Buy") then
+
 {
-	{
 	    if(_itemText == _x select 0) then{
 			_price = _x select 4;
-                        if(_x select 0 == "Bet Chocos")then {
-                        _chocos = player getvariable"bounty";if(_chocos <= 1)then {_chocos = 1;};
-                        _price = 10000 * _chocos;
+                        _price2 = _x select 5;
+                       if(_x select 0 == "Bet your Money")then {
+                        _chocos = player getvariable"choco";
+                        _price = _chocos;
+                        };
+                        if(_x select 0 == "Spawn Beacon")then {
+                        _chocos = player getvariable"choco";
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
+                        };
+                         if(_x select 0 == "Ultima Repair Kit")then {
+                        _chocos = player getvariable"choco";
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
                         };
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
-			_itemlisttext ctrlSetText format ["Price: $%1", _price];	
+			_itemlisttext ctrlSetText format ["Money: $%1", _price];
+                        _itemlisttext2 ctrlSetText format ["Chocos: %1", _price2];
 		}
 	}forEach generalStore;
-} else {	
-	{
-	    if(_itemText == _x select 0) then{
-			_price = _x select 5;
-            _picLink = _x select 3;
-            _picture ctrlSetText _picLink;
-            _itemInfo ctrlSetStructuredText parseText ((_x select 2));
-			_itemlisttext ctrlSetText format ["Price: $%1", _price];	
-		}
-	}forEach generalStore;
-};

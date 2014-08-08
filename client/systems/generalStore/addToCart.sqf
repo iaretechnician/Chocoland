@@ -8,10 +8,11 @@
 #include "dialog\genstoreDefines.sqf";
 disableSerialization;
 
-if (local player) then {
+//if (local player) then {
 
 	//Initialize Values
 	_price = 0;
+        _price2 = 0;
 	_checkWeapon = "";
 	_checkAmmo = "";
 	_checkAccessor = "";
@@ -21,42 +22,40 @@ if (local player) then {
 	_itemlist = _dialog displayCtrl genstore_item_list;
 	_cartlist = _dialog displayCtrl genstore_cart;
 	_totalText = _dialog displayCtrl genstore_total;
-	_buysell = _dialog displayCtrl genstore_buysell;
-
-	_switchText = Ctrltext _buysell;
-
-	//Get Selected Item
+_totalText2 = _dialog displayCtrl genstore_total2;
 	_selectedItem = lbCurSel _itemlist;
 	_itemText = _itemlist lbText _selectedItem;
-
-	if(_switchText == "Buy") then
-	{
 		{
-        	if(_x select 0 == _itemText) then
-            {
+        	//if(_x select 0 == _itemText) then
+            //{
                 if(_x select 0 == _itemText) then
-                {
+              {
                     _price = _x select 4;
-                    if(_x select 0 == "Bet Chocos")then {
-                        _chocos = player getvariable"bounty";if(_chocos <= 1)then {_chocos = 1;};
-                        _price = 10000 * _chocos;
+                    _price2 = _x select 5;
+                    if(_x select 0 == "Bet your Money")then {
+                        _chocos = player getvariable"choco";
+                        _price = _chocos;
                         };
-                } 
-            };   
+                        if(_x select 0 == "Spawn Beacon")then {
+                        _chocos = player getvariable"choco";
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
+                        };
+                         if(_x select 0 == "Ultima Repair Kit")then {
+                        _chocos = player getvariable"choco";
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
+                        };
+               };
+            //};   
         }forEach generalStore;
-	} else {
-		{
-        	if(_x select 0 == _itemText) then
-            {
-                _price = _x select 5;
-            };    
-        }forEach generalStore;
-		_itemlist lbDelete _selectedItem;
-	};
+	// };
 
 	//Check Items Price
-	genStoreCart = genStoreCart + _price;
-	_totalText CtrlsetText format["Total: $%1", genStoreCart];
-
-	_cartlist lbAdd format["%1",_itemText];
-};
+	genStoreCart = _price;
+        genStoreCart2 =_price2;
+	_totalText CtrlsetText format["MoneyTotal: $%1", genStoreCart];
+        _totalText2 CtrlsetText format["ChocoTotal: $%1", genStoreCart2];
+	lbClear _cartlist;
+        _cartlist lbAdd format["%1",_itemText];
+        

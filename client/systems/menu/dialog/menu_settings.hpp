@@ -37,8 +37,8 @@ class menu1d {
                   class loadgenStore: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\generalStore\loadGenStore.sqf'";
-			text = "-> Generals";
+			onButtonClick = "closeDialog 0; []execVM 'client\systems\menu\animal.sqf'";
+			text = "-> Animal Mode";
 
 			x = 0.220313 * safezoneW + safezoneX;
 			y = 0.036111 * safezoneH + safezoneY;
@@ -61,7 +61,7 @@ class menu1d {
 		{
 			idc =-1;
 			onButtonClick = "closeDialog 0; [] execVM 'client\systems\ChopperStore\loadChopStore.sqf'";
-			text = "-> Choppers";
+			text = "-> Airplanes";
 
 			x = 0.020313 * safezoneW + safezoneX;
 			y = 0.421852 * safezoneH + safezoneY;
@@ -85,8 +85,8 @@ class menu1d {
                  class loadfunStore2: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> Funny chocos";
+			onButtonClick = "closeDialog 0; [] execVM 'client\systems\generalStore\loadGenStore.sqf'";
+			text = "-> Choco Generals";
 
 			x = 0.220313 * safezoneW + safezoneX;
 			y = 0.421852 * safezoneH + safezoneY;
@@ -94,17 +94,20 @@ class menu1d {
 			h = 0.07 * safezoneH;
 
 		};
-          class smartammo: w_RscButton
+                class smartAmmobutton: w_RscButton
 		{
 			idc = -1;
 			onButtonClick = "[] execVM 'client\systems\gunStore\smartammo.sqf'";
-			text = "-> add Ammo";
+			text = "Smart Ammo buy";
 
-			x = 0.280313 * safezoneW + safezoneX;
-			y = 0.491852 * safezoneH + safezoneY;
-			w = 0.09 * safezoneW;
-			h = 0.05 * safezoneH;
+			x = 0.3 * safezoneW + safezoneX;
+			y = 0.5 * safezoneH + safezoneY;
+			w = 0.08 * safezoneW;
+			h = 0.04 * safezoneH;
 
-		};    
+		};
+               
+                
+                
 	};
 };
