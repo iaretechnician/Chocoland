@@ -1,3 +1,5 @@
+
+
 // anti hack scripts cannot disable your user input
 // this is irrelivant now as the code is deprected by the main hack.
 // Dependant on version may be removed without notice.

@@ -1,3 +1,5 @@
+
+
 _private=["_camonet"];
 _camonet=_this select 0;
 //_camonet = (nearestobjects [getpos player, ["Explosive"],  5] select 0);

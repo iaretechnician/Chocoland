@@ -1,3 +1,5 @@
+
+
 _fnc_create_land_target = {
 	private ["_index","_unit_type"];
 	_index = _this select 0;

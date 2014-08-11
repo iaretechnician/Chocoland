@@ -1,3 +1,5 @@
+
+
 #include "defs.hpp"
 switch true do {
 	case (_this == "bulletcam"): {

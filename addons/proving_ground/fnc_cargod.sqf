@@ -1,3 +1,5 @@
+
+
 while {alive ( vehicle player )} do 
 {
 	vehicle player setfuel 1;

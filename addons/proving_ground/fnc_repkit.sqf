@@ -1,3 +1,5 @@
+
+
 _lsdfp_olddmgv = damage (vehicle player);
 
 if (_lsdfp_olddmgv <=0) then {

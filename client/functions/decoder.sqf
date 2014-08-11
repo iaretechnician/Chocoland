@@ -15,7 +15,7 @@ if((typeof cursortarget) in R3F_LOG_CFG_objets_deplacables and !R3F_LOG_mutex_lo
 
 _dist=Round (player distance cursortarget);
 hint format  ["your object is %1 meters away it need some time",_dist];
-_dist = round (_dist /5);
+_dist = round (_dist /3);
 if (_dist < 1)then {_dist=1;};
 _totalDuration = _dist;
 		_unlockDuration = _totalDuration;
@@ -39,14 +39,14 @@ _totalDuration = _dist;
 		    sleep 0.5;
                     _base = _currObject getvariable"base";
                     if (_base == 1)exitwith {R3F_LOG_mutex_local_verrou = false;
-                        _random = round (random 8);
-                        if(_random == 4)then {hint "your lucky the basebuilder-object is deleted";deletevehicle _currObject;}else{hint"your not lucky the basebuilder-object is still locked";};
+                        _random = floor (random 100);
+                        if(_random > 80)then {hint "your lucky the basebuilder-object is deleted";deletevehicle _currObject;}else{hint"your not lucky the basebuilder-object is still locked";};
                         
                 };
                     deletevehicle _currObject;
          
-         _random = Round (random 5);
-         if (_random == 1)then {player setvariable["bounty",(player getvariable"bounty")+1,true];player globalchat"hey you found 1 chocos";};
+         _random = floor (random 100);
+         if (_random > 90)then {player setvariable["bounty",(player getvariable"bounty")+1,true];player globalchat"hey you found 1 chocos";};
          
          
          };

@@ -1,3 +1,4 @@
+
 //#define __DEBUG true
 if((side player) == resistance) exitWith {};
 #define __REFRESH 0.34

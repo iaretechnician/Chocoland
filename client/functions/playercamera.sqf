@@ -1,3 +1,4 @@
+
 while {alive player} do {
 	waituntil {sleep 0.1; !(cameraView in ["INTERNAL","GUNNER"])};
     if(cameraView == "GROUP") then {

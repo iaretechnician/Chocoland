@@ -35,7 +35,7 @@ class Header
 #include "client\systems\vehicleStore\dialog\vehshop_settings.hpp"
 #include "client\systems\ChopperStore\dialog\chopshop_settings.hpp"
 #include "client\systems\menu\dialog\menu_settings.hpp"
-#include "client\systems\FunStore\dialog\funStore_settings.hpp"
+
 #include "client\systems\confirm\dialog\menu_settings.hpp"
 #include "client\systems\attach\dialog\attach_settings.hpp"
 

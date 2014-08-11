@@ -1,3 +1,5 @@
+
+
 footSpeedIndex = _this select 1;
 footSpeedKeys = vars select footSpeedIndex;
 

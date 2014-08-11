@@ -1,3 +1,4 @@
+
 _test= _this select 0;
 _player = _this select 1;
 _player setDammage statsDMG;

@@ -255,7 +255,7 @@ class PlayersMenu
                 class Choco5Button: w_RscButton
 		{
 			idc = -1;
-			text = "choco-5";
+			text = "choco+5";
 			onButtonClick = "[13] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.3 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -275,7 +275,7 @@ class PlayersMenu
                    class donatorButton1: w_RscButton
 		{
 			idc = -1;
-			text = "baseb0/1";
+			text = "baseb 0/1";
 			onButtonClick = "[15] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.4 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -353,7 +353,7 @@ class PlayersMenu
                 {
 			idc = -1;
 			text = "Set chocos = 0";
-			onButtonClick = "[4] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[20] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;

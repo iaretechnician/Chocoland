@@ -1,3 +1,5 @@
+
+
 //	@file Version: 1.0
 //	@file Name: clientCompile.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
@@ -51,9 +53,7 @@ Populateclass = compile preprocessFileLineNumbers "client\systems\class\populate
 classItemInfo = compile preprocessFileLineNumbers "client\systems\class\itemInfo.sqf";
 
 // funstore Dialog compiles
-loadFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\loadFunStore.sqf";
-PopulateFunStore = compile preprocessFileLineNumbers "client\systems\FunStore\populateFunStore.sqf";
-funItemInfo = compile preprocessFileLineNumbers "client\systems\FunStore\itemInfo.sqf";
+
 // Vehicle Dialog compiles
 loadVehStore = compile preprocessFileLineNumbers "client\systems\vehicleStore\loadVehStore.sqf";
 PopulateVehStore = compile preprocessFileLineNumbers "client\systems\vehicleStore\populateVehStore.sqf";

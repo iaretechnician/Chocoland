@@ -1,3 +1,5 @@
+
+
 //	@file Version: 1.0
 //	@file Name: onRespawn.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
@@ -7,11 +9,11 @@
 private["_player","_corpse","_town","_spawn","_temp"];
 playerSetupComplete = false;
 _corpse = _this select 1;
-_corpse removeAction bombId;
+//_corpse removeAction bombId;
 _corpse removeAction revId;
-newUnit removeAction bombId;
+//newUnit removeAction bombId;
 newUnit removeAction revId;
-player removeAction bombId;
+//player removeAction bombId;
 player removeAction revId;
 player addweapon "ItemMap";
 player addweapon "ItemCompass";

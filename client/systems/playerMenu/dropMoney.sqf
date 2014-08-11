@@ -1,3 +1,5 @@
+
+
 #include "dialog\player_sys.sqf";
 #define GET_DISPLAY (findDisplay playersys_DIALOG)
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)

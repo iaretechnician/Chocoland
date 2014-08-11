@@ -1,3 +1,5 @@
+
+
 /*if (isnil "pm") then {pm = 0;}; if (pm == 0) then {pm = 1; hint "Player Markers ON";} else {pm = 0; hint "Player Markers OFF";};
 setGroupIconsVisible [true, true];
 while {pm == 1} do

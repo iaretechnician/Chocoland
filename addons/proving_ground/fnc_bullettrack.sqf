@@ -1,3 +1,5 @@
+
+
 #include "defs.hpp"
 #define GET_DISPLAY (uiNameSpace getVariable "balca_debug_hint")
 #define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)

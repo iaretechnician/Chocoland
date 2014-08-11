@@ -15,7 +15,7 @@ donatorClassrray = [
 ["Blufor Soldier At","USMC_Soldier_AT",1],
 ["Blufor Officer","BAF_Soldier_Officer_MTP",1],
 ["Blufor Engineer","USMC_SoldierS_Engineer",1],
-["Blufor Medic","Ins_Soldier_Medic",1],
+["Blufor Medic","CDF_Soldier_Medic",1],
 ["Opfor Sniper","RU_Soldier_Sniper",2],
 ["Opfor Soldier Co","Ins_Soldier_CO",2],
 ["Opfor Soldier At","USMC_Soldier_AT",2],
@@ -23,7 +23,7 @@ donatorClassrray = [
 ["Opfor Engineer","USMC_SoldierS_Engineer",2],
 ["Opfor Medic","Ins_Soldier_Medic",2],
 ["Independent Sniper","GUE_Soldier_Sniper",3],
-["Independent Soldier Co","Ins_Soldier_CO",3],
+["Independent Soldier Scout","GUE_Soldier_Scout",3],
 ["Independent Soldier At","USMC_Soldier_AT",3],
 ["Independent Officer","UN_CDF_Soldier_Officer_EP1",3],
 ["Independent Engineer","Soldier_Engineer_PMC",3],
@@ -278,7 +278,7 @@ accessoriesArray = [
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
-//["Rainbow Flares","rflares",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,1],
+["Rainbow Flares","rflares",localize "STR_WL_ShopDescriptions_rainbow","client\icons\water.paa",10000,1],
 	["Water","water",localize "STR_WL_ShopDescriptions_Water","client\icons\water.paa",300,1],
 	["Canned Food","canfood",localize "STR_WL_ShopDescriptions_CanFood","client\icons\cannedfood.paa",300,1],
 	["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,3],
@@ -353,6 +353,7 @@ ChopperStoreArray = [
         ["Mi-24P", 300000,"Mi24_P"]
 ];
 vehicleStoreArray = [
+
 ["CowCycle", 500,"cowcycle"],
 ["2xPchelaBQM", 10000,"pchelabqm"],
 ["Armed OspreyXC130", 50000,"adminplane"],
@@ -410,6 +411,8 @@ vehicleStoreArray = [
         ["M1A2 TUSK [USMC]", 100000,"M1A2_TUSK_MG"]
 ];
 BuildStoreArray = [
+["Buy Fregata", 1000000,"fregata"],
+["buy Carrier", 2000000,"carrier"],
 ["~~~~~NEW BASECOREEEE~~~~~~", 9999999,""],
 ["Choco BaseCore",2500,"Misc_cargo_cont_tiny"],
 ["Choco BaseCore Level 2",25000,"TK_GUE_WarfareBUAVterminal_EP1"],

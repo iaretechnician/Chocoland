@@ -1,3 +1,5 @@
+
+
 #include "dialog\player_sys.sqf"; 
 if(isnil {player getVariable "choco"}) then {player setVariable["choco",0,true];};
 if(dialog) exitwith{};

@@ -126,7 +126,9 @@
 <Key ID="STR_WL_ShopDescriptions_basebuilder">
 			<English>Become a BaseBuilder, create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever and you only pay 50% forEver in the ParaStore-Buildings</English>
 		</Key>
-
+<Key ID="STR_WL_ShopDescriptions_rainbow">
+			<English>you will get a Rainbow Command, and if you activate it, you will be pretty colorful happy</English>
+		</Key>
 <Key ID="STR_WL_ShopDescriptions_chocos">
 			<English>you have a chance of 50% to double your Money, if you're unlucky you'll loose your Money</English>
 		</Key>

@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: playerSelect.sqf
 //	@file Author: [404] Deadbeat
@@ -77,7 +78,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			}forEach pvar_teamSwitchList;		
                        
 	    };
-		case 15: //Unlock Team Killer
+		case 4: //Unlock Team Killer
 	   {      
 			_targetUID = getPlayerUID _target;
 	        {
@@ -93,7 +94,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    };
 			}forEach pvar_teamKillList;       		
 	    };
-            case 4: //Remove All Money
+            case 20: //Remove All Money
 	    {      
 			_targetUID = getPlayerUID _target;
 	        {

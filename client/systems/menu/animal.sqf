@@ -1,3 +1,5 @@
+
+
 #include "dialog\menuDefines.sqf";
 //disableSerialization;
 //classSelect = 0;

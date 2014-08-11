@@ -1,4 +1,5 @@
 
+
 //	@file Version: 1.0
 //	@file Name: buyGuns.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
@@ -97,15 +98,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
             };
     
  
-   case "Bet your Money": {
-       _chocos = player getvariable"choco";
-       _random = round (random 2);
-       if(_random ==1)then {player setvariable["choco",_chocos *3,true];_playerMoney= player getvariable"choco";hint format ["you're really lucky, you won %1 Money",_chocos];}else{hint"you're not lucky this time, try again";};
-       };
-        
-    case "Unlock Basebuilder":{
-       
-            player globalchat" you unlocked Basebuilder Feature,create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever, and you only pay 50%";
+   case "Bet your Money/chocos": {[_payment] execVM "client\systems\generalStore\adds\betchoco.sqf";  };
+          case "Rainbow Flares":{[] execVM "client\systems\generalStore\adds\rainbow.sqf";}; 
+    case "Unlock Basebuilder":{ player globalchat" you unlocked Basebuilder Feature,create wonderful Bases with your Special bonus, your Objects will return after Restarts for Ever, and you only pay 50%";
             player setvariable["basebuilder",1,true];}; 
     
      case "Unlock attach":{
@@ -126,7 +121,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
         case "Delete Object":{player globalChat format["watch your MouseWheel Commands, delete house dont work"];playerdeleteObject = player addAction[('<t color=''#17FF41''>' + ('mark the object on your Aim, Press on this') +  '</t>'),'addons\proving_ground\fnc_delete_1.sqf'];};
     case "Spectate Player":{[_payment] execVM "client\systems\generalStore\adds\fnc_spectate.sqf";};
     case "receive reinforcement":{group player createUnit [typeOf player,getpos player,[],0.1,"FORM"] setSkill 1;};
-   // case "Infinite Ammunition 1m":{[_payment] execVM "client\systems\generalStore\adds\fnc_ammo_1.sqf";};
+    case "Infinite Ammunition 1m":{[_payment] execVM "client\systems\generalStore\adds\fnc_ammo_1.sqf";};
    case "Cow for the Win":{[3]execVM "client\systems\generalStore\adds\beanimal.sqf";};
       case "Terror Rabid":{[2]execVM "client\systems\generalStore\adds\beanimal.sqf";};
      case "Goat gives Milk":{[5]execVM "client\systems\generalStore\adds\beanimal.sqf";};

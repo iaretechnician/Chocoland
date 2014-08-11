@@ -1,3 +1,4 @@
+
 _currObject = getPos player nearestObject "SatPhone"; 
 
 if (player distance _currObject < 4)

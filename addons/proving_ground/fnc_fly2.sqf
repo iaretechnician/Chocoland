@@ -1,4 +1,6 @@
 
+
+
 forwardAndBackward = 4; 	//Changes how fast you move forward and backward
 leftAndRight = 5; 		//Changes how fast you turn left and right
 upAndDown = 5; 			//Changes how fast you go up or down (Gravity still brings you down on its own)

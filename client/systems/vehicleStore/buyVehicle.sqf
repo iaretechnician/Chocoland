@@ -1,3 +1,5 @@
+
+
 #include "dialog\vehstoreDefines.sqf";
 disableSerialization;
 cowcycle= {
@@ -54,7 +56,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			if(_x select 2 == "adminplane") exitWith {[] call adminplane;};
                         player setVariable["choco",_playerMoney - _price,true];
                         PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+                        publicVariableServer "PDB_saveReq";
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 			hintsilent "Vehicle bought - watch the sky";
                         closeDialog 0;

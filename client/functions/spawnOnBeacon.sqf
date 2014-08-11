@@ -1,3 +1,4 @@
+
 //	@file Version: 1.1
 //	@file Name: spawnOnBeacon.sqf
 //	@file Author: [404] Costlyy, Redshirt_Ensign

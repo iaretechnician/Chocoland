@@ -1,3 +1,4 @@
+
 _xpos= getmarkerpos"Mission";
 _pos=[_xpos, 200, 5000, 5, 0, 10, 0] call BIS_fnc_findSafePos;
 //layer setPos _pos;

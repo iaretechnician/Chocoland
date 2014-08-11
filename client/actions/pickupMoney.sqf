@@ -1,3 +1,5 @@
+
+
 //	@file Version: 1.1
 //	@file Name: pickupMoney.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy

@@ -1,4 +1,5 @@
 
+
 //	@file Version: 1.1
 //	@file Name: playerActions.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
@@ -45,10 +46,10 @@ aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\
 
 aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 0;']];
 aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 1;']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 2", "client\functions\basecore.sqf", [1], 2, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 2", "client\functions\basecore_d.sqf", [1], 2, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 3", "client\functions\basecore.sqf", [1], 3, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 3", "client\functions\basecore_d.sqf", [1], 3, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 2", "client\functions\basecore.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 2", "client\functions\basecore_d.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 3", "client\functions\basecore.sqf", [3], 0, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 3", "client\functions\basecore_d.sqf", [3], 0, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
 
 aActionsIDs = aActionsIDs + [player addAction["Redeem chocos", "client\functions\satPhone.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["SatPhone"],  20] select 0) < 3']];
 //HaloSpawn
@@ -66,5 +67,5 @@ if(player getvariable"sat" == 1)then
 {playersatId = player addAction [format ["<t color='#585858'>%1</t>", "activate Sattelite"], "client\systems\FunStore\adds\fnc_sattelite_fnc.sqf",[],-12,false,false,"","local player"];
  player globalchat"check mouseWheel commands for Sattelite";
 };
-aActionsIDs = aActionsIDs + [player addAction["decode this object", "client\functions\decoder.sqf", [], -10, false, false, "", 'player getvariable"decoder" == 1;']];
+aActionsIDs = aActionsIDs + [player addAction["decode this object", "client\functions\decoder.sqf", [], -10, false, false, "", 'player getvariable"decoder" == 1;R3F_LOG_mutex_local_verrou == false']];
 playerdoor =  [player addAction["ChocoDoor", "client\functions\chocodoor.sqf", [], -10, false, false, "", 'chocodoor ==0']];

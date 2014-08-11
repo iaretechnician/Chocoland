@@ -102,19 +102,7 @@ class vehshopd {
 
 
 		};
-                  class loadfunStore3: w_RscButton
-		{
-			idc = -1;
-			onButtonClick = "closeDialog 0; [] execVM 'client\systems\FunStore\loadFunStore.sqf'";
-			text = "-> funniest";
-
-			x = 0.230203 * safezoneW + safezoneX;
-			y = 0.50 * safezoneH + safezoneY;
-			w = 0.124927 * safezoneW;
-			h = 0.0599908 * safezoneH;
-
-
-		};
+               
               
 		class SelectionList: w_RscListbox
 		{

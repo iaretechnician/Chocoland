@@ -1,3 +1,4 @@
+
 // THANKS to KiloSwiss  scripty by KiloSwiss
 private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney"];
 
@@ -32,7 +33,7 @@ switch (_action) do{
         _killerb = player getvariable"bounty";if(_killerb==0)then{_killerb=1;};if(isnil "_killerb")then{_killerb=1;};
         _reward = _reward * _killerb;
          if(_multikill >= 2)then {_reward = _reward * _multikill;};
-        titleText [format["\n+ %1$ for killing %2 on %3 meters", _reward, name _victim,_distance], "PLAIN DOWN", 0];
+        titleText [format["\n+ %1$ for killing %2", _reward, name _victim], "PLAIN DOWN", 0];
 	
       player setVariable["choco", _money + _reward, true];
      _killerb = player getvariable"bounty";if(_killerb==0)then{_killerb=0;};if(isnil "_killerb")then{_killerb=0;};

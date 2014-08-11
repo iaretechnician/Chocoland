@@ -1,3 +1,5 @@
+
+
 _cursortarget = cursorTarget;
 deleteVehicle cursorTarget;
 hint format ["Yeah, you destroyed 1 Object"];

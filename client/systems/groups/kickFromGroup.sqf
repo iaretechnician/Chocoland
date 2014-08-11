@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: kickFromGroup.sqf
 //	@file Author: [404] Deadbeat

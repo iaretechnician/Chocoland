@@ -1,29 +1,25 @@
 
+_obj =cursortarget;
+
 _switch = _this select 0;
-_array = [];
-{_array = _array + [_x select 2]}foreach ChopperStoreArray;
-{_array = _array + [_x select 2]}foreach vehicleStoreArray;
-{_array = _array + [_x select 2]}foreach BuildStoreArray;
+_array = ["Land_Misc_ConcPipeline_EP1","Misc_concrete_High","Concrete_Wall_EP1","RampConcrete","Land_ConcreteRamp","Land_ConcreteBlock","Misc_cargo_cont_tiny",
+"TK_GUE_WarfareBUAVterminal_EP1","USMC_WarfareBAircraftFactory","Land_A_Castle_Bastion","Land_A_CraneCon","Land_A_statue02","Land_A_GeneralStore_01a","Land_A_TVTower_Base"
+,"Land_Barn_Metal","Land_A_Office01","Land_A_BuildingWIP","Land_A_Hospital","Land_HouseB_Tenement"];
+
 switch (_switch) do
 { 
  case 1:{
-     if(player distance cursortarget <= 20)then{
-        if(typeof cursortarget in _array and typeof cursortarget != "Land_Misc_ConcPipeline_EP1"
-        and typeof cursortarget != "Misc_concrete_High" and typeof cursortarget != "Concrete_Wall_EP1"
-        and typeof cursortarget != "RampConcrete" and typeof cursortarget != "Land_ConcreteRamp"
-        and typeof cursortarget != "Land_ConcreteBlock")then{
-            object1 = cursorTarget;player globalchat"object 1 defined."
-        }else{hint"you cannot Attach this object";}
-    }else{hint"you are to far away";};
+     if(player distance _obj <= 20)then{
+        if(!(isplayer _obj) and !(_obj in _array))then{
+            object1 = _obj;player globalchat"object 1 defined."
+        }else{player globalchat"you cannot Attach this object";}
+    }else{player globalchat"you are to far away";};
 };
  case 2:{
-     if(player distance cursortarget <= 20)then{
-        if(typeof cursortarget in _array and typeof cursortarget != "Land_Misc_ConcPipeline_EP1"
-        and typeof cursortarget != "Misc_concrete_High" and typeof cursortarget != "Concrete_Wall_EP1"
-        and typeof cursortarget != "RampConcrete" and typeof cursortarget != "Land_ConcreteRamp"
-        and typeof cursortarget != "Land_ConcreteBlock")then{
-            object2 = cursorTarget;player globalchat"object 2 defined."
-        }else{hint"you cannot Attach this object";}
-    }else{hint"you are to far away";};
+     if(player distance _obj <= 20)then{
+        if(!(isplayer _obj) and !(_obj in _array))then{
+            object2 = _obj;player globalchat"object 2 defined."
+        }else{player globalchat"you cannot Attach this object";}
+    }else{player globalchat"you are to far away";};
 };
 };

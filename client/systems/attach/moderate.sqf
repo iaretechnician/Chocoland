@@ -1,4 +1,4 @@
-//private [_switch];
+
 _switch = _this select 0;
 switch (_switch) do
 { 

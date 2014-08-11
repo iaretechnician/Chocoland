@@ -1,3 +1,5 @@
+
+
 #include "dialog\chopstoreDefines.sqf";
 disableSerialization;
 _playerMoney = player getVariable "choco";

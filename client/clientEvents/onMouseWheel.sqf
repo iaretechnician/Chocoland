@@ -1,3 +1,5 @@
+
+
 terminate playerMenuHandle;
 playerMenuHandle = [] spawn {
 	waituntil {!isnull player};

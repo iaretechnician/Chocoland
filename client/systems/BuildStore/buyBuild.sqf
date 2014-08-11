@@ -1,6 +1,9 @@
+
+
 #include "dialog\buildstoreDefines.sqf";
 disableSerialization;
-
+_fregata= {player globalChat format["watch your MouseWheel Commands"];playerbaseObject = player addAction[('<t color=''#17FF41''>' + ('create Here My Fregata') +  '</t>'),'addons\scripts\createFregata.sqf'];};
+_carrier= {player globalChat format["watch your MouseWheel Commands"];playerbaseObject = player addAction[('<t color=''#17FF41''>' + ('create Here My Carrier') +  '</t>'),'addons\scripts\createCarrier.sqf'];};
 //if(objStoreCart > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 //objshop_cart
 
@@ -33,10 +36,12 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 	_itemText = _itemlist lbText _selectedItem;
 	{if(_itemText == _x select 0) then{
 	if(0 <= 1) then {
+           
 			_price = _x select 1;if(player getvariable"basebuilder" == 1)then{_price = Round(_price /2);};
 			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["choco",_playerMoney - _price,true];
-                        
+                         if(_x select 2 == "fregata") exitWith {[] call _fregata;};
+             if(_x select 2 == "carrier") exitWith {[] call _carrier;};
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir;
@@ -57,9 +62,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
                  if(on)then {deTach _spawn;on = false;};
         sleep 0.1;
 };
-player removeaction paraId;
+
 		deTach _spawn;
-		sleep 3;
+		sleep 3;player removeaction paraId;
 if((_x select 2) == "Land_Barrel_water") then 
 {
     _spawn setVariable["water",40,true];
@@ -86,6 +91,7 @@ if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon"
 {
         _spawn setVariable ["objectLocked", true, true];
          _spawn setVariable ["base", 1, true];
+          _spawn setVariable ["playerGUID", name player, true];
 };
 _spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
     		// Delete parachute

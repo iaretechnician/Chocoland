@@ -1,3 +1,4 @@
+
 private ["_allVehicles","_check","_vehicleType"];
 
 _allVehicles = vehicles;

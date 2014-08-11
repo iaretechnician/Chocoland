@@ -1,3 +1,4 @@
+
 //	@file Version: 1.0
 //	@file Name: updateTeamKiller.sqf
 //	@file Author: [404] Deadbeat

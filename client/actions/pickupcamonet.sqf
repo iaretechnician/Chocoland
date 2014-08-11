@@ -1,3 +1,5 @@
+
+
 //	@file Version: 1.1
 //	@file Name: pickupcamonet.sqf
 //	@file Author: Sixty8 Pulse

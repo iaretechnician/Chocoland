@@ -1,3 +1,5 @@
+
+
 private ["_townName","_randomLoc","_pos","_switch"];
 BOMB = false;
 waituntil {!isnil "bis_fnc_init"};
@@ -7,7 +9,7 @@ switch (_switch) do
  case 1:{_randomLoc = [3208,3535,0];};//Kabanino NW 
  case 2:{_randomLoc = [3900,4100,0];};//Dubrovka NE
  case 3:{_randomLoc = [3402,3064,0];};//Kozlovka SW 
- case 4:{_randomLoc = [4596,3798,0];};//Msta SE
+ case 4:{_randomLoc = [4522.86,3231.71,0];};//Msta SE
     };
  //_range = [1, 700] call BIS_fnc_randomNum;
 //_direction = [1, 359] call BIS_fnc_randomNum;
@@ -38,7 +40,8 @@ _mins = floor(60 * (daytime - floor(daytime)));
 [
 	"Paradropping into","darkness",format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
- bombId = player addAction[('<t color=''#FF33CC''>' + ('arm with ChocoBomb for 25K$') +  '</t>'),'client\systems\confirm\loadmenu.sqf'];
+ bombId = player addAction[('<t color=''#FF33CC''>' + ('arm with ChocoBomb for 25K$') +  '</t>'),'
+'];
 
 //Altimeter reading at top right
 while {((getposATL player)select 2) > 1} do

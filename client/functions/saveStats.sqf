@@ -1,3 +1,4 @@
+
 //savestats
 statsDMG = damage player;
 statsbounty = player getVariable"bounty";

@@ -1,4 +1,6 @@
 
+
+
 _pos = getpos player;
 player removeaction bombId;
 newUnit removeaction bombId;

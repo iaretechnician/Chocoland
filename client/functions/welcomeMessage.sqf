@@ -1,3 +1,5 @@
+
+
 #define welcomeText 3200
 sleep 1;
 10 cutrsc["WelcomeMessage", "PLAIN"];

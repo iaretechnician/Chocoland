@@ -1,3 +1,5 @@
+
+
 // THANKS to KiloSwiss  scripty by KiloSwiss
 private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney"];
 

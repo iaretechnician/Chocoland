@@ -1,3 +1,5 @@
+
+
 //check object is not op  or static house 
 // set up   variable door 
 doorobject = cursortarget;

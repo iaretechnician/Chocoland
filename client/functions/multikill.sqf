@@ -1,4 +1,5 @@
 
+
 private["_multikill", "_nameplayer"];
 
 _multikill = _this select 0;

@@ -1,4 +1,5 @@
 
+
 _loadout = player getvariable"chocoload";
 
 _price = 5000;

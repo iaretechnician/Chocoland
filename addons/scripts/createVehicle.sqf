@@ -1,3 +1,5 @@
+
+
 // database spawn
 _test =player getVariable"saveVehicle";
 if(isNil "vehicleSave") then{

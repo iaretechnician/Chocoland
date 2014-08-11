@@ -1,3 +1,5 @@
+
+
 #include "dialog\attachDefines.sqf";
 disableSerialization;
 _playerMoney = player getVariable "choco";

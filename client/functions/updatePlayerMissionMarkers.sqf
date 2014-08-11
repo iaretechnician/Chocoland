@@ -1,3 +1,4 @@
+
 {deleteMarkerLocal _x;} forEach currentMissionsMarkers;
 currentMissionsMarkers = [];
 

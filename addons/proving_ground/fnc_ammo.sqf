@@ -1,3 +1,5 @@
+
+
 if (infammook==0) then
 {
 	hint "Infinite Ammo ON!";

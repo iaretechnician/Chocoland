@@ -1,3 +1,5 @@
+
+
 hint "yanniks  schiff";
 _pos = getpos player;_Parachute = "MV22" createVehicle _pos; _Parachute setPos _pos;_pos= [(_pos select 0)+30,(_pos select 1), (_pos select 2)];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,-12,0]];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,12,0]];
 

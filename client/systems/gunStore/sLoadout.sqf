@@ -1,3 +1,4 @@
+
 if(!isnil"loadout")then{
 player globalchat"you Loadout has been saved! (Press 2 x L to buy your Loadout)";
 player setvariable ["chocoload",loadout,true];

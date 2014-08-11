@@ -1,3 +1,4 @@
+
 //[]execVM"client\functions\createBaseMarker.sqf";
 private ["_marker","_markerText","_temp","_unit","_vehicle","_markerNumber","_show","_injured","_text","_num","_getNextMarker","_getMarkerColor","_showAllSides","_showPlayers","_showAIs","_l"];
 _getNextMarker = {
