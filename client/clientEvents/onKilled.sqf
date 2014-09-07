@@ -22,6 +22,8 @@ if (isServer) then {
 if(!local _player) exitwith {};
 
 //custom 
+_y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,(_y select 2)+1,_y select 3,_y select 4,_y select 5,_y select 6, _y select 7],true];
+         
 _player setVariable["basecore",0,false];
 if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
 _sidePlayer = side (group _player);

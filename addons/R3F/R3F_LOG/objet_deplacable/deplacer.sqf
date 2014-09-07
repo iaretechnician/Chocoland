@@ -99,10 +99,10 @@ else
 	                _action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
 			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
 			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
-			atthfix = 0;
+			atthfix = 1;
 			// On limite la vitesse de marche et on interdit de monter dans un véhicule tant que l'objet est porté
 			while {!isNull R3F_LOG_joueur_deplace_objet && alive player} do
-			{
+			{  // []call positionCheck; if(poscheck) then{R3F_LOG_joueur_deplace_objet = objNull; hintsilent "You are out of the map, get back Soldier!"};
 				if (vehicle player != player) then
 				{
 					player globalChat STR_R3F_LOG_ne_pas_monter_dans_vehicule;

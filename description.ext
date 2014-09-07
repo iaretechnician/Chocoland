@@ -141,7 +141,7 @@ class CfgIdentities
 	// Federated Republics of Ekhrenia
 	class name4 // Main Character, Thread #4
 	{
-		name="Dalibor Kati?";
+		name="Dalibor Kate";
 		face="Face74";
 		glasses="none";
 		speaker="Dan";
@@ -219,7 +219,7 @@ class CfgIdentities
 	};
         class name13 // President of the Republic of Colemania
 	{
-		name="Matthias Lundström";
+		name="Matthias Lundstroem";
 		face="Face74";
 		glasses="Spectacles";
 		speaker="Dan";

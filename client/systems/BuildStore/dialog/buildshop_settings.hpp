@@ -5,14 +5,14 @@ class buildshopd {
 	idd = buildshop_DIALOG;
 	movingEnable = true;
 	enableSimulation = true;
-	onLoad = "[] spawn PopulateBuildStore";
+	onLoad = "[0] spawn PopulateBuildStore";
 
 	class controlsBackground {
 		
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
-			text = "\ca\ui\data\ui_background_controlers_ca.paa";
+			text = "ui_background_controlers_ca.paa";
 
 			x = 0.001704 * safezoneW + safezoneX ;
 			y = 0.00 * safezoneH + safezoneY ;
@@ -52,7 +52,133 @@ class buildshopd {
 	};
 	
 	class controls {
-           
+                class WeaponsButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[0] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "ALL";
+
+			x = -0.11 * safezoneW;
+			y = 0.0 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;
+			h = 0.040 * safezoneH;
+	
+		};
+
+		class WeaponsButton_1: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[1] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "BASECORES";
+
+			x = -0.11 * safezoneW;
+			y = 0.05 * safezoneH + safezoneY;
+			w = 0.060 * safezoneW;
+			h = 0.040 * safezoneH;
+		};
+
+		class WeaponsButton_2: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[2] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "CONTAINER";
+
+			x = -0.11 * safezoneW;
+			y = 0.1 * safezoneH + safezoneY;
+			w = 0.060 * safezoneW;
+			h = 0.040 * safezoneH;
+		};
+
+		class WeaponsButton_3: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[3]execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "WeaponCrates";
+
+			x = -0.11 * safezoneW;
+			y = 0.15 * safezoneH + safezoneY;
+			w = 0.060 * safezoneW;
+			h = 0.040 * safezoneH;
+		};
+
+		class WeaponsButton_4: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[4] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "ESSIANTIAL";
+
+			x = -0.11 * safezoneW;
+			y = 0.2 * safezoneH + safezoneY;
+			w = 0.060 * safezoneW;
+			h = 0.040 * safezoneH;
+		};
+
+		class WeaponsButton_5: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[5] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "FORTIFIED";
+
+			x = -0.11 * safezoneW;
+			y = 0.25 * safezoneH + safezoneY;
+			w = 0.060 * safezoneW;
+			h = 0.040 * safezoneH;
+	
+		};
+
+		class WeaponsButton_6: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[6]execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "BUNKER";
+			x = -0.11 * safezoneW;y = 0.3 * safezoneH + safezoneY;
+                        w = 0.088 * safezoneW;h = 0.040 * safezoneH;};
+
+		class WeaponsButton_7: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[7] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "CONCRETE";
+			x = -0.11 * safezoneW;y = 0.3 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;h = 0.040 * safezoneH;
+
+		};
+                class WeaponsButton_8: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[8] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "CRAP STUFF";
+			x = -0.11 * safezoneW;y = 0.35 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;h = 0.040 * safezoneH;
+
+		};
+                class WeaponsButton_9: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[9] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "FLAG+SIGN";
+			x = -0.11 * safezoneW;y = 0.4 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;h = 0.040 * safezoneH;
+
+		};
+                class WeaponsButton_10: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[10] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "BIG BUILDINGS";
+			x = -0.11 * safezoneW;y = 0.45 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;h = 0.040 * safezoneH;
+
+		};
+                class WeaponsButton_11: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[11] execVM 'client\systems\BuildStore\populateBuildStore.sqf'";
+			text = "GUNSSS";
+			x = -0.11 * safezoneW;y = 0.50 * safezoneH + safezoneY;
+			w = 0.088 * safezoneW;h = 0.040 * safezoneH;
+
+		};
                 class loadVehStore: w_RscButton
 		{
 			idc =-1;
@@ -118,14 +244,27 @@ class buildshopd {
 		class BuyVehicleButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\BuildStore\buyBuild.sqf'";
+			onButtonClick = "[0] execVM 'client\systems\BuildStore\buyBuild.sqf'";
 			text = "Buy";
 
-                        x = 0.12 * safezoneW + safezoneX;
+                        x = 0.14 * safezoneW + safezoneX;
 			y = 0.54 * safezoneH + safezoneY;
 			w = 0.065 * safezoneW;
 			h = 0.040 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
+
+		};
+class BuyVehicleButton1: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[1] execVM 'client\systems\BuildStore\buyBuild.sqf'";
+			text = "Multibuy(200%Price)";
+
+                        x = 0.07 * safezoneW + safezoneX;
+			y = 0.54 * safezoneH + safezoneY;
+			w = 0.075 * safezoneW;
+			h = 0.040 * safezoneH;
+			color[] = {0.1,0.55,0.1,1};
 
 		};
 

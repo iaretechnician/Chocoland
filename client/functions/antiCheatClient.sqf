@@ -15,8 +15,8 @@ _bannedWeapons = [
     "80mmLauncher","9M311Laucher","AALauncher_twice","AGS17","AGS30_heli","AirBombLauncher","AT10LauncherSingle","AT11LauncherSingle","AT13LauncherSingle","AT5Launcher","AT5LauncherSingle",
     "AT6Launcher","AT9Launcher","AZP85","BAF_GMG","BombLauncher","Ch29Launcher","CRV7_FAT","CRV7_HEPD",
     "CRV7_PG","CTWS","D10","D30","D81","DT_veh","FFARLauncher","FFARLauncher_14","GRAD","GSh23L",
-    "GSh23L_L39","GSh301","GSh302","HeliBombLauncher","HellfireLauncher","HellfireLauncher_AH6","Igla_twice","KPVT","M119","M120","M134",
-    "M134_2","M168","M197","M230","M242","M242BC","M252","M256","M2BC","M32_heli","M3P","M621",
+    "GSh23L_L39","GSh301","GSh302","HeliBombLauncher","Igla_twice","KPVT","M119","M120","M134",
+    "M134_2","M168","M197","M242","M242BC","M252","M256","M2BC","M32_heli","M3P","M621",
     "M68","MaverickLauncher","MissileLauncher","Mk82BombLauncher","Mk82BombLauncher_6","MLRS","R73Launcher","R73Launcher_2","RocketPods","S8Launcher",
     "SmokeLauncher","SPG9","StingerLaucher_4x","StingerLauncher_twice","TOWLauncherSingle","TwinM134","TwinVickers","VikhrLauncher",
     "ZiS_S_53"];
@@ -56,33 +56,9 @@ while {true} do {
 _nObject = nearestObject [player, "EvMoney"];
 //if(player distance (nearestobjects [player, ["EvMoney"],  2] select 0) < 2)then { []execVM "client\actions\pickupMoney.sqf";};
 if(player distance _nObject < 2 && moneypick == 1)then { []execVM "client\actions\pickupMoney.sqf";};
-//_nObject = nearestObject [player, "PipeBomb"];
-//[] execVM "client\functions\antiCheatClient.sqf";
 
-     _uid = getPlayerUID player;
-    if ((_uid in serverAdministrators)) then {
-thirstLevel = 100;
-hungerLevel = 100;
-    	_targetUID = getPlayerUID player;
-	        {
-			    if(_x select 0 == _targetUID) then
-			    {
-			    	pvar_teamSwitchList set [_forEachIndex, "REMOVETHISCRAP"];
-					pvar_teamSwitchList = pvar_teamSwitchList - ["REMOVETHISCRAP"];
-			        publicVariableServer "pvar_teamSwitchList";
-	                
-	                player setVehicleInit format["if (name player == ""%1"") then {client_firstSpawn = nil;};",name player];
-			        processInitCommands;
-			        clearVehicleInit player;
-	                
-	                player setVehicleInit format["if isServer then {publicVariable 'pvar_teamSwitchList';};"];
-			        processInitCommands;
-			        clearVehicleInit player;         
-			    };
-			}forEach pvar_teamSwitchList;
-        };
-     //	player enableSimulation true;
-   //    disableUserInput false;
+  player enableSimulation true;
+  disableUserInput false;
 	        
 	   { // Check for illegal weapons. 
     	if (currentWeapon player == _x) exitWith {
@@ -100,8 +76,6 @@ hungerLevel = 100;
         	[] call func_tauntHacker;
         };
     }forEach _bannedVehicles;
-              	
-	// Loop speed not much of an issue clientside.
-	sleep 2; 
+    sleep 2; 
 };
 

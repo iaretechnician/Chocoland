@@ -30,7 +30,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_price = _x select 1;
                         if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
 			player setVariable["choco",_playerMoney - _price,true];
-                        PDB_saveReq = getPlayerUID player;
+                         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+_price,_y select 5,_y select 6, _y select 7],true];
+         
+PDB_saveReq = getPlayerUID player;
 publicVariableServer "PDB_saveReq";
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
 			hintsilent "Chopper bought - watch the sky";

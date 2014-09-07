@@ -33,6 +33,7 @@ if (_type == 0) then {
 
 	//Set original posistion then add to vehicle array
 	_car setVariable["newVehicle",1,true];
+        _car setVariable["original",1,true];
 };
 
 //Create Military Vehicle

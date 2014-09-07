@@ -12,7 +12,7 @@ class vehshopd {
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
-			text = "\ca\ui\data\ui_background_controlers_ca.paa";
+			text = "ui_background_controlers_ca.paa";
 
 			x = 0.001704 * safezoneW + safezoneX ;
 			y = 0.00 * safezoneH + safezoneY ;

@@ -17,35 +17,14 @@ class menu1d {
                         
 			
 		};
-                 class Maintwitter: w_RscPicture
-		{
-			idc = picture3;
-			text = "client\images\twit.jpg";
-                        x = 0.08168 * safezoneW + safezoneX ;
-			y = 0.01 * safezoneH + safezoneY ;
-			w = 0.15 * safezoneW; //0.28
-			h = 0.15 * safezoneH;
-                        
-			
-		};
+               
 
 		
 	};
 	
 	class controls {
 		///custom
-                   class twitt: w_RscButton
-		{
-			idc =-1;
-			onButtonClick = "closeDialog 0; [] execVM 'addons\scripts\twitter.sqf'";
-			text = "Follow us";
-
-			x = 0.08 * safezoneW + safezoneX;
-			y = 0.01 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
-			h = 0.04 * safezoneH;
-
-		};
+              
                   class loadChopStore: w_RscButton
 		{
 			idc =-1;

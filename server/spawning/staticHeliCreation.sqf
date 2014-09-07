@@ -53,5 +53,6 @@ if (_isWreck == 0) then {
  
 	//Set original status to stop ner-do-wells
 	_currHeli setVariable["newVehicle",1,true];
+        _currHeli setVariable["original",1,true];
     _currHeli setVariable["R3F_LOG_disabled", true, true];  
 };

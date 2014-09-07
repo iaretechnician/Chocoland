@@ -1,5 +1,3 @@
-
-
 #include "dialog\buildstoreDefines.sqf";
 disableSerialization;
 

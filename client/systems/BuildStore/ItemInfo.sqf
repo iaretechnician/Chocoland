@@ -27,5 +27,6 @@ _itemlisttext ctrlSetText format ["Price: 0$"];
 	_item = (configFile >> "CfgVehicles" >> _type);
     //    _picture = getText (configFile >> "cfgVehicles" >> _type >> "picture");
      //   _vehiclepicture ctrlSettext _picture;
+     _price=[_price] call fnc_number;
 	_itemlisttext ctrlSetText format ["Price: %1$", _price];
 }}forEach BuildStoreArray;

@@ -1,0 +1,1 @@
+[1, 1, 1, 60, 1800, 300, [1,1,1]] execVM "server\events\stormEffect.sqf";

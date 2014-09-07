@@ -11,10 +11,10 @@ class playerSettings {
 		
 			class MainBG : w_RscPicture {
 			idc = -1;
-			text = "\ca\ui\data\ui_background_controlers_ca.paa";		
+			text = "ui_background_controlers_ca.paa";		
 			moving = true;
 			x = 0.0; y = 0.1;
-			w = 1.0; h = 0.65;
+			w = 1.4; h = 0.65;
 		};
 		
 		
@@ -26,7 +26,71 @@ class playerSettings {
 			x = 0.260; y = 0.112;
 			w = 0.3; h = 0.05;
 		};
-		
+                //highscorestart
+		class highscoreTitle : w_RscText {
+			idc = -1;
+			text = "your Highscore";
+			sizeEx = 0.05;shadow = 2;		
+			x = 0.800; y = 0.112;
+			w = 0.3; h = 0.05;
+		};
+                class highscore1 : w_RscText {
+			idc = highscore1;
+			text = "Total Kills:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.19;
+			w = 0.3; h = 0.05;
+		};
+                class highscore2 : w_RscText {
+			idc = highscore2;
+			text = "Winning streak:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.23;
+			w = 0.3; h = 0.05;
+		};
+                class highscore3 : w_RscText {
+			idc = highscore3;
+			text = "Deaths:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.27;
+			w = 0.3; h = 0.05;
+		};
+                class highscore8 : w_RscText {
+			idc = highscore8;
+			text = "Cleared Missions:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.31;
+			w = 0.3; h = 0.05;
+		};
+                class highscore4 : w_RscText {
+			idc = highscore4;
+			text = "Money Payed:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.35;
+			w = 0.3; h = 0.05;
+		};
+                class highscore5 : w_RscText {
+			idc = highscore5;
+			text = "Money Earned:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.39;
+			w = 0.3; h = 0.05;
+		};
+                class highscore6 : w_RscText {
+			idc = highscore6;
+			text = "Time played:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.43;
+			w = 0.3; h = 0.05;
+		};
+                 class highscore7 : w_RscText {
+			idc = highscore7;
+			text = "Total Walked:";
+			sizeEx = 0.03;
+			x = 0.75; y = 0.47;
+			w = 0.3; h = 0.05;
+		};
+                //highscore end
 		class moneyIcon : w_RscPicture {	
 	  		idc = -1;
         	text = "\CA\misc\data\icons\picture_money_CA.paa";
@@ -129,6 +193,11 @@ class playerSettings {
 			x = 0.625; y = 0.605;
 			w = .1; h = .030;
 		};
+		class playerInput: w_RscCombo {
+			idc = player_value;
+			x = 0.625; y = 0.655;
+			w = .1; h = .030;
+		};
 		
 		class DropcButton : w_RscButton {
 			text = "Drop Money";
@@ -174,6 +243,14 @@ class playerSettings {
 			x = 0.360; y = 0.68;
 			w = 0.225; h = 0.046 * safezoneH;
 		};
+                 class info1Button1 : w_RscButton {
+			idc = safeButton;
+			text = "introduction";
+			onButtonClick = "call infointro;closeDialog 0;";
+			x = 0.160; y = 0.18;
+			w = 0.235; h = 0.049 * safezoneH;
+		};
+             
                   class SafeButton1 : w_RscButton {
 			idc = safeButton;
 			text = "Save Player";
@@ -194,7 +271,7 @@ class playerSettings {
 			idc = groupButton;
 			text = "Group Management";
 			onButtonClick = "[] execVM 'client\systems\groups\loadGroupManagement.sqf'";
-			x = 0.160; y = 0.48;
+			x = 0.160; y = 0.18;
 			w = 0.235; h = 0.049 * safezoneH;
 		};
 

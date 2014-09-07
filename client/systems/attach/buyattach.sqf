@@ -19,6 +19,8 @@ on= true;
         {if(typeof object2 == _x select 2)then {_price2= _x select 1; }; }foreach BuildStoreArray; 
         if((_price+_price2) > _playerMoney) exitWith {hintsilent "You do not have enough money"};
 	player setVariable["choco",_playerMoney - (_price + _price2),true];
+         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+_price+_price2,_y select 5,_y select 6, _y select 7],true];
+         
      //   object2 attachTo [object1,[0,0,0]];
         player globalchat format["you attach successfully your objects for %1$",_price+_price2];
         }else{hint"object2 is empty";};

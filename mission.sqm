@@ -54,12 +54,12 @@ class Mission
 		year=2020;
 		month=3;
 		day=7;
-		hour=13;
+		hour=15;
 		minute=0;
 	};
 	class Groups
 	{
-		items=72;
+		items=69;
 		class Item0
 		{
 			side="LOGIC";
@@ -960,62 +960,60 @@ class Mission
 		};
 		class Item47
 		{
-			side="CIV";
+			side="GUER";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2089.9304,20.455914,4290.7656};
-					id=47;
-					side="CIV";
-					vehicle="Policeman";
+					position[]={2114.2546,21.643749,4294.0864};
+					id=70;
+					side="GUER";
+					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="admin1";
+					text="guer70";
 				};
 			};
 		};
-		class Item48
+	
+class Item48
 		{
-			side="CIV";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2089.9304,20.455914,4290.7656};
-					id=48;
-					side="CIV";
-					vehicle="Policeman";
-					player="PLAY CDG";
+					position[]={2109.96,24.884512,4329.5498};
+					id=71;
+					side="LOGIC";
+					vehicle="ProtectionZone_Ep1";
 					leader=1;
-					skill=0.60000002;
-					text="admin2";
+					skill=0.2;
+					text="spawni2";
 				};
 			};
 		};
 		class Item49
 		{
-			side="CIV";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2089.9304,20.455914,4290.7656};
-					id=49;
-					side="CIV";
-					vehicle="Policeman";
-					player="PLAY CDG";
+					position[]={2089.5769,19.654554,4304.1831};
+					id=72;
+					side="LOGIC";
+					vehicle="ProtectionZone_Ep1";
 					leader=1;
-					skill=0.60000002;
-					text="admin3";
+					skill=0.2;
+					text="spawni3";
 				};
 			};
 		};
-	
 		class Item50
 		{
 			side="GUER";
@@ -1396,62 +1394,7 @@ class Mission
 				};
 			};
 		};
-		class Item70
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={2114.2546,21.643749,4294.0864};
-					id=70;
-					side="GUER";
-					vehicle="UN_CDF_Soldier_Officer_EP1";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					text="guer70";
-				};
-			};
-		};
 	
-class Item71
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={2109.96,24.884512,4329.5498};
-					id=71;
-					side="LOGIC";
-					vehicle="ProtectionZone_Ep1";
-					leader=1;
-					skill=0.2;
-					text="spawni2";
-				};
-			};
-		};
-		class Item72
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={2089.5769,19.654554,4304.1831};
-					id=72;
-					side="LOGIC";
-					vehicle="ProtectionZone_Ep1";
-					leader=1;
-					skill=0.2;
-					text="spawni3";
-				};
-			};
-		};
 };
 	class Vehicles
 	{

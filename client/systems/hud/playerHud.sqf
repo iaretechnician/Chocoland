@@ -24,7 +24,7 @@ while {true} do
     
     _playerMoney = player getVariable "choco";
     _test=[_playerMoney] call fnc_number; 
-   _vitals ctrlSetStructuredText parseText format ["%5 <img size='0.8' image='client\icons\bounty.paa'/><br/>%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='client\icons\food.paa'/><br/>%3 <img size='0.8' image='client\icons\water.paa'/><br/>%4 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, hungerLevel, thirstLevel, _test,player getvariable "bounty"];
+   _vitals ctrlSetStructuredText parseText format ["%3 <img size='0.8' image='client\icons\bounty.paa'/><br/>%1 <img size='0.8' image='client\icons\health.paa'/><br/>%2 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>", _health, _test,player getvariable "bounty"];
     _vitals ctrlCommit 0;
     
     

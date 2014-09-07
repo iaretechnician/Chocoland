@@ -31,9 +31,9 @@ switch _key do
     //tilde ~
     case 41:
     {
-       // if(vehicle player != player) exitwith{};  // Check the player is not a car.
+      
         if(!alive player) exitwith{};  // Check the player is not dead.
-       // [] execVM "client\systems\menu\loadmenu.sqf";
+      
         [] call loadPlayerMenu;
     };
      case 38: //L
@@ -49,6 +49,9 @@ switch _key do
 	case 48:
 	{ if(!alive player) exitwith{};if((player getvariable"attach") ==1)then{
 		[] spawn loadattach;};
+    };
+    case 76:// 	NUM_5 
+     {_uid = getPlayerUID player;if (_uid in serverAdministrators) then {deleteVehicle cursorTarget;};
     };
 };
 

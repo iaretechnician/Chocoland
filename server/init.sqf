@@ -1,34 +1,18 @@
-//	@file Version: 1.0
-//	@file Name: init.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:19
-//	@file Description: The server init.
-//	@file Args:
 
 #include "setup.sqf"
 if(!X_Server) exitWith {};
 
-sideMissions = 1;
-serverSpawning = 1;
-
-//Execute Server Side Scripts.
 "diag_log_server" addPublicVariableEventHandler {diag_log (_this select 1)};
 [] execVM "server\admins.sqf";
 [] execVM "server\functions\serverVars.sqf";
 _serverCompiledScripts = [] execVM "server\functions\serverCompile.sqf";
 [] execVM "server\functions\broadcaster.sqf";
 [] execVM "server\functions\relations.sqf";
-[] execVM "server\functions\serverTimeSync.sqf";
-[] execVM "server\functions\antiCheatServer.sqf";
+
 waitUntil{scriptDone _serverCompiledScripts};
 
 diag_log format["WASTELAND SERVER - Server Complie Finished"];
-
-#ifdef __DEBUG__
-#else
-//Execute Server Spawning.
-if (serverSpawning == 1) then {
-    diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
+diag_log format["WASTELAND SERVER - Initilizing Server Spawning"];
 	_vehSpawn = [] ExecVM "server\functions\vehicleSpawning.sqf";
 	waitUntil{sleep 0.1; scriptDone _vehSpawn};
     _objSpawn = [] ExecVM "server\functions\objectsSpawning.sqf";
@@ -39,23 +23,29 @@ if (serverSpawning == 1) then {
     waitUntil{sleep 0.1; scriptDone _heliSpawn};
     _markerClean = [] ExecVM "server\functions\cleanMarkers.sqf";
     waitUntil{sleep 0.1; scriptDone _markerClean};
-};
-#endif
-//Execute Server Missions.
-if (sideMissions == 1) then {
-	diag_log format["WASTELAND SERVER - Initilizing Missions"];
-    [] execVM "server\missions\sideMissionController.sqf";
-    sleep 5;
-    [] execVM "server\missions\mainMissionController.sqf";
-    sleep 5;
-  [] execVM "server\missions\spawnController.sqf";
-  sleep 5;
- // [] execVM "server\missions\eventController.sqf";
-[] execVM "server\missions\events\moneyzone.sqf";
- []execVM "server\missions\events\night.sqf";
-  []execVM "server\missions\factoryMethods\npcweapon.sqf";
-};
-
+//Execute Server Missions. 
+[] execVM "server\spawnController.sqf";
+[] execVM "server\moneyzone.sqf";
+//[] execVM "server\randomMission.sqf";
 if (isDedicated) then {
 	_id = [] execFSM "server\WastelandServClean.fsm";
+};
+while {true} do
+{
+   //waiting 
+    _countppl= 120;
+    {
+	if (alive _x) then
+		{
+                _countppl= _countppl -4;	
+		};
+	} forEach playableUnits; 
+       if(_countppl < 0)then {_countppl =0;}; 
+      
+
+	_missionRunning = [] execVM "server\randomMission.sqf";
+    diag_log format["WASTELAND SERVER - Execute New Main Mission"];
+
+waitUntil{sleep 1; scriptDone _missionRunning};
+  sleep _countppl;
 };

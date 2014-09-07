@@ -43,6 +43,8 @@ switch (_switch) do
                 _bounty = player getVariable"bounty";if(_bounty==0)then{_bounty=1;};
                 _money = _money * _bounty;
                   player setVariable["choco",(player getVariable"choco") + _money,true];
+                    _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,(_y select 5)+_money,_y select 6, _y select 7],true];
+         
                     player setVariable["bounty",0,true];
                 deletevehicle _currObject;
                 titleText [format["\n+ you got %1 $ for Destroy BaseCore", _money], "PLAIN DOWN", 0];

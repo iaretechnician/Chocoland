@@ -140,7 +140,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 case "Mothership" :{player globalChat format["watch your MouseWheel Commands"];playershieldObject = player addAction[('<t color=''#17FF41''>' + ('Spawn here my MotherShip') +  '</t>'),'client\systems\generalStore\adds\ship.sqf'];};
 };};
 
-if(_payment == 0)then {player setVariable["choco",_playerMoney - genStoreCart,true];}                      
+if(_payment == 0)then {player setVariable["choco",_playerMoney - genStoreCart,true]; _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+genStoreCart,_y select 5,_y select 6, _y select 7],true];
+         }                      
 else{player setVariable["bounty",_playerMoney2 - genStoreCart2,true];};
 diag_log_server = parsetext format["player:%1 buyed %2 for %3 ,%4 and have now %5 MoneyLeft",name player,_itemText,genStoreCart,genStoreCart2,(player getVariable"choco")];
 publicvariableserver "diag_log_server";

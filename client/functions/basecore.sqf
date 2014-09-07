@@ -30,6 +30,8 @@ while {alive _currObject and (_currObject getvariable"basecore" == 1) and (playe
  if (player distance _currObject < _range and player getvariable"basecore"== 1)
         then { _money = _money2 + (player getVariable"bounty");
                 player setVariable["choco",(player getVariable"choco") + _money,true];
+                  _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,(_y select 5)+_money,_y select 6, _y select 7],true];
+         
    _currObject setVariable["wallet",(_currObject getVariable"wallet") + _money2,true];
     _pos = getPos _currObject;
   }else{

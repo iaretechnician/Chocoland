@@ -51,6 +51,7 @@ _itemText = _itemlist lbText _selectedItem;
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
+             _price=[_price] call fnc_number;
 			_itemlisttext ctrlSetText format ["Money: $%1", _price];
                         _itemlisttext2 ctrlSetText format ["Chocos: %1", _price2];
 		}

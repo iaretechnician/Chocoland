@@ -13,8 +13,9 @@
 private ["_objet", "_est_desactive", "_est_transporte_par", "_est_deplace_par", "_objectState", "_doLock", "_doUnlock","_currentAnim","_config","_onLadder"];
 
 _objet = _this select 0;
-_player = Round (_player);
+//_player = Round (_player);
 _doLock = 0;
+_player = player;
 _doUnlock = 1;
 
 _est_desactive = _objet getVariable "R3F_LOG_disabled";

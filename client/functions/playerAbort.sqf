@@ -11,10 +11,7 @@ while {true} do
 	if (!(isNull (findDisplay 49))) then
 	{
 		((findDisplay 49) displayCtrl 104) ctrlEnable true;
-		player globalChat "Player Saved.";
-hint "saved";
-PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+		
                 waitUntil {isNull (findDisplay 49)};
 	};
 };

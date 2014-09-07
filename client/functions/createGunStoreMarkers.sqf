@@ -1,26 +1,19 @@
+player setVariable["lastPos",[],true];
+sleep 60;
+_y= player getvariable"highscore";
+if((_y select 7)>=999999)then {player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, 0],true];};
 
-//	@file Version: 1.0
-//	@file Name: createGunStoreMarkers.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 28/11/2012 05:19
-//	@file Args:
+while {walked}do {
+    waituntil {vehicle player == player};
+_charPos = getPos player;
+private["_debug","_distance"];
 
-/*_gunStores = ["gs1"];
+_distance = [0,0,0] distance _charPos;
 
-//Creates the markers around general stores.
-waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _gunStores == count _gunStores};
-{
-	_unit = missionNamespace getVariable _x;
-
-	// Gun store title    
-    _markerName = format["marker_shop_title_%1",_x];
-    deleteMarkerLocal _markerName;
-	_marker = createMarkerLocal [_markerName, getPos _unit];
-	_markerName setMarkerShapeLocal "ICON";
-    _markerName setMarkerTypeLocal "Dot";
-    _markerName setMarkerColorLocal "ColorRed";
-	_markerName setMarkerSizeLocal [1,1];
-	_markerName setMarkerTextLocal "Gun Store";
-
-} forEach _gunStores;
-*/
+if (_distance > 10000) exitWith { };
+_lastPos =player getVariable"lastPos";
+_distanceFoot = round(_charPos distance _lastPos);
+if (_distanceFoot > 1000) exitWith {};
+_y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, (_y select 7)+_distanceFoot],true];
+player setVariable["lastPos",_charPos,true];
+sleep 10;}; 

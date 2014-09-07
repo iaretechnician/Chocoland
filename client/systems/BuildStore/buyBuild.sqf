@@ -2,6 +2,7 @@
 
 #include "dialog\buildstoreDefines.sqf";
 disableSerialization;
+_switch = _this select 0;
 _fregata= {player globalChat format["watch your MouseWheel Commands"];playerbaseObject = player addAction[('<t color=''#17FF41''>' + ('create Here My Fregata') +  '</t>'),'addons\scripts\createFregata.sqf'];};
 _carrier= {player globalChat format["watch your MouseWheel Commands"];playerbaseObject = player addAction[('<t color=''#17FF41''>' + ('create Here My Carrier') +  '</t>'),'addons\scripts\createCarrier.sqf'];};
 //if(objStoreCart > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
@@ -27,8 +28,8 @@ closeDialog objshop_DIALOG;
 
 
 // pos = [(pos select 0),(pos select 1),100];
-pos = [(pos select 0)+4*sin(dir),(pos select 1)+4*cos(dir),(pos select 2)+100];
-
+if(_switch ==0)then {pos = [(pos select 0)+4*sin(dir),(pos select 1)+4*cos(dir),(pos select 2)+100];};
+if(_switch ==1)then {pos = [(pos select 0)+6*sin(dir),(pos select 1)+6*cos(dir),(pos select 2)];};
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
@@ -39,8 +40,13 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
            
 			_price = _x select 1;if(player getvariable"basebuilder" == 1)then{_price = Round(_price /2);};
 			if(_price > (player getVariable "choco")) exitWith {hintsilent "You do not have enough money"};
+                         []call positionCheck;
+                         if(poscheck) exitWith {hintsilent "You are out of the map, get back Soldier!"};
+                         if(_switch ==1)then {_price = _price *2};
 			player setVariable["choco",_playerMoney - _price,true];
-                         if(_x select 2 == "fregata") exitWith {[] call _fregata;};
+                        _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+_price,_y select 5,_y select 6, _y select 7],true];
+         
+             if(_x select 2 == "fregata") exitWith {[] call _fregata;};
              if(_x select 2 == "carrier") exitWith {[] call _carrier;};
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
@@ -50,6 +56,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];
 			_spawn setVariable["R3F_LOG_disabled", false, true];
+                        if(_switch == 0)then{
 			hintsilent "Building bought - watch the sky";
                 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPosatl (getPosatl _spawn);
@@ -65,15 +72,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 
 		deTach _spawn;
 		sleep 3;player removeaction paraId;
-if((_x select 2) == "Land_Barrel_water") then 
-{
-    _spawn setVariable["water",40,true];
-};
-
-if((_x select 2) == "Land_stand_small_EP1") then 
-{
-    _spawn setVariable["food",40,true];
-};
+}else {hintsilent "Building bought via Multibuy";};
 if((_x select 2) == "Misc_cargo_cont_tiny") then 
 {
     _spawn setVariable ["basecore",0, true];
@@ -81,26 +80,28 @@ if((_x select 2) == "Misc_cargo_cont_tiny") then
 if((_x select 2) == "TK_GUE_WarfareBUAVterminal_EP1") then 
 {
     _spawn setVariable ["basecore",0, true];
+   
 };
 if((_x select 2) == "USMC_WarfareBAircraftFactory") then 
 {
     _spawn setVariable ["basecore",0, true];
+    diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];
 };
 //bigobjects_currObject setVariable ["basecore",1, true];
-if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon" ||(_x select 2) == "Land_A_statue02" ||(_x select 2) == "Land_A_GeneralStore_01a" ||(_x select 2) == "Land_A_TVTower_Base" ||(_x select 2) == "Land_Barn_Metal" ||(_x select 2) == "Land_A_Office01" ||(_x select 2) == "Land_A_BuildingWIP" ||(_x select 2) == "Land_A_Hospital"||(_x select 2) == "Land_HouseB_Tenement") then 
+if((_x select 2) == "Land_A_Castle_Bastion" ||(_x select 2) == "Land_A_CraneCon" ||(_x select 2) == "Land_A_FuelStation_Shed"||(_x select 2) == "Land_A_statue02" ||(_x select 2) == "Land_A_GeneralStore_01a" ||(_x select 2) == "Land_A_TVTower_Base" ||(_x select 2) == "Land_Barn_Metal" ||(_x select 2) == "Land_A_Office01" ||(_x select 2) == "Land_A_BuildingWIP" ||(_x select 2) == "Land_A_Hospital"||(_x select 2) == "Land_HouseB_Tenement") then 
 {
         _spawn setVariable ["objectLocked", true, true];
          _spawn setVariable ["base", 1, true];
           _spawn setVariable ["playerGUID", name player, true];
+          diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];
 };
-_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
+if(_switch == 0)then {_spawn setPos [(getPos _spawn select 0),(getPos _spawn select 1),0.0014];
     		// Delete parachute
 		sleep 15;
-		deleteVehicle _Parachute;      
+		deleteVehicle _Parachute;     }; 
                  _spawn setDamage (0.00);
 		} else {
 		hintsilent "There is another Building or player blocking the spawn point!";
 		};
 	}}forEach BuildStoreArray;
 };
-diag_log format["player:%1 buyed %2 and have now %3 MoneyLeft",name player, _price, (player getVariable"choco")];

@@ -322,6 +322,43 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			}forEach playableUnits;       
                           
 	    };
+                case 21: //reset all stats
+	    {      
+			_targetUID = getPlayerUID _target;
+	        {
+			    if(getPlayerUID _x == _targetUID) then
+			    {
+                                _x setDamage 0;
+_x setVariable["dot",0,true];
+_x setVariable["animal",false,true];
+_x setVariable["bounty",0,true];
+_x setVariable["donator",0,true];
+_x setVariable["decoder",0,true];
+_x setVariable["basebuilder",0,true];
+_x setVariable["choco",500,true];
+_x setVariable["attach",0,true];
+_x setVariable["upgrades",0,true];
+_x setVariable["canfood",2,true];
+_x setVariable["chocopack",nil,true];
+_x setVariable["chocoload",[],true];
+
+_x setVariable["highscore",[0,0,0,0,0],true];
+_x setVariable["saveVehicle",0,true];
+_x setVariable["medkits",0,true];
+_x setVariable["water",2,true];
+_x setVariable["fuel",0,true];
+_x setVariable["repairkits",0,true];
+_x setVariable["fuelFull", 1,true];
+_x setVariable["fuelEmpty",0,true];
+_x setVariable["bombs",false,true];
+_x setVariable["spawnBeacon",0,true];
+_x setVariable["camonet",0,true];
+_x setVariable["canDrop",false,true]; 
+                               
+  			   };
+			}forEach playableUnits;       
+                          
+	    };
 	};
 } else {
   exit;  

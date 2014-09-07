@@ -27,7 +27,7 @@ class PlayersMenu
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
-			text = "\ca\ui\data\ui_background_controlers_ca.paa";
+			text = "ui_background_controlers_ca.paa";
 			x = 0.1875 * safezoneW + safezoneX;
 			y = 0.15 * safezoneH + safezoneY;
 			w = 0.837499 * safezoneW;
@@ -252,6 +252,17 @@ class PlayersMenu
 			h = 0.04 * safezoneH;
                         color[] = {0.1,0.95,0.1,1};
 		};
+                 class playerresetstats: w_RscButton
+                {
+			idc = -1;
+			text = "RESET STATS";
+			onButtonClick = "[21] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			x = 0.65 * safezoneW + safezoneX;
+			y = 0.42 * safezoneH + safezoneY;
+			w = 0.080 * safezoneW;
+			h = 0.04 * safezoneH;
+			color[] = {0.1,0.95,0.1,1};
+		};
                 class Choco5Button: w_RscButton
 		{
 			idc = -1;
@@ -353,7 +364,7 @@ class PlayersMenu
                 {
 			idc = -1;
 			text = "Set chocos = 0";
-			onButtonClick = "[20] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;

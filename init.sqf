@@ -52,10 +52,6 @@ if(X_Client) then {
 
 if(X_Server) then {
 	diag_log format ["############################# ChocoLand #############################"];
-	#ifdef __DEBUG__
-	diag_log format ["T%1,DT%2,F%3", time, diag_tickTime, diag_frameno];
-	#endif
-    diag_log format["WASTELAND SERVER - Initilizing Server"];
 	[] execVM "server\init.sqf";
 };
 
@@ -65,5 +61,4 @@ if(X_Server) then {
 //[0, 0, 0] execVM "addons\scripts\DynamicWeatherEffects.sqf";
 [] execVM "motd.sqf";
 _null = [] execVM "addons\scripts\cleanupnew.sqf";
-
-execVM "persistentscripts\init.sqf";
+execVM "datenbank\init.sqf";

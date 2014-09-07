@@ -3,14 +3,14 @@
 #include "dialog\vehstoreDefines.sqf";
 disableSerialization;
 cowcycle= {
- player setVariable["choco",_playerMoney - _price,true];closeDialog 0;  _pos = getposatl player;_grp = creategroup civilian;  _spawn = _grp createunit ["Cow04",_pos,[],0,"FORM"];  _spawn setPos _pos; 
+ player setVariable["choco",_playerMoney - _price,true];closeDialog 0; dir=getdir player; _pos = getposatl player;_pos = [(_pos select 0)+5*sin(dir),(_pos select 1)+5*cos(dir),(_pos select 2)];_grp = creategroup civilian;  _spawn = _grp createunit ["Cow04",_pos,[],0,"FORM"];  _spawn setPos _pos; 
  spawn2 = createVehicle["Old_moto_TK_Civ_EP1",_pos,[], 0,"CAN_COLLIDE"];spawn2 setdir ( getdir player);_spawn attachto [spawn2,[-0.2,-0.55,-1.8]];  spawn2 setObjectTexture [0, ""];spawn2 setObjectTexture [1, ""];
  publicvariable"spawn2";  _randomPos=getpos player;_inArea = _randomPos nearEntities 22222;     {   if (isPlayer _x) then {  _x setVehicleInit "spawn2 setobjecttexture [1,''];spawn2 setobjecttexture [0,''];";
  processInitCommands; };} forEach _inArea;   player moveindriver spawn2;  player assignAsDriver spawn2;
 };
 pchelabqm={
 	player setVariable["choco",_playerMoney - _price,true];closeDialog 0;
-	_pos = getpos player;_Parachute = "Pchela1T" createVehicle _pos; _Parachute setPos _pos;_Parachute setdir ( getdir player);
+	dir=getdir player; _pos = getposatl player;_pos = [(_pos select 0)+5*sin(dir),(_pos select 1)+5*cos(dir),(_pos select 2)];_Parachute = "Pchela1T" createVehicle _pos; _Parachute setPos _pos;_Parachute setdir ( getdir player);
 	_pos= [(_pos select 0),(_pos select 1), (_pos select 2)];_Parachute2 = "Pchela1T" createvehicle _pos;
 	_Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,1.5,0]];_Parachute3 = "Chukar" createvehicle _pos;
 	_Parachute setPos _pos;_Parachute3 attachTo [_Parachute,[1,0,0.7]];  _Parachute4 = "Chukar" createvehicle _pos; _Parachute setPos _pos;_Parachute4 attachTo [_Parachute,[-1,0,0.7]];  
@@ -18,7 +18,7 @@ pchelabqm={
 };
 adminplane= {
 	player setVariable["choco",_playerMoney - _price,true];closeDialog 0;
-	_pos = getpos player;_Parachute = "MV22" createVehicle _pos; _Parachute setPos _pos;_Parachute setdir ( getdir player);_pos= [(_pos select 0)+30,(_pos select 1), (_pos select 2)];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,-12,0]];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,12,0]];
+	dir=getdir player; _pos = getposatl player;_pos = [(_pos select 0)+5*sin(dir),(_pos select 1)+5*cos(dir),(_pos select 2)];_Parachute = "MV22" createVehicle _pos; _Parachute setPos _pos;_Parachute setdir ( getdir player);_pos= [(_pos select 0)+30,(_pos select 1), (_pos select 2)];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,-12,0]];_Parachute2 = "C130J" createvehicle _pos; _Parachute setPos _pos;_Parachute2 attachTo [_Parachute,[0,12,0]];
 _Parachute addWeapon "Gau12";_Parachute addMagazine "300Rnd_25mm_GAU12";_Parachute addWeapon "Bomblauncher";_Parachute addMagazine "6Rnd_GBu12_AV8B";
  _Parachute addWeapon "CMFlareLauncher";_Parachute addMagazine "120Rnd_CMFlare_Chaff_Magazine";player moveindriver _Parachute;  player assignAsDriver _Parachute;
 	};
@@ -55,6 +55,8 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			if(_x select 2 == "pchelabqm") exitWith {[] call pchelabqm;};
 			if(_x select 2 == "adminplane") exitWith {[] call adminplane;};
                         player setVariable["choco",_playerMoney - _price,true];
+                         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+_price,_y select 5,_y select 6, _y select 7],true];
+         
                         PDB_saveReq = getPlayerUID player;
                         publicVariableServer "PDB_saveReq";
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];

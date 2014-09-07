@@ -1,3 +1,0 @@
-playersatId = player addAction [format ["<t color='#585858'>%1</t>", "activate Sattelite"], "client\systems\FunStore\adds\fnc_sattelite_fnc.sqf",[],-12,false,false,"","local player"];
- player globalchat"check mouseWheel commands for Sattelite";
-player setvariable["sat",1,true];

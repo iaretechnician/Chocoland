@@ -11,10 +11,10 @@ if(mutexScriptInProgress || geldaction) exitWith
 {
 	//player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 };
-
+_server =0;
 _totalDuration = 1;
 _lockDuration = _totalDuration;
-_originalState = animationState player;
+
 mutexScriptInProgress = true;
 
 _moneyObject = (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
@@ -41,10 +41,7 @@ for "_iteration" from 1 to _lockDuration do
         _moneyObject setVariable ["owner", "world", true];
 	};   
 		    
-	if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then 
-	{
-		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
-	};
+	
 		    
 	_lockDuration = _lockDuration - 1;
 	sleep 1;
@@ -70,13 +67,15 @@ for "_iteration" from 1 to _lockDuration do
 			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "cash");
                         _server = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "server");
 			deleteVehicle (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
-                        if(_server == 1) then {_money = _money max floor(_money * (player getVariable "bounty"));};
-			player setVariable["choco", (player getVariable "choco")+_money,true];          
-			player globalChat format["You have picked up $%1",_money];
-			mutexScriptInProgress = false;
-			player switchMove _originalState;
+                        if(_server == 1) then {_money = _money max floor(_money * (player getVariable "bounty"))};
+                     
+                       player globalChat format["You have picked up $%1",_money];
+                        player setVariable["choco", (player getVariable "choco")+_money,true];
+                         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,(_y select 5)+_money,_y select 6, _y select 7],true];
+         
 			
-                        PDB_saveReq = getPlayerUID player;
+			mutexScriptInProgress = false;
+		        PDB_saveReq = getPlayerUID player;
                         publicVariableServer "PDB_saveReq";
                         geldaction =false;
 		};      

@@ -12,6 +12,7 @@ private ["_selectedBox", "_selectedBoxPos", "_finishedBox", "_currBox"];
 
 _selectedBox = _this select 0;
 _selectedBoxPos = _this select 1;
+_parachuteaction  = _this select 2;
 
 switch(_selectedBox) do {
 	case "basicUS": { // Basic US 1 is mainly M16's and standard US Army weaponry
@@ -49,7 +50,8 @@ switch(_selectedBox) do {
 		_currBox addMagazineCargoGlobal ["SmokeShell",50];
 		_currBox addMagazineCargoGlobal ["SmokeShellRed",50];
 		_currBox addMagazineCargoGlobal ["SmokeShellGreen",50]; 
-    };
+  
+   };
     case "basicUS2": { // Basic US 2 is a few M4's and some combat shotguns
     	_currBox = createVehicle ["USBasicWeaponsBox", _selectedBoxPos,[], 30, "NONE"];
         
@@ -80,6 +82,7 @@ switch(_selectedBox) do {
         _currBox addMagazineCargoGlobal ["1Rnd_HE_M203",30];
         _currBox addMagazineCargoGlobal ["1Rnd_Smoke_M203",30];
 		_currBox addMagazineCargoGlobal ["10Rnd_127x99_m107",10];
+                  
     };
     case "basicRU": { // Basic RU 1 is mainly AK's and better pistols, footsoldier weapons.
     	_currBox = createVehicle ["RUBasicWeaponsBox", _selectedBoxPos,[], 30, "NONE"];
@@ -398,3 +401,4 @@ switch(_selectedBox) do {
 		
     };
 };
+  if(_parachuteaction ==1)then {[_currBox]execVM"server\spawning\parachute.sqf";};

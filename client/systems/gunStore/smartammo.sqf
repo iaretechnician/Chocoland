@@ -13,7 +13,8 @@ if (local player) then {
 _weapon = currentWeapon player;
 if (isnil "_weapon")exitwith{};
 _magazines = getArray(configFile >> "cfgWeapons" >> _weapon>> "magazines");
-_magazines = _magazines call BIS_fnc_selectRandom; 
+_magazines = _magazines select 0;
+//_magazines = _magazines call BIS_fnc_selectRandom; 
 	{ if(_magazines == _x select 1) then { _price = _x select 2;};
         }forEach ammoArray;
         _price = _price *2;

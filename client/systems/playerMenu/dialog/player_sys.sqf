@@ -11,3 +11,12 @@
 #define groupButton 2011
 #define saveVehicleText2_text 2012
 #define saveVehicleText_text 2013
+#define player_value 2014
+#define highscore1 2015
+#define highscore2 2016
+#define highscore3 2017
+#define highscore4 2018
+#define highscore5 2019
+#define highscore6 2020
+#define highscore7 2021
+#define highscore8 2022

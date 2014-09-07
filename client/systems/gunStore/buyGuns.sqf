@@ -203,6 +203,8 @@ publicvariableserver "diag_log_server";
 		};
 
 		player setVariable["choco",_playerMoney - gunStoreCart,true];
+                 _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+gunStoreCart,_y select 5,_y select 6, _y select 7],true];
+         
                 PDB_saveReq = getPlayerUID player;
 publicVariableServer "PDB_saveReq";
 		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];

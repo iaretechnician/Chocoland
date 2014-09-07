@@ -148,41 +148,6 @@ objectList = ["Land_Barrel_water",
 //Object List - Random Spawns.
 staticWeaponsList = ["M2StaticMG_US_EP1",
 				"DSHKM_TK_INS_EP1"];
-
 //Object List - Random Helis.
 staticHeliList = [];
-
 vehicleWeapons = [];
-                
-MissionSpawnMarkers = [
-            ["Mission_1",false],
-            ["Mission_2",false],
-            ["Mission_3",false],
-            ["Mission_4",false],
-            ["Mission_5",false],
-            ["Mission_6",false],
-            ["Mission_7",false],
-            ["Mission_8",false],
-            ["Mission_9",false],
-            ["Mission_10",false],
-            ["Mission_11",false],
-            ["Mission_12",false],
-            ["Mission_13",false],
-            ["Mission_14",false],
-            ["Mission_15",false],
-            ["Mission_16",false],
-            ["Mission_17",false],
-            ["Mission_18",false],
-            ["Mission_19",false],
-            ["Mission_20",false]
-];
-CarrierMarkers = [
-[carrier_1, false],
-[carrier_2, false],
-[carrier_3, false],
-[carrier_4, false],
-[carrier_5, false],
-[carrier_6, false],
-[carrier_7, false],
-[carrier_8, false]
-];

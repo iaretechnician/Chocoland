@@ -3,7 +3,10 @@
 //save weapon to backpack
 
 _primary = primaryWeapon player;
-_backpack = player getvariable"chocopack";
+_backpack = player getvariable"chocopack"; 
+_vehicle = player; 
+//ammoLeft = _vehicle ammo _primary;
+
     if (_primary != "" and (isNil "_backpack")) then {
 //magazin
     _magtypes = getArray(configFile>> "cfgWeapons" >> _primary >> "magazines");
@@ -18,12 +21,14 @@ _backpack = player getvariable"chocopack";
 		};
                 player setvariable["chocopack",_primary,true];
     //ende
+  
     {
     player removeMagazine _x} forEach magsbackpack;
     player removeWeapon _primary;
-    
+  
                 }else{
                     
+    
 // wenn waffe schon im backpack vorhanden ist
 //magazin
 _oldmags = magsbackpack;
@@ -47,6 +52,6 @@ _oldweapon = player getvariable"chocopack";
     sleep 1;
     player addweapon _oldweapon;
     player selectWeapon _oldweapon;
-    {player addMagazine _x} forEach _oldmags;
-    
+    {player addMagazine _x;} forEach _oldmags;
+  //player setAmmo [_oldweapon vehicle player, ammoLeft];
     };

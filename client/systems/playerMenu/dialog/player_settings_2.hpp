@@ -11,7 +11,7 @@ class playerSettings2 {
 		
 			class MainBG : w_RscPicture {
 			idc = -1;
-			text = "\ca\ui\data\ui_background_controlers_ca.paa";		
+			text = "ui_background_controlers_ca.paa";		
 			moving = true;
 			x = 0.0; y = 0.1;
 			w = 1.0; h = 0.65;
@@ -69,6 +69,13 @@ class playerSettings2 {
 			text = "Copy Server IP to Clipboard";
 			onButtonClick = "[2] execVM 'client\systems\playerMenu\copy2clip.sqf';closeDialog 0;";
 			x = 0.160; y = 0.44;
+			w = 0.325; h = 0.046 * safezoneH;
+		};
+                 class SafeButton1121 : w_RscButton {
+			idc = safeButton;
+			text = "Follow us on Twitter";
+			onButtonClick = "[3] execVM 'client\systems\playerMenu\copy2clip.sqf';closeDialog 0;";
+			x = 0.160; y = 0.64;
 			w = 0.325; h = 0.046 * safezoneH;
 		};
 	};

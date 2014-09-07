@@ -13,7 +13,7 @@ _random = Round(random 2);
 if(_random == 2) then {
 _Objtype = objectList select (random (count objectList - 1));
 _obj = createVehicle [_Objtype,_objPos,[], 50,"None"]; 
-
+_obj setVariable["original",1,true];
 if(_Objtype == "Land_Barrel_water") then 
 {
     _obj setVariable["water",40,true];

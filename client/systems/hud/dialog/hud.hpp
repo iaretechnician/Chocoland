@@ -39,15 +39,15 @@ class WastelandHud {
 		{
 			idc = hud_status_idc;
 			type = CT_STRUCTURED_TEXT;
-			size = 0.040;
+			size = 0.050;
 			x = safeZoneX + (safeZoneW * (0.97 - (0.14 / SafeZoneW)));
-                        y = safeZoneY + (safeZoneH * (1 - (0.20 / SafeZoneH)));
+                        y = safeZoneY + (safeZoneH * (1 - (0.15 / SafeZoneH)));
 			w = 0.2; h = 0.20;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
-			text = "100 <img size='0.8' image='client\icons\food.paa'/><br/>100 <img size='0.8' image='client\icons\water.paa'/><br/>500 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
-			shadow = 2;
+			text = "500 <img size='0.8' image='\CA\misc\data\icons\picture_money_CA.paa'/><br/>100 <img size='0.8' image='client\icons\health.paa'/>";
+			shadow = 4;
 			class Attributes {
 				align = "right";
 			};

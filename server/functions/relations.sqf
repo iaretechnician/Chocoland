@@ -21,3 +21,4 @@ RESISTANCE setFriend [WEST, 0];
 CIVILIAN setFriend [EAST, 0];
 CIVILIAN setFriend [WEST, 0];
 CIVILIAN setFriend [RESISTANCE, 0];
+CIVILIAN setFriend [CIVILIAN, 1];

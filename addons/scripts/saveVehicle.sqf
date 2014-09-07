@@ -18,7 +18,7 @@ _nic = [nil, vehicleSave, "per", rHideobject, true] call RE;
 _position_attache = [random 3000, random 3000, (10000 + (random 3000))];
 vehicleSave attachTo [vehiclesaveattach, _position_attache];
 
-    hint format ["%1 saved to Hangar! (press L to spawn)", vehiclename];
+    hint format ["%1 saved to Hangar! (spawn it on your PlayerMenu)", vehiclename];
     sleep 1;
     player globalChat "Vehicle Saved.";
     player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";

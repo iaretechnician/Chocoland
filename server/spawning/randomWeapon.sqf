@@ -21,5 +21,5 @@ _mag = (getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines")) select 
 
 //Add guns and magazines, note the Global at the end..
 _car addMagazineCargoGlobal [_mag,1];
-_car addMagazineCargoGlobal [_mag,(random 4)];
+_car addMagazineCargoGlobal [_mag,round(random 4)];
 _car addWeaponCargoGlobal [_weapon,1];
