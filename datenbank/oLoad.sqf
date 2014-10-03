@@ -9,10 +9,9 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 	 _class = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "classname", "STRING"] call iniDB_read;
 	_pos = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "pos", "ARRAY"] call iniDB_read;
 	_dir = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "dir", "ARRAY"] call iniDB_read;
-	_supplyleft = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "supplyleft", "NUMBER"] call iniDB_read;
-	_weapons = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "weapons", "ARRAY"] call iniDB_read;
+		_weapons = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "weapons", "ARRAY"] call iniDB_read;
 	_magazines = ["Objects" call PDB_databaseNameCompiler, _objSaveName, "magazines", "ARRAY"] call iniDB_read;
-	if(!isNil "_objSaveName" && !isNil "_class" && !isNil "_pos" && !isNil "_dir" && !isNil "_supplyleft" && !isNil "_weapons" && !isNil "_magazines") then 
+	if(!isNil "_objSaveName" && !isNil "_class" && !isNil "_pos" && !isNil "_dir" && !isNil "_weapons" && !isNil "_magazines") then 
 	{
 
 		_obj = createVehicle [_class,_pos, [], 0, "CAN COLLIDE"];
@@ -28,7 +27,19 @@ for[{_i = 0}, {_i < _objectscount}, {_i = _i + 1}] do {
 		{
 			_obj setVariable["water",_supplyleft,true];
 		};
-
+if(_class == "Misc_cargo_cont_tiny") then 
+{
+    _obj setVariable ["basecore",0, true];
+};
+if(_class == "TK_GUE_WarfareBUAVterminal_EP1") then 
+{
+    _obj setVariable ["basecore",0, true];
+   
+};
+if(_class == "USMC_WarfareBAircraftFactory") then 
+{
+    _obj setVariable ["basecore",0, true];
+};
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 

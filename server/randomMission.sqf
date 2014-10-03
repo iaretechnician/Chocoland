@@ -3,10 +3,13 @@ if(!isServer) exitwith {};
 private ["_result","_missionMarkerName","_missionType","_startTime","_returnData","_randomPos","_randomIndex","_vehicleClass","_vehicle","_picture","_vehicleName","_hint","_currTime","_playerPresent","_unitsAlive"];
 _result = 0;
 _zeit =0;
-_pl= playableunits call BIS_fnc_selectRandom;
+_vehicle2= [];
+/*_pl= playableunits call BIS_fnc_selectRandom;
 _range = [1, 1000] call BIS_fnc_randomNum;
 _direction = [1, 359] call BIS_fnc_randomNum;
-_randomPos = [_pl,_range,_direction] call BIS_fnc_relPos;
+_randomPos = [_pl,_range,_direction] call BIS_fnc_relPos;*/
+_xpos= getmarkerpos"Mission";
+_randomPos=[_xpos, 200, 5000, 5, 0, 10, 0] call BIS_fnc_findSafePos;
 _randomPos = [_randompos select 0,_randompos select 1, 150];
 //vehicle
 _random1 = floor(random 10);
@@ -35,7 +38,7 @@ _random33=floor (random 100);if(_random33 >90)then{_currBox = _nerfBoxes call BI
 //composition
 _random4 = floor(random 100);
 _objects = nearestObjects [_randomPos, ["ALL"], 100]; 
-if(_random4 >90 && count _objects < 5)then{_currCompo =nerfcompo call BIS_fnc_selectRandom;_newComp = [[_randompos select 0,_randompos select 1,0], 0, _currCompo] call (compile (preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"));};
+if(_random4 >80 && count _objects < 10)then{_currCompo =nerfcompo call BIS_fnc_selectRandom;_newComp = [[_randompos select 0,_randompos select 1,0], 0, _currCompo] call (compile (preprocessFileLineNumbers "ca\modules\dyno\data\scripts\objectMapper.sqf"));};
 
 waitUntil
 {

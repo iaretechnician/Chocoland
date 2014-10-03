@@ -49,16 +49,13 @@ ProfileFound%1;
 "pos" call PersistentDBLCStuff;		
 "dammage" call PersistentDBLCStuff;		
 "cmoney" call PersistentDBLCStuff;
-"bounty" call PersistentDBLCStuff;	
 "donator" call PersistentDBLCStuff;
-"mothership" call PersistentDBLCStuff;
-"decoder" call PersistentDBLCStuff;
 "highscore" call PersistentDBLCStuff;
 "chocoload" call PersistentDBLCStuff;
-"basebuilder" call PersistentDBLCStuff;
-"attach" call PersistentDBLCStuff;
 "chocopack"call PersistentDBLCStuff;
 "saveVehicle"call PersistentDBLCStuff;
+"bounty" call PersistentDBLCStuff;	
+
 waitUntil{!isNil "respawnDialogActive"};
 
 waitUntil{respawnDialogActive};
@@ -68,11 +65,10 @@ waitUntil{!respawnDialogActive};
 PDB_saveLoop = {
 	while {true} do
 	{
-		//player setVariable["hungerLevel", hungerLevel, true];
-		//player setVariable["thirstLevel", thirstLevel, true];
-		{
-			player setVariable[_x, (player getVariable _x), true];
-		}foreach _varArr;
+		
+		//{
+			//player setVariable[_x, (player getVariable _x), true];
+		//}foreach _varArr;
 		sleep 180;
 		waitUntil{!respawnDialogActive && (alive player) && !PDB_isDead};
 		PDB_saveReq = getPlayerUID player;
@@ -99,9 +95,10 @@ _PDB_checkDeadLoop = {
 
 [] spawn _PDB_checkDeadLoop;
 
-if (!_profileFound) exitWith{hint "Persistent DB: No profile found";call infointro;};
+if (!_profileFound) exitWith{hint "Persistent DB: No profile found";call infointro;call starterkit;};
 _curVal = "weapons" call persistentDBLCConvert;//Test if got values
-if(isnil "_curVal") exitWith {hint "PersistentDB: No profile on this team.";};
+if(isnil "_curVal") exitWith {hint "PersistentDB: No profile on this team.";
+};
 hint "Persistent DB: Profile found";
 _curVal = ("dammage" call PersistentDBLCConvert);
 if(!isNil "_curVal") then
@@ -144,10 +141,6 @@ _varArr = [
 "donator",
 "saveVehicle",
 "chocopack",
-"basebuilder",
-"decoder",
-"attach",
-"mothership",
 "highscore",
 "chocoload"
 ];
@@ -164,6 +157,5 @@ _varArr = [
 	};
 	};
 }foreach _varArr;
-//thirstLevel = 100;
-//hungerLevel = 100;
+
 spawnHalo = true;

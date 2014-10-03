@@ -9,6 +9,3 @@ _playerMoney = _Dialog displayCtrl buildshop_money;
 _money = player getVariable "choco";
 _playerMoney CtrlsetText format[""];
 
-BuildShop = str(_this select 0);
-
-ShopSpawn = getPos player;

@@ -33,16 +33,14 @@ _highscore7 = _Dialog displayCtrl highscore7; _price3=[_score select 6] call fnc
 _highscore8 = _Dialog displayCtrl highscore8; _price4=[_score select 7] call fnc_number;_highscore8 ctrlSetText format["Total Walked: %1", _price4];
 //end highscore
 
-//_foodtext ctrlSettext format["%1 / 100", round(hungerLevel)];
-//_watertext ctrlSetText format["%1 / 100", round(thirstLevel)];
 _test=[player getVariable "choco"] call fnc_number;
 _moneytext ctrlSetText format["%1", _test];
 _vehicle = player getvariable"saveVehicle";
 _vehicle2 = player getvariable"chocopack";
-_vehicle = (configFile >> "CfgVehicles" >> _vehicle);  _vehicle = getText(_vehicle >> "displayName");
-//_vehicle2 = (configFile >> "CfgVehicles" >>  _vehicle2);  _vehicle2 = getText(_vehicle2 >> "displayName");
+_vehicle = (configFile >> "CfgVehicles" >> _vehicle);_vehicle = getText(_vehicle >> "displayName");
 _saveVehicle ctrlSetText format["Hangar: %1", _vehicle];
-_saveVehicle2 ctrlSetText format["Backpack: %1", _vehicle2];
+_weaponName = getText (configFile >> "cfgWeapons" >> _vehicle2 >> "displayName");
+_saveVehicle2 ctrlSetText format["Backpack: %1", _weaponName];
 
 _mIndex = _mvalue lbadd "$10"; _mvalue lbSetData [(lbSize _mvalue)-1, "10"];
 _mIndex = _mvalue lbadd "$50"; _mvalue lbSetData [(lbSize _mvalue)-1, "50"];

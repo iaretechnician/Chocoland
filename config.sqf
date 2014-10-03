@@ -7,15 +7,41 @@ donatorClassrray = [
 ["Blufor Medic","CDF_Soldier_Medic",1],
 ["Opfor Sniper","RU_Soldier_Sniper",2],
 ["Opfor Soldier Co","Ins_Soldier_CO",2],
-["Opfor Soldier At","USMC_Soldier_AT",2],
+["Opfor Soldier At","TK_Soldier_AT_EP1",2],
 ["Opfor Officer","BAF_Soldier_Officer_MTP",2],
-["Opfor Engineer","USMC_SoldierS_Engineer",2],
+["Opfor Engineer","TK_Soldier_Engineer_EP1",2],
 ["Opfor Medic","Ins_Soldier_Medic",2],
 ["Independent Sniper","GUE_Soldier_Sniper",3],
 ["Independent Soldier Scout","GUE_Soldier_Scout",3],
 ["Independent Soldier At","USMC_Soldier_AT",3],
 ["Independent Officer","UN_CDF_Soldier_Officer_EP1",3],
 ["Independent Engineer","Soldier_Engineer_PMC",3],
+["Ins_Commander","Ins_Commander",4],
+["Ins_Lopotev","Ins_Lopotev",4],
+["Ins_Soldier_Pilot","Ins_Soldier_Pilot",4],
+["Ins_Soldier_Sab","Ins_Soldier_Sab",4],
+["Ins_Villager4","Ins_Villager4",4],
+["Ins_Woodlander1","Ins_Woodlander1",4],
+["Assistant","Assistant",4],
+["Doctor","Doctor",4],
+["Functionary1","Functionary1",4],
+["Profiteer1","Profiteer1",4],
+["Priest","Priest",4],
+["RU_Pilot","RU_Pilot",4],
+["RU_Policeman","RU_Policeman",4],
+["Farmwife1","Farmwife1",4],
+["Damsel4","Damsel4",4],
+["Damsel5","Damsel5",4],
+["Hooker1","Hooker1",4],
+["Hooker2","Hooker2",4],
+["Hooker3","Hooker3",4],
+["Hooker4","Hooker4",4],
+["Madam3","Madam3",4],
+["RU_Damsel5","RU_Damsel5",4],
+["RU_Secretary5","RU_Secretary5",4],
+["WorkWoman5","WorkWoman5",4],
+["CIV_EuroWoman02_EP1","CIV_EuroWoman02_EP1",4],
+["Haris_Press_EP1","Haris_Press_EP1",4],
 ["Independent Medic","Soldier_Medic_PMC",3]
 ];
 
@@ -191,7 +217,7 @@ ammoArray = [
    ["MG36-Mag.","100Rnd_556x45_BetaCMag",30],
    ["G36 SD (30 Sch.)","30Rnd_556x45_G36SD",50],
 	["20Rnd. VSS","20Rnd_9x39_SP5_VSS",50],
-    ["PDW SD Mag.","30Rnd_9x19_UZI_SD",20],
+        ["PDW SD Mag.","30Rnd_9x19_UZI_SD",20],
 	["PDW Mag.","30Rnd_9x19_UZI",10],
 	["MP5-Mag.","30Rnd_9x19_MP5",40],
 	["MP5SD-Mag.","30Rnd_9x19_MP5SD",40],
@@ -201,7 +227,7 @@ ammoArray = [
 	["Sa-58 Mag.","30Rnd_762x39_AK47",30],
 	["M107 (10 Sch.)","10Rnd_127x99_m107",100],
 	["STANAG (30 Sch.)","30Rnd_556x45_Stanag",30],
-    ["STANAG SD (30 Sch.)","30Rnd_556x45_StanagSD",50],
+        ["STANAG SD (30 Sch.)","30Rnd_556x45_StanagSD",150],
 	["STANAG (20 Sch.)","20Rnd_556x45_Stanag",15],
 	["Bizon-Mag.","64Rnd_9x19_Bizon",60],
 	["Bizon SD-Mag.","64Rnd_9x19_SD_Bizon",60],
@@ -224,7 +250,7 @@ ammoArray = [
 	["9K32 Strela","Strela",2500],
 	["NLAW-Rakete","NLAW",3000],
 	["Igla 9K38","Igla",2500],
-    ["M136","M136",1500],
+        ["M136","M136",1500],
 	["6x40mm HE Boden","6Rnd_HE_M203",50],
 	["M203 Rauch","6Rnd_Smoke_M203",50],
 	["M203 Leuchtgeschoss weiÃŸ","6Rnd_FlareWhite_M203",50],
@@ -257,17 +283,17 @@ ammoArray = [
 //Text name, classname, buy cost
 accessoriesArray = [
 	["GPS","ItemGPS", 1000],
-	["NV Goggles","NVGoggles",800],
-	["Range Finder","Binocular_Vector",3500],
-        ["Laser Marker","Laserdesignator",6500],
-        ["Binocular","Binocular",300]
+	["NV Goggles","NVGoggles",1000],
+	["Range Finder","Binocular_Vector",1000],
+        ["Laser Marker","Laserdesignator",1000],
+        ["Binocular","Binocular",500]
 ];
 
 //General Store Item List
 //Display Name, Class Name, Description, Picture, Buy Price, Sell Price.
 generalStore = [
 ["Rainbow Flares","rflares",localize "STR_WL_ShopDescriptions_rainbow","client\icons\water.paa",10000,1],
-		["Ultima Repair Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,3],
+		["Ultimate Kit","repairkits",localize "STR_WL_ShopDescriptions_RepairKit","client\icons\repair.paa",10000,2],
 	["Medical Kit","medkits",localize "STR_WL_ShopDescriptions_MedKit","client\icons\medkit.paa",2000,1],
 	["Jerry Can (Full)","fuelFull",localize "STR_WL_ShopDescriptions_fuelFull","client\icons\jerrycan.paa",1500,1],
     ["Jerry Can (Empty)","fuelEmpty",localize "STR_WL_ShopDescriptions_fuelEmpty","client\icons\jerrycan.paa",500,1],
@@ -277,7 +303,7 @@ generalStore = [
     ["Unlock Decoder", "decoder", localize "STR_WL_ShopDescriptions_decoder", "client\icons\gunner.paa",250000,25], 
     ["Unlock Basebuilder", "basebuilder", localize "STR_WL_ShopDescriptions_basebuilder", "client\icons\passenger.paa",250000,25],
    ["Unlock attach", "attach","", "client\icons\passenger.paa",250000,25],
- //  ["Unlock upgrades", "upgrades","", "client\icons\passenger.paa",250000,15],
+ //["Unlock upgrades", "upgrades","", "client\icons\passenger.paa",250000,15],
 ["Cow for the Win","cow", localize "STR_cow04", "client\images\Cow04.paa",20000,2],
 ["Goat gives Milk","goat", localize "STR_goat", "client\images\Goat.paa",30000,3],
 ["get 2 random Weapons","rweapon", localize "STR_rweapon", "client\images\choco.paa",6000,1],
@@ -286,16 +312,16 @@ generalStore = [
 ["Dance on the Island","dance", localize "STR_dance", "client\images\dance.paa",50000,5],
 ["Hen","Hen", localize "STR_hen", "client\images\Hen.paa",50000,4],
 ["German shepherd","Pastor", localize "STR_shepard","client\images\Pastor.paa",100000,5],
-["Terror Rabid","rabbid", localize "STR_rabbit","client\images\Rabbit.paa",100000,5],
-["Teleport to maplocation","tel", localize "STR_tele","client\images\choco.paa",100000,5],
-["receive reinforcement","npc", localize "STR_bot","client\images\reinforcement.paa",200000,12],
-["5m No Recoil + Random Vehicle","recoil", localize "STR_recoil","client\images\choco.paa",10000,4],
-["1ClickBase","base", localize "STR_1click","client\images\choco.paa",100000,10],
-["Satelite Camera","satcam", localize "STR_Satcom","client\images\satcam.paa",100000,10],
-["Baseshield 1m","baseshield", localize "STR_Baseshield","client\images\shieldx.paa",100000,10],
-["Kill Player","killplayer", localize "STR_kill","client\images\killx.paa",300000,20],
-["Kill yourself?","death", localize "STR_suicide","client\images\death.paa",500000,50],
-["Mothership","ship", localize "STR_Mothership","client\images\frigate.paa",1000000,50]
+["Terror Rabid","rabbid", localize "STR_rabbit","client\images\Rabbit.paa",100000,10],
+["Teleport to maplocation","tel", localize "STR_tele","client\images\choco.paa",100000,10],
+["receive reinforcement","npc", localize "STR_bot","client\images\reinforcement.paa",250000,12],
+["5m No Recoil + Random Vehicle","recoil", localize "STR_recoil","client\images\choco.paa",250000,10],
+["1ClickBase","base", localize "STR_1click","client\images\choco.paa",250000,10],
+["Satelite Camera","satcam", localize "STR_Satcom","client\images\satcam.paa",250000,10],
+["Baseshield 1m","baseshield", localize "STR_Baseshield","client\images\shieldx.paa",500000,10],
+//["Kill Player","killplayer", localize "STR_kill","client\images\killx.paa",600000,20],
+["Kill yourself?","death", localize "STR_suicide","client\images\death.paa",1000000,50],
+["Mothership","ship", localize "STR_Mothership","client\images\frigate.paa",5000000,50]
 ];
 ChopperStoreArray = [
         ["Littlebird", 1000,"AH6X_EP1"],
@@ -323,20 +349,20 @@ ChopperStoreArray = [
         ["AV8B Harrier", 35000,"AV8B"],
         ["AV8B2 Harrier", 40000,"AV8B2"],
 	["Ka-52", 40000,"Ka52"],
-        ["AV-8B (GBU) [USMC]", 46000,"AV8B2"],
+       
         ["Su-34", 60000,"Su34"],
-	["Su-34 [Russia]", 60000,"Su34"],
 	["F-35B", 75000,"F35B"],
-	["Su-25 [Russia]", 75000,"Su25_CDF"],
-        ["Su-39 [Russia]", 90000,"Su39"],
+	["Su-25", 75000,"Su25_CDF"],
+        ["Su-39", 90000,"Su39"],
 	["A10", 100000,"A10"],
         ["Mi-24P", 300000,"Mi24_P"]
 ];
 vehicleStoreArray = [
-["CowCycle", 500,"cowcycle"],
+["CowCycle", 1000,"cowcycle"],
 ["2xPchelaBQM", 10000,"pchelabqm"],
 ["Armed OspreyXC130", 50000,"adminplane"],
 ["Old Bycicle", 1000,"Old_bike_TK_INS_EP1"],
+["ATV -Quad", 1000,"ATV_Base_EP1"],
 ["Mountain bike", 1000,"MMT_USMC"],
 	["Utility Truck", 1000,"Kamaz"],
         ["Towing Tractor", 1000,"TowingTractor"],
@@ -348,7 +374,7 @@ vehicleStoreArray = [
         ["HMMWV ARMOR", 1000,"HMMWV_Armored"],
 	["M113 Ambulance", 1000,"M113Ambul_UN_EP1"],
         ["~~~~~Water Vehicles~~~~~~", 999999,"RHIB2Turret"],
-        ["Fishing Boat - 8seats", 1000,"Fishing_Boat"],
+        ["Fishing Boat - 8seats", 1000,"M113Ambul_UN_EP1"],
         ["PBX - 4Seats", 5000,"PBX"],
         ["SeaFox - 1Seats", 2000,"SeaFox"],
         ["Small boat - 6Seats", 2000,"Smallboat_1"],
@@ -367,7 +393,7 @@ vehicleStoreArray = [
 	["Jackal 2 MWMIK GMG", 8500,"BAF_Jackal2_L2A1_D"],
         ["Vodnik (2xPK) [Russia]", 20000,"GAZ_Vodnik"], 
         ["MTVR (Fuel)", 10000,"KamazRefuel"],
-        ["Utility Truck Ammunition", 10000,"KamazReammo"],
+       //["Utility Truck Ammunition", 10000,"KamazReammo"],
 	["HMMWV Avenger", 20000,"HMMWV_Avenger"],
         ["Vodnik (BPPU) [Russia]", 20000,"GAZ_Vodnik_HMG"],
 	["M113 (M2)", 10000,"M113_UN_EP1"],
@@ -559,4 +585,4 @@ cityLocations = [];
 randomVehicleArray = ["MV22","Pchela1T","An2_1_TK_Civ_EP1","UH60M_MEV_EP1","UH60M_MEV_EP1","Mi17_medevac_RU","MH60S","BAF_Merlin_HC3_D","An2_1_TK_CIV_EP1","UH1H_TK_EP1","UH60M_EP1","AH6J_EP1","CH_47F_EP1","AW159_Lynx_BAF","UH1Y","AH1Z","F35B","Kamaz","TowingTractor","HMMWV_DES_EP1","Offroad_DSHKM_Gue","SUV_UN_EP1","UAZ_AGS30_TK_EP1","Ikarus_TK_CIV_EP1","HMMWV_Armored","M113Ambul_UN_EP1","GAZ_Vodnik","HMMWV_M2","BTR40_MG_TK_INS_EP1","UAZ_SPG9_INS","Ural_ZU23_CDF","HMMWV_M1151_M2_CZ_DES_EP1","LandRover_Special_CZ_EP1","ArmoredSUV_PMC","BAF_Jackal2_L2A1_D","UralRepair_TK_EP1","HMMWV_TOW","GAZ_Vodnik_HMG","BRDM2_ATGM_CDF","AAV","M1135_ATGMV_EP1","M1128_MGS_EP1","MTVR_Refuel","KamazReammo","HMMWV_Avenger","M113_UN_EP1"];
 randomBuildingrray = ["Fort_Crate_wood","Land_stand_small_EP1","Land_Barrel_water","Land_kulna","Land_Shed_wooden","Land_GuardShed","Land_fortified_nest_small_EP1","Land_fortified_nest_big_EP1","Land_fort_bagfence_long","Land_fort_bagfence_round","Land_fort_bagfence_corner","Land_BagFenceLong","Land_Dirthump01","Land_fort_rampart_EP1","Land_fort_artillery_nest_EP1","Land_Ind_SawMillPen","Base_WarfareBBarrier5x","Base_WarfareBBarrier10x","Base_WarfareBBarrier10xTall","Land_HBarrier1","Land_HBarrier3","Land_HBarrier5","Land_HBarrier_large","Land_ConcreteBlock","Land_Fort_Watchtower_EP1","Land_Fort_Watchtower","Land_fortified_nest_big_EP1","WarfareBCamp","WarfareBDepot","Land_Misc_deerstand","Land_radar_EP1","CampEast_EP1","Land_tent_east","MASH","TK_WarfareBFieldhHospital_EP1","US_WarfareBFieldhHospital_EP1","Barrack2","Land_Barrack2_EP1","Land_CncBlock","Land_CncBlock_Stripes","Land_Misc_ConcPipeline_EP1","Misc_concrete_High","Concrete_Wall_EP1","RampConcrete","Land_ConcreteRamp","Land_ConcreteBlock","Land_Ind_BoardsPack2","Land_Ind_BoardsPack1","Land_Ind_Timbers","Hhedgehog_concrete","Hhedgehog_concreteBig","Land_Misc_Cargo1Eo_EP1","Land_Misc_Cargo2E","Land_Misc_Cargo1D","Fort_Barricade_EP1","Hedgehog_EP1","ZavoraAnim","Land_WoodenRamp","Land_prebehlavka","Land_prebehlavka","Land_prolejzacka","Land_leseni2x","Land_leseni4x","Land_Misc_Scaffolding","Land_Misc_Coil_EP1","Land_Fire_barrel_burning","Land_Campfire_burning","Land_Chair_EP1","WoodChair","Land_Bench_EP1","Land_Table_EP1","FoldChair","FoldTable","Land_sunshade_EP1","Land_covering_hut_EP1","Land_covering_hut_big_EP1","Land_KBud","Land_Toilet","Land_ladder","Land_ladder_half","WarfareBMGNest_PK_TK_EP1","Fort_Nest_M240","DSHkM_Mini_TriPod_TK_EP1"];
 randomweaponarray = ["LeeEnfield","AA12_PMC","AKS_74_Kobra","AKS_Gold","bizon_silenced","Bizon","FN_FAL","G36K_camo","BAF_L85A2_UGL_ACOG","BAF_L85A2_RIS_ACOG","M16A2","M4A1_AIM_SD_camo","SCAR_L_CQC_Holo","SCAR_H_STD_EGLM_Spect","MP5A5","MP5SD","Sa58V_CCO_EP1","m8_sharpshooter","M14_EP1","SVD","M24","M24_des_EP1","M4SPR","SCAR_H_LNG_Sniper","SVD_CAMO","DMR","M40A3","M107","KSVK","VSS_Vintorez", "BAF_LRR_scoped","BAF_AS50_scoped","BAF_L110A1_Aim","BAF_L7A2_GPMG","BAF_L86A2_ACOG","m240_scoped_EP1","M240","M249_EP1","M249","M249_m145_EP1","M60A4_EP1","m8_SAW","MG36_camo","MG36","Mk_48","Mk_48_DES_EP1","PK","Pecheneg","RPK_74","BAF_L85A2_RIS_CWS","Igla","Javelin","M136","M32_EP1","M47Launcher_EP1","M79_EP1","MAAWS","MetisLauncher","Mk13_EP1","BAF_NLAW_Launcher","RPG7V","SMAW","Stinger","Strela"];
-nerfcompo=["MediumTentCamp_napa","SmallTentCamp2_napa","SmallTentCamp_napa","airplane_park_ru1","anti-air_ru1","anti-air_us1","bunkerMedium01","bunkerMedium02","bunkerMedium03","bunkerMedium04","bunkerSmall01","camp_ins1","camp_ins2","camp_ru1","camp_ru2","camp_us1","camp_us2","camp_us3","checkpoint1_us","cityBase04","citybase01","citybase02","citybase03","firebase_ru1","firebase_us1","firing_range_targets_water1","fuelDepot_us","fuel_dump_ru1","fuel_dump_us1","guardpost2_us","guardpost_us","heli_park_us1","mediumtentcamp2_ru","mediumtentcamp3_ru","mediumtentcamp_ru","radar_site_ru1","smallbase","tankDitch2_cdf","tankDitch_cdf","vehicleShelter_us","vehicle_park_ru1","weapon_store_us1"];
+nerfcompo=["MediumTentCamp_napa","SmallTentCamp2_napa","SmallTentCamp_napa","airplane_park_ru1","anti-air_ru1","anti-air_us1","bunkerMedium01","bunkerMedium02","bunkerMedium03","bunkerMedium04","bunkerSmall01","camp_ins1","camp_ins2","camp_ru1","camp_ru2","camp_us1","camp_us2","camp_us3","checkpoint1_us","cityBase04","citybase01","citybase02","citybase03","firebase_ru1","firebase_us1","firing_range_targets_water1","fuelDepot_us","fuel_dump_ru1","fuel_dump_us1","guardpost2_us","guardpost_us","mediumtentcamp2_ru","mediumtentcamp3_ru","mediumtentcamp_ru","smallbase","tankDitch2_cdf","tankDitch_cdf","vehicleShelter_us","weapon_store_us1"];

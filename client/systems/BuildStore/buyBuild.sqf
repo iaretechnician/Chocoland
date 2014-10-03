@@ -24,12 +24,12 @@ _itemlist = _dialog displayCtrl buildshop_item_list;
 hintsilent "Checking Purchase";
 closeDialog objshop_DIALOG;
  dir = getdir player;
- pos = getPosatl player;
+ pos = getPosasl player;
 
 
 // pos = [(pos select 0),(pos select 1),100];
 if(_switch ==0)then {pos = [(pos select 0)+4*sin(dir),(pos select 1)+4*cos(dir),(pos select 2)+100];};
-if(_switch ==1)then {pos = [(pos select 0)+6*sin(dir),(pos select 1)+6*cos(dir),(pos select 2)];};
+if(_switch ==1)then {pos = [(pos select 0)+6*sin(dir),(pos select 1)+6*cos(dir),(pos select 2)-0.1];};
 //Buy
 for [{_x=0},{_x<=_size},{_x=_x+1}] do
 {
@@ -51,7 +51,7 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
 			_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
                         _spawn = createVehicle [(_x select 2),pos,[], 0,"CAN_COLLIDE"];
 			_spawn setDir dir;
-                        _spawn setPos pos;
+                        _spawn setPosASL pos;
 				clearMagazineCargoGlobal _spawn;
 				clearWeaponCargoGlobal _spawn;
 			_spawn setVariable["original",1,true];

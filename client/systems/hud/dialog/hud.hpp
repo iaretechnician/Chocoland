@@ -8,7 +8,7 @@
 
 #define hud_status_idc 3600
 #define hud_vehicle_idc 3601
-
+#define hud_high_idc 3602
 class WastelandHud {
 	idd = -1;
     fadeout=0;
@@ -23,9 +23,9 @@ class WastelandHud {
 			idc = hud_vehicle_idc;
 			type = CT_STRUCTURED_TEXT;
 			size = 0.040;
-			x = safeZoneX + (safeZoneW * (1 - (0.42 / SafeZoneW)));
+			x = safeZoneX + (safeZoneW * (1 - (0.14 / SafeZoneW)));
                         y = safeZoneY + (safeZoneH * (1 - (0.30 / SafeZoneH)));
-			w = 0.4; h = 0.65;
+			w = 0.2; h = 0.65;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;
 			colorBackground[] = {0,0,0,0};
@@ -33,6 +33,23 @@ class WastelandHud {
 			shadow = 2;
 			class Attributes {
 				align = "right";
+			};
+		};
+class highscore:w_RscText
+		{
+			idc = hud_high_idc;
+			type = CT_STRUCTURED_TEXT;
+			size = 0.06;
+			x = safeZoneX + (safeZoneW * (0.1 + (0.04 / SafeZoneW)));
+                        y = safeZoneY + (safeZoneH * (0 + (0.15 / SafeZoneH)));
+			w = 2; h = 0.08;
+			colorText[] = {1,1,1,1};
+			lineSpacing = 3;
+			colorBackground[] = {0,1,1,0};
+			text = "";
+			shadow = 4;
+			class Attributes {
+				align = "center";
 			};
 		};
 		class WastelandHud_Status:w_RscText

@@ -42,11 +42,7 @@ _totalText2 = _dialog displayCtrl genstore_total2;
                         _min1 = Round(_chocos /100);
                         _price = _price + _min1;
                         };
-                         if(_x select 0 == "Ultima Repair Kit")then {
-                        _chocos = player getvariable"choco";
-                        _min1 = Round(_chocos /100);
-                        _price = _price + _min1;
-                        };
+                       
                };
             //};   
         }forEach generalStore;

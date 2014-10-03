@@ -54,12 +54,13 @@ _objet addEventHandler ["GetIn",
 	};
 }];
 
-if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_deplacables > 0) then
+if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_deplacables > 0 ) then
 {
-  _objet addAction [("<t color=""#dddd00"">" + STR_R3F_LOG_action_deplacer_objet + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\deplacer.sqf", nil, 5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_deplacer_objet_valide && !(_target getVariable ['objectLocked', false])"];
+ _objet addAction [("<t color=""#dddd00"">" + STR_R3F_LOG_action_deplacer_objet + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\deplacer.sqf", nil, 5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_deplacer_objet_valide && !(_target getVariable ['objectLocked', false])"];
  _objet addAction [("<t color=""#21DE31"">" + STR_LOCK_OBJECT + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\objectLockStateMachine.sqf", _doLock, -5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_deplacer_objet_valide && Object_canLock"];
- _objet addAction [("<t color=""#21DE31"">" + STR_UNLOCK_OBJECT + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\objectLockStateMachine.sqf", _doUnlock, -5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_deplacer_objet_valide && !Object_canLock"];
-};//custome
+_objet addAction [("<t color=""#21DE31"">" + STR_UNLOCK_OBJECT + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\objectLockStateMachine.sqf", _doUnlock, -5, false, true, "", "R3F_LOG_objet_addAction == _target && R3F_LOG_action_deplacer_objet_valide && !Object_canLock"];
+};
+
 if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_remorquables > 0) then
 {
 	if ({_objet isKindOf _x} count R3F_LOG_CFG_objets_deplacables > 0) then

@@ -4,6 +4,9 @@ if(!X_Client) exitWith {};
 player enableSimulation false; 
 removeAllWeapons player;
 [] execVM "client\functions\playerAbort.sqf";
+
+chocobounty = 1;
+
 mutexScriptInProgress = false;
 respawnDialogActive = false;
 groupManagmentActive = false;
@@ -11,6 +14,7 @@ pvar_PlayerTeamKiller = objNull;
 doCancelAction = false;
 shipspawned= false;
 behindi =1;
+locking= false;
 moneypick = 1;
 infovar=0;
 timeplayer = 0;
@@ -31,15 +35,13 @@ waitUntil{time > 2};
 player call compile preprocessFileLineNumbers "client\functions\clientCompile.sqf";
 [] execVM "client\systems\class\loadclass.sqf";
 waitUntil { sleep 1;classSelect==1;};
-//Player setup
+
 player call playerSetup;
-//classSelection
-//Setup player events.
+
 if(!isNil "client_initEH") then {player removeEventHandler ["Respawn", client_initEH];};
 player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 player addEventHandler ["Killed", {[_this] call onKilled;}];
 
-//Setup player menu scroll action.
 [] execVM "client\clientEvents\onMouseWheel.sqf";
 
 //Setup Key Handler
@@ -71,26 +73,23 @@ if (isNil "FZF_IC_INIT") then
 sleep 1;
 
 player setDamage 0;
+player setvariable["ongui","",true];
 player setVariable["dot",0,true];
 player setVariable["animal",false,true];
 player setVariable["bounty",0,true];
 player setVariable["donator",0,true];
-player setVariable["decoder",0,true];
-player setVariable["basebuilder",0,true];
-player setVariable["choco",500,true];
-player setVariable["attach",0,true];
-player setVariable["upgrades",0,true];
-player setVariable["canfood",2,true];
+player setVariable["decoder",1,true];
+player setVariable["basebuilder",1,true];
+player setVariable["choco",55555,true];
+player setVariable["attach",1,true];
+
 player setVariable["chocopack",nil,true];
 player setVariable["chocoload",[],true];
 player setVariable["mothership",[0,0],true];
-//function [wert,gender]call savethisVariable;
-//highscore  [0kills,1streak,2deaths,3missions,4moneypayed,5money,6time,7moved]
-//_y= player getvariable"highscore"; setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4],true];
 player setVariable["highscore",[0,0,0,0,0,0,0,0],true];
 player setVariable["saveVehicle",0,true];
 player setVariable["medkits",0,true];
-player setVariable["water",2,true];
+
 player setVariable["fuel",0,true];
 player setVariable["repairkits",0,true];
 player setVariable["fuelFull", 1,true];

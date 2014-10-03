@@ -176,7 +176,3 @@ execVM "datenbank\oSave.sqf";
 execVM "datenbank\oLoad.sqf";
 execVM "datenbank\PLR.sqf";
 onPlayerConnected '[_uid, _name, _id] execVM "datenbank\pLoad.sqf"';
-//highscore
-//onPlayerConnected '[_uid, _name, _id] execVM "datenbank\hplayerLoad.sqf"';
-//execVM "datenbank\hLoad.sqf";
-//execVM "datenbank\highscoreSave.sqf";

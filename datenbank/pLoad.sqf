@@ -72,35 +72,19 @@ ProfileFound%1 = nil;
 		};		
 		
 		[_uid, _playerSide, "weapons", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-
 		[_uid, _playerSide, "magazines", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-		
 		[_uid, _playerSide, "pos", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-		
 		[_uid, _playerSide, "dammage", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-		
 		[_uid, _playerSide, "cmoney", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-		
-                [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-                
-                [_uid, _playerSide, "donator", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-                
+		[_uid, _playerSide, "donator", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                 [_uid, _playerSide, "highscore", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-                
-                [_uid, _playerSide, "mothership", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-                 
-                [_uid, _playerSide, "chocoload", _id, "ARRAY"] spawn PersistentDBLoadStuff;
-                  
-                [_uid, _playerSide, "basebuilder", _id, "NUMBER"] spawn PersistentDBLoadStuff;
-                  
+                [_uid, _playerSide, "chocoload", _id, "ARRAY"] spawn PersistentDBLoadStuff; 
                 [_uid, _playerSide, "decoder", _id, "NUMBER"] spawn PersistentDBLoadStuff;  
-                
+                [_uid, _playerSide, "basebuilder", _id, "NUMBER"] spawn PersistentDBLoadStuff;
                 [_uid, _playerSide, "attach", _id, "NUMBER"] spawn PersistentDBLoadStuff;    
-		
-                [_uid, _playerSide, "saveVehicle", _id, "STRING"] spawn PersistentDBLoadStuff;
-                
+		[_uid, _playerSide, "saveVehicle", _id, "STRING"] spawn PersistentDBLoadStuff;
                 [_uid, _playerSide, "chocopack", _id, "STRING"] spawn PersistentDBLoadStuff;
-               
+                [_uid, _playerSide, "bounty", _id, "NUMBER"] spawn PersistentDBLoadStuff;
 		
 		exit;
 	};

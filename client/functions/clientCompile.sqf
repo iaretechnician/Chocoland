@@ -8,6 +8,7 @@
 
 // Event handlers
 infointro = compile preprocessfile "client\systems\playerMenu\info.sqf";
+starterkit = compile preprocessfile "client\chocofunc\starterkit.sqf";
 positionCheck = compile preprocessfile "client\chocofunc\positionCheck.sqf";
 onRespawn = compile preprocessfile "client\clientEvents\onRespawn.sqf";
 onKilled = compile preprocessfile "client\clientEvents\onKilled.sqf";

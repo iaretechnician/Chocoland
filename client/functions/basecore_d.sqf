@@ -13,7 +13,7 @@ switch (_switch) do
 
  _currObject = getPos player nearestObject _object; 
  if (player distance _currObject < 10)
- then {process = true;
+ then {process = true;mutexScriptInProgress =true;
        _currObject setVariable ["basecore",0, true];
 		_totalDuration = 8;
 		_unlockDuration = _totalDuration;
@@ -21,13 +21,13 @@ switch (_switch) do
                 _stringEscapePercent = "%";
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 		for "_iteration" from 1 to _unlockDuration do {
-                   
-                    if(player distance _currObject > 10) exitWith {  process = false;
+                   if(!mutexScriptInProgress)exitwith{hint "chanceled";process = false;mutexScriptInProgress =false ;};
+                    if(player distance _currObject > 10) exitWith {  process = false;mutexScriptInProgress =false ;
                           2 cutText ["Object destroy failed, you too far away...", "PLAIN DOWN", 1];
                            _currObject setVariable ["basecore",1, true];};
             if (!(alive player)) exitWith {// If the player dies, revert state.
 				2 cutText ["Object unlock failed, you are dead...", "PLAIN DOWN", 1];
-                              _currObject setVariable ["basecore",1, true]; };
+                              _currObject setVariable ["basecore",1, true];mutexScriptInProgress =false ; };
             if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then { // Keep the player locked in medic animation for the full duration of the unlock.
                 player switchMove "AinvPknlMstpSlayWrflDnon_medic";
             };
@@ -48,7 +48,7 @@ switch (_switch) do
                     player setVariable["bounty",0,true];
                 deletevehicle _currObject;
                 titleText [format["\n+ you got %1 $ for Destroy BaseCore", _money], "PLAIN DOWN", 0];
-                process = false;
+                process = false;mutexScriptInProgress =false ;
                                                                     }; 
 		};
 		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.     

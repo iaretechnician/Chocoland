@@ -167,6 +167,16 @@ class PlayersMenu
 			w = 0.40 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
+                 class playerMenudecodeText24: w_RscText
+		{
+			idc = playerMenuticker;
+			text = "Ticker:";
+			sizeEx = 0.030;
+			x = 0.52 * safezoneW + safezoneX;
+			y = 0.53 * safezoneH + safezoneY;
+			w = 0.40 * safezoneW;
+			h = 0.2 * safezoneH;
+		};
                 class PlayerItemsText: w_RscText
 		{
 			idc = playerMenuPlayerItems;
@@ -453,11 +463,11 @@ class PlayersMenu
 		class WarnButton: w_RscButton
 		{
 			idc = -1;
-			text = "Warn";
+			text = "give Money ->";
 			onButtonClick = "[1] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.535 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
-			w = 0.05 * safezoneW;
+			w = 0.06 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
 	};

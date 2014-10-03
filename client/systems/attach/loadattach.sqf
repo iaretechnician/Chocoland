@@ -10,9 +10,6 @@ _Dialog = findDisplay attach_DIALOG;
 _playerMoney = _Dialog displayCtrl attach_money;
 _money = player getVariable "choco";
 _playerMoney CtrlsetText format[""];
-
-funShop = str(_this select 0);
-ShopSpawn = getPos player;
 on= false;
 objectMoveup=0;
 objectMovelaenge=0;

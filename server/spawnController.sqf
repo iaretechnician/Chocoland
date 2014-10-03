@@ -1,14 +1,9 @@
 if(!isServer) exitWith {};
-
-
 #include "setup.sqf"
 diag_log format["WASTELAND SERVER - Started spawning State"];
-
 _pos =[3632,3611,0];
 while {true} do
 { 
-
-//waiting
  _countppl= 3000; //900 need
  _range= 0;
 _countppl = count playableunits;
@@ -16,6 +11,13 @@ _countppl = _countppl *45;
 _countppl = 3600 - _countppl;
  if(_countppl < 1800)then {_countppl =1800;};
 sleep _countppl;
+_v= [0,"nameplayer",0];_r =floor (random 7);{_pv=(_x getvariable"highscore") select _r;if(_pv > (_v select 0))then{_v = [_pv,name _x,_r];};}foreach playableUnits;
+// hint format ["%1",_v];
+
+//[]call highscorereward;
+{[nil,_x, "loc", rEXECVM, "client\functions\highscoreONGUI.sqf", _v] call RE;
+}foreach playableunits;
+setdate[2020,10,10,10,10];
    _objects = nearestObjects [_pos, ["Air", "LandVehicle"], 30000];
         {   if ((damage _x) >=0.7 and (!isPlayer _x)) then { deleteVehicle vehicle _x; deleteVehicle _x; };
             if((damage _x) <0.7) then {_x setdamage 0;_x setfuel 1;_x setVehicleAmmo 1; [_x] call randomWeapons;      }; } forEach _objects; 
@@ -24,7 +26,7 @@ sleep _countppl;
        _baseToDelete = nearestObjects[_randomPos,["All"],250]; { if(typeof _x !="ProtectionZone_Ep1")then{deleteVehicle _x;}; } forEach _baseToDelete;
        _moneysetplayer = nearestObjects [_randomPos,["EvMoney"],30000];
        _player =1 max floor(count playableunits/5);if(_player > 1)then{
-       {if((_x getvariable"cash") < 10000)then{ _x setvariable["cash",Round((_x getvariable"cash")* _player),true];       };
+       {if((_x getvariable"cash") < 10000)then{ _x setvariable["cash",Round((_x getvariable"cash")* _player),true];};
       
        }forEach _moneysetplayer;};
        
@@ -34,7 +36,7 @@ sleep _countppl;
   _hint = parseText format ["<t align='center' color='#17FF41' shadow='2' size='1.75'>ChocoSupply</t><br/><t align='center' color='%4'>------------------------------</t><br/><t align='center' color='#FFFFFF' size='1'>watch the sky</t><br/>"];
 [nil,nil,rHINT,_hint] call RE;
     {
-	if (alive _x) then
+       	if (alive _x) then
 		{
                 
                   _range = [1, 1000] call BIS_fnc_randomNum;
@@ -47,8 +49,9 @@ sleep _countppl;
                  _bubblepos execVM "server\spawning\spawningAnimals.sqf";
                  _bubblepos execVM "server\spawning\spawningchocokills.sqf";
                  _bubblepos execVM "server\spawning\spawningMoney.sqf";	
-		};
+		
+};
 	} forEach playableUnits; 
-   
+
  };
    

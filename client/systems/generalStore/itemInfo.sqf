@@ -43,11 +43,7 @@ _itemText = _itemlist lbText _selectedItem;
                         _min1 = Round(_chocos /100);
                         _price = _price + _min1;
                         };
-                         if(_x select 0 == "Ultima Repair Kit")then {
-                        _chocos = player getvariable"choco";
-                        _min1 = Round(_chocos /100);
-                        _price = _price + _min1;
-                        };
+                       
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));

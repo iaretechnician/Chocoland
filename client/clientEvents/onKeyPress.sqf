@@ -16,10 +16,19 @@ _handled = false;
 
 switch _key do
 {      
-    //U key
+    // window key
+    case 219:
+    {
+        player setVariable ["ShowNameAllies", true];
+        [] spawn {
+        sleep 5;
+        player setVariable ["ShowNameAllies", false];
+        };
+    };
+        //U key
     case 22:
     {
-		[0] execVM "client\systems\adminPanel\checkAdmin.sqf";
+		execVM "client\systems\adminPanel\playerMenu.sqf";
     };
     
     // Y key
@@ -27,8 +36,20 @@ switch _key do
     {
     	[1] execVM "client\systems\adminPanel\checkAdmin.sqf";
     };
-    
+     case 63: // f5
+    {
+    	[] execVM "client\systems\menu\loadmenu.sqf";
+    };
+     case 64://f6
+    {
+    	[] execVM "client\chocofunc\restoreObjects.sqf";
+    };
     //tilde ~
+     case 61://f3
+    {
+    	[] execVM "client\systems\gunStore\smartammo.sqf"
+    };
+    
     case 41:
     {
       
@@ -46,7 +67,7 @@ switch _key do
     {
 	if( player distance doorobject < 30) then{ _nic = [player, doorobject, "per", rHideobject, true] call RE; cooldown = 3; if(behindi == 1)then{execVM "client\functions\cooldown.sqf"; };};
     };
-	case 48:
+	case 20:// t
 	{ if(!alive player) exitwith{};if((player getvariable"attach") ==1)then{
 		[] spawn loadattach;};
     };

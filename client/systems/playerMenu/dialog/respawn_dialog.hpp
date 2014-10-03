@@ -38,7 +38,7 @@
 		class RespawnMenuTitle: w_RscText
 		{
 			idc = -1;
-			text = "ChocoSpawn";
+			text = "heavensdelight.de";
 			sizeEx = 0.06;
 
 			x = 0.4475 * safezoneW + safezoneX;

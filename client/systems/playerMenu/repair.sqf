@@ -1,4 +1,3 @@
-
 //	@file Version: 1.0
 //	@file Name: repair.sqf
 //	@file Original Author: TAW_Tonic
@@ -23,7 +22,6 @@ if(vehicle player != player) exitWith { player globalChat localize "STR_WL_Error
 // PRECONDITION: Check for vehicle near-by, if exists then select closest.
 if(isNil{_currVehicle}) exitWith { hint "No vehicle within range"; };
 
-if(!(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _currVehicle > 0) AND (count(configFile >> "CfgVehicles" >> (_currVehicleType) >> "Turrets") > 0) AND !(canFire _currVehicle))) then {
 	
     mutexScriptInProgress = true;  
     _currPlayerState = animationState player;
@@ -60,24 +58,22 @@ if(!(canMove _currVehicle) OR (_currVehicle isKindOf "Air") OR ((count crew _cur
      	_iterationAmount = _iterationAmount - 1;
 		_iterationPercentage = floor (_iteration / _totalDuration * 100);
 				    
-		2 cutText [format["Vehicle repair %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
+		2 cutText [format["Vehicle preparing %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		sleep 1;
             
      	if (_iteration >= _totalDuration) exitWith { // Success conditions
     		sleep 1;
 			2 cutText ["", "PLAIN DOWN", 1];
       		player switchMove _currPlayerState;
-  			player setVariable["repairkits",(player getVariable "repairkits")-1,false];
+  			player setVariable["repairkits",0,false];
       		_currVehicle setDamage 0;
                 _currVehicle setFuel 1;
+                _currVehicle setvehicleammo 1;
                
    		};
     };
-} else {
-	{[_currVehicle, _x, 0] call client_setHit;} forEach ["HitGlass1", "HitGlass2", "HitGlass3", "HitGlass4", "HitGlass5", "HitGlass6"];
-	hint "Vehicle does not need repairing";
-};
+
 
 sleep 1;
-2 cutText ["repaired", "PLAIN DOWN", 1];
+2 cutText ["your Vehicle is Ready", "PLAIN DOWN", 1];
 mutexScriptInProgress = false;

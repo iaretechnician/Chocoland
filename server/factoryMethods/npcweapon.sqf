@@ -1,4 +1,4 @@
-private [_npc,_rweapon,_magazines];
+//private [_npc,_rweapon,_magazines];
 
 _npc = _this select 0;
 //_randomIndex = (random (count _MMarray - 1));

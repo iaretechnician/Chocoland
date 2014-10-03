@@ -45,6 +45,7 @@ while {true} do
 
 	_missionRunning = [] execVM "server\randomMission.sqf";
     diag_log format["WASTELAND SERVER - Execute New Main Mission"];
+sleep 5;
 
 waitUntil{sleep 1; scriptDone _missionRunning};
   sleep _countppl;

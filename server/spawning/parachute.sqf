@@ -1,5 +1,6 @@
-private [_spawn, _Parachute];
+
 _spawn = _this select 0;
+
 	 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
          
 		_Parachute setPos (getPos _spawn);

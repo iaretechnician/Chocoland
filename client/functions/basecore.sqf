@@ -1,7 +1,4 @@
 
-
-
-//_currObject = nearestObject [player, "Misc_cargo_cont_tiny"];
 _count = 0;
 _money = 0;
 _money2 =0;
@@ -23,9 +20,11 @@ if((_currObject getVariable"basecore") == 0 and (player getVariable"basecore") =
 player setVariable ["basecore",1, true];
 _currObject setVariable ["wallet",0, true];
 _currObject setVariable ["basecore",1, true];
+_currObject setVariable ["name",name player, true];
 hint format["%1 `BaseCore is Online and Marked on the Map", name player];
 titleText [format["\n BaseCore Activated"], "PLAIN DOWN", 0];
 _pos = getPos _currObject;
+if(_money2 < 0)exitwith{player globalchat"basecore error,pls report to our website"};
 while {alive _currObject and (_currObject getvariable"basecore" == 1) and (player getVariable"basecore") == 1} do {    
  if (player distance _currObject < _range and player getvariable"basecore"== 1)
         then { _money = _money2 + (player getVariable"bounty");

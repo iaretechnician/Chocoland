@@ -27,19 +27,17 @@ _stringEscapePercent = "%";
 		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
 			2 cutText [format["redeeming chocos %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		    sleep 1;
-			if (_iteration >= _totalDuration) exitWith { // Sleep a little extra to show that lock has completed
+			if (_iteration >= _totalDuration) exitWith { 
 		        sleep 1;
-                
                
  _bounty= player getVariable"bounty";
-
 titleText [format["\n you got 1 chocos"], "PLAIN DOWN", 0];
-_ck=_bounty +1;
+_ck=_bounty + chocobounty;
                 deletevehicle _currObject;
                 player setvariable["bounty", _ck,true];
                 process = false;
                 }; 
 		};
-		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"; // Redundant reset of animation state to avoid getting locked in animation.     
+		player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";   
       
        } else {hint " your are too far away";};

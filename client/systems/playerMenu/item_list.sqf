@@ -37,13 +37,13 @@ if(player getVariable "camonet" > 0) then {
 	_itemList lbSetData [(lbSize _itemList)-1, "camonet"];
 };
 if(player getVariable "repairkits" > 0) then {
-	_str = "Repair Kit";
+	_str = "Ultimate Kit";
     
 	if(player getVariable "repairkits" > 1) then 
     {
-        _str = format ["%1x - Repair Kit", player getVariable "repairkits"];
+        _str = format ["%1x - Ultimate Kit Kit", player getVariable "repairkits"];
     } else {
-        _str = "Repair Kit"
+        _str = "Ultimate Kit";
     };
     
 	_itemListIndex = _itemList lbAdd _str;

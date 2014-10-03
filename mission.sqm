@@ -1251,7 +1251,7 @@ class Item48
 				class Item0
 				{
 					position[]={2114.2546,21.643749,4294.0864};
-					id=62
+					id=62;
 					side="GUER";
 					vehicle="UN_CDF_Soldier_Officer_EP1";
 					player="PLAY CDG";

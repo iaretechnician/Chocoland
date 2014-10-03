@@ -119,7 +119,7 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*1;
-				text = "NoRecoil + Ring";
+				text = "Flares";
 				action = "[] execVM 'addons\proving_ground\fnc_rearm.sqf'"; 
 			};
                         
@@ -152,8 +152,8 @@ class balca_debug_main
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "FLY - off";
-				action = "[] execVM 'addons\proving_ground\fnc_fly2.sqf'"; 
+				text = "3d Marker test";
+				action = "[] execVM 'addons\proving_ground\fnc_3dmarker.sqf'"; 
 			};
 			
 			class balca_dance3_btn : balca_debug_btn
@@ -161,15 +161,15 @@ class balca_debug_main
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*6;
 				text = "Destroy all (30m)";
-				action = "[] execVM 'addons\proving_ground\fnc_destroy30.sqf'"; 
+				action = "[1] execVM 'addons\proving_ground\fnc_destroy30.sqf'"; 
 			};
 			
 			class balca_playershield_btn : balca_debug_btn
 			{
 				x = column_weight; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "animal +map";
-				action = "[] execVM 'addons\proving_ground\fnc_map.sqf'"; 
+				text = "destroy all (100m)";
+				action = "[2] execVM 'addons\proving_ground\fnc_destroy30.sqf'"; 
 			};
 		    
 			class balca_spectate_btn : balca_debug_btn
@@ -233,8 +233,8 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*5;
-				text = "spawn here AShip";
-				action = "closeDialog 0;[] execVM 'addons\proving_ground\fnc_ship.sqf'"; 
+				text = "vehicle Mangement";
+				action = "closeDialog 0;execVM 'client\systems\adminPanel\vehicleManagement.sqf'"; 
 			};
 
 			class balca_cfgexplorer_btn : balca_debug_btn
@@ -249,8 +249,8 @@ class balca_debug_main
 			{
 				x = column_weight*2; w = column_weight-column_div;
 				y = btn_height*7;
-				text = "saveDatabase to clip";
-				action = "[] execVM 'addons\proving_ground\fnc_savedatabase.sqf'"; 
+				text = "server FPS";
+				action = " hint format[""Server FPS: %1"",serverFPS]"; 
 			};
 
 			class balca_BIS_cfgviewer_btn : balca_debug_btn

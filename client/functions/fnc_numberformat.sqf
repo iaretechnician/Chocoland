@@ -1,8 +1,6 @@
 
 fnc_number={
-    /*[1234567, 1, 0, true] call CBA_fnc_formatNumber;        // => "1,234,567" */
-
-
+  
 private ["_integerPart", "_string", "_numIntegerDigits", "_decimalPoint",
 	"_thousandsSeparator", "_basePlaces"];
         

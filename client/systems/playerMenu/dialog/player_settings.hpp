@@ -20,7 +20,7 @@ class playerSettings {
 		
 		class MainTitle : w_RscText {
 			idc = -1;
-			text = "Player Inventory Menu";
+			text = "heavensdelight.de";
 			sizeEx = 0.04;
 			shadow = 2;		
 			x = 0.260; y = 0.112;
@@ -200,7 +200,7 @@ class playerSettings {
 		};
 		
 		class DropcButton : w_RscButton {
-			text = "Drop Money";
+			text = "sent Money";
 			onButtonClick = "[] execVM 'client\systems\playerMenu\dropMoney.sqf'";
 			x = 0.48; y = 0.60;
                             w = 0.135; h = 0.033 * safezoneH;

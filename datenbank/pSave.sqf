@@ -34,22 +34,7 @@ PDB_savePlayer = {
 			if(!isNil "_chocoload") then {
 				[_playerUID call PDB_databaseNameCompiler, _playerSide, "chocoload", _chocoload] call iniDB_write;
 			};
-                          _mothership = _x getVariable "mothership";
-			if(!isNil "_mothership") then {
-				[_playerUID call PDB_databaseNameCompiler, _playerSide, "mothership", _mothership] call iniDB_write;
-			};
-                        _decoder = _x getVariable "decoder";
-			if(!isNil "_decoder") then {
-				[_playerUID call PDB_databaseNameCompiler, _playerSide, "decoder", _decoder] call iniDB_write;
-			};
-                        _basebuilder = _x getVariable "basebuilder";
-			if(!isNil "_basebuilder") then {
-				[_playerUID call PDB_databaseNameCompiler, _playerSide, "basebuilder", _basebuilder] call iniDB_write;
-			};
-                         _attach = _x getVariable "attach";
-			if(!isNil "_attach") then {
-				[_playerUID call PDB_databaseNameCompiler, _playerSide, "attach", _attach] call iniDB_write;
-			};
+                      
                         _saveVehicle =_x getVariable"saveVehicle";
                         if(!isNil"_saveVehicle")then {
                                 [_playerUID call PDB_databaseNameCompiler, _playerSide, "saveVehicle", _saveVehicle] call iniDB_write;

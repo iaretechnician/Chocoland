@@ -85,16 +85,16 @@
 	</Package>
 	<Package name="ShopDescriptions">
 <Key ID="STR_betchocos"><English>Gamble with your Chockills to double them(50% Chance of winning).</English></Key>
-<Key ID="STR_cow04"><English>Transform to a cow and surprise your enemys with a huge explosion!</English></Key>
-<Key ID="STR_goat"><English>Transform to a goat and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_cow04"><English>Transform to a cow and surprise your enemys with a huge explosion when there attacks you!</English></Key>
+<Key ID="STR_goat"><English>Transform to a goat and surprise your enemys with a huge explosion when there attacks you!</English></Key>
 <Key ID="STR_rweapon"><English>Generates a random weapon and gives it you twice!</English></Key>
 <Key ID="STR_name"><English>Advertise yourself or anger your enemys after you owned them.</English></Key>
 <Key ID="STR_rvehicle"><English>Let a random vehicle parachute above you!</English></Key>
 <Key ID="STR_dance"><English>Explains itself...</English></Key>
-<Key ID="STR_hen"><English>Transform to a hen and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_hen"><English>Transform to a hen and surprise your enemys with a huge explosion when there attacks you!</English></Key>
 <Key ID="STR_delete"><English>Delete a random object instantly(works with locked objects too).</English></Key>
-<Key ID="STR_shepard"><English>Transform to a dog and surprise your enemys with a huge explosion!</English></Key>
-<Key ID="STR_rabbit"><English>Transform to a rabid and surprise your enemys with a huge explosion!</English></Key>
+<Key ID="STR_shepard"><English>Transform to a dog and surprise your enemys with a huge explosion when there attacks you!</English></Key>
+<Key ID="STR_rabbit"><English>Transform to a rabid and surprise your enemys with a huge explosion when there attacks you!</English></Key>
 <Key ID="STR_tele"><English>Press on a place you want to be teleported to.</English></Key>
 <Key ID="STR_spectate"><English>Be NSA and spectate players in any way.</English></Key>
 <Key ID="STR_iammo1"><English>Let's your weapon shoot infinite ammo for one minute.</English></Key>

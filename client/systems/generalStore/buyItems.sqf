@@ -68,9 +68,9 @@ for [{_x=0},{_x<=_size},{_x=_x+1}] do
            
         };
         
-		case "Ultima Repair Kit": {
+		case "Ultimate Kit": {
             
-                player setVariable["repairkits",(player getVariable "repairkits") + 1,true];
+                player setVariable["repairkits",1,true];
            
         };
         

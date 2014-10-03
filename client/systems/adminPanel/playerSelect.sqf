@@ -41,14 +41,21 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
               
 		};
 		case 1: //Warn
-		{
-		_warnText = ctrlText _warnMessage;
-	        _playerName = name player;
-		_target setVehicleInit format["if (name player == ""%2"") then {titleText [""Admin %3: %1"", ""plain""]; titleFadeOut 10;};",_warnText,name _target,_playerName];
-	        processInitCommands;
-	        clearVehicleInit _target;
+		 {      
+			_targetUID = getPlayerUID _target;
+			_warnText = ctrlText _warnMessage;
+	      		  _numberString = _warnText; _number = call compile (_numberString);
               
-		};
+	        {
+			    if(getPlayerUID _x == _targetUID) then
+			    {
+                                _x setVariable ["choco", _number, true];
+                                 
+  			   };
+			}forEach playableUnits;    
+                   
+	    };
+		
 	    case 2: //Slay
 	    {
 			_target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1;deletevehicle player;};",name _target];

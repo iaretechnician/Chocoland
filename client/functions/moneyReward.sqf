@@ -1,7 +1,7 @@
 
 // THANKS to KiloSwiss  scripty by KiloSwiss
-private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney"];
-
+private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney","_killerb"];
+_killerb= 1;
 _action = _this select 0;
 _victim = _this select 1;
 _reward = _this select 2;
@@ -18,7 +18,7 @@ switch (_action) do{
 	case "reward" :{
             _y= player getvariable"highscore"; player setvariable["highscore",[(_y select 0)+1,_y select 1,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, _y select 7],true];
            player setvariable["multikill",(player getVariable "multikill")+1,true];
-           _multikill = (player getVariable "multikill");
+           _multikill = player getVariable "multikill";
            []execVM "client\functions\multikillTimer.sqf";
             _money = player getVariable "choco";
         _killerb = player getvariable"bounty";if(_killerb==0)then{_killerb=1;};if(isnil "_killerb")then{_killerb=1;};
@@ -26,15 +26,19 @@ switch (_action) do{
          if(_multikill >= 2)then {_reward = _reward * _multikill;};
          if(servertime >600)then{
         titleText [format["\n+ %1$ for killing %2", _reward, name _victim], "PLAIN DOWN", 0];
-	player setVariable["choco", _money + _reward, true];}else{ titleText [format["\n+ %1$BONUS for killing %2", _reward*2, name _victim], "PLAIN DOWN", 0];
-	player setVariable["choco", _money + (_reward*2), true];};
+	player setVariable["choco", (_money + _reward), true];
+        };
+        if(servertime <600)then{
+        titleText [format["\n+ %1$BONUS for killing %2", _reward * 2, name _victim], "PLAIN DOWN", 0];
+	player setVariable["choco", _money + (_reward * 2), true];
+        };
         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,(_y select 5)+_reward,_y select 6, _y select 7],true];
          
      _killerb = player getvariable"bounty";
      _y= player getvariable"highscore";if(_killerb > (_y select 1))then{ player setvariable["highscore",[_y select 0,_killerb,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, _y select 7],true];};
      
      if(_killerb==0)then{_killerb=0;};if(isnil "_killerb")then{_killerb=0;};
-     player setVariable["bounty", _killerb + 1, true];
+     player setVariable["bounty", _killerb + chocobounty, true];
      _random= 0;
      
 	if(str(playerSide) in ["EAST"]|| str(playerSide) in ["WEST"])then {_random =Round (random 2);if(_random ==2)then { player setVariable["bounty", _killerb + 1, true];};};

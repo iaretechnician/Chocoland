@@ -1,6 +1,6 @@
 if(!X_Client) exitWith {};
 sleep 10; 
-player globalchat" patchnotes: hotfix buildings +Multibuy, spawn my vehicle 100meter set and Movable parachute, Super Random Airdrop Missions - fight your Way trough to the vehicle and get the great Mission Reward (no Marker , no smoke, no warning,max 2 random WeaponCrates,max2 random Vehicles, random Npc)";
+player globalchat"patchnotes:Smart Ammo Buy (use with F3), Parastore (F5))You dont need to Lock / unlock objects it will automatically save over restarts ( and new ObjectLife-cycle) ! players need to Restore (F6) his Objects because there loose 10% life every 2 Hours and 15 Min (24h 100%); comming : Basecore Screen 3dMarker, buy your vehicles and Weapons with Chocos and comming arma 3 Server";
 sleep 60;
 _hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />Welcome To ChocoLands - Wasteland MOD BaseDefense, on this Chocoland you may to be an Animal, you can ATtach objects , you can hide objects, you can hide yourself, you can get infinite Ammunition,you are god in Parajump, you cannot unlock enemy locked objects"];
 [nil,player,"loc",rHINT,_hint] call RE;
@@ -15,7 +15,7 @@ sleep 300;
 
 _bounty = 100 max floor((Player getvariable "bounty") * 250);
 player setVariable["choco",(player getVariable"choco")+ _bounty,true];
-_hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />look for the Secret MoneyZone where you get 999$ every Second<br />------------------------<br /><t color='#17FF41' size='1.5' shadow='2' shadowColor='#000000' align='center'>Reward $%1 </t>",_bounty];
+_hint = parseText format ["<t color='#FFBF00' size='2' shadow='2' shadowColor='#000000' align='center'>ChocoLand</t><br />------------------------<br />look for the Secret MoneyZone where you get 33*OnlinePlayers$ every Second<br />------------------------<br /><t color='#17FF41' size='1.5' shadow='2' shadowColor='#000000' align='center'>Reward $%1 </t>",_bounty];
 [nil,player,"loc",rHINT,_hint] call RE;
 sleep 300;
 
