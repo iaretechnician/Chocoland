@@ -212,28 +212,15 @@ class ItemSelectedPrice2: w_RscStructuredText
 		class BuyToPlayer1 : w_RscButton {
 			
 			idc = genstore_buysell;
-
-			text = "MoneyBuy";
 			onButtonClick = "[0] execVM 'client\systems\generalStore\buyitems.sqf'";
+			text = "<img size='3' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 
-			x = 0.7 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.088 * safezoneW;
-			h = 0.040 * safezoneH;
+			x = 0.67 * safezoneW + safezoneX;
+			y = 0.730 * safezoneH + safezoneY;
+			w = 0.12 * safezoneW;
+			h = 0.080 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
 		};
-                class BuyToPlayer : w_RscButton {
-			
-			idc = genstore_buysell1;
-
-			text = "ChocoBuy";
-			onButtonClick = "[1] execVM 'client\systems\generalStore\buyitems.sqf'";
-
-			x = 0.6 * safezoneW + safezoneX;
-			y = 0.750 * safezoneH + safezoneY;
-			w = 0.088 * safezoneW;
-			h = 0.040 * safezoneH;
-			color[] = {0.1,0.95,0.2,1};
-		};
+               
 	};
 };

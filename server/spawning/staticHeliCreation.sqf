@@ -25,7 +25,7 @@ if (_isWreck == 0) then {
 	clearWeaponCargoGlobal _currHeli;
 	
 	//Set original status to stop ner-do-wells
-	_currHeli setVariable["newVehicle",1,true];
+	
 } else {
 	//diag_log "Spawning heli wreck...";
 	_spawnType = staticHeliWrecks select (random (count staticHeliList - 1));
@@ -51,8 +51,5 @@ if (_isWreck == 0) then {
     _currHeli addEventHandler["handleDamage", { false } ];
     _currHeli setVehicleAmmo (random 0.3);
  
-	//Set original status to stop ner-do-wells
-	_currHeli setVariable["newVehicle",1,true];
-        _currHeli setVariable["original",1,true];
     _currHeli setVariable["R3F_LOG_disabled", true, true];  
 };

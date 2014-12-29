@@ -11,7 +11,7 @@ player createDiaryRecord["ChocoLand",
 <br/>
 	   ChocoLand Hosted by Heavensdelight.de <br/>
            Admin - OberChoco [B2F] Chocobora<br/>
-           Admin - General [B2F] NinjaSquirttle<br/>
+           Admin - General Viggo Marksman<br/>
            Admin - OberBaum [B2F] MisterIxi<br/>
 "
 ]

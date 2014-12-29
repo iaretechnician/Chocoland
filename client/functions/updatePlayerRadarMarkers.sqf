@@ -13,16 +13,16 @@ currentRadarMarkers = [];
      
 	if(str(playerSide) == "GUER") then {_side = "Independent"};
     _playerSide = str(playerSide);
-    if(_playerSide != (_x select 2)) exitWith {diag_log "faction mis-match, exiting loop";};
+    if(_playerSide != (_x select 2)) exitWith {};
     
     // Check if the player is indep and in the group or not.
     _player = _x select 4;
     
     if((count units group _player > 1) AND (_side == "Independent")) then {
     	if (!(player in units group _player)) exitWith {
-        	//diag_log "Indep and group - however player not in it, exiting loop";
+        	
         } else {
-        	//diag_log "Player in group with radar";
+        	
         };
     };
     

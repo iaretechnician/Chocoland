@@ -11,6 +11,7 @@ disableSerialization;
 if (local player) then {
 	//Initialize Values
 	_price = 0;
+ 
 	_checkWeapon = "";
 	_checkAmmo = "";
 	_checkAccessor = "";
@@ -25,9 +26,11 @@ if (local player) then {
 	_itemText = _gunlist lbText _selectedItem;
         _weapon= 0;
 	//Check Items Price
-	{ if(_itemText == _x select 1) then { _price = _x select 3;_weapon = _x select 2; } }forEach weaponsArray;
-	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1;} }forEach ammoArray;
-	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1; } }forEach accessoriesArray;
+	{_weapon = configFile >> "cfgWeapons" >> (_x select 1);_name = getText(_weapon >> "displayName");
+        if(_itemText == _name) then { _price = _x select 2; _weapon = _x select 1; } }forEach weaponsArray;
+	{_Name = getText (configFile >> "CfgMagazines" >> (_x select 0) >> "displayName"); if(_itemText == _name) then { _price = _x select 1; _weapon = _x select 0;} }forEach ammoArray;
+	{ _weapon = configFile >> "cfgWeapons" >> (_x select 0);_name = getText(_weapon >> "displayName");
+        if(_itemText == _name) then { _price = _x select 1; _weapon = _x select 0; } }forEach accessoriesArray;
 
 	gunStoreCart = gunStoreCart + _price;
 	_totalText CtrlsetText format["Total: $%1", gunStoreCart];

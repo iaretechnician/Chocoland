@@ -21,8 +21,8 @@ _veh allowdamage false;
 vehicleSave = objNull; 
 vehicleSave1  = objNull;
 player setVariable["saveVehicle",[],true];
-PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+	
+	
 _Parachute = createVehicle ["ParachuteBigWest_EP1",_pos,[], 0,"FLY"];
 _Parachute setPos _pos;
 _Parachute setVelocity [0, 1, 0];
@@ -33,7 +33,7 @@ deTach _veh;
 sleep 5;
 deleteVehicle _Parachute;
 _veh allowdamage true;
-player globalChat "Hangar is Empty"; 
+chocoland globalChat "Hangar is Empty"; 
 };};
 
 // client spawn
@@ -58,8 +58,7 @@ _veh allowdamage false;
 vehicleSave = objNull; 
 vehicleSave1  = objNull;
 player setvariable["saveVehicle",[],true];
-PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+	
 _Parachute = createVehicle ["ParachuteBigWest_EP1",_pos,[], 0,"FLY"];
 _Parachute setPos _pos;
 _Parachute setVelocity [0, 1, 0];
@@ -70,7 +69,7 @@ deTach _veh;
 sleep 5;
 deleteVehicle _Parachute;
 _veh allowdamage true;
-player globalChat "Hangar is Empty"; 
+chocoland globalChat "Hangar is Empty"; 
    
-} else { player globalChat "Hangar is Empty, you cannot Spawn your Vehicle"; };
+} else { chocoland globalChat "Hangar is Empty, you cannot Spawn your Vehicle"; };
 

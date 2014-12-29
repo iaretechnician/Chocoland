@@ -26,5 +26,5 @@ if ((player getvariable"beacon") == 1)then
     _pos = getposasl chocobeacon;
     player setposasl _pos;
     sleep 1;
-}else{player globalchat "something wrong with your beacon, pls relink"};
-}else{player globalchat "you dont have any linked Choco Beacon "};
+}else{chocoland globalChat "something wrong with your beacon, pls relink"};
+}else{chocoland globalChat "you dont have any linked Choco Beacon "};

@@ -1,12 +1,13 @@
-/**
- * Sélectionne un objet à charger dans un transporteur
- * 
- * @param 0 l'objet à sélectionner
- */
 
+ _currObject =cursortarget;
+ _Test =_currObject getvariable["playerGUID",""];
+
+if (_test !=name player)exitwith {
+                     2 cutText [format["You Cannot load in this Object, %1 is the Owner of this Object",_currobject getvariable["playerGUID",""]], "PLAIN DOWN", 1];
+                    R3F_LOG_mutex_local_verrou = false;};
 if (R3F_LOG_mutex_local_verrou) then
 {
-	player globalChat STR_R3F_LOG_mutex_action_en_cours;
+	chocoland globalChat STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
@@ -21,7 +22,7 @@ else
 	R3F_LOG_mutex_local_verrou = true;
 	
 	R3F_LOG_objet_selectionne = _this select 0;
-	player globalChat format [STR_R3F_LOG_action_selectionner_objet_charge_fait, getText (configFile >> "CfgVehicles" >> (typeOf R3F_LOG_objet_selectionne) >> "displayName")];
+	chocoland globalChat format [STR_R3F_LOG_action_selectionner_objet_charge_fait, getText (configFile >> "CfgVehicles" >> (typeOf R3F_LOG_objet_selectionne) >> "displayName")];
 	
 	R3F_LOG_mutex_local_verrou = false;
 };

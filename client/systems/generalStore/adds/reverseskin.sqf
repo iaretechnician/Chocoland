@@ -50,7 +50,7 @@ player setVariable["decoder",0,true];
 player setVariable["basebuilder",0,true];
 player setVariable["attach",0,true];
 player setVariable["upgrades",0,true];
-player setVariable["choco",500,true];
+player setVariable["cmoney",500,true];
 player setVariable["canfood",2,true];
 player setVariable["chocopack",0,true];
 player setVariable["chocoload",[],true];

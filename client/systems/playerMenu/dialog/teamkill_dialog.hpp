@@ -87,7 +87,7 @@ class TeamkillDialog {
 		class PunishButton:w_RscButton {
 			idc = tkDialogPunish;
 			text = "Punish";
-			onButtonClick = "true call teamkillAction";
+			onButtonClick = "punishplayer = 1;publicvariable'punishplayer';true call teamkillAction";
 
 			size = 0.031;
 			color[] = {0.95, 0.10, 0.10, 1};

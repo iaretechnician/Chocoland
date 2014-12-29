@@ -45,7 +45,7 @@ _hasInvite = false;
 while{groupManagmentActive} do
 {
     //Check if player has invite.
-    {if(_x select 1 == getPlayerUID player) then {_hasInvite = true};}forEach currentInvites;
+    {if(_x select 1 == puid) then {_hasInvite = true};}forEach currentInvites;
     
     //Member Controls
     if(count units group player > 1) then 
@@ -72,7 +72,7 @@ while{groupManagmentActive} do
         _groupDeclineInvite ctrlShow true; 
         	  	
         //Get Invite Text and Set it.
-        {_invite = _x;if(_invite select 1 == getPlayerUID player) then {{if(_invite select 0 == getPlayerUID _x) then {_name = name(_x);};}forEach playableUnits;};}forEach currentInvites;
+        {_invite = _x;if(_invite select 1 == puid) then {{if(_invite select 0 == getPlayerUID _x) then {_name = name(_x);};}forEach playableUnits;};}forEach currentInvites;
         _groupInviteText ctrlSetStructuredText parseText (format ["Group Invite From<br/>%1",_name]);
         
     } else {
@@ -85,7 +85,7 @@ while{groupManagmentActive} do
 	{
 		if(str(side _x) == str(playerSide)) then
 	    {
-	        if(getPlayerUID _x != getPlayerUID player) then
+	        if(getPlayerUID _x != puid) then
 	        {
 			    //Add to list
 			    _namestr = name(_x);             

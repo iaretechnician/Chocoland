@@ -8,3 +8,4 @@
 #define attach_total 2008
 #define attach_buysell 2020
 #define attach_item_Info 2021
+#define menu_texturecount 99122

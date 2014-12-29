@@ -11,7 +11,7 @@ _pos =[_pos1 select 0,_pos1 select 1,500];
 		_Parachute setPos (getPos _spawn);
                 _Parachute setvelocity [0,10,0];
 		_spawn attachTo [_Parachute,[0,0,-1.5]];
-		waitUntil {(getPos _spawn select 2) < 2 || !alive _spawn || !alive _Parachute};
+		waitUntil {sleep 1;_Parachute setVelocity [(velocity _Parachute select 0)*0, (velocity _Parachute select 1)*0, (velocity _Parachute select 2)*1.2];(getPos _spawn select 2) < 2 || !alive _spawn || !alive _Parachute};
 		deTach _spawn;
 		sleep 1;
 		deleteVehicle _Parachute;

@@ -1,20 +1,16 @@
-
-
 //	@file Version: 1.0
 //	@file Name: clientCompile.sqf
 //	@file Author: [404] Deadbeat, [404] Costlyy
 //	@file Created: 20/11/2012 05:19
-//	@file Args:
-
-// Event handlers
-infointro = compile preprocessfile "client\systems\playerMenu\info.sqf";
 starterkit = compile preprocessfile "client\chocofunc\starterkit.sqf";
-positionCheck = compile preprocessfile "client\chocofunc\positionCheck.sqf";
+savePlayer = compile preprocessfile "client\chocofunc\savePlayer.sqf";
+execVM"client\chocofunc\fnc_numberformat.sqf";
 onRespawn = compile preprocessfile "client\clientEvents\onRespawn.sqf";
+countingbounty = compile preprocessfile "client\chocofunc\countingbounty.sqf";
 onKilled = compile preprocessfile "client\clientEvents\onKilled.sqf";
 onKeyPress = compile preprocessFile "client\clientEvents\onKeyPress.sqf";
-statsave = compile preprocessFile "client\functions\saveStats.sqf";
-statload = compile preprocessFile "client\functions\loadStats.sqf";
+statsave = compile preprocessFile "client\chocofunc\saveStats.sqf";
+statload = compile preprocessFile "client\chocofunc\loadStats.sqf";
 // Player details and actions
 loadPlayerMenu = compile preprocessFile "client\systems\playerMenu\init.sqf";
 playerSpawn = compile preprocessFileLineNumbers "client\functions\playerSpawn.sqf";
@@ -43,8 +39,6 @@ teamkillMessage = compile preprocessFileLineNumbers "client\functions\showTeamKi
 client_respawnDialog = compile preprocessFileLineNumbers "client\functions\loadRespawnDialog.sqf";
 loadGeneralStore = compile preprocessFileLineNumbers "client\systems\generalStore\loadGenStore.sqf";
 loadGunStore = compile preprocessFileLineNumbers "client\systems\gunStore\loadGunStore.sqf";
-loadSellConfirm = compile preprocessFileLineNumbers "client\systems\gunStore\loadSellConfirm.sqf";
-sellWeaponConfirmed = compile preprocessFileLineNumbers "client\systems\gunStore\sellWeaponConfirmed.sqf";
 
 // Building Dialog compiles
 loadbuildStore = compile preprocessFileLineNumbers "client\systems\BuildStore\loadBuildStore.sqf";

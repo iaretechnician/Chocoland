@@ -15,8 +15,8 @@
 disableSerialization;
 
 private ["_start","_dialog","_vehicleCountText","_vehicleType","_vehicleCount","_uid","_vehicleCivBtn","_vehicleHeliBtn","_vehiclePlaneBtn","_vehicleTankBtn"];
-_uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
+_uid = puid;
+if (_uid in admins) then {
 	_start = createDialog "VehicleManagement";
 	
 	_dialog = findDisplay vehicleManagementDialog;
@@ -26,7 +26,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	_vehiclePlaneBtn = _dialog displayCtrl vehicleManagementPlaneButton;
 	_vehicleTankBtn = _dialog displayCtrl vehicleManagementTankButton;
 	
-	_uid = getPlayerUID player;
+	_uid = puid;
 	_vehicleCount = 0;
 	{
 	    _vehicleType = Format["%1",typeOf _x];
@@ -37,13 +37,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	
 	_vehicleCountText ctrlSetText format["Vehicles on Server: %1", _vehicleCount];
 	
-	if((_uid in moderators)) then
-	{
-		_vehicleCivBtn ctrlShow false;
-	    _vehicleHeliBtn ctrlShow false;
-	    _vehiclePlaneBtn ctrlShow false;
-	    _vehicleTankBtn ctrlShow false;	    
-	};
+	
 } else {
   exit;  
 };

@@ -4,7 +4,7 @@
 //	@file Author: [404] Deadbeat
 //	@file Created: 20/11/2012 05:19
 
-if(player != leader group player) exitWith {player globalChat format["you are not the leader and can't invite people"];};
+if(player != leader group player) exitWith {chocoland globalChat format["you are not the leader and can't invite people"];};
 
 #define groupManagementDialog 55510
 #define groupManagementPlayerList 55511
@@ -24,21 +24,19 @@ _check = 0;
 //Check selected data is valid   			
 {if (str(_x) == _playerData) then {_target = _x;_check = 1;};}forEach playableUnits;
 
-diag_log "Invite to group: Before the checks";
+
 
 //Checks
-if(_check == 0) exitWith{player globalChat "you must select someone to invite first";};
-if(_target == player) exitWith {player globalChat "you can't invite yourself";};
-if((count units group _target) > 1) exitWith {player globalChat "This player is already in a group"};
+if(_check == 0) exitWith{chocoland globalChat "you must select someone to invite first";};
+if(_target == player) exitWith {chocoland globalChat "you can't invite yourself";};
+if((count units group _target) > 1) exitWith {chocoland globalChat "This player is already in a group"};
 
 {if(_x select 1 == getPlayerUID _target) then{_hasInvite = true;};}forEach currentInvites;
-if(_hasInvite) exitWith {player globalChat "This player already has a pending invite";};
+if(_hasInvite) exitWith {chocoland globalChat "This player already has a pending invite";};
 
-diag_log "Invite to group: After the checks";
-
-currentInvites set [count currentInvites,[getPlayerUID player,getPlayerUID _target]];
+currentInvites set [count currentInvites,[puid,getPlayerUID _target]];
 publicVariableServer "currentInvites"; 
 
 [nil,_target,"loc", rTITLETEXT, format["You have been invited to join %1's group",name player], "PLAIN", 0] call RE;
 
-player globalChat format["you have invited %1 to join the group",name _target];
+chocoland globalChat format["you have invited %1 to join the group",name _target];

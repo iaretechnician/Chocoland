@@ -34,21 +34,35 @@ _itemText = _itemlist lbText _selectedItem;
 	    if(_itemText == _x select 0) then{
 			_price = _x select 4;
                         _price2 = _x select 5;
+                          if(_x select 0 == "Fog for ALL" || _x select 0 == "BAD Weather for ALL" || _x select 0 == "Night for ALL")then {
+                        _chocos = player getvariable["cmoney",0];
+                        _min1 = Round(_chocos /10);
+                        _price = _price + _min1;
+                        };
                        if(_x select 0 == "Bet your Money")then {
-                        _chocos = player getvariable"choco";
+                        _chocos = player getvariable["cmoney",0];
                         _price = _chocos;
                         };
                         if(_x select 0 == "Spawn Beacon")then {
-                        _chocos = player getvariable"choco";
+                        _chocos = player getvariable["cmoney",0];
                         _min1 = Round(_chocos /100);
                         _price = _price + _min1;
                         };
-                       
+                        if(_x select 0 == "Ultimate Kit")then {
+                        _chocos = player getvariable["cmoney",0];
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
+                        };
+                         if(_x select 0 == "Teleport to maplocation")then {
+                        _chocos = player getvariable["cmoney",0];
+                        _min1 = Round(_chocos /100);
+                        _price = _price + _min1;
+                        };
             _picLink = _x select 3;
             _picture ctrlSetText _picLink;
             _itemInfo ctrlSetStructuredText parseText ((_x select 2));
              _price=[_price] call fnc_number;
 			_itemlisttext ctrlSetText format ["Money: $%1", _price];
-                        _itemlisttext2 ctrlSetText format ["Chocos: %1", _price2];
+                      
 		}
 	}forEach generalStore;

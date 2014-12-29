@@ -18,7 +18,6 @@ _veh = createVehicle [_vehicleClass,_randomPos,[], 0, _state];
 _veh setFuel _fuel;
 _veh setVehicleAmmo _ammo;
 _veh setdamage _damage;
-_veh setVariable["original",1,true];
 clearMagazineCargoGlobal _veh;
 clearWeaponCargoGlobal _veh;
 

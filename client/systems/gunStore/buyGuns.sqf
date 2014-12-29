@@ -1,56 +1,34 @@
-
-
-//	@file Version: 1.0
-//	@file Name: buyGuns.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:13
-//	@file Args: [int (0 = buy to player 1 = buy to crate)]
-
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;
-if(gunStoreCart > (player getVariable "choco")) exitWith {hint "You do not have enough money"};
+
+if( gunStoreCart > (player getVariable "cmoney")) exitWith {hint "You do not have enough money"};
+if(gunStoreCart < 1)exitwith {hint " ERROR <0"};
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
+	chocoland globalChat "ERROR: ALREADY PERFORMING ANOTHER ACTION!";
 };	
 
 // Check if player is alive.
 if(!(alive player)) exitWith {
-	player globalChat "ERROR: YOU ARE CURRENTLY DEAD.";
+	chocoland globalChat "ERROR: YOU ARE CURRENTLY DEAD.";
     closeDialog 0;
 };	
 dropweapon = "WeaponHolder" createVehicle getPos player; 
 dropweapon setPos [getPos player select 0,getPos player select 1,getPos player select 2];
 mutexScriptInProgress = true;
 //delete switch weapon
-fnc_drop_weapon = {
-	_weapon = _this select 0;
-	_weaponCfg = (configFile >> "cfgWeapons" >> _weapon);
-	_type = getNumber(_weaponCfg >> "type");
-	if (_type in [1,2,4,5]) then {
-		{_cWepType = [getNumber(configFile >> "cfgWeapons" >> _x >> "type")];
-		if (_cWepType select 0 in [1,5]) then {_cWepType = [1,5];};
-		if (_type in _cWepType) then {
-			player removeWeapon _x;
-                         dropweapon addWeaponCargo [_x,1];
-			_current_magazines = magazines player;
-			_compatible_magazines = getArray(configFile >> "cfgWeapons" >> _x >> "magazines");
-			{if (_x in _compatible_magazines) then {
-				player removeMagazine _x;
-                                 dropweapon addMagazineCargo [_x,1];
-			};} forEach _current_magazines;
-		};} forEach (weapons player);
-	};
-	player addWeapon _weapon;
-	player selectWeapon _weapon;
-	
-};
+fnc_drop_weapon = {	_weapon = _this select 0;	_weaponCfg = (configFile >> "cfgWeapons" >> _weapon);
+	_type = getNumber(_weaponCfg >> "type");	if (_type in [1,2,4,5]) then {		{_cWepType = [getNumber(configFile >> "cfgWeapons" >> _x >> "type")];
+		if (_cWepType select 0 in [1,5]) then {_cWepType = [1,5];};		if (_type in _cWepType) then {
+			player removeWeapon _x;    dropweapon addWeaponCargo [_x,1];		_current_magazines = magazines player;		_compatible_magazines = getArray(configFile >> "cfgWeapons" >> _x >> "magazines");
+			{if (_x in _compatible_magazines) then {player removeMagazine _x;    dropweapon addMagazineCargo [_x,1];		};} forEach _current_magazines;	};} forEach (weapons player);};
+	player addWeapon _weapon;	player selectWeapon _weapon;};
 private ["_name"];
 
 //Initialize Values
-_switch = _this select 0;
-_playerMoney = player getVariable "choco";
+_playerMoney = player getVariable "cmoney";
+_playerbounty=  player getvariable["bounty",1];
 _size = 0;
 _price = 0;
 // Grab access to the controls
@@ -61,29 +39,24 @@ _playerMoneyText = _Dialog displayCtrl gunshop_money;
 _size = lbSize _cartlist;
 _pos = getposatl player;
 
-switch(_switch) do 
-{
-	//Buy To Player
-	case 0: 
-	{
 		for [{_x=0},{_x<=_size},{_x=_x+1}] do
 		{
 			_itemText = _cartlist lbText _x;
+                       
 			//0 = Primary, 1 = SideArm, 2= Secondary, 3= HandGun Mags, 4= MainGun Mags, 5= Binocular, 7=Compass Slots
 			_playerSlots = [player] call BIS_fnc_invSlotsEmpty;
 			
-			{
-				if(_itemText == _x select 1) then
+			{_weapon = configFile >> "cfgWeapons" >> (_x select 1);_name = getText(_weapon >> "displayName");
+				if(_itemText == _name) then
 				{
-					_class = _x select 2;
+					_class = _x select 1;
 					_weapon = (configFile >> "cfgWeapons" >> _class);
 					_type = getNumber(_weapon >> "type");
 					
                     switch (_type) do {
                     
                     	case 1: { //Main Rifle
-                         diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
-                         publicvariableserver "diag_log_server";
+                    
                         	if((_playerSlots select 0) >= 1) then { 
 								player addWeapon _class;
                                                                 player selectWeapon _class;
@@ -91,8 +64,7 @@ switch(_switch) do
                         };
                         
                         case 2: { //Side Arm
-                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
-publicvariableserver "diag_log_server";
+                        	
                             if((_playerSlots select 1) >= 1) then {
 								player addWeapon _class;
                                                                 player selectWeapon _class;
@@ -100,8 +72,7 @@ publicvariableserver "diag_log_server";
                         };
                         
                         case 4: { //Rocket launcher
-                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
-publicvariableserver "diag_log_server";
+                        	
                             if((_playerSlots select 2) >= 1) then {
 								player addWeapon _class;
                                                                 player selectWeapon _class;
@@ -109,8 +80,7 @@ publicvariableserver "diag_log_server";
                         };
                         
                         case 5: { //Machinegun
-                        	 diag_log_server = parsetext format["player:%1 buyed %2 for %3 and have now %4 MoneyLeft",name player,_x select 1, _x select 3, (player getVariable"choco")];
-publicvariableserver "diag_log_server";
+                        
                             if(((_playerSlots select 2) >= 1) AND ((_playerSlots select 0) >= 1)) then {
 								player addWeapon _class;
                                                                 player selectWeapon _class;
@@ -120,12 +90,11 @@ publicvariableserver "diag_log_server";
                     };          
 				};   
                                  		
-			}forEach weaponsArray;
+}forEach weaponsArray;
 
-			{
-				//if(_itemText == _x select 0) then {
-                                    if(_itemText == _x select 1 ||_itemText == _x select 0) then {
-					_class = _x select 1;
+			{_Name = getText (configFile >> "CfgMagazines" >> (_x select 0) >> "displayName");
+				                                    if(_itemText == _Name) then {
+					_class = _x select 0;
 					_mag = (configFile >> "cfgMagazines" >> _class);
 					_type = (getNumber(_mag >> "type"));
 					
@@ -179,16 +148,16 @@ publicvariableserver "diag_log_server";
 				};
 			}forEach ammoArray;
 
-			{
-	            if(_itemText == _x select 0) then {
-					_class = _x select 1;
+			{ _weapon = configFile >> "cfgWeapons" >> (_x select 0);_name = getText(_weapon >> "displayName");
+	            if(_itemText == _name) then {
+					_class = _x select 0;
 					if(_class == "Binocular_Vector" OR _class== "NVGoggles") then {
 						if((_playerSlots select 5) >= 1) then {
 							player addWeapon _class;
                                                         
 						} else {
 							{
-                            	if(_x select 1 == _class) then { _price = _x select 2; _name = _x select 0; };
+                            	if(_x select 0 == _class) then { _price = _x select 1; _name = _x select 0; };
                             }forEach accessoriesArray;
                             
 							gunStoreCart = gunStoreCart - _price;
@@ -202,16 +171,12 @@ publicvariableserver "diag_log_server";
             }forEach accessoriesArray;
 		};
 
-		player setVariable["choco",_playerMoney - gunStoreCart,true];
-                 _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,(_y select 4)+gunStoreCart,_y select 5,_y select 6, _y select 7],true];
-         
-                PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
-		_playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "choco"];
+	player setVariable["cmoney",_playerMoney - gunStoreCart,true];[]call savePlayer;
+                 _y= player getvariable["highscore",[0,0,0,0,0,0,0,0]];_y set [4,(_y select 4)+gunStoreCart]; player setvariable["highscore",_y ,false];
+     _playerMoneyText CtrlsetText format["Cash: $%1", player getVariable "cmoney"];
 		gunStoreCart = 0;
+                reload player;
 		_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 		lbClear _cartlist;
-	};
-};
-
+	
 mutexScriptInProgress = false;

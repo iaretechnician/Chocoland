@@ -1,11 +1,12 @@
 private ["_range","_rvehicle"];
 _rvehicle =0;
+_rjet = 0;
 _random = floor (random 2);
 if(_random ==1)then{
 _randomObject = vehicleStoreArray  call BIS_fnc_selectRandom;
 _rvehicle = _randomObject select 2;
 }else {_randomObject = ChopperStoreArray  call BIS_fnc_selectRandom;
-_rvehicle = _randomObject select 2;
+_rvehicle = _randomObject select 2;_rjet = 1;
 };
 hint "1 Random Vehlice";
  _dir = getdir player;
@@ -16,7 +17,7 @@ _spawn setDir _dir;
  _spawn allowdamage false;
 clearMagazineCargoGlobal _spawn;
 clearWeaponCargoGlobal _spawn;
-_spawn setVariable["original",1,true];
+ if(_rjet == 1)then {{_spawn removeWeapon _x} forEach weapons _spawn;};
 _spawn setVariable["R3F_LOG_disabled", false, true];           
 _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);
@@ -28,7 +29,7 @@ _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_smoke setPos (getPos _spawn);
 		_smoke attachTo [_Parachute,[0,0,-1.5]];
                 };
-player globalchat"use W,A,S,D to controll your Parachute, you can Rotate with mousewheel";
+chocoland globalChat"use W,A,S,D to controll your Parachute, you can Rotate with mousewheel";
 paraId = player addAction[('<t color=''#FF33CC''>' + ('Rotate Vehicle 90°') +  '</t>'),'client\functions\on.sqf'];
 while {(getPos _spawn select 2) > 2 and  (alive _Parachute)and (alive _spawn)}do
 {_Parachute setVelocity [(velocity player select 0)*3, (velocity player select 1)*3, (velocity _Parachute select 2)*1.07];

@@ -1,10 +1,10 @@
-iloopok = 0;
+iloopok2 = 0;
 
-while {iloopok<=60} do
+while {iloopok2<=60} do
 {
 	(vehicle player) setVehicleAmmo 0.9;
 	sleep 0.1;
-        iloopok=iloopok + 0.1;
+        iloopok2=iloopok2 + 0.1;
 };
-hint "Infinite Ammo OFF!";
-iloopok = 0;
+chocoland globalChat "unlimited Ammo OFF!";
+iloopok2 = 0;

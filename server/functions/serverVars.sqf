@@ -1,25 +1,14 @@
-//	@file Version: 1.0
-//	@file Name: serverVars.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy, [404] Pulse
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
-// --------------------------------------------------------------------------------------------------- \\
-// ----------  !DO NOT CHANGE ANYTHING BELOW THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING!	---------- \\
-// ----------																				---------- \\
-// ----------			404Games are not responsible for anything that may happen 			---------- \\
-// ----------			 as a result of unauthorised modifications to this file.			---------- \\
-// --------------------------------------------------------------------------------------------------- \\
 #include "setup.sqf"
 if(!X_Server) exitWith {};
 
 diag_log format["WASTELAND SERVER - Initilizing Server Vars"];
 
-CVG_weapons = [];
-CVG_weapons = CVG_rifles;
+CVG_weapons = [];/*
+CVG_weapons = CVG_weapons + CVG_rifles;
 CVG_weapons = CVG_weapons + CVG_Scoped;
 CVG_weapons = CVG_weapons + CVG_Heavy;
 CVG_weapons = CVG_weapons + CVG_pistols;
-CVG_weapons = CVG_weapons + CVG_Launchers;
+CVG_weapons = CVG_weapons + CVG_Launchers;*/
 
 sideMissionPos = "";
 mainMissionPos = "";
@@ -151,3 +140,25 @@ staticWeaponsList = ["M2StaticMG_US_EP1",
 //Object List - Random Helis.
 staticHeliList = [];
 vehicleWeapons = [];
+MissionSpawnMarkers = [
+            ["Mission_1",false],
+            ["Mission_2",false],
+            ["Mission_3",false],
+            ["Mission_4",false],
+            ["Mission_5",false],
+            ["Mission_6",false],
+            ["Mission_7",false],
+            ["Mission_8",false],
+            ["Mission_9",false],
+            ["Mission_10",false],
+            ["Mission_11",false],
+            ["Mission_12",false],
+            ["Mission_13",false],
+            ["Mission_14",false],
+            ["Mission_15",false],
+            ["Mission_16",false],
+            ["Mission_17",false],
+            ["Mission_18",false],
+            ["Mission_19",false],
+            ["Mission_20",false]
+];

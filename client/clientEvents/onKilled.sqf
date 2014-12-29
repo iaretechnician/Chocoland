@@ -1,54 +1,32 @@
-
-
-//	@file Version: 1.0
-//	@file Name: onKilled.sqf
-//	@file Author: [404] Deadbeat
-//	@file Created: 20/11/2012 05:19
-//	@file Args:
-
+if (isServer) then {_id = PlayerCDeath spawn serverPlayerDied;};
 _player = (_this select 0) select 0;
 _killer = (_this select 0) select 1;
-
-
-if((_player getvariable"donator") == 1)
-then {Donatorweapon = weapons _player;};
-PlayerCDeath = [_player];
-
-publicVariable "PlayerCDeath";
-if (isServer) then {
-	_id = PlayerCDeath spawn serverPlayerDied; 
-};
-
-if(!local _player) exitwith {};
-
-//custom 
-_y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,(_y select 2)+1,_y select 3,_y select 4,_y select 5,_y select 6, _y select 7],true];
-         
+_distance = _player distance _killer;
+//_playername = name _player;
+//_killername = name _killer;
+_kbounty= _killer getvariable ["bounty",1];
+_pbounty= _player getvariable ["bounty",1];
+if(gunner (vehicle _killer) == _killer)then{
+_kbounty= (gunner (vehicle _killer)) getVariable ["bounty",1];};
+_reward = 1000 max floor(_kbounty *_pbounty *1000);
+if(_player getvariable["donator",0] == 1)then {Donatorweapon = weapons _player;};
+PlayerCDeath = [_player];publicVariable "PlayerCDeath";
+_y= _player getvariable"highscore";_y set [2,(_y select 2)+1]; _player setvariable["highscore",_y,false];
 _player setVariable["basecore",0,false];
-if (isPlayer _killer) then {	//Money reward for kills - Uses RemoteExec on Killer
+if (isPlayer _killer && _Player != _Killer) then {
+_string =format["%1 killed %2 (+%3$,+%5 %4 meters)",name _killer,name _player,_reward,floor _distance]; 
+_string =format["chocoland globalchat ""%1"";",_string];chocostring=_string;publicvariable"chocostring";call compile _string;
 _sidePlayer = side (group _player);
 _sideKiller = side (group _killer);
 _killerUID = getPlayerUID _killer;
 _groupMemberUIDs = [];
-if(count units group player > 1) then { //Get your group member UIDs
-	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;
+if(count units group player > 1) then {	{_groupMemberUIDs set [count _groupMemberUIDs, getPlayerUID _x];}forEach units player;};
+if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs))) then {
+[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
+}else{
+[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _reward] call RE;};
+        
 };
-
-if ((_sidePlayer == _sideKiller) && ((_sidePlayer in [west,east]) || (_killerUID in _groupMemberUIDs)) && !(_Player == _Killer)) then {
-		[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "punish", _player] call RE;
-	}else{
-		if(_Player != _Killer)then{	//Give the killer his deserved reward.
-	
-	 //_killerb = _Killer getvariable"bounty";if(_killerb==0)then{_killerb=1;};if(isnil "_killerb")then{_killerb=1;};
-         _playerb = _Player getVariable"bounty";if(_playerb==0)then{_playerb=0;};if(isnil "_playerb")then{_playerb=0;};
-         _reward = 100 max floor(250 * _playerb);
-[nil,_killer, "loc", rEXECVM, "client\functions\moneyReward.sqf", "reward", _player, _reward, _killerb, _playerb] call RE;
-[nil,_player, "loc", rEXECVM, "client\functions\killerposition.sqf", _killer] call RE;
-		};
-	};
-};
-//!custom
-                            
 if((_player != _killer) && (vehicle _player != vehicle _killer) && (playerSide == side _killer) && (str(playerSide) in ["WEST", "EAST"])) then {
 	pvar_PlayerTeamKiller = objNull;
 	if(_killer isKindOf "CAManBase") then {
@@ -115,5 +93,5 @@ if((_player getVariable "repairkits") > 0) then {
 
 true spawn {
 	waitUntil {playerRespawnTime < 2};
-	titleText ["", "BLACK OUT", 1];
+	titleRsc["introImage", "PLAIN",8];
 };

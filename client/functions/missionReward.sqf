@@ -1,33 +1,13 @@
-
 // THANKS to KiloSwiss  scripty by KiloSwiss
 private["_action","_victim","_reward","_punishment","_killerMoney","_newMoney"];
-
 _action = _this select 0;
 _reward = _this select 2;
-
-
 switch (_action) do{
-	
-	case "reward" :{
-
-		_y= player getvariable"highscore";
- if( _y select 3 > 100000)then{player setvariable["highscore",[_y select 0,_y select 1,_y select 2,0,_y select 4,_y select 5,_y select 6, _y select 7],true];
-};player setvariable["highscore",[_y select 0,_y select 1,_y select 2,(_y select 3)+1,_y select 4,_y select 5,_y select 6, _y select 7],true];
-         
-		_killerMoney = player getVariable "choco";
-                _bounty = player getVariable "bounty";
-player setvariable["bounty",_bounty + chocobounty,true];
-                if(_bounty ==0) then{_bounty =1;};
-                if(_bounty >=5) then{_bounty =5;};
-		_newMoney = (_reward * _bounty)+ _killerMoney;
-                _missionreward= _reward * _bounty;
-                if(servertime > 600)then{
-		player setVariable ["choco", _newMoney, true];
-                titleText [format["\n +%1$ for Mission", _missionreward], "PLAIN DOWN", 0]}else{
-                player setVariable ["choco", _newMoney*2, true];
-                titleText [format["\n +%1$Bonus for Mission", _missionreward*2], "PLAIN DOWN", 0];};
-                
-        
-            
-	};
-};
+		case "reward" :{
+		_y= player getvariable["highscore",[0,0,0,0,0,0,0,0]];_y set [3,(_y select 3)+1];
+player setvariable["highscore",_y,false];
+		_killerMoney = count playableunits * 1000;
+                []call countingbounty;  []call countingbounty;
+_xr= (player getvariable["cmoney",0]);
+player setVariable ["cmoney", _killerMoney + _xr, true];
+titleText [format["\n +%1$for Mission", _killermoney], "PLAIN DOWN", 0]};};

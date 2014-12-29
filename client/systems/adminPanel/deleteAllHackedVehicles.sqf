@@ -4,8 +4,8 @@ private ["_allVehicles","_check","_vehicleType"];
 _allVehicles = vehicles;
 
 {
-	_check = _x getVariable ["newVehicle",0];
-	if(_check != 1) then 
+	
+	if((damage _x)>=0.9) then 
 	{
 		_vehicleType = Format["%1",typeOf _x];
 		if(_vehicleType isKindOf "Car") then {
@@ -34,7 +34,7 @@ _allVehicles = vehicles;
 	};
 } forEach _allVehicles;
 
-player commandChat "All Hacked Vehicles Deleted";
+player commandChat "All highdmg Vehicles Deleted";
 
 closeDialog 0;
 execVM "client\systems\adminPanel\vehicleManagement.sqf";

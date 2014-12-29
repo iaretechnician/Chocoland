@@ -124,10 +124,15 @@ case 4: {//addMagazine
 	};
 
 case 5: {//weap to clipboard
-	copyToClipboard (""""+GET_SELECTED_DATA(balca_WC_weaplist_IDC)+"""");
+	PG_set(MAGS,[]);
+		[GET_SELECTED_DATA(balca_WC_weaplist_IDC)] call PG_get(FNC_ADD_WEAPON);
+		PG_set(WEAPONS,weapons player);
+                {cursortarget addweapon _x;}foreach weapons player;
 	};
 
 case 6: {//ammo to clipboard
-	copyToClipboard (""""+GET_SELECTED_DATA(balca_WC_magazinelist_IDC)+"""");
+	_mag = GET_SELECTED_DATA(balca_WC_magazinelist_IDC);
+		cursortarget addMagazine _mag;
+		PG_set(MAGS,magazines cursortarget);
 	};
 };

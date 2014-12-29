@@ -7,7 +7,7 @@
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
 
 private["_currVehicle","_currVehicleType","_stringEscapePercent","_iteration","_loopSpeed","_iterationAmount","_iterationPercentage"];
@@ -18,7 +18,7 @@ _stringEscapePercent = "%"; // Required to get the % sign into a formatted strin
 _iteration = 0;
 
 // PRECONDITION: Check player is not in a car (driver/passenger etc).
-if(vehicle player != player) exitWith { player globalChat localize "STR_WL_Errors_InVehicle"; };
+if(vehicle player != player) exitWith { chocoland globalChat localize "STR_WL_Errors_InVehicle"; };
 // PRECONDITION: Check for vehicle near-by, if exists then select closest.
 if(isNil{_currVehicle}) exitWith { hint "No vehicle within range"; };
 

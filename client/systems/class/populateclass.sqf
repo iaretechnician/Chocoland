@@ -22,7 +22,7 @@ _itemInfo ctrlSetStructuredText parseText "";
 
 if ((_x select 2) == 3 and (side player == resistance))then{ _itemlistIndex = _itemlist lbAdd format["%1",_x select 0];};
 
-_uid = getPlayerUID player;
+_uid = puid;
 if ((_x select 2) == 4 and (_uid in serverAdministrators))then{ _itemlistIndex = _itemlist lbAdd format["%1",_x select 0];};
 
 

@@ -43,7 +43,7 @@ switch(_switch) do
 			{
             	// Check if mutex lock is active.
 				if(mutexScriptInProgress) exitWith {
-					player globalChat localize "STR_WL_Errors_InProgress";
+					chocoland globalChat localize "STR_WL_Errors_InProgress";
 				};
             
             	mutexScriptInProgress = true;
@@ -73,7 +73,7 @@ switch(_switch) do
 			{
             	// Check if mutex lock is active.
 				if(mutexScriptInProgress) exitWith {
-					player globalChat localize "STR_WL_Errors_InProgress";
+					chocoland globalChat localize "STR_WL_Errors_InProgress";
 				};
             	
                 mutexScriptInProgress = true;
@@ -119,13 +119,16 @@ switch(_switch) do
 				hint "You are now fully healed";
 			};
 			case "camonet": 
-			{
+			{if(claymorelimit >= 2)exitwith{hint " you have allready 2 active Chocobombs";mutexScriptInProgress = false;  closeDialog 0;};
 				_playerPos = getPosATL player;
 				player setVariable["camonet",(player getVariable "camonet")-1,true];
+                                
 				_dir = getdir player;
 				_deployedCamoNet = "Explosive" createVehicle (position player); _deployedCamoNet setPos _playerPos;
 				_deployedCamoNet setDir _dir;
 				hint "ChocoBomb deployed";
+                                chocoland globalChat"Claymore added to ChocoBomb";
+                                [_deployedCamoNet]execVM"client\chocofunc\claymore.sqf";
 			};            
             case "spawnBeacon": 
             {
@@ -138,15 +141,15 @@ switch(_switch) do
 	{
 
 		if(_data == "") exitWith {
-        	player globalChat "YOU NEED TO SELECT AN ITEM TO DROP!";
+        	chocoland globalChat "YOU NEED TO SELECT AN ITEM TO DROP!";
         };
 		// Check if mutex lock is active.
 		if(mutexScriptInProgress) exitWith {
-			player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
+			chocoland globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 		};
         
 		if(vehicle player != player) exitwith {
-        	player globalChat "YOU ARE CURRENTLY BUSY!";
+        	chocoland globalChat "YOU ARE CURRENTLY BUSY!";
         };
         
         mutexScriptInProgress = true;

@@ -1,10 +1,4 @@
 
-
-//	**ModdedGaming.Org**
-//	**Original by tonic altered by [404] Deadbeat**
-//	**Custom Modifications By ModdedGaming.Org**
-//	**If you use any of these files, please leave credits**
-// by Xeno
 player removeaction playerbaseObject;
 _private =["_pos"];
 _pos = player;

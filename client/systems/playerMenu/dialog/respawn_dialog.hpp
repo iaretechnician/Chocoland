@@ -27,8 +27,8 @@
 		class MainBackground: w_RscPicture
 		{
 			idc = -1;
-			text = "ui_background_controlers_ca.paa";
-
+			//text = "ui_background_controlers_ca.paa";
+text="";
 			x = 0.2745 * safezoneW + safezoneX;
 			y = 0.166 * safezoneH + safezoneY;
 			w = 0.600 * safezoneW;
@@ -38,7 +38,7 @@
 		class RespawnMenuTitle: w_RscText
 		{
 			idc = -1;
-			text = "heavensdelight.de";
+			text = "";
 			sizeEx = 0.06;
 
 			x = 0.4475 * safezoneW + safezoneX;
@@ -210,7 +210,7 @@
 		{
 			idc = -1;
 			onButtonClick = "execVM 'client\functions\spawnOnBeacon.sqf'";
-			text = "choco beacon";
+			text = "Choco Beacon";
 
 			x = 0.56 * safezoneW + safezoneX;
 			y = 0.310 * safezoneH + safezoneY;
@@ -269,7 +269,7 @@
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\functions\switchButtonNames.sqf'";
-			text = "Towns";
+			text = "Friends<3";
 
 			x = 0.46 * safezoneW + safezoneX;
 			y = 0.45 * safezoneH + safezoneY;

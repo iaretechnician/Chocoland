@@ -11,7 +11,7 @@ hint " Random weapon";
                         _spawn setpos _pos;
 			_spawn setDir _dir;
                         _spawn allowdamage false;
-			_spawn setVariable["original",1,true];
+			
 			_spawn setVariable["R3F_LOG_disabled", false, true];           
               _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);

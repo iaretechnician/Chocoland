@@ -11,32 +11,35 @@ aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">link choco 
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Deploy radar</t>"), "client\functions\radarDeploy.sqf",nil, 6, false, false, "", '_currRadar = (nearestobjects [player, ["M1133_MEV_EP1"],  5]); player distance (_currRadar select 0) < 5; ((nearestObjects[player, ["M1133_MEV_EP1"], 10] select 0) getVariable "deployed") == 0 AND str(playerSide) != "GUER"']];
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#E01B1B"">Repack radar</t>"), "client\functions\radarPack.sqf", nil, 6, false, false, "", '_currRadar = (nearestobjects [player, ["M1130_HQ_unfolded_Base_EP1"],  5]); player distance (_currRadar select 0) < 5; ((nearestObjects[player, ["M1130_HQ_unfolded_Base_EP1"], 10] select 0) getVariable "deployed") == 1 AND str(playerSide) != "GUER"']];
 //Mission interactions
-aActionsIDs = aActionsIDs + [player addAction[("<t color=""#21DE31"">Release VIP</t>"), "client\functions\releaseVIP.sqf", nil, 6, false, true, "", '_unitVIP = (nearestobjects [player, ["Functionary1"],  5] select 0); alive _unitVIP; (_unitVIP getVariable "released") == 0']];
 //Camonet pickup
 aActionsIDs = aActionsIDs + [player addAction["Pickup ChocoBomb", "client\actions\pickupcamonet.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
-aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\functions\chocobomb.sqf", [_bomb], 1, false, false, "", '_bomb = (nearestobjects [player, ["Explosive"],  5] select 0);player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
+aActionsIDs = aActionsIDs + [player addAction["Activate ChocoBomb", "client\chocofunc\chocobomb.sqf", [_bomb], 1, false, false, "", '_bomb = (nearestobjects [player, ["Explosive"],  5] select 0);player distance (nearestobjects [player, ["Explosive"],  5] select 0) < 5']];
 //Cancel action
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#FFFFFF"">Cancel Action</t>"), "noscript.sqf", 'doCancelAction = true;', 1, false, false, "", 'mutexScriptInProgress']];
 aActionsIDs = aActionsIDs + [player addAction["Get on Board", "client\functions\getonBoard.sqf", [], -12, false, false, "", 'player distance (nearestobjects [player, ["Land_LHD_1"],  500] select 0) < 800 && ((getposasl player) select 2) < 102']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\functions\basecore.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 0;']];
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\functions\basecore_d.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 1;']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 2", "client\functions\basecore.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
-aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 2", "client\functions\basecore_d.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
-aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 3", "client\functions\basecore.sqf", [3], 0, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore", "client\chocofunc\basecore.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore", "client\chocofunc\basecore_d.sqf", [1], 1, false, false, "", 'player distance (nearestobjects [player, ["Misc_cargo_cont_tiny"],  20] select 0) < 5; _obj = (nearestobjects [player, ["Misc_cargo_cont_tiny"],  5]); (_obj select 0 )getvariable"basecore"== 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 2", "client\chocofunc\basecore.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 2", "client\chocofunc\basecore_d.sqf", [2], 0, false, false, "", 'player distance (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20] select 0) < 20; _obj = (nearestobjects [player, ["TK_GUE_WarfareBUAVterminal_EP1"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Activate BaseCore lvl 3", "client\chocofunc\basecore.sqf", [3], 0, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 0;']];
+aActionsIDs = aActionsIDs + [player addAction["Capture Server Core",  "client\chocofunc\capturingCore.sqf", _obj, 0, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  30] select 0) < 30; _obj = (nearestobjects [player, ["76n6ClamShell"],  30]);(_obj select 0)getvariable"basecore" == 1;']];
+aActionsIDs = aActionsIDs + [player addAction["Destroy Server Core",  "client\chocofunc\capturingCore2.sqf", _obj, 0, false, false, "", 'player distance (nearestobjects [player, ["76n6ClamShell"],  30] select 0) < 30; _obj = (nearestobjects [player, ["76n6ClamShell"],  30]);(_obj select 0)getvariable"basecore" == 0;']];
+
+    
 aActionsIDs = aActionsIDs + [player addAction["Destroy BaseCore lvl 3", "client\functions\basecore_d.sqf", [3], 0, false, false, "", 'player distance (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20] select 0) < 20; _obj = (nearestobjects [player, ["USMC_WarfareBAircraftFactory"],  20]); (_obj select 0 )getvariable"basecore" == 1;']];
 aActionsIDs = aActionsIDs + [player addAction["Redeem Chocos", "client\functions\satPhone.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["SatPhone"],  20] select 0) < 3']];
 //HaloSpawn
 aActionsIDs = aActionsIDs + [player addAction["Ready for HaloSpawn", "client\functions\spawnHalo.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["ProtectionZone_Ep1"],  30] select 0) < 30 And spawnHalo']];
 // chocopack 
+aActionsIDs = aActionsIDs + [player addAction["Rescue Animal", "client\chocofunc\rescueanimal.sqf", [], 1, false, false, "", 'player distance (nearestobjects [player, ["Hen","Rabbit","Cow04","Pastor","Goat"],  5] select 0) < 5 AND !RESCUE']];
+
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">weapon to Chocopack</t>"), "addons\scripts\saveChocopack.sqf",[],-10,false,false,"", '_primary = primaryWeapon player;_primary != ""']];
 aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">Chocopack</t>"), "addons\scripts\createChocopack.sqf",[],-10,false,false,"", '_primary = primaryWeapon player;_primary == ""']];
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">setHome</t>"), "client\chocofunc\home.sqf",1,-10,false,false,"", '!home']];
+aActionsIDs = aActionsIDs + [player addAction[("<t color=""#BEBEBE"">GotoHome</t>"), "client\chocofunc\home.sqf",2,-10,false,false,"", 'home && !Dcooldown']];
 
 if(player getvariable"sat" == 1)then 
 {
     playersatId = player addAction [format ["<t color='#585858'>%1</t>", "activate Sattelite"], "client\systems\generalStore\adds\fnc_sattelite_fnc.sqf",[],-12,false,false,"","local player"];
-    player globalchat"check mouseWheel commands for Sattelite";
+    chocoland globalChat"check mouseWheel commands for Sattelite";
 };
-aActionsIDs = aActionsIDs + [player addAction["decoding", "client\functions\decoder.sqf", [], -10, false, false, "", '!Dcooldown']];
-aActionsIDs = aActionsIDs + [player addAction["Restore Baseparts(F6)", "client\chocofunc\restoreObjects.sqf", [], -11, false, false, "", '!Dcooldown']];
-
-playerdoor =  [player addAction["ChocoDoor", "client\functions\chocodoor.sqf", [], -10, false, false, "", 'chocodoor ==0']];

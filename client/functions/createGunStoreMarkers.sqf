@@ -1,19 +1,18 @@
-player setVariable["lastPos",[],true];
-sleep 60;
-_y= player getvariable"highscore";
-if((_y select 7)>=999999)then {player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, 0],true];};
+lastPos=0;
+sleep 6;
+_distancefoot = 1;
 
-while {walked}do {
-    waituntil {vehicle player == player};
+while {true}do {
+ if(walked)then {
+
 _charPos = getPos player;
-private["_debug","_distance"];
-
-_distance = [0,0,0] distance _charPos;
-
-if (_distance > 10000) exitWith { };
-_lastPos =player getVariable"lastPos";
-_distanceFoot = round(_charPos distance _lastPos);
-if (_distanceFoot > 1000) exitWith {};
-_y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,_y select 5,_y select 6, (_y select 7)+_distanceFoot],true];
-player setVariable["lastPos",_charPos,true];
-sleep 10;}; 
+_distance = lastPos distance _charPos;
+_distanceFoot = floor(1 max _distance);
+chocoland globalChat format ["%1 feet distance",_distance];
+if (_distanceFoot < 1000) then {
+_y= player getvariable["highscore",[0,0,0,0,0,0,0,0]];_y set [7,(_y select 7)+_distanceFoot];player setvariable["highscore",_y,false];
+lastPos=_charPos;
+};
+};
+sleep 10;
+};

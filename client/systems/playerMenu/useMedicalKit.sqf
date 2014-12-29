@@ -6,7 +6,7 @@
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
             	
 mutexScriptInProgress = true;

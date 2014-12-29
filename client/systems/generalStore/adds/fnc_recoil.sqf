@@ -10,7 +10,7 @@ _spawn = createVehicle [_rvehicle,_pos,[], 0,"CAN_COLLIDE"];
                         _spawn allowdamage false;
 			clearMagazineCargoGlobal _spawn;
 			clearWeaponCargoGlobal _spawn;
-			_spawn setVariable["original",1,true];
+			
 			_spawn setVariable["R3F_LOG_disabled", false, true];           
               _Parachute = "ParachuteBigWest_EP1" createVehicle position _spawn;
 		_Parachute setPos (getPos _spawn);

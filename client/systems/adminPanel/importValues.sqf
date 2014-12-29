@@ -31,8 +31,8 @@
 disableSerialization;
 
 private ["_index1","_type1","_dialog","_vehicleListBox","_weaponText","_userText","_damageText","_speedText","_data1"];
-_uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
+_uid = puid;
+if (_uid in admins) then {
 	_index1 = _this select 1;
 	_type1 = _this select 0;
 	
@@ -83,21 +83,21 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	    {
 	        if (str(_x) == _data1) exitwith {
 	            _itemsText ctrlSetText format["Items: %1",weapons _x];
-                    _test=[_x getVariable "choco"] call fnc_number;
+                    _test=[_x getVariable "cmoney"] call fnc_number;
 	            _currentGunText ctrlSetText format["Money: %1", _test];
 	            _skinText ctrlSetText format["Skin: %1",typeOf(_x)];
 	            _posText ctrlSetText format["Position: %1",position _x];
 	            _objectText ctrlSetText format["Slot: %1",_x];
-	            _currentbountyText ctrlSetText format["chocos: %1",_x getVariable "bounty"];
-                    _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable"donator"];
-                    _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getVariable"basebuilder"];
-                    _currentdecoderText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                    _currentsavevehicleText ctrlSetText format["savevehicle: %1",_x getVariable"saveVehicle"];
-                    _currentsaveweaponText ctrlSetText format["saveweapon: %1",_x getVariable"chocopack"];
-                    _currentdecodeText ctrlSetText format["decoder: %1",_x getVariable"decoder"];
-                    _currentattach ctrlSetText format["attach: %1",_x getVariable"attach"];
-                    _currentupgrades ctrlSetText format["upgrades: %1",_x getVariable"upgrades"];
-                    _currentsavevehicle2 ctrlSetText format["saveVehicle2: %1",_x getVariable"saveVehicle2"];
+	            _currentbountyText ctrlSetText format["chocos: %1",_x getVariable ["bounty",0]];
+                    _currentdonatorText ctrlSetText format["Donator: %1",_x getVariable["donator",0]];
+                    _currentbasebuilderText ctrlSetText format["basebuilder: %1",_x getvariable["basebuilder",0]];
+                  
+                    _currentsavevehicleText ctrlSetText format["savevehicle: %1",_x getVariable["saveVehicle",0]];
+                    _currentsaveweaponText ctrlSetText format["saveweapon: %1",_x getVariable["chocopack",0]];
+                    _currentdecodeText ctrlSetText format["decoder: %1",_x getVariable["decoder",0]];
+                    _currentattach ctrlSetText format["attach: %1",_x getVariable["attach",0]];
+                 //   _currentupgrades ctrlSetText format["upgrades: %1",_x getVariable"upgrades"];
+                    _currentsavevehicle2 ctrlSetText format["saveVehicle2: %1",_x getVariable["saveVehicle2",0]];
 	            //Calculate Health 0 - 100
 				_decimalPlaces = 2;
 				_health = damage _x;

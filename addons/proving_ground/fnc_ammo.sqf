@@ -1,4 +1,4 @@
-
+if (isnil "infammook") then {infammook = 0;};
 
 if (infammook==0) then
 {

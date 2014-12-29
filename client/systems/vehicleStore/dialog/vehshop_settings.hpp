@@ -42,13 +42,14 @@ class vehshopd {
 		class PlayerMoneyText: w_RscText
 		{
 			idc = vehshop_money;
-			text = "Price:";
+			text = "Price:0$";
 
-			 x = 0.10 * safezoneW + safezoneX;
+			 x = 0.065 * safezoneW + safezoneX;
 			y = 0.013 * safezoneH + safezoneY;
 			w = 0.165 * safezoneW;
 			h = 0.040 * safezoneH;
 		};
+               			
 	};
 	
 	class controls {
@@ -118,17 +119,17 @@ class vehshopd {
 		class BuyVehicleButton: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "[] execVM 'client\systems\vehicleStore\buyVehicle.sqf'";
-			text = "Buy";
+			onButtonClick = "[0] execVM 'client\systems\vehicleStore\buyVehicle.sqf'";
+			text = "<img size='3' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 
-                        x = 0.12 * safezoneW + safezoneX;
-			y = 0.54 * safezoneH + safezoneY;
-			w = 0.065 * safezoneW;
-			h = 0.040 * safezoneH;
+                       x = 0.09 * safezoneW + safezoneX;
+			y = 0.52 * safezoneH + safezoneY;
+			w = 0.12 * safezoneW;
+			h = 0.080 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
 
 		};
-
+             
 		class CancelButton: w_RscButton
 		{
 			idc = -1;

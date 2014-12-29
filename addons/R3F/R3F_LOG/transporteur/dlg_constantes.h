@@ -1,7 +1,3 @@
-/**
- * Constantes pour rendre les définitions des boîtes de dialogue plus lisible et maintenable
- */
-
 #define R3F_ARTY_ID_transporteur_START 65430
 
 #define R3F_LOG_IDD_dlg_contenu_vehicule (R3F_ARTY_ID_transporteur_START + 1)

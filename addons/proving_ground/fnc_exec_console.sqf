@@ -82,9 +82,7 @@ switch (_mode) do {
 
 		[] spawn {
 			_time = time+2;
-			waitUntil{
-				((count(player getVariable ['PG_result',[]])==1)||_time>time)
-			};
+			waitUntil{((count(player getVariable ['PG_result',[]])==1)||_time>time)	};
 			_res = player getVariable ['PG_result',[""]];
 			GET_CTRL(balca_debug_console_result_IDC) ctrlSetText str(_res select 0);
 			player setVariable ['PG_result',[]];

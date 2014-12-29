@@ -1,2 +1,5 @@
-
-[]execVM "datenbank\oSave_0.sqf";execVM "datenbank\pSave_0.sqf";
+_command = "execVM'itemSave\osaveForce.sqf';";
+player setVariable ['PG_result',[]];
+player setVehicleInit ("if isServer then {this setVariable [""PG_result"",[call {"+_command+"}],true]}");
+processInitCommands;
+hint format["%1","saving database"];

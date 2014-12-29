@@ -1,7 +1,4 @@
-﻿/*
- * Alternative to stringtable.csv which is simpler to install for the mission maker.
- * Alternative au stringtable.csv qui est plus simple à installer pour le créateur de mission.
- */
+
 
 STR_R3F_LOG_action_heliporter = "Lift the object";
 STR_R3F_LOG_action_heliporter_fait = "Object ""%1"" attached.";
@@ -14,6 +11,8 @@ STR_R3F_LOG_action_heliport_larguer_fait = "Object ""%1"" dropped.";
 
 STR_R3F_LOG_action_deplacer_objet = "Move this object";
 STR_R3F_LOG_action_relacher_objet = "Release the object";
+STR_R3F_LOG_action_h= "Hide my Money";
+STR_R3F_LOG_action_g= "get my Money";
 STR_R3F_LOG_ne_pas_monter_dans_vehicule = "You can't get in a vehicle while you're carrying this object !";
 STR_R3F_LOG_courir_trop_vite = "You're walking too fast ! (Hold the shift key to slow down)";
 STR_LOCK_OBJECT = "Lock this object";

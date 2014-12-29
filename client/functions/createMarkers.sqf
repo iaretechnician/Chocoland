@@ -1,15 +1,19 @@
+// new marker script triggers in near 1000meters for all basecores and exchanger
+setGroupIconsVisible [true, true];
+function_marker = {
+     _cores = nearestObjects [player, ["RU_Pilot"], 10000];
+     {
+         clearGroupIcons group _x;(group _x) addGroupIcon ["x_art"];
+     if( _x getvariable"name" == "Server")then {(group _x) setGroupIconParams [[0, 1, 0, 1],format ["%1 Core",_x getvariable"name"], 0.4, true];}
+   else{
+     (group _x) setGroupIconParams [[0, 1, 0, 1],format ["%1`s Core (%2$)",_x getvariable"name",_x getvariable["wallet",2]], 0.4, true];};
+     }foreach _cores;
+    };
 
-_unit = _this select 0;
-_marker = _this select 1;
-_test = _this select 2;
-
-
-_hm = _hm + createMarker ["_marker", position _unit];
-"_marker" setmarkershape "ICON";
-"_marker" setMarkerType "mil_dot";
-"_marker" setmarkercolor "ColorRed";
-"_marker" setmarkerText format ["%1 BC %2 $)",_marker,_test];
-
-publicvariable "_hm";
-sleep 1;
-deleteMarker "_marker";
+while{walked} do {
+    []spawn function_marker;
+    
+        sleep 5;};
+        functionMarker = false;
+waituntil{functionMarker};
+execVM"client\functions\createMarkers.sqf";

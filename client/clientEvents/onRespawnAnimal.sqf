@@ -28,6 +28,6 @@ waitUntil {respawnDialogActive};
 while {respawnDialogActive} do {
 	titleText ["", "BLACK OUT", 0.00001];
 };
-titleText ["", "BLACK IN", 0.00001];
+titleText ["", "BLACK IN", 1];
 player enableSimulation true; 
 playerSpawning = false;

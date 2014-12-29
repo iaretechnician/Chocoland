@@ -1,12 +1,13 @@
 
 _currObject = getPos player nearestObject "SatPhone"; 
-
+_chance = 0;
+_percent =0;
+_totalDuration = floor (random 10)+1;
 if (player distance _currObject < 4)
  then {
        process = true;
-		_totalDuration = 3;
-		_unlockDuration = _totalDuration;
-		_iteration = 0;
+	_unlockDuration = _totalDuration;
+	_iteration = 0;
                
 _stringEscapePercent = "%";
 		player switchMove "AinvPknlMstpSlayWrflDnon_medic";
@@ -27,14 +28,13 @@ _stringEscapePercent = "%";
 		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
 			2 cutText [format["redeeming chocos %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		    sleep 1;
-			if (_iteration >= _totalDuration) exitWith { 
-		        sleep 1;
-               
- _bounty= player getVariable"bounty";
-titleText [format["\n you got 1 chocos"], "PLAIN DOWN", 0];
-_ck=_bounty + chocobounty;
+			if (_iteration >= _totalDuration) exitWith {
+                          
+[]call countingbounty;[]call countingbounty;
+titleText [format["\n you got +0.2 Multiplier"], "PLAIN DOWN", 0];
+
                 deletevehicle _currObject;
-                player setvariable["bounty", _ck,true];
+            
                 process = false;
                 }; 
 		};

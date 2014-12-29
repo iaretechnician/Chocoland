@@ -3,6 +3,7 @@ disableSerialization;
 
 while {true} do
 {
+    
 	waitUntil {!(isNull (findDisplay 49))};
 	((findDisplay 49) displayCtrl 104) ctrlEnable false;
 	_time = time;
@@ -11,7 +12,8 @@ while {true} do
 	if (!(isNull (findDisplay 49))) then
 	{
 		((findDisplay 49) displayCtrl 104) ctrlEnable true;
-		
+		titleText ["", "BLACK IN", 0.01];
+            
                 waitUntil {isNull (findDisplay 49)};
 	};
 };

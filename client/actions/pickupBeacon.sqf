@@ -8,13 +8,13 @@
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
 
 private["_stringEscapePercent","_totalDuration","_lockDuration","_iteration","_iterationPercentage","_currSpawnBeaconFaction", "_destroyOrSteal", "_currBeaconOwnerUID", "_currBeaconTemp"];
 
 if(vehicle player != player) exitWith {
-	player globalChat localize "STR_WL_Errors_InVehicle";
+	chocoland globalChat localize "STR_WL_Errors_InVehicle";
 };
 
 _chocobeacon = (nearestobjects [getposatl player, ["Satelit"],  5] select 0);
@@ -37,7 +37,7 @@ _players =1;
 		for "_iteration" from 1 to _lockDuration do {
 
            	if(vehicle player != player) exitWith { // A little inspiration from R3F
-				player globalChat localize "STR_WL_Errors_BeaconInVehicle";
+				chocoland globalChat localize "STR_WL_Errors_BeaconInVehicle";
         		player action ["eject", vehicle player];
 				sleep 1;
 				mutexScriptInProgress = false;
@@ -91,7 +91,7 @@ _players =1;
 		for "_iteration" from 1 to _lockDuration do {
 
                         if(vehicle player != player) exitWith { // A little inspiration from R3F
-			        player globalChat localize "STR_WL_Errors_BeaconInVehicle";
+			        chocoland globalChat localize "STR_WL_Errors_BeaconInVehicle";
         		        player action ["eject", vehicle player];
 			        sleep 1;
 				mutexScriptInProgress = false;
@@ -145,7 +145,7 @@ _lockDuration = 0;
 		for "_iteration" from 1 to _lockDuration do {
 
                         if(vehicle player != player) exitWith { // A little inspiration from R3F
-			        player globalChat localize "STR_WL_Errors_BeaconInVehicle";
+			        chocoland globalChat localize "STR_WL_Errors_BeaconInVehicle";
         		        player action ["eject", vehicle player];
 			        sleep 1;
 				mutexScriptInProgress = false;
@@ -177,7 +177,7 @@ _lockDuration = 0;
 		                2 cutText ["", "PLAIN DOWN", 1];
 chocobeacon = (nearestobjects [getposatl player, ["Satelit"],  5] select 0);
 player setvariable["beacon",1,true];
-player globalChat  "you linked successfully to this choco beacon";
+chocoland globalChat  "you linked successfully to this choco beacon";
  mutexScriptInProgress = false;
 			};
 		};

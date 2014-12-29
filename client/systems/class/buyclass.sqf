@@ -2,7 +2,7 @@
 
 #include "dialog\classDefines.sqf";
 disableSerialization;
-
+[]call statsave;
 _size = 0;
 _price = 0;
 _ObjectsInArea = [];
@@ -73,3 +73,4 @@ classselect =1;			//content
 		};
 	}}forEach donatorClassrray;
 };
+[2,player]call statload;

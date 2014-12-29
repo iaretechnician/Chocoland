@@ -20,10 +20,10 @@ vehicleSave attachTo [vehiclesaveattach, _position_attache];
 
     hint format ["%1 saved to Hangar! (spawn it on your PlayerMenu)", vehiclename];
     sleep 1;
-    player globalChat "Vehicle Saved.";
+    chocoland globalChat "Vehicle Saved.";
     player SwitchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
       } 
       else
-      { player globalChat "There is another Player in this Vehicle.";sleep 1;};
+      { chocoland globalChat "There is another Player in this Vehicle.";sleep 1;};
 } 
-else { player globalChat "cannot Save Vehicle,pls stop and turn engine Off"; sleep 1;};
+else { chocoland globalChat "cannot Save Vehicle,pls stop and turn engine Off"; sleep 1;};

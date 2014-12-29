@@ -9,7 +9,7 @@
 // Check if mutex lock is active.
 if(mutexScriptInProgress || geldaction) exitWith 
 {
-	//player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
+	//chocoland globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 };
 _server =0;
 _totalDuration = 1;
@@ -20,12 +20,12 @@ mutexScriptInProgress = true;
 _moneyObject = (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
 if((_moneyObject getVariable "owner") == "world") then
 {
-   	_moneyObject setVariable ["owner", getPlayerUID player, true];
+   	_moneyObject setVariable ["owner", puid, true];
 };
 
 for "_iteration" from 1 to _lockDuration do 
 {	
-	if((_moneyObject getVariable "owner") != getPlayerUID player) exitWith
+	if((_moneyObject getVariable "owner") != puid) exitWith
 	{
 		
         mutexScriptInProgress = false;  
@@ -33,7 +33,7 @@ for "_iteration" from 1 to _lockDuration do
     	
 	if(vehicle player != player) exitWith 
 	{
-		player globalChat "You can't pick up money whilst in a car";
+		chocoland globalChat "You can't pick up money whilst in a car";
 	//	player action ["eject", vehicle player];
 	//	sleep 1;
 		mutexScriptInProgress = false;
@@ -64,20 +64,16 @@ for "_iteration" from 1 to _lockDuration do
             _moneyObject setVariable ["owner", "world", true];
 		} else {
 		geldaction = true;
-			_money = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "cash");
-                        _server = ((nearestobjects [getpos player, ["EvMoney"],  5] select 0) getVariable "server");
 			deleteVehicle (nearestobjects [getpos player, ["EvMoney"],  5] select 0);
-                        if(_server == 1) then {_money = _money max floor(_money * (player getVariable "bounty"))};
-                     
-                       player globalChat format["You have picked up $%1",_money];
-                        player setVariable["choco", (player getVariable "choco")+_money,true];
-                         _y= player getvariable"highscore"; player setvariable["highscore",[_y select 0,_y select 1,_y select 2,_y select 3,_y select 4,(_y select 5)+_money,_y select 6, _y select 7],true];
-         
-			
-			mutexScriptInProgress = false;
-		        PDB_saveReq = getPlayerUID player;
-                        publicVariableServer "PDB_saveReq";
-                        geldaction =false;
+                        _money = 1 max floor(random 20);
+                        []call countingbounty;
+                     _r = floor (random 1000);
+                    _money = (_money *250) + _r;
+                    _money = round (_money * (player getvariable"bounty"));
+                       chocoland globalChat format["You have picked up %1$",_money];
+                        player setVariable["cmoney", (player getVariable "cmoney")+_money,true];
+                   mutexScriptInProgress = false;
+		   geldaction =false;
 		};      
 	};     
 };

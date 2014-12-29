@@ -17,6 +17,23 @@ class menu1d {
                         
 			
 		};
+                   class WastelandHud_Info:w_RscText
+		{
+			idc = hud_status_idc;
+			type = CT_STRUCTURED_TEXT;
+			size = 0.040;
+			x = safeZoneX + (safeZoneW * (0 + (0.05 / SafeZoneW)));
+                        y = safeZoneY + (safeZoneH * (0 + (0.05 / SafeZoneH)));
+			w = 0.35; h = 0.22;
+			colorText[] = {0,0,1,0.2};
+			lineSpacing = 3;
+			colorBackground[] = {0,0,0,0};
+			text = "Teamspeak: tseu5.vilayer.com:9988<br/>ServerIP: 134.255.217.167:2302";
+			shadow = 0;
+			class Attributes {
+				align = "left";
+			};
+		};
                
 
 		
@@ -101,7 +118,7 @@ class menu1d {
 		{
 			idc = -1;
 			onButtonClick = "[] execVM 'client\systems\gunStore\smartammo.sqf'";
-			text = "Smart Ammo buy";
+			text = "Smart Ammo buy (F3)";
 
 			x = 0.3 * safezoneW + safezoneX;
 			y = 0.5 * safezoneH + safezoneY;
@@ -109,8 +126,19 @@ class menu1d {
 			h = 0.04 * safezoneH;
 
 		};
-               
-                
+                 class smartAmmobutton2: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[] execVM 'client\chocofunc\erfolge.sqf'";
+			text = "Rainbow Flares";
+
+			x = 0.2 * safezoneW + safezoneX;
+			y = 0.5 * safezoneH + safezoneY;
+			w = 0.08 * safezoneW;
+			h = 0.04 * safezoneH;
+
+		};
+              
                 
 	};
 };

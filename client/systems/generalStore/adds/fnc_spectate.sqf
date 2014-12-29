@@ -16,7 +16,7 @@ v 1.01
 3) \0/ Profit! :)
 
 */
- player globalchat"check mouseWheel commands for Sattelite, abort with F3";
+ chocoland globalChat"check mouseWheel commands for Sattelite, abort with F3";
 mycv = cameraView;
 spect = 
 {

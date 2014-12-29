@@ -2,6 +2,7 @@
 #define vehshop_item_TEXT 2002
 #define vehshop_item_list 2003
 #define vehshop_money 2004
+#define vehshop_money2 82004
 #define vehshop_item_pic 2005
 #define vehshop_item_info 2006
 #define vehshop_cart 2007

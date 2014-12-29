@@ -1,19 +1,11 @@
-
-
-//	@file Version: 1.0
-//	@file Name: weaponInfo.sqf
-//	@file Author: [404] Deadbeat, [404] Costlyy
-//	@file Created: 20/11/2012 05:13
-//	@file Args:
-
 #include "dialog\gunstoreDefines.sqf";
-
 disableSerialization;
 
 //Initialize Values
 _weap_type = "";
 _picture = "";
 _price = 0;
+_price2= 0;
 
 // Grab access to the controls
 _dialog = findDisplay gunshop_DIALOG;
@@ -31,12 +23,13 @@ _gunpicture ctrlSettext _picture;
 //_itemText2 = _ammoselect lbText _selectedItem2;
 _gunlisttext ctrlSetText format [""];	
 _gunlistammo = _dialog displayCtrl gunshop_ammo_list;
+_name="";
 //Check Items Price
-{
-	if(_itemText == _x select 1) then {
-		_weap_type = _x select 2; 
-		_price = _x select 3;
-	    
+{_weapon = configFile >> "cfgWeapons" >> (_x select 1);_name = getText(_weapon >> "displayName");
+	if(_itemText == _name) then {
+		_weap_type = _x select 1; 
+		_price = _x select 2;
+	 
 		_weapon = (configFile >> "cfgWeapons" >> _weap_type);
 	    _gunInfo ctrlSetStructuredText parseText (format ["%1<br/>%2",getText(_weapon >> "displayName"),getText(_weapon >> "descriptionShort")]);
 	    _picture = getText(_weapon >> "picture");
@@ -54,10 +47,11 @@ magazine1=[];
 	}
 }forEach weaponsArray;
 
-{
-	if(_itemText == _x select 0) then {
-		_weap_type = _x select 1; 
-		_price = _x select 2;
+{_displayName = getText (configFile >> "CfgMagazines" >> (_x select 0) >> "displayName");
+	if(_itemText == _displayName) then {
+        	
+		_weap_type = _x select 0; 
+		_price = _x select 1;
 	    
 	    _weapon = (configFile >> "cfgMagazines" >> _weap_type);
 	    _gunInfo ctrlSetStructuredText parseText (format ["%1<br/>%2",getText(_weapon >> "displayName"),getText(_weapon >> "descriptionShort")]);
@@ -66,14 +60,14 @@ magazine1=[];
 		_gunpicture ctrlSettext _picture;
 	    
 	    
-		_gunlisttext ctrlSetText format ["Price: $%1", _price];	
+		_gunlisttext ctrlSetText format ["Price: $%1", _price];
 	}
 }forEach ammoArray;
 
-{
-	if(_itemText == _x select 0) then {
-		_weap_type = _x select 1; 
-		_price = _x select 2;
+{_weapon = configFile >> "cfgWeapons" >> (_x select 0);_name = getText(_weapon >> "displayName");
+	if(_itemText == _name) then {
+		_weap_type = _x select 0; 
+		_price = _x select 1;
 	    
 		_weapon = (configFile >> "cfgWeapons" >> _weap_type);
 	    _gunInfo ctrlSetStructuredText parseText (format ["%1<br/>%2",getText(_weapon >> "displayName"),getText(_weapon >> "descriptionShort")]);

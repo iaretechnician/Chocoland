@@ -160,7 +160,7 @@ class PlayersMenu
                 class playerMenudecodeText23: w_RscText
 		{
 			idc = playerMenuupgrades;
-			text = "upgrades:";
+			text = "empty:";
 			sizeEx = 0.030;
 			x = 0.52 * safezoneW + safezoneX;
 			y = 0.51 * safezoneH + safezoneY;
@@ -254,7 +254,7 @@ class PlayersMenu
                 class Choco2Button: w_RscButton
 		{
 			idc = -1;
-			text = "choco+1";
+			text = "choco+0.1";
 			onButtonClick = "[12] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.25 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -276,7 +276,7 @@ class PlayersMenu
                 class Choco5Button: w_RscButton
 		{
 			idc = -1;
-			text = "choco+5";
+			text = "choco+1";
 			onButtonClick = "[13] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.3 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -286,7 +286,7 @@ class PlayersMenu
                 class donatorButton: w_RscButton
 		{
 			idc = -1;
-			text = "donate 0/1";
+			text = "donate 1/0";
 			onButtonClick = "[14] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.35 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -296,7 +296,7 @@ class PlayersMenu
                    class donatorButton1: w_RscButton
 		{
 			idc = -1;
-			text = "baseb 0/1";
+			text = "baseb 1/0";
 			onButtonClick = "[15] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.4 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -306,7 +306,7 @@ class PlayersMenu
                    class donatorButton2: w_RscButton
 		{
 			idc = -1;
-			text = "decoder 0/1";
+			text = "decoder 1/0";
 			onButtonClick = "[16] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.45 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
@@ -316,14 +316,14 @@ class PlayersMenu
                    class donatorButton3: w_RscButton
 		{
 			idc = -1;
-			text = "attach 0/1";
+			text = "attach 1/0";
 			onButtonClick = "[17] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.5 * safezoneW + safezoneX;
 			y = 0.700 * safezoneH + safezoneY;
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-                   class donatorButton4: w_RscButton
+             /*      class donatorButton4: w_RscButton
 		{
 			idc = -1;
 			text = "upgrades 0/1";
@@ -333,7 +333,7 @@ class PlayersMenu
 			w = 0.05 * safezoneW;
 			h = 0.04 * safezoneH;
 		};
-                
+                */
 		class SlayButton: w_RscButton
 		{
 			idc = -1;
@@ -373,8 +373,8 @@ class PlayersMenu
                 class UnlockTeamKillerButton: w_RscButton
                 {
 			idc = -1;
-			text = "Set chocos = 0";
-			onButtonClick = "[2] execVM 'client\systems\adminPanel\playerSelect.sqf'";
+			text = "Set chocos = 1";
+			onButtonClick = "[20] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.250 * safezoneW + safezoneX;
 			y = 0.760 * safezoneH + safezoneY;
 			w = 0.080 * safezoneW;
@@ -385,7 +385,7 @@ class PlayersMenu
 		class RemoveAllMoneyButton: w_RscButton
 		{
 			idc = -1;
-			text = "RA Money";
+			text = "Reset Money";
 			onButtonClick = "[5] execVM 'client\systems\adminPanel\playerSelect.sqf'";
 			x = 0.330 * safezoneW + safezoneX;
 			y = 0.730 * safezoneH + safezoneY;

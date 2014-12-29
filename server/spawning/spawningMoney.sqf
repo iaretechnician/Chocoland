@@ -36,12 +36,12 @@ _pos =[_pos1 select 0,_pos1 select 1,500];
    _Parachute = "ParachuteMediumEast" createVehicle _pos;
           clearMagazineCargoGlobal _spawn;
 	clearWeaponCargoGlobal _spawn;
-_spawn setVariable["original",1,true];
+
 _spawn setVariable["R3F_LOG_disabled", false, true];
 _Parachute setPos (getPos _spawn);
    _Parachute setvelocity [0,10,0];
 	_spawn attachTo [_Parachute,[0,0,-1.5]];
-		waitUntil {(getPos _spawn select 2) < 1.5 || !alive _spawn || !alive _Parachute};
+		waitUntil {sleep 1;_Parachute setVelocity [(velocity _Parachute select 0)*0, (velocity _Parachute select 1)*0, (velocity _Parachute select 2)*1.2];(getPos _spawn select 2) < 1.5 || !alive _spawn || !alive _Parachute};
                 _test = getpos _spawn;
                 _spawn setpos _test;
                 _spawn setvelocity[0,0,0];

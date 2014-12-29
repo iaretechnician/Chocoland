@@ -11,17 +11,17 @@ _radarTank = (nearestobjects [getpos player, ["M1133_MEV_EP1"],  10] select 0);
 
 // PRECONDITION: Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
 
 // PRECONDITION: Check that a player is not currently a car (driving)
 if(vehicle player != player) exitWith {
-	player globalChat localize "STR_WL_Errors_InVehicle";
+	chocoland globalChat localize "STR_WL_Errors_InVehicle";
 };
 
 // PRECONDITION: Check the vehicle is alive
 if(getDammage _radarTank == 1) exitWith {
-	player globalChat "NICE TRY BUT THIS TRUCK HAS HAD IT.";
+	chocoland globalChat "NICE TRY BUT THIS TRUCK HAS HAD IT.";
     deleteVehicle _radarTank;
 };
 
@@ -46,7 +46,7 @@ mutexScriptInProgress = true;
 for "_iteration" from 1 to _actionDuration do {
 		
 	if(vehicle player != player) exitWith {
-		player globalChat localize "STR_WL_Errors_BeaconInVehicle";
+		chocoland globalChat localize "STR_WL_Errors_BeaconInVehicle";
         player action ["eject", vehicle player];
         mutexScriptInProgress = false;
 		sleep 1;

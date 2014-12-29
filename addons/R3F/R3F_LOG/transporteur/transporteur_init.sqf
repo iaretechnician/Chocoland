@@ -1,8 +1,3 @@
-/**
- * Initialise un véhicule transporteur
- * 
- * @param 0 le transporteur
- */
 
 private ["_transporteur", "_est_desactive", "_objets_charges"];
 
@@ -14,7 +9,6 @@ if (isNil "_est_desactive") then
 	_transporteur setVariable ["R3F_LOG_disabled", false];
 };
 
-// Définition locale de la variable si elle n'est pas définie sur le réseau
 _objets_charges = _transporteur getVariable "R3F_LOG_objets_charges";
 if (isNil "_objets_charges") then
 {

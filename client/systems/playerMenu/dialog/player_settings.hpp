@@ -91,51 +91,7 @@ class playerSettings {
 			w = 0.3; h = 0.05;
 		};
                 //highscore end
-		class moneyIcon : w_RscPicture {	
-	  		idc = -1;
-        	text = "\CA\misc\data\icons\picture_money_CA.paa";
-        	x = 0.02; y = 0.32;
-			w = 0.04; h = 0.04;
-		};
 		
-		class waterIcon : w_RscPicture {
-	  		idc = -1;
-        	text = "client\icons\water.paa";
-        	x = 0.015; y = 0.19;
-			w = 0.05; h = 0.05;
-		};
-		
-		class foodIcon : w_RscPicture {
-      		idc = -1;
-        	text = "client\icons\food.paa";
-        	x = 0.02; y = 0.26;
-			w = 0.04; h = 0.04;
-		};
-		
-		class moneyText : w_RscText {
-			idc = money_text;
-			text = "";
-			sizeEx = 0.03;
-			x = 0.06; y = 0.313;
-			w = 0.3; h = 0.05;
-		};
-		
-		class foodText : w_RscText {	
-			idc = food_text;
-			sizeEx = 0.03;
-			text = "";
-			x = 0.06; y = 0.254;
-			w = 0.3; h = 0.05;
-		};
-		
-		class waterText : w_RscText {	
-			idc = water_text;
-			text = "";
-			sizeEx = 0.03;
-			x = 0.06; y = 0.193;
-			w = 0.3; h = 0.05;
-		};
-
 		class distanceText : w_RscText {	
 			idc = view_range_text;
 			text = "View range:";
@@ -143,9 +99,23 @@ class playerSettings {
 			x = 0.03; y = 0.40;
 			w = 0.3; h = 0.02;
 		};
+                class distanceText2 : w_RscText {	
+			idc = view_range_text;
+			text = "PlayerName";
+			sizeEx = 0.025;
+			x = 0.825; y = 0.605;
+			w = 0.3; h = 0.02;
+		};class distanceText3 : w_RscText {	
+			idc = view_range_text;
+			text = "Amount of Money";
+			sizeEx = 0.025;
+			x = 0.825; y = 0.685;
+			w = 0.3; h = 0.02;
+		};
+                
                 class vehIcon : w_RscPicture {
       		idc = -1;
-        	text = "client\icons\driver.paa";
+        	text = "";
         	x = 0.02; y = 0.26;
 			w = 0.04; h = 0.04;
 		};
@@ -189,18 +159,20 @@ class playerSettings {
 		};
 
 		class moneyInput: w_RscCombo {
-			idc = money_value;
-			x = 0.625; y = 0.605;
-			w = .1; h = .030;
+			idc = player_value;
+                       
+			x = 0.625; y = 0.59;
+			w = 0.2; h = 0.060;
 		};
 		class playerInput: w_RscCombo {
-			idc = player_value;
-			x = 0.625; y = 0.655;
-			w = .1; h = .030;
+                        idc = money_value;
+                       
+			x = 0.625; y = 0.670;
+			w = 0.2; h = 0.060;
 		};
 		
 		class DropcButton : w_RscButton {
-			text = "sent Money";
+			text = "send Money";
 			onButtonClick = "[] execVM 'client\systems\playerMenu\dropMoney.sqf'";
 			x = 0.48; y = 0.60;
                             w = 0.135; h = 0.033 * safezoneH;
@@ -237,30 +209,23 @@ class playerSettings {
 		};
                
                class SafeB2utton : w_RscButton {
-			idc = safeButton;
-			text = "autoPickupMoney on/off";
-			onButtonClick = "[] execVM 'addons\scripts\moneypickup.sqf';closeDialog 0;";
-			x = 0.360; y = 0.68;
-			w = 0.225; h = 0.046 * safezoneH;
-		};
-                 class info1Button1 : w_RscButton {
-			idc = safeButton;
-			text = "introduction";
-			onButtonClick = "call infointro;closeDialog 0;";
+			idc = -1;
+			text = "core Tags on/off";
+			onButtonClick = "if(walked)then {walked = false;}else{walked=true};closeDialog 0;";
 			x = 0.160; y = 0.18;
 			w = 0.235; h = 0.049 * safezoneH;
 		};
-             
+                            
                   class SafeButton1 : w_RscButton {
-			idc = safeButton;
-			text = "Save Player";
-			onButtonClick = "[] execVM 'addons\scripts\saveplayer.sqf';closeDialog 0;";
+			idc = -1;
+			text = "unSet My HOME";
+			onButtonClick = "home = false;closeDialog 0;";
 			x = 0.160; y = 0.28;
 			w = 0.235; h = 0.049 * safezoneH;
 		};
              
                   class vehButton : w_RscButton {
-			idc = vehButton;
+			idc = -1;
 			text = "Spawn My Vehicle";
 			onButtonClick = "[] execVM 'addons\scripts\createVehicle.sqf';closeDialog 0;";
 			x = 0.160; y = 0.38;
@@ -276,28 +241,28 @@ class playerSettings {
 		};
 
 		class btnDistanceNear : w_RscButton {
-			text = "Near";
-			onButtonClick = "setViewDistance 1100;";
+			text = "1200 M";
+			onButtonClick = "setViewDistance 1200;";
 			x = 0.02; y = 0.45;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
 		class btnDistanceMedium : w_RscButton {
-			text = "Medium";
-			onButtonClick = "setViewDistance 2200;";
+			text = "2500 M";
+			onButtonClick = "setViewDistance 2500;";
 			x = 0.02; y = 0.50;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 
 		class btnDistanceFar : w_RscButton {
-			text = "Far";
-			onButtonClick = "setViewDistance 3300;";
+			text = "3500 M";
+			onButtonClick = "setViewDistance 3500;";
 			x = 0.02; y = 0.55;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 		class btnDistanceInsane : w_RscButton {
-			text = "Insane";
-			onButtonClick = "setViewDistance 5000;";
+			text = "6000 M";
+			onButtonClick = "setViewDistance 6000;";
 			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.033 * safezoneH;
 		};

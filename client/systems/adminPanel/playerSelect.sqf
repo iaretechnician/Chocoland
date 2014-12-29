@@ -11,10 +11,10 @@
 #define playerMenuWarnMessage 55509
 
 disableSerialization;
-_uid = getPlayerUID player;
+_uid = puid;
 private ["_dialog","_playerListBox","_spectateButton","_switch","_index","_modSelect","_playerData","_target","_check","_spectating","_camadm","_rnum","_warnText","_targetUID","_playerName"];
-_uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministrators)) then {
+_uid = puid;
+if (_uid in admins) then {
 	_dialog = findDisplay playerMenuDialog;
 	_playerListBox = _dialog displayCtrl playerMenuPlayerList;
 	_spectateButton = _dialog displayCtrl playerMenuSpectateButton;
@@ -49,7 +49,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-                                _x setVariable ["choco", _number, true];
+                                _x setVariable ["cmoney", _number, true];
                                  
   			   };
 			}forEach playableUnits;    
@@ -119,7 +119,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-  					_x setVariable["choco",0,true];
+  					_x setVariable["cmoney",0,true];
                                                               
 			    };
 			}forEach playableUnits;      
@@ -159,9 +159,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-                                _killerMoney = _x getVariable "choco";
+                                _killerMoney = _x getVariable ["cmoney",0];
                                 _newMoney = _killerMoney +25000;
-                                _x setVariable ["choco", _newMoney, true];
+                                _x setVariable ["cmoney", _newMoney, true];
                                  
   			   };
 			}forEach playableUnits;    
@@ -174,7 +174,7 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
                              _playerName = name player;
-                            _target setVehicleInit format["if (name player == ""%1"") then {titleText [""Admin %2 is approaching you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
+                            _target setVehicleInit format["if (name player == ""%1"") then {titleText [""GameMaster %2 is approaching you"", ""plain""]; titleFadeOut 5;};",name _target,_playerName];
                               processInitCommands;
                              clearVehicleInit _target;
                             _pos1 = getPosATL _x;
@@ -206,8 +206,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			  if(getPlayerUID _x == _targetUID) then
 			    {
                                 _bounty = _x getVariable "bounty";
-                                _bount = _bounty -1;
-                                _x setVariable ["bounty", _bount, true];
+                                _bount = _bounty -0.1;
+                                _x setVariable ["bounty", _bount, false];
                                 
   			   };
 			}forEach playableUnits;   
@@ -220,8 +220,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			  if(getPlayerUID _x == _targetUID) then
 			    {
                                 _bounty = _x getVariable "bounty";
-                                _bount = _bounty +1;
-                                _x setVariable ["bounty", _bount, true];
+                                _bount = _bounty +0.1;
+                                _x setVariable ["bounty", _bount,false];
                                                        
   			   };
 			}forEach playableUnits;   
@@ -234,8 +234,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			  if(getPlayerUID _x == _targetUID) then
 			    {
                                 _bounty = _x getVariable "bounty";
-                                _bount = _bounty +5;
-                                _x setVariable ["bounty", _bount, true];
+                                _bount = _bounty +1;
+                                _x setVariable ["bounty", _bount, false];
                                
   			   };
 			}forEach playableUnits;  
@@ -247,10 +247,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
-                                _bounty = _x getVariable "donator";
-                                if(_bounty == 1)then{
-                                _x setVariable ["donator", 0, true];}else{
-                                _x setVariable ["donator", 1, true];};
+if (isnil "dm") then {dm = 0;}; if (dm == 0) then {dm = 1;  chocoland globalChat"on";
+_x setVariable ["donator", 1, false];} else {chocoland globalChat"off";dm = 0; _x setVariable ["donator", 0, false];};
+                             
                              
   			   };
 			}forEach playableUnits;  
@@ -261,10 +260,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
-                                _bounty = _x getVariable "basebuilder";
-                                if(_bounty == 1)then{
-                                _x setVariable ["basebuilder", 0, true];}else{
-                                _x setVariable ["basebuilder", 1, true];};
+ if (isnil "bm") then {bm = 0;}; if (bm == 0) then {bm = 1;chocoland globalChat"on";    
+ _x setVariable ["basebuilder", 1, false];} else {chocoland globalChat"off";bm = 0;    _x setVariable ["basebuilder", 0, false];};
+                             
                              
   			   };
 			}forEach playableUnits;  
@@ -276,10 +274,10 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
-                                _bounty = _x getVariable "decoder";
-                                if(_bounty == 1)then{
-                                _x setVariable ["decoder", 0, true];}else{
-                                _x setVariable ["decoder", 1, true];};
+if (isnil "cm") then {cm = 0;}; if (cm == 0) then {cm = 1; chocoland globalChat"on";
+_x setVariable ["decoder", 1, false];} else {chocoland globalChat"off";cm = 0;    _x setVariable ["decoder", 0, false];};
+ 
+                               
                                 
   			   };
 			}forEach playableUnits;  
@@ -291,12 +289,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
-                                _bounty = _x getVariable "attach";
-                                if(_bounty == 1)then{
-                                _x setVariable ["attach", 0, true];}else{
-                                _x setVariable ["attach", 1, true];};
-                                
-  			   };
+if (isnil "am") then {am = 0;}; if (am == 0) then {am = 1; chocoland globalChat"on";
+_x setVariable ["attach", 1, false];} else {chocoland globalChat"off";bm = 0; _x setVariable ["attach", 0, false];};
+  };
 			}forEach playableUnits;
                         
 	    };
@@ -306,10 +301,8 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			  if(getPlayerUID _x == _targetUID) then
 			    {
-                                _bounty = _x getVariable "upgrades";
-                                if(_bounty == 1)then{
-                                _x setVariable ["upgrades", 0, true];}else{
-                                _x setVariable ["upgrades", 1, true];};
+                                
+                                _x setVariable ["upgrades", 1, false];
                               
   			   };
 			}forEach playableUnits;   
@@ -321,9 +314,9 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 	        {
 			    if(getPlayerUID _x == _targetUID) then
 			    {
-                                _killerMoney = _x getVariable "choco";
-                                _newMoney = _killerMoney +100000;
-                                _x setVariable ["choco", _newMoney, true]; 
+                                _killerMoney = _x getVariable ["cmoney",0];
+                                 _newMoney = _killerMoney +100000;
+                                _x setVariable ["cmoney", _newMoney, true]; 
                                
   			   };
 			}forEach playableUnits;       
@@ -336,31 +329,29 @@ if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serveradministr
 			    if(getPlayerUID _x == _targetUID) then
 			    {
                                 _x setDamage 0;
-_x setVariable["dot",0,true];
-_x setVariable["animal",false,true];
-_x setVariable["bounty",0,true];
-_x setVariable["donator",0,true];
-_x setVariable["decoder",0,true];
-_x setVariable["basebuilder",0,true];
-_x setVariable["choco",500,true];
-_x setVariable["attach",0,true];
-_x setVariable["upgrades",0,true];
-_x setVariable["canfood",2,true];
-_x setVariable["chocopack",nil,true];
-_x setVariable["chocoload",[],true];
-
-_x setVariable["highscore",[0,0,0,0,0],true];
-_x setVariable["saveVehicle",0,true];
-_x setVariable["medkits",0,true];
-_x setVariable["water",2,true];
-_x setVariable["fuel",0,true];
-_x setVariable["repairkits",0,true];
-_x setVariable["fuelFull", 1,true];
-_x setVariable["fuelEmpty",0,true];
-_x setVariable["bombs",false,true];
-_x setVariable["spawnBeacon",0,true];
-_x setVariable["camonet",0,true];
-_x setVariable["canDrop",false,true]; 
+_x setVariable["dot",0,false];
+_x setVariable["animal",false,false];
+_x setVariable["bounty",0,false];
+_x setVariable["donator",0,false];
+_x setVariable["decoder",0,false];
+_x setVariable["basebuilder",0,false];
+_x setVariable["attach",0,false];
+_x setVariable["upgrades",0,false];
+_x setVariable["canfood",2,false];
+_x setVariable["chocopack",nil,false];
+_x setVariable["chocoload",[],false];
+_x setVariable["highscore",[0,0,0,0,0],false];
+_x setVariable["saveVehicle",0,false];
+_x setVariable["medkits",0,false];
+_x setVariable["water",2,false];
+_x setVariable["fuel",0,false];
+_x setVariable["repairkits",0,false];
+_x setVariable["fuelFull", 1,false];
+_x setVariable["fuelEmpty",0,false];
+_x setVariable["bombs",false,false];
+_x setVariable["spawnBeacon",0,false];
+_x setVariable["camonet",0,false];
+_x setVariable["canDrop",false,false]; 
                                
   			   };
 			}forEach playableUnits;       

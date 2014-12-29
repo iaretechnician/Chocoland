@@ -24,10 +24,8 @@ _dummyGroup = createGroup (side _oldUnit);
 _dummyUnit = (_ar select 4) createUnit [_skin, [0, 0, 0], [], 0, "NONE"]; // Join in the old group incase there was only 1 member
 
 [_oldUnit] join _dummyGroup;
- 
- newUnit = _dummyGroup createUnit [_skin, _ar select 5, [], 0, "NONE"];
 
- 
+ newUnit = _dummyGroup createUnit [_skin, _ar select 5, [], 0, "NONE"];
 sleep 0.3;
 setPlayable newUnit;
 addSwitchableUnit newUnit;
@@ -59,9 +57,9 @@ newUnit addweapon "ItemCompass";newUnit addweapon "ItemWatch";
 newUnit addEventHandler ["Respawn", {[player]execVM"client\clientEvents\onRespawnAnimal.sqf"}];
 //newUnit addEventHandler ["Killed", {[[this,this]]execVM"server\functions\dropLoot.sqf"}];
 //[newUnit]execVM"client\functions\animalMoney.sqf";
-
+ RESCUE= true;newunit spawn {waituntil{!alive _this}; RESCUE= false;};
 [1,player] call statload;
 player setVariable["animal",true,true];
-player globalchat" Reserve to Player function will come in 180 seconds";
-sleep 180;
+chocoland globalChat" Reserve to Player MouseWheel action will come in 60 seconds";
+sleep 60;
 revId = player addAction[('<t color=''#219eff''>' + ('Reverse to Player') +  '</t>'),'client\systems\generalStore\adds\reverseskin.sqf'];

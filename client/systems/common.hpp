@@ -1,10 +1,3 @@
-/*
-	@file Version: 1.0
-	@file Name: common.hpp
-	@file Author: [404] Deadbeat
-	@file Created: 11/09/2012 04:23
-	@file Args:
-*/
 
 #define CT_STATIC 0 
 #define CT_BUTTON 1 
@@ -22,7 +15,7 @@
 #define CT_STRUCTURED_TEXT 13 
 #define CT_CONTEXT_MENU 14 
 #define CT_CONTROLS_GROUP 15 
-#define CT_SHORTCUT_BUTTON 16 // Arma 2 - textured button 
+#define CT_SHORTCUT_BUTTON 16 
 #define CT_XKEYDESC 40 
 #define CT_XBUTTON 41 
 #define CT_XLISTBOX 42 
@@ -69,6 +62,7 @@
 
 // Slider styles 
 #define SL_DIR 0x400 
+
 #define SL_VERT 0 
 #define SL_HORZ 0x400 
 #define SL_TEXTURES 0x10 
@@ -340,13 +334,9 @@ class w_RscButtonBase {
 		
 	};
 	
-	class AttributesImage {
-	
-		font = "Zeppelin32";
+	class AttributesImage {	font = "Zeppelin32";
 		color = "#E5E5E5";
-		align = "left";
-		
-	};
+		align = "left";};
 };
 
 class w_RscButton : w_RscButtonBase {
@@ -437,7 +427,74 @@ class RscButton
     soundEnter[]              = {"", 0.15, 1};
 
 };
-
+class R_Slider {
+	idc = -1;
+	type = 43;
+	style = 0x400  + 0x10;
+	x = 0;
+	y = 0;
+	h = 0.029412;
+	w = 0.2;
+	color[] = {1, 0, 0, 1};
+	colorActive[] = {1, 0, 0, 1};
+	colorDisabled[] = {1, 0, 0, 1};
+	arrowEmpty = "\ca\ui\data\ui_arrow_left_ca.paa";
+	arrowFull = "\ca\ui\data\ui_arrow_left_active_ca.paa";
+	border = "\ca\ui\data\ui_border_frame_ca.paa";
+	thumb = "\ca\ui\data\ui_slider_bar_ca.paa";
+    
+};
+class G_Slider {
+	idc = -1;
+	type = 43;
+	style = 0x400  + 0x10;
+	x = 0;
+	y = 0;
+	h = 0.029412;
+	w = 0.2;
+	color[] = {0, 1, 0, 1};
+	colorActive[] = {0, 1, 0, 1};
+	colorDisabled[] = {0, 1, 0, 1};
+	arrowEmpty = "\ca\ui\data\ui_arrow_left_ca.paa";
+	arrowFull = "\ca\ui\data\ui_arrow_left_active_ca.paa";
+	border = "\ca\ui\data\ui_border_frame_ca.paa";
+	thumb = "\ca\ui\data\ui_slider_bar_ca.paa";
+    
+};
+class B_Slider {
+	idc = -1;
+	type = 43;
+	style = 0x400  + 0x10;
+	x = 0;
+	y = 0;
+	h = 0.029412;
+	w = 0.2;
+	color[] = {0, 0, 1, 1};
+	colorActive[] = {0, 0, 1, 1};
+	colorDisabled[] = {0, 0, 1, 1};
+	arrowEmpty = "\ca\ui\data\ui_arrow_left_ca.paa";
+	arrowFull = "\ca\ui\data\ui_arrow_left_active_ca.paa";
+	border = "\ca\ui\data\ui_border_frame_ca.paa";
+	thumb = "\ca\ui\data\ui_slider_bar_ca.paa";
+    
+};
+class A_Slider {
+	idc = -1;
+	type = 43;
+	style = 0x400  + 0x10;
+	x = 0;
+	y = 0;
+	h = 0.029412;
+	w = 0.2;
+	color[] = {0, 0,0, 0.5};
+	colorActive[] = {1, 1, 1, 0.5};
+	colorDisabled[] = {1, 1, 1, 0.5};
+	arrowEmpty = "\ca\ui\data\ui_arrow_left_ca.paa";
+	arrowFull = "\ca\ui\data\ui_arrow_left_active_ca.paa";
+	border = "\ca\ui\data\ui_border_frame_ca.paa";
+	thumb = "\ca\ui\data\ui_slider_bar_ca.paa";
+    
+};
 class w_RscCombo {
 
 	idc = -1;
@@ -499,70 +556,4 @@ class w_RscCombo {
 			border = "\ca\ui\data\ui_border_scroll_ca.paa";
 		};
 	
-};
-
-class w_RscHTML
-{
-	type = CT_HTML;
-	idc = -1;
-	style = 0;
-	filename = "";
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1};
-	colorBold[] = {0, 0, 0, 1};
-	colorLink[] = {0.05, 0.20, 0.05, 1};
-	colorLinkActive[] = {0, 0, 0.20, 1};
-	colorPicture[] = {1, 1, 1, 1};
-	colorPictureLink[] = {1, 1, 1, 1};
-	colorPictureSelected[] = {1, 1, 1, 1};
-	colorPictureBorder[] = {0, 0, 0, 0};
-	tooltipColorText[] = {0, 0, 0, 1};
-	tooltipColorBox[] = {0, 0, 0, 0.50};
-	tooltipColorShade[] = {1, 1, 0.70, 1};
-	align="left";
-
-	class H1
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.024740;
-	};
-	class H2
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.028646;
-	};
-	class H3
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.028646;
-	};
-	class H4
-	{
-		font = "Zeppelin33Italic";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.020833;
-	};
-	class H5
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.020833;
-	};
-	class H6
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.020833;
-	};
-	class P
-	{
-		font = "Zeppelin32";
-		fontBold = "Zeppelin33";
-		sizeEx = 0.020833;
-	};
-	prevPage = "\ca\ui\data\arrow_left_ca.paa";
-	nextPage = "\ca\ui\data\arrow_right_ca.paa";
 };

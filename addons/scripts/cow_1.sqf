@@ -1,3 +1,0 @@
-
-
-player say "cow";

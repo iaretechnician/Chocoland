@@ -7,7 +7,7 @@
 
 // PRECONDITION: Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
 
 private["_stringEscapePercent","_totalDuration","_lockDuration","_iteration","_iterationPercentage","_playerPos","_placedBeacon", "_lockDuration", "_beaconOwner", "_placedBeaconPos", "_playerSide", "_playerUID", "_activeBeacon"];
@@ -17,7 +17,7 @@ _playerPos = getPosATL player;
 
 // PRECONDITION: Check that a player is not currently a car (driving)
 if(vehicle player != player) exitWith {
-	player globalChat localize "STR_WL_Errors_InVehicle";
+	chocoland globalChat localize "STR_WL_Errors_InVehicle";
 };
 
 player switchMove "AinvPknlMstpSlayWrflDnon_medic"; // Begin the full medic animation...
@@ -34,7 +34,7 @@ for "_iteration" from 1 to _players do {
     
 
 	if(vehicle player != player) exitWith {mutexScriptInProgress = false;
-	player globalChat "BeaconInVehicle";
+	chocoland globalChat "BeaconInVehicle";
         player action ["eject", vehicle player];
 	};  
     

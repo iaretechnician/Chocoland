@@ -1,24 +1,13 @@
-/**
- * Fait déplacer un objet par le joueur. Il garde l'objet tant qu'il ne le relâche pas ou ne meurt pas.
- * L'objet est relaché quand la variable R3F_LOG_joueur_deplace_objet passe à objNull ce qui terminera le script
- * 
- * @param 0 l'objet à déplacer
- * 
- * Copyright (C) 2010 madbull ~R3F~
- * 
- * This program is free software under the terms of the GNU General Public License version 3.
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
+/**opyright (C) 2010 madbull ~R3F~ */
+atthfix = 1;
 _currentAnim =	animationState player;
 _config = configFile >> "CfgMovesMaleSdr" >> "States" >> _currentAnim;
 _onLadder =	(getNumber (_config >> "onLadder"));
-if(_onLadder == 1) exitWith{player globalChat "You can't move this object while on a ladder";};
+if(_onLadder == 1) exitWith{chocoland globalChat "You can't move this object while on a ladder";};
 
 if (R3F_LOG_mutex_local_verrou) then
 {
-	player globalChat STR_R3F_LOG_mutex_action_en_cours;
+	chocoland globalChat STR_R3F_LOG_mutex_action_en_cours;
 }
 else
 {
@@ -33,32 +22,26 @@ else
 	_tempVar = false;
 
 	_est_calculateur = _objet getVariable "R3F_ARTY_est_calculateur";
-	if !(isNil "_est_calculateur") then
-	{
-		R3F_LOG_mutex_local_verrou = false;
-		[_objet] execVM "addons\R3F\R3F_ARTY\poste_commandement\deplacer_calculateur.sqf";
-	}
-	else
-	{
+	
 		_objet setVariable ["R3F_LOG_est_deplace_par", player, true];
 		
 		R3F_LOG_joueur_deplace_objet = _objet;
 		
-		// Sauvegarde et retrait de l'arme primaire
+		
 		_arme_principale = primaryWeapon player;
 		if (_arme_principale != "") then
-		{
+                		{
                 
 			player removeWeapon _arme_principale;
                         		}
 		else {sleep 0.5;};
 		
-		// Si le joueur est mort pendant le sleep, on remet tout comme avant
+		
 		if (!alive player) then
 		{
 			R3F_LOG_joueur_deplace_objet = objNull;
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
-			// Car attachTo de "charger" positionne l'objet en altitude :
+			
 			_objet setPosATL [getPosATL _objet select 0, getPosATL _objet select 1, getPosATL _objet select 2];
 			_objet setVelocity [0, 0, 0];
 			
@@ -74,10 +57,10 @@ else
 			
 			if (count (weapons _objet) > 0) then
 			{
-				// Le canon doit pointer devant nous (sinon on a l'impression de se faire empaler)
+				
 				_azimut_canon = ((_objet weaponDirection (weapons _objet select 0)) select 0) atan2 ((_objet weaponDirection (weapons _objet select 0)) select 1);
 				
-				// On est obligé de demander au serveur de tourner le canon pour nous
+				
 				R3F_ARTY_AND_LOG_PUBVAR_setDir = [_objet, (getDir _objet)-_azimut_canon];
 				if (isServer) then
 				{
@@ -94,18 +77,14 @@ else
 			
 			_action_menu_release_relative = player addAction [("<t color=""#21DE31"">" + STR_R3F_LOG_action_relacher_objet + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\relacher.sqf", false, 5, true, true];
 			_action_menu_release_horizontal = player addAction [("<t color=""#21DE31"">" + STR_RELEASE_HORIZONTAL + "</t>"), "addons\R3F\R3F_LOG\objet_deplacable\relacher.sqf", true, 5, true, true];
-			_action_menu_up = player addAction [("<t color=""#dddd00"">Move up</t>"), "addons\R3F\R3F_LOG\objet_deplacable\upanddown.sqf", 1, 5, true, true];
-			_action_menu_down = player addAction [("<t color=""#dddd00"">Move down</t>"), "addons\R3F\R3F_LOG\objet_deplacable\upanddown.sqf", 2, 5, true, true];
-	                _action_menu_45 = player addAction [("<t color=""#dddd00"">Rotate object 45°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 45, 5, true, true];
-			_action_menu_90 = player addAction [("<t color=""#dddd00"">Rotate object 90°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 90, 5, true, true];
-			_action_menu_180 = player addAction [("<t color=""#dddd00"">Rotate object 180°</t>"), "addons\R3F\R3F_LOG\objet_deplacable\rotate.sqf", 180, 5, true, true];
-			atthfix = 1;
-			// On limite la vitesse de marche et on interdit de monter dans un véhicule tant que l'objet est porté
+			chocoland globalChat "use Q (Move up), R (Move down) and F to Rotate 45°";
+                  atthfix = 1;
+			
 			while {!isNull R3F_LOG_joueur_deplace_objet && alive player} do
-			{  // []call positionCheck; if(poscheck) then{R3F_LOG_joueur_deplace_objet = objNull; hintsilent "You are out of the map, get back Soldier!"};
+			{  
 				if (vehicle player != player) then
 				{
-					player globalChat STR_R3F_LOG_ne_pas_monter_dans_vehicule;
+					chocoland globalChat STR_R3F_LOG_ne_pas_monter_dans_vehicule;
 					player action ["eject", vehicle player];
 					sleep 1;
 				};
@@ -113,7 +92,7 @@ else
 				
 			};
 			
-			// L'objet n'est plus porté, on le repose
+			
 			detach _objet;
 			if(R3F_LOG_force_horizontally) then {
 				R3F_LOG_force_horizontally = false;
@@ -127,7 +106,7 @@ else
 					_objet setPos [getPos _objet select 0, getPos _objet select 1, 0.0014];
                                         
 				} else {
-					//_objet setPosASL _opos;
+					
                                         _objet setPos [getPos _objet select 0, getPos _objet select 1, 0.0014];
 				};
 			} else {
@@ -138,20 +117,20 @@ else
 				};
 			};
 			
-			_objet setVelocity [0, 0, 0];
+			//_objet setVelocity [0, 0, 0];
 			
 			player removeAction _action_menu_release_relative;
 			player removeAction _action_menu_release_horizontal;
-			player removeAction _action_menu_45;
-			player removeAction _action_menu_90;
-			player removeAction _action_menu_180;
-                        player removeAction _action_menu_up;
-			player removeAction _action_menu_down;
+			//player removeAction _action_menu_45;
+			//player removeAction _action_menu_90;
+			//player removeAction _action_menu_180;
+                       // player removeAction _action_menu_up;
+			//player removeAction _action_menu_down;
 			R3F_LOG_joueur_deplace_objet = objNull;
 			
 			_objet setVariable ["R3F_LOG_est_deplace_par", objNull, true];
 			
-			// Restauration de l'arme primaire
+			
 			if (alive player && _arme_principale != "") then
 			{
 				if(primaryWeapon player != "") then {
@@ -165,5 +144,5 @@ else
 				};
 			};
 		};
-	};
+	
 };

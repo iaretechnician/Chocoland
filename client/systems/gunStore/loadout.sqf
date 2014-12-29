@@ -4,18 +4,18 @@ _price = 0;
 xx=0;
 
 {xx= _x;
-        { if(xx == _x select 2 and xx != "") then { _price =_price+( _x select 3);}; }forEach weaponsArray;
-	{ if(xx == _x select 1 and xx != "") then { _price = _price+(_x select 2); }; }forEach ammoArray;
-	{ if(xx == _x select 1 and xx != "") then { _price =_price+ (_x select 2); }; }forEach accessoriesArray;
+        { if(xx == _x select 1 and xx != "") then { _price =_price+(  _x select 2);}; }forEach weaponsArray;
+	{ if(xx == _x select 0 and xx != "") then { _price = _price+(_x select 1); }; }forEach ammoArray;
+	{ if(xx == _x select 0 and xx != "") then { _price =_price+ (_x select 1); }; }forEach accessoriesArray;
 
  }foreach _loadout;
 
  geld =_price;
- _money = player getvariable"choco";
+ _money = player getvariable["cmoney",0];
 
  //geld ende
  if(_money < geld)exitwith{hint"you dont have enough money"};
- player setvariable["choco",_money - geld,true];
+ player setvariable["cmoney",_money - geld,true];[]call savePlayer;
 
 dropweapon = "WeaponHolder" createVehicle getPos player; 
 dropweapon setPos [getPos player select 0,getPos player select 1,getPos player select 2];
@@ -35,12 +35,9 @@ dropweapon setPos [getPos player select 0,getPos player select 1,getPos player s
 				player removeMagazine _x;
                                 dropweapon addMagazineCargo [_x,1];
 			};} forEach _current_magazines;
-		};} forEach (weapons player);
-	};
+		};} forEach (weapons player);};
 	player addWeapon _weapon;
-	player selectWeapon _weapon;
-	
-};
+	player selectWeapon _weapon;};
 {
     _weaponCfg = (configFile >> "cfgWeapons" >> _x);
 _type = getNumber(_weaponCfg >> "type");
@@ -50,4 +47,4 @@ if (_type in [1,2,4,5]) then {
     };
           }foreach _loadout;
  //item ende
-player globalchat format["Loadout successfully buyed for %1$.",geld];
+chocoland globalChat format["Loadout successfully buyed for %1$.",geld];

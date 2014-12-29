@@ -1,7 +1,7 @@
 #include "addons\R3F\desc_include.h"
 loadScreen = "Loading.jpg";
 respawn="BASE";
-respawnDelay=5;
+respawnDelay=3;
 disabledAI=1;
 disableChannels[]={2,6};
 minScore = 0;
@@ -9,7 +9,7 @@ class Header
 {
 	gameType=COOP;
 	minPlayers=1;
-	maxPlayers=50;
+	maxPlayers=66;
 };
 
 //Dialog includes
@@ -19,12 +19,7 @@ class Header
 #include "client\systems\playerMenu\dialog\player_settings.hpp"
 #include "client\systems\groups\dialog\groupManagement.hpp"
 #include "client\systems\gunStore\dialog\gunshop_settings.hpp"
-#include "client\systems\gunStore\dialog\gunshop_ConfirmSell.hpp"
 #include "client\systems\generalStore\dialog\genstore_settings.hpp"
-#include "client\systems\adminPanel\dialog\adminMenu.hpp"
-#include "client\systems\adminPanel\dialog\modMenu.hpp"
-#include "client\systems\adminPanel\dialog\serverAdminMenu.hpp"
-#include "client\systems\adminPanel\dialog\debugMenu.hpp"
 #include "client\systems\adminPanel\dialog\playerMenu.hpp"
 #include "client\systems\adminPanel\dialog\VehicleManagement.hpp"
 #include "client\systems\playerMenu\dialog\respawn_dialog.hpp"
@@ -44,6 +39,42 @@ class RscTitles {
     #include "client\systems\hud\dialog\hud.hpp"
 	#include "client\systems\playerMenu\dialog\welcome.hpp"
 	#include "client\systems\newicons.hpp"
+       
+    titles[] = {introImage}; // optional
+
+    class introImage
+    {    
+        idd = -1;    
+        movingEnable = false;
+        duration = 8; // 5 second display time
+        fadein = 1;
+        fadout = 1;
+        name = "IntroImage"; 
+
+        class ControlsBackground
+        {
+            class Background : w_RscText //Black background for letterboxing in case of a different aspect ratio than the image
+            {
+                x = "safeZoneX";
+                y = "safeZoneY";
+                w = "safeZoneW";
+                h = "safeZoneH";
+                colorBackground[] = {0,0,0,1};
+            };
+        };
+        class Controls
+        {
+            class image1: w_RscPicture
+            {    
+                x = "safeZoneX";
+                y = "safeZoneY+((safeZoneH-(safeZoneW/(2048/1024)*(4/3)))/2)"; //Substitute 2048 and 1024 for the x,y dimensions of your image
+                w = "safeZoneW";
+                h = "safeZoneW/(2048/1024)*(4/3)"; //Substitute 2048 and 1024 for the x,y dimensions of your image
+                text = "loading.jpg";
+            };
+        };
+    };
+ 
 };
 
 class CfgSounds
@@ -118,7 +149,7 @@ class CfgIdentities
 		name="Amos S. Ferguson";
 		face="Face74";
 		glasses="Spectacles";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name2 // Main Character Thread #1
@@ -126,7 +157,7 @@ class CfgIdentities
 		name="Thomas K. Pablo";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name3 // Main Character, Thread #3
@@ -134,7 +165,7 @@ class CfgIdentities
 		name="Norman Despain";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -144,7 +175,7 @@ class CfgIdentities
 		name="Dalibor Kate";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name5// Ekhrenian assassin of Residency X, Thread #5
@@ -152,7 +183,7 @@ class CfgIdentities
 		name="Torsten Diederich";
 		face="Face20";
 		glasses="BlackSun";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -162,7 +193,7 @@ class CfgIdentities
 		name="Dominik Hartmann";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
         class name7 // President of the Republic of Colemania
@@ -170,7 +201,7 @@ class CfgIdentities
 		name="Ryder Pike";
 		face="Face74";
 		glasses="Spectacles";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name8 // Main Character Thread #1
@@ -178,7 +209,7 @@ class CfgIdentities
 		name="Anthony Dennis";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name9 // Main Character, Thread #3
@@ -186,7 +217,7 @@ class CfgIdentities
 		name="Lasse S. Rasmussen";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -196,7 +227,7 @@ class CfgIdentities
 		name="Hending Brownlock";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name11// Ekhrenian assassin of Residency X, Thread #5
@@ -204,7 +235,7 @@ class CfgIdentities
 		name="Lee Tsai";
 		face="Face20";
 		glasses="BlackSun";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -214,7 +245,7 @@ class CfgIdentities
 		name="Shi Li";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
         class name13 // President of the Republic of Colemania
@@ -222,7 +253,7 @@ class CfgIdentities
 		name="Matthias Lundstroem";
 		face="Face74";
 		glasses="Spectacles";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name14 // Main Character Thread #1
@@ -230,7 +261,7 @@ class CfgIdentities
 		name="Olle Larsson";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name15 // Main Character, Thread #3
@@ -238,7 +269,7 @@ class CfgIdentities
 		name="Kalle Lindqvist";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -248,7 +279,7 @@ class CfgIdentities
 		name="Ciriaco Rossi";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name17// Ekhrenian assassin of Residency X, Thread #5
@@ -256,7 +287,7 @@ class CfgIdentities
 		name="Celso Castiglione";
 		face="Face20";
 		glasses="BlackSun";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -266,7 +297,7 @@ class CfgIdentities
 		name="Dobrogost Kucharski";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
         class name19 // President of the Republic of Colemania
@@ -274,7 +305,7 @@ class CfgIdentities
 		name="Tomasz Jaworski";
 		face="Face74";
 		glasses="Spectacles";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name20 // Main Character Thread #1
@@ -282,7 +313,7 @@ class CfgIdentities
 		name="Myron Efremov";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name21 // Main Character, Thread #3
@@ -290,7 +321,7 @@ class CfgIdentities
 		name="Vlad Ibrahimov";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -300,7 +331,7 @@ class CfgIdentities
 		name="Timmie Arvidsson";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	class name23// Ekhrenian assassin of Residency X, Thread #5
@@ -308,7 +339,7 @@ class CfgIdentities
 		name="Klaus Baader";
 		face="Face20";
 		glasses="BlackSun";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 	
@@ -318,7 +349,7 @@ class CfgIdentities
 		name="Phillipp Unger";
 		face="Face74";
 		glasses="none";
-		speaker="Dan";
+		speaker="Male01EN";
 		pitch=.95;
 	};
 };

@@ -22,9 +22,9 @@ _check = 0;
 {if (str(_x) == _playerData) then {_target = _x;_check = 1;};}forEach playableUnits;
 
 //Checks
-if(_target == player) exitWith {player globalChat "you can't kick yourself";};
-if (_check == 0) exitWith {player globalChat "you must select someone to kick first";};
+if(_target == player) exitWith {chocoland globalChat "you can't kick yourself";};
+if (_check == 0) exitWith {chocoland globalChat "you must select someone to kick first";};
 
 [_target] join grpNull;
 
-player globalChat format["you have kicked %1 from the group",name _target];
+chocoland globalChat format["you have kicked %1 from the group",name _target];

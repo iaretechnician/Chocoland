@@ -8,8 +8,7 @@
 
 #include "dialog\gunstoreDefines.sqf";
 disableSerialization;
-//if (local player) then {
-	//Initialize Values
+
 	_price = 0;
 	_checkWeapon = "";
 	_checkAmmo = "";
@@ -26,10 +25,9 @@ disableSerialization;
 	//Check Items Price
         _weapon =[];
 		
-	{ if(_itemText == _x select 0) then { _price = _x select 2;_weapon = _x select 1;_itemText = (_x select 1);} }forEach ammoArray;
-	
+	{_Name = getText (configFile >> "CfgMagazines" >> (_x select 0) >> "displayName");
+        if(_itemText == _name) then { _price = _x select 1; _weapon = _x select 0;} }forEach ammoArray;
 	gunStoreCart = gunStoreCart + _price;
 	_totalText CtrlsetText format["Total: $%1", gunStoreCart];
 	_cartlist lbAdd format["%1",_itemText];
         loadout= loadout +[_weapon];
-//};

@@ -7,12 +7,12 @@
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat localize "STR_WL_Errors_InProgress";
+	chocoland globalChat localize "STR_WL_Errors_InProgress";
 };
 
 // Check if player is alive.
 if(!(alive player)) exitWith {
-	player globalChat localize "YOU ARE CURRENTLY BUSY.";
+	chocoland globalChat localize "YOU ARE CURRENTLY BUSY.";
 };
             	
 mutexScriptInProgress = true;

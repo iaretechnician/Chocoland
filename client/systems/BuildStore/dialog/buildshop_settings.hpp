@@ -245,7 +245,7 @@ class buildshopd {
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\systems\BuildStore\buyBuild.sqf'";
-			text = "Buy";
+			text = "<img size='1' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 
                         x = 0.14 * safezoneW + safezoneX;
 			y = 0.54 * safezoneH + safezoneY;

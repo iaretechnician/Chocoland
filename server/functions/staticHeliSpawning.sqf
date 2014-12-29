@@ -7,7 +7,7 @@ _moneyCount = Round (random 200) + 250;
 for "_i" from 1 to _moneyCount do
     {
     //GREAT THX to Viba and KiloSwiss =D
-    _count = Round (random 250)+200;
+    _count = floor (random 4000)+1000;
     if(_count == 450) then
         {
          _random = Round (random 6);

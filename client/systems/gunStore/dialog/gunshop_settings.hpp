@@ -61,7 +61,7 @@ class gunshopd {
 
 			x = 0.6875 * safezoneW + safezoneX;
 			y = 0.65 * safezoneH + safezoneY;
-			w = 0.0844792 * safezoneW;
+			w = 0.1 * safezoneW;
 			h = 0.0448148 * safezoneH;
 		};
 	};
@@ -75,7 +75,7 @@ class gunshopd {
 			onButtonClick = "[] execVM 'client\systems\gunStore\sLoadout.sqf'";
 			text = "save loadout";
 
-			x = 0.603125 * safezoneW + safezoneX;
+			x = 0.48 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.088 * safezoneW;
 			h = 0.040 * safezoneH;
@@ -88,7 +88,7 @@ class gunshopd {
 			onButtonClick = "loadout =[];player setvariable['chocoload',[],true];";
 			text = "reset loadout";
 
-			x = 0.503125 * safezoneW + safezoneX;
+			x = 0.403125 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.078 * safezoneW;
 			h = 0.040 * safezoneH;
@@ -98,10 +98,10 @@ class gunshopd {
                  class howLoadout: w_RscButton
 		{
 			idc = -1;
-			onButtonClick = "player globalchat'add your favorite weapons and magazines to GunStore Cart and press Save Loadout';";
+			onButtonClick = "chocoland globalChat'add your favorite weapons and magazines to GunStore Cart and press Save Loadout';";
 			text = "how to save loadout";
 
-			x = 0.403125 * safezoneW + safezoneX;
+			x = 0.303125 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.1 * safezoneW;
 			h = 0.040 * safezoneH;
@@ -132,8 +132,6 @@ class gunshopd {
                 class SelectionammoList: w_RscListbox
 		{
 			idc = gunshop_ammo_list;
-			//onLBSelChanged = "[] execVM 'client\systems\gunStore\quickAddAmmo.sqf'";
-
 			x = 0.590 * safezoneW + safezoneX;
 			y = 0.41 * safezoneH + safezoneY;
 			w = 0.085 * safezoneW;
@@ -183,16 +181,16 @@ class gunshopd {
 		{
 			idc = -1;
 			onButtonClick = "[0] execVM 'client\systems\gunStore\buyGuns.sqf'";
-			text = "Buy";
+			text = "<img size='3' image='\CA\misc\data\icons\picture_money_CA.paa'/>";
 
-			x = 0.703125 * safezoneW + safezoneX;
-			y = 0.740 * safezoneH + safezoneY;
-			w = 0.098 * safezoneW;
-			h = 0.050 * safezoneH;
+			x = 0.67 * safezoneW + safezoneX;
+			y = 0.730 * safezoneH + safezoneY;
+			w = 0.12 * safezoneW;
+			h = 0.080 * safezoneH;
 			color[] = {0.1,0.95,0.1,1};
 
 		};
-
+              
 	
 		class CancelButton: w_RscButton
 		{
@@ -200,7 +198,7 @@ class gunshopd {
 			onButtonClick = "closeDialog 0;";
 			text = "Cancel";
 
-			x = 0.203125 * safezoneW + safezoneX;
+			x = 0.2 * safezoneW + safezoneX;
 			y = 0.750 * safezoneH + safezoneY;
 			w = 0.072 * safezoneW;
 			h = 0.040 * safezoneH;

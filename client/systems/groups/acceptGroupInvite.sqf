@@ -9,7 +9,7 @@ private["_inviterUID","_inviter"];
 //Get the inviters UID
 _groupExists = false;
 {
-	if(getPlayerUID player == _x select 1) then
+	if(puid == _x select 1) then
 	{
     	_inviterUID = _x select 0;
         currentInvites set [_forEachIndex,"REMOVETHISCRAP"];
@@ -30,7 +30,7 @@ _groupExists = false;
 if(_groupExists) then
 {
 	[player] join (group _inviter);
-    player globalChat format["you have accepted the invite"];
+    chocoland globalChat format["you have accepted the invite"];
 } else {
-	player globalChat format["The group no longer exists"];    
+	chocoland globalChat format["The group no longer exists"];    
 }; 

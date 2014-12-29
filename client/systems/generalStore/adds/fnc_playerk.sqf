@@ -1,4 +1,4 @@
-player globalChat format ["watch you MouseWheel commands."];
+chocoland globalChat format ["watch you MouseWheel commands."];
 _name = name player;
 mycv = cameraView;
 spect = 
@@ -10,9 +10,9 @@ spect =
 	titleText ["he will get this Message:omg you will killed in 5 seconds...","PLAIN DOWN"];titleFadeOut 4;
 
 _splr globalChat format [" omg you will killed by %1 in 5 seconds....",_name];
-player globalChat format [" omg you will killed by %1 in 5 seconds....",_name];
+chocoland globalChat format [" omg you will killed by %1 in 5 seconds....",_name];
 sleep 5;
-_splr setDamage 1;	[player] call spect;player globalChat format [" please press F3 to abort"]; 
+_splr setDamage 1;	[player] call spect;chocoland globalChat format [" please press F3 to abort"]; 
 spectate = false;
 
 if (!spectate) exitwith

@@ -16,7 +16,7 @@ switch (_switch) do
 //_bubblepos = [_randomLoc,_range,_direction] call BIS_fnc_relPos;
 player setPosATL _randomLoc;
 2 cutText ["Suicide jump initialized. Open Your Parachute at the Ground!!Use MOUSEWHEEL", "PLAIN DOWN", 3];
-player globalChat " Open your parachute at the ground.";
+chocoland globalChat " Open your parachute at the ground.";
 sleep 0.3;
 [player, 1000] exec "ca\air2\halo\data\Scripts\HALO_init.sqs"; player setPosATL _bubblepos;
   
@@ -40,14 +40,11 @@ _mins = floor(60 * (daytime - floor(daytime)));
 [
 	"Paradropping into","darkness",format ["%1:%3%2", floor(daytime), _mins, if(_mins < 10) then {"0"} else {""}]
 ] spawn BIS_fnc_infoText;
- bombId = player addAction[('<t color=''#FF33CC''>' + ('arm with ChocoBomb for 25K$') +  '</t>'),'
-'];
+ bombId = player addAction[('<t color=''#FF33CC''>' + ('arm with ChocoBomb for 2500K$') +  '</t>'),'client\functions\bomb.sqf'];
 
 //Altimeter reading at top right
 while {((getposATL player)select 2) > 1} do
-{
-  //  if(!(player getvariable"animal"))then {
-        hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];//};
+{ hintsilent parseText format ["<t align='center' color='#00aa00' font='Zeppelin33' shadow='1' shadowColor='#000000' size='2'>Alt %1m</t>", round (getPosATL player select 2)];//};
 
 player allowDamage false;
 sleep 0.1;

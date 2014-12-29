@@ -1,7 +1,7 @@
 
 R3F_LOG_CFG_remorqueurs = [
 	"Truck",
-    "Car",
+        "Car",
 	"TowingTractor",
 	"Tractor",
 	"BRDM2_Base",
@@ -127,7 +127,6 @@ R3F_LOG_CFG_objets_heliportables = [
 	"C130J",
 	"MV22",
 	"F35",
-	"ATV_Base_EP1",
 	"HMMWV_Avenger",
 	"HMMWV_M998A2_SOV_DES_EP1",
 	"HMMWV_Base",
@@ -141,9 +140,7 @@ R3F_LOG_CFG_objets_heliportables = [
 	"SkodaBase",
 	"TowingTractor",
 	"Tractor",
-	"ZU23_base",
 	"VWGolf",
-	"Volha_TK_CIV_Base_EP1",
 	"BRDM2_Base",
 	"BTR40_MG_base_EP1",
 	"LAV25_Base",
@@ -292,7 +289,7 @@ R3F_LOG_CFG_objets_transportables =  [
 ["TK_WarfareBFieldhHospital_EP1",50],
 ["US_WarfareBFieldhHospital_EP1",50],
 	["Pchela1T", 15],
-	//["ATV_Base_EP1", 10],
+	
 	["FoldChair_with_Cargo", 1],
 	["Chukar", 15],
 	["MMT_base", 1],
@@ -516,6 +513,22 @@ R3F_LOG_CFG_objets_transportables =  [
  */
 
 R3F_LOG_CFG_objets_deplacables = [
+"HeliHCivil",
+"Fort_RazorWire",
+"GraveCross2",
+"Hanged",
+"Land_A_Castle_Bergfrit",
+"Land_A_Castle_Donjon",
+"Land_A_Castle_Gate",
+"Land_A_Castle_Wall1_20",
+"Land_A_Castle_Wall1_20_Turn",
+"Land_A_Castle_Wall1_Corner",
+"Land_A_Castle_Wall1_Corner_2",
+"Land_A_Castle_Wall1_End",
+"Land_A_Castle_Wall1_End_2",
+"Land_A_Castle_Wall2_30",
+"Land_A_Castle_Wall2_End",
+"Land_A_Castle_Wall2_End_2",
 "USMC_WarfareBAircraftFactory",
 "TK_GUE_WarfareBUAVterminal_EP1",
 "GraveCross2_EP1",
@@ -525,7 +538,6 @@ R3F_LOG_CFG_objets_deplacables = [
 "Land_ladderEP1",
 "Bleacher_EP1",
 "Land_Hlidac_Budka_EP1",
-
 "WaterBasin_conc_EP1",
 "HeliHRescue",
 "HeliHCivil",
@@ -718,7 +730,7 @@ R3F_LOG_CFG_objets_deplacables = [
 	"Land_leseni4x",
 	"Wall_L_2m5_EP1",
 	"M1130_HQ_unfolded_Base_EP1",
-	//"ATV_Base_EP1",
+	
 	"Motorcycle",
 	"Land_Ind_SawMillPen",
 	"Land_Misc_Cargo2E",

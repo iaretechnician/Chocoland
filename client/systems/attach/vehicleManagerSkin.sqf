@@ -1,0 +1,21 @@
+
+#include "dialog\attachDefines.sqf";
+disableSerialization;
+_dialog = findDisplay attach_DIALOG;
+_player = _dialog displayCtrl menu_texturecount;
+_player = lbCurSel menu_texturecount;
+if(_player < 0)then {_player = 0};
+_skin = _this select 0;
+object1 = cursortarget; 
+if((player getvariable"cmoney")< 500)exitwith{hint" oh you have no money"};
+player setvariable["cmoney",(player getvariable"cmoney")-500,true];
+if(_skin == 1)then {object1 setObjectTexture [_player, "snowy.jpg"];publicvariable"object1";
+_string =format["object1 setObjectTexture [%1, ""snowy.jpg""];",_player]; 
+chocostring =_string;
+publicvariable"chocostring";
+};
+if (_skin ==2 )then{object1 setObjectTexture [_player, "millitary.jpg"];publicvariable"object1";
+_string =format["object1 setObjectTexture [%1, ""millitary.jpg""];",_player]; 
+chocostring =_string;
+publicvariable"chocostring";
+};

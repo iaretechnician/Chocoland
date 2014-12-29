@@ -154,5 +154,116 @@ class attachd {
 			h = 0.07 * safezoneH;
 			color[] = {0.95,0.5,0.1,1};
 		};
+                   class slider: R_Slider
+		{
+			idc = -1;
+			onButtonClick = "";
+			text = "";
+                          onSliderPosChanged = "COLORRED=(_this select 1);[] execVM 'client\systems\attach\vehicleManager.sqf';"; 
+			x = 0.1 * safezoneW + safezoneX;
+			y = 0.01 * safezoneH;
+			w = 0.2 * safezoneW;
+			h = 0.02 * safezoneH;
+
+		};
+                  class sslider: G_Slider
+		{
+			idc = -1;
+			onButtonClick = "";
+			text = "";
+                          onSliderPosChanged = "COLORGREEN=(_this select 1);[] execVM 'client\systems\attach\vehicleManager.sqf';";  
+			x = 0.1 * safezoneW + safezoneX;
+			y = 0.03 * safezoneH;
+			w = 0.2 * safezoneW;
+			h = 0.02 * safezoneH;
+
+		};
+                  class eslider: B_Slider
+		{
+			idc = -1;
+			onButtonClick = "";
+			text = "";
+                        onSliderPosChanged = "COLORBLUE=(_this select 1);[] execVM 'client\systems\attach\vehicleManager.sqf';"; 
+			x = 0.1 * safezoneW + safezoneX;
+			y = 0.05 * safezoneH;
+			w = 0.2 * safezoneW;
+			h = 0.02 * safezoneH;
+
+		};
+                    class Aeslider: A_Slider
+		{
+			idc = -1;
+			onButtonClick = "";
+			text = "";
+                        onSliderPosChanged = "COLORALPHA=(_this select 1);[] execVM 'client\systems\attach\vehicleManager.sqf';"; 
+			x = 0.1 * safezoneW + safezoneX;
+			y = 0.07 * safezoneH;
+			w = 0.2 * safezoneW;
+			h = 0.02 * safezoneH;
+
+		};
+                class xmoneyInput: w_RscCombo {
+			idc = menu_texturecount;
+                       
+			x = 0.1 * safezoneW + safezoneX;
+			y = 0.09 * safezoneH + safezoneY;
+			w = 0.2; h = 0.060;
+		};
+                class Skin1VehicleButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "[1] execVM 'client\systems\attach\vehicleManagerSkin.sqf';";
+			text = "Snowy skin";
+
+                         x = -0.09 * safezoneW + safezoneX;
+			y = 0.01 * safezoneH;
+			w = 0.07 * safezoneW;
+			h = 0.07 * safezoneH;
+			color[] = {0.95,0.5,0.1,1};
+			
+
+		};
+                  class Skin2VehicleButton: w_RscButton
+		{
+			idc = -1;
+		onButtonClick = "[2] execVM 'client\systems\attach\vehicleManagerSkin.sqf';";
+			text = "millitary skin";
+
+                         x = -0.09 * safezoneW + safezoneX;
+			y = 0.1 * safezoneH;
+			w = 0.07 * safezoneW;
+			h = 0.07 * safezoneH;
+			color[] = {0.95,0.5,0.1,1};
+			
+
+		};
+                    class loadbVehicleButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "SAVECOLOR=[COLORRED,COLORGREEN,COLORBLUE,COLORALPHA];";
+			text = "save Color";
+
+                         x = -0.09 * safezoneW + safezoneX;
+			y = 0.19 * safezoneH;
+			w = 0.07 * safezoneW;
+			h = 0.07 * safezoneH;
+			color[] = {0.95,0.5,0.1,1};
+			
+
+		};
+                    class loadb2VehicleButton: w_RscButton
+		{
+			idc = -1;
+			onButtonClick = "COLORRED = SAVECOLOR select 0;COLORGREEN =SAVECOLOR select 1 ;COLORBLUE =SAVECOLOR select 2;COLORALPHA=SAVECOLOR select 3;[] execVM 'client\systems\attach\vehicleManager.sqf';";
+			text = "load Color";
+
+                         x = -0.09 * safezoneW + safezoneX;
+			y = 0.28 * safezoneH;
+			w = 0.07 * safezoneW;
+			h = 0.07 * safezoneH;
+			color[] = {0.95,0.5,0.1,1};
+			
+
+		};
 	};
 };

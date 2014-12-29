@@ -1,41 +1,50 @@
-#include "dialog\player_sys.sqf";
-#define GET_DISPLAY (findDisplay playersys_DIALOG)
-#define GET_CTRL(a) (GET_DISPLAY displayCtrl ##a)
-#define GET_SELECTED_DATA(a) ([##a] call {_idc = _this select 0;_selection = (lbSelection GET_CTRL(_idc) select 0);if (isNil {_selection}) then {_selection = 0};(GET_CTRL(_idc) lbData _selection)})
 
+#include "dialog\player_sys.sqf";
+disableSerialization;
+
+_dialog = findDisplay playersys_DIALOG;
+_player = _dialog displayCtrl player_value;
+_money = _dialog displayCtrl money_value;
 if(isNil {dropActive}) then {dropActive = false};
 if(isNil {MoneyInUse}) then {MoneyInUse = false};
-_Dialog = findDisplay playerSettings;
 
-_playerValueCtrl = _Dialog displayCtrl player_value;
-_index = lbCurSel _playerValueCtrl;
-_player = _playerValueCtrl lbData _index;
-
-
-if(isnil {player getVariable "choco"}) then {player setVariable["choco",0,true];};
 //disableSerialization;
 
 // Check if mutex lock is active.
 if(mutexScriptInProgress) exitWith {
-	player globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
+	chocoland globalChat "YOU ARE ALREADY PERFORMING ANOTHER ACTION!";
 };
-
-private["_money","_pos","_cash"];
-_money = parsenumber(GET_SELECTED_DATA(money_value));
-
-if((player getVariable "choco" < _money) OR (player getVariable "choco" < 0)) exitwith {hint format["You don't have $%1 to drop", _money];};
+_player = lbCurSel player_value;
+_money = lbCurSel money_value;
+_player2 = 0;
+{if(_player == _player2)then {_player = name _x};_player2 = _player2 + 1 ;}foreach playableunits;
+switch(_money) do 
+{
+	case 0: {_money =1000;};
+        case 1: {_money =2500;};
+        case 2: {_money =5000;};
+        case 3: {_money =10000;};
+        case 4: {_money =25000;};
+        case 5: {_money =50000;};
+        case 6: {_money =100000;};
+        case 7: {_money =250000;};
+};
+      
+if((player getVariable ["cmoney",0] < _money) OR (player getVariable ["cmoney",0] < 0)) exitwith {hint format["You don't have $%1 to drop", _money];};
 _condi = false;
 
 mutexScriptInProgress = true;
-player setVariable["choco",(player getVariable "choco") - _money,true];
-player globalchat format ["transfering %2$ to %1...",_player,_money];
-sleep 3 ; 
-{if(_player == name _x)then {_x setVariable["choco",(_x getvariable"choco")+_money,true];};}foreach playableunits;
+player setVariable["cmoney",(player getVariable "cmoney") - _money,true];[]call savePlayer;
+chocoland globalChat format ["transfering %2$ to %1 ",_player,_money];
+sleep 1 ; 
+chocoland globalChat".";
+sleep 1 ; 
+chocoland globalChat"..";
+sleep 1 ; 
 
+{if(_player == name _x)then {_x setVariable["cmoney",(_x getvariable["cmoney",0])+_money,true];call compile format["[nil,_x,""loc"",rHINT,""%1 gaves you %2$""] call RE;", name player,_money];};}foreach playableunits;
+chocoland globalChat"...transfered";
 
- if(_money >= 100000)then{
-                        diag_log_server = parsetext format["player:%1 drop %2 now %3 Money",name player,_money, (player getVariable"choco")];
-publicvariableserver "diag_log_server";};
-PDB_saveReq = getPlayerUID player;
-publicVariableServer "PDB_saveReq";
+	
+	
 mutexScriptInProgress = false;

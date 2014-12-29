@@ -35,14 +35,14 @@ _totalText2 = _dialog displayCtrl genstore_total2;
         	if(_x select 0 == _itemText) then
             {
                 _price = _x select 4;
-                _price2 = _x select 5;
+               
                 
             };    
         }forEach generalStore;
 	
 	genStoreCart = genStoreCart - _price;
-        genStoreCart2 = genStoreCart2 - _price2;
+        
 	_totalText CtrlsetText format["MoneyTotal: $%1", genStoreCart];
-_totalText2 CtrlsetText format["ChocoTotal: $%1", genStoreCart2];
+
 	//Remove selected item.
 	_cartlist lbDelete _selectedItem;

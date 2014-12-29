@@ -5,8 +5,8 @@
 //	@file Created: 20/11/2012 05:19
 //	@file Args:
 
-_uid = getPlayerUID player;
-if ((_uid in moderators) OR (_uid in administrators) OR (_uid in serverAdministrators)) then {
+_uid = puid;
+if (_uid in Admins) then {
 	if (isnil "pm") then {pm = 0;}; if (pm == 0) then {pm = 1; hint "Player Markers ON";} else {pm = 0; hint "Player Markers OFF";};
 	setGroupIconsVisible [true, true];
 	while {pm == 1} do
